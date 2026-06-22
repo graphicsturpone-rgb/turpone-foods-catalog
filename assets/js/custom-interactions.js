@@ -184,12 +184,18 @@ document.addEventListener('DOMContentLoaded', () => {
         promoCloseBtn.innerHTML = '&times;';
         promoCloseBtn.style.cssText = 'position: absolute; top: -45px; right: -10px; background: none; border: none; color: #fff; font-size: 45px; cursor: pointer; line-height: 1; padding: 0;';
         
+        const promoLink = document.createElement('a');
+        promoLink.href = 'https://www.specialtyfood.com/fancy-food-shows/summer/';
+        promoLink.target = '_blank';
+        promoLink.style.display = 'block';
+
         const promoImg = document.createElement('img');
-        promoImg.src = 'https://nvyt.es/banner/ace5b664c0878ee33afd';
+        promoImg.src = 'assets/images/big_banner.webp';
         promoImg.style.cssText = 'max-width: 100%; max-height: 85vh; border-radius: 8px; box-shadow: 0 10px 40px rgba(0,0,0,0.8); display: block; object-fit: contain;';
         
+        promoLink.appendChild(promoImg);
         promoContainer.appendChild(promoCloseBtn);
-        promoContainer.appendChild(promoImg);
+        promoContainer.appendChild(promoLink);
         promoOverlay.appendChild(promoContainer);
         document.body.appendChild(promoOverlay);
 
@@ -225,11 +231,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const headerBannerOverlay = document.createElement('div');
     headerBannerOverlay.style.cssText = 'width: 100%; background-color: #1a1a1a; text-align: center; display: block; line-height: 0; border-bottom: 1px solid #333; z-index: 999999; position: relative;';
     
+    const headerBannerLink = document.createElement('a');
+    headerBannerLink.href = 'https://www.specialtyfood.com/fancy-food-shows/summer/';
+    headerBannerLink.target = '_blank';
+    headerBannerLink.style.display = 'block';
+
     const headerBannerImg = document.createElement('img');
-    headerBannerImg.src = 'https://nvyt.es/banner/565b68c8d0735afc9c1a';
-    headerBannerImg.style.cssText = 'max-width: 100%; height: auto; display: inline-block; vertical-align: top; max-height: 80px; object-fit: contain;'; // Assuming it's a thin banner, limit height just in case
+    headerBannerImg.src = 'assets/images/small_banner.webp';
+    headerBannerImg.style.cssText = 'max-width: 100%; height: auto; display: block; margin: 0 auto; vertical-align: top; max-height: 80px; object-fit: contain;'; 
     
-    headerBannerOverlay.appendChild(headerBannerImg);
+    headerBannerLink.appendChild(headerBannerImg);
+    headerBannerOverlay.appendChild(headerBannerLink);
     
     // Inject at the very top of the body
     if (document.body.firstChild) {
