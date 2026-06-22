@@ -1,0 +1,6 @@
+name = "turpone-foods"
+account_id = "7b97368b9c914ebb22e0414f2cf822cb"
+pages_build_output_dir = "."
+
+[site]
+bucket = "./"
