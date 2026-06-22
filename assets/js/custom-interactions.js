@@ -249,4 +249,34 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
         document.body.appendChild(headerBannerOverlay);
     }
+
+    // Advanced Smooth Scroll Animations Engine
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('reveal-visible');
+                observer.unobserve(entry.target); // Only animate once
+            }
+        });
+    }, {
+        root: null,
+        threshold: 0.1, // Trigger when 10% visible
+        rootMargin: "0px 0px -50px 0px" // Trigger slightly before it hits the bottom
+    });
+
+    // Select elements to animate, explicitly excluding the header navigation and the global banner we just injected
+    const elementsToAnimate = document.querySelectorAll(`
+        main h1, main h2, main h3, main p, 
+        .elementor-section:not(.elementor-location-header) .elementor-widget-image img,
+        .elementor-section:not(.elementor-location-header) .elementor-button
+    `);
+
+    elementsToAnimate.forEach((el, index) => {
+        // Add base class
+        el.classList.add('reveal-on-scroll');
+        // Add a slight stagger delay based on DOM order for a beautiful waterfall effect
+        el.style.transitionDelay = `${(index % 5) * 0.1}s`;
+        revealObserver.observe(el);
+    });
+
 });
