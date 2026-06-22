@@ -190,7 +190,7 @@ document.addEventListener('DOMContentLoaded', () => {
         promoLink.style.display = 'block';
 
         const promoImg = document.createElement('img');
-        promoImg.src = 'assets/images/big_banner.webp';
+        promoImg.src = '/assets/images/big_banner.webp';
         promoImg.style.cssText = 'max-width: 100%; max-height: 85vh; border-radius: 8px; box-shadow: 0 10px 40px rgba(0,0,0,0.8); display: block; object-fit: contain;';
         
         promoLink.appendChild(promoImg);
@@ -237,7 +237,7 @@ document.addEventListener('DOMContentLoaded', () => {
     headerBannerLink.style.display = 'block';
 
     const headerBannerImg = document.createElement('img');
-    headerBannerImg.src = 'assets/images/small_banner.webp';
+    headerBannerImg.src = '/assets/images/small_banner.webp';
     headerBannerImg.style.cssText = 'max-width: 100%; height: auto; display: block; margin: 0 auto; vertical-align: top; max-height: 80px; object-fit: contain;'; 
     
     headerBannerLink.appendChild(headerBannerImg);
