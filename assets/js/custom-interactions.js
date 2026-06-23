@@ -372,4 +372,53 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Dynamic Team Section (Bypasses Elementor HTML fragility)
+    if (window.location.pathname.includes('/about-us') || document.querySelector('[data-e-type="container"][data-id="a2326b3"]')) {
+        const teamContainer = document.querySelector('[data-e-type="container"][data-id="a2326b3"]');
+        if (teamContainer) {
+            const teamMembers = [
+                { id: "member2", name: "Anthony Capone", role: "Managing Director", img: "Anthony%20Capone.webp" },
+                { id: "member1", name: "Joe Turturici", role: "Sales Director", img: "Joe%20Turturici.webp" },
+                { id: "member3", name: "Laura Trentadue", role: "Lead Creative Designer", img: "Laura%20Trentadue.webp" },
+                { id: "member4", name: "Gianni Iaboni", role: "E-Commerce Specialist", img: "Gianni%20Iaboni.webp" },
+                { id: "member5", name: "Maria Guarin", role: "Project Manager", img: "Maria%20Guarin.webp" },
+                { id: "member6", name: "Rosemary Bruni", role: "Logistic Coordinator", img: "Rosemary%20Bruni.webp" },
+                { id: "member7", name: "Beata Niyoyita", role: "Accounting", img: "Beata%20Niyoyita.webp" },
+                { id: "member8", name: "Stephen Liu", role: "Accounting", img: "Stephen%20Liu.webp" },
+                { id: "member9", name: "Tony Capone", role: "Culinary Director", img: "Tony%20Capone.webp" },
+                { id: "member10", name: "Sara Turturici", role: "Marketing Coordinator", img: "Sara%20Turturici.webp" }
+            ];
+
+            let html = `
+                <div class="dynamic-team-section" data-cms-section="team">
+                    <div class="dynamic-team-header">
+                        <h2 data-cms-id="about.team.heading">MEET OUR TEAM</h2>
+                    </div>
+                    <div class="dynamic-team-grid">
+            `;
+
+            teamMembers.forEach((member, index) => {
+                const bossClass = (index < 2) ? ' boss-card' : '';
+                html += `
+                    <div class="dynamic-team-member${bossClass}">
+                        <div class="member-photo-wrap">
+                            <img loading="lazy" src="../assets/images/${member.img}" alt="${member.name}" data-cms-img="about.team.${member.id}_img">
+                        </div>
+                        <div class="member-info-wrap">
+                            <h3 class="member-name" data-cms-id="about.team.${member.id}_name">${member.name}</h3>
+                            <p class="member-title" data-cms-id="about.team.${member.id}_role">${member.role}</p>
+                        </div>
+                    </div>
+                `;
+            });
+
+            html += `
+                    </div>
+                </div>
+            `;
+
+            teamContainer.innerHTML = html;
+        }
+    }
+
 });
