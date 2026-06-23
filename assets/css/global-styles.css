@@ -149,12 +149,14 @@ a:hover, button:hover {
   grid-column: span 2;
   align-items: center;
   text-align: center;
-  max-width: 500px;
+  max-width: 100%;
   margin: 0 auto;
 }
 
 .dynamic-team-member.boss-card .member-photo-wrap {
   aspect-ratio: 1 / 1;
+  max-width: 260px; /* Restrict image size so their faces match the scale of the others */
+  margin-bottom: 20px;
 }
 
 .member-photo-wrap {
