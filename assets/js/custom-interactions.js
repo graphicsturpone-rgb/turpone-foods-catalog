@@ -376,6 +376,28 @@ document.addEventListener('DOMContentLoaded', () => {
     if (window.location.pathname.includes('/about-us') || document.querySelector('[data-e-type="container"][data-id="a2326b3"]')) {
         const teamContainer = document.querySelector('[data-e-type="container"][data-id="a2326b3"]');
         if (teamContainer) {
+            const isFr = window.location.pathname.includes('/fr/');
+            const isEs = window.location.pathname.includes('/es/');
+
+            const t = {
+                meetOurTeam: isFr ? "RENCONTREZ NOTRE ÉQUIPE" : (isEs ? "CONOCE A NUESTRO EQUIPO" : "MEET OUR TEAM")
+            };
+
+            const translateRole = (role) => {
+                const roles = {
+                    "Managing Director": isFr ? "Directeur Général" : (isEs ? "Director General" : "Managing Director"),
+                    "Sales Director": isFr ? "Directeur des Ventes" : (isEs ? "Director de Ventas" : "Sales Director"),
+                    "Lead Creative Designer": isFr ? "Concepteur Créatif Principal" : (isEs ? "Diseñador Creativo Principal" : "Lead Creative Designer"),
+                    "E-Commerce Specialist": isFr ? "Spécialiste E-Commerce" : (isEs ? "Especialista en E-Commerce" : "E-Commerce Specialist"),
+                    "Project Manager": isFr ? "Chef de Projet" : (isEs ? "Gerente de Proyecto" : "Project Manager"),
+                    "Logistic Coordinator": isFr ? "Coordinateur Logistique" : (isEs ? "Coordinador de Logística" : "Logistic Coordinator"),
+                    "Accounting": isFr ? "Comptabilité" : (isEs ? "Contabilidad" : "Accounting"),
+                    "Culinary Director": isFr ? "Directeur Culinaire" : (isEs ? "Director Culinario" : "Culinary Director"),
+                    "Marketing Coordinator": isFr ? "Coordinateur Marketing" : (isEs ? "Coordinador de Marketing" : "Marketing Coordinator")
+                };
+                return roles[role] || role;
+            };
+
             const teamMembers = [
                 { id: "member2", name: "Anthony Capone", role: "Managing Director", img: "Anthony%20Capone.webp" },
                 { id: "member1", name: "Joe Turturici", role: "Sales Director", img: "Joe%20Turturici.webp" },
@@ -392,7 +414,7 @@ document.addEventListener('DOMContentLoaded', () => {
             let html = `
                 <div class="dynamic-team-section" data-cms-section="team">
                     <div class="dynamic-team-header">
-                        <h2 data-cms-id="about.team.heading">MEET OUR TEAM</h2>
+                        <h2 data-cms-id="about.team.heading">${t.meetOurTeam}</h2>
                     </div>
                     <div class="dynamic-team-grid">
             `;
@@ -402,11 +424,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 html += `
                     <div class="dynamic-team-member${bossClass}">
                         <div class="member-photo-wrap">
-                            <img loading="lazy" src="../assets/images/${member.img}" alt="${member.name}" data-cms-img="about.team.${member.id}_img">
+                            <img loading="lazy" src="/assets/images/${member.img}" alt="${member.name}" data-cms-img="about.team.${member.id}_img">
                         </div>
                         <div class="member-info-wrap">
                             <h3 class="member-name" data-cms-id="about.team.${member.id}_name">${member.name}</h3>
-                            <p class="member-title" data-cms-id="about.team.${member.id}_role">${member.role}</p>
+                            <p class="member-title" data-cms-id="about.team.${member.id}_role">${translateRole(member.role)}</p>
                         </div>
                     </div>
                 `;
