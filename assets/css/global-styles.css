@@ -180,12 +180,6 @@ a:hover, button:hover {
   transform: scale(1.05);
 }
 
-/* Specifically reduce Sara's (10th card) photo size because her original image is closely cropped */
-.dynamic-team-member:nth-child(10) .member-photo-wrap {
-  width: 70%;
-  margin-left: 0;
-}
-
 .member-info-wrap {
   width: 100%;
 }
