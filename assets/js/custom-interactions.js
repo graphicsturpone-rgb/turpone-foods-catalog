@@ -386,7 +386,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 { id: "member7", name: "Beata Niyoyita", role: "Accounting", img: "Beata%20Niyoyita.webp" },
                 { id: "member8", name: "Stephen Liu", role: "Accounting", img: "Stephen%20Liu.webp" },
                 { id: "member9", name: "Tony Capone", role: "Culinary Director", img: "Tony%20Capone.webp" },
-                { id: "member10", name: "Sara Turturici", role: "Marketing Coordinator", img: "Sara%20Turturici.webp" }
+                { id: "member10", name: "Sara Turturici", role: "Marketing Coordinator", img: "Sara-Turturici.webp" }
             ];
 
             let html = `
