@@ -310,9 +310,11 @@ document.addEventListener('DOMContentLoaded', () => {
             item.addEventListener('click', function(e) {
                 // Find siblings to build the gallery group based on the parent container
                 const container = item.closest('.elementor-gallery__container') || item.closest('.e-con-inner') || item.parentElement;
-                const siblings = container.querySelectorAll('.elementor-gallery-item');
                 
-                currentGroup = Array.from(siblings).map(sib => {
+                // Only select images that are currently visible (not hidden by category filters)
+                const siblings = Array.from(container.querySelectorAll('.elementor-gallery-item')).filter(sib => sib.offsetParent !== null);
+                
+                currentGroup = siblings.map(sib => {
                     let url = sib.getAttribute('href');
                     if (url) {
                         var filename = url.substring(url.lastIndexOf('/') + 1);
