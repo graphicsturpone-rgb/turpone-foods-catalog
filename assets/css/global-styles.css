@@ -99,21 +99,26 @@ a:hover, button:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
+  z-index: 10; /* Ensure this sits ABOVE any Elementor background overlays */
 }
 
 .dynamic-team-header {
   text-align: center;
   margin-bottom: 60px;
+  position: relative;
+  z-index: 10;
 }
 
 .dynamic-team-header h2 {
   font-family: "Poppins", sans-serif;
   font-weight: 700;
   font-size: 48px;
-  color: rgb(249, 249, 249);
+  color: #ffffff !important;
   text-transform: uppercase;
   margin: 0;
   letter-spacing: 2px;
+  text-shadow: 2px 2px 10px rgba(0,0,0,0.8);
 }
 
 .dynamic-team-grid {
@@ -121,6 +126,8 @@ a:hover, button:hover {
   grid-template-columns: repeat(4, 1fr);
   gap: 40px;
   width: 100%;
+  position: relative;
+  z-index: 10;
 }
 
 .dynamic-team-member {
@@ -128,6 +135,13 @@ a:hover, button:hover {
   flex-direction: column;
   align-items: flex-start;
   text-align: left;
+  background-color: #111111; /* Clean dark background to prevent blending into the background */
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  position: relative;
+  z-index: 10;
 }
 
 /* Make bosses span 2 columns so they are perfectly centered on top of the 4-column grid */
@@ -146,10 +160,10 @@ a:hover, button:hover {
 .member-photo-wrap {
   width: 100%;
   aspect-ratio: 1 / 1;
-  border-radius: 12px;
+  border-radius: 8px;
   overflow: hidden;
   margin-bottom: 20px;
-  background-color: transparent;
+  background-color: #000;
 }
 
 .member-photo-wrap img {
@@ -157,10 +171,15 @@ a:hover, button:hover {
   height: 100%;
   object-fit: cover;
   transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  display: block;
 }
 
 .dynamic-team-member:hover .member-photo-wrap img {
   transform: scale(1.05);
+}
+
+.member-info-wrap {
+  width: 100%;
 }
 
 .member-info-wrap .member-name {
@@ -168,7 +187,7 @@ a:hover, button:hover {
   font-weight: 700;
   font-style: normal;
   font-size: 24px;
-  color: rgb(249, 249, 249);
+  color: #ffffff !important;
   margin: 0 0 5px 0;
   line-height: 1.2;
 }
@@ -178,7 +197,7 @@ a:hover, button:hover {
   font-weight: 500;
   font-style: normal;
   font-size: 14px;
-  color: #b0b0b0;
+  color: #cccccc !important;
   margin: 0;
   line-height: 1.4;
 }
