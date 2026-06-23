@@ -279,4 +279,95 @@ document.addEventListener('DOMContentLoaded', () => {
         revealObserver.observe(el);
     });
 
+    // Advanced Lightbox Navigation (Safe Mode - Does not destroy existing Elementor bindings)
+    const customLightbox = document.getElementById('custom-lightbox');
+    if (customLightbox) {
+        // Inject arrows if they don't exist
+        if (!document.getElementById('lightbox-prev')) {
+            const prevArrow = document.createElement('div');
+            prevArrow.id = 'lightbox-prev';
+            prevArrow.className = 'lightbox-arrow lightbox-prev';
+            prevArrow.innerHTML = '&#10094;';
+            customLightbox.appendChild(prevArrow);
+
+            const nextArrow = document.createElement('div');
+            nextArrow.id = 'lightbox-next';
+            nextArrow.className = 'lightbox-arrow lightbox-next';
+            nextArrow.innerHTML = '&#10095;';
+            customLightbox.appendChild(nextArrow);
+        }
+
+        const lightboxImgObj = document.getElementById('lightbox-img');
+        const lightboxCapObj = document.getElementById('lightbox-caption');
+        const prevBtn = document.getElementById('lightbox-prev');
+        const nextBtn = document.getElementById('lightbox-next');
+
+        let currentGroup = [];
+        let currentIndex = 0;
+
+        // Simply add our own listener alongside the inline script
+        document.querySelectorAll('.elementor-gallery-item').forEach(function(item) {
+            item.addEventListener('click', function(e) {
+                // Find siblings to build the gallery group based on the parent container
+                const container = item.closest('.elementor-gallery__container') || item.closest('.e-con-inner') || item.parentElement;
+                const siblings = container.querySelectorAll('.elementor-gallery-item');
+                
+                currentGroup = Array.from(siblings).map(sib => {
+                    let url = sib.getAttribute('href');
+                    if (url) {
+                        var filename = url.substring(url.lastIndexOf('/') + 1);
+                        url = '/assets/images/' + filename;
+                    }
+                    const titleEl = sib.querySelector('.elementor-gallery-item__title');
+                    const titleText = titleEl ? titleEl.textContent.trim() : (sib.getAttribute('data-elementor-lightbox-title') || '');
+                    return { url, title: titleText };
+                }).filter(obj => obj.url);
+
+                // Find current index
+                var origUrl = item.getAttribute('href');
+                if(origUrl) {
+                    var thisFilename = origUrl.substring(origUrl.lastIndexOf('/') + 1);
+                    var resolvedUrl = '/assets/images/' + thisFilename;
+                    currentIndex = currentGroup.findIndex(obj => obj.url === resolvedUrl);
+                }
+                if (currentIndex === -1) currentIndex = 0;
+
+                // Sync arrows visibility based on gallery size
+                prevBtn.style.display = currentGroup.length > 1 ? 'flex' : 'none';
+                nextBtn.style.display = currentGroup.length > 1 ? 'flex' : 'none';
+            });
+        });
+
+        function updateLightbox() {
+            if (currentGroup.length === 0) return;
+            const current = currentGroup[currentIndex];
+            lightboxImgObj.src = current.url;
+            lightboxCapObj.textContent = current.title;
+        }
+
+        function slideNext(e) {
+            if (e) e.stopPropagation();
+            if (currentGroup.length === 0) return;
+            currentIndex = (currentIndex + 1) % currentGroup.length;
+            updateLightbox();
+        }
+
+        function slidePrev(e) {
+            if (e) e.stopPropagation();
+            if (currentGroup.length === 0) return;
+            currentIndex = (currentIndex - 1 + currentGroup.length) % currentGroup.length;
+            updateLightbox();
+        }
+
+        nextBtn.addEventListener('click', slideNext);
+        prevBtn.addEventListener('click', slidePrev);
+
+        // Keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            if (!customLightbox.classList.contains('show')) return;
+            if (e.key === 'ArrowRight') slideNext();
+            if (e.key === 'ArrowLeft') slidePrev();
+        });
+    }
+
 });
