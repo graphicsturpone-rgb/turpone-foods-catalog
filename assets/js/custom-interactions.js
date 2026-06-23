@@ -422,3 +422,36 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 });
+
+// ==========================================
+// FRONT-END SECURITY SHIELD
+// ==========================================
+
+// 1. Disable Right Click (Context Menu)
+document.addEventListener('contextmenu', function(e) {
+    e.preventDefault();
+});
+
+// 2. Disable Developer Tools and View Source Keyboard Shortcuts
+document.addEventListener('keydown', function(e) {
+    // Prevent F12
+    if (e.key === 'F12' || e.keyCode === 123) {
+        e.preventDefault();
+    }
+    // Prevent Ctrl+U / Cmd+U (View Source)
+    if ((e.ctrlKey || e.metaKey) && (e.key === 'u' || e.key === 'U')) {
+        e.preventDefault();
+    }
+    // Prevent Ctrl+S / Cmd+S (Save Page)
+    if ((e.ctrlKey || e.metaKey) && (e.key === 's' || e.key === 'S')) {
+        e.preventDefault();
+    }
+    // Prevent Ctrl+Shift+I / Cmd+Option+I (Inspect Element)
+    if ((e.ctrlKey || e.metaKey) && (e.shiftKey || e.altKey) && (e.key === 'i' || e.key === 'I')) {
+        e.preventDefault();
+    }
+    // Prevent Ctrl+Shift+J / Cmd+Option+J (Console)
+    if ((e.ctrlKey || e.metaKey) && (e.shiftKey || e.altKey) && (e.key === 'j' || e.key === 'J')) {
+        e.preventDefault();
+    }
+});

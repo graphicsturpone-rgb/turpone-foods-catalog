@@ -225,3 +225,32 @@ a:hover, button:hover {
     font-size: 36px;
   }
 }
+
+/* ==========================================
+   FRONT-END SECURITY SHIELD
+   ========================================== */
+
+/* Disable Text Selection */
+body {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Allow Text Selection in Form Elements */
+input, textarea {
+    -webkit-user-select: auto !important;
+    -moz-user-select: auto !important;
+    -ms-user-select: auto !important;
+    user-select: auto !important;
+}
+
+/* Anti-Drag for Images */
+img {
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    user-drag: none;
+}
