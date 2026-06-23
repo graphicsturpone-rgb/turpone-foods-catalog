@@ -312,7 +312,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 const container = item.closest('.elementor-gallery__container') || item.closest('.e-con-inner') || item.parentElement;
                 
                 // Only select images that are currently visible (not hidden by category filters)
-                const siblings = Array.from(container.querySelectorAll('.elementor-gallery-item')).filter(sib => sib.offsetParent !== null);
+                const siblings = Array.from(container.querySelectorAll('.elementor-gallery-item')).filter(sib => {
+                    return sib.offsetParent !== null && !sib.classList.contains('e-gallery-item--hidden');
+                });
                 
                 currentGroup = siblings.map(sib => {
                     let url = sib.getAttribute('href');
