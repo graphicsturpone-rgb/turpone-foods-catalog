@@ -197,88 +197,6 @@ document.addEventListener('DOMContentLoaded', () => {
         targetDescEl.style.transition = 'opacity 0.2s ease-in-out';
     }
 
-    // Promotional Image Popup (Homepage Only)
-    const path = window.location.pathname;
-    const isHomePage = path === '/' || path.endsWith('/index.html') || path === '/es/' || path === '/fr/';
-    
-    if (isHomePage) {
-        // Build Popup DOM dynamically
-        const promoOverlay = document.createElement('div');
-        promoOverlay.style.cssText = 'position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); display: none; align-items: center; justify-content: center; z-index: 2147483647; opacity: 0; transition: opacity 0.4s ease; padding: 20px; box-sizing: border-box;';
-        
-        const promoContainer = document.createElement('div');
-        promoContainer.style.cssText = 'position: relative; max-width: 90vw; max-height: 90vh; transform: scale(0.95); transition: transform 0.4s ease;';
-        
-        const promoCloseBtn = document.createElement('button');
-        promoCloseBtn.innerHTML = '&times;';
-        promoCloseBtn.style.cssText = 'position: absolute; top: -45px; right: -10px; background: none; border: none; color: #fff; font-size: 45px; cursor: pointer; line-height: 1; padding: 0;';
-        
-        const promoLink = document.createElement('a');
-        promoLink.href = 'https://www.specialtyfood.com/fancy-food-shows/summer/';
-        promoLink.target = '_blank';
-        promoLink.style.display = 'block';
-
-        const promoImg = document.createElement('img');
-        promoImg.src = '/assets/images/big_banner.webp';
-        promoImg.style.cssText = 'max-width: 100%; max-height: 85vh; border-radius: 8px; box-shadow: 0 10px 40px rgba(0,0,0,0.8); display: block; object-fit: contain;';
-        
-        promoLink.appendChild(promoImg);
-        promoContainer.appendChild(promoCloseBtn);
-        promoContainer.appendChild(promoLink);
-        promoOverlay.appendChild(promoContainer);
-        document.body.appendChild(promoOverlay);
-
-        let promoAutoCloseTimer;
-
-        const closePromo = () => {
-            promoOverlay.style.opacity = '0';
-            promoContainer.style.transform = 'scale(0.95)';
-            setTimeout(() => { promoOverlay.style.display = 'none'; }, 400);
-            clearTimeout(promoAutoCloseTimer); // Prevent double-closing if they manually close it early
-        };
-
-        promoCloseBtn.addEventListener('click', closePromo);
-        promoOverlay.addEventListener('click', (e) => {
-            if (e.target === promoOverlay) closePromo();
-        });
-
-        // Open after 3 seconds
-        setTimeout(() => {
-            promoOverlay.style.display = 'flex';
-            // Small delay to ensure display:flex is applied before starting opacity transition
-            setTimeout(() => {
-                promoOverlay.style.opacity = '1';
-                promoContainer.style.transform = 'scale(1)';
-            }, 50);
-            
-            // Disappear automatically in 7 seconds after opening
-            promoAutoCloseTimer = setTimeout(closePromo, 7000);
-        }, 3000);
-    }
-
-    // Global Header Announcement Banner
-    const headerBannerOverlay = document.createElement('div');
-    headerBannerOverlay.style.cssText = 'width: 100%; background-color: #1a1a1a; text-align: center; display: block; line-height: 0; border-bottom: 1px solid #333; z-index: 999999; position: relative;';
-    
-    const headerBannerLink = document.createElement('a');
-    headerBannerLink.href = 'https://www.specialtyfood.com/fancy-food-shows/summer/';
-    headerBannerLink.target = '_blank';
-    headerBannerLink.style.display = 'block';
-
-    const headerBannerImg = document.createElement('img');
-    headerBannerImg.src = '/assets/images/small_banner.webp';
-    headerBannerImg.style.cssText = 'max-width: 100%; height: auto; display: block; margin: 0 auto; vertical-align: top; max-height: 80px; object-fit: contain;'; 
-    
-    headerBannerLink.appendChild(headerBannerImg);
-    headerBannerOverlay.appendChild(headerBannerLink);
-    
-    // Inject at the very top of the body
-    if (document.body.firstChild) {
-        document.body.insertBefore(headerBannerOverlay, document.body.firstChild);
-    } else {
-        document.body.appendChild(headerBannerOverlay);
-    }
-
     // Advanced Smooth Scroll Animations Engine
     const revealObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
@@ -293,7 +211,7 @@ document.addEventListener('DOMContentLoaded', () => {
         rootMargin: "0px 0px -50px 0px" // Trigger slightly before it hits the bottom
     });
 
-    // Select elements to animate, explicitly excluding the header navigation and the global banner we just injected
+    // Select elements to animate, explicitly excluding the header navigation 
     const elementsToAnimate = document.querySelectorAll(`
         main h1, main h2, main h3, main p, 
         .elementor-section:not(.elementor-location-header) .elementor-widget-image img,
