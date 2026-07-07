@@ -106,10 +106,18 @@ function initTurponeChatbot() {
         messagesContainer.scrollTop = messagesContainer.scrollHeight;
 
         try {
+            const pageContext = {
+                url: window.location.href,
+                title: document.title
+            };
+
             const response = await fetch('/api/chat', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ messages: conversationHistory })
+                body: JSON.stringify({ 
+                    messages: conversationHistory,
+                    context: pageContext
+                })
             });
 
             if (!response.ok) {
