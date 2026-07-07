@@ -254,3 +254,10 @@ img {
     -o-user-drag: none;
     user-drag: none;
 }
+ 
+ / *   G l o b a l   A n i m a t i o n s   a n d   T r a n s i t i o n s   * /  
+ h t m l   {   s c r o l l - b e h a v i o r :   s m o o t h ;   }  
+ b o d y   {   a n i m a t i o n :   f a d e I n P a g e   0 . 8 s   e a s e - i n - o u t   f o r w a r d s ;   o p a c i t y :   0 ;   }  
+ @ k e y f r a m e s   f a d e I n P a g e   {   f r o m   {   o p a c i t y :   0 ;   }   t o   {   o p a c i t y :   1 ;   }   }  
+ a ,   b u t t o n ,   . e l e m e n t o r - b u t t o n   {   t r a n s i t i o n :   a l l   0 . 3 s   e a s e   ! i m p o r t a n t ;   }  
+ 

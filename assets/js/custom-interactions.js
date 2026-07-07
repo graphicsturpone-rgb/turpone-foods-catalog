@@ -433,3 +433,53 @@ document.addEventListener('keydown', function(e) {
         e.preventDefault();
     }
 });
+
+// ==========================================
+// DYNAMIC AOS (ANIMATE ON SCROLL) INJECTOR
+// ==========================================
+(function initAOS() {
+    // 1. Inject AOS CSS
+    if (!document.querySelector('link[href*="aos.css"]')) {
+        const aosCss = document.createElement('link');
+        aosCss.rel = 'stylesheet';
+        aosCss.href = 'https://unpkg.com/aos@2.3.1/dist/aos.css';
+        document.head.appendChild(aosCss);
+    }
+
+    // 2. Inject AOS attributes to elements dynamically before initialization
+    document.addEventListener("DOMContentLoaded", () => {
+        // Find elements to animate
+        const elementsToAnimate = document.querySelectorAll('h1, h2, h3, .elementor-heading-title, .elementor-text-editor p, .dynamic-team-member, .elementor-image img');
+        
+        elementsToAnimate.forEach((el, index) => {
+            if (el.hasAttribute('data-aos') || el.closest('#turpone-chat-window') || el.closest('#turpone-chat-fab')) return;
+            
+            const delay = (index % 3) * 100;
+            
+            el.setAttribute('data-aos', 'fade-up');
+            el.setAttribute('data-aos-duration', '800');
+            if (delay > 0) {
+                el.setAttribute('data-aos-delay', delay.toString());
+            }
+        });
+
+        // 3. Load AOS JS and initialize
+        if (!document.querySelector('script[src*="aos.js"]')) {
+            const aosJs = document.createElement('script');
+            aosJs.src = 'https://unpkg.com/aos@2.3.1/dist/aos.js';
+            aosJs.onload = () => {
+                if (typeof AOS !== 'undefined') {
+                    AOS.init({
+                        once: true,
+                        offset: 50,
+                    });
+                }
+            };
+            document.body.appendChild(aosJs);
+        } else {
+            if (typeof AOS !== 'undefined') {
+                AOS.init({ once: true, offset: 50 });
+            }
+        }
+    });
+})();
