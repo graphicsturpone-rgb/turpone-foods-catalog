@@ -350,14 +350,14 @@ document.addEventListener('DOMContentLoaded', () => {
             const teamMembers = [
                 { id: "member2", name: "Anthony Capone", role: "Managing Director", img: "Anthony%20Capone.webp" },
                 { id: "member1", name: "Joe Turturici", role: "Sales Director", img: "Joe%20Turturici.webp" },
-                { id: "member3", name: "Laura Trentadue", role: "Lead Creative Designer", img: "Laura%20Trentadue.webp" },
                 { id: "member4", name: "Gianni Iaboni", role: "E-Commerce Specialist", img: "Gianni%20Iaboni.webp" },
                 { id: "member5", name: "Maria Guarin", role: "Project Manager", img: "Maria%20Guarin.webp" },
                 { id: "member6", name: "Rosemary Bruni", role: "Logistic Coordinator", img: "Rosemary%20Bruni.webp" },
                 { id: "member7", name: "Beata Niyoyita", role: "Accounting", img: "Beata%20Niyoyita.webp" },
                 { id: "member8", name: "Stephen Liu", role: "Accounting", img: "Stephen%20Liu.webp" },
                 { id: "member9", name: "Tony Capone", role: "Culinary Director", img: "Tony%20Capone.webp" },
-                { id: "member10", name: "Sara Turturici", role: "Marketing Coordinator", img: "Sara-Turturici.webp" }
+                { id: "member10", name: "Sara Turturici", role: "Marketing Coordinator", img: "Sara-Turturici.webp" },
+                { id: "member3", name: "Laura Trentadue", role: "Lead Creative Designer", img: "Laura%20Trentadue.webp" }
             ];
 
             let html = `
