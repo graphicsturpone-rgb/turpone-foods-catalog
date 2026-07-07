@@ -455,7 +455,7 @@ document.addEventListener('keydown', function(e) {
             if (el.hasAttribute('data-aos') || el.closest('#turpone-chat-window') || el.closest('#turpone-chat-fab')) return;
             
             el.setAttribute('data-aos', 'fade-up');
-            el.setAttribute('data-aos-duration', '800');
+            el.setAttribute('data-aos-duration', '1500');
             // Removed delay logic to keep entire containers animating smoothly without staggering delays across the page
         });
 
@@ -468,13 +468,14 @@ document.addEventListener('keydown', function(e) {
                     AOS.init({
                         once: true,
                         offset: 50,
+                        easing: 'ease-out-cubic',
                     });
                 }
             };
             document.body.appendChild(aosJs);
         } else {
             if (typeof AOS !== 'undefined') {
-                AOS.init({ once: true, offset: 50 });
+                AOS.init({ once: true, offset: 50, easing: 'ease-out-cubic' });
             }
         }
     });
