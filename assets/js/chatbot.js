@@ -1,6 +1,14 @@
 function initTurponeChatbot() {
     if (document.getElementById('turpone-chat-fab')) return; // Already initialized
 
+    // Determine language from URL path
+    const isEs = window.location.pathname.includes('/es/');
+    const isFr = window.location.pathname.includes('/fr/');
+    
+    let welcomeMessage = "Hello! Welcome to Turpone Foods. How can I help you today?";
+    if (isEs) welcomeMessage = "¡Hola! Bienvenido a Turpone Foods. ¿Cómo puedo ayudarte hoy?";
+    if (isFr) welcomeMessage = "Bonjour ! Bienvenue chez Turpone Foods. Comment puis-je vous aider aujourd'hui ?";
+
     // Inject HTML
     const chatbotHTML = `
         <div id="turpone-chat-fab" title="Chat with us">
@@ -16,7 +24,7 @@ function initTurponeChatbot() {
             </div>
             <div class="turpone-chat-messages" id="turpone-chat-messages">
                 <div class="turpone-chat-bubble assistant">
-                    Hello! Welcome to Turpone Foods. How can I help you today? / ¡Hola! ¿Cómo puedo ayudarte? / Bonjour! Comment puis-je vous aider?
+                    ${welcomeMessage}
                 </div>
                 <div class="turpone-typing-indicator" id="turpone-typing-indicator">
                     <span></span><span></span><span></span>
