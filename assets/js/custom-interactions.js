@@ -354,7 +354,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 { id: "member6", name: "Rosemary Bruni", role: "Logistic Coordinator", img: "Rosemary%20Bruni.webp" },
                 { id: "member10", name: "Sara Turturici", role: "Marketing Coordinator", img: "Sara-Turturici.webp" },
                 { id: "member9", name: "Tony Capone", role: "Culinary Director", img: "Tony%20Capone.webp" },
-                { id: "member11", name: "Carlos Ozuna", role: "Senior Graphic Design / AI Web Developer", img: "carlos-ozuna.webp", link: "https://cozuna.com/" },
+                { id: "member11", name: "Carlos Ozuna", role: "Senior Graphic Design / AI Web Developer", img: "carlos-ozuna.webp" },
                 { id: "member4", name: "Gianni Iaboni", role: "E-Commerce Specialist", img: "Gianni%20Iaboni.webp" },
                 { id: "member3", name: "Laura Trentadue", role: "Lead Creative Designer", img: "Laura%20Trentadue.webp" },
                 { id: "member5", name: "Maria Guarin", role: "Project Manager", img: "Maria%20Guarin.webp" },
