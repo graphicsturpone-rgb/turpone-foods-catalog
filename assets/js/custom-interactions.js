@@ -448,19 +448,15 @@ document.addEventListener('keydown', function(e) {
 
     // 2. Inject AOS attributes to elements dynamically before initialization
     document.addEventListener("DOMContentLoaded", () => {
-        // Find elements to animate
-        const elementsToAnimate = document.querySelectorAll('h1, h2, h3, .elementor-heading-title, .elementor-text-editor p, .dynamic-team-member, .elementor-image img');
+        // Find elements to animate (now targeting containers instead of individual text elements)
+        const elementsToAnimate = document.querySelectorAll('.elementor-section:not(.elementor-inner-section), .elementor-container, .dynamic-team-section, section');
         
         elementsToAnimate.forEach((el, index) => {
             if (el.hasAttribute('data-aos') || el.closest('#turpone-chat-window') || el.closest('#turpone-chat-fab')) return;
             
-            const delay = (index % 3) * 100;
-            
             el.setAttribute('data-aos', 'fade-up');
             el.setAttribute('data-aos-duration', '800');
-            if (delay > 0) {
-                el.setAttribute('data-aos-delay', delay.toString());
-            }
+            // Removed delay logic to keep entire containers animating smoothly without staggering delays across the page
         });
 
         // 3. Load AOS JS and initialize
