@@ -356,10 +356,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 { id: "member9", name: "Tony Capone", role: "Culinary Director", img: "Tony%20Capone.webp" },
                 { id: "member11", name: "Carlos Ozuna", role: "Senior Graphic Design / AI Web Developer", img: "carlos-ozuna.webp" },
                 { id: "member4", name: "Gianni Iaboni", role: "E-Commerce Specialist", img: "Gianni%20Iaboni.webp" },
+                { id: "member3", name: "Laura Trentadue", role: "Lead Creative Designer", img: "Laura%20Trentadue.webp" },
                 { id: "member5", name: "Maria Guarin", role: "Project Manager", img: "Maria%20Guarin.webp" },
                 { id: "member7", name: "Beata Niyoyita", role: "Accounting", img: "Beata%20Niyoyita.webp" },
-                { id: "member8", name: "Stephen Liu", role: "Accounting", img: "Stephen%20Liu.webp" },
-                { id: "member3", name: "Laura Trentadue", role: "Lead Creative Designer", img: "Laura%20Trentadue.webp" }
+                { id: "member8", name: "Stephen Liu", role: "Accounting", img: "Stephen%20Liu.webp" }
             ];
 
             let html = `
