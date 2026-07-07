@@ -150,28 +150,31 @@
 }
 
 .turpone-chat-input-area button {
-    background-color: #000;
-    color: #fff;
-    border: none;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
+    background-color: #000 !important;
+    color: #fff !important;
+    border: none !important;
+    width: 40px !important;
+    height: 40px !important;
+    min-width: 40px !important;
+    padding: 0 !important;
+    border-radius: 50% !important;
     cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
     transition: background-color 0.2s;
 }
 
 .turpone-chat-input-area button:hover {
-    background-color: #333;
+    background-color: #333 !important;
 }
 
 .turpone-chat-input-area button svg {
-    width: 18px;
-    height: 18px;
-    fill: currentColor;
-    margin-left: 2px;
+    width: 18px !important;
+    height: 18px !important;
+    min-width: 18px !important;
+    fill: #fff !important;
+    margin-left: 2px !important;
 }
 
 /* Typing Indicator */
