@@ -66,10 +66,28 @@ function initTurponeChatbot() {
         }, 300);
     });
 
+    function escapeHTML(str) {
+        return str.replace(/[&<>'"]/g, function(tag) {
+            const chars = { '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' };
+            return chars[tag] || tag;
+        });
+    }
+
     function addMessageToUI(text, role) {
         const bubble = document.createElement('div');
         bubble.className = `turpone-chat-bubble ${role}`;
-        bubble.textContent = text;
+        
+        // Escape HTML to prevent XSS
+        let safeText = escapeHTML(text);
+        
+        // Convert URLs to clickable links
+        const urlRegex = /(https?:\/\/[^\s]+)/g;
+        safeText = safeText.replace(urlRegex, function(url) {
+            return '<a href="' + url + '" target="_blank" style="color: #64b5f6; text-decoration: underline;">' + url + '</a>';
+        });
+        
+        bubble.innerHTML = safeText;
+        
         // Insert before typing indicator
         messagesContainer.insertBefore(bubble, typingIndicator);
         messagesContainer.scrollTop = messagesContainer.scrollHeight;
