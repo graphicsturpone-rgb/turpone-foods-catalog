@@ -1,4 +1,6 @@
-document.addEventListener('DOMContentLoaded', () => {
+function initTurponeChatbot() {
+    if (document.getElementById('turpone-chat-fab')) return; // Already initialized
+
     // Inject HTML
     const chatbotHTML = `
         <div id="turpone-chat-fab" title="Chat with us">
@@ -108,4 +110,10 @@ document.addEventListener('DOMContentLoaded', () => {
             sendMessage();
         }
     });
-});
+}
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initTurponeChatbot);
+} else {
+    initTurponeChatbot();
+}
