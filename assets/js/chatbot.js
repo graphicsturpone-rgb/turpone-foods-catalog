@@ -60,7 +60,7 @@ function initTurponeChatbot() {
 
     function addMessageToUI(text, role) {
         const bubble = document.createElement('div');
-        bubble.className = \`turpone-chat-bubble \${role}\`;
+        bubble.className = `turpone-chat-bubble ${role}`;
         bubble.textContent = text;
         // Insert before typing indicator
         messagesContainer.insertBefore(bubble, typingIndicator);
