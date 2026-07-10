@@ -460,6 +460,18 @@ document.addEventListener('keydown', function(e) {
     }
 
     // 2. Inject AOS attributes to elements dynamically before initialization
+    // --- Google Analytics (GA4) Global Site Tag ---
+    const gaScript = document.createElement('script');
+    gaScript.async = true;
+    gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-LLX04899KQ';
+    document.head.appendChild(gaScript);
+
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-LLX04899KQ');
+    // ---------------------------------------------
+
     document.addEventListener("DOMContentLoaded", () => {
         // Find elements to animate (now targeting containers instead of individual text elements)
         const elementsToAnimate = document.querySelectorAll('.elementor-section:not(.elementor-inner-section), .elementor-container, .dynamic-team-section, section');
