@@ -18,8 +18,8 @@ const indexTemplate = fs.readFileSync(indexTemplatePath, 'utf8');
 
 const languages = [
     { code: 'en', outDir: outputDir, indexFile: '../index.html', t: { ing: 'Ingredients', inst: 'Instructions', nut: 'Nutrition Information', rec: 'Recommended Product' } },
-    { code: 'fr', outDir: path.join(__dirname, '../fr/recipes'), indexFile: '../fr/index.html', t: { ing: 'Ingrédients', inst: 'Instructions', nut: 'Valeur nutritive', rec: 'Produit recommandé' } },
-    { code: 'es', outDir: path.join(__dirname, '../es/recipes'), indexFile: '../es/index.html', t: { ing: 'Ingredientes', inst: 'Instrucciones', nut: 'Información nutricional', rec: 'Producto recomendado' } }
+    { code: 'fr', outDir: path.join(__dirname, '../fr/recipes'), indexFile: '../fr/index.html', t: { ing: 'Ingrï¿½dients', inst: 'Instructions', nut: 'Valeur nutritive', rec: 'Produit recommandï¿½' } },
+    { code: 'es', outDir: path.join(__dirname, '../es/recipes'), indexFile: '../es/index.html', t: { ing: 'Ingredientes', inst: 'Instrucciones', nut: 'Informaciï¿½n nutricional', rec: 'Producto recomendado' } }
 ];
 
 languages.forEach(lang => {
