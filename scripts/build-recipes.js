@@ -58,6 +58,14 @@ files.forEach(file => {
         html = html.replace(/{{ingredients_list}}/g, ingredientsHtml);
         html = html.replace(/{{instructions_list}}/g, instructionsHtml);
         html = html.replace(/{{body}}/g, bodyHtml);
+
+        if (metadata.nutrition && metadata.nutrition.trim() !== '') {
+            html = html.replace(/{{nutrition_display}}/g, 'block');
+            html = html.replace(/{{nutrition}}/g, marked.parse(metadata.nutrition));
+        } else {
+            html = html.replace(/{{nutrition_display}}/g, 'none');
+            html = html.replace(/{{nutrition}}/g, '');
+        }
         
         // Generate slug from filename
         const slug = file.replace('.md', '');
@@ -98,3 +106,4 @@ fs.writeFileSync(path.join(outputDir, 'index.html'), indexHtml);
 console.log('Generated: /recipes/index.html');
 
 console.log('Recipe build complete!');
+

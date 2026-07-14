@@ -128,6 +128,10 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
         <img src="/assets/images/recipes/Fig & Herb Balsamic Vinaigrette.webp" alt="Fig & Herb Balsamic Vinaigrette" style="width: 100%; height: auto; border-radius: 12px; box-shadow: 0 20px 40px rgba(0,0,0,0.1);" />
     </div>
     
+    <div class="recipe-description" style="font-size: 18px; line-height: 1.8; color: #444; margin-bottom: 50px;">
+        
+    </div>
+    
     <div class="recipe-grid" style="display: grid; grid-template-columns: 1fr 2fr; gap: 80px;">
         <!-- Left Column: Ingredients & Upsell -->
         <div class="ingredients-section">
@@ -158,10 +162,10 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 </ol>
             </div>
             
-            <div class="nutrition-box" style="margin-top: 60px; padding-top: 40px; border-top: 1px solid #eee;">
+            <div class="nutrition-box" style="margin-top: 60px; padding-top: 40px; border-top: 1px solid #eee; display: none;">
                 <h4 style="font-size: 14px; text-transform: uppercase; letter-spacing: 1px; color: #888; margin-bottom: 10px;">Nutrition Information</h4>
                 <div style="font-size: 14px; color: #666;">
-                    {{nutrition}}
+                    
                 </div>
             </div>
         </div>
@@ -389,4 +393,5 @@ document.addEventListener("DOMContentLoaded", function() {
 <script src="/assets/js/cookie-consent.js"></script>
 <script src="/assets/js/newsletter-popup.js"></script>
 <link href="/assets/css/chatbot.css" rel="stylesheet"/><script defer="" src="/assets/js/chatbot.js"></script></body></html>
+
 
