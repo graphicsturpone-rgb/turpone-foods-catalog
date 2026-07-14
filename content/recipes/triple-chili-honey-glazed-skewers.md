@@ -5,7 +5,7 @@ prepTime: 20 minutes
 cookTime: 15 minutes
 calories: 320 kcal
 yields: 4 servings
-upsellImage: /assets/images/recipes/triple-chili-honey-glazed-skewers.webp
+upsellImage: ''
 upsellLink: /turpone-products
 ingredients:
   - 1.5 lbs chicken thighs, cut into 1-inch cubes
