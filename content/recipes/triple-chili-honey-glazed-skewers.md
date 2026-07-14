@@ -1,6 +1,6 @@
 ---
 title: Triple Chili Honey Glazed Skewers
-image: /assets/images/Balsamic-Garlic-and-Herb-Infused-Extra-Virgin-Olive-Oil.webp
+image: /assets/images/recipes/triple-chili-honey-glazed-skewers.webp
 prepTime: 20 minutes
 cookTime: 15 minutes
 calories: 320 kcal
