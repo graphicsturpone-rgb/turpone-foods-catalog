@@ -259,3 +259,7 @@ html { scroll-behavior: smooth; }
 body { animation: fadeInPage 1.2s ease-in-out forwards; opacity: 0; }
 @keyframes fadeInPage { from { opacity: 0; } to { opacity: 1; } }
 a, button, .elementor-button { transition: all 0.3s ease !important; }
+
+/* Hide language switcher globally */
+.lang-switcher { display: none !important; }
+
