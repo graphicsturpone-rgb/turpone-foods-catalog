@@ -9,6 +9,11 @@ backend:
     uploadMedia: 'Upload “{{path}}” [skip cf]'
     deleteMedia: 'Delete “{{path}}” [skip cf]'
 
+i18n:
+  structure: multiple_folders
+  locales: [en, fr, es]
+  default_locale: en
+
 media_folder: "assets/images/recipes"
 public_folder: "/assets/images/recipes"
 
