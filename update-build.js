@@ -1,18 +1,15 @@
 const fs = require('fs');
 let content = fs.readFileSync('scripts/build-recipes.js', 'utf8');
 
-const targetStr = `html = html.replace(/{{body}}/g, bodyHtml);`;
-const replaceStr = targetStr + `
+const targetStr = `            metadata.instructions.forEach(item => {
+                instructionsHtml += \`<li style="margin-bottom: 20px;">\${item}</li>\\n\`;
+            });`;
 
-        if (metadata.nutrition && metadata.nutrition.trim() !== '') {
-            html = html.replace(/{{nutrition_display}}/g, 'block');
-            html = html.replace(/{{nutrition}}/g, marked.parse(metadata.nutrition));
-        } else {
-            html = html.replace(/{{nutrition_display}}/g, 'none');
-            html = html.replace(/{{nutrition}}/g, '');
-        }`;
+const replaceStr = `            metadata.instructions.forEach(item => {
+                instructionsHtml += \`<li style="margin-bottom: 20px;">\${marked.parseInline(item)}</li>\\n\`;
+            });`;
 
-if (content.includes(targetStr) && !content.includes('metadata.nutrition')) {
+if (content.includes(targetStr)) {
     content = content.replace(targetStr, replaceStr);
     fs.writeFileSync('scripts/build-recipes.js', content, 'utf8');
     console.log('Script updated successfully.');

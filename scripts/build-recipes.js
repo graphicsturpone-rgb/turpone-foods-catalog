@@ -43,7 +43,7 @@ files.forEach(file => {
         let instructionsHtml = '<ol style="padding-left: 20px; line-height: 1.8; font-size: 16px; color: #444;">\n';
         if (metadata.instructions && Array.isArray(metadata.instructions)) {
             metadata.instructions.forEach(item => {
-                instructionsHtml += `<li style="margin-bottom: 20px;">${item}</li>\n`;
+                instructionsHtml += `<li style="margin-bottom: 20px;">${marked.parseInline(item)}</li>\n`;
             });
         }
         instructionsHtml += '</ol>';

@@ -23,5 +23,5 @@ collections:
       - {label: "Recommended Product Image", name: "upsellImage", widget: "image", required: false}
       - {label: "Recommended Product Link", name: "upsellLink", widget: "string", required: false}
       - {label: "Ingredients", name: "ingredients", widget: "list", field: {label: "Ingredient", name: "ingredient", widget: "string"}}
-      - {label: "Instructions", name: "instructions", widget: "list", field: {label: "Step", name: "step", widget: "text"}}
+      - {label: "Instructions", name: "instructions", widget: "list", field: {label: "Step", name: "step", widget: "markdown"}}
       - {label: "Nutrition Information", name: "nutrition", widget: "markdown", required: false}
