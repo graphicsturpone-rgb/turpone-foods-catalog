@@ -19,15 +19,15 @@ collections:
     create: true
     slug: "{{slug}}"
     fields:
-      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Title", name: "title", widget: "string", i18n: true}
       - {label: "Featured Image", name: "image", widget: "image"}
-      - {label: "Recipe Paragraph (Under Image)", name: "body", widget: "markdown"}
+      - {label: "Recipe Paragraph (Under Image)", name: "body", widget: "markdown", i18n: true}
       - {label: "Prep Time", name: "prepTime", widget: "string", default: "15 min"}
       - {label: "Cook Time", name: "cookTime", widget: "string", default: "30 min"}
       - {label: "Calories", name: "calories", widget: "string", default: "320 kcal"}
       - {label: "Yields", name: "yields", widget: "string", default: "4 servings"}
       - {label: "Recommended Product Image", name: "upsellImage", widget: "image", required: false}
       - {label: "Recommended Product Link", name: "upsellLink", widget: "string", required: false}
-      - {label: "Ingredients", name: "ingredients", widget: "list", field: {label: "Ingredient", name: "ingredient", widget: "string"}}
-      - {label: "Instructions", name: "instructions", widget: "list", field: {label: "Step", name: "step", widget: "markdown"}}
-      - {label: "Nutrition Information", name: "nutrition", widget: "markdown", required: false}
+      - {label: "Ingredients", name: "ingredients", widget: "list", i18n: true, field: {label: "Ingredient", name: "ingredient", widget: "string"}}
+      - {label: "Instructions", name: "instructions", widget: "list", i18n: true, field: {label: "Step", name: "step", widget: "markdown"}}
+      - {label: "Nutrition Information", name: "nutrition", widget: "markdown", required: false, i18n: true}
