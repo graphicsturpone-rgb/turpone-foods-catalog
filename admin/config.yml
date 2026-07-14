@@ -2,8 +2,6 @@ backend:
   name: github
   repo: graphicsturpone-rgb/turpone-foods
   branch: main
-  auth_type: pkce
-  app_id: PLACEHOLDER_GITHUB_CLIENT_ID # The user will need to create a GitHub OAuth App and put the Client ID here
 
 media_folder: "assets/images/recipes"
 public_folder: "/assets/images/recipes"
