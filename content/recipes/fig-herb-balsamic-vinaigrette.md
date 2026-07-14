@@ -5,7 +5,7 @@ prepTime: 5 min
 cookTime: 5 min
 calories: 320 kcal
 yields: 1 cup
-upsellImage: ''
+upsellImage: /assets/images/recipes/Fig-Oregano.png
 upsellLink: ''
 ingredients:
   - 3 tbsp Martha Stewart’s Fig Oregano Honey
