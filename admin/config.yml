@@ -23,6 +23,7 @@ collections:
     folder: "content/recipes"
     create: true
     slug: "{{slug}}"
+    i18n: true
     fields:
       - {label: "Title", name: "title", widget: "string", i18n: true}
       - {label: "Featured Image", name: "image", widget: "image"}
