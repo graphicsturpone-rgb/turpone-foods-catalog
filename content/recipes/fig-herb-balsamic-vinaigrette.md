@@ -6,7 +6,7 @@ cookTime: 5 min
 calories: 320 kcal
 yields: 1 cup
 upsellImage: /assets/images/recipes/Fig-Oregano.png
-upsellLink: ''
+upsellLink: https://turponefoods.com/turpone-products/
 ingredients:
   - 3 tbsp Martha Stewart’s Fig Oregano Honey
   - 1/4 cup aged balsamic vinegar
