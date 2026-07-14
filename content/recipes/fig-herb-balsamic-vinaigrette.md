@@ -23,3 +23,5 @@ instructions:
   - 'Serve: Lightly toss your preferred salad greens in the vinaigrette. Plate the salad, top with warm, pan-fried goat cheese, and complete with a direct zigzag drizzle of raw Fig Oregano Honey across the cheese.'
 nutrition: ''
 ---
+
+An elegant, Mediterranean-inspired dressing that marries deep, jammy fig blossom notes with aromatic oregano. This vinaigrette relies on proper emulsification to create a smooth, unified coating for crisp salad greens.
