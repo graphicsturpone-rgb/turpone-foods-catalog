@@ -1,5 +1,7 @@
 const fs = require('fs');
 const path = require('path');
+const matter = require('gray-matter');
+const { marked } = require('marked');
 
 const contentDir = path.join(__dirname, '../content/recipes');
 const outputDir = path.join(__dirname, '../recipes');
@@ -19,72 +21,60 @@ const recipesList = [];
 files.forEach(file => {
     if (file.endsWith('.md')) {
         const filePath = path.join(contentDir, file);
-        const content = fs.readFileSync(filePath, 'utf8');
+        const fileContent = fs.readFileSync(filePath, 'utf8');
         
-        // Simple frontmatter parser
-        const match = content.match(/^---\n([\s\S]+?)\n---\n([\s\S]*)$/);
-        if (match) {
-            const frontmatterRaw = match[1];
-            const markdownBody = match[2].trim();
-            
-            const metadata = {};
-            frontmatterRaw.split('\n').forEach(line => {
-                const parts = line.split(':');
-                if (parts.length >= 2) {
-                    const key = parts[0].trim();
-                    const value = parts.slice(1).join(':').trim().replace(/^"|"$/g, '');
-                    metadata[key] = value;
-                }
-            });
-            
-            // Build ingredients list
-            const ingredientsMatch = frontmatterRaw.match(/ingredients:\n((?:\s+- .*\n?)+)/);
-            let ingredientsHtml = '';
-            if (ingredientsMatch) {
-                const items = ingredientsMatch[1].split('\n').filter(i => i.trim().startsWith('-'));
-                items.forEach(item => {
-                    ingredientsHtml += `<li><span style="color:#000; font-weight:bold;">✓</span> ${item.replace('-', '').trim().replace(/^"|"$/g, '')}</li>\n`;
-                });
-            }
-            
-            // Build instructions
-            const instructionsMatch = frontmatterRaw.match(/instructions:\n((?:\s+- .*\n?)+)/);
-            let instructionsHtml = '<ol style="padding-left: 20px; line-height: 1.8; font-size: 16px; color: #444;">\n';
-            if (instructionsMatch) {
-                const items = instructionsMatch[1].split('\n').filter(i => i.trim().startsWith('-'));
-                items.forEach(item => {
-                    instructionsHtml += `<li style="margin-bottom: 20px;">${item.replace('-', '').trim().replace(/^"|"$/g, '')}</li>\n`;
-                });
-            }
-            instructionsHtml += '</ol>';
-            
-            let html = template;
-            html = html.replace(/{{title}}/g, metadata.title || '');
-            html = html.replace(/{{image}}/g, metadata.image || '');
-            html = html.replace(/{{prepTime}}/g, metadata.prepTime || '');
-            html = html.replace(/{{cookTime}}/g, metadata.cookTime || '');
-            html = html.replace(/{{yields}}/g, metadata.yields || '');
-            html = html.replace(/{{calories}}/g, metadata.calories || '');
-            html = html.replace(/{{ingredients_list}}/g, ingredientsHtml);
-            html = html.replace(/{{instructions_list}}/g, instructionsHtml);
-            
-            // Generate slug from filename
-            const slug = file.replace('.md', '');
-            const recipeDir = path.join(outputDir, slug);
-            
-            if (!fs.existsSync(recipeDir)) {
-                fs.mkdirSync(recipeDir, { recursive: true });
-            }
-            
-            fs.writeFileSync(path.join(recipeDir, 'index.html'), html);
-            console.log(`Generated: /recipes/${slug}/index.html`);
-            
-            recipesList.push({
-                title: metadata.title,
-                image: metadata.image,
-                slug: slug
+        // Parse frontmatter and markdown body using gray-matter
+        const parsed = matter(fileContent);
+        const metadata = parsed.data;
+        const markdownBody = parsed.content;
+        
+        // Render markdown body to HTML using marked
+        const bodyHtml = marked.parse(markdownBody);
+        
+        // Build ingredients list
+        let ingredientsHtml = '';
+        if (metadata.ingredients && Array.isArray(metadata.ingredients)) {
+            metadata.ingredients.forEach(item => {
+                ingredientsHtml += `<li><span style="color:#000; font-weight:bold;">✓</span> ${item}</li>\n`;
             });
         }
+        
+        // Build instructions
+        let instructionsHtml = '<ol style="padding-left: 20px; line-height: 1.8; font-size: 16px; color: #444;">\n';
+        if (metadata.instructions && Array.isArray(metadata.instructions)) {
+            metadata.instructions.forEach(item => {
+                instructionsHtml += `<li style="margin-bottom: 20px;">${item}</li>\n`;
+            });
+        }
+        instructionsHtml += '</ol>';
+        
+        let html = template;
+        html = html.replace(/{{title}}/g, metadata.title || '');
+        html = html.replace(/{{image}}/g, metadata.image || '');
+        html = html.replace(/{{prepTime}}/g, metadata.prepTime || '');
+        html = html.replace(/{{cookTime}}/g, metadata.cookTime || '');
+        html = html.replace(/{{yields}}/g, metadata.yields || '');
+        html = html.replace(/{{calories}}/g, metadata.calories || '');
+        html = html.replace(/{{ingredients_list}}/g, ingredientsHtml);
+        html = html.replace(/{{instructions_list}}/g, instructionsHtml);
+        html = html.replace(/{{body}}/g, bodyHtml);
+        
+        // Generate slug from filename
+        const slug = file.replace('.md', '');
+        const recipeDir = path.join(outputDir, slug);
+        
+        if (!fs.existsSync(recipeDir)) {
+            fs.mkdirSync(recipeDir, { recursive: true });
+        }
+        
+        fs.writeFileSync(path.join(recipeDir, 'index.html'), html);
+        console.log(`Generated: /recipes/${slug}/index.html`);
+        
+        recipesList.push({
+            title: metadata.title,
+            image: metadata.image,
+            slug: slug
+        });
     }
 });
 
