@@ -62,7 +62,7 @@ files.forEach(file => {
         let upsellHtml = '';
         if (metadata.upsellImage && metadata.upsellLink) {
             upsellHtml = `
-            <div style="margin-top: 40px; text-align: center;">
+            <div style="margin-top: 40px; text-align: left;">
                 <h4 style="font-size: 16px; font-weight: 600; margin-bottom: 15px; color: #333; text-transform: uppercase; letter-spacing: 1px;">Recommended Product</h4>
                 <a href="${metadata.upsellLink}" target="_blank" style="display: inline-block;">
                     <img src="${metadata.upsellImage}" alt="Recommended Product" style="max-width: 100%; max-height: 400px; object-fit: contain; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
@@ -70,7 +70,7 @@ files.forEach(file => {
             </div>`;
         } else if (metadata.upsellImage) {
             upsellHtml = `
-            <div style="margin-top: 40px; text-align: center;">
+            <div style="margin-top: 40px; text-align: left;">
                 <h4 style="font-size: 16px; font-weight: 600; margin-bottom: 15px; color: #333; text-transform: uppercase; letter-spacing: 1px;">Recommended Product</h4>
                 <img src="${metadata.upsellImage}" alt="Recommended Product" style="max-width: 100%; max-height: 400px; object-fit: contain; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
             </div>`;
