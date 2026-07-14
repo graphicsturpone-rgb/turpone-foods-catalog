@@ -36,8 +36,8 @@ languages.forEach(lang => {
     let currentIndexTemplate = indexTemplate;
     
     if (headerMatch && footerMatch) {
-        let h = headerMatch[0].replace(/(src|href)="\.\.\//g, '$1="/');
-        let f = footerMatch[0].replace(/(src|href)="\.\.\//g, '$1="/');
+        let h = headerMatch[0].replace(/(src|href)="(?:\.\.\/)?(assets|css|images|js)\//g, '$1="/$2/');
+        let f = footerMatch[0].replace(/(src|href)="(?:\.\.\/)?(assets|css|images|js)\//g, '$1="/$2/');
         currentTemplate = currentTemplate.replace(/<header.*?<\/header>/s, h).replace(/<footer.*?<\/footer>/s, f);
         currentIndexTemplate = currentIndexTemplate.replace(/<header.*?<\/header>/s, h).replace(/<footer.*?<\/footer>/s, f);
     }
