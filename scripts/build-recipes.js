@@ -36,8 +36,10 @@ languages.forEach(lang => {
     let currentIndexTemplate = indexTemplate;
     
     if (headerMatch && footerMatch) {
-        currentTemplate = currentTemplate.replace(/<header.*?<\/header>/s, headerMatch[0]).replace(/<footer.*?<\/footer>/s, footerMatch[0]);
-        currentIndexTemplate = currentIndexTemplate.replace(/<header.*?<\/header>/s, headerMatch[0]).replace(/<footer.*?<\/footer>/s, footerMatch[0]);
+        let h = headerMatch[0].replace(/(src|href)="\.\.\//g, '$1="/');
+        let f = footerMatch[0].replace(/(src|href)="\.\.\//g, '$1="/');
+        currentTemplate = currentTemplate.replace(/<header.*?<\/header>/s, h).replace(/<footer.*?<\/footer>/s, f);
+        currentIndexTemplate = currentIndexTemplate.replace(/<header.*?<\/header>/s, h).replace(/<footer.*?<\/footer>/s, f);
     }
 
     const files = fs.readdirSync(langContentDir);
