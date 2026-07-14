@@ -15,6 +15,7 @@ collections:
     fields:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Featured Image", name: "image", widget: "image"}
+      - {label: "Recipe Paragraph (Under Image)", name: "body", widget: "markdown"}
       - {label: "Prep Time", name: "prepTime", widget: "string", default: "15 min"}
       - {label: "Cook Time", name: "cookTime", widget: "string", default: "30 min"}
       - {label: "Calories", name: "calories", widget: "string", default: "320 kcal"}
