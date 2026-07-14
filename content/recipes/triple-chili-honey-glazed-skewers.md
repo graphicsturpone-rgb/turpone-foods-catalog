@@ -6,7 +6,7 @@ cookTime: 15 minutes
 calories: 320 kcal
 yields: 4 servings
 upsellImage: ''
-upsellLink: /turpone-products
+upsellLink: ''
 ingredients:
   - 1.5 lbs chicken thighs, cut into 1-inch cubes
   - 3 tbsp Triple Chili Honey Drizzle
