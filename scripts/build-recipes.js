@@ -37,6 +37,17 @@ languages.forEach(lang => {
     
     if (headerMatch && footerMatch) {
         let h = headerMatch[0].replace(/(src|href)="(?:\.\.\/)?(assets|css|images|js)\//g, '$1="/$2/');
+        
+        // Remove active state from Home (or any other page)
+        h = h.replace(/current-menu-item/g, '')
+             .replace(/current_page_item/g, '')
+             .replace(/aria-current="page"/g, '')
+             .replace(/elementor-item-active/g, '');
+             
+        // Add active state to Recipes
+        h = h.replace(/(<li[^>]*?menu-item-recipes[^>]*?class=")([^"]*)(")/g, '$1$2 current-menu-item current_page_item$3')
+             .replace(/(<li[^>]*?menu-item-recipes[^>]*?>\s*<a[^>]*?class=")([^"]*)(")/g, '$1$2 elementor-item-active$3 aria-current="page"');
+        
         let f = footerMatch[0].replace(/(src|href)="(?:\.\.\/)?(assets|css|images|js)\//g, '$1="/$2/');
         currentTemplate = currentTemplate.replace(/<header.*?<\/header>/s, h).replace(/<footer.*?<\/footer>/s, f);
         currentIndexTemplate = currentIndexTemplate.replace(/<header.*?<\/header>/s, h).replace(/<footer.*?<\/footer>/s, f);
