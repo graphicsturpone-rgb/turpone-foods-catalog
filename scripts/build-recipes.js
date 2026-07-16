@@ -17,9 +17,9 @@ const template = fs.readFileSync(templatePath, 'utf8');
 const indexTemplate = fs.readFileSync(indexTemplatePath, 'utf8');
 
 const languages = [
-    { code: 'en', outDir: outputDir, indexFile: '../index.html', t: { title: 'Our Recipes', ing: 'Ingredients', inst: 'Instructions', nut: 'Nutrition Information', rec: 'Recommended Product' } },
-    { code: 'fr', outDir: path.join(__dirname, '../fr/recipes'), indexFile: '../fr/index.html', t: { title: 'Nos Recettes', ing: 'Ingrédients', inst: 'Instructions', nut: 'Valeur nutritive', rec: 'Produit recommandé' } },
-    { code: 'es', outDir: path.join(__dirname, '../es/recipes'), indexFile: '../es/index.html', t: { title: 'Nuestras Recetas', ing: 'Ingredientes', inst: 'Instrucciones', nut: 'Información nutricional', rec: 'Producto recomendado' } }
+    { code: 'en', outDir: outputDir, prefix: '/recipes/', indexFile: '../index.html', t: { title: 'Our Recipes', ing: 'Ingredients', inst: 'Instructions', nut: 'Nutrition Information', rec: 'Recommended Product' } },
+    { code: 'fr', outDir: path.join(__dirname, '../fr/recettes'), prefix: '/fr/recettes/', indexFile: '../fr/index.html', t: { title: 'Nos Recettes', ing: 'Ingrédients', inst: 'Instructions', nut: 'Valeur nutritive', rec: 'Produit recommandé' } },
+    { code: 'es', outDir: path.join(__dirname, '../es/recetas'), prefix: '/es/recetas/', indexFile: '../es/index.html', t: { title: 'Nuestras Recetas', ing: 'Ingredientes', inst: 'Instrucciones', nut: 'Información nutricional', rec: 'Producto recomendado' } }
 ];
 
 languages.forEach(lang => {
@@ -127,7 +127,7 @@ languages.forEach(lang => {
                 title: metadata.title,
                 image: metadata.image,
                 slug: slug,
-                prefix: lang.code === 'en' ? '/recipes/' : `/${lang.code}/recipes/`
+                prefix: lang.prefix
             });
         }
     });
