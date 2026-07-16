@@ -3,11 +3,32 @@ backend:
   repo: graphicsturpone-rgb/turpone-foods
   branch: main
   commit_messages:
-    create: 'Create {{collection}} “{{slug}}” [skip cf]'
-    update: 'Update {{collection}} “{{slug}}” [skip cf]'
-    delete: 'Delete {{collection}} “{{slug}}” [skip cf]'
-    uploadMedia: 'Upload “{{path}}” [skip cf]'
-    deleteMedia: 'Delete “{{path}}” [skip cf]'
+    create: 'Create {{collection}} â€œ{{slug}}â€� [skip cf]'
+    update: 'Update {{collection}} â€œ{{slug}}â€� [skip cf]'
+    delete: 'Delete {{collection}} â€œ{{slug}}â€� [skip cf]'
+    uploadMedia: 'Upload â€œ{{path}}â€� [skip cf]'
+    deleteMedia: 'Delete â€œ{{path}}â€� [skip cf]'
+
+i18n:
+  structure: multiple_folders
+  locales: [en, fr, es]
+  default_locale: en
+
+media_folder: "assets/images/recipes"
+public_folder: "/assets/images/recipes"
+
+collections:
+  - name: "recipes"
+backend:
+  name: github
+  repo: graphicsturpone-rgb/turpone-foods
+  branch: main
+  commit_messages:
+    create: 'Create {{collection}} â€œ{{slug}}â€ [skip cf]'
+    update: 'Update {{collection}} â€œ{{slug}}â€ [skip cf]'
+    delete: 'Delete {{collection}} â€œ{{slug}}â€ [skip cf]'
+    uploadMedia: 'Upload â€œ{{path}}â€ [skip cf]'
+    deleteMedia: 'Delete â€œ{{path}}â€ [skip cf]'
 
 i18n:
   structure: multiple_folders
@@ -25,15 +46,108 @@ collections:
     slug: "{{slug}}"
     i18n: true
     fields:
-      - {label: "Title", name: "title", widget: "string", i18n: true}
-      - {label: "Featured Image", name: "image", widget: "image", i18n: true}
-      - {label: "Recipe Paragraph (Under Image)", name: "body", widget: "markdown", i18n: true}
-      - {label: "Prep Time", name: "prepTime", widget: "string", default: "15 min", i18n: true}
-      - {label: "Cook Time", name: "cookTime", widget: "string", default: "30 min", i18n: true}
-      - {label: "Calories", name: "calories", widget: "string", default: "320 kcal", i18n: true}
-      - {label: "Yields", name: "yields", widget: "string", default: "4 servings", i18n: true}
-      - {label: "Recommended Product Image", name: "upsellImage", widget: "image", required: false, i18n: true}
-      - {label: "Recommended Product Link", name: "upsellLink", widget: "string", required: false, i18n: true}
-      - {label: "Ingredients", name: "ingredients", widget: "list", i18n: true, field: {label: "Ingredient", name: "ingredient", widget: "string"}}
-      - {label: "Instructions", name: "instructions", widget: "list", i18n: true, field: {label: "Step", name: "step", widget: "markdown"}}
-      - {label: "Nutrition Information", name: "nutrition", widget: "markdown", required: false, i18n: true}
+      - label:
+          en: Title
+          fr: Titre
+          es: Título
+        name: title
+        widget: string
+        i18n: true
+      - label:
+          en: Featured Image
+          fr: Image principale
+          es: Imagen destacada
+        name: image
+        widget: image
+        i18n: true
+      - label:
+          en: Recipe Paragraph (Under Image)
+          fr: Paragraphe de recette
+          es: Párrafo de receta
+        name: body
+        widget: markdown
+        i18n: true
+      - label:
+          en: Prep Time
+          fr: Temps de préparation
+          es: Tiempo de preparación
+        name: prepTime
+        widget: string
+        default: 15 min
+        i18n: true
+      - label:
+          en: Cook Time
+          fr: Temps de cuisson
+          es: Tiempo de cocción
+        name: cookTime
+        widget: string
+        default: 30 min
+        i18n: true
+      - label:
+          en: Calories
+          fr: Calories
+          es: Calorías
+        name: calories
+        widget: string
+        default: 320 kcal
+        i18n: true
+      - label:
+          en: Yields
+          fr: Rendement
+          es: Porciones
+        name: yields
+        widget: string
+        default: 4 servings
+        i18n: true
+      - label:
+          en: Recommended Product Image
+          fr: Image du produit recommandé
+          es: Imagen del producto recomendado
+        name: upsellImage
+        widget: image
+        required: false
+        i18n: true
+      - label:
+          en: Recommended Product Link
+          fr: Lien du produit recommandé
+          es: Enlace del producto recomendado
+        name: upsellLink
+        widget: string
+        required: false
+        i18n: true
+      - label:
+          en: Ingredients
+          fr: Ingrédients
+          es: Ingredientes
+        name: ingredients
+        widget: list
+        field:
+          label:
+            en: Ingredient
+            fr: Ingrédient
+            es: Ingrediente
+          name: ingredient
+          widget: string
+          i18n: true
+      - label:
+          en: Instructions
+          fr: Instructions
+          es: Instrucciones
+        name: instructions
+        widget: list
+        field:
+          label:
+            en: Step
+            fr: Étape
+            es: Paso
+          name: step
+          widget: markdown
+          i18n: true
+      - label:
+          en: Nutrition Information
+          fr: Valeur nutritive
+          es: Información nutricional
+        name: nutrition
+        widget: markdown
+        required: false
+        i18n: true
