@@ -17,9 +17,9 @@ const template = fs.readFileSync(templatePath, 'utf8');
 const indexTemplate = fs.readFileSync(indexTemplatePath, 'utf8');
 
 const languages = [
-    { code: 'en', outDir: outputDir, indexFile: '../index.html', t: { ing: 'Ingredients', inst: 'Instructions', nut: 'Nutrition Information', rec: 'Recommended Product' } },
-    { code: 'fr', outDir: path.join(__dirname, '../fr/recipes'), indexFile: '../fr/index.html', t: { ing: 'Ingr�dients', inst: 'Instructions', nut: 'Valeur nutritive', rec: 'Produit recommand�' } },
-    { code: 'es', outDir: path.join(__dirname, '../es/recipes'), indexFile: '../es/index.html', t: { ing: 'Ingredientes', inst: 'Instrucciones', nut: 'Informaci�n nutricional', rec: 'Producto recomendado' } }
+    { code: 'en', outDir: outputDir, indexFile: '../index.html', t: { title: 'Our Recipes', ing: 'Ingredients', inst: 'Instructions', nut: 'Nutrition Information', rec: 'Recommended Product' } },
+    { code: 'fr', outDir: path.join(__dirname, '../fr/recipes'), indexFile: '../fr/index.html', t: { title: 'Nos Recettes', ing: 'Ingrédients', inst: 'Instructions', nut: 'Valeur nutritive', rec: 'Produit recommandé' } },
+    { code: 'es', outDir: path.join(__dirname, '../es/recipes'), indexFile: '../es/index.html', t: { title: 'Nuestras Recetas', ing: 'Ingredientes', inst: 'Instrucciones', nut: 'Información nutricional', rec: 'Producto recomendado' } }
 ];
 
 languages.forEach(lang => {
@@ -146,6 +146,7 @@ languages.forEach(lang => {
         `;
     });
 
+    htmlIndex = htmlIndex.replace(/>Our Recipes<\/h1>/g, `>${lang.t.title}</h1>`);
     htmlIndex = htmlIndex.replace('{{RECIPES_GRID}}', gridHtml);
     if (!fs.existsSync(lang.outDir)) fs.mkdirSync(lang.outDir, { recursive: true });
     fs.writeFileSync(path.join(lang.outDir, 'index.html'), htmlIndex);
