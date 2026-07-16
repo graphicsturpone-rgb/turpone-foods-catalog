@@ -34,6 +34,6 @@ collections:
       - {label: "Yields", name: "yields", widget: "string", default: "4 servings", i18n: true}
       - {label: "Recommended Product Image", name: "upsellImage", widget: "image", required: false, i18n: true}
       - {label: "Recommended Product Link", name: "upsellLink", widget: "string", required: false, i18n: true}
-      - {label: "Ingredients", name: "ingredients", widget: "list", i18n: true, field: {label: "Ingredient", name: "ingredient", widget: "string"}}
-      - {label: "Instructions", name: "instructions", widget: "list", i18n: true, field: {label: "Step", name: "step", widget: "markdown"}}
+      - {label: "Ingredients", name: "ingredients", widget: "list", i18n: true, field: {label: "Ingredient", name: "ingredient", widget: "string", i18n: true}}
+      - {label: "Instructions", name: "instructions", widget: "list", i18n: true, field: {label: "Step", name: "step", widget: "markdown", i18n: true}}
       - {label: "Nutrition Information", name: "nutrition", widget: "markdown", required: false, i18n: true}
