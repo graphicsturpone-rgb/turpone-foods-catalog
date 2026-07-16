@@ -3,32 +3,11 @@ backend:
   repo: graphicsturpone-rgb/turpone-foods
   branch: main
   commit_messages:
-    create: 'Create {{collection}} â€œ{{slug}}â€� [skip cf]'
-    update: 'Update {{collection}} â€œ{{slug}}â€� [skip cf]'
-    delete: 'Delete {{collection}} â€œ{{slug}}â€� [skip cf]'
-    uploadMedia: 'Upload â€œ{{path}}â€� [skip cf]'
-    deleteMedia: 'Delete â€œ{{path}}â€� [skip cf]'
-
-i18n:
-  structure: multiple_folders
-  locales: [en, fr, es]
-  default_locale: en
-
-media_folder: "assets/images/recipes"
-public_folder: "/assets/images/recipes"
-
-collections:
-  - name: "recipes"
-backend:
-  name: github
-  repo: graphicsturpone-rgb/turpone-foods
-  branch: main
-  commit_messages:
-    create: 'Create {{collection}} â€œ{{slug}}â€ [skip cf]'
-    update: 'Update {{collection}} â€œ{{slug}}â€ [skip cf]'
-    delete: 'Delete {{collection}} â€œ{{slug}}â€ [skip cf]'
-    uploadMedia: 'Upload â€œ{{path}}â€ [skip cf]'
-    deleteMedia: 'Delete â€œ{{path}}â€ [skip cf]'
+    create: 'Create {{collection}} "{{slug}}" [skip cf]'
+    update: 'Update {{collection}} "{{slug}}" [skip cf]'
+    delete: 'Delete {{collection}} "{{slug}}" [skip cf]'
+    uploadMedia: 'Upload "{{path}}" [skip cf]'
+    deleteMedia: 'Delete "{{path}}" [skip cf]'
 
 i18n:
   structure: multiple_folders
