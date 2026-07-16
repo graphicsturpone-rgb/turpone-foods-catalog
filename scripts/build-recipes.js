@@ -45,7 +45,7 @@ languages.forEach(lang => {
              .replace(/elementor-item-active/g, '');
              
         // Add active state to Recipes
-        h = h.replace(/(<li[^>]*?menu-item-recipes[^>]*?class=")([^"]*)(")/g, '$1$2 current-menu-item current_page_item$3')
+        h = h.replace(/(<li[^>]*?class="[^"]*?menu-item-recipes[^"]*)(")/g, '$1 current-menu-item current_page_item$2')
              .replace(/(<li[^>]*?menu-item-recipes[^>]*?>\s*<a[^>]*?class=")([^"]*)(")/g, '$1$2 elementor-item-active$3 aria-current="page"');
         
         let f = footerMatch[0].replace(/(src|href)="(?:\.\.\/)?(assets|css|images|js)\//g, '$1="/$2/');
