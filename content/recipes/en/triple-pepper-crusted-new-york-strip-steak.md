@@ -16,7 +16,7 @@ ingredients:
   - 2 cloves garlic, smashed
 instructions:
   - '**Bring to Room Temperature:** Remove the steaks from the refrigerator 30 minutes before cooking. Bringing the beef to room temperature ensures an even cook throughout the steak and prevents the center from remaining cold.'
-  - '**Dry and Season:** Pat the entire surface of the steaks completely dry with paper towels. Rub a tiny drop of oil over the meat to help the seasoning stick. Generously press the Triple Pepper Mix Seasoning onto the top, bottom, and sides of the steaks, creating an even, visible crust.'
+  - '**Dry and Season:** Pat the entire surface of the steaks completely dry with paper towels. Rub a tiny drop of oil over the meat to help the seasoning stick. Generously press the[ Triple Pepper Mix Seasoning](https://turponefoods.com/turpone-products/) onto the top, bottom, and sides of the steaks, creating an even, visible crust.'
   - '**Sear the Exterior:** Heat a heavy cast-iron skillet over high heat until smoking. Add the remaining high-smoke point oil. Carefully lay the seasoned steaks into the pan. Sear undisturbed for 3 to 4 minutes per side until a deeply browned, spicy pepper crust forms.'
   - '**Baste with Aromatics:** Turn the heat down to medium. Flip the steaks onto their sides to render any thick edges of fat for 1 minute. Turn the steaks back flat, slide them to one side of the skillet, and drop the unsalted butter, smashed garlic, and fresh herb sprigs into the empty space.'
   - '**Finish Cooking:** As the butter melts and foams, tilt the pan slightly and spoon the hot garlic-herb butter continuously over the tops of the steaks for an additional 2 minutes, or until an instant-read thermometer registers 130°F (54°C) for medium-rare.'
