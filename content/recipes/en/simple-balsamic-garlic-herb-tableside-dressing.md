@@ -16,7 +16,7 @@ ingredients:
 instructions:
   - '**Dry the Greens:** Wash salad greens thoroughly and run through a salad spinner until completely, bone-dry. _(Any residual surface moisture on the leaves will repel the infused oil dressing)._'
   - '**Season the Leaves First:** Place the dry greens and any desired toppings into a large wooden or ceramic serving bowl. Before adding any oil, sprinkle the salt and freshly cracked black pepper directly onto the dry leaves.'
-  - '**Integrate the Blend:** Shake your bottle of Balsamic Garlic and Herb Infused Olive Oil vigorously for 10 seconds to ensure the blended vinegar, garlic solids, and sedimented herbs are fully distributed before pouring.'
+  - '**Integrate the Blend:** Shake your bottle of [Balsamic Garlic and Herb Infused Olive Oil](https://turponefoods.com/turpone-products/) vigorously for 10 seconds to ensure the blended vinegar, garlic solids, and sedimented herbs are fully distributed before pouring.'
   - '**Pour the Oil:** Drizzle 3 to 4 tablespoons of the shaken oil directly over the seasoned greens in a slow, sweeping zigzag motion across the bowl.'
   - '**Toss and Serve:** Using salad tongs, lift and gently toss the greens from the bottom up for 15 to 20 seconds. Ensure the dark balsamic streaks and herbs are evenly distributed, giving every leaf a glossy, aromatic sheen. Serve immediately.'
 nutrition: ''
