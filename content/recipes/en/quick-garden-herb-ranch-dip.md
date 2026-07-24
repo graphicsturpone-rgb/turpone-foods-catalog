@@ -15,7 +15,7 @@ ingredients:
   - Fresh chives or dill, finely chopped (for garnish)
 instructions:
   - '**Whisk the Base:** In a medium bowl, whisk together the sour cream and mayonnaise until completely smooth and unified.'
-  - '**Incorporate the Seasoning:** Add the Garden Herb Seasoning to the bowl. Using a rubber spatula, fold the blend thoroughly into the cream base until the herbs, garlic, and cracked black pepper are evenly distributed.'
+  - '**Incorporate the Seasoning:** Add the[ Garden Herb Seasoning](https://turponefoods.com/turpone-products/) to the bowl. Using a rubber spatula, fold the blend thoroughly into the cream base until the herbs, garlic, and cracked black pepper are evenly distributed.'
   - '**Adjust the Brightness:** Taste the mixture. If a brighter, tangier profile is desired, stir in the fresh lemon juice to amplify the citrus notes inherent in the seasoning.'
   - '**Chill and Bloom:** Cover the bowl tightly with plastic wrap and refrigerate for at least 30 minutes before serving. This resting period allows the dehydrated onion, garlic, and herbs to absorb moisture and fully release their aromatic oils.'
   - '**Garnish and Serve:** Give the dip a brief stir, transfer to a chilled serving dish, and scatter fresh chopped chives or dill across the top. Serve alongside crisp crudités, potato chips, or as a cooling accompaniment to grilled mains.'
