@@ -21,11 +21,7 @@ instructions:
   - '**Sear the Meat:** Place skewers on the grill. Cook undisturbed for 5 to 6 minutes per side for chicken (or 4 minutes per side for pork). Ensure distinct grill marks form and the meat is nearly cooked through before glazing.'
   - '**Glaze and Caramelize:** During the final 2 minutes of grilling, use a pastry brush to generously coat the top side of the skewers with the remaining 2 tablespoons of [Triple Chili Honey Drizzle](https://turponefoods.com/turpone-products/). Flip onto the glazed side for 30 to 60 seconds until bubbling and slightly charred. Coat the reverse side, flip once more, and remove immediately from the heat.'
   - '**Rest and Serve:** Let the skewers rest for 3 minutes. Just before serving, apply a light finishing drizzle of fresh honey straight from the bottle for a glossy, sweet-spicy presentation.'
-nutrition: |-
-  **Serving Size:** 1 Skewer
-  **Protein:** 25g
-  **Carbs:** 12g
-  **Fat:** 18g
+nutrition: ''
 ---
 
 This sweet and spicy glaze pairs beautifully with smoky, flame-kissed proteins. The honey is utilized two ways: first to build flavor in a quick marinade, then applied at the very end of cooking to create a thick, glossy, caramelized finish.
