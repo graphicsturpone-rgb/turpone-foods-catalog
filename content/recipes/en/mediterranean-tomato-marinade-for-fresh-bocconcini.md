@@ -5,7 +5,7 @@ prepTime: 10 min
 cookTime: 10 min (plus 30 min marinating)
 calories: 320 kcal
 yields: 4 to 6 servings
-upsellImage: ''
+upsellImage: /assets/images/recipes/mediterranean tomato.png
 upsellLink: ''
 ingredients:
   - 3 tbsp Martha Stewart’s Mediterranean Tomato Seasoning
