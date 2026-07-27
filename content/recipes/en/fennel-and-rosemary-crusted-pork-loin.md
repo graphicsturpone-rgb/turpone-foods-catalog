@@ -5,7 +5,7 @@ prepTime: 15 min
 cookTime: 1 hour
 calories: 320 kcal
 yields: 4 to 6 servings
-upsellImage: ''
+upsellImage: /assets/images/recipes/sweet italian.png
 upsellLink: ''
 ingredients:
   - 1 boneless center-cut pork loin roast (approx. 2.5 to 3 lbs)
