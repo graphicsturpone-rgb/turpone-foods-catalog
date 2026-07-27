@@ -5,7 +5,7 @@ prepTime: 35 min
 cookTime: 1 hour 35 min
 calories: 320 kcal
 yields: 4 servings
-upsellImage: ''
+upsellImage: /assets/images/recipes/roasted garlic.png
 upsellLink: ''
 ingredients:
   - 1 whole roasting chicken (approx. 4 lbs)
