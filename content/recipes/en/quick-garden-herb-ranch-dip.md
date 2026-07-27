@@ -5,7 +5,7 @@ prepTime: 5 min
 cookTime: 5 minutes (plus 30 minutes chilling)
 calories: 320 kcal
 yields: 1.5 cups
-upsellImage: ''
+upsellImage: /assets/images/recipes/garden herb.png
 upsellLink: ''
 ingredients:
   - 3 tbsp Martha Stewart’s Garden Herb Seasoning
