@@ -5,7 +5,7 @@ prepTime: 15 min
 cookTime: 25 min
 calories: 320 kcal
 yields: 2 servings
-upsellImage: ''
+upsellImage: /assets/images/recipes/triple pepper mix.png
 upsellLink: ''
 ingredients:
   - 2 thick-cut New York strip steaks (approx. 12 to 14 oz each, 1.5 inches thick)
