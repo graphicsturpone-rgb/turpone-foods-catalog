@@ -5,7 +5,7 @@ prepTime: 15 min
 cookTime: 25 min
 calories: 320 kcal
 yields: 3 to 4 servings
-upsellImage: ''
+upsellImage: /assets/images/recipes/spicy garlic.png
 upsellLink: ''
 ingredients:
   - 1 lb large shrimp (16–20 count), peeled and deveined, tails left on
