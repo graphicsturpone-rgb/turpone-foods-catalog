@@ -5,7 +5,7 @@ prepTime: 15 min
 cookTime: 25 min
 calories: 320 kcal
 yields: 2 servings
-upsellImage: ''
+upsellImage: /assets/images/recipes/lemon black pepper.png
 upsellLink: ''
 ingredients:
   - 2 salmon fillets (6 to 8 oz each), skin-on preferred
