@@ -5,7 +5,7 @@ prepTime: 10 min
 cookTime: 20 min
 calories: 320 kcal
 yields: 2 servings
-upsellImage: ''
+upsellImage: /assets/images/recipes/lemon pepper.png
 upsellLink: ''
 ingredients:
   - 2 high-quality white fish fillets (such as Sea Bass, Halibut, Cod, or Red Snapper)
