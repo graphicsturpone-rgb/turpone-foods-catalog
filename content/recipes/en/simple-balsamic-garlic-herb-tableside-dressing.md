@@ -5,7 +5,7 @@ prepTime: 5 min
 cookTime: 5 min
 calories: 320 kcal
 yields: 4 to 6 servings
-upsellImage: ''
+upsellImage: /assets/images/recipes/balsamic and herb.png
 upsellLink: ''
 ingredients:
   - 5 to 6 cups fresh salad greens (crisp Italian blend, butter lettuce, or mixed baby greens)
