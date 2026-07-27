@@ -5,7 +5,7 @@ prepTime: 20 minutes
 cookTime: 15 minutes
 calories: 320 kcal
 yields: 4 servings
-upsellImage: ''
+upsellImage: /assets/images/recipes/triple chili.png
 upsellLink: ''
 ingredients:
   - 1.5 lbs chicken thighs, cut into 1-inch cubes
