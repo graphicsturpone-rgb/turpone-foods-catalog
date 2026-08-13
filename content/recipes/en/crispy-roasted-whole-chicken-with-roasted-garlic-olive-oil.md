@@ -9,7 +9,7 @@ upsellImage: /assets/images/recipes/roasted garlic.png
 upsellLink: ''
 ingredients:
   - 1 whole roasting chicken (approx. 4 lbs)
-  - 4 tbsp Martha Stewart’s Roasted Garlic Infused Extra Virgin Olive Oil, divided
+  - 4 tbsp <strong><a href="https://martha.com/" target="_blank">Martha Stewart</a></strong>’s Roasted Garlic Infused Extra Virgin Olive Oil, divided
   - 1 tbsp kosher salt
   - 1 tsp coarsely cracked black pepper
   - 1 tsp paprika

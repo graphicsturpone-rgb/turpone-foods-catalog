@@ -8,12 +8,12 @@ yields: 1 pizza (4 porciones)
 upsellImage: ''
 upsellLink: ''
 ingredients:
-  - 1 paquete de mezcla para masa de pizza estilo napolitano de Martha Stewart, preparada según las instrucciones del paquete
-  - 1/2 taza de salsa para pizza tradicional de Martha Stewart
+  - 1 paquete de mezcla para masa de pizza estilo napolitano de <strong><a href="https://martha.com/" target="_blank">Martha Stewart</a></strong>, preparada según las instrucciones del paquete
+  - 1/2 taza de salsa para pizza tradicional de <strong><a href="https://martha.com/" target="_blank">Martha Stewart</a></strong>
   - 2 tazas de queso mozzarella rallado
   - 4 oz de prosciutto en lonchas finas
   - 2 tazas de rúcula fresca
-  - 2 cdas. de aceite de oliva virgen extra infusionado con balsámico, ajo y hierbas de Martha Stewart
+  - 2 cdas. de aceite de oliva virgen extra infusionado con balsámico, ajo y hierbas de <strong><a href="https://martha.com/" target="_blank">Martha Stewart</a></strong>
   - Virutas de queso parmesano fresco
 instructions:
   - Prepare la masa según las instrucciones del paquete y déle forma a una pizza de 10 pulgadas (25 cm).
@@ -25,4 +25,4 @@ instructions:
 nutrition: ''
 ---
 
-Una pizza sofisticada inspirada en las _trattorias_ italianas. El delicado prosciutto, la rúcula picante y el aceite de oliva virgen extra infusionado con balsámico, ajo y hierbas de Martha Stewart crean un final fresco y equilibrado.
+Una pizza sofisticada inspirada en las _trattorias_ italianas. El delicado prosciutto, la rúcula picante y el aceite de oliva virgen extra infusionado con balsámico, ajo y hierbas de <strong><a href="https://martha.com/" target="_blank">Martha Stewart</a></strong> crean un final fresco y equilibrado.

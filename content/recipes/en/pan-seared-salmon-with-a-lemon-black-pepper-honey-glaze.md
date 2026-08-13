@@ -9,7 +9,7 @@ upsellImage: /assets/images/recipes/lemon black pepper.png
 upsellLink: ''
 ingredients:
   - 2 salmon fillets (6 to 8 oz each), skin-on preferred
-  - 2.5 tbsp Martha Stewart’s Lemon Black Pepper Honey
+  - 2.5 tbsp <strong><a href="https://martha.com/" target="_blank">Martha Stewart</a></strong>’s Lemon Black Pepper Honey
   - 1 tbsp olive oil
   - 2 cloves garlic, finely minced
   - 1 tbsp fresh lemon juice

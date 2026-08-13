@@ -9,7 +9,7 @@ upsellImage: ''
 upsellLink: ''
 ingredients:
   - 1 pollo entero (aprox. 4 lbs)
-  - 4 cdas. de Aceite de Oliva Virgen Extra Infusionado con Ajo Asado de Martha Stewart, divididas
+  - 4 cdas. de Aceite de Oliva Virgen Extra Infusionado con Ajo Asado de <strong><a href="https://martha.com/" target="_blank">Martha Stewart</a></strong>, divididas
   - 1 cda. de sal kosher
   - 1 cdta. de pimienta negra partida
   - 1 cdta. de pimentón

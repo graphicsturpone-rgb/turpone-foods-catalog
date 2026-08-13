@@ -9,7 +9,7 @@ upsellImage: /assets/images/recipes/triple pepper mix.png
 upsellLink: ''
 ingredients:
   - 2 thick-cut New York strip steaks (approx. 12 to 14 oz each, 1.5 inches thick)
-  - 3 tbsp Martha Stewart’s Triple Pepper Mix Seasoning
+  - 3 tbsp <strong><a href="https://martha.com/" target="_blank">Martha Stewart</a></strong>’s Triple Pepper Mix Seasoning
   - 1.5 tbsp high-smoke point oil (such as canola or grapeseed oil)
   - 2 tbsp unsalted butter
   - 2 sprigs fresh thyme or rosemary

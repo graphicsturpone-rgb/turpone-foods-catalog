@@ -8,7 +8,7 @@ yields: 4 a 6 porciones
 upsellImage: ''
 upsellLink: ''
 ingredients:
-  - 3 cdas de Sazonador de Tomate Mediterráneo (Mediterranean Tomato Seasoning) de Martha Stewart
+  - 3 cdas de Sazonador de Tomate Mediterráneo (Mediterranean Tomato Seasoning) de <strong><a href="https://martha.com/" target="_blank">Martha Stewart</a></strong>
   - 1/2 taza de aceite de oliva extra virgen de alta calidad
   - 1 cda de vinagre balsámico blanco o jugo de limón fresco
   - 450 g (1 lb) de bolitas de queso bocconcini fresco (o perlas de mozzarella fresca, escurridas)

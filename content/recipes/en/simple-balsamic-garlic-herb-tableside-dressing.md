@@ -9,7 +9,7 @@ upsellImage: /assets/images/recipes/balsamic and herb.png
 upsellLink: ''
 ingredients:
   - 5 to 6 cups fresh salad greens (crisp Italian blend, butter lettuce, or mixed baby greens)
-  - 3 to 4 tbsp Martha Stewart’s Balsamic Garlic and Herb Infused Extra Virgin Olive Oil
+  - 3 to 4 tbsp <strong><a href="https://martha.com/" target="_blank">Martha Stewart</a></strong>’s Balsamic Garlic and Herb Infused Extra Virgin Olive Oil
   - 1/2 tsp flaky sea salt or kosher salt
   - 1/4 tsp freshly cracked black pepper
   - 'Optional: Halved cherry tomatoes, sliced cucumbers, or shaved Parmesan cheese'

@@ -8,14 +8,14 @@ yields: 1 pizza (4 portions)
 upsellImage: ''
 upsellLink: ''
 ingredients:
-  - 1 paquet de mélange à pâte à pizza de style napolitain Martha Stewart, préparé selon les instructions de l'emballage
-  - 1/2 tasse de sauce à pizza épicée Martha Stewart
-  - 2 c. à table d'huile d'olive extra vierge infusée à l'ail épicé Martha Stewart
+  - 1 paquet de mélange à pâte à pizza de style napolitain <strong><a href="https://martha.com/" target="_blank">Martha Stewart</a></strong>, préparé selon les instructions de l'emballage
+  - 1/2 tasse de sauce à pizza épicée <strong><a href="https://martha.com/" target="_blank">Martha Stewart</a></strong>
+  - 2 c. à table d'huile d'olive extra vierge infusée à l'ail épicé <strong><a href="https://martha.com/" target="_blank">Martha Stewart</a></strong>
   - 2 tasses de mozzarella râpée
   - 8 oz de saucisse italienne, cuite et émiettée
   - 1/2 poivron vert, coupé en fines tranches
   - 1/4 d'oignon rouge, coupé en fines tranches
-  - 1 c. à table d'assaisonnement Triple Pepper Mix Martha Stewart
+  - 1 c. à table d'assaisonnement Triple Pepper Mix <strong><a href="https://martha.com/" target="_blank">Martha Stewart</a></strong>
 instructions:
   - "**Préparer la pâte :** Préparer le mélange à pâte à pizza de style napolitain selon les instructions de l'emballage et l'étirer en une pizza de 10 pouces."
   - '**Préchauffer le four :** Chauffer le four et la pierre à pizza à 500 °F.'

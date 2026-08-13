@@ -8,7 +8,7 @@ yields: 4 à 6 portions
 upsellImage: ''
 upsellLink: ''
 ingredients:
-  - 3 c. à soupe d’assaisonnement aux tomates méditerranéennes de Martha Stewart
+  - 3 c. à soupe d’assaisonnement aux tomates méditerranéennes de <strong><a href="https://martha.com/" target="_blank">Martha Stewart</a></strong>
   - 1/2 tasse d’huile d’olive extra-vierge de haute qualité
   - 1 c. à soupe de vinaigre balsamique blanc ou de jus de citron frais
   - 450 g (1 lb) de boules de bocconcini frais (ou de perles de mozzarella fraîches, égouttées)

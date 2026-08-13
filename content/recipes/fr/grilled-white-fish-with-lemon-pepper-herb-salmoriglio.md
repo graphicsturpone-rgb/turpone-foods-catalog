@@ -9,7 +9,7 @@ upsellImage: ''
 upsellLink: ''
 ingredients:
   - 2 filets de poisson blanc de haute qualité (tels que le bar, le flétan, la morue ou le vivaneau rouge)
-  - 4 c. à soupe d'huile d'olive extra vierge infusée au poivre citronné de Martha Stewart, divisées
+  - 4 c. à soupe d'huile d'olive extra vierge infusée au poivre citronné de <strong><a href="https://martha.com/" target="_blank">Martha Stewart</a></strong>, divisées
   - 2 c. à soupe de jus de citron frais
   - 3 c. à soupe de persil frais à feuilles plates, finement haché
   - 1 c. à soupe d'origan frais ou de thym, finement haché

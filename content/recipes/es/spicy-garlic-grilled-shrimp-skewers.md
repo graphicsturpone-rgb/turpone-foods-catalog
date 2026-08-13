@@ -9,7 +9,7 @@ upsellImage: ''
 upsellLink: ''
 ingredients:
   - 1 lb de camarones grandes (16-20 unidades), pelados y desvenados, con la cola intacta
-  - 4 cdas. de Aceite de Oliva Infusionado con Ajo Picante de Martha Stewart, divididas
+  - 4 cdas. de Aceite de Oliva Infusionado con Ajo Picante de <strong><a href="https://martha.com/" target="_blank">Martha Stewart</a></strong>, divididas
   - 1 limón fresco, rallado y cortado en gajos
   - 1 cdta. de pimentón ahumado
   - 2 cdas. de perejil fresco de hoja plana, finamente picado

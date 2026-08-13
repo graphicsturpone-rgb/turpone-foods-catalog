@@ -9,7 +9,7 @@ upsellImage: ''
 upsellLink: ''
 ingredients:
   - 5 à 6 tasses de feuilles de salade fraîches (mélange italien croustillant, laitue beurre ou jeunes pousses mélangées)
-  - 3 à 4 c. à soupe d’huile d’olive extra-vierge infusée balsamique, ail et fines herbes de Martha Stewart
+  - 3 à 4 c. à soupe d’huile d’olive extra-vierge infusée balsamique, ail et fines herbes de <strong><a href="https://martha.com/" target="_blank">Martha Stewart</a></strong>
   - 1/2 c. à thé de sel de mer en flocons ou de sel casher
   - 1/4 c. à thé de poivre noir fraîchement concassé
   - 'Facultatif : Tomates cerises coupées en deux, concombres tranchés ou parmesan râpé'

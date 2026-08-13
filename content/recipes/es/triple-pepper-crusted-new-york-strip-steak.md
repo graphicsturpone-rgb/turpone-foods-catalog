@@ -9,7 +9,7 @@ upsellImage: ''
 upsellLink: ''
 ingredients:
   - 2 bistecs New York strip de corte grueso (aprox. 340 a 400 g cada uno, 3.8 cm de grosor)
-  - 3 cdas de Mezcla de Triple Pimienta (Triple Pepper Mix Seasoning) de Martha Stewart
+  - 3 cdas de Mezcla de Triple Pimienta (Triple Pepper Mix Seasoning) de <strong><a href="https://martha.com/" target="_blank">Martha Stewart</a></strong>
   - 1.5 cdas de aceite con alto punto de humo (como aceite de canola o de semilla de uva)
   - 2 cdas de mantequilla sin sal
   - 2 ramitas de tomillo o romero fresco

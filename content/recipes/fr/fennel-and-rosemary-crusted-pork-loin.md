@@ -9,7 +9,7 @@ upsellImage: ''
 upsellLink: ''
 ingredients:
   - 1 rôti de longe de porc désossé, coupé au centre (environ 1,1 à 1,4 kg/2,5 à 3 lb)
-  - 3 c. à soupe d’assaisonnement italien sucré de Martha Stewart
+  - 3 c. à soupe d’assaisonnement italien sucré de <strong><a href="https://martha.com/" target="_blank">Martha Stewart</a></strong>
   - 2 c. à soupe d’huile d’olive extra-vierge
   - 1 tasse de bouillon de poulet à faible teneur en sodium ou de vin blanc sec (pour la poêle)
 instructions:

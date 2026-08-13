@@ -8,7 +8,7 @@ yields: 1 cup
 upsellImage: /assets/images/recipes/Fig-Oregano.png
 upsellLink: https://turponefoods.com/turpone-products/
 ingredients:
-  - 3 tbsp Martha Stewart’s Fig Oregano Honey
+  - 3 tbsp <strong><a href="https://martha.com/" target="_blank">Martha Stewart</a></strong>’s Fig Oregano Honey
   - 1/4 cup aged balsamic vinegar
   - 1/2 cup extra virgin olive oil
   - 1 tsp Dijon mustard

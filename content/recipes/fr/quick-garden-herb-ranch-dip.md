@@ -8,7 +8,7 @@ yields: 1,5 tasse (375 ml)
 upsellImage: ''
 upsellLink: ''
 ingredients:
-  - 3 c. à soupe d’assaisonnement aux fines herbes du jardin de Martha Stewart
+  - 3 c. à soupe d’assaisonnement aux fines herbes du jardin de <strong><a href="https://martha.com/" target="_blank">Martha Stewart</a></strong>
   - 1 tasse de crème sure
   - 1/2 tasse de mayonnaise de haute qualité
   - 1 c. à thé de jus de citron frais (facultatif)

@@ -9,7 +9,7 @@ upsellImage: /assets/images/recipes/sweet italian.png
 upsellLink: ''
 ingredients:
   - 1 boneless center-cut pork loin roast (approx. 2.5 to 3 lbs)
-  - 3 tbsp Martha Stewart’s Sweet Italian Seasoning
+  - 3 tbsp <strong><a href="https://martha.com/" target="_blank">Martha Stewart</a></strong>’s Sweet Italian Seasoning
   - 2 tbsp extra virgin olive oil
   - 1 cup low-sodium chicken broth or dry white wine (for the pan)
 instructions:

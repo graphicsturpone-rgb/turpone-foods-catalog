@@ -8,7 +8,7 @@ yields: 1.5 tazas
 upsellImage: ''
 upsellLink: ''
 ingredients:
-  - 3 cdas de Sazonador de Hierbas de Jardín (Garden Herb Seasoning) de Martha Stewart
+  - 3 cdas de Sazonador de Hierbas de Jardín (Garden Herb Seasoning) de <strong><a href="https://martha.com/" target="_blank">Martha Stewart</a></strong>
   - 1 taza de crema agria
   - 1/2 taza de mayonesa de alta calidad
   - 1 cdta de jugo de limón fresco (opcional)

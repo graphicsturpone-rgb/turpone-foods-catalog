@@ -8,7 +8,7 @@ yields: 4 to 6 servings
 upsellImage: /assets/images/recipes/mediterranean tomato.png
 upsellLink: ''
 ingredients:
-  - 3 tbsp Martha Stewart’s Mediterranean Tomato Seasoning
+  - 3 tbsp <strong><a href="https://martha.com/" target="_blank">Martha Stewart</a></strong>’s Mediterranean Tomato Seasoning
   - 1/2 cup high-quality extra virgin olive oil
   - 1 tbsp white balsamic vinegar or fresh lemon juice
   - 1 lb fresh bocconcini cheese balls (or fresh mozzarella pearls, drained)

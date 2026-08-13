@@ -9,7 +9,7 @@ upsellImage: ''
 upsellLink: ''
 ingredients:
   - 2 filetes de pescado blanco de alta calidad (como lubina, fletán, bacalao o pargo rojo)
-  - 4 cdas. de Aceite de Oliva Virgen Extra Infusionado con Limón y Pimienta de Martha Stewart, divididas
+  - 4 cdas. de Aceite de Oliva Virgen Extra Infusionado con Limón y Pimienta de <strong><a href="https://martha.com/" target="_blank">Martha Stewart</a></strong>, divididas
   - 2 cdas. de jugo de limón fresco
   - 3 cdas. de perejil fresco de hoja plana, finamente picado
   - 1 cda. de orégano o tomillo fresco, finamente picado

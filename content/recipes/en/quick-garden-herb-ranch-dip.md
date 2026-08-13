@@ -8,7 +8,7 @@ yields: 1.5 cups
 upsellImage: /assets/images/recipes/garden herb.png
 upsellLink: ''
 ingredients:
-  - 3 tbsp Martha Stewart’s Garden Herb Seasoning
+  - 3 tbsp <strong><a href="https://martha.com/" target="_blank">Martha Stewart</a></strong>’s Garden Herb Seasoning
   - 1 cup sour cream
   - 1/2 cup high-quality mayonnaise
   - 1 tsp fresh lemon juice (optional)

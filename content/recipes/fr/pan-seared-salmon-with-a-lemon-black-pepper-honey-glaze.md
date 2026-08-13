@@ -9,7 +9,7 @@ upsellImage: ''
 upsellLink: ''
 ingredients:
   - 2 filets de saumon (6 à 8 oz chacun), avec peau de préférence
-  - 2,5 c. à soupe de miel Citron Poivre Noir de Martha Stewart
+  - 2,5 c. à soupe de miel Citron Poivre Noir de <strong><a href="https://martha.com/" target="_blank">Martha Stewart</a></strong>
   - 1 c. à soupe d’huile d’olive
   - 2 gousses d'ail, finement hachées
   - 1 c. à soupe de jus de citron frais

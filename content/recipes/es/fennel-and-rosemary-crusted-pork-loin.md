@@ -9,7 +9,7 @@ upsellImage: ''
 upsellLink: ''
 ingredients:
   - 1 asado de lomo de cerdo sin hueso y de centro (aprox. 1.1 a 1.4 kg / 2.5 a 3 lb)
-  - 3 cdas de Sazonador Italiano Dulce (Sweet Italian Seasoning) de Martha Stewart
+  - 3 cdas de Sazonador Italiano Dulce (Sweet Italian Seasoning) de <strong><a href="https://martha.com/" target="_blank">Martha Stewart</a></strong>
   - 2 cdas de aceite de oliva extra virgen
   - 1 taza de caldo de pollo bajo en sodio o vino blanco seco (para la fuente)
 instructions:

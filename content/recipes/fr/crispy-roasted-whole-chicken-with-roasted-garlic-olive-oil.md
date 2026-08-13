@@ -9,7 +9,7 @@ upsellImage: ''
 upsellLink: ''
 ingredients:
   - 1 poulet entier à rôtir (environ 4 lb)
-  - 4 c. à soupe d'huile d'olive extra vierge infusée à l'ail rôti de Martha Stewart, divisées
+  - 4 c. à soupe d'huile d'olive extra vierge infusée à l'ail rôti de <strong><a href="https://martha.com/" target="_blank">Martha Stewart</a></strong>, divisées
   - 1 c. à soupe de sel casher
   - 1 c. à thé de poivre noir concassé
   - 1 c. à thé de paprika

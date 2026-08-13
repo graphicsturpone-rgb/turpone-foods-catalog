@@ -8,7 +8,7 @@ yields: 1 taza
 upsellImage: /assets/images/recipes/Fig-Oregano.png
 upsellLink: ''
 ingredients:
-  - 3 cdas. de Miel de Higo y Orégano de Martha Stewart
+  - 3 cdas. de Miel de Higo y Orégano de <strong><a href="https://martha.com/" target="_blank">Martha Stewart</a></strong>
   - 1/4 de taza de vinagre balsámico añejo
   - 1/2 taza de aceite de oliva virgen extra
   - 1 cdta. de mostaza Dijon

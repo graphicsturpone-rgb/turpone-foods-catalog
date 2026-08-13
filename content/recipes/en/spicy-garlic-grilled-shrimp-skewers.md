@@ -9,7 +9,7 @@ upsellImage: /assets/images/recipes/spicy garlic.png
 upsellLink: ''
 ingredients:
   - 1 lb large shrimp (16–20 count), peeled and deveined, tails left on
-  - 4 tbsp Martha Stewart’s Spicy Garlic Infused Olive Oil, divided
+  - 4 tbsp <strong><a href="https://martha.com/" target="_blank">Martha Stewart</a></strong>’s Spicy Garlic Infused Olive Oil, divided
   - 1 fresh lemon, zested and cut into wedges
   - 1 tsp smoked paprika
   - 2 tbsp fresh flat-leaf parsley, finely chopped

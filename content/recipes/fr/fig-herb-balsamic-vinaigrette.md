@@ -8,7 +8,7 @@ yields: 4 servings
 upsellImage: /assets/images/recipes/Fig-Oregano.png
 upsellLink: ''
 ingredients:
-  - 3 c. à soupe de miel Figue Origan de Martha Stewart
+  - 3 c. à soupe de miel Figue Origan de <strong><a href="https://martha.com/" target="_blank">Martha Stewart</a></strong>
   - 1/4 tasse de vinaigre balsamique vieilli
   - 1/2 tasse d'huile d'olive extra vierge
   - 1 c. à thé de moutarde de Dijon

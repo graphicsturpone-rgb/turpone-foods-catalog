@@ -9,7 +9,7 @@ upsellImage: ''
 upsellLink: ''
 ingredients:
   - 1.5 libras de muslos de pollo (sin hueso, sin piel) o solomillo de cerdo, cortado en cubos de 1 pulgada
-  - 3 cdas. de Miel con Triple Chile de Martha Stewart (Triple Chili Honey Drizzle), divididas
+  - 3 cdas. de Miel con Triple Chile de <strong><a href="https://martha.com/" target="_blank">Martha Stewart</a></strong> (Triple Chili Honey Drizzle), divididas
   - 2 cdas. de salsa de soja
   - 1 cda. de aceite de oliva
   - 3 dientes de ajo, picados

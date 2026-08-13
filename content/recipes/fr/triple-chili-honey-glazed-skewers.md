@@ -9,7 +9,7 @@ upsellImage: ''
 upsellLink: ''
 ingredients:
   - 1,5 lb de hauts de cuisse de poulet (désossés, sans peau) ou de longe de porc, coupés en cubes de 1 pouce
-  - 3 c. à soupe de miel en filet Triple Chili de Martha Stewart, divisées
+  - 3 c. à soupe de miel en filet Triple Chili de <strong><a href="https://martha.com/" target="_blank">Martha Stewart</a></strong>, divisées
   - 2 c. à soupe de sauce soya
   - 1 c. à soupe d’huile d’olive
   - 3 gousses d'ail, hachées

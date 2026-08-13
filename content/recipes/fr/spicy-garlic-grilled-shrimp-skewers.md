@@ -9,7 +9,7 @@ upsellImage: ''
 upsellLink: ''
 ingredients:
   - 1 lb de grosses crevettes (16 à 20), décortiquées et déveinées, queues laissées
-  - 4 c. à soupe d'huile d'olive infusée à l'ail épicé de Martha Stewart, divisées
+  - 4 c. à soupe d'huile d'olive infusée à l'ail épicé de <strong><a href="https://martha.com/" target="_blank">Martha Stewart</a></strong>, divisées
   - 1 citron frais, zeste et coupé en quartiers
   - 1 c. à thé de paprika fumé
   - 2 c. à soupe de persil frais à feuilles plates, finement haché

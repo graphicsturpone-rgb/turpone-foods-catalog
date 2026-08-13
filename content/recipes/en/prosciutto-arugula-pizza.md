@@ -8,12 +8,12 @@ yields: 1 pizza (4 servings)
 upsellImage: ''
 upsellLink: ''
 ingredients:
-  - 1 package Martha Stewart Neapolitan Style Pizza Dough Mix, prepared according to package directions
-  - 1/2 cup Martha Stewart Traditional Pizza Sauce
+  - 1 package <strong><a href="https://martha.com/" target="_blank">Martha Stewart</a></strong> Neapolitan Style Pizza Dough Mix, prepared according to package directions
+  - 1/2 cup <strong><a href="https://martha.com/" target="_blank">Martha Stewart</a></strong> Traditional Pizza Sauce
   - 2 cups shredded mozzarella
   - 4 oz thinly sliced prosciutto
   - 2 cups fresh arugula
-  - 2 tbsp Martha Stewart Balsamic Garlic & Herb Infused Extra Virgin Olive Oil
+  - 2 tbsp <strong><a href="https://martha.com/" target="_blank">Martha Stewart</a></strong> Balsamic Garlic & Herb Infused Extra Virgin Olive Oil
   - Fresh Parmesan shavings
 instructions:
   - Prepare the dough according to package directions and shape into a 10-inch pizza.
@@ -25,4 +25,4 @@ instructions:
 nutrition: ''
 ---
 
-A sophisticated pizza inspired by Italian trattorias. Delicate prosciutto, peppery arugula, and Martha Stewart Balsamic Garlic & Herb Infused Extra Virgin Olive Oil create a fresh, balanced finish.
+A sophisticated pizza inspired by Italian trattorias. Delicate prosciutto, peppery arugula, and <strong><a href="https://martha.com/" target="_blank">Martha Stewart</a></strong> Balsamic Garlic & Herb Infused Extra Virgin Olive Oil create a fresh, balanced finish.

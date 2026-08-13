@@ -9,7 +9,7 @@ upsellImage: ''
 upsellLink: ''
 ingredients:
   - 5 a 6 tazas de hojas de ensalada frescas (mezcla italiana crujiente, lechuga mantequilla o brotes tiernos mezclados)
-  - 3 a 4 cdas. de Aceite de Oliva Virgen Extra Infusionado con Balsámico, Ajo y Hierbas de Martha Stewart
+  - 3 a 4 cdas. de Aceite de Oliva Virgen Extra Infusionado con Balsámico, Ajo y Hierbas de <strong><a href="https://martha.com/" target="_blank">Martha Stewart</a></strong>
   - 1/2 cdta. de sal marina en escamas o sal kosher
   - 1/4 cdta. de pimienta negra recién molida
   - 'Opcional: Tomates cherry cortados por la mitad, pepinos en rodajas o queso parmesano rallado'

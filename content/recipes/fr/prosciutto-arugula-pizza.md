@@ -8,12 +8,12 @@ yields: 1 pizza (4 personnes)
 upsellImage: ''
 upsellLink: ''
 ingredients:
-  - 1 paquet de mélange pour pâte à pizza de style napolitain de Martha Stewart, préparé selon les instructions sur l’emballage
-  - 1/2 tasse de sauce à pizza traditionnelle de Martha Stewart
+  - 1 paquet de mélange pour pâte à pizza de style napolitain de <strong><a href="https://martha.com/" target="_blank">Martha Stewart</a></strong>, préparé selon les instructions sur l’emballage
+  - 1/2 tasse de sauce à pizza traditionnelle de <strong><a href="https://martha.com/" target="_blank">Martha Stewart</a></strong>
   - 2 tasses de mozzarella râpée
   - 4 oz de prosciutto tranché finement
   - 2 tasses de roquette fraîche
-  - 2 c. à soupe d’huile d’olive extra vierge infusée au basilic, à l’ail et au vinaigre balsamique de Martha Stewart
+  - 2 c. à soupe d’huile d’olive extra vierge infusée au basilic, à l’ail et au vinaigre balsamique de <strong><a href="https://martha.com/" target="_blank">Martha Stewart</a></strong>
   - Copeaux de parmesan frais
 instructions:
   - Préparez la pâte selon les instructions sur l’emballage et façonnez une pizza de 10 pouces.
@@ -25,4 +25,4 @@ instructions:
 nutrition: ''
 ---
 
-Une pizza sophistiquée inspirée des _trattorias_ italiennes. Le prosciutto délicat, la roquette poivrée et l’huile d’olive extra vierge infusée au basilic, à l’ail et au vinaigre balsamique de Martha Stewart créent une finale fraîche et équilibrée.
+Une pizza sophistiquée inspirée des _trattorias_ italiennes. Le prosciutto délicat, la roquette poivrée et l’huile d’olive extra vierge infusée au basilic, à l’ail et au vinaigre balsamique de <strong><a href="https://martha.com/" target="_blank">Martha Stewart</a></strong> créent une finale fraîche et équilibrée.

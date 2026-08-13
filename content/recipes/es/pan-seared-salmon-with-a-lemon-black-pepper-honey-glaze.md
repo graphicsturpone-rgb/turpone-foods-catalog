@@ -9,7 +9,7 @@ upsellImage: ''
 upsellLink: ''
 ingredients:
   - 2 filetes de salmón (6 a 8 oz cada uno), preferiblemente con piel
-  - 2.5 cdas. de Miel de Limón y Pimienta Negra de Martha Stewart
+  - 2.5 cdas. de Miel de Limón y Pimienta Negra de <strong><a href="https://martha.com/" target="_blank">Martha Stewart</a></strong>
   - 1 cda. de aceite de oliva
   - 2 dientes de ajo, finamente picados
   - 1 cda. de jugo de limón fresco

@@ -9,7 +9,7 @@ upsellImage: ''
 upsellLink: ''
 ingredients:
   - 2 steaks de contre-filet de New York épais (environ 340 à 400 g chacun, 3,8 cm/1,5 po d’épaisseur)
-  - 3 c. à soupe d’assaisonnement mélange de poivre triple de Martha Stewart
+  - 3 c. à soupe d’assaisonnement mélange de poivre triple de <strong><a href="https://martha.com/" target="_blank">Martha Stewart</a></strong>
   - 1,5 c. à soupe d’huile à point de fumée élevé (comme l’huile de canola ou de pépins de raisin)
   - 2 c. à soupe de beurre non salé
   - 2 brins de thym ou de romarin frais

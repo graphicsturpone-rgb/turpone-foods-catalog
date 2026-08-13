@@ -9,7 +9,7 @@ upsellImage: /assets/images/recipes/lemon pepper.png
 upsellLink: ''
 ingredients:
   - 2 high-quality white fish fillets (such as Sea Bass, Halibut, Cod, or Red Snapper)
-  - 4 tbsp Martha Stewart’s Lemon Pepper Infused Extra Virgin Olive Oil, divided
+  - 4 tbsp <strong><a href="https://martha.com/" target="_blank">Martha Stewart</a></strong>’s Lemon Pepper Infused Extra Virgin Olive Oil, divided
   - 2 tbsp fresh lemon juice
   - 3 tbsp fresh flat-leaf parsley, finely minced
   - 1 tbsp fresh oregano or thyme, finely minced
