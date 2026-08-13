@@ -83,6 +83,16 @@ languages.forEach(lang => {
             instructionsHtml += '</ol>';
             
             let html = currentTemplate;
+            const seoTitle = metadata.title || '';
+            const rawText = bodyHtml.replace(/<[^>]*>?/gm, '').replace(/\n/g, ' ').trim();
+            const seoDesc = metadata.description ? metadata.description : (rawText.length > 150 ? rawText.substring(0, 147) + '...' : rawText);
+            const slug = file.replace('.md', '');
+            const canonicalUrl = `https://turponefoods.com${lang.prefix}${slug}/`;
+            
+            html = html.replace(/{{seo_title}}/g, seoTitle);
+            html = html.replace(/{{seo_description}}/g, seoDesc.replace(/"/g, '&quot;'));
+            html = html.replace(/{{canonical_url}}/g, canonicalUrl);
+            
             html = html.replace(/{{title}}/g, metadata.title || '');
             html = html.replace(/{{image}}/g, metadata.image || '');
             html = html.replace(/{{prepTime}}/g, metadata.prepTime || '');
@@ -124,7 +134,6 @@ languages.forEach(lang => {
                 html = html.replace(/{{nutrition}}/g, '');
             }
             
-            const slug = file.replace('.md', '');
             const recipeDir = path.join(lang.outDir, slug);
             
             if (!fs.existsSync(recipeDir)) {
@@ -159,6 +168,11 @@ languages.forEach(lang => {
 
     htmlIndex = htmlIndex.replace(/>Our Recipes<\/h1>/g, `>${lang.t.title}</h1>`);
     htmlIndex = htmlIndex.replace('{{RECIPES_GRID}}', gridHtml);
+    
+    htmlIndex = htmlIndex.replace(/{{title}}/g, lang.t.title);
+    htmlIndex = htmlIndex.replace(/{{seo_description}}/g, `Explore our delicious premium outdoor pizza oven and grill recipes. ${lang.t.title}.`);
+    htmlIndex = htmlIndex.replace(/{{canonical_url}}/g, `https://turponefoods.com${lang.prefix}`);
+    
     if (!fs.existsSync(lang.outDir)) fs.mkdirSync(lang.outDir, { recursive: true });
     fs.writeFileSync(path.join(lang.outDir, 'index.html'), htmlIndex);
     console.log(`Generated: ${lang.outDir}/index.html`);

@@ -6,6 +6,6 @@
     "puppeteer": "^25.1.0"
   },
   "scripts": {
-    "build": "node scripts/build-recipes.js"
+    "build": "node scripts/build-recipes.js && node scripts/generate-sitemap.js"
   }
 }
