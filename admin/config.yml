@@ -29,8 +29,7 @@ collections:
       - {label: "Featured Image", name: "image", widget: "image", i18n: true}
       - {label: "Recipe Paragraph (Under Image)", name: "body", widget: "markdown", i18n: true}
       - {label: "Prep Time", name: "prepTime", widget: "string", default: "15 min", i18n: true}
-      - {label: "Cook Time", name: "cookTime", widget: "string", default: "30 min", i18n: true}
-      - {label: "Calories", name: "calories", widget: "string", default: "320 kcal", i18n: true}
+      - {label: "Total Time", name: "cookTime", widget: "string", default: "30 min", i18n: true}
       - {label: "Yields", name: "yields", widget: "string", default: "4 servings", i18n: true}
       - {label: "Recommended Product Image", name: "upsellImage", widget: "image", required: false, i18n: true}
       - {label: "Recommended Product Link", name: "upsellLink", widget: "string", required: false, i18n: true}

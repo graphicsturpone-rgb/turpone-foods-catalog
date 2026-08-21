@@ -17,9 +17,9 @@ const template = fs.readFileSync(templatePath, 'utf8');
 const indexTemplate = fs.readFileSync(indexTemplatePath, 'utf8');
 
 const languages = [
-    { code: 'en', outDir: outputDir, prefix: '/recipes/', indexFile: '../index.html', t: { title: 'Our Recipes', ing: 'Ingredients', inst: 'Instructions', nut: 'Nutrition Information', rec: 'Recommended Product' } },
-    { code: 'fr', outDir: path.join(__dirname, '../fr/recettes'), prefix: '/fr/recettes/', indexFile: '../fr/index.html', t: { title: 'Nos Recettes', ing: 'Ingrédients', inst: 'Instructions', nut: 'Valeur nutritive', rec: 'Produit recommandé' } },
-    { code: 'es', outDir: path.join(__dirname, '../es/recetas'), prefix: '/es/recetas/', indexFile: '../es/index.html', t: { title: 'Nuestras Recetas', ing: 'Ingredientes', inst: 'Instrucciones', nut: 'Información nutricional', rec: 'Producto recomendado' } }
+    { code: 'en', outDir: outputDir, prefix: '/recipes/', indexFile: '../index.html', t: { title: 'Our Recipes', ing: 'Ingredients', inst: 'Instructions', nut: 'Nutrition Information', rec: 'Recommended Product', totalTime: 'Total Time' } },
+    { code: 'fr', outDir: path.join(__dirname, '../fr/recettes'), prefix: '/fr/recettes/', indexFile: '../fr/index.html', t: { title: 'Nos Recettes', ing: 'Ingrédients', inst: 'Instructions', nut: 'Valeur nutritive', rec: 'Produit recommandé', totalTime: 'Temps Total' } },
+    { code: 'es', outDir: path.join(__dirname, '../es/recetas'), prefix: '/es/recetas/', indexFile: '../es/index.html', t: { title: 'Nuestras Recetas', ing: 'Ingredientes', inst: 'Instrucciones', nut: 'Información nutricional', rec: 'Producto recomendado', totalTime: 'Tiempo Total' } }
 ];
 
 languages.forEach(lang => {
@@ -97,8 +97,8 @@ languages.forEach(lang => {
             html = html.replace(/{{image}}/g, metadata.image || '');
             html = html.replace(/{{prepTime}}/g, metadata.prepTime || '');
             html = html.replace(/{{cookTime}}/g, metadata.cookTime || '');
+            html = html.replace(/{{totalTimeLabel}}/g, lang.t.totalTime);
             html = html.replace(/{{yields}}/g, metadata.yields || '');
-            html = html.replace(/{{calories}}/g, metadata.calories || '');
             html = html.replace(/{{ingredients_list}}/g, ingredientsHtml);
             html = html.replace(/{{instructions_list}}/g, instructionsHtml);
             html = html.replace(/{{body}}/g, bodyHtml);

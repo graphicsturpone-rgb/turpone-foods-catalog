@@ -1,0 +1,97 @@
+const fs = require('fs');
+
+const astroContent = `---
+import Layout from '../../layouts/Layout.astro';
+import { productsData } from '../../data/data.js';
+
+const categories = ["All", "Infused Oils", "Honeys", "Seasoning", "Pizza Sauce", "Pizza Flour", "Frozen Pizza Dough", "Frozen Pizza", "Frozen Pinsa"];
+---
+<Layout>
+<style>
+.products-layout { display: flex; max-width: 1200px; margin: 40px auto; padding: 0 20px; gap: 40px; }
+.products-sidebar { width: 250px; flex-shrink: 0; background: #ffffff; padding: 20px; border-radius: 8px; border: 1px solid #eaeaea; align-self: flex-start; position: sticky; top: 120px; }
+.products-sidebar h3 { font-size: 16px; font-weight: 600; margin-bottom: 20px; color: #333; border-bottom: 1px solid #ddd; padding-bottom: 10px;}
+.products-sidebar ul { list-style: none; padding: 0; margin: 0; }
+.products-sidebar li { margin-bottom: 15px; }
+.products-sidebar label { display: flex; align-items: center; font-size: 14px; color: #555; cursor: pointer; }
+.products-sidebar input[type="checkbox"] { margin-right: 10px; cursor: pointer; accent-color: #111111; }
+.products-grid { flex-grow: 1; display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; align-items: stretch; }
+.product-card { background: #fff; border-radius: 8px; border: 1px solid #eaeaea; padding: 20px; text-align: center; transition: box-shadow 0.3s ease; display: flex; flex-direction: column; justify-content: space-between;}
+.product-card:hover { box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+.product-card .img-wrapper { width: 100%; height: 220px; display: flex; align-items: center; justify-content: center; margin-bottom: 15px; background: #ffffff; border-radius: 4px; padding: 10px;}
+.product-card img { max-width: 100%; max-height: 100%; object-fit: contain; }
+.card-cat { font-size: 10px; color: #111111; text-transform: uppercase; margin-bottom: 5px; font-weight: 600; letter-spacing: 1px;}
+.product-card h4 { font-size: 16px; font-weight: 600; color: #333; margin-bottom: 8px; line-height: 1.3;}
+.product-card p { font-size: 13px; color: #777; margin-bottom: 20px; line-height: 1.4; flex-grow: 1;}
+.product-card .btn-details { color: #111111; font-size: 13px; font-weight: 600; text-transform: uppercase; text-decoration: none; display: inline-flex; align-items: center; justify-content: center;}
+.product-card .btn-details i { margin-left: 5px; transition: transform 0.2s; }
+.product-card .btn-details:hover i { transform: translateX(3px); }
+@media(max-width: 992px) { .products-grid { grid-template-columns: repeat(2, 1fr); } } @media(max-width: 768px) { .products-layout { flex-direction: column; } .products-sidebar { width: 100%; position: relative; top: 0; } .products-grid { grid-template-columns: repeat(2, 1fr); } } @media(max-width: 576px) { .products-grid { grid-template-columns: 1fr; } }
+</style>
+
+<div style="background: #ffffff; min-height: 80vh; padding-top: 40px; padding-bottom: 60px;">
+    <div style="text-align: center; padding-bottom: 20px;">
+        <h1 style="font-size: 42px; font-weight: 700; color: #333;">Turpone Products</h1>
+        <p style="color: #666; font-size: 16px;">Discover our premium selection of authentic ingredients.</p>
+    </div>
+    <div class="products-layout">
+        <aside class="products-sidebar">
+            <h3>By Categories</h3>
+            <ul>
+                {categories.map(cat => (
+                    <li><label><input type="checkbox" class="category-filter" value={cat} checked={cat === "All"} /> {cat === "All" ? "View All" : cat}</label></li>
+                ))}
+            </ul>
+        </aside>
+        <div class="products-grid" id="products-grid">
+            {productsData.map(p => (
+                <div class="product-card" data-category={p.category}>
+                    <a href={\`/products/detail.html?id=\${p.id}\`} style="text-decoration:none; color:inherit; display:flex; flex-direction:column; height:100%;">
+                        <div class="img-wrapper">
+                            <img src={\`/assets/images/ca_imgs/\${p.image}\`} alt={p.title} loading="lazy" />
+                        </div>
+                        <div class="card-cat">{p.category}</div>
+                        <h4>{p.title}</h4>
+                        <p>Authentic Turpone quality, crafted for excellence.</p>
+                        <span class="btn-details" style="margin-top:auto;">View Details <i class="fa-solid fa-arrow-right"></i></span>
+                    </a>
+                </div>
+            ))}
+        </div>
+    </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const filters = document.querySelectorAll('.category-filter');
+    const cards = document.querySelectorAll('.product-card');
+    
+    filters.forEach(filter => {
+        filter.addEventListener('change', (e) => {
+            if (e.target.checked) {
+                filters.forEach(f => {
+                    if (f !== e.target) f.checked = false;
+                });
+                
+                const selectedCat = e.target.value;
+                cards.forEach(card => {
+                    if (selectedCat === 'All' || card.dataset.category === selectedCat) {
+                        card.style.display = 'flex';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            } else {
+                document.querySelector('input[value="All"]').checked = true;
+                cards.forEach(card => card.style.display = 'flex');
+            }
+        });
+    });
+});
+</script>
+</Layout>
+`;
+
+fs.mkdirSync('turpone-astro/src/pages/products', { recursive: true });
+fs.writeFileSync('turpone-astro/src/pages/products/index.astro', astroContent);
+console.log('Products index generated.');
