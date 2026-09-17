@@ -28,7 +28,7 @@ files.forEach(file => {
         const jsonStr = Buffer.from(base64Str, 'base64').toString('utf8');
         const jsonObj = JSON.parse(jsonStr);
 
-        if (jsonObj.url && jsonObj.url.includes('/wp-content/uploads/')) {
+        if (jsonObj.url && jsonObj.url.includes('/assets/uploads/')) {
           const filename = jsonObj.url.substring(jsonObj.url.lastIndexOf('/') + 1);
           // Set to ca_imgs. The us-image-swap.js will dynamically swap this to us_imgs if needed!
           jsonObj.url = '/assets/images/ca_imgs/' + filename;

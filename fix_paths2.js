@@ -15,7 +15,7 @@ let newHtml = html.replace(/<a class="e-gallery-item[^>]+>([\s\S]*?)<\/a>/g, (ma
             // Base64 decode
             let settingsJson = Buffer.from(settingsStr, 'base64').toString('utf8');
             let settings = JSON.parse(settingsJson);
-            let url = settings.url; // e.g. http://localhost:10008/wp-content/uploads/2026/05/Lemon-Pepper-Infused-Extra-Virgin-Olive-Oil.webp
+            let url = settings.url; // e.g. http://localhost:10008/assets/uploads/2026/05/Lemon-Pepper-Infused-Extra-Virgin-Olive-Oil.webp
             // Extract filename
             let filename = url.substring(url.lastIndexOf('/') + 1);
             

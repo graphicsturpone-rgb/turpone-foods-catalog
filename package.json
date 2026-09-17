@@ -1,11 +1,17 @@
 {
-  "dependencies": {
-    "cheerio": "^1.2.0",
-    "gray-matter": "^4.0.3",
-    "marked": "^18.0.6",
-    "puppeteer": "^25.1.0"
-  },
+  "name": "turpone-platform",
+  "version": "0.0.0",
+  "private": true,
   "scripts": {
-    "build": "node scripts/build-recipes.js && node scripts/generate-sitemap.js"
-  }
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "lint": "turbo run lint",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+  },
+  "devDependencies": {
+    "prettier": "^3.2.5",
+    "turbo": "^2.0.0",
+    "typescript": "^5.4.5"
+  },
+  "packageManager": "pnpm@9.1.0"
 }
