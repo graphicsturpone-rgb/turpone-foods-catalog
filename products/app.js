@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     function renderProducts(category) {
         grid.innerHTML = '';
-        const filtered = category === 'All' ? productsData : productsData.filter(p => p.category === category);
+        let filtered = category === 'All' ? [...productsData].sort((a, b) => a.category.localeCompare(b.category)) : productsData.filter(p => p.category === category);
         
         if (filtered.length === 0) {
             grid.innerHTML = '<p style="grid-column: 1/-1; text-align: center; color: #777;">No products found in this category.</p>';

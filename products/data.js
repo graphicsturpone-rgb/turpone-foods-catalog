@@ -254,13 +254,5 @@ const productsData = [
     "image": "Spinach-Four-Cheese-with-ALfredo-Frozen-Pizza.webp",
     "description": "Martha Stewart Spinach Four Cheese with Alfredo Pizza combines spinach with creamy Alfredo sauce and a rich blend of fontina, mozzarella, Parmesan and Romano cheeses on a hand-stretched, stone-baked crust. Rich and satisfying, it's an elevated option that's ready to enjoy at home in minutes.",
     "features": "Featuring: Spinach, Alfredo sauce, fontina, mozzarella, Parmesan and Romano cheeses"
-  },
-  {
-    "id": 35,
-    "title": "Pizza Dough Balls (Bulk)",
-    "category": "Frozen Pizza Dough",
-    "image": "Turpone_Pizza_Dough_Balls_2.webp",
-    "description": "Premium quality dough balls for food service and retail.",
-    "features": ""
   }
 ];
