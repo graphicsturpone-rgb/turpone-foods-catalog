@@ -1,0 +1,6 @@
+apps/
+packages/
+turpone-cms/
+turpone-astro/
+node_modules/
+mingit/

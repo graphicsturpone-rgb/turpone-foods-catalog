@@ -2,3 +2,10 @@ wp-content/uploads/2025/12/FOL-BANNER.mp4
 wp-content/uploads/2025/12/Timeline-1.mov
 wp-content/uploads/2026/01/ENG-LAST-FEATURES-VID.mp4
 wp-content/uploads/2026/01/FR-LAST-FEATURES-VID.mp4
+
+apps/
+packages/
+turpone-cms/
+turpone-astro/
+.next/
+node_modules/
