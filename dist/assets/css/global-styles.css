@@ -263,3 +263,16 @@ a, button, .elementor-button { transition: all 0.3s ease !important; }
 /* Hide language switcher globally */
 .lang-switcher { display: none !important; }
 
+/* Disabled Footer Titles */
+.footer-title-disabled {
+    pointer-events: none !important;
+    cursor: default !important;
+    display: inline-block !important;
+    transform: none !important;
+}
+.footer-title-disabled * {
+    pointer-events: none !important;
+    cursor: default !important;
+    transform: none !important;
+}
+

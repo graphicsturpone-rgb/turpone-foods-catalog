@@ -56,6 +56,27 @@ document.addEventListener('DOMContentLoaded', () => {
     `;
     document.head.appendChild(style);
 
+    // Footer Title & Link Safeguard
+    const footerLinks = document.querySelectorAll('footer a');
+    footerLinks.forEach(a => {
+        const text = a.textContent.trim();
+        const boldSpan = a.querySelector('span[style*="font-weight:bold"], span[style*="font-weight: bold"], strong, b');
+        if (boldSpan || ['divisions', 'company', 'contact', 'compañía', 'contacto', 'entreprise', 'coordonnées'].includes(text.toLowerCase())) {
+            a.style.pointerEvents = 'none';
+            a.style.cursor = 'default';
+            a.removeAttribute('href');
+            a.addEventListener('click', e => e.preventDefault());
+        } else if (text.toLowerCase() === 'food service' || text.toLowerCase() === 'service alimentaire' || text.toLowerCase() === 'servicio de alimentación') {
+            const isFr = window.location.pathname.includes('/fr/');
+            const isEs = window.location.pathname.includes('/es/');
+            a.setAttribute('href', isFr ? '/fr/services/' : (isEs ? '/es/services/' : '/services/'));
+        } else if (text.toLowerCase() === 'retail' || text.toLowerCase() === 'commerce de détail' || text.toLowerCase() === 'minorista') {
+            const isFr = window.location.pathname.includes('/fr/');
+            const isEs = window.location.pathname.includes('/es/');
+            a.setAttribute('href', isFr ? '/fr/contact/' : (isEs ? '/es/contact/' : '/contact/'));
+        }
+    });
+
     // 1. Mobile Menu Toggle
     const menuToggles = document.querySelectorAll('.elementor-menu-toggle');
     menuToggles.forEach(toggle => {
