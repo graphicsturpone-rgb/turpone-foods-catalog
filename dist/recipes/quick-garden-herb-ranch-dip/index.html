@@ -191,40 +191,118 @@ wp.i18n.setLocaleData( { 'text direction\u0004ltr': [ 'ltr' ] } );
 var ElementorProFrontendConfig = {"ajaxurl":"\/wp-admin\/admin-ajax.php","nonce":"a806ee0c2b","urls":{"assets":"\/assets\/vendor\/ui-builder-pro\/assets\/","rest":"\/wp-json\/"},"settings":{"lazy_load_background_images":false},"popup":{"hasPopUps":false},"shareButtonsNetworks":{"facebook":{"title":"Facebook","has_counter":true},"twitter":{"title":"Twitter"},"linkedin":{"title":"LinkedIn","has_counter":true},"pinterest":{"title":"Pinterest","has_counter":true},"reddit":{"title":"Reddit","has_counter":true},"vk":{"title":"VK","has_counter":true},"odnoklassniki":{"title":"OK","has_counter":true},"tumblr":{"title":"Tumblr"},"digg":{"title":"Digg"},"skype":{"title":"Skype"},"stumbleupon":{"title":"StumbleUpon","has_counter":true},"mix":{"title":"Mix"},"telegram":{"title":"Telegram"},"pocket":{"title":"Pocket","has_counter":true},"xing":{"title":"XING","has_counter":true},"whatsapp":{"title":"WhatsApp"},"email":{"title":"Email"},"print":{"title":"Print"},"x-twitter":{"title":"X"},"threads":{"title":"Threads"}},"facebook_sdk":{"lang":"en_US","app_id":""},"lottie":{"defaultAnimationUrl":"\/assets\/vendor\/ui-builder-pro\/modules\/lottie\/assets\/animations\/default.json"}};
 //# sourceURL=elementor-pro-frontend-js-before
 </script><script id="elementor-pro-frontend-js" src="/assets/js/frontend.min.js"></script><script id="pro-elements-handlers-js" src="/assets/js/elements-handlers.min.js"></script><style>
-/* Floating Instagram Icon */
+/* Floating Social Media Icons */
 .floating-ig {
-    position: fixed;
-    top: 50%;
-    left: 0;
-    transform: translateY(-50%);
-    background-color: #000000;
-    color: white;
-    padding: 10px 15px;
-    border-radius: 0 5px 5px 0;
-    font-size: 24px;
-    z-index: 1000;
-    box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    text-decoration: none;
-    transition: all 0.3s ease;
+    position: fixed !important;
+    top: 50% !important;
+    left: 0 !important;
+    transform: translateY(-50%) !important;
+    background-color: #000000 !important;
+    color: white !important;
+    padding: 10px 15px !important;
+    border-radius: 0 5px 5px 0 !important;
+    font-size: 24px !important;
+    z-index: 9999 !important;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.2) !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+    text-decoration: none !important;
+    transition: all 0.3s ease !important;
 }
-.floating-ig span {
-    font-size: 14px;
-    max-width: 0;
-    overflow: hidden;
-    white-space: nowrap;
-    transition: max-width 0.3s ease;
-    font-family: Arial, sans-serif;
+.floating-tk {
+    position: fixed !important;
+    top: calc(50% + 55px) !important;
+    left: 0 !important;
+    transform: translateY(-50%) !important;
+    background-color: #000000 !important;
+    color: white !important;
+    padding: 10px 15px !important;
+    border-radius: 0 5px 5px 0 !important;
+    font-size: 24px !important;
+    z-index: 9999 !important;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.2) !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+    text-decoration: none !important;
+    transition: all 0.3s ease !important;
 }
-.floating-ig:hover span {
-    max-width: 200px;
+.floating-pt {
+    position: fixed !important;
+    top: calc(50% + 110px) !important;
+    left: 0 !important;
+    transform: translateY(-50%) !important;
+    background-color: #000000 !important;
+    color: white !important;
+    padding: 10px 15px !important;
+    border-radius: 0 5px 5px 0 !important;
+    font-size: 24px !important;
+    z-index: 9999 !important;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.2) !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+    text-decoration: none !important;
+    transition: all 0.3s ease !important;
 }
-.floating-ig:hover {
-    padding-right: 20px;
-    color: white;
+.floating-fb {
+    position: fixed !important;
+    top: calc(50% + 165px) !important;
+    left: 0 !important;
+    transform: translateY(-50%) !important;
+    background-color: #000000 !important;
+    color: white !important;
+    padding: 10px 15px !important;
+    border-radius: 0 5px 5px 0 !important;
+    font-size: 24px !important;
+    z-index: 9999 !important;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.2) !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+    text-decoration: none !important;
+    transition: all 0.3s ease !important;
 }
+.floating-xtwitter {
+    position: fixed !important;
+    top: calc(50% + 220px) !important;
+    left: 0 !important;
+    transform: translateY(-50%) !important;
+    background-color: #000000 !important;
+    color: white !important;
+    padding: 10px 15px !important;
+    border-radius: 0 5px 5px 0 !important;
+    font-size: 24px !important;
+    z-index: 9999 !important;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.2) !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+    text-decoration: none !important;
+    transition: all 0.3s ease !important;
+}
+.floating-ig span, .floating-tk span, .floating-pt span, .floating-fb span, .floating-xtwitter span {
+    font-size: 14px !important;
+    max-width: 0 !important;
+    overflow: hidden !important;
+    white-space: nowrap !important;
+    transition: max-width 0.3s ease !important;
+    font-family: Arial, sans-serif !important;
+}
+.floating-ig:hover span, .floating-tk:hover span, .floating-pt:hover span, .floating-fb:hover span, .floating-xtwitter:hover span {
+    max-width: 200px !important;
+}
+.floating-ig:hover, .floating-tk:hover, .floating-pt:hover, .floating-fb:hover, .floating-xtwitter:hover {
+    padding-right: 20px !important;
+    color: white !important;
+    transform: translateY(-50%) !important;
+}
+.floating-xtwitter .fa-x-twitter, .floating-xtwitter svg {
+    color: white !important;
+    fill: white !important;
+}
+
 /* Scroll to Top Button */
 .scroll-top-btn {
     position: fixed !important;
@@ -265,7 +343,13 @@ var ElementorProFrontendConfig = {"ajaxurl":"\/wp-admin\/admin-ajax.php","nonce"
     transform: translateY(-5px);
     background-color: #333333;
 }
-</style><a class="floating-ig" href="https://instagram.com/turponefoods" target="_blank"><i class="fa-brands fa-instagram"></i><span>Follow us on Instagram</span></a><button class="scroll-top-btn" id="scrollTopBtn" title="Go to top"><i class="fa-solid fa-arrow-up"></i></button><script>
+</style>
+<a class="floating-ig" href="https://instagram.com/turponefoods" target="_blank"><i class="fa-brands fa-instagram"></i><span>Follow us on Instagram</span></a>
+<a class="floating-tk" href="https://www.tiktok.com/@turponefoods" target="_blank"><i class="fa-brands fa-tiktok"></i><span>Follow us on Tik Tok</span></a>
+<a class="floating-pt" href="https://ca.pinterest.com/turponefoods/" target="_blank"><i class="fa-brands fa-pinterest"></i><span>Follow us on Pinterest</span></a>
+<a class="floating-fb" href="https://www.facebook.com/people/Turpone-Foods/61593551650708/" target="_blank"><i class="fa-brands fa-facebook"></i><span>Follow us on Facebook</span></a>
+<a class="floating-xtwitter" href="https://x.com/TurponeFoods" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="0.85em" height="0.85em" fill="white" style="display:inline-block;vertical-align:middle;"><path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"/></svg><span>Follow us on X</span></a>
+<button class="scroll-top-btn" id="scrollTopBtn" title="Go to top"><i class="fa-solid fa-arrow-up"></i></button><script>
 document.addEventListener("DOMContentLoaded", function() {
     var scrollTopBtn = document.getElementById("scrollTopBtn");
     window.addEventListener("scroll", function() {
