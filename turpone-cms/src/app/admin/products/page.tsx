@@ -100,7 +100,7 @@ export default function ProductsPage() {
                   <TableCell className="font-medium">{product.title}</TableCell>
                   <TableCell>{product.category}</TableCell>
                   <TableCell className="text-right">
-                    <Button variant="outline" size="sm" className="mr-2" onClick={() => router.push(`/admin/products/${product.id}`)}>
+                    <Button variant="outline" size="sm" className="mr-2" onClick={() => router.push(`/admin/products/edit?id=${product.id}`)}>
                       Edit
                     </Button>
                     <Button variant="destructive" size="sm" onClick={() => handleDelete(product.id)}>

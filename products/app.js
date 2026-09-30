@@ -1,11 +1,29 @@
 
+function resolveImageUrl(img) {
+    if (!img) return '/assets/images/TF-LOgo.svg';
+    if (img.startsWith('http://') || img.startsWith('https://') || img.startsWith('data:') || img.startsWith('/')) {
+        return img;
+    }
+    return '/assets/images/ca_imgs/' + img;
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     const grid = document.getElementById('products-grid');
     const filters = document.querySelectorAll('.category-filter');
     
+    function getProductList() {
+        if (window.ProductStore) {
+            return window.ProductStore.getAll();
+        }
+        return (typeof productsData !== 'undefined') ? productsData : [];
+    }
+
     function renderProducts(category) {
         grid.innerHTML = '';
-        let filtered = category === 'All' ? [...productsData].sort((a, b) => a.category.localeCompare(b.category)) : productsData.filter(p => p.category === category);
+        const allProds = getProductList();
+        let filtered = category === 'All' 
+            ? [...allProds].sort((a, b) => (a.category || '').localeCompare(b.category || '')) 
+            : allProds.filter(p => p.category === category);
         
         if (filtered.length === 0) {
             grid.innerHTML = '<p style="grid-column: 1/-1; text-align: center; color: #777;">No products found in this category.</p>';
@@ -15,10 +33,11 @@ document.addEventListener('DOMContentLoaded', () => {
         filtered.forEach(p => {
             const card = document.createElement('div');
             card.className = 'product-card';
+            const imgSrc = resolveImageUrl(p.image);
             card.innerHTML = `
                 <a href="/products/detail.html?id=${p.id}" style="text-decoration:none; color:inherit; display:flex; flex-direction:column; height:100%;">
                     <div class="img-wrapper">
-                        <img src="/assets/images/ca_imgs/${p.image}" alt="${p.title}" loading="lazy">
+                        <img src="${imgSrc}" alt="${p.title}" loading="lazy">
                     </div>
                     <div class="card-cat">${p.category}</div>
                     <h4>${p.title}</h4>

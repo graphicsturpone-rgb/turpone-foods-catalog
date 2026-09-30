@@ -75,7 +75,7 @@ function renderStores() {
             html += `<div class="store-item" style="border-bottom: 1px solid #eaeaea; padding: 15px 10px;">
                 <div style="flex:1; display:flex; flex-direction:column; gap:8px;">
                     <div style="display:flex; justify-content:space-between; align-items:flex-start;">
-                        <img src="${store.logo}" class="store-logo-img" alt="${store.name} Logo" style="max-width:80px; max-height:30px;" />
+                        <img src="${store.logo}" class="store-logo-img" alt="${store.name} Logo" style="max-width:120px; max-height:45px;" />
                         <button class="btn-buy" style="padding: 8px 15px; font-size:11px;">Directions</button>
                     </div>
                     <div class="store-item-info" style="margin:0;">
@@ -164,10 +164,25 @@ function toggleAccordion(el) {
     }
 }
 
+function resolveImageUrl(img) {
+    if (!img) return '/assets/images/TF-LOgo.svg';
+    if (img.startsWith('http://') || img.startsWith('https://') || img.startsWith('data:') || img.startsWith('/')) {
+        return img;
+    }
+    return '/assets/images/ca_imgs/' + img;
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     const urlParams = new URLSearchParams(window.location.search);
-    const id = parseInt(urlParams.get('id'));
-    const product = productsData.find(p => p.id === id);
+    const idParam = urlParams.get('id');
+    
+    let product = null;
+    if (window.ProductStore) {
+        product = window.ProductStore.getById(idParam);
+    } else if (typeof productsData !== 'undefined') {
+        const numId = parseInt(idParam);
+        product = productsData.find(p => p.id === numId || String(p.id) === String(idParam));
+    }
 
     if (!product) {
         document.getElementById('product-content').innerHTML = '<h2 style="text-align:center; padding: 50px;">Product Not Found</h2>';
@@ -175,28 +190,64 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Populate data
-    document.getElementById('breadcrumb-cat').textContent = product.category;
-    document.getElementById('title-cat').textContent = product.category;
-    document.getElementById('product-title').textContent = product.title;
+    document.getElementById('breadcrumb-cat').textContent = product.category || 'Product';
+    document.getElementById('title-cat').textContent = product.category || 'Product';
+    document.getElementById('product-title').textContent = product.title || '';
     
     const mainImg = document.getElementById('main-img');
-    mainImg.src = '/assets/images/ca_imgs/' + product.image;
+    const mainImgSrc = resolveImageUrl(product.image);
+    mainImg.src = mainImgSrc;
     
-    // Setup thumbnails (just repeating the image 4 times for layout preview)
-    const thumbs = document.querySelectorAll('.thumb-box img');
-    thumbs.forEach(t => t.src = '/assets/images/ca_imgs/' + product.image);
+    // Gallery Thumbnails setup
+    let galleryImages = [];
+    if (Array.isArray(product.gallery) && product.gallery.length > 0) {
+        galleryImages = product.gallery.map(img => resolveImageUrl(img));
+        // Ensure the main image is the first in gallery if not already present
+        if (!galleryImages.includes(mainImgSrc)) {
+            galleryImages.unshift(mainImgSrc);
+        }
+    } else if (product.image) {
+        galleryImages = [mainImgSrc];
+    }
 
-    document.getElementById('desc-text').textContent = product.description;
+    const thumbsContainer = document.querySelector('.thumbs-container');
+    if (thumbsContainer) {
+        thumbsContainer.innerHTML = '';
+        galleryImages.forEach((imgUrl, idx) => {
+            const thumbBox = document.createElement('div');
+            thumbBox.className = 'thumb-box';
+            thumbBox.style.cssText = `width:70px; height:70px; border: 1px solid ${idx === 0 ? '#111' : '#ddd'}; border-radius:8px; padding:8px; background:#fff; cursor:pointer; display:flex; align-items:center; justify-content:center; transition: all 0.2s ease;`;
+            thumbBox.innerHTML = `<img src="${imgUrl}" alt="Thumbnail ${idx + 1}" style="max-width:100%; max-height:100%; object-fit:contain;" />`;
+            
+            // Hover and click dynamic image swap
+            const selectThumbnail = () => {
+                mainImg.src = imgUrl;
+                document.querySelectorAll('.thumbs-container .thumb-box').forEach(b => {
+                    b.style.borderColor = '#ddd';
+                    b.style.transform = 'scale(1)';
+                });
+                thumbBox.style.borderColor = '#111';
+                thumbBox.style.transform = 'scale(1.05)';
+            };
+
+            thumbBox.addEventListener('mouseenter', selectThumbnail);
+            thumbBox.addEventListener('click', selectThumbnail);
+            thumbsContainer.appendChild(thumbBox);
+        });
+    }
+
+    document.getElementById('desc-text').textContent = product.description || 'Authentic Turpone quality, crafted for excellence.';
     
     // Accordions
-    document.getElementById('ingredients-text').textContent = product.ingredients || 'Not available';
-    document.getElementById('nutrition-text').textContent = 'Nutrition information coming soon.';
-    document.getElementById('storage-text').textContent = 'Store in a cool, dry place.';
     document.getElementById('details-text').textContent = product.features || 'This package contains premium ingredients crafted for authenticity.';
+    document.getElementById('ingredients-text').textContent = product.ingredients || 'Ingredients information coming soon.';
+    document.getElementById('nutrition-text').textContent = product.nutrition || 'Nutrition facts coming soon.';
+    document.getElementById('storage-text').textContent = product.storage || 'Store in a cool, dry place.';
 
     // Pinsa specific block
     if (product.category === 'Frozen Pinsa') {
-        document.getElementById('pinsa-info').style.display = 'block';
+        const pinsaInfo = document.getElementById('pinsa-info');
+        if (pinsaInfo) pinsaInfo.style.display = 'block';
     }
 
     // Initial render of store locator
