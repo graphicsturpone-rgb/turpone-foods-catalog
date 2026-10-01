@@ -616,12 +616,12 @@
                             <label for="formImage">Main Image *</label>
                             <div class="upload-input-group">
                                 <input type="text" id="formImage" required placeholder="Filename or full URL" oninput="updateImagePreviews()">
-                                <label class="btn-upload-file" title="Upload image directly from your computer">
+                                <label class="btn-upload-file" title="Upload image directly from your computer (webp, png, jpg)">
                                     <i class="fa-solid fa-arrow-up-from-bracket"></i> Upload
-                                    <input type="file" id="mainFileInput" accept="image/*" style="display:none;" onchange="handleMainFileUpload(this)">
+                                    <input type="file" id="mainFileInput" accept=".webp,.png,.jpg,.jpeg,image/webp,image/png,image/jpeg" style="display:none;" onchange="handleMainFileUpload(this)">
                                 </label>
                             </div>
-                            <span class="hint">Upload from your computer, or type a filename in <code>assets/images/ca_imgs/</code> or full URL.</span>
+                            <span class="hint">Upload from your computer (.webp, .png, .jpg), or type a filename in <code>assets/images/ca_imgs/</code> or full URL.</span>
                             <div class="main-preview-wrap">
                                 <div class="main-preview-box" id="mainPreviewBox" title="Main image preview">
                                     <span style="font-size:11px; color:#94a3b8;">No image</span>
@@ -635,13 +635,14 @@
                     <div class="form-group">
                         <label for="formGallery">Images Gallery (Hover Thumbnails)</label>
                         <div class="upload-input-group">
-                            <input type="text" id="formGallery" placeholder="e.g. pinsa-box.webp, pinsa-slice.webp" oninput="updateImagePreviews()">
-                            <label class="btn-upload-file" title="Upload multiple gallery images from your computer">
+                            <input type="text" id="formGallery" placeholder="Add filename (e.g. pinsa-box.webp) or URL, press Enter to add" onkeydown="handleGalleryInputKey(event)">
+                            <button type="button" class="btn-cancel" style="padding: 8px 12px; font-size:12px; font-weight:600;" onclick="addGalleryUrlFromInput()">Add</button>
+                            <label class="btn-upload-file" title="Upload gallery images from your computer (.webp, .png, .jpg)">
                                 <i class="fa-solid fa-folder-open"></i> Upload Images
-                                <input type="file" id="galleryFileInput" accept="image/*" multiple style="display:none;" onchange="handleGalleryFileUpload(this)">
+                                <input type="file" id="galleryFileInput" accept=".webp,.png,.jpg,.jpeg,image/webp,image/png,image/jpeg" multiple style="display:none;" onchange="handleGalleryFileUpload(this)">
                             </label>
                         </div>
-                        <span class="hint">Upload multiple images from your computer, or type comma-separated filenames. Hovering thumbnails on the product page previews them.</span>
+                        <span class="hint">Upload .webp, .png, or .jpg images from your computer, or type a filename/URL and click Add. Hovering thumbnails on the product page previews them.</span>
                         <div class="gallery-preview-box" id="galleryPreviewBox"></div>
                     </div>
 
@@ -696,6 +697,7 @@
 
     <script>
         let currentProducts = [];
+        let currentGallery = [];
 
         function showToast(msg) {
             const toast = document.getElementById('toast');
@@ -712,8 +714,42 @@
             return '/assets/images/ca_imgs/' + img;
         }
 
+        // Repair any previously split DataURLs in localStorage
+        function sanitizeProductGallery(gallery) {
+            if (!Array.isArray(gallery)) return [];
+            const sanitized = [];
+            for (let i = 0; i < gallery.length; i++) {
+                const item = gallery[i];
+                if (typeof item !== 'string') continue;
+                // If it was split by comma at "data:image/...;base64", reconstruct if next piece exists
+                if (item.startsWith('data:image/') && item.includes(';base64') && !item.includes(',') && i + 1 < gallery.length) {
+                    sanitized.push(item + ',' + gallery[i + 1]);
+                    i++;
+                } else {
+                    sanitized.push(item);
+                }
+            }
+            return sanitized;
+        }
+
         function loadProducts() {
             if (window.ProductStore) {
+                // Check if any custom products have broken split galleries and repair them
+                const custom = window.ProductStore.getCustom();
+                let dirty = false;
+                custom.forEach(p => {
+                    if (Array.isArray(p.gallery)) {
+                        const repaired = sanitizeProductGallery(p.gallery);
+                        if (repaired.length !== p.gallery.length) {
+                            p.gallery = repaired;
+                            dirty = true;
+                        }
+                    }
+                });
+                if (dirty) {
+                    window.ProductStore.saveCustom(custom);
+                }
+
                 currentProducts = window.ProductStore.getAll();
             } else if (typeof productsData !== 'undefined') {
                 currentProducts = [...productsData];
@@ -748,7 +784,8 @@
             tbody.innerHTML = filtered.map(p => {
                 const isCustom = String(p.id).startsWith('prod_');
                 const imgSrc = resolveImage(p.image);
-                const galleryCount = (Array.isArray(p.gallery) ? p.gallery.length : 0);
+                const galleryList = sanitizeProductGallery(p.gallery);
+                const galleryCount = galleryList.length;
 
                 return `
                     <tr>
@@ -794,7 +831,9 @@
             document.getElementById('productForm').reset();
             document.getElementById('mainFileInput').value = '';
             document.getElementById('galleryFileInput').value = '';
-            document.getElementById('galleryPreviewBox').innerHTML = '';
+            document.getElementById('formGallery').value = '';
+            currentGallery = [];
+            renderGalleryPreviews();
             updateImagePreviews();
             document.getElementById('productModal').classList.add('active');
         }
@@ -808,7 +847,6 @@
             document.getElementById('formTitle').value = product.title || '';
             document.getElementById('formCategory').value = product.category || '';
             document.getElementById('formImage').value = product.image || '';
-            document.getElementById('formGallery').value = Array.isArray(product.gallery) ? product.gallery.join(', ') : (product.gallery || '');
             document.getElementById('formDescription').value = product.description || '';
             document.getElementById('formFeatures').value = product.features || '';
             document.getElementById('formIngredients').value = product.ingredients || '';
@@ -816,7 +854,18 @@
             document.getElementById('formStorage').value = product.storage || '';
             document.getElementById('mainFileInput').value = '';
             document.getElementById('galleryFileInput').value = '';
+            document.getElementById('formGallery').value = '';
 
+            // Populate currentGallery safely
+            if (Array.isArray(product.gallery)) {
+                currentGallery = sanitizeProductGallery(product.gallery);
+            } else if (typeof product.gallery === 'string' && product.gallery.trim()) {
+                currentGallery = [product.gallery.trim()];
+            } else {
+                currentGallery = [];
+            }
+
+            renderGalleryPreviews();
             updateImagePreviews();
             document.getElementById('productModal').classList.add('active');
         }
@@ -828,6 +877,15 @@
         function handleMainFileUpload(input) {
             if (!input.files || !input.files[0]) return;
             const file = input.files[0];
+            
+            // Validate allowed extensions: webp, png, jpg, jpeg
+            const allowed = /\.(webp|png|jpe?g)$/i;
+            if (!allowed.test(file.name) && !file.type.match(/^image\/(webp|png|jpeg)$/i)) {
+                alert('Allowed image formats are: .webp, .png, .jpg, .jpeg');
+                input.value = '';
+                return;
+            }
+
             const reader = new FileReader();
             reader.onload = function(e) {
                 document.getElementById('formImage').value = e.target.result;
@@ -846,36 +904,82 @@
         function handleGalleryFileUpload(input) {
             if (!input.files || !input.files.length) return;
             const files = Array.from(input.files);
-            let processed = 0;
-            const newImgs = [];
+            const allowed = /\.(webp|png|jpe?g)$/i;
+            const validFiles = files.filter(f => allowed.test(f.name) || f.type.match(/^image\/(webp|png|jpeg)$/i));
 
-            files.forEach(file => {
+            if (validFiles.length < files.length) {
+                alert('Some files were skipped. Only .webp, .png, .jpg images are supported.');
+            }
+
+            if (validFiles.length === 0) {
+                input.value = '';
+                return;
+            }
+
+            let processed = 0;
+            validFiles.forEach(file => {
                 const reader = new FileReader();
                 reader.onload = function(e) {
-                    newImgs.push(e.target.result);
+                    currentGallery.push(e.target.result);
                     processed++;
-                    if (processed === files.length) {
-                        const currentVal = document.getElementById('formGallery').value.trim();
-                        const currentArr = currentVal ? currentVal.split(',').map(s => s.trim()).filter(Boolean) : [];
-                        const merged = currentArr.concat(newImgs);
-                        document.getElementById('formGallery').value = merged.join(', ');
-                        updateImagePreviews();
-                        showToast(`Added ${files.length} gallery image${files.length > 1 ? 's' : ''}`);
+                    if (processed === validFiles.length) {
+                        input.value = '';
+                        renderGalleryPreviews();
+                        showToast(`Added ${validFiles.length} gallery image${validFiles.length > 1 ? 's' : ''}`);
                     }
                 };
                 reader.readAsDataURL(file);
             });
         }
 
-        function removeGalleryImage(index) {
-            const currentVal = document.getElementById('formGallery').value.trim();
-            if (!currentVal) return;
-            let currentArr = currentVal.split(',').map(s => s.trim()).filter(Boolean);
-            if (index >= 0 && index < currentArr.length) {
-                currentArr.splice(index, 1);
-                document.getElementById('formGallery').value = currentArr.join(', ');
-                updateImagePreviews();
+        function handleGalleryInputKey(e) {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                addGalleryUrlFromInput();
             }
+        }
+
+        function addGalleryUrlFromInput() {
+            const input = document.getElementById('formGallery');
+            const val = input.value.trim();
+            if (!val) return;
+            // If user pasted comma-separated filenames (non-data URLs)
+            if (!val.startsWith('data:')) {
+                const items = val.split(',').map(s => s.trim()).filter(Boolean);
+                currentGallery.push(...items);
+            } else {
+                currentGallery.push(val);
+            }
+            input.value = '';
+            renderGalleryPreviews();
+        }
+
+        function removeGalleryImage(index) {
+            if (index >= 0 && index < currentGallery.length) {
+                currentGallery.splice(index, 1);
+                renderGalleryPreviews();
+            }
+        }
+
+        function renderGalleryPreviews() {
+            const previewBox = document.getElementById('galleryPreviewBox');
+            if (!previewBox) return;
+
+            if (currentGallery.length === 0) {
+                previewBox.innerHTML = '';
+                return;
+            }
+
+            previewBox.innerHTML = currentGallery.map((item, idx) => {
+                const resolvedThumb = resolveImage(item);
+                return `
+                    <div class="preview-img-box" title="Gallery image ${idx + 1}">
+                        <img src="${resolvedThumb}" onerror="this.src='/assets/images/TF-LOgo.svg'">
+                        <span class="thumb-badge">${idx + 1}</span>
+                        <button type="button" class="btn-remove-thumb" onclick="removeGalleryImage(${idx})" title="Remove this gallery image">&times;</button>
+                    </div>
+                `;
+            }).join('');
         }
 
         function updateImagePreviews() {
@@ -892,26 +996,6 @@
                 mainBox.innerHTML = `<span style="font-size:11px; color:#94a3b8;">No image</span>`;
                 if (btnRemoveMain) btnRemoveMain.style.display = 'none';
             }
-
-            const previewBox = document.getElementById('galleryPreviewBox');
-            const galleryVal = document.getElementById('formGallery').value.trim();
-
-            if (!galleryVal) {
-                previewBox.innerHTML = '';
-                return;
-            }
-
-            const galleryItems = galleryVal.split(',').map(s => s.trim()).filter(Boolean);
-            previewBox.innerHTML = galleryItems.map((item, idx) => {
-                const resolvedThumb = resolveImage(item);
-                return `
-                    <div class="preview-img-box" title="Gallery image ${idx + 1}">
-                        <img src="${resolvedThumb}" onerror="this.src='/assets/images/TF-LOgo.svg'">
-                        <span class="thumb-badge">${idx + 1}</span>
-                        <button type="button" class="btn-remove-thumb" onclick="removeGalleryImage(${idx})" title="Remove this gallery image">&times;</button>
-                    </div>
-                `;
-            }).join('');
         }
 
         function handleFormSubmit(e) {
@@ -920,21 +1004,26 @@
             const title = document.getElementById('formTitle').value.trim();
             const category = document.getElementById('formCategory').value.trim();
             const image = document.getElementById('formImage').value.trim();
-            const galleryInput = document.getElementById('formGallery').value.trim();
             const description = document.getElementById('formDescription').value.trim();
             const features = document.getElementById('formFeatures').value.trim();
             const ingredients = document.getElementById('formIngredients').value.trim();
             const nutrition = document.getElementById('formNutrition').value.trim();
             const storage = document.getElementById('formStorage').value.trim();
 
-            const gallery = galleryInput ? galleryInput.split(',').map(s => s.trim()).filter(Boolean) : [];
+            // Check if there is still un-added text in the gallery text field
+            const pendingGalleryText = document.getElementById('formGallery').value.trim();
+            if (pendingGalleryText && !pendingGalleryText.startsWith('data:')) {
+                const items = pendingGalleryText.split(',').map(s => s.trim()).filter(Boolean);
+                currentGallery.push(...items);
+                document.getElementById('formGallery').value = '';
+            }
 
             const productData = {
                 id: id || ('prod_' + Date.now()),
                 title,
                 category,
                 image,
-                gallery,
+                gallery: [...currentGallery],
                 description,
                 features,
                 ingredients,

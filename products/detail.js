@@ -198,10 +198,28 @@ document.addEventListener('DOMContentLoaded', () => {
     const mainImgSrc = resolveImageUrl(product.image);
     mainImg.src = mainImgSrc;
     
+    // Sanitize any previously split Data URLs
+    function sanitizeGallery(gallery) {
+        if (!Array.isArray(gallery)) return [];
+        const sanitized = [];
+        for (let i = 0; i < gallery.length; i++) {
+            const item = gallery[i];
+            if (typeof item !== 'string') continue;
+            if (item.startsWith('data:image/') && item.includes(';base64') && !item.includes(',') && i + 1 < gallery.length) {
+                sanitized.push(item + ',' + gallery[i + 1]);
+                i++;
+            } else {
+                sanitized.push(item);
+            }
+        }
+        return sanitized;
+    }
+
     // Gallery Thumbnails setup
     let galleryImages = [];
-    if (Array.isArray(product.gallery) && product.gallery.length > 0) {
-        galleryImages = product.gallery.map(img => resolveImageUrl(img));
+    const cleanGallery = sanitizeGallery(product.gallery);
+    if (cleanGallery.length > 0) {
+        galleryImages = cleanGallery.map(img => resolveImageUrl(img));
         // Ensure the main image is the first in gallery if not already present
         if (!galleryImages.includes(mainImgSrc)) {
             galleryImages.unshift(mainImgSrc);
