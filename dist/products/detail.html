@@ -140,7 +140,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 .detail-layout { display: flex; max-width: 1200px; margin: 40px auto; padding: 0 20px; gap: 60px; flex-wrap: wrap;}
 .detail-left { flex: 1; min-width: 300px; }
 .detail-right { flex: 1; min-width: 300px; }
-.main-img-box { border: 1px solid #eaeaea; border-radius: 8px; padding: 20px; background: #fff; text-align: center; margin-bottom: 20px; height: 500px; display: flex; align-items: center; justify-content: center; }
+.main-img-box { border: none; padding: 0; background: #fff; text-align: center; margin-bottom: 20px; height: 500px; display: flex; align-items: center; justify-content: center; }
 .main-img-box img { max-width: 100%; max-height: 100%; object-fit: contain; }
 .store-list { border: 1px solid #eaeaea; border-radius: 8px; background: #fff; overflow: hidden; }
 .store-list-header { display: flex; }
@@ -183,7 +183,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
     
       <div class="detail-layout">
           <div class="detail-left">
-              <div class="main-img-box" style="border-radius:12px; padding:30px; border: 1px solid #ddd;">
+              <div class="main-img-box" style="border: none; padding: 0;">
                   <img id="main-img" src="" alt="Product Image">
               </div>
               <div class="thumbs-container" style="display:flex; justify-content:center; gap:15px; margin-top:20px;">
