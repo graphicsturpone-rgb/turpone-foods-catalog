@@ -377,7 +377,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     "Senior Graphic Design / AI Web Developer": isFr ? "Concepteur Graphique Senior / Développeur Web IA" : (isEs ? "Diseñador Gráfico Senior / Desarrollador Web IA" : "Senior Graphic Design / AI Web Developer"),
                     "Digital Marketing Intern": isFr ? "Stagiaire en Marketing Numérique" : (isEs ? "Pasante de Marketing Digital" : "Digital Marketing Intern"),
                     "Brand and Marketing Coordinator": isFr ? "Coordinateur de Marque et Marketing" : (isEs ? "Coordinador de Marca y Marketing" : "Brand and Marketing Coordinator"),
-                    "Sales and Product Management": isFr ? "Gestion des Ventes et des Produits" : (isEs ? "Gestión de Ventas y Productos" : "Sales and Product Management")
+                    "Sales and Product Management": isFr ? "Gestion des Ventes et des Produits" : (isEs ? "Gestión de Ventas y Productos" : "Sales and Product Management"),
+                    "Sales Coordinator": isFr ? "Coordinateur des Ventes" : (isEs ? "Coordinador de Ventas" : "Sales Coordinator")
                 };
                 return roles[role] || role;
             };
@@ -396,7 +397,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 { id: "member8", name: "Stephen Liu", role: "Accounting", img: "Stephen%20Liu.webp" },
                 { id: "member12", name: "Natalia Leano", role: "Digital Marketing Intern", img: "Natalia.webp" },
                 { id: "member13", name: "KahKashan Ansary", role: "Brand and Marketing Coordinator", img: "Kkay.webp" },
-                { id: "member14", name: "Grace Sidaway", role: "Sales and Product Management", img: "Grace.webp" }
+                { id: "member14", name: "Grace Sidaway", role: "Sales Coordinator", img: "Grace.webp" }
             ];
 
             let html = `
