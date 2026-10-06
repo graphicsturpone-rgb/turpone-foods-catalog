@@ -112,7 +112,7 @@ body.home:not(.page-products) .lang-btn.active {
     color: #ffffff !important;
 }
 body.home:not(.page-products) .lang-separator {
-    color: rgba(255, 255, 255, 0.5) !important;
+    color: #ffffff !important;
 }
 
 /* When homepage is scrolled, revert nav text to dark for readability on frosted light background */
