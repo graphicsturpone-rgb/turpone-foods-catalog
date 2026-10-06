@@ -80,13 +80,46 @@
         return true;
     }
 
+    // Background live sync from /api/products if connected
+    function syncFromApi(callback) {
+        if (typeof fetch === 'undefined') return;
+        fetch('/api/products')
+            .then(res => res.json())
+            .then(data => {
+                if (data && data.success && Array.isArray(data.products)) {
+                    window.__apiProducts = data.products;
+                    if (typeof callback === 'function') callback(data.products);
+                }
+            })
+            .catch(() => { /* offline fallback */ });
+    }
+
+    // Run background sync on load
+    if (typeof window !== 'undefined') {
+        syncFromApi();
+    }
+
     // Export to window
     window.ProductStore = {
-        getAll: getAllProducts,
+        getAll: function() {
+            if (window.__apiProducts && window.__apiProducts.length > 0) {
+                // If remote API products are loaded, merge custom drafts
+                const custom = getCustomProducts();
+                const merged = [...window.__apiProducts];
+                custom.forEach(c => {
+                    const idx = merged.findIndex(p => String(p.id) === String(c.id));
+                    if (idx >= 0) merged[idx] = { ...merged[idx], ...c };
+                    else merged.unshift(c);
+                });
+                return merged;
+            }
+            return getAllProducts();
+        },
         getById: getProductById,
         save: saveProduct,
         delete: deleteProduct,
         getCustom: getCustomProducts,
-        saveCustom: saveCustomProducts
+        saveCustom: saveCustomProducts,
+        syncFromApi: syncFromApi
     };
 })(window);
