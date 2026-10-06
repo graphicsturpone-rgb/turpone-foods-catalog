@@ -276,3 +276,20 @@ a, button, .elementor-button { transition: all 0.3s ease !important; }
     transform: none !important;
 }
 
+/* Footer Typography: 12px font size for all 4 columns */
+.elementor-location-footer .elementor-element-76b403c,
+.elementor-location-footer .elementor-element-8714e54,
+.elementor-location-footer .elementor-element-36fccaa,
+.elementor-location-footer .elementor-element-fbf6206,
+.elementor-location-footer .elementor-element-76b403c *,
+.elementor-location-footer .elementor-element-8714e54 *,
+.elementor-location-footer .elementor-element-36fccaa *,
+.elementor-location-footer .elementor-element-fbf6206 *,
+.elementor-location-footer .elementor-icon-box-description,
+.elementor-location-footer .elementor-icon-list-item,
+.elementor-location-footer .elementor-icon-list-text,
+.elementor-location-footer .elementor-icon-list-text span,
+.elementor-location-footer .elementor-icon-list-text a {
+    font-size: 12px !important;
+}
+
