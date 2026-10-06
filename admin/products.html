@@ -520,6 +520,9 @@
             <span class="admin-brand-badge">Catalog Backend</span>
         </a>
         <div class="admin-actions">
+            <button class="btn-view-store" onclick="copyCatalogData()" title="Click to copy newly added products data to send to AI assistant">
+                <i class="fa-solid fa-copy"></i> Copy Catalog Data
+            </button>
             <a href="/products/" class="btn-view-store" target="_blank">
                 <i class="fa-solid fa-arrow-up-right-from-square"></i> View Store Catalog
             </a>
@@ -698,6 +701,26 @@
     <script>
         let currentProducts = [];
         let currentGallery = [];
+
+        function copyCatalogData() {
+            const data = localStorage.getItem('turpone_custom_products');
+            if (!data || data === '[]') {
+                alert('No custom products found in this browser storage.');
+                return;
+            }
+            navigator.clipboard.writeText(data).then(() => {
+                showToast('Catalog data copied to clipboard! Just paste it in the chat.');
+            }).catch(err => {
+                // Fallback for older browsers
+                const ta = document.createElement('textarea');
+                ta.value = data;
+                document.body.appendChild(ta);
+                ta.select();
+                document.execCommand('copy');
+                document.body.removeChild(ta);
+                showToast('Catalog data copied to clipboard! Just paste it in the chat.');
+            });
+        }
 
         function showToast(msg) {
             const toast = document.getElementById('toast');
