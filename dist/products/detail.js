@@ -259,8 +259,26 @@ document.addEventListener('DOMContentLoaded', () => {
     // Accordions
     document.getElementById('details-text').textContent = product.features || 'This package contains premium ingredients crafted for authenticity.';
     document.getElementById('ingredients-text').textContent = product.ingredients || 'Ingredients information coming soon.';
-    document.getElementById('nutrition-text').textContent = product.nutrition || 'Nutrition facts coming soon.';
-    document.getElementById('storage-text').textContent = product.storage || 'Store in a cool, dry place.';
+
+    // Interactive 2x Zoom on Mouse Hover for Main Product Image
+    const mainImgBox = document.querySelector('.main-img-box');
+    if (mainImgBox && mainImg) {
+        mainImgBox.addEventListener('mousemove', (e) => {
+            const rect = mainImgBox.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            const xPercent = (x / rect.width) * 100;
+            const yPercent = (y / rect.height) * 100;
+
+            mainImg.style.transformOrigin = `${xPercent}% ${yPercent}%`;
+            mainImg.style.transform = 'scale(2)';
+        });
+
+        mainImgBox.addEventListener('mouseleave', () => {
+            mainImg.style.transformOrigin = 'center center';
+            mainImg.style.transform = 'scale(1)';
+        });
+    }
 
     // Pinsa specific block
     if (product.category === 'Frozen Pinsa') {

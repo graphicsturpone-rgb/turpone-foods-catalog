@@ -666,18 +666,6 @@
                         <label for="formIngredients">Ingredients (Accordion)</label>
                         <textarea id="formIngredients" rows="2" placeholder="e.g. Ingredients: Extra-virgin olive oil, balsamic vinegar, basil, crushed red pepper, garlic..."></textarea>
                     </div>
-
-                    <!-- Nutrition Facts -->
-                    <div class="form-group">
-                        <label for="formNutrition">Nutrition Facts (Accordion)</label>
-                        <textarea id="formNutrition" rows="2" placeholder="e.g. Calories 280, Fat 12g, Sodium 540mg, Carbohydrates 32g, Protein 11g..."></textarea>
-                    </div>
-
-                    <!-- Instructions / Storage -->
-                    <div class="form-group">
-                        <label for="formStorage">Instructions / Storage (Accordion)</label>
-                        <textarea id="formStorage" rows="2" placeholder="e.g. Keep frozen until ready to bake. Preheat oven to 425°F. Store in a cool, dry place."></textarea>
-                    </div>
                 </div>
 
                 <div class="modal-footer">
@@ -873,8 +861,6 @@
             document.getElementById('formDescription').value = product.description || '';
             document.getElementById('formFeatures').value = product.features || '';
             document.getElementById('formIngredients').value = product.ingredients || '';
-            document.getElementById('formNutrition').value = product.nutrition || '';
-            document.getElementById('formStorage').value = product.storage || '';
             document.getElementById('mainFileInput').value = '';
             document.getElementById('galleryFileInput').value = '';
             document.getElementById('formGallery').value = '';
@@ -1036,8 +1022,6 @@
             const description = document.getElementById('formDescription').value.trim();
             const features = document.getElementById('formFeatures').value.trim();
             const ingredients = document.getElementById('formIngredients').value.trim();
-            const nutrition = document.getElementById('formNutrition').value.trim();
-            const storage = document.getElementById('formStorage').value.trim();
 
             // Check if there is still un-added text in the gallery text field
             const pendingGalleryText = document.getElementById('formGallery').value.trim();
@@ -1055,9 +1039,7 @@
                 gallery: [...currentGallery],
                 description,
                 features,
-                ingredients,
-                nutrition,
-                storage
+                ingredients
             };
 
             // 1. Immediately save to local store for instant UI response
