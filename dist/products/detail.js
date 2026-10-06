@@ -288,7 +288,168 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Initial render of store locator
     renderStores();
+
+    // Related Products Carousel (4 columns, sliding 2 at a time)
+    initRelatedProducts(product);
     
     // Attach accordion listeners globally
     window.toggleAccordion = toggleAccordion;
 });
+
+function initRelatedProducts(currentProduct) {
+    const section = document.getElementById('related-products-section');
+    const track = document.getElementById('relatedTrack');
+    const prevBtn = document.getElementById('relatedPrevBtn');
+    const nextBtn = document.getElementById('relatedNextBtn');
+    const dotsContainer = document.getElementById('relatedDots');
+
+    if (!section || !track) return;
+
+    // Fetch all products
+    let allProducts = [];
+    if (window.ProductStore) {
+        allProducts = window.ProductStore.getAll();
+    } else if (typeof productsData !== 'undefined') {
+        allProducts = [...productsData];
+    }
+
+    // Exclude current product
+    const otherProducts = allProducts.filter(p => String(p.id) !== String(currentProduct.id));
+    if (otherProducts.length === 0) return;
+
+    // Prioritize products in the same category, then other categories
+    const sameCategory = otherProducts.filter(p => p.category === currentProduct.category);
+    const diffCategory = otherProducts.filter(p => p.category !== currentProduct.category);
+    const relatedList = [...sameCategory, ...diffCategory];
+
+    if (relatedList.length === 0) return;
+
+    // Render cards
+    track.innerHTML = relatedList.map(p => {
+        const imgSrc = resolveImageUrl(p.image);
+        return `
+            <a href="/products/detail.html?id=${p.id}" class="related-card">
+                <div>
+                    <div class="img-wrapper">
+                        <img src="${imgSrc}" alt="${p.title}" loading="lazy" onerror="this.src='/assets/images/TF-LOgo.svg'">
+                    </div>
+                    <div class="related-card-cat">${p.category || 'Product'}</div>
+                    <h4>${p.title}</h4>
+                </div>
+                <div class="btn-view">
+                    View Details <i class="fa-solid fa-arrow-right"></i>
+                </div>
+            </a>
+        `;
+    }).join('');
+
+    section.style.display = 'block';
+
+    // Carousel state
+    let currentIndex = 0;
+    const totalItems = relatedList.length;
+
+    function getVisibleCount() {
+        const width = window.innerWidth;
+        if (width <= 480) return 1;
+        if (width <= 768) return 2;
+        if (width <= 992) return 3;
+        return 4;
+    }
+
+    function getSlideStep() {
+        const visible = getVisibleCount();
+        // If 1 visible on mobile, slide 1; otherwise slide 2 at a time as requested
+        return visible === 1 ? 1 : 2;
+    }
+
+    function getMaxIndex() {
+        const visible = getVisibleCount();
+        return Math.max(0, totalItems - visible);
+    }
+
+    function updateCarousel() {
+        const visible = getVisibleCount();
+        const maxIdx = getMaxIndex();
+        if (currentIndex > maxIdx) currentIndex = maxIdx;
+        if (currentIndex < 0) currentIndex = 0;
+
+        const firstCard = track.children[0];
+        if (firstCard) {
+            const gap = window.innerWidth <= 768 ? 16 : (window.innerWidth <= 992 ? 20 : 24);
+            const cardWidth = firstCard.getBoundingClientRect().width;
+            const shift = currentIndex * (cardWidth + gap);
+            track.style.transform = `translateX(-${shift}px)`;
+        }
+
+        if (prevBtn) prevBtn.disabled = (currentIndex === 0);
+        if (nextBtn) nextBtn.disabled = (currentIndex >= maxIdx);
+
+        // Render dots
+        if (dotsContainer) {
+            const step = getSlideStep();
+            const dotSteps = [];
+            for (let i = 0; i <= maxIdx; i += step) {
+                dotSteps.push(i);
+            }
+            if (dotSteps[dotSteps.length - 1] !== maxIdx && maxIdx > 0) {
+                dotSteps.push(maxIdx);
+            }
+
+            dotsContainer.innerHTML = dotSteps.map(stepIdx => {
+                const isActive = (currentIndex >= stepIdx && currentIndex < stepIdx + step) || (stepIdx === maxIdx && currentIndex === maxIdx);
+                return `<button type="button" class="related-dot ${isActive ? 'active' : ''}" aria-label="Go to slide ${stepIdx + 1}" onclick="window.goRelatedSlide(${stepIdx})"></button>`;
+            }).join('');
+        }
+    }
+
+    window.goRelatedSlide = function(idx) {
+        currentIndex = idx;
+        updateCarousel();
+    };
+
+    function slideNext() {
+        const step = getSlideStep();
+        const maxIdx = getMaxIndex();
+        if (currentIndex < maxIdx) {
+            currentIndex = Math.min(currentIndex + step, maxIdx);
+        } else {
+            currentIndex = 0; // Loop back slowly to start
+        }
+        updateCarousel();
+    }
+
+    function slidePrev() {
+        const step = getSlideStep();
+        const maxIdx = getMaxIndex();
+        if (currentIndex > 0) {
+            currentIndex = Math.max(currentIndex - step, 0);
+        } else {
+            currentIndex = maxIdx;
+        }
+        updateCarousel();
+    }
+
+    if (nextBtn) nextBtn.addEventListener('click', slideNext);
+    if (prevBtn) prevBtn.addEventListener('click', slidePrev);
+
+    // Responsive update on resize
+    window.addEventListener('resize', () => {
+        updateCarousel();
+    });
+
+    // Auto-advance slowly every 4.5 seconds; pause on hover
+    let autoInterval = setInterval(slideNext, 4500);
+
+    section.addEventListener('mouseenter', () => {
+        clearInterval(autoInterval);
+    });
+
+    section.addEventListener('mouseleave', () => {
+        clearInterval(autoInterval);
+        autoInterval = setInterval(slideNext, 4500);
+    });
+
+    // Initial positioning
+    setTimeout(updateCarousel, 100);
+}
