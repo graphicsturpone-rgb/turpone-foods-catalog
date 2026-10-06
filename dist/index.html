@@ -159,6 +159,105 @@ wp.i18n.setLocaleData( { 'text direction\u0004ltr': [ 'ltr' ] } );
 var ElementorProFrontendConfig = {"ajaxurl":"\/wp-admin\/admin-ajax.php","nonce":"a806ee0c2b","urls":{"assets":"\/assets\/vendor\/ui-builder-pro\/assets\/","rest":"\/wp-json\/"},"settings":{"lazy_load_background_images":false},"popup":{"hasPopUps":false},"shareButtonsNetworks":{"facebook":{"title":"Facebook","has_counter":true},"twitter":{"title":"Twitter"},"linkedin":{"title":"LinkedIn","has_counter":true},"pinterest":{"title":"Pinterest","has_counter":true},"reddit":{"title":"Reddit","has_counter":true},"vk":{"title":"VK","has_counter":true},"odnoklassniki":{"title":"OK","has_counter":true},"tumblr":{"title":"Tumblr"},"digg":{"title":"Digg"},"skype":{"title":"Skype"},"stumbleupon":{"title":"StumbleUpon","has_counter":true},"mix":{"title":"Mix"},"telegram":{"title":"Telegram"},"pocket":{"title":"Pocket","has_counter":true},"xing":{"title":"XING","has_counter":true},"whatsapp":{"title":"WhatsApp"},"email":{"title":"Email"},"print":{"title":"Print"},"x-twitter":{"title":"X"},"threads":{"title":"Threads"}},"facebook_sdk":{"lang":"en_US","app_id":""},"lottie":{"defaultAnimationUrl":"\/assets\/vendor\/ui-builder-pro\/modules\/lottie\/assets\/animations\/default.json"}};
 //# sourceURL=elementor-pro-frontend-js-before
 </script><script id="elementor-pro-frontend-js" src="assets/js/frontend.min.js"></script><script id="pro-elements-handlers-js" src="assets/js/elements-handlers.min.js"></script><style>
+
+/* Architecture of Scale - 1 Column, 2 Rows Layout */
+.elementor-9 .elementor-element.elementor-element-bdd79f8 {
+    --flex-direction: column !important;
+    --min-height: auto !important;
+    padding-top: 80px !important;
+    padding-bottom: 80px !important;
+}
+.elementor-9 .elementor-element.elementor-element-bdd79f8 > .e-con-inner {
+    flex-direction: column !important;
+    gap: 48px !important;
+    width: 100% !important;
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    padding: 0 20px !important;
+}
+.elementor-9 .elementor-element.elementor-element-406b6fe {
+    --width: 100% !important;
+    width: 100% !important;
+    max-width: 780px !important;
+    margin: 0 auto !important;
+    text-align: center !important;
+}
+.elementor-9 .elementor-element.elementor-element-8794757 .elementor-image-box-wrapper {
+    text-align: center !important;
+}
+.elementor-9 .elementor-element.elementor-element-8794757 .elementor-image-box-title {
+    margin-bottom: 16px !important;
+}
+.elementor-9 .elementor-element.elementor-element-576dd45 {
+    --width: 100% !important;
+    width: 100% !important;
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 28px !important;
+    align-items: stretch !important;
+}
+.elementor-9 .elementor-element.elementor-element-576dd45 > .elementor-widget-icon-box {
+    width: 100% !important;
+    margin: 0 !important;
+    display: flex !important;
+}
+.elementor-9 .elementor-element.elementor-element-576dd45 .elementor-widget-container {
+    width: 100% !important;
+    padding: 36px 28px !important;
+    background-color: #FFFFFF !important;
+    border: 1px solid #EEEEEE !important;
+    border-radius: 12px !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04) !important;
+    transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+}
+.elementor-9 .elementor-element.elementor-element-576dd45 > .elementor-widget-icon-box:hover .elementor-widget-container {
+    transform: translateY(-8px) !important;
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.08) !important;
+    border-color: #DDDDDD !important;
+}
+.elementor-9 .elementor-element.elementor-element-576dd45 .elementor-icon-box-wrapper {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: flex-start !important;
+    text-align: left !important;
+    gap: 20px !important;
+}
+.elementor-9 .elementor-element.elementor-element-576dd45 .elementor-icon-box-icon {
+    flex-shrink: 0 !important;
+    margin-top: 2px !important;
+}
+.elementor-9 .elementor-element.elementor-element-576dd45 .elementor-icon svg {
+    width: 32px !important;
+    height: 32px !important;
+    fill: #000000 !important;
+}
+.elementor-9 .elementor-element.elementor-element-576dd45 .elementor-icon-box-title {
+    margin-bottom: 8px !important;
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    color: #111111 !important;
+    line-height: 1.4 !important;
+}
+.elementor-9 .elementor-element.elementor-element-576dd45 .elementor-icon-box-description {
+    font-size: 14px !important;
+    line-height: 1.6 !important;
+    color: #666666 !important;
+    margin: 0 !important;
+}
+@media (max-width: 991px) {
+    .elementor-9 .elementor-element.elementor-element-576dd45 {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+    }
+    .elementor-9 .elementor-element.elementor-element-bdd79f8 {
+        padding-top: 50px !important;
+        padding-bottom: 50px !important;
+    }
+}
+
 /* Floating Social Media Icons */
 .floating-ig {
     position: fixed !important;
