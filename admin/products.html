@@ -883,7 +883,42 @@
             document.getElementById('productModal').classList.remove('active');
         }
 
-        function handleMainFileUpload(input) {
+        function compressImageFile(file, maxWidth = 1200, maxHeight = 1200, quality = 0.85) {
+            return new Promise((resolve, reject) => {
+                const reader = new FileReader();
+                reader.onerror = reject;
+                reader.onload = function(e) {
+                    const img = new Image();
+                    img.onerror = reject;
+                    img.onload = function() {
+                        let { width, height } = img;
+                        if (width > maxWidth || height > maxHeight) {
+                            if (width / height > maxWidth / maxHeight) {
+                                height = Math.round((height * maxWidth) / width);
+                                width = maxWidth;
+                            } else {
+                                width = Math.round((width * maxHeight) / height);
+                                maxHeight = height;
+                            }
+                        }
+
+                        const canvas = document.createElement('canvas');
+                        canvas.width = width;
+                        canvas.height = height;
+                        const ctx = canvas.getContext('2d');
+                        ctx.drawImage(img, 0, 0, width, height);
+
+                        // Export as high quality, compressed webp data URL
+                        const compressedDataUrl = canvas.toDataURL('image/webp', quality);
+                        resolve(compressedDataUrl);
+                    };
+                    img.src = e.target.result;
+                };
+                reader.readAsDataURL(file);
+            });
+        }
+
+        async function handleMainFileUpload(input) {
             if (!input.files || !input.files[0]) return;
             const file = input.files[0];
             
@@ -895,13 +930,22 @@
                 return;
             }
 
-            const reader = new FileReader();
-            reader.onload = function(e) {
-                document.getElementById('formImage').value = e.target.result;
+            try {
+                showToast(`Optimizing main image: ${file.name}...`);
+                const compressed = await compressImageFile(file);
+                document.getElementById('formImage').value = compressed;
                 updateImagePreviews();
-                showToast(`Loaded main image: ${file.name}`);
-            };
-            reader.readAsDataURL(file);
+                showToast(`Main image optimized and ready!`);
+            } catch (err) {
+                console.error('Image compression error:', err);
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    document.getElementById('formImage').value = e.target.result;
+                    updateImagePreviews();
+                    showToast(`Loaded main image: ${file.name}`);
+                };
+                reader.readAsDataURL(file);
+            }
         }
 
         function removeMainImage() {
@@ -910,7 +954,7 @@
             updateImagePreviews();
         }
 
-        function handleGalleryFileUpload(input) {
+        async function handleGalleryFileUpload(input) {
             if (!input.files || !input.files.length) return;
             const files = Array.from(input.files);
             const allowed = /\.(webp|png|jpe?g)$/i;
@@ -925,20 +969,27 @@
                 return;
             }
 
-            let processed = 0;
-            validFiles.forEach(file => {
-                const reader = new FileReader();
-                reader.onload = function(e) {
-                    currentGallery.push(e.target.result);
-                    processed++;
-                    if (processed === validFiles.length) {
-                        input.value = '';
-                        renderGalleryPreviews();
-                        showToast(`Added ${validFiles.length} gallery image${validFiles.length > 1 ? 's' : ''}`);
-                    }
-                };
-                reader.readAsDataURL(file);
-            });
+            showToast(`Optimizing ${validFiles.length} image(s)...`);
+            for (const file of validFiles) {
+                try {
+                    const compressed = await compressImageFile(file);
+                    currentGallery.push(compressed);
+                } catch (err) {
+                    console.error('Error compressing gallery file:', err);
+                    await new Promise(res => {
+                        const reader = new FileReader();
+                        reader.onload = function(e) {
+                            currentGallery.push(e.target.result);
+                            res();
+                        };
+                        reader.readAsDataURL(file);
+                    });
+                }
+            }
+
+            input.value = '';
+            renderGalleryPreviews();
+            showToast(`Added ${validFiles.length} gallery image${validFiles.length > 1 ? 's' : ''}`);
         }
 
         function handleGalleryInputKey(e) {
@@ -1013,7 +1064,7 @@
             const originalBtnText = saveBtn.innerHTML;
             
             saveBtn.disabled = true;
-            saveBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Auto-translating & Syncing...';
+            saveBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Saving & Syncing...';
 
             const id = document.getElementById('productId').value;
             const title = document.getElementById('formTitle').value.trim();
@@ -1047,7 +1098,7 @@
                 window.ProductStore.save(productData);
             }
 
-            // 2. Call automated Cloudflare backend for GitHub commit, auto-translation (FR & ES) & production deployment
+            // 2. Call automated Cloudflare backend for GitHub commit & production deployment
             try {
                 const response = await fetch('/api/products', {
                     method: 'POST',
@@ -1057,23 +1108,26 @@
 
                 const result = await response.json();
                 if (response.ok && result.success) {
-                    // Update local store with translated product
                     if (result.product && window.ProductStore) {
                         window.ProductStore.save(result.product);
                     }
-                    showToast('Saved, translated (FR & ES), and pushed live to Production!');
+                    showToast('Saved and pushed live to Production!');
+                    closeModal();
+                    loadProducts();
                 } else {
                     console.warn('Backend API note:', result.error || result);
-                    showToast('Saved locally. Auto-sync will retry on next deployment.');
+                    alert(`Save Notice: ${result.error || 'Server did not save changes to GitHub'}. Saved locally in browser.`);
+                    closeModal();
+                    loadProducts();
                 }
             } catch (apiErr) {
                 console.warn('Network error calling /api/products:', apiErr);
-                showToast('Saved locally. Auto-sync will retry on next deployment.');
+                alert('Saved locally. Backend sync timed out or was unreachable: ' + apiErr.message);
+                closeModal();
+                loadProducts();
             } finally {
                 saveBtn.disabled = false;
                 saveBtn.innerHTML = originalBtnText;
-                closeModal();
-                loadProducts();
             }
         }
 

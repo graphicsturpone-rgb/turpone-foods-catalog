@@ -14,6 +14,8 @@ const PRODUCTS_DATA_PATH = "products/data.js";
 const DIST_PRODUCTS_DATA_PATH = "dist/products/data.js";
 const IMAGES_DIR = "assets/images/ca_imgs";
 const DIST_IMAGES_DIR = "dist/assets/images/ca_imgs";
+const US_IMAGES_DIR = "assets/images/us_imgs";
+const DIST_US_IMAGES_DIR = "dist/assets/images/us_imgs";
 
 // Helper for GitHub REST API calls
 async function githubRequest(path, method = "GET", body = null, token) {
@@ -216,27 +218,34 @@ export async function onRequest(context) {
                     const imageFileName = `${slug}.${ext}`;
                     const imgBase64 = match[2];
 
-                    // Commit image to assets/images/ca_imgs/
-                    const existingImg = await getFileContent(`${IMAGES_DIR}/${imageFileName}`, "main", token);
-                    await putFileContent(
-                        `${IMAGES_DIR}/${imageFileName}`,
-                        imgBase64,
-                        `Upload product image for ${product.title}`,
-                        existingImg ? existingImg.sha : null,
-                        "main",
-                        token
-                    );
+                    // Helper to put file safely across dirs and branches
+                    async function saveImageToDirs(dirPath, fileName, base64) {
+                        const fullPath = `${dirPath}/${fileName}`;
+                        const existing = await getFileContent(fullPath, "main", token);
+                        await putFileContent(
+                            fullPath,
+                            base64,
+                            `Upload image ${fileName} to ${dirPath}`,
+                            existing ? existing.sha : null,
+                            "main",
+                            token
+                        );
+                        // Also sync to production branch
+                        const existingProd = await getFileContent(fullPath, "production", token);
+                        await putFileContent(
+                            fullPath,
+                            base64,
+                            `Upload image ${fileName} to ${dirPath} (production)`,
+                            existingProd ? existingProd.sha : null,
+                            "production",
+                            token
+                        );
+                    }
 
-                    // Commit image to dist/assets/images/ca_imgs/
-                    const existingDistImg = await getFileContent(`${DIST_IMAGES_DIR}/${imageFileName}`, "main", token);
-                    await putFileContent(
-                        `${DIST_IMAGES_DIR}/${imageFileName}`,
-                        imgBase64,
-                        `Upload product image for ${product.title} (dist)`,
-                        existingDistImg ? existingDistImg.sha : null,
-                        "main",
-                        token
-                    );
+                    await saveImageToDirs(IMAGES_DIR, imageFileName, imgBase64);
+                    await saveImageToDirs(DIST_IMAGES_DIR, imageFileName, imgBase64);
+                    await saveImageToDirs(US_IMAGES_DIR, imageFileName, imgBase64);
+                    await saveImageToDirs(DIST_US_IMAGES_DIR, imageFileName, imgBase64);
 
                     product.image = imageFileName;
                 }
@@ -254,25 +263,32 @@ export async function onRequest(context) {
                             const galFileName = `${slug}-gallery-${i + 1}.${ext}`;
                             const galBase64 = match[2];
 
-                            const existingGal = await getFileContent(`${IMAGES_DIR}/${galFileName}`, "main", token);
-                            await putFileContent(
-                                `${IMAGES_DIR}/${galFileName}`,
-                                galBase64,
-                                `Upload gallery image ${i + 1} for ${product.title}`,
-                                existingGal ? existingGal.sha : null,
-                                "main",
-                                token
-                            );
+                            async function saveGalToDirs(dirPath, fileName, base64) {
+                                const fullPath = `${dirPath}/${fileName}`;
+                                const existing = await getFileContent(fullPath, "main", token);
+                                await putFileContent(
+                                    fullPath,
+                                    base64,
+                                    `Upload gallery image ${fileName} to ${dirPath}`,
+                                    existing ? existing.sha : null,
+                                    "main",
+                                    token
+                                );
+                                const existingProd = await getFileContent(fullPath, "production", token);
+                                await putFileContent(
+                                    fullPath,
+                                    base64,
+                                    `Upload gallery image ${fileName} to ${dirPath} (production)`,
+                                    existingProd ? existingProd.sha : null,
+                                    "production",
+                                    token
+                                );
+                            }
 
-                            const existingDistGal = await getFileContent(`${DIST_IMAGES_DIR}/${galFileName}`, "main", token);
-                            await putFileContent(
-                                `${DIST_IMAGES_DIR}/${galFileName}`,
-                                galBase64,
-                                `Upload gallery image ${i + 1} for ${product.title} (dist)`,
-                                existingDistGal ? existingDistGal.sha : null,
-                                "main",
-                                token
-                            );
+                            await saveGalToDirs(IMAGES_DIR, galFileName, galBase64);
+                            await saveGalToDirs(DIST_IMAGES_DIR, galFileName, galBase64);
+                            await saveGalToDirs(US_IMAGES_DIR, galFileName, galBase64);
+                            await saveGalToDirs(DIST_US_IMAGES_DIR, galFileName, galBase64);
 
                             processedGallery.push(galFileName);
                         } else {
