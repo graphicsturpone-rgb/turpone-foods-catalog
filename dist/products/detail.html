@@ -190,9 +190,6 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 .related-card .btn-view { color: #111; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; display: inline-flex; align-items: center; justify-content: center; margin-top: auto; padding-top: 10px; }
 .related-card .btn-view i { margin-left: 6px; transition: transform 0.2s ease; }
 .related-card:hover .btn-view i { transform: translateX(3px); }
-.related-dots { display: flex; justify-content: center; gap: 8px; margin-top: 25px; }
-.related-dot { width: 8px; height: 8px; border-radius: 50%; background: #ddd; cursor: pointer; transition: all 0.3s ease; border: none; padding: 0; }
-.related-dot.active { background: #111; width: 24px; border-radius: 4px; }
 
 @media(max-width: 992px) {
     .related-card { flex: 0 0 calc((100% - (2 * 20px)) / 3); }
@@ -281,7 +278,6 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
                   <!-- Injected via detail.js -->
               </div>
           </div>
-          <div class="related-dots" id="relatedDots"></div>
       </section>
   </div>
 </main>

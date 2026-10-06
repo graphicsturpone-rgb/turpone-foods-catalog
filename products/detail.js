@@ -384,29 +384,7 @@ function initRelatedProducts(currentProduct) {
 
         if (prevBtn) prevBtn.disabled = (currentIndex === 0);
         if (nextBtn) nextBtn.disabled = (currentIndex >= maxIdx);
-
-        // Render dots
-        if (dotsContainer) {
-            const step = getSlideStep();
-            const dotSteps = [];
-            for (let i = 0; i <= maxIdx; i += step) {
-                dotSteps.push(i);
-            }
-            if (dotSteps[dotSteps.length - 1] !== maxIdx && maxIdx > 0) {
-                dotSteps.push(maxIdx);
-            }
-
-            dotsContainer.innerHTML = dotSteps.map(stepIdx => {
-                const isActive = (currentIndex >= stepIdx && currentIndex < stepIdx + step) || (stepIdx === maxIdx && currentIndex === maxIdx);
-                return `<button type="button" class="related-dot ${isActive ? 'active' : ''}" aria-label="Go to slide ${stepIdx + 1}" onclick="window.goRelatedSlide(${stepIdx})"></button>`;
-            }).join('');
-        }
     }
-
-    window.goRelatedSlide = function(idx) {
-        currentIndex = idx;
-        updateCarousel();
-    };
 
     function slideNext() {
         const step = getSlideStep();
