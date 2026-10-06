@@ -242,6 +242,49 @@ export async function onRequest(context) {
                 }
             }
 
+            // Process Images Gallery
+            if (Array.isArray(product.gallery) && product.gallery.length > 0) {
+                const processedGallery = [];
+                for (let i = 0; i < product.gallery.length; i++) {
+                    const item = product.gallery[i];
+                    if (typeof item === "string" && item.startsWith("data:image/")) {
+                        const match = item.match(/^data:image\/([a-zA-Z0-9]+);base64,(.+)$/);
+                        if (match) {
+                            const ext = match[1] === "jpeg" ? "jpg" : match[1];
+                            const galFileName = `${slug}-gallery-${i + 1}.${ext}`;
+                            const galBase64 = match[2];
+
+                            const existingGal = await getFileContent(`${IMAGES_DIR}/${galFileName}`, "main", token);
+                            await putFileContent(
+                                `${IMAGES_DIR}/${galFileName}`,
+                                galBase64,
+                                `Upload gallery image ${i + 1} for ${product.title}`,
+                                existingGal ? existingGal.sha : null,
+                                "main",
+                                token
+                            );
+
+                            const existingDistGal = await getFileContent(`${DIST_IMAGES_DIR}/${galFileName}`, "main", token);
+                            await putFileContent(
+                                `${DIST_IMAGES_DIR}/${galFileName}`,
+                                galBase64,
+                                `Upload gallery image ${i + 1} for ${product.title} (dist)`,
+                                existingDistGal ? existingDistGal.sha : null,
+                                "main",
+                                token
+                            );
+
+                            processedGallery.push(galFileName);
+                        } else {
+                            processedGallery.push(item);
+                        }
+                    } else if (typeof item === "string" && item.trim()) {
+                        processedGallery.push(item.trim());
+                    }
+                }
+                product.gallery = processedGallery;
+            }
+
             // 4. Update or Insert product into catalog array
             const prodId = product.id ? String(product.id) : `prod_${Date.now()}`;
             product.id = isNaN(Number(prodId)) ? prodId : Number(prodId);
