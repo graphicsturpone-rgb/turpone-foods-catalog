@@ -101,6 +101,13 @@ body.home:not(.page-products) .elementor-nav-menu--main:not(.e--pointer-framed) 
 body.home:not(.page-products) .elementor-nav-menu--main:not(.e--pointer-framed) .elementor-item:after {
     background-color: #ffffff !important;
 }
+body.home:not(.page-products) .elementor-nav-menu--layout-horizontal .elementor-nav-menu > li:not(:last-child):after {
+    border-color: #ffffff !important;
+    opacity: 0.9 !important;
+}
+body.home:not(.page-products) .elementor-nav-menu {
+    --e-nav-menu-divider-color: #ffffff !important;
+}
 body.home:not(.page-products) .lang-switcher {
     background: rgba(255, 255, 255, 0.15) !important;
     border-color: rgba(255, 255, 255, 0.3) !important;
@@ -115,7 +122,7 @@ body.home:not(.page-products) .lang-separator {
     color: #ffffff !important;
 }
 
-/* When homepage is scrolled, revert nav text to dark for readability on frosted light background */
+/* When homepage is scrolled, revert nav text and dividers to dark for readability on frosted light background */
 body.home:not(.page-products).scrolled .elementor-nav-menu--main .elementor-item,
 body.home:not(.page-products) .elementor-location-header.is-scrolled .elementor-nav-menu--main .elementor-item {
     color: #171717 !important;
@@ -126,6 +133,15 @@ body.home:not(.page-products).scrolled .elementor-nav-menu--main:not(.e--pointer
 body.home:not(.page-products) .elementor-location-header.is-scrolled .elementor-nav-menu--main:not(.e--pointer-framed) .elementor-item:before,
 body.home:not(.page-products) .elementor-location-header.is-scrolled .elementor-nav-menu--main:not(.e--pointer-framed) .elementor-item:after {
     background-color: #171717 !important;
+}
+body.home:not(.page-products).scrolled .elementor-nav-menu--layout-horizontal .elementor-nav-menu > li:not(:last-child):after,
+body.home:not(.page-products) .elementor-location-header.is-scrolled .elementor-nav-menu--layout-horizontal .elementor-nav-menu > li:not(:last-child):after {
+    border-color: #171717 !important;
+    opacity: 0.6 !important;
+}
+body.home:not(.page-products).scrolled .elementor-nav-menu,
+body.home:not(.page-products) .elementor-location-header.is-scrolled .elementor-nav-menu {
+    --e-nav-menu-divider-color: #171717 !important;
 }
 body.home:not(.page-products).scrolled .lang-switcher,
 body.home:not(.page-products) .elementor-location-header.is-scrolled .lang-switcher {
