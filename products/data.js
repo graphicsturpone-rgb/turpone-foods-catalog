@@ -60,8 +60,8 @@ const productsData = [
     "title": "Triple Chili Honey Drizzle",
     "category": "Honeys",
     "image": "MS-Honey-Triple-Chili-1.webp",
-    "description": "Martha Stewart Triple Chili Honey Drizzle combines raw honey with jalapeÃ±o, habanero and cayenne peppers for a delicious balance of sweetness and heat. Drizzle it over pizza for a sweet and spicy finishing touch, pair it with grilled chicken or pork, or add it to roasted vegetables for an unexpected burst of flavor. Itâs an easy way to bring a little heatâand a lot of flavorâto everyday dishes.",
-    "ingredients": "Ingredients: Raw honey, jalapeÃ±o pepper, habanero pepper, cayenne pepper, apple cider vinegar."
+    "description": "Martha Stewart Triple Chili Honey Drizzle combines raw honey with jalapeÃÂ±o, habanero and cayenne peppers for a delicious balance of sweetness and heat. Drizzle it over pizza for a sweet and spicy finishing touch, pair it with grilled chicken or pork, or add it to roasted vegetables for an unexpected burst of flavor. ItÃ¢ÂÂs an easy way to bring a little heatÃ¢ÂÂand a lot of flavorÃ¢ÂÂto everyday dishes.",
+    "ingredients": "Ingredients: Raw honey, jalapeÃÂ±o pepper, habanero pepper, cayenne pepper, apple cider vinegar."
   },
   {
     "id": 9,
@@ -254,28 +254,33 @@ const productsData = [
     "image": "Spinach-Four-Cheese-with-ALfredo-Frozen-Pizza.webp",
     "description": "Martha Stewart Spinach Four Cheese with Alfredo Pizza combines spinach with creamy Alfredo sauce and a rich blend of fontina, mozzarella, Parmesan and Romano cheeses on a hand-stretched, stone-baked crust. Rich and satisfying, it's an elevated option that's ready to enjoy at home in minutes.",
     "features": "Featuring: Spinach, Alfredo sauce, fontina, mozzarella, Parmesan and Romano cheeses"
-},
+  },
   {
     "id": 33,
     "aliasId": "prod_1790799592574",
     "slug": "organic-pinsa-crust",
     "title": "Organic Pinsa Crust",
-    "title_fr": "Croûte de Pinsa Biologique",
-    "title_es": "Masa de Pinsa Orgánica",
+    "title_fr": "CroÃ»te de Pinsa Biologique",
+    "title_es": "Masa de Pinsa OrgÃ¡nica",
     "category": "Frozen Pinsa",
-    "category_fr": "Pinsa surgelée",
+    "category_fr": "Pinsa surgelÃ©e",
     "category_es": "Pinsa congelada",
-    "image": "Organic-Pinsa-Crust.webp",
+    "image": "organic-pinsa-crust.webp",
     "description": "Martha Stewart Organic Pinsa Crust is handcrafted using authentic Roman sourdough techniques and certified organic ingredients. With 20g of protein per serving, this light, airy, and naturally digestible crust delivers a crispy golden exterior and an irresistibly soft interior. Ready in minutes, it provides the ultimate artisan foundation for your favorite gourmet pizza creations at home.",
-    "description_fr": "La croûte de pinsa biologique Martha Stewart est confectionnée artisanalement selon les méthodes romaines authentiques au levain et avec des ingrédients biologiques certifiés. Avec 20 g de protéines par portion, cette pâte légère, aérée et digeste offre un extérieur croustillant et une mie tendre. Prête en quelques minutes, elle est la base artisanale idéale pour vos pizzas gourmandes à la maison.",
-    "description_es": "La masa de pinsa orgánica Martha Stewart está elaborada artesanalmente siguiendo la auténtica tradición romana con masa madre e ingredientes orgánicos certificados. Con 20 g de proteína por porción, esta masa ligera, esponjosa y de fácil digestión ofrece un exterior dorado crujiente y un interior suave y delicioso. Lista en minutos, es la base artesanal perfecta para sus creaciones gourmet en casa.",
-    "features": "Featuring: Hand-stretched authentic Roman organic sourdough crust, 20g protein, USDA Organic certified (2 pack, Net Wt. 2 x 230 g).",
-    "features_fr": "Caractéristiques : Croûte de pinsa biologique romaine étirée à la main au levain, 20 g de protéines, certifiée biologique (paquet de 2, poids net 2 x 230 g).",
-    "features_es": "Características: Masa artesanal romana orgánica estirada a mano con masa madre, 20 g de proteína, certificada orgánica USDA (paquete de 2, peso neto 2 x 230 g).",
+    "description_fr": "La croÃ»te de pinsa biologique Martha Stewart est confectionnÃ©e artisanalement selon les mÃ©thodes romaines authentiques au levain et avec des ingrÃ©dients biologiques certifiÃ©s. Avec 20 g de protÃ©ines par portion, cette pÃ¢te lÃ©gÃ¨re, aÃ©rÃ©e et digeste offre un extÃ©rieur croustillant et une mie tendre. PrÃªte en quelques minutes, elle est la base artisanale idÃ©ale pour vos pizzas gourmandes Ã  la maison.",
+    "description_es": "La masa de pinsa orgÃ¡nica Martha Stewart estÃ¡ elaborada artesanalmente siguiendo la autÃ©ntica tradiciÃ³n romana con masa madre e ingredientes orgÃ¡nicos certificados. Con 20 g de proteÃ­na por porciÃ³n, esta masa ligera, esponjosa y de fÃ¡cil digestiÃ³n ofrece un exterior dorado crujiente y un interior suave y delicioso. Lista en minutos, es la base artesanal perfecta para sus creaciones gourmet en casa.",
+    "features": "Pinsa is a light, crisp and authentic Italian flatbread, made with a carefully selected blend including organic einkorn, organic rice flour and organic fava flour, it is hand pressed and ready for bake at home.\u0003",
+    "features_fr": "CaractÃ©ristiques : CroÃ»te de pinsa biologique romaine Ã©tirÃ©e Ã  la main au levain, 20 g de protÃ©ines, certifiÃ©e biologique (paquet de 2, poids net 2 x 230 g).",
+    "features_es": "CaracterÃ­sticas: Masa artesanal romana orgÃ¡nica estirada a mano con masa madre, 20 g de proteÃ­na, certificada orgÃ¡nica USDA (paquete de 2, peso neto 2 x 230 g).",
     "gallery": [
-      "Organic-Pinsa-Crust.webp",
-      "Organic-Pinsa-Crust-gallery-1.webp"
-    ]
-
+      "organic-pinsa-crust-gallery-1.webp",
+      "organic-pinsa-crust-gallery-2.webp",
+      "organic-pinsa-crust-gallery-3.webp",
+      "organic-pinsa-crust-gallery-4.webp",
+      "organic-pinsa-crust-gallery-5.webp"
+    ],
+    "ingredients": "Ingredients: Organic Flour Blend (Organic Wheat Flour, Organic Spelt Flour, Organic Einkorn Flour, Organic Rice Flour, Organic Fava Flour, Sourdough Yeast), Water, Salt, Organic Extra Virgin Olive Oil, Yeast (Yeast, Sorbitan Monostearate).\nContains: Wheat",
+    "nutrition": "",
+    "storage": ""
   }
 ];
