@@ -1,13 +1,35 @@
 document.write(`
 <style>
-/* Global Header & Container Padding: exactly 5px top and bottom */
+/* Global Header & Container: exactly 3px padding, 75px height, perfectly centered */
 .elementor-location-header,
-header.elementor-location-header,
+header.elementor-location-header {
+    height: 75px !important;
+    min-height: 75px !important;
+    max-height: 75px !important;
+    padding-top: 3px !important;
+    padding-bottom: 3px !important;
+    box-sizing: border-box !important;
+    display: flex !important;
+    align-items: center !important;
+}
+
 .elementor-element-4dc4acd,
-.elementor-element-4dc4acd.logo-sticky,
+.elementor-element-4dc4acd.logo-sticky {
+    height: 100% !important;
+    min-height: 100% !important;
+    padding-top: 3px !important;
+    padding-bottom: 3px !important;
+    box-sizing: border-box !important;
+    display: flex !important;
+    align-items: center !important;
+}
+
 .elementor-element-4dc4acd > .e-con-inner {
-    padding-top: 5px !important;
-    padding-bottom: 5px !important;
+    height: 100% !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    display: flex !important;
+    align-items: center !important;
 }
 
 /* Home Page Header: Fixed / Sticky to top while transparent over hero ONLY on home pages */
@@ -16,6 +38,9 @@ body.home:not(.page-products) .elementor-location-header {
     top: 0 !important;
     left: 0 !important;
     width: 100% !important;
+    height: 75px !important;
+    min-height: 75px !important;
+    max-height: 75px !important;
     z-index: 9999 !important;
     background: transparent !important;
     background-color: transparent !important;
@@ -25,8 +50,9 @@ body.home:not(.page-products) .elementor-element-4dc4acd {
     background: transparent !important;
     background-color: transparent !important;
     box-shadow: none !important;
-    padding-top: 5px !important;
-    padding-bottom: 5px !important;
+    height: 100% !important;
+    padding-top: 3px !important;
+    padding-bottom: 3px !important;
 }
 
 /* Scrolled state: frosted semi-transparent background when user scrolls down */
@@ -38,10 +64,10 @@ body.home:not(.page-products) .elementor-location-header.is-scrolled {
     box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06) !important;
 }
 
-/* Logo styling: crisp, proportional size to preserve header height */
+/* Logo styling: crisp, proportional size to fit nicely within 75px header */
 .elementor-24 .elementor-element.elementor-element-823fde1 img {
-    height: 50px !important;
-    max-height: 50px !important;
+    height: 58px !important;
+    max-height: 58px !important;
     width: auto !important;
     max-width: 100% !important;
     display: inline-block !important;
@@ -56,8 +82,8 @@ body.home:not(.page-products) .elementor-location-header.is-scrolled {
 
 /* Navigation vertical alignment */
 .elementor-24 .elementor-element.elementor-element-40b1f9e .elementor-nav-menu--main .elementor-item {
-    padding-top: 5px !important;
-    padding-bottom: 5px !important;
+    padding-top: 3px !important;
+    padding-bottom: 3px !important;
 }
 
 /* Home Page Header Nav Color: WHITE over transparent hero slider */
