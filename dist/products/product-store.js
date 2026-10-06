@@ -45,7 +45,12 @@
 
     function getProductById(id) {
         const all = getAllProducts();
-        return all.find(p => String(p.id) === String(id)) || null;
+        const strId = String(id).trim().toLowerCase();
+        return all.find(p => 
+            String(p.id).trim().toLowerCase() === strId ||
+            (p.aliasId && String(p.aliasId).trim().toLowerCase() === strId) ||
+            (p.slug && String(p.slug).trim().toLowerCase() === strId)
+        ) || null;
     }
 
     function saveProduct(product) {
