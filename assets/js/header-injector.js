@@ -40,8 +40,8 @@ body.home:not(.page-products) .elementor-location-header.is-scrolled {
 
 /* Logo styling: crisp, proportional size to preserve header height */
 .elementor-24 .elementor-element.elementor-element-823fde1 img {
-    height: 40px !important;
-    max-height: 40px !important;
+    height: 50px !important;
+    max-height: 50px !important;
     width: auto !important;
     max-width: 100% !important;
     display: inline-block !important;
