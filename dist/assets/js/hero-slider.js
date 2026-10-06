@@ -3,7 +3,8 @@
  * Sequence:
  *   Slide 0: web-slider-1 (5s)
  *   Slide 1: web-slider-2 (5s)
- *   Slide 2: turponefoods-hero-website.mp4 (plays until video finishes)
+ *   Slide 2: web-slider-3 (5s)
+ *   Slide 3: turponefoods-hero-website.mp4 (plays until video finishes)
  *   -> loops back to Slide 0
  */
 (function() {
