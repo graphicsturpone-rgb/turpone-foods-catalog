@@ -1021,8 +1021,14 @@
             }
         }
 
-        function handleFormSubmit(e) {
+        async function handleFormSubmit(e) {
             e.preventDefault();
+            const saveBtn = document.getElementById('saveBtn');
+            const originalBtnText = saveBtn.innerHTML;
+            
+            saveBtn.disabled = true;
+            saveBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Auto-translating & Syncing...';
+
             const id = document.getElementById('productId').value;
             const title = document.getElementById('formTitle').value.trim();
             const category = document.getElementById('formCategory').value.trim();
@@ -1054,22 +1060,59 @@
                 storage
             };
 
+            // 1. Immediately save to local store for instant UI response
             if (window.ProductStore) {
                 window.ProductStore.save(productData);
             }
 
-            closeModal();
-            loadProducts();
-            showToast(id ? 'Product updated successfully!' : 'Product created and added to catalog!');
+            // 2. Call automated Cloudflare backend for GitHub commit, auto-translation (FR & ES) & production deployment
+            try {
+                const response = await fetch('/api/products', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ product: productData })
+                });
+
+                const result = await response.json();
+                if (response.ok && result.success) {
+                    // Update local store with translated product
+                    if (result.product && window.ProductStore) {
+                        window.ProductStore.save(result.product);
+                    }
+                    showToast('Saved, translated (FR & ES), and pushed live to Production!');
+                } else {
+                    console.warn('Backend API note:', result.error || result);
+                    showToast('Saved locally. Auto-sync will retry on next deployment.');
+                }
+            } catch (apiErr) {
+                console.warn('Network error calling /api/products:', apiErr);
+                showToast('Saved locally. Auto-sync will retry on next deployment.');
+            } finally {
+                saveBtn.disabled = false;
+                saveBtn.innerHTML = originalBtnText;
+                closeModal();
+                loadProducts();
+            }
         }
 
-        function confirmDelete(id) {
+        async function confirmDelete(id) {
             if (confirm('Are you sure you want to remove this product?')) {
                 if (window.ProductStore) {
                     window.ProductStore.delete(id);
                 }
                 loadProducts();
-                showToast('Product removed.');
+                showToast('Product removed locally. Syncing deletion to GitHub...');
+
+                try {
+                    const response = await fetch(`/api/products?id=${encodeURIComponent(id)}`, {
+                        method: 'DELETE'
+                    });
+                    if (response.ok) {
+                        showToast('Product permanently deleted from repository!');
+                    }
+                } catch (e) {
+                    console.error('Delete sync error:', e);
+                }
             }
         }
 
