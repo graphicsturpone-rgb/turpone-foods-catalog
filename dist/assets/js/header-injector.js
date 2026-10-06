@@ -10,8 +10,8 @@ header.elementor-location-header,
     padding-bottom: 5px !important;
 }
 
-/* Home Page Header: Fixed / Sticky to top while transparent over hero */
-body.home .elementor-location-header {
+/* Home Page Header: Fixed / Sticky to top while transparent over hero ONLY on home pages */
+body.home:not(.page-products) .elementor-location-header {
     position: fixed !important;
     top: 0 !important;
     left: 0 !important;
@@ -21,7 +21,7 @@ body.home .elementor-location-header {
     background-color: transparent !important;
     transition: background-color 0.35s ease, box-shadow 0.35s ease, backdrop-filter 0.35s ease !important;
 }
-body.home .elementor-element-4dc4acd {
+body.home:not(.page-products) .elementor-element-4dc4acd {
     background: transparent !important;
     background-color: transparent !important;
     box-shadow: none !important;
@@ -30,8 +30,8 @@ body.home .elementor-element-4dc4acd {
 }
 
 /* Scrolled state: frosted semi-transparent background when user scrolls down */
-body.home.scrolled .elementor-location-header,
-body.home .elementor-location-header.is-scrolled {
+body.home:not(.page-products).scrolled .elementor-location-header,
+body.home:not(.page-products) .elementor-location-header.is-scrolled {
     background-color: rgba(255, 255, 255, 0.95) !important;
     backdrop-filter: blur(10px) !important;
     -webkit-backdrop-filter: blur(10px) !important;
@@ -100,9 +100,27 @@ body.home .elementor-location-header.is-scrolled {
         });
     }
 
+    function handleScrollHeader() {
+        var header = document.querySelector('.elementor-location-header');
+        if (!header) return;
+        if (window.scrollY > 30) {
+            header.classList.add('is-scrolled');
+            document.body.classList.add('scrolled');
+        } else {
+            header.classList.remove('is-scrolled');
+            document.body.classList.remove('scrolled');
+        }
+    }
+
+    window.addEventListener('scroll', handleScrollHeader, { passive: true });
+
     if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', updateActiveNav);
+        document.addEventListener('DOMContentLoaded', function() {
+            updateActiveNav();
+            handleScrollHeader();
+        });
     } else {
         updateActiveNav();
+        handleScrollHeader();
     }
 })();
