@@ -134,6 +134,9 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 </script>
 <style id="custom-architecture-scale-style">
   /* Custom 2-row layout for Brand Partner / Architecture of Scale section (8cd2749) */
+  :root {
+    --card-icon-hover-color: var(--e-global-color-01fb1fb, #1D895B);
+  }
   .elementor-185 .elementor-element.elementor-element-8cd2749 > .e-con-inner {
     flex-direction: column !important;
     align-items: center !important;
@@ -187,11 +190,13 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
     display: flex !important;
     flex-direction: column !important;
     justify-content: flex-start !important;
-    transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease !important;
+    cursor: pointer;
   }
   .elementor-185 .elementor-element.elementor-element-233441d .elementor-widget-icon-box:hover .elementor-widget-container {
     transform: translateY(-6px) !important;
     box-shadow: 0 14px 32px rgba(0, 0, 0, 0.08) !important;
+    border-color: #e0e4e8 !important;
   }
   .elementor-185 .elementor-element.elementor-element-233441d .elementor-icon-box-wrapper {
     display: flex !important;
@@ -214,9 +219,15 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
     padding: 0 !important;
   }
   .elementor-185 .elementor-element.elementor-element-233441d .elementor-icon svg {
-    width: 36px !important;
-    height: 36px !important;
+    width: 64px !important;
+    height: 64px !important;
     fill: #111111 !important;
+    transition: fill 0.3s ease, transform 0.3s ease !important;
+  }
+  /* Icon hover color change when card or icon is hovered */
+  .elementor-185 .elementor-element.elementor-element-233441d .elementor-widget-icon-box:hover .elementor-icon svg {
+    fill: var(--card-icon-hover-color) !important;
+    transform: scale(1.05);
   }
   .elementor-185 .elementor-element.elementor-element-233441d .elementor-icon-box-content {
     display: flex !important;
@@ -231,6 +242,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
     margin-bottom: 14px !important;
     color: #111111 !important;
     line-height: 1.35 !important;
+    transition: color 0.3s ease !important;
   }
   .elementor-185 .elementor-element.elementor-element-233441d .elementor-icon-box-description {
     font-size: 14px !important;
