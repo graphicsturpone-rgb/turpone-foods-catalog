@@ -459,3 +459,52 @@ a.elementor-button:hover,
   fill: var(--brand-olive) !important;
   transition: color 0.3s ease, fill 0.3s ease !important;
 }
+
+/* ==========================================================================
+   HOMEPAGE & SERVICES PILLAR CARDS: FORCED VERTICAL COLUMN (ICON ON TOP)
+   ========================================================================== */
+.elementor-element.elementor-element-576dd45 .elementor-icon-box-wrapper,
+.elementor-element.elementor-element-233441d .elementor-icon-box-wrapper,
+.elementor-element.elementor-element-f922b06 .elementor-icon-box-wrapper,
+.elementor-element.elementor-element-b998b55 .elementor-icon-box-wrapper,
+.elementor-element.elementor-element-9fb3feb .elementor-icon-box-wrapper,
+.elementor-element.elementor-element-ae02681 .elementor-icon-box-wrapper,
+.elementor-element.elementor-element-e04e3a9 .elementor-icon-box-wrapper,
+.elementor-element.elementor-element-a962bd1 .elementor-icon-box-wrapper,
+.elementor-widget-icon-box.elementor-element-f922b06 .elementor-icon-box-wrapper,
+.elementor-widget-icon-box.elementor-element-b998b55 .elementor-icon-box-wrapper,
+.elementor-widget-icon-box.elementor-element-9fb3feb .elementor-icon-box-wrapper {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  text-align: left !important;
+  gap: 24px !important;
+}
+
+.elementor-element.elementor-element-576dd45 .elementor-icon-box-icon,
+.elementor-element.elementor-element-233441d .elementor-icon-box-icon,
+.elementor-element.elementor-element-f922b06 .elementor-icon-box-icon,
+.elementor-element.elementor-element-b998b55 .elementor-icon-box-icon,
+.elementor-element.elementor-element-9fb3feb .elementor-icon-box-icon,
+.elementor-element.elementor-element-ae02681 .elementor-icon-box-icon,
+.elementor-element.elementor-element-e04e3a9 .elementor-icon-box-icon,
+.elementor-element.elementor-element-a962bd1 .elementor-icon-box-icon {
+  margin-bottom: 4px !important;
+  margin-right: 0 !important;
+  flex-shrink: 0 !important;
+  display: block !important;
+}
+
+.elementor-element.elementor-element-576dd45 .elementor-icon-box-content,
+.elementor-element.elementor-element-233441d .elementor-icon-box-content,
+.elementor-element.elementor-element-f922b06 .elementor-icon-box-content,
+.elementor-element.elementor-element-b998b55 .elementor-icon-box-content,
+.elementor-element.elementor-element-9fb3feb .elementor-icon-box-content,
+.elementor-element.elementor-element-ae02681 .elementor-icon-box-content,
+.elementor-element.elementor-element-e04e3a9 .elementor-icon-box-content,
+.elementor-element.elementor-element-a962bd1 .elementor-icon-box-content {
+  display: flex !important;
+  flex-direction: column !important;
+  width: 100% !important;
+  text-align: left !important;
+}
