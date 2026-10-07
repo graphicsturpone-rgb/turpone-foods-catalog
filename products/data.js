@@ -3,9 +3,18 @@ const productsData = [
     "id": 1,
     "title": "Bacon and Caramelized Onions Pinsa",
     "category": "Frozen Pinsa",
-    "image": "Bacon-and-Caramelized-Onion-Frozen-Pinsa.webp",
+    "image": "bacon-and-caramelized-onions-pinsa.webp",
     "description": "Martha Stewart Bacon and Caramelized Onions Pinsa pairs savory bacon and sweet caramelized onions with creamy Alfredo sauce, mozzarella and Parmesan on a hand-stretched, authentic Roman-style crust. Light and airy with a crisp exterior, the pinsa crust creates the perfect base for this rich, savory and slightly sweet combination. Ready in minutes, it's an effortless way to enjoy a distinctive Roman-inspired meal at home.",
-    "features": "Featuring: Alfredo sauce, mozzarella, Parmesan, caramelized onions and bacon"
+    "features": "Featuring: Alfredo sauce, mozzarella, Parmesan, caramelized onions and bacon",
+    "gallery": [
+      "bacon-and-caramelized-onions-pinsa-gallery-1.webp",
+      "bacon-and-caramelized-onions-pinsa-gallery-2.webp",
+      "bacon-and-caramelized-onions-pinsa-gallery-3.webp",
+      "bacon-and-caramelized-onions-pinsa-gallery-4.webp",
+      "bacon-and-caramelized-onions-pinsa-gallery-5.webp"
+    ],
+    "ingredients": "",
+    "slug": "bacon-and-caramelized-onions-pinsa"
   },
   {
     "id": 2,
@@ -60,8 +69,8 @@ const productsData = [
     "title": "Triple Chili Honey Drizzle",
     "category": "Honeys",
     "image": "MS-Honey-Triple-Chili-1.webp",
-    "description": "Martha Stewart Triple Chili Honey Drizzle combines raw honey with jalapeÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ±o, habanero and cayenne peppers for a delicious balance of sweetness and heat. Drizzle it over pizza for a sweet and spicy finishing touch, pair it with grilled chicken or pork, or add it to roasted vegetables for an unexpected burst of flavor. ItÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂs an easy way to bring a little heatÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂand a lot of flavorÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂto everyday dishes.",
-    "ingredients": "Ingredients: Raw honey, jalapeÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ±o pepper, habanero pepper, cayenne pepper, apple cider vinegar."
+    "description": "Martha Stewart Triple Chili Honey Drizzle combines raw honey with jalapeÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ±o, habanero and cayenne peppers for a delicious balance of sweetness and heat. Drizzle it over pizza for a sweet and spicy finishing touch, pair it with grilled chicken or pork, or add it to roasted vegetables for an unexpected burst of flavor. ItÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂs an easy way to bring a little heatÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂand a lot of flavorÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂto everyday dishes.",
+    "ingredients": "Ingredients: Raw honey, jalapeÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ±o pepper, habanero pepper, cayenne pepper, apple cider vinegar."
   },
   {
     "id": 9,
@@ -260,18 +269,18 @@ const productsData = [
     "aliasId": "prod_1790799592574",
     "slug": "organic-pinsa-crust",
     "title": "Organic Pinsa Crust",
-    "title_fr": "CroÃÂÃÂÃÂÃÂ»te de Pinsa Biologique",
-    "title_es": "Masa de Pinsa OrgÃÂÃÂÃÂÃÂ¡nica",
+    "title_fr": "CroÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ»te de Pinsa Biologique",
+    "title_es": "Masa de Pinsa OrgÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¡nica",
     "category": "Frozen Pinsa",
-    "category_fr": "Pinsa surgelÃÂÃÂÃÂÃÂ©e",
+    "category_fr": "Pinsa surgelÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ©e",
     "category_es": "Pinsa congelada",
     "image": "organic-pinsa-crust.webp",
     "description": "Martha Stewart Organic Pinsa Crust is handcrafted using authentic Roman sourdough techniques and certified organic ingredients. With 20g of protein per serving, this light, airy, and naturally digestible crust delivers a crispy golden exterior and an irresistibly soft interior. Ready in minutes, it provides the ultimate artisan foundation for your favorite gourmet pizza creations at home.",
-    "description_fr": "La croÃÂÃÂÃÂÃÂ»te de pinsa biologique Martha Stewart est confectionnÃÂÃÂÃÂÃÂ©e artisanalement selon les mÃÂÃÂÃÂÃÂ©thodes romaines authentiques au levain et avec des ingrÃÂÃÂÃÂÃÂ©dients biologiques certifiÃÂÃÂÃÂÃÂ©s. Avec 20 g de protÃÂÃÂÃÂÃÂ©ines par portion, cette pÃÂÃÂÃÂÃÂ¢te lÃÂÃÂÃÂÃÂ©gÃÂÃÂÃÂÃÂ¨re, aÃÂÃÂÃÂÃÂ©rÃÂÃÂÃÂÃÂ©e et digeste offre un extÃÂÃÂÃÂÃÂ©rieur croustillant et une mie tendre. PrÃÂÃÂÃÂÃÂªte en quelques minutes, elle est la base artisanale idÃÂÃÂÃÂÃÂ©ale pour vos pizzas gourmandes ÃÂÃÂÃÂÃÂ  la maison.",
-    "description_es": "La masa de pinsa orgÃÂÃÂÃÂÃÂ¡nica Martha Stewart estÃÂÃÂÃÂÃÂ¡ elaborada artesanalmente siguiendo la autÃÂÃÂÃÂÃÂ©ntica tradiciÃÂÃÂÃÂÃÂ³n romana con masa madre e ingredientes orgÃÂÃÂÃÂÃÂ¡nicos certificados. Con 20 g de proteÃÂÃÂÃÂÃÂ­na por porciÃÂÃÂÃÂÃÂ³n, esta masa ligera, esponjosa y de fÃÂÃÂÃÂÃÂ¡cil digestiÃÂÃÂÃÂÃÂ³n ofrece un exterior dorado crujiente y un interior suave y delicioso. Lista en minutos, es la base artesanal perfecta para sus creaciones gourmet en casa.",
+    "description_fr": "La croÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ»te de pinsa biologique Martha Stewart est confectionnÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ©e artisanalement selon les mÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ©thodes romaines authentiques au levain et avec des ingrÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ©dients biologiques certifiÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ©s. Avec 20 g de protÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ©ines par portion, cette pÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢te lÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ©gÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¨re, aÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ©rÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ©e et digeste offre un extÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ©rieur croustillant et une mie tendre. PrÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂªte en quelques minutes, elle est la base artisanale idÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ©ale pour vos pizzas gourmandes ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ  la maison.",
+    "description_es": "La masa de pinsa orgÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¡nica Martha Stewart estÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¡ elaborada artesanalmente siguiendo la autÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ©ntica tradiciÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ³n romana con masa madre e ingredientes orgÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¡nicos certificados. Con 20 g de proteÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ­na por porciÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ³n, esta masa ligera, esponjosa y de fÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¡cil digestiÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ³n ofrece un exterior dorado crujiente y un interior suave y delicioso. Lista en minutos, es la base artesanal perfecta para sus creaciones gourmet en casa.",
     "features": "Pinsa is a light, crisp and authentic Italian flatbread, made with a carefully selected blend including organic einkorn, organic rice flour and organic fava flour, it is hand pressed and ready for bake at home.\u0003",
-    "features_fr": "CaractÃÂÃÂÃÂÃÂ©ristiques : CroÃÂÃÂÃÂÃÂ»te de pinsa biologique romaine ÃÂÃÂÃÂÃÂ©tirÃÂÃÂÃÂÃÂ©e ÃÂÃÂÃÂÃÂ  la main au levain, 20 g de protÃÂÃÂÃÂÃÂ©ines, certifiÃÂÃÂÃÂÃÂ©e biologique (paquet de 2, poids net 2 x 230 g).",
-    "features_es": "CaracterÃÂÃÂÃÂÃÂ­sticas: Masa artesanal romana orgÃÂÃÂÃÂÃÂ¡nica estirada a mano con masa madre, 20 g de proteÃÂÃÂÃÂÃÂ­na, certificada orgÃÂÃÂÃÂÃÂ¡nica USDA (paquete de 2, peso neto 2 x 230 g).",
+    "features_fr": "CaractÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ©ristiques : CroÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ»te de pinsa biologique romaine ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ©tirÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ©e ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ  la main au levain, 20 g de protÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ©ines, certifiÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ©e biologique (paquet de 2, poids net 2 x 230 g).",
+    "features_es": "CaracterÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ­sticas: Masa artesanal romana orgÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¡nica estirada a mano con masa madre, 20 g de proteÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ­na, certificada orgÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¡nica USDA (paquete de 2, peso neto 2 x 230 g).",
     "gallery": [
       "organic-pinsa-crust-gallery-1.webp",
       "organic-pinsa-crust-gallery-2.webp",
