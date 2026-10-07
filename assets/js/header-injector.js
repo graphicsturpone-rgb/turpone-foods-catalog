@@ -176,6 +176,43 @@ body.home:not(.page-products) .elementor-location-header.is-scrolled .lang-separ
         }
         if (!path) path = '/';
 
+        const NAV_LABELS = {
+            en: {
+                '/': 'Home',
+                '/products/': 'Products',
+                '/about-us/': 'About Us',
+                '/services/': 'Services',
+                '/partners/': 'Partners',
+                '/turpone-products/': 'Food Services',
+                '/recipes/': 'Recipes',
+                '/contact/': 'Contact'
+            },
+            fr: {
+                '/': 'Accueil',
+                '/products/': 'Produits',
+                '/about-us/': 'À propos',
+                '/services/': 'Services',
+                '/partners/': 'Partenaires',
+                '/turpone-products/': 'Services Alimentaires',
+                '/recipes/': 'Recettes',
+                '/contact/': 'Contact'
+            },
+            es: {
+                '/': 'Inicio',
+                '/products/': 'Productos',
+                '/about-us/': 'Nosotros',
+                '/services/': 'Servicios',
+                '/partners/': 'Socios',
+                '/turpone-products/': 'Servicios Alimentarios',
+                '/recipes/': 'Recetas',
+                '/contact/': 'Contacto'
+            }
+        };
+
+        var currentLang = 'en';
+        if (path.startsWith('/fr/') || path === '/fr') currentLang = 'fr';
+        else if (path.startsWith('/es/') || path === '/es') currentLang = 'es';
+
         var navLinks = document.querySelectorAll('.elementor-nav-menu a.elementor-item');
         if (!navLinks || navLinks.length === 0) return;
 
@@ -186,6 +223,30 @@ body.home:not(.page-products) .elementor-location-header.is-scrolled .lang-separ
             if (cleanHref.endsWith('/index.html')) cleanHref = cleanHref.slice(0, -10);
             if (cleanHref.length > 1 && cleanHref.endsWith('/')) cleanHref = cleanHref.slice(0, -1);
             if (!cleanHref) cleanHref = '/';
+
+            // Clean language prefix to find canonical key
+            var canonical = cleanHref;
+            if (canonical.startsWith('/fr/')) canonical = canonical.slice(3);
+            else if (canonical === '/fr') canonical = '/';
+            else if (canonical.startsWith('/es/')) canonical = canonical.slice(3);
+            else if (canonical === '/es') canonical = '/';
+            if (!canonical.startsWith('/')) canonical = '/' + canonical;
+            if (canonical.length > 1 && !canonical.endsWith('/')) canonical = canonical + '/';
+
+            // Localize href according to current language
+            var localizedHref = canonical;
+            if (currentLang === 'fr') {
+                localizedHref = (canonical === '/') ? '/fr/' : ('/fr' + canonical);
+            } else if (currentLang === 'es') {
+                localizedHref = (canonical === '/') ? '/es/' : ('/es' + canonical);
+            }
+            a.setAttribute('href', localizedHref);
+
+            // Localize label
+            var labels = NAV_LABELS[currentLang] || NAV_LABELS.en;
+            if (labels[canonical]) {
+                a.textContent = labels[canonical];
+            }
 
             var isActive = false;
             if (cleanHref === '/' || cleanHref === '/fr' || cleanHref === '/es') {
