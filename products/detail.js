@@ -235,7 +235,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const thumbBox = document.createElement('div');
             thumbBox.className = 'thumb-box';
             thumbBox.style.cssText = `width:70px; height:70px; border: 1px solid ${idx === 0 ? '#111' : '#ddd'}; border-radius:8px; padding:8px; background:#fff; cursor:pointer; display:flex; align-items:center; justify-content:center; transition: all 0.2s ease;`;
-            thumbBox.innerHTML = `<img src="${imgUrl}" alt="Thumbnail ${idx + 1}" style="max-width:100%; max-height:100%; object-fit:contain;" />`;
+            thumbBox.innerHTML = `<img src="${imgUrl}" alt="Thumbnail ${idx + 1}" style="width:100%; height:100%; object-fit:cover; border-radius:4px;" />`;
             
             // Hover and click dynamic image swap
             const selectThumbnail = () => {
