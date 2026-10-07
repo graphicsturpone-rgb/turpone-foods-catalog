@@ -566,17 +566,24 @@ const productsData = [
     "category": "Frozen Pinsa",
     "category_fr": "Pinsa surgelée",
     "category_es": "Pinsa congelada",
-    "image": "Sausage-and-Hot-Honey-Frozen-Pinsa.webp",
+    "image": "sausage-and-hot-honey-pinsa.webp",
     "description": "Martha Stewart Sausage and Hot Honey Pinsa combines savory Italian sausage and fresh mozzarella with hot honey on a hand-stretched, authentic Roman-style crust. The light, airy and crisp crust pairs beautifully with rich Italian sausage, creamy mozzarella and a sweet kick of heat from the hot honey. It's a bold balance of sweet and savory flavors, ready to bake and enjoy in minutes.",
     "description_fr": "La pinsa à la saucisse italienne et miel piquant Martha Stewart marie saucisse italienne assaisonnée, mozzarella fraîche et un filet de miel piquant sur une croûte romaine légère et croustillante. Une alliance sucrée-salée irrésistible.",
     "description_es": "La pinsa de salchicha italiana y miel picante Martha Stewart reúne salchicha sazonada, mozzarella cremosa y miel picante sobre una masa artesanal de masa madre crujiente.",
     "features": "Featuring: Fresh mozzarella, Italian sausage and hot honey",
     "features_fr": "Caractéristiques : Mozzarella fraîche, saucisse italienne et miel piquant",
     "features_es": "Características: Mozzarella fresca, salchicha italiana y miel picante",
-    "gallery": [],
+    "gallery": [
+      "sausage-and-hot-honey-pinsa-gallery-1.webp",
+      "sausage-and-hot-honey-pinsa-gallery-2.webp",
+      "sausage-and-hot-honey-pinsa-gallery-3.webp",
+      "sausage-and-hot-honey-pinsa-gallery-4.webp",
+      "sausage-and-hot-honey-pinsa-gallery-5.webp"
+    ],
     "ingredients": "Ingredients: Pinsa crust (wheat flour, organic rice flour, organic fava flour, sourdough yeast, water, olive oil, salt, yeast), Italian sausage (pork, spices, salt), fresh mozzarella, hot honey, tomato sauce.\nContains: Wheat, Milk.",
     "ingredients_fr": "Ingrédients : Pâte à pinsa (farine de blé, farine de riz bio, farine de fève bio, levain, eau, huile d'olive, sel, levure), saucisse italienne de porc, mozzarella fraîche, miel piquant, sauce tomate.\nContient : Blé, Lait.",
-    "ingredients_es": "Ingredientes: Masa de pinsa (harina de trigo, harina de arroz orgánica, harina de haba orgánica, masa madre, agua, aceite de oliva, sal, levadura), salchicha italiana de cerdo, mozzarella fresca, miel picante, salsa de tomate.\nContiene: Trigo, Leche."
+    "ingredients_es": "Ingredientes: Masa de pinsa (harina de trigo, harina de arroz orgánica, harina de haba orgánica, masa madre, agua, aceite de oliva, sal, levadura), salchicha italiana de cerdo, mozzarella fresca, miel picante, salsa de tomate.\nContiene: Trigo, Leche.",
+    "slug": "sausage-and-hot-honey-pinsa"
   },
   {
     "id": 29,
