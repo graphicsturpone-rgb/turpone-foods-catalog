@@ -293,3 +293,169 @@ a, button, .elementor-button { transition: all 0.3s ease !important; }
     font-size: 12px !important;
 }
 
+
+
+/* ==========================================================================
+   TURPONE MASTER BRAND ELEVATED HOVER SYSTEM
+   Palette Architecture:
+   - Signature Olive:   #7e8157
+   - Warm Stone:        #d6d2cf
+   - Espresso Charcoal: #3d3935
+   - Pure White:        #ffffff
+   ========================================================================== */
+
+:root {
+  --brand-olive: #7e8157;
+  --brand-olive-tint: rgba(126, 129, 87, 0.12);
+  --brand-stone-light: #d6d2cf;
+  --brand-charcoal: #3d3935;
+  --brand-white: #ffffff;
+  --brand-hover-shadow: 0 16px 36px rgba(61, 57, 53, 0.12);
+  --brand-card-shadow: 0 4px 20px rgba(61, 57, 53, 0.05);
+}
+
+/* 1. Global Navigation & Links Hover Treatment */
+.elementor-nav-menu .elementor-item,
+.main-navigation a,
+.site-navigation a,
+nav a {
+  transition: color 0.3s cubic-bezier(0.16, 1, 0.3, 1), transform 0.3s ease !important;
+}
+
+.elementor-nav-menu .elementor-item:hover,
+.elementor-nav-menu .elementor-item.elementor-item-active,
+.elementor-nav-menu .elementor-item.highlighted,
+.main-navigation a:hover,
+.site-navigation a:hover {
+  color: var(--brand-olive) !important;
+}
+
+/* 2. Global Buttons & Call-to-Actions */
+.elementor-button,
+button.elementor-button,
+a.elementor-button,
+.elementor-kit-6 button,
+.elementor-kit-6 .elementor-button,
+.btn-primary,
+.view-btn {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), 
+              box-shadow 0.35s ease, 
+              background-color 0.35s ease, 
+              border-color 0.35s ease, 
+              color 0.35s ease !important;
+}
+
+.elementor-button:hover,
+button.elementor-button:hover,
+a.elementor-button:hover,
+.elementor-kit-6 button:hover,
+.elementor-kit-6 .elementor-button:hover,
+.view-btn:hover {
+  transform: translateY(-3px) !important;
+  box-shadow: 0 10px 24px rgba(126, 129, 87, 0.28) !important;
+  background-color: var(--brand-olive) !important;
+  border-color: var(--brand-olive) !important;
+  color: var(--brand-white) !important;
+}
+
+/* 3. Global Icon Boxes & Interactive Feature Cards */
+.elementor-widget-icon-box {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.elementor-widget-icon-box .elementor-widget-container {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), 
+              box-shadow 0.35s ease, 
+              border-color 0.35s ease, 
+              background-color 0.35s ease !important;
+}
+
+.elementor-widget-icon-box .elementor-icon,
+.elementor-widget-icon-box .elementor-icon svg,
+.elementor-widget-icon-box .elementor-icon i {
+  transition: fill 0.35s ease, 
+              color 0.35s ease, 
+              transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), 
+              background-color 0.35s ease !important;
+}
+
+.elementor-widget-icon-box .elementor-icon-box-title,
+.elementor-widget-icon-box .elementor-icon-box-title a {
+  transition: color 0.35s ease !important;
+}
+
+.elementor-widget-icon-box:hover .elementor-icon svg,
+.elementor-widget-icon-box:hover .elementor-icon i {
+  fill: var(--brand-olive) !important;
+  color: var(--brand-olive) !important;
+  transform: scale(1.06) !important;
+}
+
+.elementor-widget-icon-box:hover .elementor-icon-box-title,
+.elementor-widget-icon-box:hover .elementor-icon-box-title a {
+  color: var(--brand-olive) !important;
+}
+
+/* 4. Global Image Boxes & Service Teasers */
+.elementor-widget-image-box .elementor-image-box-title,
+.elementor-widget-image-box .elementor-image-box-title a {
+  transition: color 0.35s ease !important;
+}
+
+.elementor-widget-image-box:hover .elementor-image-box-title,
+.elementor-widget-image-box:hover .elementor-image-box-title a {
+  color: var(--brand-olive) !important;
+}
+
+/* 5. Product Catalog & Related Product Cards */
+.product-card,
+.related-product-card,
+.product-card-hover {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), 
+              box-shadow 0.35s ease, 
+              border-color 0.35s ease !important;
+  border-radius: 14px !important;
+  border: 1px solid var(--brand-stone-light) !important;
+}
+
+.product-card:hover,
+.related-product-card:hover,
+.product-card-hover:hover {
+  transform: translateY(-8px) !important;
+  box-shadow: var(--brand-hover-shadow) !important;
+  border-color: rgba(126, 129, 87, 0.45) !important;
+}
+
+.product-card:hover .card-title,
+.product-card:hover .product-title,
+.related-product-card:hover .related-title,
+.related-product-card:hover h4 {
+  color: var(--brand-olive) !important;
+  transition: color 0.3s ease !important;
+}
+
+.product-card:hover .img-wrapper img,
+.related-product-card:hover img {
+  transform: scale(1.05) !important;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+/* 6. Language Switcher Buttons */
+.lang-switcher:hover {
+  background: var(--brand-olive-tint) !important;
+  border-color: rgba(126, 129, 87, 0.3) !important;
+}
+
+.lang-btn:hover:not(.active) {
+  color: var(--brand-olive) !important;
+}
+
+/* 7. Footer Links & Icon Lists */
+.elementor-icon-list-item:hover .elementor-icon-list-text,
+.elementor-icon-list-item:hover .elementor-icon-list-text a,
+.elementor-icon-list-item:hover .elementor-icon-list-icon svg,
+.elementor-location-footer a:hover {
+  color: var(--brand-olive) !important;
+  fill: var(--brand-olive) !important;
+  transition: color 0.3s ease, fill 0.3s ease !important;
+}
