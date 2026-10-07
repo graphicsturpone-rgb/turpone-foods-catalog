@@ -126,7 +126,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 </head><body class="wp-singular page-template-default page page-id-185 wp-custom-logo wp-embed-responsive wp-theme-hello-elementor hello-elementor-default elementor-default elementor-kit-6 elementor-page elementor-page-185"><a class="skip-link screen-reader-text" href="#content">Skip to content</a><script src="/assets/js/header-injector.js"></script><main class="site-main post-185 page type-page status-publish hentry" id="content">
 <div class="recipes-index" style="max-width:1200px; margin: 0 auto; padding: 100px 20px; background-color: #ffffff; color: #000000; min-height: 70vh;">
     <h1 style="font-size: 60px; font-weight: 300; letter-spacing: -1px; margin-bottom: 50px; text-align: center;">Our Recipes</h1>
-    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 40px;">
+    <div id="recipes-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 40px;">
         
         <a href="/recipes/crispy-roasted-whole-chicken-with-roasted-garlic-olive-oil/" style="text-decoration: none; color: inherit; display: block; border-radius: 12px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: transform 0.3s ease;">
             <div style="height: 250px; background-image: url('/assets/images/recipes/Crispy Roasted Whole Chicken with Roasted Garlic Olive Oil.webp'); background-size: cover; background-position: center;"></div>
@@ -526,5 +526,50 @@ document.addEventListener("DOMContentLoaded", function() {
 </script> <script src="/assets/js/custom-interactions.js"></script>
 <script src="/assets/js/cookie-consent.js"></script>
 <script src="/assets/js/newsletter-popup.js"></script>
-<link href="/assets/css/chatbot.css" rel="stylesheet"/><script defer="" src="/assets/js/chatbot.js"></script><script src="/assets/js/us-image-swap.js" defer></script>
+<script src="/recipes/data.js"></script>
+<script src="/recipes/recipe-store.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', async function() {
+    const grid = document.getElementById('recipes-grid');
+    if (!grid || typeof RecipeStore === 'undefined') return;
+
+    // Load recipes (synced with API / localStorage / fallback)
+    try {
+        const recipes = await RecipeStore.getAll();
+        if (recipes && recipes.length > 0) {
+            // Known static directory slugs that have their own index.html
+            const staticSlugs = new Set([
+                "crispy-roasted-whole-chicken-with-roasted-garlic-olive-oil",
+                "fennel-and-rosemary-crusted-pork-loin",
+                "fig-herb-balsamic-vinaigrette",
+                "grilled-white-fish-with-lemon-pepper-herb-salmoriglio",
+                "mediterranean-tomato-marinade-for-fresh-bocconcini",
+                "pan-seared-salmon-with-a-lemon-black-pepper-honey-glaze",
+                "prosciutto-arugula-pizza",
+                "quick-garden-herb-ranch-dip",
+                "simple-balsamic-garlic-herb-tableside-dressing",
+                "spicy-garlic-grilled-shrimp-skewers",
+                "spicy-italian-sausage-pizza",
+                "triple-chili-honey-glazed-skewers",
+                "triple-pepper-crusted-new-york-strip-steak"
+            ]);
+
+            // Clear static placeholders and re-render fresh list
+            grid.innerHTML = recipes.map(r => {
+                const targetUrl = staticSlugs.has(r.slug) ? `/recipes/${r.slug}/` : `/recipes/detail.html?slug=${encodeURIComponent(r.slug)}`;
+                const img = r.image || '/assets/images/placeholder.svg';
+                return `
+                <a href="${targetUrl}" style="text-decoration: none; color: inherit; display: block; border-radius: 12px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: transform 0.3s ease;">
+                    <div style="height: 250px; background-image: url('${img}'); background-size: cover; background-position: center;"></div>
+                    <div style="padding: 25px; background: #fff;">
+                        <h3 style="font-size: 22px; font-weight: 600; margin: 0;">${r.title || 'Untitled Recipe'}</h3>
+                    </div>
+                </a>`;
+            }).join('');
+        }
+    } catch (e) {
+        console.error('Error hydrating recipes:', e);
+    }
+});
+</script>
 </body></html>
