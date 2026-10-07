@@ -67,8 +67,12 @@ document.addEventListener('DOMContentLoaded', () => {
                                (lang === 'es' && p.category_es) ? p.category_es :
                                p.category;
 
+            const detailUrl = (lang === 'fr') ? `/fr/products/detail.html?id=${p.id}` :
+                              (lang === 'es') ? `/es/products/detail.html?id=${p.id}` :
+                              `/products/detail.html?id=${p.id}`;
+
             card.innerHTML = `
-                <a href="/products/detail.html?id=${p.id}" style="text-decoration:none; color:inherit; display:flex; flex-direction:column; height:100%;">
+                <a href="${detailUrl}" style="text-decoration:none; color:inherit; display:flex; flex-direction:column; height:100%;">
                     <div class="img-wrapper">
                         <img src="${imgSrc}" alt="${displayTitle}" loading="lazy">
                     </div>

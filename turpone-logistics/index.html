@@ -351,7 +351,7 @@ document.addEventListener("DOMContentLoaded", function() {
             localStorage.setItem("preferred-lang", "en");
             if (!isEn) {
                 var clean = getCleanPath();
-                window.location.href = clean;
+                window.location.href = clean + (window.location.search || "") + (window.location.hash || "");
             }
         });
     }
@@ -361,7 +361,7 @@ document.addEventListener("DOMContentLoaded", function() {
             localStorage.setItem("preferred-lang", "es");
             if (!isEs) {
                 var clean = getCleanPath();
-                window.location.href = "/es" + clean;
+                window.location.href = "/es" + clean + (window.location.search || "") + (window.location.hash || "");
             }
         });
     }
@@ -371,7 +371,7 @@ document.addEventListener("DOMContentLoaded", function() {
             localStorage.setItem("preferred-lang", "fr");
             if (!isFr) {
                 var clean = getCleanPath();
-                window.location.href = "/fr" + clean;
+                window.location.href = "/fr" + clean + (window.location.search || "") + (window.location.hash || "");
             }
         });
     }
