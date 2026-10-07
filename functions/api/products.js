@@ -211,6 +211,21 @@ export async function onRequest(context) {
             const slug = (product.slug || product.title.toLowerCase().replace(/[^a-z0-9]+/g, "-")).replace(/(^-|-$)/g, "");
             product.slug = slug;
 
+            // Efficient Image saver: saves to assets/images/ca_imgs on main branch
+            // Keeps subrequests under Cloudflare's 50-limit
+            async function saveImageFile(fileName, base64) {
+                const fullPath = `${IMAGES_DIR}/${fileName}`;
+                const existing = await getFileContent(fullPath, "main", token);
+                return await putFileContent(
+                    fullPath,
+                    base64,
+                    `Upload ${fileName} to ${IMAGES_DIR}`,
+                    existing ? existing.sha : null,
+                    "main",
+                    token
+                );
+            }
+
             if (product.image && product.image.startsWith("data:image/")) {
                 const match = product.image.match(/^data:image\/([a-zA-Z0-9]+);base64,(.+)$/);
                 if (match) {
@@ -218,35 +233,7 @@ export async function onRequest(context) {
                     const imageFileName = `${slug}.${ext}`;
                     const imgBase64 = match[2];
 
-                    // Helper to put file safely across dirs and branches
-                    async function saveImageToDirs(dirPath, fileName, base64) {
-                        const fullPath = `${dirPath}/${fileName}`;
-                        const existing = await getFileContent(fullPath, "main", token);
-                        await putFileContent(
-                            fullPath,
-                            base64,
-                            `Upload image ${fileName} to ${dirPath}`,
-                            existing ? existing.sha : null,
-                            "main",
-                            token
-                        );
-                        // Also sync to production branch
-                        const existingProd = await getFileContent(fullPath, "production", token);
-                        await putFileContent(
-                            fullPath,
-                            base64,
-                            `Upload image ${fileName} to ${dirPath} (production)`,
-                            existingProd ? existingProd.sha : null,
-                            "production",
-                            token
-                        );
-                    }
-
-                    await saveImageToDirs(IMAGES_DIR, imageFileName, imgBase64);
-                    await saveImageToDirs(DIST_IMAGES_DIR, imageFileName, imgBase64);
-                    await saveImageToDirs(US_IMAGES_DIR, imageFileName, imgBase64);
-                    await saveImageToDirs(DIST_US_IMAGES_DIR, imageFileName, imgBase64);
-
+                    await saveImageFile(imageFileName, imgBase64);
                     product.image = imageFileName;
                 }
             }
@@ -263,33 +250,7 @@ export async function onRequest(context) {
                             const galFileName = `${slug}-gallery-${i + 1}.${ext}`;
                             const galBase64 = match[2];
 
-                            async function saveGalToDirs(dirPath, fileName, base64) {
-                                const fullPath = `${dirPath}/${fileName}`;
-                                const existing = await getFileContent(fullPath, "main", token);
-                                await putFileContent(
-                                    fullPath,
-                                    base64,
-                                    `Upload gallery image ${fileName} to ${dirPath}`,
-                                    existing ? existing.sha : null,
-                                    "main",
-                                    token
-                                );
-                                const existingProd = await getFileContent(fullPath, "production", token);
-                                await putFileContent(
-                                    fullPath,
-                                    base64,
-                                    `Upload gallery image ${fileName} to ${dirPath} (production)`,
-                                    existingProd ? existingProd.sha : null,
-                                    "production",
-                                    token
-                                );
-                            }
-
-                            await saveGalToDirs(IMAGES_DIR, galFileName, galBase64);
-                            await saveGalToDirs(DIST_IMAGES_DIR, galFileName, galBase64);
-                            await saveGalToDirs(US_IMAGES_DIR, galFileName, galBase64);
-                            await saveGalToDirs(DIST_US_IMAGES_DIR, galFileName, galBase64);
-
+                            await saveImageFile(galFileName, galBase64);
                             processedGallery.push(galFileName);
                         } else {
                             processedGallery.push(item);
@@ -324,7 +285,7 @@ export async function onRequest(context) {
                 products.push(product);
             }
 
-            // 5. Serialize and Commit updated data.js to both branches
+            // 5. Serialize and Commit updated data.js (main and dist on main branch)
             const updatedJsContent = serializeProductsData(products);
             const updatedBase64 = toBase64Utf8(updatedJsContent);
 
@@ -348,31 +309,6 @@ export async function onRequest(context) {
                 "main",
                 token
             );
-
-            // Also sync to production branch to ensure instant production deploy
-            const prodFileData = await getFileContent(PRODUCTS_DATA_PATH, "production", token);
-            if (prodFileData) {
-                await putFileContent(
-                    PRODUCTS_DATA_PATH,
-                    updatedBase64,
-                    `Catalog update: ${product.title} [production auto-sync]`,
-                    prodFileData.sha,
-                    "production",
-                    token
-                );
-            }
-
-            const distProdFileData = await getFileContent(DIST_PRODUCTS_DATA_PATH, "production", token);
-            if (distProdFileData) {
-                await putFileContent(
-                    DIST_PRODUCTS_DATA_PATH,
-                    updatedBase64,
-                    `Catalog update: ${product.title} (dist) [production auto-sync]`,
-                    distProdFileData.sha,
-                    "production",
-                    token
-                );
-            }
 
             return new Response(JSON.stringify({
                 success: true,
