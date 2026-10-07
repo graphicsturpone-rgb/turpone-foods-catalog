@@ -18,6 +18,88 @@ const physicalStores = [
 let userLocation = null;
 let currentTab = 'online';
 let showAll = false;
+let pageCurrentLang = 'en';
+
+// Comprehensive UI dictionary for EN, FR, and ES
+const UI_TRANSLATIONS = {
+    en: {
+        home: "Home",
+        products: "Products",
+        onlineTab: "Online",
+        instoreTab: "In Store",
+        directions: "Directions",
+        buy: "Buy",
+        seeMore: "See More",
+        seeLess: "See Less",
+        termsOfUse: "Terms of Use",
+        moreDetails: "More Details",
+        ingredients: "Ingredients",
+        pinsaTitle: "What is a Pinsa?",
+        pinsaDesc: "Pinsa is a hand-stretched Roman-style crust inspired by an ancient recipe, known for its crisp exterior and light, airy texture.",
+        relatedTitle: "Related Products",
+        relatedSubtitle: "Discover more authentic selections from our kitchen.",
+        viewDetails: "View Details",
+        loadingMap: "Loading Map...",
+        findingStore: "Finding closest store...",
+        productNotFound: "Product Not Found",
+        defaultDesc: "Authentic Turpone quality, crafted for excellence.",
+        defaultFeatures: "This package contains premium ingredients crafted for authenticity.",
+        defaultIngredients: "Ingredients information coming soon."
+    },
+    fr: {
+        home: "Accueil",
+        products: "Produits",
+        onlineTab: "En ligne",
+        instoreTab: "En magasin",
+        directions: "Itinéraire",
+        buy: "Acheter",
+        seeMore: "Voir plus",
+        seeLess: "Voir moins",
+        termsOfUse: "Conditions d'utilisation",
+        moreDetails: "Plus de détails",
+        ingredients: "Ingrédients",
+        pinsaTitle: "Qu'est-ce qu'une Pinsa ?",
+        pinsaDesc: "La pinsa est une pâte de style romain étirée à la main et inspirée d'une recette ancestrale, réputée pour son croustillant et sa texture légère et aérée.",
+        relatedTitle: "Produits associés",
+        relatedSubtitle: "Découvrez d'autres sélections authentiques de notre cuisine.",
+        viewDetails: "Voir les détails",
+        loadingMap: "Chargement de la carte...",
+        findingStore: "Recherche du magasin le plus proche...",
+        productNotFound: "Produit non trouvé",
+        defaultDesc: "Qualité Turpone authentique, conçue pour l'excellence.",
+        defaultFeatures: "Ce produit contient des ingrédients de première qualité confectionnés pour l'authenticité.",
+        defaultIngredients: "Informations sur les ingrédients à venir."
+    },
+    es: {
+        home: "Inicio",
+        products: "Productos",
+        onlineTab: "En línea",
+        instoreTab: "En tienda",
+        directions: "Cómo llegar",
+        buy: "Comprar",
+        seeMore: "Ver más",
+        seeLess: "Ver menos",
+        termsOfUse: "Términos de uso",
+        moreDetails: "Más detalles",
+        ingredients: "Ingredientes",
+        pinsaTitle: "¿Qué es una Pinsa?",
+        pinsaDesc: "La pinsa es una masa artesanal de estilo romano estirada a mano inspirada en una receta antigua, conocida por su exterior crujiente y su textura ligera y aireada.",
+        relatedTitle: "Productos relacionados",
+        relatedSubtitle: "Descubra más selecciones auténticas de nuestra cocina.",
+        viewDetails: "Ver detalles",
+        loadingMap: "Cargando mapa...",
+        findingStore: "Buscando la tienda más cercana...",
+        productNotFound: "Producto no encontrado",
+        defaultDesc: "Calidad Turpone auténtica, creada para la excelencia.",
+        defaultFeatures: "Este producto contiene ingredientes de primera calidad creados para la autenticidad.",
+        defaultIngredients: "Información de ingredientes próximamente."
+    }
+};
+
+function getT(key) {
+    const langDict = UI_TRANSLATIONS[pageCurrentLang] || UI_TRANSLATIONS.en;
+    return langDict[key] || (UI_TRANSLATIONS.en[key] || '');
+}
 
 function getDistanceFromLatLonInKm(lat1, lon1, lat2, lon2) {
     const R = 6371; 
@@ -32,16 +114,17 @@ function getDistanceFromLatLonInKm(lat1, lon1, lat2, lon2) {
 }
 
 function deg2rad(deg) {
-    return deg * (Math.PI / 180)
+    return deg * (Math.PI / 180);
 }
 
 function renderStores() {
     const container = document.getElementById('store-list-container');
+    if (!container) return;
     
     let html = `
         <div class="store-list-header">
-            <div class="${currentTab === 'online' ? 'active' : ''}" onclick="switchTab('online')">Online</div>
-            <div class="${currentTab === 'instore' ? 'active' : ''}" onclick="switchTab('instore')">In Store</div>
+            <div class="${currentTab === 'online' ? 'active' : ''}" onclick="switchTab('online')">${getT('onlineTab')}</div>
+            <div class="${currentTab === 'instore' ? 'active' : ''}" onclick="switchTab('instore')">${getT('instoreTab')}</div>
         </div>
     `;
 
@@ -54,7 +137,7 @@ function renderStores() {
         items.sort((a, b) => a.distance - b.distance);
     }
 
-    const displayCount = showAll ? items.length : (currentTab === 'online' ? 4 : 4);
+    const displayCount = showAll ? items.length : 4;
     const itemsToShow = items.slice(0, displayCount);
 
     if (currentTab === 'instore') {
@@ -65,24 +148,24 @@ function renderStores() {
             const closest = items[0];
             html += `<iframe src="https://maps.google.com/maps?q=${closest.lat},${closest.lng}&z=13&output=embed" allowfullscreen="" loading="lazy"></iframe>`;
         } else {
-            html += `<div style="display:flex; height:100%; align-items:center; justify-content:center; background:#eee; color:#999;">Loading Map...</div>`;
+            html += `<div style="display:flex; height:100%; align-items:center; justify-content:center; background:#eee; color:#999;">${getT('loadingMap')}</div>`;
         }
 
         html += `</div>
             <div class="instore-list">`;
             
-        itemsToShow.forEach((store, index) => {
+        itemsToShow.forEach((store) => {
             html += `<div class="store-item" style="border-bottom: 1px solid #eaeaea; padding: 15px 10px;">
                 <div style="flex:1; display:flex; flex-direction:column; gap:8px;">
                     <div style="display:flex; justify-content:space-between; align-items:flex-start;">
                         <img src="${store.logo}" class="store-logo-img" alt="${store.name} Logo" style="max-width:120px; max-height:45px;" />
-                        <button class="btn-buy" style="padding: 8px 15px; font-size:11px;">Directions</button>
+                        <button class="btn-buy" style="padding: 8px 15px; font-size:11px;">${getT('directions')}</button>
                     </div>
                     <div class="store-item-info" style="margin:0;">
                         <div class="store-dist" style="font-weight:600; color:#111;">${store.distance !== undefined ? store.distance.toFixed(1) + ' mi' : ''} - ${store.address2}</div>
                         <div class="store-addr">${store.address}</div>
                     </div>
-                    <a href="#" style="font-size:12px; font-weight:600; color:#111; text-decoration:none;">Buy <i class="fa-solid fa-arrow-up-right-from-square" style="font-size:10px;"></i></a>
+                    <a href="#" style="font-size:12px; font-weight:600; color:#111; text-decoration:none;">${getT('buy')} <i class="fa-solid fa-arrow-up-right-from-square" style="font-size:10px;"></i></a>
                 </div>
             </div>`;
         });
@@ -90,24 +173,24 @@ function renderStores() {
         if (items.length > 4) {
             html += `
                 <div style="text-align: center; padding: 15px; font-size: 13px; color: #111111; cursor: pointer; font-weight: 600;" onclick="toggleSeeMore()">
-                    ${showAll ? 'See Less <i class="fa-solid fa-angle-up"></i>' : 'See More <i class="fa-solid fa-angle-down"></i>'}
+                    ${showAll ? `${getT('seeLess')} <i class="fa-solid fa-angle-up"></i>` : `${getT('seeMore')} <i class="fa-solid fa-angle-down"></i>`}
                 </div>
             `;
         }
         
-        html += `</div></div>`; // Close instore-list and instore-layout
+        html += `</div></div>`;
     } else {
         html += `<div class="online-list">`;
         itemsToShow.forEach((store) => {
             html += `<div class="store-item">
                 <img src="${store.logo}" class="store-logo-img" alt="${store.name} Logo" />
-                <a href="${store.url}" target="_blank"><button class="btn-buy">Buy</button></a>
+                <a href="${store.url}" target="_blank"><button class="btn-buy">${getT('buy')}</button></a>
             </div>`;
         });
         if (items.length > 4) {
             html += `
                 <div style="text-align: center; padding: 15px; font-size: 13px; color: #111111; cursor: pointer; font-weight: 600;" onclick="toggleSeeMore()">
-                    ${showAll ? 'See Less <i class="fa-solid fa-angle-up"></i>' : 'See More <i class="fa-solid fa-angle-down"></i>'}
+                    ${showAll ? `${getT('seeLess')} <i class="fa-solid fa-angle-up"></i>` : `${getT('seeMore')} <i class="fa-solid fa-angle-down"></i>`}
                 </div>
             `;
         }
@@ -125,16 +208,18 @@ window.switchTab = function(tab) {
     } else {
         renderStores();
     }
-}
+};
 
 window.toggleSeeMore = function() {
     showAll = !showAll;
     renderStores();
-}
+};
 
 function fetchLocation() {
     const container = document.getElementById('store-list-container');
-    container.innerHTML += '<div style="text-align:center; padding: 20px;">Finding closest store...</div>';
+    if (container) {
+        container.innerHTML += `<div style="text-align:center; padding: 20px;">${getT('findingStore')}</div>`;
+    }
     
     fetch('https://get.geojs.io/v1/ip/geo.json')
         .then(response => response.json())
@@ -178,7 +263,6 @@ function resolveImageUrl(img) {
 function attachImageFallback(imgEl, originalFilename) {
     if (!imgEl || !originalFilename) return;
     
-    // Extract base filename without path
     const cleanName = originalFilename.replace(/^.*[\\\/]/, '');
     const fallbackPaths = [
         `/assets/images/ca_imgs/${cleanName}`,
@@ -202,7 +286,24 @@ function attachImageFallback(imgEl, originalFilename) {
     };
 }
 
-document.addEventListener('DOMContentLoaded', () => {
+function sanitizeGallery(gallery) {
+    if (!Array.isArray(gallery)) return [];
+    const sanitized = [];
+    for (let i = 0; i < gallery.length; i++) {
+        const item = gallery[i];
+        if (typeof item !== 'string') continue;
+        if (item.startsWith('data:image/') && item.includes(';base64') && !item.includes(',') && i + 1 < gallery.length) {
+            sanitized.push(item + ',' + gallery[i + 1]);
+            i++;
+        } else {
+            sanitized.push(item);
+        }
+    }
+    return sanitized;
+}
+
+// Main page rendering function
+function renderDetailPage() {
     const urlParams = new URLSearchParams(window.location.search);
     const idParam = urlParams.get('id');
     
@@ -214,26 +315,7 @@ document.addEventListener('DOMContentLoaded', () => {
         product = productsData.find(p => p.id === numId || String(p.id) === String(idParam));
     }
 
-    // Self-healing: if localStorage has an old draft of a base product with broken/missing gallery, refresh with productsData
-    if (product && typeof productsData !== 'undefined') {
-        const base = productsData.find(p => String(p.id) === String(product.id));
-        if (base) {
-            // If base has valid gallery and product draft doesn't, or if base image changed, synchronize
-            if ((!product.gallery || product.gallery.length === 0) && base.gallery && base.gallery.length > 0) {
-                product.gallery = base.gallery;
-            }
-            if (base.image && (!product.image || product.image.includes('placeholder'))) {
-                product.image = base.image;
-            }
-        }
-    }
-
-    if (!product) {
-        document.getElementById('product-content').innerHTML = '<h2 style="text-align:center; padding: 50px;">Product Not Found</h2>';
-        return;
-    }
-
-    // Determine current language: check pathname first (/fr/, /es/), fallback to preferred-lang
+    // Determine current language: pathname has top priority (/fr/, /es/), fallback to preferred-lang
     let currentLang = 'en';
     const path = window.location.pathname.toLowerCase();
     const storedLang = (localStorage.getItem('preferred-lang') || '').toLowerCase();
@@ -244,6 +326,38 @@ document.addEventListener('DOMContentLoaded', () => {
     } else if (storedLang === 'fr' || storedLang === 'es') {
         currentLang = storedLang;
     }
+    pageCurrentLang = currentLang;
+
+    // Self-healing: merge missing gallery, image, or localized keys from base productsData
+    if (product && typeof productsData !== 'undefined') {
+        const base = productsData.find(p => String(p.id) === String(product.id));
+        if (base) {
+            if ((!product.gallery || product.gallery.length === 0) && base.gallery && base.gallery.length > 0) {
+                product.gallery = base.gallery;
+            }
+            if (base.image && (!product.image || product.image.includes('placeholder'))) {
+                product.image = base.image;
+            }
+            const keysToSync = [
+                'title_fr', 'title_es',
+                'category_fr', 'category_es',
+                'description_fr', 'description_es',
+                'features_fr', 'features_es',
+                'ingredients_fr', 'ingredients_es'
+            ];
+            keysToSync.forEach(k => {
+                if (!product[k] && base[k]) product[k] = base[k];
+            });
+        }
+    }
+
+    const contentContainer = document.getElementById('product-content');
+    if (!product) {
+        if (contentContainer) {
+            contentContainer.innerHTML = `<h2 style="text-align:center; padding: 50px;">${getT('productNotFound')}</h2>`;
+        }
+        return;
+    }
 
     const localizedTitle = (currentLang === 'fr' && product.title_fr) ? product.title_fr :
                            (currentLang === 'es' && product.title_es) ? product.title_es :
@@ -251,44 +365,48 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const localizedCat = (currentLang === 'fr' && product.category_fr) ? product.category_fr :
                          (currentLang === 'es' && product.category_es) ? product.category_es :
-                         (product.category || 'Product');
+                         (product.category || (currentLang === 'fr' ? 'Produit' : currentLang === 'es' ? 'Producto' : 'Product'));
 
-    // Populate data
-    document.getElementById('breadcrumb-cat').textContent = localizedCat;
-    document.getElementById('title-cat').textContent = localizedCat;
-    document.getElementById('product-title').textContent = localizedTitle;
+    // Localize Breadcrumbs & Title Links
+    const homeLink = document.querySelector('#product-content a[href="/"], #product-content a[href="/fr/"], #product-content a[href="/es/"], #breadcrumb-home');
+    if (homeLink) {
+        homeLink.textContent = getT('home');
+        homeLink.setAttribute('href', currentLang === 'fr' ? '/fr/' : (currentLang === 'es' ? '/es/' : '/'));
+    }
+
+    const productsLink = document.querySelector('#product-content a[href="/products/"], #product-content a[href="/fr/products/"], #product-content a[href="/es/products/"], #breadcrumb-products');
+    if (productsLink) {
+        productsLink.textContent = getT('products');
+        productsLink.setAttribute('href', currentLang === 'fr' ? '/fr/products/' : (currentLang === 'es' ? '/es/products/' : '/products/'));
+    }
+
+    const breadcrumbCat = document.getElementById('breadcrumb-cat');
+    if (breadcrumbCat) breadcrumbCat.textContent = localizedCat;
+
+    const titleCat = document.getElementById('title-cat');
+    if (titleCat) titleCat.textContent = localizedCat;
+
+    const titleEl = document.getElementById('product-title');
+    if (titleEl) titleEl.textContent = localizedTitle;
+
     if (localizedTitle) {
         document.title = `${localizedTitle} | Turpone Foods`;
     }
     
+    // Main Product Image
     const mainImg = document.getElementById('main-img');
     const mainImgSrc = resolveImageUrl(product.image);
-    attachImageFallback(mainImg, product.image);
-    mainImg.src = mainImgSrc;
-    
-    // Sanitize any previously split Data URLs
-    function sanitizeGallery(gallery) {
-        if (!Array.isArray(gallery)) return [];
-        const sanitized = [];
-        for (let i = 0; i < gallery.length; i++) {
-            const item = gallery[i];
-            if (typeof item !== 'string') continue;
-            if (item.startsWith('data:image/') && item.includes(';base64') && !item.includes(',') && i + 1 < gallery.length) {
-                sanitized.push(item + ',' + gallery[i + 1]);
-                i++;
-            } else {
-                sanitized.push(item);
-            }
-        }
-        return sanitized;
+    if (mainImg) {
+        attachImageFallback(mainImg, product.image);
+        mainImg.src = mainImgSrc;
+        mainImg.alt = localizedTitle;
     }
-
+    
     // Gallery Thumbnails setup
     let galleryImages = [];
     const cleanGallery = sanitizeGallery(product.gallery);
     if (cleanGallery.length > 0) {
         galleryImages = cleanGallery.map(img => resolveImageUrl(img));
-        // Ensure the main image is the first in gallery if not already present
         if (!galleryImages.includes(mainImgSrc)) {
             galleryImages.unshift(mainImgSrc);
         }
@@ -311,10 +429,11 @@ document.addEventListener('DOMContentLoaded', () => {
             attachImageFallback(thumbImg, imgUrl);
             thumbBox.appendChild(thumbImg);
             
-            // Hover and click dynamic image swap
             const selectThumbnail = () => {
-                attachImageFallback(mainImg, imgUrl);
-                mainImg.src = imgUrl;
+                if (mainImg) {
+                    attachImageFallback(mainImg, imgUrl);
+                    mainImg.src = imgUrl;
+                }
                 document.querySelectorAll('.thumbs-container .thumb-box').forEach(b => {
                     b.style.borderColor = '#ddd';
                     b.style.transform = 'scale(1)';
@@ -329,27 +448,68 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Localized Description
     const localizedDesc = (currentLang === 'fr' && product.description_fr) ? product.description_fr :
                           (currentLang === 'es' && product.description_es) ? product.description_es :
-                          (product.description || (currentLang === 'fr' ? 'Qualité Turpone authentique, conçue pour l\'excellence.' : currentLang === 'es' ? 'Calidad Turpone auténtica, creada para la excelencia.' : 'Authentic Turpone quality, crafted for excellence.'));
+                          (product.description || getT('defaultDesc'));
     
-    document.getElementById('desc-text').textContent = localizedDesc;
+    const descText = document.getElementById('desc-text');
+    if (descText) descText.textContent = localizedDesc;
     
-    // Accordions
+    // Accordion Titles & Content
+    const accordionTitles = document.querySelectorAll('.accordion-title');
+    if (accordionTitles.length >= 2) {
+        accordionTitles[0].innerHTML = `${getT('moreDetails')} <i class="fa-solid fa-angle-up" style="color:#777;"></i>`;
+        accordionTitles[1].innerHTML = `${getT('ingredients')} <i class="fa-solid fa-angle-down" style="color:#777;"></i>`;
+    }
+
     const localizedFeatures = (currentLang === 'fr' && product.features_fr) ? product.features_fr :
                               (currentLang === 'es' && product.features_es) ? product.features_es :
-                              (product.features || (currentLang === 'fr' ? 'Ce produit contient des ingrédients de première qualité confectionnés pour l\'authenticité.' : currentLang === 'es' ? 'Este producto contiene ingredientes de primera calidad creados para la autenticidad.' : 'This package contains premium ingredients crafted for authenticity.'));
+                              (product.features || getT('defaultFeatures'));
 
     const localizedIngredients = (currentLang === 'fr' && product.ingredients_fr) ? product.ingredients_fr :
                                 (currentLang === 'es' && product.ingredients_es) ? product.ingredients_es :
-                                (product.ingredients || (currentLang === 'fr' ? 'Informations sur les ingrédients à venir.' : currentLang === 'es' ? 'Información de ingredientes próximamente.' : 'Ingredients information coming soon.'));
+                                (product.ingredients || getT('defaultIngredients'));
 
-    document.getElementById('details-text').textContent = localizedFeatures;
-    document.getElementById('ingredients-text').textContent = localizedIngredients;
+    const detailsText = document.getElementById('details-text');
+    if (detailsText) detailsText.textContent = localizedFeatures;
+
+    const ingredientsText = document.getElementById('ingredients-text');
+    if (ingredientsText) ingredientsText.textContent = localizedIngredients;
+
+    // Terms of Use string
+    const termsEl = document.querySelector('.detail-right > div[style*="text-align:center"]');
+    if (termsEl) {
+        termsEl.innerHTML = `${getT('termsOfUse')} <i class="fa-solid fa-building-columns"></i>`;
+    }
+
+    // Pinsa specific block localization
+    const pinsaInfo = document.getElementById('pinsa-info');
+    if (pinsaInfo) {
+        if (product.category === 'Frozen Pinsa') {
+            pinsaInfo.style.display = 'block';
+            pinsaInfo.innerHTML = `
+                <h4 style="font-size: 16px; font-weight: 700; color: #111111; margin-bottom: 10px;">${getT('pinsaTitle')}</h4>
+                <p style="font-size: 14px; color: #555; line-height: 1.6; margin:0;">${getT('pinsaDesc')}</p>
+            `;
+        } else {
+            pinsaInfo.style.display = 'none';
+        }
+    }
+
+    // Related Products Section Header localization
+    const relatedSection = document.getElementById('related-products-section');
+    if (relatedSection) {
+        const h3 = relatedSection.querySelector('.related-header h3');
+        const p = relatedSection.querySelector('.related-header p');
+        if (h3) h3.textContent = getT('relatedTitle');
+        if (p) p.textContent = getT('relatedSubtitle');
+    }
 
     // Interactive 2x Zoom on Mouse Hover for Main Product Image
     const mainImgBox = document.querySelector('.main-img-box');
-    if (mainImgBox && mainImg) {
+    if (mainImgBox && mainImg && !mainImgBox.dataset.zoomAttached) {
+        mainImgBox.dataset.zoomAttached = 'true';
         mainImgBox.addEventListener('mousemove', (e) => {
             const rect = mainImgBox.getBoundingClientRect();
             const x = e.clientX - rect.left;
@@ -367,32 +527,21 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Pinsa specific block
-    if (product.category === 'Frozen Pinsa') {
-        const pinsaInfo = document.getElementById('pinsa-info');
-        if (pinsaInfo) pinsaInfo.style.display = 'block';
-    }
-
-    // Initial render of store locator
+    // Render Store Locator
     renderStores();
 
-    // Related Products Carousel (4 columns, sliding 2 at a time)
+    // Render Related Products Carousel
     initRelatedProducts(product);
-    
-    // Attach accordion listeners globally
-    window.toggleAccordion = toggleAccordion;
-});
+}
 
 function initRelatedProducts(currentProduct) {
     const section = document.getElementById('related-products-section');
     const track = document.getElementById('relatedTrack');
     const prevBtn = document.getElementById('relatedPrevBtn');
     const nextBtn = document.getElementById('relatedNextBtn');
-    const dotsContainer = document.getElementById('relatedDots');
 
     if (!section || !track) return;
 
-    // Fetch all products
     let allProducts = [];
     if (window.ProductStore) {
         allProducts = window.ProductStore.getAll();
@@ -400,31 +549,39 @@ function initRelatedProducts(currentProduct) {
         allProducts = [...productsData];
     }
 
-    // Exclude current product
     const otherProducts = allProducts.filter(p => String(p.id) !== String(currentProduct.id));
     if (otherProducts.length === 0) return;
 
-    // Prioritize products in the same category, then other categories
     const sameCategory = otherProducts.filter(p => p.category === currentProduct.category);
     const diffCategory = otherProducts.filter(p => p.category !== currentProduct.category);
     const relatedList = [...sameCategory, ...diffCategory];
 
     if (relatedList.length === 0) return;
 
-    // Render cards
+    const detailUrlPrefix = (pageCurrentLang === 'fr') ? '/fr/products/detail.html?id=' :
+                            (pageCurrentLang === 'es') ? '/es/products/detail.html?id=' :
+                            '/products/detail.html?id=';
+
     track.innerHTML = relatedList.map(p => {
         const imgSrc = resolveImageUrl(p.image);
+        const cardTitle = (pageCurrentLang === 'fr' && p.title_fr) ? p.title_fr :
+                          (pageCurrentLang === 'es' && p.title_es) ? p.title_es :
+                          (p.title || '');
+        const cardCat = (pageCurrentLang === 'fr' && p.category_fr) ? p.category_fr :
+                        (pageCurrentLang === 'es' && p.category_es) ? p.category_es :
+                        (p.category || (pageCurrentLang === 'fr' ? 'Produit' : pageCurrentLang === 'es' ? 'Producto' : 'Product'));
+
         return `
-            <a href="/products/detail.html?id=${p.id}" class="related-card">
+            <a href="${detailUrlPrefix}${p.id}" class="related-card">
                 <div>
                     <div class="img-wrapper">
-                        <img src="${imgSrc}" alt="${p.title}" loading="lazy" onerror="this.onerror=null; this.src=NEUTRAL_PRODUCT_PLACEHOLDER;">
+                        <img src="${imgSrc}" alt="${cardTitle}" loading="lazy" onerror="this.onerror=null; this.src=NEUTRAL_PRODUCT_PLACEHOLDER;">
                     </div>
-                    <div class="related-card-cat">${p.category || 'Product'}</div>
-                    <h4>${p.title}</h4>
+                    <div class="related-card-cat">${cardCat}</div>
+                    <h4>${cardTitle}</h4>
                 </div>
                 <div class="btn-view">
-                    View Details <i class="fa-solid fa-arrow-right"></i>
+                    ${getT('viewDetails')} <i class="fa-solid fa-arrow-right"></i>
                 </div>
             </a>
         `;
@@ -432,7 +589,6 @@ function initRelatedProducts(currentProduct) {
 
     section.style.display = 'block';
 
-    // Carousel state
     let currentIndex = 0;
     const totalItems = relatedList.length;
 
@@ -446,7 +602,6 @@ function initRelatedProducts(currentProduct) {
 
     function getSlideStep() {
         const visible = getVisibleCount();
-        // If 1 visible on mobile, slide 1; otherwise slide 2 at a time as requested
         return visible === 1 ? 1 : 2;
     }
 
@@ -479,7 +634,7 @@ function initRelatedProducts(currentProduct) {
         if (currentIndex < maxIdx) {
             currentIndex = Math.min(currentIndex + step, maxIdx);
         } else {
-            currentIndex = 0; // Loop back slowly to start
+            currentIndex = 0;
         }
         updateCarousel();
     }
@@ -495,26 +650,48 @@ function initRelatedProducts(currentProduct) {
         updateCarousel();
     }
 
-    if (nextBtn) nextBtn.addEventListener('click', slideNext);
-    if (prevBtn) prevBtn.addEventListener('click', slidePrev);
+    if (nextBtn && !nextBtn.dataset.listenerAttached) {
+        nextBtn.dataset.listenerAttached = 'true';
+        nextBtn.addEventListener('click', slideNext);
+    }
+    if (prevBtn && !prevBtn.dataset.listenerAttached) {
+        prevBtn.dataset.listenerAttached = 'true';
+        prevBtn.addEventListener('click', slidePrev);
+    }
 
-    // Responsive update on resize
-    window.addEventListener('resize', () => {
-        updateCarousel();
-    });
+    if (!window.detailCarouselResizeAttached) {
+        window.detailCarouselResizeAttached = true;
+        window.addEventListener('resize', () => {
+            updateCarousel();
+        });
+    }
 
-    // Auto-advance slowly every 4.5 seconds; pause on hover
-    let autoInterval = setInterval(slideNext, 4500);
+    if (window.detailAutoSlideInterval) {
+        clearInterval(window.detailAutoSlideInterval);
+    }
+    window.detailAutoSlideInterval = setInterval(slideNext, 4500);
 
-    section.addEventListener('mouseenter', () => {
-        clearInterval(autoInterval);
-    });
+    if (!section.dataset.hoverAttached) {
+        section.dataset.hoverAttached = 'true';
+        section.addEventListener('mouseenter', () => {
+            clearInterval(window.detailAutoSlideInterval);
+        });
+        section.addEventListener('mouseleave', () => {
+            clearInterval(window.detailAutoSlideInterval);
+            window.detailAutoSlideInterval = setInterval(slideNext, 4500);
+        });
+    }
 
-    section.addEventListener('mouseleave', () => {
-        clearInterval(autoInterval);
-        autoInterval = setInterval(slideNext, 4500);
-    });
-
-    // Initial positioning
     setTimeout(updateCarousel, 100);
 }
+
+// Lifecycle listeners
+document.addEventListener('DOMContentLoaded', () => {
+    window.toggleAccordion = toggleAccordion;
+    renderDetailPage();
+});
+
+// Re-render automatically when background API sync delivers updated products
+window.addEventListener('turpone:products-updated', () => {
+    renderDetailPage();
+});

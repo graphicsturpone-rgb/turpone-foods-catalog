@@ -1114,6 +1114,8 @@
                 document.getElementById('formGallery').value = '';
             }
 
+            const existingProduct = id && window.ProductStore ? window.ProductStore.getById(id) : null;
+
             const productData = {
                 id: id || ('prod_' + Date.now()),
                 title,
@@ -1124,6 +1126,21 @@
                 features,
                 ingredients
             };
+
+            // Preserve any existing translations if editing an existing item
+            if (existingProduct) {
+                [
+                    'title_fr', 'title_es',
+                    'category_fr', 'category_es',
+                    'description_fr', 'description_es',
+                    'features_fr', 'features_es',
+                    'ingredients_fr', 'ingredients_es'
+                ].forEach(key => {
+                    if (existingProduct[key] && !productData[key]) {
+                        productData[key] = existingProduct[key];
+                    }
+                });
+            }
 
             // 1. Immediately save to local store for instant UI response
             if (window.ProductStore) {

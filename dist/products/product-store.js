@@ -31,10 +31,26 @@
         
         // Merge custom products, overriding base products if ID matches or appending new ones
         const merged = [...baseProducts];
+        const translationKeys = [
+            'title_fr', 'title_es',
+            'category_fr', 'category_es',
+            'description_fr', 'description_es',
+            'features_fr', 'features_es',
+            'ingredients_fr', 'ingredients_es'
+        ];
+
         customProducts.forEach(custom => {
             const index = merged.findIndex(p => String(p.id) === String(custom.id));
             if (index >= 0) {
-                merged[index] = { ...merged[index], ...custom };
+                const baseProd = merged[index];
+                const updated = { ...baseProd, ...custom };
+                // Ensure localized strings are preserved from baseProd if custom draft did not specify them
+                translationKeys.forEach(k => {
+                    if (!updated[k] && baseProd[k]) {
+                        updated[k] = baseProd[k];
+                    }
+                });
+                merged[index] = updated;
             } else {
                 merged.unshift(custom);
             }
@@ -88,6 +104,9 @@
             .then(data => {
                 if (data && data.success && Array.isArray(data.products)) {
                     window.__apiProducts = data.products;
+                    try {
+                        window.dispatchEvent(new CustomEvent('turpone:products-updated', { detail: data.products }));
+                    } catch (e) {}
                     if (typeof callback === 'function') callback(data.products);
                 }
             })
@@ -106,10 +125,25 @@
                 // If remote API products are loaded, merge custom drafts
                 const custom = getCustomProducts();
                 const merged = [...window.__apiProducts];
+                const translationKeys = [
+                    'title_fr', 'title_es',
+                    'category_fr', 'category_es',
+                    'description_fr', 'description_es',
+                    'features_fr', 'features_es',
+                    'ingredients_fr', 'ingredients_es'
+                ];
                 custom.forEach(c => {
                     const idx = merged.findIndex(p => String(p.id) === String(c.id));
-                    if (idx >= 0) merged[idx] = { ...merged[idx], ...c };
-                    else merged.unshift(c);
+                    if (idx >= 0) {
+                        const baseProd = merged[idx];
+                        const updated = { ...baseProd, ...c };
+                        translationKeys.forEach(k => {
+                            if (!updated[k] && baseProd[k]) updated[k] = baseProd[k];
+                        });
+                        merged[idx] = updated;
+                    } else {
+                        merged.unshift(c);
+                    }
                 });
                 return merged;
             }

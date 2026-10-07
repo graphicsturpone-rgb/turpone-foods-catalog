@@ -206,19 +206,19 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 
 <main style="background: #ffffff; min-height: 80vh; padding-top: 40px; padding-bottom: 60px;" id="product-content">
     <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px; font-size: 12px; color: #777;">
-        <a href="/" style="color:#777; text-decoration:none;">Home</a> <i class="fa-solid fa-angle-right" style="margin: 0 5px;"></i> 
-        <a href="/products/" style="color:#777; text-decoration:none;">Products</a> <i class="fa-solid fa-angle-right" style="margin: 0 5px;"></i> 
-        <span id="breadcrumb-cat">Category</span>
+        <a href="/fr/" style="color:#777; text-decoration:none;">Accueil</a> <i class="fa-solid fa-angle-right" style="margin: 0 5px;"></i> 
+        <a href="/fr/products/" style="color:#777; text-decoration:none;">Produits</a> <i class="fa-solid fa-angle-right" style="margin: 0 5px;"></i> 
+        <span id="breadcrumb-cat">Catégorie</span>
     </div>
 
     <div style="max-width: 1200px; margin: 20px auto 0; padding: 0 20px;">
-        <span id="title-cat" style="font-size: 12px; color: #111111; text-transform: uppercase; font-weight: 600; letter-spacing: 1px;">Category</span>
-        <h1 id="product-title" style="font-size: 36px; font-weight: 700;  color: #333; margin-top: 5px;">Product Title</h1>
+        <span id="title-cat" style="font-size: 12px; color: #111111; text-transform: uppercase; font-weight: 600; letter-spacing: 1px;">Catégorie</span>
+        <h1 id="product-title" style="font-size: 36px; font-weight: 700;  color: #333; margin-top: 5px;">Titre du produit</h1>
     
       <div class="detail-layout">
           <div class="detail-left">
               <div class="main-img-box" style="border: none; padding: 0;">
-                  <img id="main-img" src="" alt="Product Image">
+                  <img id="main-img" src="" alt="Image du produit">
               </div>
               <div class="thumbs-container" style="display:flex; justify-content:center; gap:15px; margin-top:20px;">
                   <div class="thumb-box" style="width:70px; height:70px; border: 1px solid #111; border-radius:8px; padding:10px; background:#fff;"><img src="" style="max-width:100%; max-height:100%; object-fit:contain;" /></div>
@@ -232,18 +232,18 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
               <div class="store-list" id="store-list-container" style="border: 1px solid #111; border-radius: 0;">
                   <!-- Injected via detail.js -->
               </div>
-              <div style="text-align:center; margin-top: 10px; font-size: 11px; color:#777;">Terms of Use <i class="fa-solid fa-building-columns"></i></div>
+              <div style="text-align:center; margin-top: 10px; font-size: 11px; color:#777;">Conditions d'utilisation <i class="fa-solid fa-building-columns"></i></div>
           </div>
       </div>
 
       <div class="detail-layout" style="margin-top: 20px; align-items: flex-start; margin-bottom: 40px;">
           <div class="detail-left" style="min-width: 350px;">
               <div class="accordion-box" style="border: 1px solid #eaeaea; background: #fff; margin-bottom: 10px;">
-                  <div class="accordion-title" onclick="toggleAccordion(this)" style="padding: 18px 20px; font-weight: 700; font-size: 14px; display: flex; justify-content: space-between; cursor: pointer; text-transform:uppercase;">More Details <i class="fa-solid fa-angle-up" style="color:#777;"></i></div>
+                  <div class="accordion-title" onclick="toggleAccordion(this)" style="padding: 18px 20px; font-weight: 700; font-size: 14px; display: flex; justify-content: space-between; cursor: pointer; text-transform:uppercase;">Plus de détails <i class="fa-solid fa-angle-up" style="color:#777;"></i></div>
                   <div class="accordion-content" id="details-text" style="padding: 0 20px 20px 20px; font-size: 13px; color: #555; line-height: 1.6; display:block;"></div>
               </div>
               <div class="accordion-box" style="border: 1px solid #eaeaea; background: #fdfdfd; margin-bottom: 10px;">
-                  <div class="accordion-title" onclick="toggleAccordion(this)" style="padding: 18px 20px; font-weight: 700; font-size: 14px; display: flex; justify-content: space-between; cursor: pointer; text-transform:uppercase;">Ingredients <i class="fa-solid fa-angle-down" style="color:#777;"></i></div>
+                  <div class="accordion-title" onclick="toggleAccordion(this)" style="padding: 18px 20px; font-weight: 700; font-size: 14px; display: flex; justify-content: space-between; cursor: pointer; text-transform:uppercase;">Ingrédients <i class="fa-solid fa-angle-down" style="color:#777;"></i></div>
                   <div class="accordion-content" id="ingredients-text" style="padding: 0 20px 20px 20px; font-size: 13px; color: #555; line-height: 1.6; display:none;"></div>
               </div>
           </div>
@@ -251,8 +251,8 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
               <div id="desc-text" style="font-size: 16px; line-height: 1.8; color: #444; "></div>
               
               <div class="pinsa-callout" id="pinsa-info" style="display: none;">
-                  <h4 style="font-size: 16px; font-weight: 700; color: #111111; margin-bottom: 10px;">What is a Pinsa?</h4>
-                  <p style="font-size: 14px; color: #555; line-height: 1.6; margin:0;">Pinsa is a hand-stretched Roman-style crust inspired by an ancient recipe, known for its crisp exterior and light, airy texture.</p>
+                  <h4 style="font-size: 16px; font-weight: 700; color: #111111; margin-bottom: 10px;">Qu'est-ce qu'une Pinsa ?</h4>
+                  <p style="font-size: 14px; color: #555; line-height: 1.6; margin:0;">La pinsa est une pâte de style romain étirée à la main et inspirée d'une recette ancestrale, réputée pour son croustillant et sa texture légère et aérée.</p>
               </div>
           </div>
       </div>
@@ -261,8 +261,8 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
       <section class="related-products-section" id="related-products-section" style="display: none;">
           <div class="related-header">
               <div>
-                  <h3>Related Products</h3>
-                  <p>Discover more authentic selections from our kitchen.</p>
+                  <h3>Produits associés</h3>
+                  <p>Découvrez d'autres sélections authentiques de notre cuisine.</p>
               </div>
               <div class="related-nav-btns">
                   <button type="button" class="related-nav-btn" id="relatedPrevBtn" aria-label="Previous products">
