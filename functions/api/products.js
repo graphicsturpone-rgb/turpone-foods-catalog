@@ -211,16 +211,28 @@ export async function onRequest(context) {
             const slug = (product.slug || product.title.toLowerCase().replace(/[^a-z0-9]+/g, "-")).replace(/(^-|-$)/g, "");
             product.slug = slug;
 
-            // Efficient Image saver: saves to assets/images/ca_imgs on main branch
-            // Keeps subrequests under Cloudflare's 50-limit
+            // Image saver: saves to both assets/images/ca_imgs AND dist/assets/images/ca_imgs on main branch
+            // Cloudflare Pages serves static files from dist/, so saving to dist ensures zero 404s.
             async function saveImageFile(fileName, base64) {
-                const fullPath = `${IMAGES_DIR}/${fileName}`;
-                const existing = await getFileContent(fullPath, "main", token);
-                return await putFileContent(
-                    fullPath,
+                const rootPath = `${IMAGES_DIR}/${fileName}`;
+                const distPath = `${DIST_IMAGES_DIR}/${fileName}`;
+
+                const existingRoot = await getFileContent(rootPath, "main", token);
+                await putFileContent(
+                    rootPath,
                     base64,
                     `Upload ${fileName} to ${IMAGES_DIR}`,
-                    existing ? existing.sha : null,
+                    existingRoot ? existingRoot.sha : null,
+                    "main",
+                    token
+                );
+
+                const existingDist = await getFileContent(distPath, "main", token);
+                await putFileContent(
+                    distPath,
+                    base64,
+                    `Upload ${fileName} to ${DIST_IMAGES_DIR}`,
+                    existingDist ? existingDist.sha : null,
                     "main",
                     token
                 );

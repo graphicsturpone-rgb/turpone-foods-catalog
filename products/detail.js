@@ -164,8 +164,10 @@ function toggleAccordion(el) {
     }
 }
 
+const NEUTRAL_PRODUCT_PLACEHOLDER = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23f8fafc'/%3E%3Cpath d='M30 65 L45 45 L58 58 L68 46 L80 65 Z' fill='%23cbd5e1'/%3E%3Ccircle cx='40' cy='38' r='5' fill='%23cbd5e1'/%3E%3C/svg%3E";
+
 function resolveImageUrl(img) {
-    if (!img) return '/assets/images/TF-LOgo.svg';
+    if (!img) return NEUTRAL_PRODUCT_PLACEHOLDER;
     if (img.startsWith('http://') || img.startsWith('https://') || img.startsWith('data:') || img.startsWith('/')) {
         return img;
     }
@@ -331,7 +333,7 @@ function initRelatedProducts(currentProduct) {
             <a href="/products/detail.html?id=${p.id}" class="related-card">
                 <div>
                     <div class="img-wrapper">
-                        <img src="${imgSrc}" alt="${p.title}" loading="lazy" onerror="this.src='/assets/images/TF-LOgo.svg'">
+                        <img src="${imgSrc}" alt="${p.title}" loading="lazy" onerror="this.onerror=null; this.src=NEUTRAL_PRODUCT_PLACEHOLDER;">
                     </div>
                     <div class="related-card-cat">${p.category || 'Product'}</div>
                     <h4>${p.title}</h4>
