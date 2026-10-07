@@ -174,6 +174,34 @@ function resolveImageUrl(img) {
     return '/assets/images/ca_imgs/' + img;
 }
 
+// Multi-path image fallback loader for detail page
+function attachImageFallback(imgEl, originalFilename) {
+    if (!imgEl || !originalFilename) return;
+    
+    // Extract base filename without path
+    const cleanName = originalFilename.replace(/^.*[\\\/]/, '');
+    const fallbackPaths = [
+        `/assets/images/ca_imgs/${cleanName}`,
+        `/assets/images/us_imgs/${cleanName}`,
+        `/assets/uploads/2026/05/${cleanName}`,
+        `/assets/images/${cleanName}`,
+        NEUTRAL_PRODUCT_PLACEHOLDER
+    ];
+
+    let currentFallbackIdx = 0;
+    imgEl.onerror = function() {
+        while (currentFallbackIdx < fallbackPaths.length) {
+            const nextCandidate = fallbackPaths[currentFallbackIdx++];
+            if (imgEl.src !== nextCandidate && !imgEl.src.endsWith(nextCandidate)) {
+                imgEl.src = nextCandidate;
+                return;
+            }
+        }
+        imgEl.onerror = null;
+        imgEl.src = NEUTRAL_PRODUCT_PLACEHOLDER;
+    };
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     const urlParams = new URLSearchParams(window.location.search);
     const idParam = urlParams.get('id');
@@ -184,6 +212,20 @@ document.addEventListener('DOMContentLoaded', () => {
     } else if (typeof productsData !== 'undefined') {
         const numId = parseInt(idParam);
         product = productsData.find(p => p.id === numId || String(p.id) === String(idParam));
+    }
+
+    // Self-healing: if localStorage has an old draft of a base product with broken/missing gallery, refresh with productsData
+    if (product && typeof productsData !== 'undefined') {
+        const base = productsData.find(p => String(p.id) === String(product.id));
+        if (base) {
+            // If base has valid gallery and product draft doesn't, or if base image changed, synchronize
+            if ((!product.gallery || product.gallery.length === 0) && base.gallery && base.gallery.length > 0) {
+                product.gallery = base.gallery;
+            }
+            if (base.image && (!product.image || product.image.includes('placeholder'))) {
+                product.image = base.image;
+            }
+        }
     }
 
     if (!product) {
@@ -198,6 +240,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     const mainImg = document.getElementById('main-img');
     const mainImgSrc = resolveImageUrl(product.image);
+    attachImageFallback(mainImg, product.image);
     mainImg.src = mainImgSrc;
     
     // Sanitize any previously split Data URLs
@@ -237,10 +280,17 @@ document.addEventListener('DOMContentLoaded', () => {
             const thumbBox = document.createElement('div');
             thumbBox.className = 'thumb-box';
             thumbBox.style.cssText = `width:70px; height:70px; border: 1px solid ${idx === 0 ? '#111' : '#ddd'}; border-radius:8px; padding:8px; background:#fff; cursor:pointer; display:flex; align-items:center; justify-content:center; transition: all 0.2s ease;`;
-            thumbBox.innerHTML = `<img src="${imgUrl}" alt="Thumbnail ${idx + 1}" style="width:100%; height:100%; object-fit:cover; border-radius:4px;" />`;
+            
+            const thumbImg = document.createElement('img');
+            thumbImg.src = imgUrl;
+            thumbImg.alt = `Thumbnail ${idx + 1}`;
+            thumbImg.style.cssText = 'width:100%; height:100%; object-fit:cover; border-radius:4px;';
+            attachImageFallback(thumbImg, imgUrl);
+            thumbBox.appendChild(thumbImg);
             
             // Hover and click dynamic image swap
             const selectThumbnail = () => {
+                attachImageFallback(mainImg, imgUrl);
                 mainImg.src = imgUrl;
                 document.querySelectorAll('.thumbs-container .thumb-box').forEach(b => {
                     b.style.borderColor = '#ddd';

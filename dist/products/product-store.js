@@ -44,7 +44,7 @@
     }
 
     function getProductById(id) {
-        const all = getAllProducts();
+        const all = (window.ProductStore && window.ProductStore.getAll) ? window.ProductStore.getAll() : getAllProducts();
         const strId = String(id).trim().toLowerCase();
         return all.find(p => 
             String(p.id).trim().toLowerCase() === strId ||
