@@ -37,13 +37,31 @@ async function githubRequest(path, method = "GET", body = null, token) {
     return { ok: res.ok, status: res.status, data };
 }
 
+function decodeBase64Utf8(base64) {
+    const binary = atob(base64);
+    const bytes = new Uint8Array(binary.length);
+    for (let i = 0; i < binary.length; i++) {
+        bytes[i] = binary.charCodeAt(i);
+    }
+    return new TextDecoder().decode(bytes);
+}
+
+function encodeBase64Utf8(str) {
+    const bytes = new TextEncoder().encode(str);
+    let binary = "";
+    for (let i = 0; i < bytes.length; i++) {
+        binary += String.fromCharCode(bytes[i]);
+    }
+    return btoa(binary);
+}
+
 // Fetch file contents from GitHub
 async function getFileContent(filePath, branch = "main", token) {
     const res = await githubRequest(`contents/${filePath}?ref=${branch}`, "GET", null, token);
     if (!res.ok || !res.data) return null;
 
     const base64 = res.data.content.replace(/\n/g, "");
-    const decoded = atob(base64);
+    const decoded = decodeBase64Utf8(base64);
     return {
         sha: res.data.sha,
         content: decoded
@@ -75,6 +93,7 @@ Title: "${product.title || ""}"
 Category: "${product.category || ""}"
 Description: "${product.description || ""}"
 Features: "${product.features || ""}"
+Ingredients: "${product.ingredients || ""}"
 
 Respond ONLY with valid, raw JSON (no markdown formatting, no code fences):
 {
@@ -85,7 +104,9 @@ Respond ONLY with valid, raw JSON (no markdown formatting, no code fences):
   "description_fr": "...",
   "description_es": "...",
   "features_fr": "...",
-  "features_es": "..."
+  "features_es": "...",
+  "ingredients_fr": "...",
+  "ingredients_es": "..."
 }`;
 
     try {
@@ -94,7 +115,7 @@ Respond ONLY with valid, raw JSON (no markdown formatting, no code fences):
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
                 contents: [{ role: "user", parts: [{ text: prompt }] }],
-                generationConfig: { temperature: 0.2, maxOutputTokens: 1000 }
+                generationConfig: { temperature: 0.2, maxOutputTokens: 1500 }
             })
         });
 
@@ -112,7 +133,9 @@ Respond ONLY with valid, raw JSON (no markdown formatting, no code fences):
                 description_fr: translations.description_fr || product.description,
                 description_es: translations.description_es || product.description,
                 features_fr: translations.features_fr || product.features,
-                features_es: translations.features_es || product.features
+                features_es: translations.features_es || product.features,
+                ingredients_fr: translations.ingredients_fr || product.ingredients,
+                ingredients_es: translations.ingredients_es || product.ingredients
             };
         }
     } catch (e) {
@@ -145,7 +168,7 @@ function serializeProductsData(products) {
 
 // Convert string to base64 safely in Cloudflare Workers UTF-8 environment
 function toBase64Utf8(str) {
-    return btoa(unescape(encodeURIComponent(str)));
+    return encodeBase64Utf8(str);
 }
 
 // Main handler

@@ -233,10 +233,33 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
     }
 
+    // Determine current language: check pathname first (/fr/, /es/), fallback to preferred-lang
+    let currentLang = 'en';
+    const path = window.location.pathname.toLowerCase();
+    const storedLang = (localStorage.getItem('preferred-lang') || '').toLowerCase();
+    if (path.includes('/fr/') || path.startsWith('/fr')) {
+        currentLang = 'fr';
+    } else if (path.includes('/es/') || path.startsWith('/es')) {
+        currentLang = 'es';
+    } else if (storedLang === 'fr' || storedLang === 'es') {
+        currentLang = storedLang;
+    }
+
+    const localizedTitle = (currentLang === 'fr' && product.title_fr) ? product.title_fr :
+                           (currentLang === 'es' && product.title_es) ? product.title_es :
+                           (product.title || '');
+
+    const localizedCat = (currentLang === 'fr' && product.category_fr) ? product.category_fr :
+                         (currentLang === 'es' && product.category_es) ? product.category_es :
+                         (product.category || 'Product');
+
     // Populate data
-    document.getElementById('breadcrumb-cat').textContent = product.category || 'Product';
-    document.getElementById('title-cat').textContent = product.category || 'Product';
-    document.getElementById('product-title').textContent = product.title || '';
+    document.getElementById('breadcrumb-cat').textContent = localizedCat;
+    document.getElementById('title-cat').textContent = localizedCat;
+    document.getElementById('product-title').textContent = localizedTitle;
+    if (localizedTitle) {
+        document.title = `${localizedTitle} | Turpone Foods`;
+    }
     
     const mainImg = document.getElementById('main-img');
     const mainImgSrc = resolveImageUrl(product.image);
@@ -306,11 +329,23 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    document.getElementById('desc-text').textContent = product.description || 'Authentic Turpone quality, crafted for excellence.';
+    const localizedDesc = (currentLang === 'fr' && product.description_fr) ? product.description_fr :
+                          (currentLang === 'es' && product.description_es) ? product.description_es :
+                          (product.description || (currentLang === 'fr' ? 'Qualité Turpone authentique, conçue pour l\'excellence.' : currentLang === 'es' ? 'Calidad Turpone auténtica, creada para la excelencia.' : 'Authentic Turpone quality, crafted for excellence.'));
+    
+    document.getElementById('desc-text').textContent = localizedDesc;
     
     // Accordions
-    document.getElementById('details-text').textContent = product.features || 'This package contains premium ingredients crafted for authenticity.';
-    document.getElementById('ingredients-text').textContent = product.ingredients || 'Ingredients information coming soon.';
+    const localizedFeatures = (currentLang === 'fr' && product.features_fr) ? product.features_fr :
+                              (currentLang === 'es' && product.features_es) ? product.features_es :
+                              (product.features || (currentLang === 'fr' ? 'Ce produit contient des ingrédients de première qualité confectionnés pour l\'authenticité.' : currentLang === 'es' ? 'Este producto contiene ingredientes de primera calidad creados para la autenticidad.' : 'This package contains premium ingredients crafted for authenticity.'));
+
+    const localizedIngredients = (currentLang === 'fr' && product.ingredients_fr) ? product.ingredients_fr :
+                                (currentLang === 'es' && product.ingredients_es) ? product.ingredients_es :
+                                (product.ingredients || (currentLang === 'fr' ? 'Informations sur les ingrédients à venir.' : currentLang === 'es' ? 'Información de ingredientes próximamente.' : 'Ingredients information coming soon.'));
+
+    document.getElementById('details-text').textContent = localizedFeatures;
+    document.getElementById('ingredients-text').textContent = localizedIngredients;
 
     // Interactive 2x Zoom on Mouse Hover for Main Product Image
     const mainImgBox = document.querySelector('.main-img-box');

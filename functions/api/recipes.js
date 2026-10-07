@@ -35,13 +35,31 @@ async function githubRequest(path, method = "GET", body = null, token) {
     return { ok: res.ok, status: res.status, data };
 }
 
+function decodeBase64Utf8(base64) {
+    const binary = atob(base64);
+    const bytes = new Uint8Array(binary.length);
+    for (let i = 0; i < binary.length; i++) {
+        bytes[i] = binary.charCodeAt(i);
+    }
+    return new TextDecoder().decode(bytes);
+}
+
+function encodeBase64Utf8(str) {
+    const bytes = new TextEncoder().encode(str);
+    let binary = "";
+    for (let i = 0; i < bytes.length; i++) {
+        binary += String.fromCharCode(bytes[i]);
+    }
+    return btoa(binary);
+}
+
 // Fetch file contents from GitHub
 async function getFileContent(filePath, branch = "main", token) {
     const res = await githubRequest(`contents/${filePath}?ref=${branch}`, "GET", null, token);
     if (!res.ok || !res.data) return null;
 
     const base64 = res.data.content.replace(/\n/g, "");
-    const decoded = atob(base64);
+    const decoded = decodeBase64Utf8(base64);
     return {
         sha: res.data.sha,
         content: decoded
@@ -142,7 +160,7 @@ function serializeRecipesData(recipes) {
 
 // Convert string to base64 safely in Cloudflare Workers UTF-8 environment
 function toBase64Utf8(str) {
-    return btoa(unescape(encodeURIComponent(str)));
+    return encodeBase64Utf8(str);
 }
 
 // Main handler

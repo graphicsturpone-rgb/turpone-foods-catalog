@@ -20,31 +20,62 @@ document.addEventListener('DOMContentLoaded', () => {
         return (typeof productsData !== 'undefined') ? productsData : [];
     }
 
+    function getCurrentLanguage() {
+        const path = window.location.pathname.toLowerCase();
+        const storedLang = (localStorage.getItem('preferred-lang') || '').toLowerCase();
+        if (path.includes('/fr/') || path.startsWith('/fr')) return 'fr';
+        if (path.includes('/es/') || path.startsWith('/es')) return 'es';
+        if (storedLang === 'fr' || storedLang === 'es') return storedLang;
+        return 'en';
+    }
+
     function renderProducts(category) {
         grid.innerHTML = '';
         const allProds = getProductList();
+        const lang = getCurrentLanguage();
+
         let filtered = category === 'All' 
             ? [...allProds].sort((a, b) => (a.category || '').localeCompare(b.category || '')) 
             : allProds.filter(p => p.category === category);
         
         if (filtered.length === 0) {
-            grid.innerHTML = '<p style="grid-column: 1/-1; text-align: center; color: #777;">No products found in this category.</p>';
+            const noProdMsg = lang === 'fr' ? 'Aucun produit trouvé dans cette catégorie.' :
+                              lang === 'es' ? 'No se encontraron productos en esta categoría.' :
+                              'No products found in this category.';
+            grid.innerHTML = `<p style="grid-column: 1/-1; text-align: center; color: #777;">${noProdMsg}</p>`;
             return;
         }
+
+        const viewDetailsText = lang === 'fr' ? 'Voir les détails' :
+                                lang === 'es' ? 'Ver detalles' :
+                                'View Details';
+
+        const defaultDescText = lang === 'fr' ? 'Qualité Turpone authentique, conçue pour l\'excellence.' :
+                                lang === 'es' ? 'Calidad Turpone auténtica, creada para la excelencia.' :
+                                'Authentic Turpone quality, crafted for excellence.';
 
         filtered.forEach(p => {
             const card = document.createElement('div');
             card.className = 'product-card';
             const imgSrc = resolveImageUrl(p.image);
+
+            const displayTitle = (lang === 'fr' && p.title_fr) ? p.title_fr :
+                                 (lang === 'es' && p.title_es) ? p.title_es :
+                                 p.title;
+
+            const displayCat = (lang === 'fr' && p.category_fr) ? p.category_fr :
+                               (lang === 'es' && p.category_es) ? p.category_es :
+                               p.category;
+
             card.innerHTML = `
                 <a href="/products/detail.html?id=${p.id}" style="text-decoration:none; color:inherit; display:flex; flex-direction:column; height:100%;">
                     <div class="img-wrapper">
-                        <img src="${imgSrc}" alt="${p.title}" loading="lazy">
+                        <img src="${imgSrc}" alt="${displayTitle}" loading="lazy">
                     </div>
-                    <div class="card-cat">${p.category}</div>
-                    <h4>${p.title}</h4>
-                    <p>Authentic Turpone quality, crafted for excellence.</p>
-                    <span class="btn-details" style="margin-top:auto;">View Details <i class="fa-solid fa-arrow-right"></i></span>
+                    <div class="card-cat">${displayCat}</div>
+                    <h4>${displayTitle}</h4>
+                    <p>${defaultDescText}</p>
+                    <span class="btn-details" style="margin-top:auto;">${viewDetailsText} <i class="fa-solid fa-arrow-right"></i></span>
                 </a>
             `;
             grid.appendChild(card);
