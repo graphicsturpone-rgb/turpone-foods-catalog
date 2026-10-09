@@ -24,7 +24,17 @@ const productsData = [
     "ingredients": "Ingredients: Pinsa (wheat flour, organic rice flour, organic fava flour, sourdough yeast, water, olive oil, salt, yeast [yeast, sorbitan monostearate, ascorbic acid]). Toppings: Mozzarella cheese (milk, modified milk ingredients, cream, salt, calcium chloride, bacterial culture, microbial enzyme), Caramelized ONIONSs (ONIONSs, natural flavour), Bacon (pork, water, salt, brown sugar, smoked sugar, sodium phosphate, sodium erythorbate, sodium nitrite, spices), Parmesan cheese (milk, salt, lipase, microbial enzyme, bacterial culture, calcium chloride, cellulose). Alfredo sauce: Cream (cream, milk, carrageenan, cellulose gum, mono and diglycerides, polysorbate 80), Minced garlic, Parmesan cheese (milk, salt, lipase, microbial enzyme, bacterial culture, calcium chloride, cellulose), Modified corn starch, Salt, Black pepper.\nContains: Wheat, Milk.\nMay contain: Eggs, Soy, Mustard.",
     "ingredients_fr": "Ingrédients : Pinsa (farine de blé, farine de riz biologique, farine de fève biologique, levain naturel, eau, huile d'olive, sel, levure). Garnitures : Fromage mozzarella, oignons caramélisés, bacon (porc, eau, sel, sucre brun, épices), fromage parmesan. Sauce Alfredo : Crème, ail émincé, fromage parmesan, amidon de maïs modifié, sel, poivre noir.\nContient : Blé, Lait.\nPeut contenir : Œufs, Soja, Moutarde.",
     "ingredients_es": "Ingredientes: Masa de pinsa (harina de trigo, harina de arroz orgánica, harina de haba orgánica, masa madre, agua, aceite de oliva, sal, levadura). Coberturas: Queso mozzarella, cebollas caramelizadas, tocino (cerdo, agua, sal, azúcar moreno, especias), queso parmesano. Salsa Alfredo: Crema, ajo picado, queso parmesano, almidón de maíz modificado, sal, pimienta negra.\nContiene: Trigo, Leche.\nPuede contener: Huevos, Soya, Mostaza.",
-    "slug": "bacon-and-caramelized-onions-pinsa"
+    "slug": "bacon-and-caramelized-onions-pinsa",
+    "image_ca": "",
+    "image_us": "bacon-and-caramelized-onions-pinsa-us.webp",
+    "gallery_ca": [],
+    "gallery_us": [
+      "bacon-and-caramelized-onions-pinsa-us-gallery-1.webp",
+      "bacon-and-caramelized-onions-pinsa-us-gallery-2.webp",
+      "bacon-and-caramelized-onions-pinsa-us-gallery-3.webp",
+      "bacon-and-caramelized-onions-pinsa-us-gallery-4.webp",
+      "bacon-and-caramelized-onions-pinsa-us-gallery-5.webp"
+    ]
   },
   {
     "id": 2,
