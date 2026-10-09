@@ -435,6 +435,8 @@ export async function onRequest(context) {
             if (!newCommitRes.ok || !newCommitRes.data) {
                 throw new Error("Failed to create Git commit for catalog update.");
             }
+            const newCommitSha = newCommitRes.data.sha;
+
             await githubRequest("git/refs/heads/main", "PATCH", {
                 sha: newCommitSha,
                 force: false
