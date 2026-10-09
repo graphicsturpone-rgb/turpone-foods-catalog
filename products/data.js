@@ -693,9 +693,15 @@ const productsData = [
     "ingredients_fr": "Ingrédients : Pâte à pinsa (farine de blé, farine de riz bio, farine de fève bio, levain, eau, huile d'olive, sel, levure). Garnitures : Mozzarella, fontina, épinards, parmesan, romano. Sauce Alfredo : Crème, ail émincé, parmesan, amidon de maïs modifié, sel, poivre noir.\nContient : Blé, Lait.\nPeut contenir : Œufs, Soja, Moutarde.",
     "ingredients_es": "Ingredientes: Masa de pinsa (harina de trigo, harina de arroz orgánica, harina de haba orgánica, masa madre, agua, aceite de oliva, sal, levadura). Coberturas: Quesos mozzarella, fontina, parmesano, romano y espinacas. Salsa Alfredo: Crema, ajo picado, queso parmesano, sal, pimienta negra.\nContiene: Trigo, Leche.\nPuede contener: Huevos, Soya, Mostaza.",
     "slug": "spinach-four-cheese-with-alfredo-sauce-pinsa",
-    "image_ca": "",
+    "image_ca": "spinach-four-cheese-with-alfredo-sauce-pinsa.webp",
     "image_us": "spinach-four-cheese-with-alfredo-sauce-pinsa-us.webp",
-    "gallery_ca": [],
+    "gallery_ca": [
+      "spinach-four-cheese-with-alfredo-sauce-pinsa-gallery-1.webp",
+      "spinach-four-cheese-with-alfredo-sauce-pinsa-gallery-2.webp",
+      "spinach-four-cheese-with-alfredo-sauce-pinsa-gallery-3.webp",
+      "spinach-four-cheese-with-alfredo-sauce-pinsa-gallery-4.webp",
+      "spinach-four-cheese-with-alfredo-sauce-pinsa-gallery-5.webp"
+    ],
     "gallery_us": [
       "spinach-four-cheese-with-alfredo-sauce-pinsa-us-gallery-1.webp",
       "spinach-four-cheese-with-alfredo-sauce-pinsa-us-gallery-2.webp",
