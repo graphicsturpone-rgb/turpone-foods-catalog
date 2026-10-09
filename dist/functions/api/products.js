@@ -230,36 +230,38 @@ export async function onRequest(context) {
             // 2. Auto-translate into authentic French & Spanish
             product = await autoTranslateProduct(product, geminiKey);
 
-            // 3. Process base64 Image upload if provided
+            // 3. Collect all files to commit via Atomic Git Tree
             const slug = (product.slug || product.title.toLowerCase().replace(/[^a-z0-9]+/g, "-")).replace(/(^-|-$)/g, "");
             product.slug = slug;
 
-            // Image saver: saves to both assets/images/ca_imgs (or us_imgs) AND dist/ on main branch
-            async function saveImageFile(fileName, base64, isUs = false) {
+            const treeEntries = [];
+
+            async function createBlobAndAddTree(fileName, base64Data, isUs = false) {
                 const targetImagesDir = isUs ? US_IMAGES_DIR : IMAGES_DIR;
                 const targetDistDir = isUs ? DIST_US_IMAGES_DIR : DIST_IMAGES_DIR;
                 const rootPath = `${targetImagesDir}/${fileName}`;
                 const distPath = `${targetDistDir}/${fileName}`;
 
-                const existingRoot = await getFileContent(rootPath, "main", token);
-                await putFileContent(
-                    rootPath,
-                    base64,
-                    `Upload ${fileName} to ${targetImagesDir}`,
-                    existingRoot ? existingRoot.sha : null,
-                    "main",
-                    token
-                );
+                const blobRes = await githubRequest("git/blobs", "POST", {
+                    content: base64Data,
+                    encoding: "base64"
+                }, token);
 
-                const existingDist = await getFileContent(distPath, "main", token);
-                await putFileContent(
-                    distPath,
-                    base64,
-                    `Upload ${fileName} to ${targetDistDir}`,
-                    existingDist ? existingDist.sha : null,
-                    "main",
-                    token
-                );
+                if (blobRes.ok && blobRes.data && blobRes.data.sha) {
+                    const blobSha = blobRes.data.sha;
+                    treeEntries.push({
+                        path: rootPath,
+                        mode: "100644",
+                        type: "blob",
+                        sha: blobSha
+                    });
+                    treeEntries.push({
+                        path: distPath,
+                        mode: "100644",
+                        type: "blob",
+                        sha: blobSha
+                    });
+                }
             }
 
             // Process Canada Main Image
@@ -268,7 +270,7 @@ export async function onRequest(context) {
                 if (match) {
                     const ext = match[1] === "jpeg" ? "jpg" : match[1];
                     const imageFileName = `${slug}.${ext}`;
-                    await saveImageFile(imageFileName, match[2], false);
+                    await createBlobAndAddTree(imageFileName, match[2], false);
                     product.image_ca = imageFileName;
                 }
             }
@@ -277,7 +279,7 @@ export async function onRequest(context) {
                 if (match) {
                     const ext = match[1] === "jpeg" ? "jpg" : match[1];
                     const imageFileName = `${slug}.${ext}`;
-                    await saveImageFile(imageFileName, match[2], false);
+                    await createBlobAndAddTree(imageFileName, match[2], false);
                     product.image = imageFileName;
                 }
             }
@@ -288,7 +290,7 @@ export async function onRequest(context) {
                 if (match) {
                     const ext = match[1] === "jpeg" ? "jpg" : match[1];
                     const imageFileName = `${slug}-us.${ext}`;
-                    await saveImageFile(imageFileName, match[2], true);
+                    await createBlobAndAddTree(imageFileName, match[2], true);
                     product.image_us = imageFileName;
                 }
             }
@@ -303,7 +305,7 @@ export async function onRequest(context) {
                         if (match) {
                             const ext = match[1] === "jpeg" ? "jpg" : match[1];
                             const galFileName = `${slug}-gallery-${i + 1}.${ext}`;
-                            await saveImageFile(galFileName, match[2], false);
+                            await createBlobAndAddTree(galFileName, match[2], false);
                             processedGallery.push(galFileName);
                         } else {
                             processedGallery.push(item);
@@ -325,7 +327,7 @@ export async function onRequest(context) {
                         if (match) {
                             const ext = match[1] === "jpeg" ? "jpg" : match[1];
                             const galFileName = `${slug}-us-gallery-${i + 1}.${ext}`;
-                            await saveImageFile(galFileName, match[2], true);
+                            await createBlobAndAddTree(galFileName, match[2], true);
                             processedGalleryUs.push(galFileName);
                         } else {
                             processedGalleryUs.push(item);
@@ -347,7 +349,7 @@ export async function onRequest(context) {
                         if (match) {
                             const ext = match[1] === "jpeg" ? "jpg" : match[1];
                             const galFileName = `${slug}-gallery-${i + 1}.${ext}`;
-                            await saveImageFile(galFileName, match[2], false);
+                            await createBlobAndAddTree(galFileName, match[2], false);
                             processedGallery.push(galFileName);
                         } else {
                             processedGallery.push(item);
@@ -382,30 +384,63 @@ export async function onRequest(context) {
                 products.push(product);
             }
 
-            // 5. Serialize and Commit updated data.js (main and dist on main branch)
+            // 5. Serialize products/data.js and add to Atomic Git Tree
             const updatedJsContent = serializeProductsData(products);
-            const updatedBase64 = toBase64Utf8(updatedJsContent);
+            const dataBlobRes = await githubRequest("git/blobs", "POST", {
+                content: toBase64Utf8(updatedJsContent),
+                encoding: "base64"
+            }, token);
 
-            // Commit to products/data.js (main branch)
-            await putFileContent(
-                PRODUCTS_DATA_PATH,
-                updatedBase64,
-                `Catalog update: ${product.title} [auto-sync]`,
-                fileData.sha,
-                "main",
-                token
-            );
+            if (dataBlobRes.ok && dataBlobRes.data && dataBlobRes.data.sha) {
+                treeEntries.push({
+                    path: PRODUCTS_DATA_PATH,
+                    mode: "100644",
+                    type: "blob",
+                    sha: dataBlobRes.data.sha
+                });
+                treeEntries.push({
+                    path: DIST_PRODUCTS_DATA_PATH,
+                    mode: "100644",
+                    type: "blob",
+                    sha: dataBlobRes.data.sha
+                });
+            }
 
-            // Commit to dist/products/data.js (main branch)
-            const distFileData = await getFileContent(DIST_PRODUCTS_DATA_PATH, "main", token);
-            await putFileContent(
-                DIST_PRODUCTS_DATA_PATH,
-                updatedBase64,
-                `Catalog update: ${product.title} (dist) [auto-sync]`,
-                distFileData ? distFileData.sha : null,
-                "main",
-                token
-            );
+            // 6. Execute Atomic Commit (1 Tree, 1 Commit, 1 Ref update)
+            const refRes = await githubRequest("git/ref/heads/main", "GET", null, token);
+            if (!refRes.ok || !refRes.data) {
+                throw new Error("Unable to fetch head commit on main branch.");
+            }
+            const baseCommitSha = refRes.data.object.sha;
+
+            const baseCommitRes = await githubRequest(`git/commits/${baseCommitSha}`, "GET", null, token);
+            const baseTreeSha = baseCommitRes.data.tree.sha;
+
+            const newTreeRes = await githubRequest("git/trees", "POST", {
+                base_tree: baseTreeSha,
+                tree: treeEntries
+            }, token);
+
+            if (!newTreeRes.ok || !newTreeRes.data) {
+                throw new Error("Failed to create Git tree for catalog update.");
+            }
+            const newTreeSha = newTreeRes.data.sha;
+
+            const newCommitRes = await githubRequest("git/commits", "POST", {
+                message: `Catalog update: ${product.title} (atomic sync) [skip ci]`,
+                tree: newTreeSha,
+                parents: [baseCommitSha]
+            }, token);
+
+            if (!newCommitRes.ok || !newCommitRes.data) {
+                throw new Error("Failed to create Git commit for catalog update.");
+            }
+            const newCommitSha = newCommitRes.data.sha;
+
+            await githubRequest("git/refs/heads/main", "PATCH", {
+                sha: newCommitSha,
+                force: false
+            }, token);
 
             return new Response(JSON.stringify({
                 success: true,
@@ -446,26 +481,35 @@ export async function onRequest(context) {
             }
 
             const updatedJsContent = serializeProductsData(products);
-            const updatedBase64 = toBase64Utf8(updatedJsContent);
+            const dataBlobRes = await githubRequest("git/blobs", "POST", {
+                content: toBase64Utf8(updatedJsContent),
+                encoding: "base64"
+            }, token);
 
-            await putFileContent(
-                PRODUCTS_DATA_PATH,
-                updatedBase64,
-                `Catalog delete: product ID ${id} [auto-sync]`,
-                fileData.sha,
-                "main",
-                token
-            );
+            const refRes = await githubRequest("git/ref/heads/main", "GET", null, token);
+            const baseCommitSha = refRes.data.object.sha;
 
-            const distFileData = await getFileContent(DIST_PRODUCTS_DATA_PATH, "main", token);
-            await putFileContent(
-                DIST_PRODUCTS_DATA_PATH,
-                updatedBase64,
-                `Catalog delete: product ID ${id} (dist) [auto-sync]`,
-                distFileData ? distFileData.sha : null,
-                "main",
-                token
-            );
+            const baseCommitRes = await githubRequest(`git/commits/${baseCommitSha}`, "GET", null, token);
+            const baseTreeSha = baseCommitRes.data.tree.sha;
+
+            const newTreeRes = await githubRequest("git/trees", "POST", {
+                base_tree: baseTreeSha,
+                tree: [
+                    { path: PRODUCTS_DATA_PATH, mode: "100644", type: "blob", sha: dataBlobRes.data.sha },
+                    { path: DIST_PRODUCTS_DATA_PATH, mode: "100644", type: "blob", sha: dataBlobRes.data.sha }
+                ]
+            }, token);
+
+            const newCommitRes = await githubRequest("git/commits", "POST", {
+                message: `Catalog delete: product ID ${id} [atomic sync]`,
+                tree: newTreeRes.data.sha,
+                parents: [baseCommitSha]
+            }, token);
+
+            await githubRequest("git/refs/heads/main", "PATCH", {
+                sha: newCommitRes.data.sha,
+                force: false
+            }, token);
 
             return new Response(JSON.stringify({
                 success: true,
