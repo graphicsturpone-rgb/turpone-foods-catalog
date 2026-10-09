@@ -539,9 +539,15 @@ const productsData = [
     "ingredients_fr": "Ingrédients : Pâte à pinsa (farine de blé, farine de riz bio, farine de fève bio, levain, eau, huile d'olive, sel, levure). Garnitures : Mozzarella, pepperoni de porc, piments forts marinés rouges et jaunes, parmesan. Sauce tomate aux herbes.\nContient : Blé, Lait.\nPeut contenir : Œufs, Soja, Moutarde.",
     "ingredients_es": "Ingredientes: Masa de pinsa (harina de trigo, harina de arroz orgánica, harina de haba orgánica, masa madre, agua, aceite de oliva, sal, levadura). Coberturas: Queso mozzarella, pepperoni de cerdo, chiles encurtidos picantes rojos y amarillos, queso parmesano. Salsa de tomate sazonada.\nContiene: Trigo, Leche.\nPuede contener: Huevos, Soya, Mostaza.",
     "slug": "pepperoni-and-hot-pickled-peppers-pinsa",
-    "image_ca": "",
+    "image_ca": "pepperoni-and-hot-pickled-peppers-pinsa.webp",
     "image_us": "pepperoni-and-hot-pickled-peppers-pinsa-us.webp",
-    "gallery_ca": [],
+    "gallery_ca": [
+      "pepperoni-and-hot-pickled-peppers-pinsa-gallery-1.webp",
+      "pepperoni-and-hot-pickled-peppers-pinsa-gallery-2.webp",
+      "pepperoni-and-hot-pickled-peppers-pinsa-gallery-3.webp",
+      "pepperoni-and-hot-pickled-peppers-pinsa-gallery-4.webp",
+      "pepperoni-and-hot-pickled-peppers-pinsa-gallery-5.webp"
+    ],
     "gallery_us": [
       "pepperoni-and-hot-pickled-peppers-pinsa-us-gallery-1.webp",
       "pepperoni-and-hot-pickled-peppers-pinsa-us-gallery-2.webp",
