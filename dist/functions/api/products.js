@@ -274,15 +274,6 @@ export async function onRequest(context) {
                     product.image_ca = imageFileName;
                 }
             }
-            if (product.image && product.image.startsWith("data:image/")) {
-                const match = product.image.match(/^data:image\/([a-zA-Z0-9]+);base64,(.+)$/);
-                if (match) {
-                    const ext = match[1] === "jpeg" ? "jpg" : match[1];
-                    const imageFileName = `${slug}.${ext}`;
-                    await createBlobAndAddTree(imageFileName, match[2], false);
-                    product.image = imageFileName;
-                }
-            }
 
             // Process US Main Image
             if (product.image_us && product.image_us.startsWith("data:image/")) {
@@ -294,6 +285,9 @@ export async function onRequest(context) {
                     product.image_us = imageFileName;
                 }
             }
+
+            // Normalize base fallback image
+            product.image = product.image_ca || product.image_us || product.image || "";
 
             // Process Canada Gallery
             if (Array.isArray(product.gallery_ca) && product.gallery_ca.length > 0) {
@@ -339,27 +333,10 @@ export async function onRequest(context) {
                 product.gallery_us = processedGalleryUs;
             }
 
-            // Process default Images Gallery fallback
-            if (Array.isArray(product.gallery) && product.gallery.length > 0) {
-                const processedGallery = [];
-                for (let i = 0; i < product.gallery.length; i++) {
-                    const item = product.gallery[i];
-                    if (typeof item === "string" && item.startsWith("data:image/")) {
-                        const match = item.match(/^data:image\/([a-zA-Z0-9]+);base64,(.+)$/);
-                        if (match) {
-                            const ext = match[1] === "jpeg" ? "jpg" : match[1];
-                            const galFileName = `${slug}-gallery-${i + 1}.${ext}`;
-                            await createBlobAndAddTree(galFileName, match[2], false);
-                            processedGallery.push(galFileName);
-                        } else {
-                            processedGallery.push(item);
-                        }
-                    } else if (typeof item === "string" && item.trim()) {
-                        processedGallery.push(item.trim());
-                    }
-                }
-                product.gallery = processedGallery;
-            }
+            // Normalize base gallery
+            product.gallery = (Array.isArray(product.gallery_ca) && product.gallery_ca.length > 0)
+                ? [...product.gallery_ca]
+                : (Array.isArray(product.gallery_us) && product.gallery_us.length > 0 ? [...product.gallery_us] : []);
 
             // 4. Update or Insert product into catalog array
             const prodId = product.id ? String(product.id) : `prod_${Date.now()}`;
@@ -416,9 +393,16 @@ export async function onRequest(context) {
             const baseCommitRes = await githubRequest(`git/commits/${baseCommitSha}`, "GET", null, token);
             const baseTreeSha = baseCommitRes.data.tree.sha;
 
+            // Deduplicate tree entries by path
+            const uniqueTreeEntriesMap = new Map();
+            for (const entry of treeEntries) {
+                uniqueTreeEntriesMap.set(entry.path, entry);
+            }
+            const uniqueTreeEntries = Array.from(uniqueTreeEntriesMap.values());
+
             const newTreeRes = await githubRequest("git/trees", "POST", {
                 base_tree: baseTreeSha,
-                tree: treeEntries
+                tree: uniqueTreeEntries
             }, token);
 
             if (!newTreeRes.ok || !newTreeRes.data) {
