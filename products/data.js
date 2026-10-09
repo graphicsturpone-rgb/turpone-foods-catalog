@@ -616,9 +616,15 @@ const productsData = [
     "ingredients_fr": "Ingrédients : Pâte à pinsa (farine de blé, farine de riz bio, farine de fève bio, levain, eau, huile d'olive, sel, levure), saucisse italienne de porc, mozzarella fraîche, miel piquant, sauce tomate.\nContient : Blé, Lait.",
     "ingredients_es": "Ingredientes: Masa de pinsa (harina de trigo, harina de arroz orgánica, harina de haba orgánica, masa madre, agua, aceite de oliva, sal, levadura), salchicha italiana de cerdo, mozzarella fresca, miel picante, salsa de tomate.\nContiene: Trigo, Leche.",
     "slug": "sausage-and-hot-honey-pinsa",
-    "image_ca": "",
+    "image_ca": "sausage-and-hot-honey-pinsa.webp",
     "image_us": "sausage-and-hot-honey-pinsa-us.webp",
-    "gallery_ca": [],
+    "gallery_ca": [
+      "sausage-and-hot-honey-pinsa-gallery-1.webp",
+      "sausage-and-hot-honey-pinsa-gallery-2.webp",
+      "sausage-and-hot-honey-pinsa-gallery-3.webp",
+      "sausage-and-hot-honey-pinsa-gallery-4.webp",
+      "sausage-and-hot-honey-pinsa-gallery-5.webp"
+    ],
     "gallery_us": [
       "sausage-and-hot-honey-pinsa-us-gallery-1.webp",
       "sausage-and-hot-honey-pinsa-us-gallery-2.webp",
