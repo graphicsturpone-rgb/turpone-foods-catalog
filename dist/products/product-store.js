@@ -44,6 +44,14 @@
             if (index >= 0) {
                 const baseProd = merged[index];
                 const updated = { ...baseProd, ...custom };
+                
+                // Explicitly preserve empty values if customized
+                if (custom.image_ca !== undefined) updated.image_ca = custom.image_ca;
+                if (custom.image_us !== undefined) updated.image_us = custom.image_us;
+                if (custom.gallery_ca !== undefined) updated.gallery_ca = custom.gallery_ca;
+                if (custom.gallery_us !== undefined) updated.gallery_us = custom.gallery_us;
+                if (custom.image_ca === "") updated.image = "";
+
                 // Ensure localized strings are preserved from baseProd if custom draft did not specify them
                 translationKeys.forEach(k => {
                     if (!updated[k] && baseProd[k]) {

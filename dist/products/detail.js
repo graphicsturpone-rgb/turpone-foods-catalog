@@ -302,12 +302,10 @@ function attachImageFallback(imgEl, originalFilename) {
     
     const cleanName = originalFilename.replace(/^.*[\\\/]/, '');
     const currentMarket = getActiveMarket();
-    const primaryFolder = currentMarket === 'US' ? '/assets/images/us_imgs/' : '/assets/images/ca_imgs/';
-    const secondaryFolder = currentMarket === 'US' ? '/assets/images/ca_imgs/' : '/assets/images/us_imgs/';
+    const marketFolder = currentMarket === 'US' ? '/assets/images/us_imgs/' : '/assets/images/ca_imgs/';
 
     const fallbackPaths = [
-        primaryFolder + cleanName,
-        secondaryFolder + cleanName,
+        marketFolder + cleanName,
         `/assets/images/${cleanName}`,
         NEUTRAL_PRODUCT_PLACEHOLDER
     ];
@@ -368,16 +366,10 @@ function renderDetailPage() {
     }
     pageCurrentLang = currentLang;
 
-    // Self-healing: merge missing gallery, image, or localized keys from base productsData
+    // Self-healing: merge missing localized keys from base productsData (never override custom images/galleries)
     if (product && typeof productsData !== 'undefined') {
         const base = productsData.find(p => String(p.id) === String(product.id));
         if (base) {
-            if ((!product.gallery || product.gallery.length === 0) && base.gallery && base.gallery.length > 0) {
-                product.gallery = base.gallery;
-            }
-            if (base.image && (!product.image || product.image.includes('placeholder'))) {
-                product.image = base.image;
-            }
             const keysToSync = [
                 'title_fr', 'title_es',
                 'category_fr', 'category_es',
@@ -435,32 +427,44 @@ function renderDetailPage() {
     
     // Market-Specific Product Image and Gallery
     const activeMarket = getActiveMarket();
-    const rawMainImg = (activeMarket === 'US' && product.image_us) ? product.image_us : (product.image_ca || product.image);
-    const mainImgSrc = resolveImageUrl(rawMainImg, activeMarket);
+    let rawMainImg = '';
+    let rawGallery = [];
+
+    if (activeMarket === 'US') {
+        rawMainImg = (product.image_us !== undefined) ? product.image_us : '';
+        rawGallery = (product.gallery_us !== undefined) ? product.gallery_us : [];
+    } else {
+        // Canada Market (CA)
+        rawMainImg = (product.image_ca !== undefined) ? product.image_ca : (product.image || '');
+        rawGallery = (product.gallery_ca !== undefined) ? product.gallery_ca : (product.gallery || []);
+    }
 
     const mainImg = document.getElementById('main-img');
     if (mainImg) {
-        attachImageFallback(mainImg, rawMainImg);
-        mainImg.src = mainImgSrc;
+        if (rawMainImg && rawMainImg.trim()) {
+            const mainImgSrc = resolveImageUrl(rawMainImg, activeMarket);
+            attachImageFallback(mainImg, rawMainImg);
+            mainImg.src = mainImgSrc;
+        } else {
+            mainImg.onerror = null;
+            mainImg.src = NEUTRAL_PRODUCT_PLACEHOLDER;
+        }
         mainImg.alt = localizedTitle;
     }
     
     // Gallery Thumbnails setup
-    let rawGallery = (activeMarket === 'US' && Array.isArray(product.gallery_us) && product.gallery_us.length > 0)
-        ? product.gallery_us
-        : (Array.isArray(product.gallery_ca) && product.gallery_ca.length > 0
-            ? product.gallery_ca
-            : product.gallery);
-
     let galleryImages = [];
     const cleanGallery = sanitizeGallery(rawGallery);
     if (cleanGallery.length > 0) {
         galleryImages = cleanGallery.map(img => resolveImageUrl(img, activeMarket));
-        if (!galleryImages.includes(mainImgSrc)) {
-            galleryImages.unshift(mainImgSrc);
+        if (rawMainImg && rawMainImg.trim()) {
+            const mainImgSrc = resolveImageUrl(rawMainImg, activeMarket);
+            if (!galleryImages.includes(mainImgSrc)) {
+                galleryImages.unshift(mainImgSrc);
+            }
         }
-    } else if (rawMainImg) {
-        galleryImages = [mainImgSrc];
+    } else if (rawMainImg && rawMainImg.trim()) {
+        galleryImages = [resolveImageUrl(rawMainImg, activeMarket)];
     }
 
     const thumbsContainer = document.querySelector('.thumbs-container');

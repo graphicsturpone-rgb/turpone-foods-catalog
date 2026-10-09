@@ -70,8 +70,13 @@ document.addEventListener('DOMContentLoaded', () => {
             const card = document.createElement('div');
             card.className = 'product-card';
             
-            const rawImg = (market === 'US' && p.image_us) ? p.image_us : (p.image_ca || p.image);
-            const imgSrc = resolveImageUrl(rawImg, market);
+            let rawImg = '';
+            if (market === 'US') {
+                rawImg = (p.image_us !== undefined) ? p.image_us : '';
+            } else {
+                rawImg = (p.image_ca !== undefined) ? p.image_ca : (p.image || '');
+            }
+            const imgSrc = (rawImg && rawImg.trim()) ? resolveImageUrl(rawImg, market) : NEUTRAL_CATALOG_PLACEHOLDER;
 
             const displayTitle = (lang === 'fr' && p.title_fr) ? p.title_fr :
                                  (lang === 'es' && p.title_es) ? p.title_es :

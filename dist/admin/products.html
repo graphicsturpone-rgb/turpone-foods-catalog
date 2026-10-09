@@ -1032,9 +1032,18 @@
             document.getElementById('formTitle').value = product.title || '';
             document.getElementById('formCategory').value = product.category || '';
             
-            // Populate CA and US images
-            document.getElementById('formImageCa').value = product.image_ca || product.image || '';
-            document.getElementById('formImageUs').value = product.image_us || '';
+            // Populate CA and US images cleanly without unwanted fallback
+            if (product.image_ca !== undefined) {
+                document.getElementById('formImageCa').value = product.image_ca;
+            } else {
+                document.getElementById('formImageCa').value = product.image || '';
+            }
+
+            if (product.image_us !== undefined) {
+                document.getElementById('formImageUs').value = product.image_us;
+            } else {
+                document.getElementById('formImageUs').value = '';
+            }
 
             document.getElementById('formDescription').value = product.description || '';
             document.getElementById('formFeatures').value = product.features || '';
@@ -1047,22 +1056,22 @@
             document.getElementById('formGalleryCa').value = '';
             document.getElementById('formGalleryUs').value = '';
 
-            // Populate CA Gallery
-            const rawGalCa = product.gallery_ca || product.gallery;
-            if (Array.isArray(rawGalCa)) {
-                currentGalleryCa = sanitizeProductGallery(rawGalCa);
-            } else if (typeof rawGalCa === 'string' && rawGalCa.trim()) {
-                currentGalleryCa = [rawGalCa.trim()];
+            // Populate CA Gallery cleanly
+            if (Array.isArray(product.gallery_ca)) {
+                currentGalleryCa = sanitizeProductGallery(product.gallery_ca);
+            } else if (product.gallery_ca !== undefined && typeof product.gallery_ca === 'string') {
+                currentGalleryCa = product.gallery_ca.trim() ? [product.gallery_ca.trim()] : [];
+            } else if (Array.isArray(product.gallery)) {
+                currentGalleryCa = sanitizeProductGallery(product.gallery);
             } else {
                 currentGalleryCa = [];
             }
 
-            // Populate US Gallery
-            const rawGalUs = product.gallery_us;
-            if (Array.isArray(rawGalUs)) {
-                currentGalleryUs = sanitizeProductGallery(rawGalUs);
-            } else if (typeof rawGalUs === 'string' && rawGalUs.trim()) {
-                currentGalleryUs = [rawGalUs.trim()];
+            // Populate US Gallery cleanly
+            if (Array.isArray(product.gallery_us)) {
+                currentGalleryUs = sanitizeProductGallery(product.gallery_us);
+            } else if (product.gallery_us !== undefined && typeof product.gallery_us === 'string') {
+                currentGalleryUs = product.gallery_us.trim() ? [product.gallery_us.trim()] : [];
             } else {
                 currentGalleryUs = [];
             }
