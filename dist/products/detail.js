@@ -1,19 +1,48 @@
-const onlineStores = [
-    { id: 'walmart', name: 'Walmart', logo: '/assets/images/store_logos/Walmart-logo.svg', url: 'https://www.walmart.com' },
+const canadianOnlineStores = [
+    { id: 'walmart-ca', name: 'Walmart Canada', logo: '/assets/images/store_logos/Walmart-logo.svg', url: 'https://www.walmart.ca' },
     { id: 'loblaws', name: 'Loblaws', logo: '/assets/images/store_logos/loblaws-logo.svg', url: 'https://www.loblaws.ca' },
     { id: 'longos', name: 'Longos', logo: '/assets/images/store_logos/longos-logo.svg', url: 'https://www.longos.com' },
     { id: 'provigo', name: 'Provigo', logo: '/assets/images/store_logos/provigo-logo.svg', url: 'https://www.provigo.ca' },
     { id: 'superstore', name: 'Real Canadian Superstore', logo: '/assets/images/store_logos/real-canadian-superstore-logo.svg', url: 'https://www.realcanadiansuperstore.ca' }
 ];
 
-const physicalStores = [
-    { id: 'walmart-1', name: 'Walmart Supercentre', logo: '/assets/images/store_logos/Walmart-logo.svg', lat: 45.5017, lng: -73.5673, address: 'Montreal, QC', address2: '123 Main St' },
-    { id: 'loblaws-1', name: 'Loblaws', logo: '/assets/images/store_logos/loblaws-logo.svg', lat: 43.6532, lng: -79.3832, address: 'Toronto, ON', address2: '456 King St' },
+const usOnlineStores = [
+    { id: 'walmart-us', name: 'Walmart', logo: '/assets/images/store_logos/Walmart-logo.svg', url: 'https://www.walmart.com' },
+    { id: 'target', name: 'Target', logo: '/assets/images/store_logos/target-logo.svg', url: 'https://www.target.com' },
+    { id: 'kroger', name: 'Kroger', logo: '/assets/images/store_logos/kroger-logo.svg', url: 'https://www.kroger.com' },
+    { id: 'wholefoods', name: 'Whole Foods Market', logo: '/assets/images/store_logos/whole-foods-logo.svg', url: 'https://www.wholefoodsmarket.com' }
+];
+
+const canadianPhysicalStores = [
+    { id: 'walmart-ca-1', name: 'Walmart Supercentre', logo: '/assets/images/store_logos/Walmart-logo.svg', lat: 45.5017, lng: -73.5673, address: 'Montreal, QC', address2: '6832 Rue Jarry E' },
+    { id: 'loblaws-1', name: 'Loblaws', logo: '/assets/images/store_logos/loblaws-logo.svg', lat: 43.6532, lng: -79.3832, address: 'Toronto, ON', address2: '456 King St W' },
     { id: 'provigo-1', name: 'Provigo Le Marché', logo: '/assets/images/store_logos/provigo-logo.svg', lat: 45.5414, lng: -73.6146, address: 'Montreal, QC', address2: '789 Queen Ave' },
     { id: 'longos-1', name: 'Longos', logo: '/assets/images/store_logos/longos-logo.svg', lat: 43.5890, lng: -79.6441, address: 'Mississauga, ON', address2: '321 Duke Blvd' },
-    { id: 'superstore-1', name: 'Real Canadian Superstore', logo: '/assets/images/store_logos/real-canadian-superstore-logo.svg', lat: 45.3850, lng: -75.7533, address: 'Ottawa, ON', address2: '555 Prince St' },
-    { id: 'walmart-2', name: 'Walmart', logo: '/assets/images/store_logos/Walmart-logo.svg', lat: 40.7128, lng: -74.0060, address: 'New York, NY', address2: '999 Broadway' }
+    { id: 'superstore-1', name: 'Real Canadian Superstore', logo: '/assets/images/store_logos/real-canadian-superstore-logo.svg', lat: 45.3850, lng: -75.7533, address: 'Ottawa, ON', address2: '555 Prince St' }
 ];
+
+const usPhysicalStores = [
+    { id: 'walmart-us-1', name: 'Walmart Supercenter', logo: '/assets/images/store_logos/Walmart-logo.svg', lat: 40.7128, lng: -74.0060, address: 'New York, NY', address2: '999 Broadway' },
+    { id: 'target-us-1', name: 'Target', logo: '/assets/images/store_logos/target-logo.svg', lat: 41.8781, lng: -87.6298, address: 'Chicago, IL', address2: '1154 S Clark St' },
+    { id: 'kroger-us-1', name: 'Kroger', logo: '/assets/images/store_logos/kroger-logo.svg', lat: 33.7490, lng: -84.3880, address: 'Atlanta, GA', address2: '725 Ponce De Leon Ave' },
+    { id: 'wholefoods-us-1', name: 'Whole Foods Market', logo: '/assets/images/store_logos/whole-foods-logo.svg', lat: 34.0522, lng: -118.2437, address: 'Los Angeles, CA', address2: '788 S Grand Ave' },
+    { id: 'walmart-us-2', name: 'Walmart Supercenter', logo: '/assets/images/store_logos/Walmart-logo.svg', lat: 25.7617, lng: -80.1918, address: 'Miami, FL', address2: '3200 NW 79th St' }
+];
+
+function getActiveMarket() {
+    if (window.TurponeMarket && typeof window.TurponeMarket.getMarket === 'function') {
+        return window.TurponeMarket.getMarket();
+    }
+    return (localStorage.getItem('turpone_market') || 'CA').toUpperCase();
+}
+
+function getOnlineStores() {
+    return getActiveMarket() === 'US' ? usOnlineStores : canadianOnlineStores;
+}
+
+function getPhysicalStores() {
+    return getActiveMarket() === 'US' ? usPhysicalStores : canadianPhysicalStores;
+}
 
 let userLocation = null;
 let currentTab = 'online';
@@ -128,7 +157,7 @@ function renderStores() {
         </div>
     `;
 
-    let items = currentTab === 'online' ? onlineStores : physicalStores;
+    let items = currentTab === 'online' ? getOnlineStores() : getPhysicalStores();
     
     if (currentTab === 'instore' && userLocation) {
         items.forEach(store => {
