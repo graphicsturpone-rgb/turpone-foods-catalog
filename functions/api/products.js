@@ -435,12 +435,16 @@ export async function onRequest(context) {
             if (!newCommitRes.ok || !newCommitRes.data) {
                 throw new Error("Failed to create Git commit for catalog update.");
             }
-            const newCommitSha = newCommitRes.data.sha;
-
             await githubRequest("git/refs/heads/main", "PATCH", {
                 sha: newCommitSha,
                 force: false
             }, token);
+
+            // Keep production branch strictly in sync for instant Cloudflare production deployments
+            await githubRequest("git/refs/heads/production", "PATCH", {
+                sha: newCommitSha,
+                force: true
+            }, token).catch(e => console.warn("Failed to sync production branch ref:", e));
 
             return new Response(JSON.stringify({
                 success: true,
@@ -510,6 +514,12 @@ export async function onRequest(context) {
                 sha: newCommitRes.data.sha,
                 force: false
             }, token);
+
+            // Keep production branch strictly in sync for instant Cloudflare production deployments
+            await githubRequest("git/refs/heads/production", "PATCH", {
+                sha: newCommitRes.data.sha,
+                force: true
+            }, token).catch(e => console.warn("Failed to sync production branch ref:", e));
 
             return new Response(JSON.stringify({
                 success: true,
