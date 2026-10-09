@@ -234,17 +234,18 @@ export async function onRequest(context) {
             const slug = (product.slug || product.title.toLowerCase().replace(/[^a-z0-9]+/g, "-")).replace(/(^-|-$)/g, "");
             product.slug = slug;
 
-            // Image saver: saves to both assets/images/ca_imgs AND dist/assets/images/ca_imgs on main branch
-            // Cloudflare Pages serves static files from dist/, so saving to dist ensures zero 404s.
-            async function saveImageFile(fileName, base64) {
-                const rootPath = `${IMAGES_DIR}/${fileName}`;
-                const distPath = `${DIST_IMAGES_DIR}/${fileName}`;
+            // Image saver: saves to both assets/images/ca_imgs (or us_imgs) AND dist/ on main branch
+            async function saveImageFile(fileName, base64, isUs = false) {
+                const targetImagesDir = isUs ? US_IMAGES_DIR : IMAGES_DIR;
+                const targetDistDir = isUs ? DIST_US_IMAGES_DIR : DIST_IMAGES_DIR;
+                const rootPath = `${targetImagesDir}/${fileName}`;
+                const distPath = `${targetDistDir}/${fileName}`;
 
                 const existingRoot = await getFileContent(rootPath, "main", token);
                 await putFileContent(
                     rootPath,
                     base64,
-                    `Upload ${fileName} to ${IMAGES_DIR}`,
+                    `Upload ${fileName} to ${targetImagesDir}`,
                     existingRoot ? existingRoot.sha : null,
                     "main",
                     token
@@ -254,26 +255,89 @@ export async function onRequest(context) {
                 await putFileContent(
                     distPath,
                     base64,
-                    `Upload ${fileName} to ${DIST_IMAGES_DIR}`,
+                    `Upload ${fileName} to ${targetDistDir}`,
                     existingDist ? existingDist.sha : null,
                     "main",
                     token
                 );
             }
 
+            // Process Canada Main Image
+            if (product.image_ca && product.image_ca.startsWith("data:image/")) {
+                const match = product.image_ca.match(/^data:image\/([a-zA-Z0-9]+);base64,(.+)$/);
+                if (match) {
+                    const ext = match[1] === "jpeg" ? "jpg" : match[1];
+                    const imageFileName = `${slug}.${ext}`;
+                    await saveImageFile(imageFileName, match[2], false);
+                    product.image_ca = imageFileName;
+                }
+            }
             if (product.image && product.image.startsWith("data:image/")) {
                 const match = product.image.match(/^data:image\/([a-zA-Z0-9]+);base64,(.+)$/);
                 if (match) {
                     const ext = match[1] === "jpeg" ? "jpg" : match[1];
                     const imageFileName = `${slug}.${ext}`;
-                    const imgBase64 = match[2];
-
-                    await saveImageFile(imageFileName, imgBase64);
+                    await saveImageFile(imageFileName, match[2], false);
                     product.image = imageFileName;
                 }
             }
 
-            // Process Images Gallery
+            // Process US Main Image
+            if (product.image_us && product.image_us.startsWith("data:image/")) {
+                const match = product.image_us.match(/^data:image\/([a-zA-Z0-9]+);base64,(.+)$/);
+                if (match) {
+                    const ext = match[1] === "jpeg" ? "jpg" : match[1];
+                    const imageFileName = `${slug}-us.${ext}`;
+                    await saveImageFile(imageFileName, match[2], true);
+                    product.image_us = imageFileName;
+                }
+            }
+
+            // Process Canada Gallery
+            if (Array.isArray(product.gallery_ca) && product.gallery_ca.length > 0) {
+                const processedGallery = [];
+                for (let i = 0; i < product.gallery_ca.length; i++) {
+                    const item = product.gallery_ca[i];
+                    if (typeof item === "string" && item.startsWith("data:image/")) {
+                        const match = item.match(/^data:image\/([a-zA-Z0-9]+);base64,(.+)$/);
+                        if (match) {
+                            const ext = match[1] === "jpeg" ? "jpg" : match[1];
+                            const galFileName = `${slug}-gallery-${i + 1}.${ext}`;
+                            await saveImageFile(galFileName, match[2], false);
+                            processedGallery.push(galFileName);
+                        } else {
+                            processedGallery.push(item);
+                        }
+                    } else if (typeof item === "string" && item.trim()) {
+                        processedGallery.push(item.trim());
+                    }
+                }
+                product.gallery_ca = processedGallery;
+            }
+
+            // Process US Gallery
+            if (Array.isArray(product.gallery_us) && product.gallery_us.length > 0) {
+                const processedGalleryUs = [];
+                for (let i = 0; i < product.gallery_us.length; i++) {
+                    const item = product.gallery_us[i];
+                    if (typeof item === "string" && item.startsWith("data:image/")) {
+                        const match = item.match(/^data:image\/([a-zA-Z0-9]+);base64,(.+)$/);
+                        if (match) {
+                            const ext = match[1] === "jpeg" ? "jpg" : match[1];
+                            const galFileName = `${slug}-us-gallery-${i + 1}.${ext}`;
+                            await saveImageFile(galFileName, match[2], true);
+                            processedGalleryUs.push(galFileName);
+                        } else {
+                            processedGalleryUs.push(item);
+                        }
+                    } else if (typeof item === "string" && item.trim()) {
+                        processedGalleryUs.push(item.trim());
+                    }
+                }
+                product.gallery_us = processedGalleryUs;
+            }
+
+            // Process default Images Gallery fallback
             if (Array.isArray(product.gallery) && product.gallery.length > 0) {
                 const processedGallery = [];
                 for (let i = 0; i < product.gallery.length; i++) {
@@ -283,9 +347,7 @@ export async function onRequest(context) {
                         if (match) {
                             const ext = match[1] === "jpeg" ? "jpg" : match[1];
                             const galFileName = `${slug}-gallery-${i + 1}.${ext}`;
-                            const galBase64 = match[2];
-
-                            await saveImageFile(galFileName, galBase64);
+                            await saveImageFile(galFileName, match[2], false);
                             processedGallery.push(galFileName);
                         } else {
                             processedGallery.push(item);

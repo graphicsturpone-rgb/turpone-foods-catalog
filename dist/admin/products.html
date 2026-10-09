@@ -649,20 +649,20 @@
                 <h3 id="modalTitle">Add New Product</h3>
                 <button class="btn-close" onclick="closeModal()"><i class="fa-solid fa-xmark"></i></button>
             </div>
-            <form id="productForm" onsubmit="handleFormSubmit(event)">
+            <form id="productForm" novalidate onsubmit="event.preventDefault(); handleFormSubmit(event);">
                 <div class="modal-body">
                     <input type="hidden" id="productId">
 
                     <!-- Title -->
                     <div class="form-group">
                         <label for="formTitle">Product Title *</label>
-                        <input type="text" id="formTitle" required placeholder="e.g. Bacon and Caramelized Onions Pinsa">
+                        <input type="text" id="formTitle" placeholder="e.g. Bacon and Caramelized Onions Pinsa">
                     </div>
 
                     <!-- Category -->
                     <div class="form-group">
                         <label for="formCategory">Category *</label>
-                        <input type="text" id="formCategory" list="categoriesList" required placeholder="Select or type category">
+                        <input type="text" id="formCategory" list="categoriesList" placeholder="Select or type category">
                         <datalist id="categoriesList">
                             <option value="Frozen Pinsa">
                             <option value="Frozen Pizza">
@@ -692,7 +692,7 @@
                             <div class="form-group" style="margin-bottom: 12px;">
                                 <label for="formImageCa" style="font-size: 13px; font-weight: 600;">🇨🇦 Canada Main Packaging Image *</label>
                                 <div class="upload-input-group">
-                                    <input type="text" id="formImageCa" required placeholder="e.g. pinsa-margherita.webp or URL" oninput="updateImagePreviews()">
+                                    <input type="text" id="formImageCa" placeholder="e.g. pinsa-margherita.webp or URL" oninput="updateImagePreviews('CA')">
                                     <label class="btn-upload-file" title="Upload Canada image">
                                         <i class="fa-solid fa-arrow-up-from-bracket"></i> Upload CA Image
                                         <input type="file" id="mainFileInputCa" accept=".webp,.png,.jpg,.jpeg,image/webp,image/png,image/jpeg" style="display:none;" onchange="handleMainFileUpload(this, 'CA')">
@@ -727,7 +727,7 @@
                             <div class="form-group" style="margin-bottom: 12px;">
                                 <label for="formImageUs" style="font-size: 13px; font-weight: 600;">🇺🇸 United States Main Packaging Image</label>
                                 <div class="upload-input-group">
-                                    <input type="text" id="formImageUs" placeholder="e.g. pinsa-margherita-us.webp or URL (optional, defaults to CA image)" oninput="updateImagePreviews()">
+                                    <input type="text" id="formImageUs" placeholder="e.g. pinsa-margherita-us.webp or URL (optional, defaults to CA image)" oninput="updateImagePreviews('US')">
                                     <label class="btn-upload-file" title="Upload US image">
                                         <i class="fa-solid fa-arrow-up-from-bracket"></i> Upload US Image
                                         <input type="file" id="mainFileInputUs" accept=".webp,.png,.jpg,.jpeg,image/webp,image/png,image/jpeg" style="display:none;" onchange="handleMainFileUpload(this, 'US')">
@@ -779,7 +779,7 @@
 
                 <div class="modal-footer">
                     <button type="button" class="btn-cancel" onclick="closeModal()">Cancel</button>
-                    <button type="submit" class="btn-primary" id="saveBtn">Save Product</button>
+                    <button type="button" class="btn-primary" id="saveBtn" onclick="handleFormSubmit(event)">Save Product</button>
                 </div>
             </form>
         </div>
