@@ -1,17 +1,26 @@
 
 const NEUTRAL_CATALOG_PLACEHOLDER = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23f8fafc'/%3E%3Cpath d='M30 65 L45 45 L58 58 L68 46 L80 65 Z' fill='%23cbd5e1'/%3E%3Ccircle cx='40' cy='38' r='5' fill='%23cbd5e1'/%3E%3C/svg%3E";
 
-function resolveImageUrl(img) {
+function resolveImageUrl(img, market) {
     if (!img) return NEUTRAL_CATALOG_PLACEHOLDER;
+    const currentMarket = market || (window.TurponeMarket ? window.TurponeMarket.getMarket() : (localStorage.getItem('turpone_market') || 'CA'));
     if (img.startsWith('http://') || img.startsWith('https://') || img.startsWith('data:') || img.startsWith('/')) {
+        if (currentMarket === 'US' && img.includes('/ca_imgs/')) {
+            return img.replace('/ca_imgs/', '/us_imgs/');
+        }
+        if (currentMarket === 'CA' && img.includes('/us_imgs/')) {
+            return img.replace('/us_imgs/', '/ca_imgs/');
+        }
         return img;
     }
-    return '/assets/images/ca_imgs/' + img;
+    const folder = currentMarket === 'US' ? '/assets/images/us_imgs/' : '/assets/images/ca_imgs/';
+    return folder + img;
 }
 
 document.addEventListener('DOMContentLoaded', () => {
     const grid = document.getElementById('products-grid');
     const filters = document.querySelectorAll('.category-filter');
+    let currentCategory = 'All';
     
     function getProductList() {
         if (window.ProductStore) {
@@ -30,13 +39,16 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function renderProducts(category) {
+        currentCategory = category || currentCategory || 'All';
+        if (!grid) return;
         grid.innerHTML = '';
         const allProds = getProductList();
         const lang = getCurrentLanguage();
+        const market = window.TurponeMarket ? window.TurponeMarket.getMarket() : (localStorage.getItem('turpone_market') || 'CA');
 
-        let filtered = category === 'All' 
+        let filtered = currentCategory === 'All' 
             ? [...allProds].sort((a, b) => (a.category || '').localeCompare(b.category || '')) 
-            : allProds.filter(p => p.category === category);
+            : allProds.filter(p => p.category === currentCategory);
         
         if (filtered.length === 0) {
             const noProdMsg = lang === 'fr' ? 'Aucun produit trouvé dans cette catégorie.' :
@@ -57,7 +69,9 @@ document.addEventListener('DOMContentLoaded', () => {
         filtered.forEach(p => {
             const card = document.createElement('div');
             card.className = 'product-card';
-            const imgSrc = resolveImageUrl(p.image);
+            
+            const rawImg = (market === 'US' && p.image_us) ? p.image_us : (p.image_ca || p.image);
+            const imgSrc = resolveImageUrl(rawImg, market);
 
             const displayTitle = (lang === 'fr' && p.title_fr) ? p.title_fr :
                                  (lang === 'es' && p.title_es) ? p.title_es :
@@ -74,7 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
             card.innerHTML = `
                 <a href="${detailUrl}" style="text-decoration:none; color:inherit; display:flex; flex-direction:column; height:100%;">
                     <div class="img-wrapper">
-                        <img src="${imgSrc}" alt="${displayTitle}" loading="lazy">
+                        <img src="${imgSrc}" alt="${displayTitle}" loading="lazy" onerror="this.onerror=null; this.src='${NEUTRAL_CATALOG_PLACEHOLDER}';">
                     </div>
                     <div class="card-cat">${displayCat}</div>
                     <h4>${displayTitle}</h4>
@@ -97,10 +111,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 renderProducts(e.target.value);
             } else {
                 // if unchecked, default to All
-                document.querySelector('input[value="All"]').checked = true;
+                const allCheckbox = document.querySelector('input[value="All"]');
+                if (allCheckbox) allCheckbox.checked = true;
                 renderProducts('All');
             }
         });
+    });
+
+    window.addEventListener('turpone:market-changed', () => {
+        renderProducts(currentCategory);
     });
 
     // Initial render

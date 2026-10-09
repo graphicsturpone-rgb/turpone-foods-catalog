@@ -280,12 +280,20 @@ function toggleAccordion(el) {
 
 const NEUTRAL_PRODUCT_PLACEHOLDER = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23f8fafc'/%3E%3Cpath d='M30 65 L45 45 L58 58 L68 46 L80 65 Z' fill='%23cbd5e1'/%3E%3Ccircle cx='40' cy='38' r='5' fill='%23cbd5e1'/%3E%3C/svg%3E";
 
-function resolveImageUrl(img) {
+function resolveImageUrl(img, market) {
     if (!img) return NEUTRAL_PRODUCT_PLACEHOLDER;
+    const currentMarket = market || getActiveMarket();
     if (img.startsWith('http://') || img.startsWith('https://') || img.startsWith('data:') || img.startsWith('/')) {
+        if (currentMarket === 'US' && img.includes('/ca_imgs/')) {
+            return img.replace('/ca_imgs/', '/us_imgs/');
+        }
+        if (currentMarket === 'CA' && img.includes('/us_imgs/')) {
+            return img.replace('/us_imgs/', '/ca_imgs/');
+        }
         return img;
     }
-    return '/assets/images/ca_imgs/' + img;
+    const folder = currentMarket === 'US' ? '/assets/images/us_imgs/' : '/assets/images/ca_imgs/';
+    return folder + img;
 }
 
 // Multi-path image fallback loader for detail page
@@ -293,10 +301,13 @@ function attachImageFallback(imgEl, originalFilename) {
     if (!imgEl || !originalFilename) return;
     
     const cleanName = originalFilename.replace(/^.*[\\\/]/, '');
+    const currentMarket = getActiveMarket();
+    const primaryFolder = currentMarket === 'US' ? '/assets/images/us_imgs/' : '/assets/images/ca_imgs/';
+    const secondaryFolder = currentMarket === 'US' ? '/assets/images/ca_imgs/' : '/assets/images/us_imgs/';
+
     const fallbackPaths = [
-        `/assets/images/ca_imgs/${cleanName}`,
-        `/assets/images/us_imgs/${cleanName}`,
-        `/assets/uploads/2026/05/${cleanName}`,
+        primaryFolder + cleanName,
+        secondaryFolder + cleanName,
         `/assets/images/${cleanName}`,
         NEUTRAL_PRODUCT_PLACEHOLDER
     ];
@@ -422,24 +433,33 @@ function renderDetailPage() {
         document.title = `${localizedTitle} | Turpone Foods`;
     }
     
-    // Main Product Image
+    // Market-Specific Product Image and Gallery
+    const activeMarket = getActiveMarket();
+    const rawMainImg = (activeMarket === 'US' && product.image_us) ? product.image_us : (product.image_ca || product.image);
+    const mainImgSrc = resolveImageUrl(rawMainImg, activeMarket);
+
     const mainImg = document.getElementById('main-img');
-    const mainImgSrc = resolveImageUrl(product.image);
     if (mainImg) {
-        attachImageFallback(mainImg, product.image);
+        attachImageFallback(mainImg, rawMainImg);
         mainImg.src = mainImgSrc;
         mainImg.alt = localizedTitle;
     }
     
     // Gallery Thumbnails setup
+    let rawGallery = (activeMarket === 'US' && Array.isArray(product.gallery_us) && product.gallery_us.length > 0)
+        ? product.gallery_us
+        : (Array.isArray(product.gallery_ca) && product.gallery_ca.length > 0
+            ? product.gallery_ca
+            : product.gallery);
+
     let galleryImages = [];
-    const cleanGallery = sanitizeGallery(product.gallery);
+    const cleanGallery = sanitizeGallery(rawGallery);
     if (cleanGallery.length > 0) {
-        galleryImages = cleanGallery.map(img => resolveImageUrl(img));
+        galleryImages = cleanGallery.map(img => resolveImageUrl(img, activeMarket));
         if (!galleryImages.includes(mainImgSrc)) {
             galleryImages.unshift(mainImgSrc);
         }
-    } else if (product.image) {
+    } else if (rawMainImg) {
         galleryImages = [mainImgSrc];
     }
 

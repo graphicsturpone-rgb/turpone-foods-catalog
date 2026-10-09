@@ -482,6 +482,36 @@
             border-radius: 3px;
         }
 
+        .market-tab-btn {
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            border: 1px solid var(--border);
+            background: #f1f5f9;
+            color: var(--text-muted);
+            transition: all 0.2s;
+        }
+        .market-tab-btn.active {
+            background: #ffffff;
+            color: var(--text-dark);
+            border-color: #cbd5e1;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+        }
+        .market-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 11px;
+            font-weight: 600;
+            padding: 2px 6px;
+            border-radius: 4px;
+            background: #f1f5f9;
+            border: 1px solid var(--border);
+            color: #475569;
+        }
+
         .modal-footer {
             padding: 16px 26px;
             border-top: 1px solid var(--border);
@@ -629,54 +659,103 @@
                         <input type="text" id="formTitle" required placeholder="e.g. Bacon and Caramelized Onions Pinsa">
                     </div>
 
-                    <!-- Category & Main Image -->
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="formCategory">Category *</label>
-                            <input type="text" id="formCategory" list="categoriesList" required placeholder="Select or type category">
-                            <datalist id="categoriesList">
-                                <option value="Frozen Pinsa">
-                                <option value="Frozen Pizza">
-                                <option value="Infused Oils">
-                                <option value="Honeys">
-                                <option value="Seasoning">
-                                <option value="Pizza Sauce">
-                                <option value="Pizza Flour">
-                                <option value="Frozen Pizza Dough">
-                            </datalist>
-                        </div>
-                        <div class="form-group">
-                            <label for="formImage">Main Image *</label>
-                            <div class="upload-input-group">
-                                <input type="text" id="formImage" required placeholder="Filename or full URL" oninput="updateImagePreviews()">
-                                <label class="btn-upload-file" title="Upload image directly from your computer (webp, png, jpg)">
-                                    <i class="fa-solid fa-arrow-up-from-bracket"></i> Upload
-                                    <input type="file" id="mainFileInput" accept=".webp,.png,.jpg,.jpeg,image/webp,image/png,image/jpeg" style="display:none;" onchange="handleMainFileUpload(this)">
-                                </label>
-                            </div>
-                            <span class="hint">Upload from your computer (.webp, .png, .jpg), or type a filename in <code>assets/images/ca_imgs/</code> or full URL.</span>
-                            <div class="main-preview-wrap">
-                                <div class="main-preview-box" id="mainPreviewBox" title="Main image preview">
-                                    <span style="font-size:11px; color:#94a3b8;">No image</span>
-                                </div>
-                                <button type="button" class="btn-cancel" id="btnRemoveMain" style="display:none; padding:4px 10px; font-size:11px;" onclick="removeMainImage()">Remove</button>
-                            </div>
-                        </div>
+                    <!-- Category -->
+                    <div class="form-group">
+                        <label for="formCategory">Category *</label>
+                        <input type="text" id="formCategory" list="categoriesList" required placeholder="Select or type category">
+                        <datalist id="categoriesList">
+                            <option value="Frozen Pinsa">
+                            <option value="Frozen Pizza">
+                            <option value="Infused Oils">
+                            <option value="Honeys">
+                            <option value="Seasoning">
+                            <option value="Pizza Sauce">
+                            <option value="Pizza Flour">
+                            <option value="Frozen Pizza Dough">
+                        </datalist>
                     </div>
 
-                    <!-- Images Gallery -->
-                    <div class="form-group">
-                        <label for="formGallery">Images Gallery (Hover Thumbnails)</label>
-                        <div class="upload-input-group">
-                            <input type="text" id="formGallery" placeholder="Add filename (e.g. pinsa-box.webp) or URL, press Enter to add" onkeydown="handleGalleryInputKey(event)">
-                            <button type="button" class="btn-cancel" style="padding: 8px 12px; font-size:12px; font-weight:600;" onclick="addGalleryUrlFromInput()">Add</button>
-                            <label class="btn-upload-file" title="Upload gallery images from your computer (.webp, .png, .jpg)">
-                                <i class="fa-solid fa-folder-open"></i> Upload Images
-                                <input type="file" id="galleryFileInput" accept=".webp,.png,.jpg,.jpeg,image/webp,image/png,image/jpeg" multiple style="display:none;" onchange="handleGalleryFileUpload(this)">
+                    <!-- Market-Specific Packaging & Galleries -->
+                    <div class="form-group" style="margin-top: 15px; margin-bottom: 20px; border: 1px solid #e2e8f0; border-radius: 8px; padding: 16px; background: #fafafa;">
+                        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px;">
+                            <label style="font-weight: 700; font-size: 14px; margin-bottom: 0; display: flex; align-items: center; gap: 8px;">
+                                <i class="fa-solid fa-earth-americas" style="color: var(--accent);"></i> Packaging & Imagery by Market
                             </label>
+                            <div class="market-tab-btns" style="display: flex; gap: 6px;">
+                                <button type="button" class="market-tab-btn active" id="tabBtnCa" onclick="switchMarketTab('CA')">🇨🇦 Canada (CA)</button>
+                                <button type="button" class="market-tab-btn" id="tabBtnUs" onclick="switchMarketTab('US')">🇺🇸 United States (US)</button>
+                            </div>
                         </div>
-                        <span class="hint">Upload .webp, .png, or .jpg images from your computer, or type a filename/URL and click Add. Hovering thumbnails on the product page previews them.</span>
-                        <div class="gallery-preview-box" id="galleryPreviewBox"></div>
+
+                        <!-- Canada Panel -->
+                        <div id="panelMarketCa" class="market-panel">
+                            <div class="form-group" style="margin-bottom: 12px;">
+                                <label for="formImageCa" style="font-size: 13px; font-weight: 600;">🇨🇦 Canada Main Packaging Image *</label>
+                                <div class="upload-input-group">
+                                    <input type="text" id="formImageCa" required placeholder="e.g. pinsa-margherita.webp or URL" oninput="updateImagePreviews()">
+                                    <label class="btn-upload-file" title="Upload Canada image">
+                                        <i class="fa-solid fa-arrow-up-from-bracket"></i> Upload CA Image
+                                        <input type="file" id="mainFileInputCa" accept=".webp,.png,.jpg,.jpeg,image/webp,image/png,image/jpeg" style="display:none;" onchange="handleMainFileUpload(this, 'CA')">
+                                    </label>
+                                </div>
+                                <span class="hint">Served to Canadian visitors from <code>assets/images/ca_imgs/</code>.</span>
+                                <div class="main-preview-wrap" style="margin-top: 8px;">
+                                    <div class="main-preview-box" id="mainPreviewBoxCa" title="Canada Main Preview">
+                                        <span style="font-size:11px; color:#94a3b8;">No CA image</span>
+                                    </div>
+                                    <button type="button" class="btn-cancel" id="btnRemoveMainCa" style="display:none; padding:4px 10px; font-size:11px;" onclick="removeMainImage('CA')">Remove</button>
+                                </div>
+                            </div>
+
+                            <div class="form-group" style="margin-bottom: 0;">
+                                <label for="formGalleryCa" style="font-size: 13px; font-weight: 600;">🇨🇦 Canada Image Gallery (Hover Thumbnails)</label>
+                                <div class="upload-input-group">
+                                    <input type="text" id="formGalleryCa" placeholder="Add CA filename or URL and press Enter" onkeydown="handleGalleryInputKey(event, 'CA')">
+                                    <button type="button" class="btn-cancel" style="padding: 8px 12px; font-size:12px; font-weight:600;" onclick="addGalleryUrlFromInput('CA')">Add</button>
+                                    <label class="btn-upload-file" title="Upload CA gallery images">
+                                        <i class="fa-solid fa-folder-open"></i> Upload CA Gallery
+                                        <input type="file" id="galleryFileInputCa" accept=".webp,.png,.jpg,.jpeg,image/webp,image/png,image/jpeg" multiple style="display:none;" onchange="handleGalleryFileUpload(this, 'CA')">
+                                    </label>
+                                </div>
+                                <span class="hint">Upload .webp, .png, or .jpg images or type filename/URL and click Add.</span>
+                                <div class="gallery-preview-box" id="galleryPreviewBoxCa"></div>
+                            </div>
+                        </div>
+
+                        <!-- US Panel -->
+                        <div id="panelMarketUs" class="market-panel" style="display: none;">
+                            <div class="form-group" style="margin-bottom: 12px;">
+                                <label for="formImageUs" style="font-size: 13px; font-weight: 600;">🇺🇸 United States Main Packaging Image</label>
+                                <div class="upload-input-group">
+                                    <input type="text" id="formImageUs" placeholder="e.g. pinsa-margherita-us.webp or URL (optional, defaults to CA image)" oninput="updateImagePreviews()">
+                                    <label class="btn-upload-file" title="Upload US image">
+                                        <i class="fa-solid fa-arrow-up-from-bracket"></i> Upload US Image
+                                        <input type="file" id="mainFileInputUs" accept=".webp,.png,.jpg,.jpeg,image/webp,image/png,image/jpeg" style="display:none;" onchange="handleMainFileUpload(this, 'US')">
+                                    </label>
+                                </div>
+                                <span class="hint">Served to US visitors from <code>assets/images/us_imgs/</code>. If empty, CA image is used as fallback.</span>
+                                <div class="main-preview-wrap" style="margin-top: 8px;">
+                                    <div class="main-preview-box" id="mainPreviewBoxUs" title="US Main Preview">
+                                        <span style="font-size:11px; color:#94a3b8;">No US image (fallback to CA)</span>
+                                    </div>
+                                    <button type="button" class="btn-cancel" id="btnRemoveMainUs" style="display:none; padding:4px 10px; font-size:11px;" onclick="removeMainImage('US')">Remove</button>
+                                </div>
+                            </div>
+
+                            <div class="form-group" style="margin-bottom: 0;">
+                                <label for="formGalleryUs" style="font-size: 13px; font-weight: 600;">🇺🇸 United States Image Gallery (Hover Thumbnails)</label>
+                                <div class="upload-input-group">
+                                    <input type="text" id="formGalleryUs" placeholder="Add US filename or URL and press Enter" onkeydown="handleGalleryInputKey(event, 'US')">
+                                    <button type="button" class="btn-cancel" style="padding: 8px 12px; font-size:12px; font-weight:600;" onclick="addGalleryUrlFromInput('US')">Add</button>
+                                    <label class="btn-upload-file" title="Upload US gallery images">
+                                        <i class="fa-solid fa-folder-open"></i> Upload US Gallery
+                                        <input type="file" id="galleryFileInputUs" accept=".webp,.png,.jpg,.jpeg,image/webp,image/png,image/jpeg" multiple style="display:none;" onchange="handleGalleryFileUpload(this, 'US')">
+                                    </label>
+                                </div>
+                                <span class="hint">Optional. If empty, CA gallery is used as fallback for US visitors.</span>
+                                <div class="gallery-preview-box" id="galleryPreviewBoxUs"></div>
+                            </div>
+                        </div>
                     </div>
 
                     <!-- Description -->
@@ -718,7 +797,37 @@
 
     <script>
         let currentProducts = [];
-        let currentGallery = [];
+        let currentGalleryCa = [];
+        let currentGalleryUs = [];
+        let activeMarketTab = 'CA';
+
+        function switchMarketTab(market) {
+            activeMarketTab = market;
+            const btnCa = document.getElementById('tabBtnCa');
+            const btnUs = document.getElementById('tabBtnUs');
+            const panelCa = document.getElementById('panelMarketCa');
+            const panelUs = document.getElementById('panelMarketUs');
+
+            if (market === 'CA') {
+                btnCa.classList.add('active');
+                btnCa.style.background = '#ffffff';
+                btnCa.style.color = 'var(--text-dark)';
+                btnUs.classList.remove('active');
+                btnUs.style.background = '#f1f5f9';
+                btnUs.style.color = 'var(--text-muted)';
+                panelCa.style.display = 'block';
+                panelUs.style.display = 'none';
+            } else {
+                btnUs.classList.add('active');
+                btnUs.style.background = '#ffffff';
+                btnUs.style.color = 'var(--text-dark)';
+                btnCa.classList.remove('active');
+                btnCa.style.background = '#f1f5f9';
+                btnCa.style.color = 'var(--text-muted)';
+                panelUs.style.display = 'block';
+                panelCa.style.display = 'none';
+            }
+        }
 
         function copyCatalogData() {
             const data = localStorage.getItem('turpone_custom_products');
@@ -729,7 +838,6 @@
             navigator.clipboard.writeText(data).then(() => {
                 showToast('Catalog data copied to clipboard! Just paste it in the chat.');
             }).catch(err => {
-                // Fallback for older browsers
                 const ta = document.createElement('textarea');
                 ta.value = data;
                 document.body.appendChild(ta);
@@ -749,12 +857,13 @@
 
         const NEUTRAL_PLACEHOLDER = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23f1f5f9'/%3E%3Cpath d='M30 65 L45 45 L58 58 L68 46 L80 65 Z' fill='%23cbd5e1'/%3E%3Ccircle cx='40' cy='38' r='5' fill='%23cbd5e1'/%3E%3C/svg%3E";
 
-        function resolveImage(img) {
+        function resolveImage(img, market = 'CA') {
             if (!img) return NEUTRAL_PLACEHOLDER;
             if (img.startsWith('http://') || img.startsWith('https://') || img.startsWith('data:') || img.startsWith('/')) {
                 return img;
             }
-            return '/assets/images/ca_imgs/' + img;
+            const folder = market === 'US' ? '/assets/images/us_imgs/' : '/assets/images/ca_imgs/';
+            return folder + img;
         }
 
         // Repair any previously split DataURLs in localStorage
@@ -764,7 +873,6 @@
             for (let i = 0; i < gallery.length; i++) {
                 const item = gallery[i];
                 if (typeof item !== 'string') continue;
-                // If it was split by comma at "data:image/...;base64", reconstruct if next piece exists
                 if (item.startsWith('data:image/') && item.includes(';base64') && !item.includes(',') && i + 1 < gallery.length) {
                     sanitized.push(item + ',' + gallery[i + 1]);
                     i++;
@@ -777,7 +885,6 @@
 
         function loadProducts() {
             if (window.ProductStore) {
-                // Check if any custom products have broken split galleries and repair them
                 const custom = window.ProductStore.getCustom();
                 let dirty = false;
                 custom.forEach(p => {
@@ -785,6 +892,20 @@
                         const repaired = sanitizeProductGallery(p.gallery);
                         if (repaired.length !== p.gallery.length) {
                             p.gallery = repaired;
+                            dirty = true;
+                        }
+                    }
+                    if (Array.isArray(p.gallery_ca)) {
+                        const repairedCa = sanitizeProductGallery(p.gallery_ca);
+                        if (repairedCa.length !== p.gallery_ca.length) {
+                            p.gallery_ca = repairedCa;
+                            dirty = true;
+                        }
+                    }
+                    if (Array.isArray(p.gallery_us)) {
+                        const repairedUs = sanitizeProductGallery(p.gallery_us);
+                        if (repairedUs.length !== p.gallery_us.length) {
+                            p.gallery_us = repairedUs;
                             dirty = true;
                         }
                     }
@@ -826,9 +947,12 @@
 
             tbody.innerHTML = filtered.map(p => {
                 const isCustom = String(p.id).startsWith('prod_');
-                const imgSrc = resolveImage(p.image);
-                const galleryList = sanitizeProductGallery(p.gallery);
-                const galleryCount = galleryList.length;
+                const rawMain = p.image_ca || p.image || p.image_us;
+                const imgSrc = resolveImage(rawMain, 'CA');
+                
+                const galleryCa = sanitizeProductGallery(p.gallery_ca || p.gallery);
+                const galleryUs = sanitizeProductGallery(p.gallery_us);
+                const hasUsPackage = !!(p.image_us || galleryUs.length > 0);
 
                 return `
                     <tr>
@@ -839,13 +963,19 @@
                         </td>
                         <td>
                             <div style="font-weight: 600; color:#0f172a;">${p.title} ${isCustom ? '<span class="custom-tag">Custom</span>' : ''}</div>
-                            <div style="font-size:12px; color:#64748b; margin-top:2px;">ID: ${p.id}</div>
+                            <div style="font-size:12px; color:#64748b; margin-top:2px; display:flex; align-items:center; gap:6px;">
+                                <span>ID: ${p.id}</span>
+                                <span class="market-badge" title="Canada Packaging Active">🇨🇦 CA</span>
+                                ${hasUsPackage ? '<span class="market-badge" style="background:#eff6ff; border-color:#bfdbfe; color:#1d4ed8;" title="US Packaging Configured">🇺🇸 US</span>' : '<span class="market-badge" style="opacity:0.6;" title="US uses CA fallback">🇺🇸 (CA Fallback)</span>'}
+                            </div>
                         </td>
                         <td>
                             <span class="category-tag">${p.category || 'Uncategorized'}</span>
                         </td>
                         <td>
-                            <span style="font-size:13px; font-weight:600; color:#334155;"><i class="fa-regular fa-images" style="margin-right:5px; color:#64748b;"></i>${galleryCount} images</span>
+                            <div style="font-size:13px; font-weight:600; color:#334155;">
+                                <i class="fa-regular fa-images" style="margin-right:5px; color:#64748b;"></i>${galleryCa.length} CA${galleryUs.length ? ` / ${galleryUs.length} US` : ''}
+                            </div>
                         </td>
                         <td style="text-align: right;">
                             <div class="action-btns" style="justify-content: flex-end;">
@@ -872,12 +1002,24 @@
             document.getElementById('modalTitle').textContent = 'Add New Product';
             document.getElementById('productId').value = '';
             document.getElementById('productForm').reset();
-            document.getElementById('mainFileInput').value = '';
-            document.getElementById('galleryFileInput').value = '';
-            document.getElementById('formGallery').value = '';
-            currentGallery = [];
-            renderGalleryPreviews();
-            updateImagePreviews();
+            document.getElementById('mainFileInputCa').value = '';
+            document.getElementById('mainFileInputUs').value = '';
+            document.getElementById('galleryFileInputCa').value = '';
+            document.getElementById('galleryFileInputUs').value = '';
+            document.getElementById('formImageCa').value = '';
+            document.getElementById('formImageUs').value = '';
+            document.getElementById('formGalleryCa').value = '';
+            document.getElementById('formGalleryUs').value = '';
+            
+            currentGalleryCa = [];
+            currentGalleryUs = [];
+            
+            switchMarketTab('CA');
+            renderGalleryPreviews('CA');
+            renderGalleryPreviews('US');
+            updateImagePreviews('CA');
+            updateImagePreviews('US');
+            
             document.getElementById('productModal').classList.add('active');
         }
 
@@ -889,25 +1031,48 @@
             document.getElementById('productId').value = product.id;
             document.getElementById('formTitle').value = product.title || '';
             document.getElementById('formCategory').value = product.category || '';
-            document.getElementById('formImage').value = product.image || '';
+            
+            // Populate CA and US images
+            document.getElementById('formImageCa').value = product.image_ca || product.image || '';
+            document.getElementById('formImageUs').value = product.image_us || '';
+
             document.getElementById('formDescription').value = product.description || '';
             document.getElementById('formFeatures').value = product.features || '';
             document.getElementById('formIngredients').value = product.ingredients || '';
-            document.getElementById('mainFileInput').value = '';
-            document.getElementById('galleryFileInput').value = '';
-            document.getElementById('formGallery').value = '';
+            
+            document.getElementById('mainFileInputCa').value = '';
+            document.getElementById('mainFileInputUs').value = '';
+            document.getElementById('galleryFileInputCa').value = '';
+            document.getElementById('galleryFileInputUs').value = '';
+            document.getElementById('formGalleryCa').value = '';
+            document.getElementById('formGalleryUs').value = '';
 
-            // Populate currentGallery safely
-            if (Array.isArray(product.gallery)) {
-                currentGallery = sanitizeProductGallery(product.gallery);
-            } else if (typeof product.gallery === 'string' && product.gallery.trim()) {
-                currentGallery = [product.gallery.trim()];
+            // Populate CA Gallery
+            const rawGalCa = product.gallery_ca || product.gallery;
+            if (Array.isArray(rawGalCa)) {
+                currentGalleryCa = sanitizeProductGallery(rawGalCa);
+            } else if (typeof rawGalCa === 'string' && rawGalCa.trim()) {
+                currentGalleryCa = [rawGalCa.trim()];
             } else {
-                currentGallery = [];
+                currentGalleryCa = [];
             }
 
-            renderGalleryPreviews();
-            updateImagePreviews();
+            // Populate US Gallery
+            const rawGalUs = product.gallery_us;
+            if (Array.isArray(rawGalUs)) {
+                currentGalleryUs = sanitizeProductGallery(rawGalUs);
+            } else if (typeof rawGalUs === 'string' && rawGalUs.trim()) {
+                currentGalleryUs = [rawGalUs.trim()];
+            } else {
+                currentGalleryUs = [];
+            }
+
+            switchMarketTab('CA');
+            renderGalleryPreviews('CA');
+            renderGalleryPreviews('US');
+            updateImagePreviews('CA');
+            updateImagePreviews('US');
+            
             document.getElementById('productModal').classList.add('active');
         }
 
@@ -940,7 +1105,6 @@
                         const ctx = canvas.getContext('2d');
                         ctx.drawImage(img, 0, 0, width, height);
 
-                        // Export as high quality, compressed webp data URL
                         const compressedDataUrl = canvas.toDataURL('image/webp', quality);
                         resolve(compressedDataUrl);
                     };
@@ -950,11 +1114,10 @@
             });
         }
 
-        async function handleMainFileUpload(input) {
+        async function handleMainFileUpload(input, market = 'CA') {
             if (!input.files || !input.files[0]) return;
             const file = input.files[0];
             
-            // Validate allowed extensions: webp, png, jpg, jpeg
             const allowed = /\.(webp|png|jpe?g)$/i;
             if (!allowed.test(file.name) && !file.type.match(/^image\/(webp|png|jpeg)$/i)) {
                 alert('Allowed image formats are: .webp, .png, .jpg, .jpeg');
@@ -962,31 +1125,38 @@
                 return;
             }
 
+            const inputId = market === 'US' ? 'formImageUs' : 'formImageCa';
+
             try {
-                showToast(`Optimizing main image: ${file.name}...`);
+                showToast(`Optimizing ${market} image: ${file.name}...`);
                 const compressed = await compressImageFile(file);
-                document.getElementById('formImage').value = compressed;
-                updateImagePreviews();
-                showToast(`Main image optimized and ready!`);
+                document.getElementById(inputId).value = compressed;
+                updateImagePreviews(market);
+                showToast(`${market} main image ready!`);
             } catch (err) {
                 console.error('Image compression error:', err);
                 const reader = new FileReader();
                 reader.onload = function(e) {
-                    document.getElementById('formImage').value = e.target.result;
-                    updateImagePreviews();
-                    showToast(`Loaded main image: ${file.name}`);
+                    document.getElementById(inputId).value = e.target.result;
+                    updateImagePreviews(market);
+                    showToast(`Loaded ${market} image: ${file.name}`);
                 };
                 reader.readAsDataURL(file);
             }
         }
 
-        function removeMainImage() {
-            document.getElementById('formImage').value = '';
-            document.getElementById('mainFileInput').value = '';
-            updateImagePreviews();
+        function removeMainImage(market = 'CA') {
+            if (market === 'US') {
+                document.getElementById('formImageUs').value = '';
+                document.getElementById('mainFileInputUs').value = '';
+            } else {
+                document.getElementById('formImageCa').value = '';
+                document.getElementById('mainFileInputCa').value = '';
+            }
+            updateImagePreviews(market);
         }
 
-        async function handleGalleryFileUpload(input) {
+        async function handleGalleryFileUpload(input, market = 'CA') {
             if (!input.files || !input.files.length) return;
             const files = Array.from(input.files);
             const allowed = /\.(webp|png|jpe?g)$/i;
@@ -1001,17 +1171,19 @@
                 return;
             }
 
-            showToast(`Optimizing ${validFiles.length} image(s)...`);
+            const targetGallery = market === 'US' ? currentGalleryUs : currentGalleryCa;
+
+            showToast(`Optimizing ${validFiles.length} ${market} gallery image(s)...`);
             for (const file of validFiles) {
                 try {
                     const compressed = await compressImageFile(file);
-                    currentGallery.push(compressed);
+                    targetGallery.push(compressed);
                 } catch (err) {
                     console.error('Error compressing gallery file:', err);
                     await new Promise(res => {
                         const reader = new FileReader();
                         reader.onload = function(e) {
-                            currentGallery.push(e.target.result);
+                            targetGallery.push(e.target.result);
                             res();
                         };
                         reader.readAsDataURL(file);
@@ -1020,73 +1192,96 @@
             }
 
             input.value = '';
-            renderGalleryPreviews();
-            showToast(`Added ${validFiles.length} gallery image${validFiles.length > 1 ? 's' : ''}`);
+            renderGalleryPreviews(market);
+            showToast(`Added ${validFiles.length} ${market} gallery image(s)`);
         }
 
-        function handleGalleryInputKey(e) {
+        function handleGalleryInputKey(e, market = 'CA') {
             if (e.key === 'Enter') {
                 e.preventDefault();
-                addGalleryUrlFromInput();
+                addGalleryUrlFromInput(market);
             }
         }
 
-        function addGalleryUrlFromInput() {
-            const input = document.getElementById('formGallery');
+        function addGalleryUrlFromInput(market = 'CA') {
+            const inputId = market === 'US' ? 'formGalleryUs' : 'formGalleryCa';
+            const targetGallery = market === 'US' ? currentGalleryUs : currentGalleryCa;
+            const input = document.getElementById(inputId);
             const val = input.value.trim();
             if (!val) return;
-            // If user pasted comma-separated filenames (non-data URLs)
+
             if (!val.startsWith('data:')) {
                 const items = val.split(',').map(s => s.trim()).filter(Boolean);
-                currentGallery.push(...items);
+                targetGallery.push(...items);
             } else {
-                currentGallery.push(val);
+                targetGallery.push(val);
             }
             input.value = '';
-            renderGalleryPreviews();
+            renderGalleryPreviews(market);
         }
 
-        function removeGalleryImage(index) {
-            if (index >= 0 && index < currentGallery.length) {
-                currentGallery.splice(index, 1);
-                renderGalleryPreviews();
+        function removeGalleryImage(index, market = 'CA') {
+            const targetGallery = market === 'US' ? currentGalleryUs : currentGalleryCa;
+            if (index >= 0 && index < targetGallery.length) {
+                targetGallery.splice(index, 1);
+                renderGalleryPreviews(market);
             }
         }
 
-        function renderGalleryPreviews() {
-            const previewBox = document.getElementById('galleryPreviewBox');
+        function renderGalleryPreviews(market = 'CA') {
+            const previewBoxId = market === 'US' ? 'galleryPreviewBoxUs' : 'galleryPreviewBoxCa';
+            const targetGallery = market === 'US' ? currentGalleryUs : currentGalleryCa;
+            const previewBox = document.getElementById(previewBoxId);
             if (!previewBox) return;
 
-            if (currentGallery.length === 0) {
+            if (targetGallery.length === 0) {
                 previewBox.innerHTML = '';
                 return;
             }
 
-            previewBox.innerHTML = currentGallery.map((item, idx) => {
-                const resolvedThumb = resolveImage(item);
+            previewBox.innerHTML = targetGallery.map((item, idx) => {
+                const resolvedThumb = resolveImage(item, market);
                 return `
-                    <div class="preview-img-box" title="Gallery image ${idx + 1}">
+                    <div class="preview-img-box" title="${market} Gallery image ${idx + 1}">
                         <img src="${resolvedThumb}" onerror="this.onerror=null; this.src=NEUTRAL_PLACEHOLDER;">
                         <span class="thumb-badge">${idx + 1}</span>
-                        <button type="button" class="btn-remove-thumb" onclick="removeGalleryImage(${idx})" title="Remove this gallery image">&times;</button>
+                        <button type="button" class="btn-remove-thumb" onclick="removeGalleryImage(${idx}, '${market}')" title="Remove image">&times;</button>
                     </div>
                 `;
             }).join('');
         }
 
-        function updateImagePreviews() {
-            const mainImgInput = document.getElementById('formImage');
-            const mainBox = document.getElementById('mainPreviewBox');
-            const btnRemoveMain = document.getElementById('btnRemoveMain');
-            const mainImg = mainImgInput ? mainImgInput.value.trim() : '';
+        function updateImagePreviews(market) {
+            if (!market || market === 'CA') {
+                const mainImgInput = document.getElementById('formImageCa');
+                const mainBox = document.getElementById('mainPreviewBoxCa');
+                const btnRemoveMain = document.getElementById('btnRemoveMainCa');
+                const mainImg = mainImgInput ? mainImgInput.value.trim() : '';
 
-            if (mainImg) {
-                const resolvedMain = resolveImage(mainImg);
-                mainBox.innerHTML = `<img src="${resolvedMain}" alt="Main Preview" onerror="this.onerror=null; this.src=NEUTRAL_PLACEHOLDER;">`;
-                if (btnRemoveMain) btnRemoveMain.style.display = 'inline-block';
-            } else {
-                mainBox.innerHTML = `<span style="font-size:11px; color:#94a3b8;">No image</span>`;
-                if (btnRemoveMain) btnRemoveMain.style.display = 'none';
+                if (mainImg) {
+                    const resolvedMain = resolveImage(mainImg, 'CA');
+                    mainBox.innerHTML = `<img src="${resolvedMain}" alt="CA Preview" onerror="this.onerror=null; this.src=NEUTRAL_PLACEHOLDER;">`;
+                    if (btnRemoveMain) btnRemoveMain.style.display = 'inline-block';
+                } else {
+                    mainBox.innerHTML = `<span style="font-size:11px; color:#94a3b8;">No CA image</span>`;
+                    if (btnRemoveMain) btnRemoveMain.style.display = 'none';
+                }
+            }
+
+            if (!market || market === 'US') {
+                const mainImgInputUs = document.getElementById('formImageUs');
+                const mainBoxUs = document.getElementById('mainPreviewBoxUs');
+                const btnRemoveMainUs = document.getElementById('btnRemoveMainUs');
+                const mainImgUs = mainImgInputUs ? mainImgInputUs.value.trim() : '';
+
+                if (mainImgUs) {
+                    const resolvedMainUs = resolveImage(mainImgUs, 'US');
+                    mainBoxUs.innerHTML = `<img src="${resolvedMainUs}" alt="US Preview" onerror="this.onerror=null; this.src=NEUTRAL_PLACEHOLDER;">`;
+                    if (btnRemoveMainUs) btnRemoveMainUs.style.display = 'inline-block';
+                } else {
+                    mainBoxUs.innerHTML = `<span style="font-size:11px; color:#94a3b8;">No US image (fallback to CA)</span>`;
+                    if (btnRemoveMainUs) btnRemoveMainUs.style.display = 'none';
+                }
             }
         }
 
@@ -1101,17 +1296,27 @@
             const id = document.getElementById('productId').value;
             const title = document.getElementById('formTitle').value.trim();
             const category = document.getElementById('formCategory').value.trim();
-            const image = document.getElementById('formImage').value.trim();
+            
+            const imageCa = document.getElementById('formImageCa').value.trim();
+            const imageUs = document.getElementById('formImageUs').value.trim();
+            const image = imageCa || imageUs;
+
             const description = document.getElementById('formDescription').value.trim();
             const features = document.getElementById('formFeatures').value.trim();
             const ingredients = document.getElementById('formIngredients').value.trim();
 
-            // Check if there is still un-added text in the gallery text field
-            const pendingGalleryText = document.getElementById('formGallery').value.trim();
-            if (pendingGalleryText && !pendingGalleryText.startsWith('data:')) {
-                const items = pendingGalleryText.split(',').map(s => s.trim()).filter(Boolean);
-                currentGallery.push(...items);
-                document.getElementById('formGallery').value = '';
+            // Check pending uncommitted gallery inputs
+            const pendingCa = document.getElementById('formGalleryCa').value.trim();
+            if (pendingCa && !pendingCa.startsWith('data:')) {
+                const items = pendingCa.split(',').map(s => s.trim()).filter(Boolean);
+                currentGalleryCa.push(...items);
+                document.getElementById('formGalleryCa').value = '';
+            }
+            const pendingUs = document.getElementById('formGalleryUs').value.trim();
+            if (pendingUs && !pendingUs.startsWith('data:')) {
+                const items = pendingUs.split(',').map(s => s.trim()).filter(Boolean);
+                currentGalleryUs.push(...items);
+                document.getElementById('formGalleryUs').value = '';
             }
 
             const existingProduct = id && window.ProductStore ? window.ProductStore.getById(id) : null;
@@ -1121,7 +1326,11 @@
                 title,
                 category,
                 image,
-                gallery: [...currentGallery],
+                image_ca: imageCa,
+                image_us: imageUs,
+                gallery: currentGalleryCa.length > 0 ? [...currentGalleryCa] : [...currentGalleryUs],
+                gallery_ca: [...currentGalleryCa],
+                gallery_us: [...currentGalleryUs],
                 description,
                 features,
                 ingredients
@@ -1142,12 +1351,12 @@
                 });
             }
 
-            // 1. Immediately save to local store for instant UI response
+            // 1. Save locally
             if (window.ProductStore) {
                 window.ProductStore.save(productData);
             }
 
-            // 2. Call automated Cloudflare backend for GitHub commit & production deployment
+            // 2. Call Cloudflare automated backend sync if connected
             try {
                 const response = await fetch('/api/products', {
                     method: 'POST',
