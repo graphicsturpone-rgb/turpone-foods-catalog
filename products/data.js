@@ -521,7 +521,7 @@ const productsData = [
     "category": "Frozen Pinsa",
     "category_fr": "Pinsa surgelée",
     "category_es": "Pinsa congelada",
-    "image": "Pepperoni-and-Hot-Pickled-Peppers-Frozen-Pinsa.webp",
+    "image": "pepperoni-and-hot-pickled-peppers-pinsa.webp",
     "description": "Martha Stewart Pepperoni and Hot Pickled Peppers Pinsa combines savory pepperoni with tangy hot pickled peppers, mozzarella and Parmesan on a hand-stretched, authentic Roman-style crust. Light and airy with a crisp exterior, the crust complements the richness of the pepperoni and cheese while hot pickled peppers add a bright, spicy kick. It's a bold twist on classic pepperoni, ready to enjoy at home in minutes.",
     "description_fr": "La pinsa au pepperoni et piments marinés piquants Martha Stewart associe du pepperoni savoureux, des piments marinés acidulés, de la mozzarella et du parmesan sur une pâte romaine au levain croustillante. Un délice audacieux prêt en quelques minutes.",
     "description_es": "La pinsa de pepperoni y chiles encurtidos picantes Martha Stewart equilibra el pepperoni especiado con chiles picantes y quesos fundidos sobre una masa romana ligera y crujiente.",
@@ -532,12 +532,23 @@ const productsData = [
       "pepperoni-and-hot-pickled-peppers-pinsa-gallery-1.webp",
       "pepperoni-and-hot-pickled-peppers-pinsa-gallery-2.webp",
       "pepperoni-and-hot-pickled-peppers-pinsa-gallery-3.webp",
-      "pepperoni-and-hot-pickled-peppers-pinsa-gallery-4.webp"
+      "pepperoni-and-hot-pickled-peppers-pinsa-gallery-4.webp",
+      "pepperoni-and-hot-pickled-peppers-pinsa-gallery-5.webp"
     ],
     "ingredients": "Ingredients: Pinsa crust (wheat flour, organic rice flour, organic fava flour, sourdough yeast, water, olive oil, salt, yeast [yeast, sorbitan monostearate, ascorbic acid]). Toppings: Mozzarella cheese (milk, modified milk ingredients, cream, salt, calcium chloride, bacterial culture, microbial enzyme), Pepperoni (pork, salt, pork stock, dextrose, spice extracts, lactic acid starter culture, sodium erythorbate, natural smoke flavor, dehydrated garlic, sodium nitrite, citric acid, smoke), Red and yellow hot pickled peppers (peppers, water, salt, acetic acid, calcium chloride, sodium benzoate, sodium metabisulfite, turmeric), Parmesan cheese (milk, salt, lipase, microbial enzyme, bacterial culture, calcium chloride, cellulose). Tomato sauce: Diced tomatoes (tomatoes, *may contain citric acid), Crushed tomatoes, Salt, Sugar, Garlic powder, Chili flakes, Herb.\nContains: Wheat, Milk.\nMay contain: Eggs, Soy, Mustard.",
     "ingredients_fr": "Ingrédients : Pâte à pinsa (farine de blé, farine de riz bio, farine de fève bio, levain, eau, huile d'olive, sel, levure). Garnitures : Mozzarella, pepperoni de porc, piments forts marinés rouges et jaunes, parmesan. Sauce tomate aux herbes.\nContient : Blé, Lait.\nPeut contenir : Œufs, Soja, Moutarde.",
     "ingredients_es": "Ingredientes: Masa de pinsa (harina de trigo, harina de arroz orgánica, harina de haba orgánica, masa madre, agua, aceite de oliva, sal, levadura). Coberturas: Queso mozzarella, pepperoni de cerdo, chiles encurtidos picantes rojos y amarillos, queso parmesano. Salsa de tomate sazonada.\nContiene: Trigo, Leche.\nPuede contener: Huevos, Soya, Mostaza.",
-    "slug": "pepperoni-and-hot-pickled-peppers-pinsa"
+    "slug": "pepperoni-and-hot-pickled-peppers-pinsa",
+    "image_ca": "",
+    "image_us": "pepperoni-and-hot-pickled-peppers-pinsa-us.webp",
+    "gallery_ca": [],
+    "gallery_us": [
+      "pepperoni-and-hot-pickled-peppers-pinsa-us-gallery-1.webp",
+      "pepperoni-and-hot-pickled-peppers-pinsa-us-gallery-2.webp",
+      "pepperoni-and-hot-pickled-peppers-pinsa-us-gallery-3.webp",
+      "pepperoni-and-hot-pickled-peppers-pinsa-us-gallery-4.webp",
+      "pepperoni-and-hot-pickled-peppers-pinsa-us-gallery-5.webp"
+    ]
   },
   {
     "id": 26,
