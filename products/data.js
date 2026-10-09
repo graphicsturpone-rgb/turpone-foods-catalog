@@ -184,7 +184,7 @@ const productsData = [
     "category": "Frozen Pinsa",
     "category_fr": "Pinsa surgelée",
     "category_es": "Pinsa congelada",
-    "image": "Margherita-with-Fresh-Mozzarella-Frozen-Pinsa.webp",
+    "image": "margherita-with-fresh-mozzarella-pinsa.webp",
     "description": "Martha Stewart Margherita with Fresh Mozzarella Pinsa brings together vine-ripened tomatoes, fresh mozzarella and basil on a hand-stretched, authentic Roman-style crust. Light, airy and crisp, the crust provides the perfect base for the simple, classic combination of rich tomatoes, creamy fresh mozzarella and fragrant basil. Ready in minutes, it's a fresh take on a timeless Margherita.",
     "description_fr": "La pinsa Margherita Martha Stewart réunit des tomates mûries sur pied, de la mozzarella fraîche fondante et du basilic aromatique sur une pâte romaine au levain étirée à la main. Légère, alvéolée et croustillante, prête en quelques minutes au four.",
     "description_es": "La pinsa Margherita Martha Stewart reúne tomates madurados al sol, mozzarella fresca cremosa y albahaca fragante sobre una base artesanal romana estirada a mano. Crujiente, esponjosa y lista en minutos para disfrutar.",
@@ -195,12 +195,23 @@ const productsData = [
       "margherita-with-fresh-mozzarella-pinsa-gallery-1.webp",
       "margherita-with-fresh-mozzarella-pinsa-gallery-2.webp",
       "margherita-with-fresh-mozzarella-pinsa-gallery-3.webp",
-      "margherita-with-fresh-mozzarella-pinsa-gallery-4.webp"
+      "margherita-with-fresh-mozzarella-pinsa-gallery-4.webp",
+      "margherita-with-fresh-mozzarella-pinsa-gallery-5.webp"
     ],
     "ingredients": "Ingredients: Pinsa crust (wheat flour, organic rice flour, organic fava flour, sourdough yeast, water, olive oil, salt, yeast [yeast, sorbitan monostearate, ascorbic acid]). Toppings: Fresh mozzarella slices (pasteurized milk, vinegar, microbial enzymes, salt), Mozzarella cheese (milk, modified milk ingredients, cream, salt, calcium chloride, bacterial culture, microbial enzyme), Parmesan cheese (milk, salt, lipase, microbial enzyme, bacterial culture, calcium chloride, cellulose), Basil. Tomato sauce: Diced tomatoes (tomatoes, *may contain citric acid), Crushed tomatoes, Salt, Sugar, Garlic powder, Chili flakes, Herb.\nContains: Wheat, Milk.\nMay contain: Eggs, Soy, Mustard.",
     "ingredients_fr": "Ingrédients : Pâte à pinsa (farine de blé, farine de riz biologique, farine de fève biologique, levain naturel, eau, huile d'olive, sel, levure). Garnitures : Mozzarella fraîche, mozzarella râpée, parmesan, basilic frais. Sauce tomate : Tomates concassées, sel, sucre, ail en poudre, herbes.\nContient : Blé, Lait.\nPeut contenir : Œufs, Soja, Moutarde.",
     "ingredients_es": "Ingredientes: Masa de pinsa (harina de trigo, harina de arroz orgánica, harina de haba orgánica, masa madre, agua, aceite de oliva, sal, levadura). Coberturas: Rebanadas de mozzarella fresca, queso mozzarella, queso parmesano, albahaca. Salsa de tomate: Tomates troceados, sal, azúcar, ajo en polvo, especias.\nContiene: Trigo, Leche.\nPuede contener: Huevos, Soya, Mostaza.",
-    "slug": "margherita-with-fresh-mozzarella-pinsa"
+    "slug": "margherita-with-fresh-mozzarella-pinsa",
+    "image_ca": "",
+    "image_us": "margherita-with-fresh-mozzarella-pinsa-us.webp",
+    "gallery_ca": [],
+    "gallery_us": [
+      "margherita-with-fresh-mozzarella-pinsa-us-gallery-1.webp",
+      "margherita-with-fresh-mozzarella-pinsa-us-gallery-2.webp",
+      "margherita-with-fresh-mozzarella-pinsa-us-gallery-3.webp",
+      "margherita-with-fresh-mozzarella-pinsa-us-gallery-4.webp",
+      "margherita-with-fresh-mozzarella-pinsa-us-gallery-5.webp"
+    ]
   },
   {
     "id": 10,
