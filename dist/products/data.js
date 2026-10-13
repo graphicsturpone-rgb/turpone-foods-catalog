@@ -38,7 +38,7 @@ const productsData = [
   },
   {
     "id": 2,
-    "title": "Bacon and Caramelized Onions Pizza",
+    "title": "Bacon and Caramelized Onions Pizza 12\"",
     "title_fr": "Pizza au Bacon et Oignons Caramélisés",
     "title_es": "Pizza de Tocino y Cebollas Caramelizadas",
     "category": "Frozen Pizza",
@@ -69,7 +69,7 @@ const productsData = [
       "bacon-and-caramelized-onions-pizza-gallery-4.webp"
     ],
     "gallery_us": [],
-    "slug": "bacon-and-caramelized-onions-pizza"
+    "slug": "bacon-and-caramelized-onions-pizza-12"
   },
   {
     "id": 3,
