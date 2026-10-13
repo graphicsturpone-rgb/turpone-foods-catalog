@@ -790,22 +790,42 @@ const productsData = [
   },
   {
     "id": 32,
-    "title": "Spinach Four Cheese with Alfredo Pizza",
+    "title": "Spinach Four Cheese with Alfredo Pizza 10\"",
     "title_fr": "Pizza Épinards et Quatre Fromages à la Sauce Alfredo",
     "title_es": "Pizza de Espinacas y Cuatro Quesos con Salsa Alfredo",
     "category": "Frozen Pizza",
     "category_fr": "Pizza surgelée",
     "category_es": "Pizza congelada",
-    "image": "Spinach-Four-Cheese-with-ALfredo-Frozen-Pizza.webp",
+    "image": "spinach-four-cheese-with-alfredo-pizza-10.webp",
     "description": "Martha Stewart Spinach Four Cheese with Alfredo Pizza combines spinach with creamy Alfredo sauce and a rich blend of fontina, mozzarella, Parmesan and Romano cheeses on a hand-stretched, stone-baked crust. Rich and satisfying, it's an elevated option that's ready to enjoy at home in minutes.",
     "description_fr": "La pizza épinards et quatre fromages à la sauce Alfredo Martha Stewart allie épinards tendres, sauce Alfredo veloutée et un mélange gourmand de fontina, mozzarella, parmesan et romano sur une pâte cuite sur pierre.",
     "description_es": "La pizza de espinacas y cuatro quesos con salsa Alfredo Martha Stewart ofrece una deliciosa combinación de espinacas, salsa Alfredo y cuatro quesos italianos sobre masa horneada a la piedra.",
     "features": "Featuring: Spinach, Alfredo sauce, fontina, mozzarella, Parmesan and Romano cheeses",
     "features_fr": "Caractéristiques : Épinards, sauce Alfredo, fromages fontina, mozzarella, parmesan et romano",
     "features_es": "Características: Espinacas, salsa Alfredo, quesos fontina, mozzarella, parmesano y romano",
-    "gallery": [],
+    "gallery": [
+      "spinach-four-cheese-with-alfredo-pizza-10-gallery-1.webp",
+      "spinach-four-cheese-with-alfredo-pizza-10-gallery-2.webp",
+      "spinach-four-cheese-with-alfredo-pizza-10-gallery-3.webp",
+      "spinach-four-cheese-with-alfredo-pizza-10-gallery-4.webp"
+    ],
     "ingredients": "Ingredients: Wheat flour, water, alfredo sauce, spinach, fontina cheese, mozzarella cheese, parmesan cheese, romano cheese, olive oil, salt, yeast.\nContains: Wheat, Milk.",
     "ingredients_fr": "Ingrédients : Farine de blé, eau, sauce alfredo, épinards, fromage fontina, fromage mozzarella, parmesan, romano, huile d'olive, sel, levure.\nContient : Blé, Lait.",
-    "ingredients_es": "Ingredientes: Harina de trigo, agua, salsa alfredo, espinacas, quesos fontina, mozzarella, parmesano, romano, aceite de oliva, sal, levadura.\nContiene: Trigo, Leche."
+    "ingredients_es": "Ingredientes: Harina de trigo, agua, salsa alfredo, espinacas, quesos fontina, mozzarella, parmesano, romano, aceite de oliva, sal, levadura.\nContiene: Trigo, Leche.",
+    "image_ca": "spinach-four-cheese-with-alfredo-pizza-10.webp",
+    "image_us": "spinach-four-cheese-with-alfredo-pizza-10-us.webp",
+    "gallery_ca": [
+      "spinach-four-cheese-with-alfredo-pizza-10-gallery-1.webp",
+      "spinach-four-cheese-with-alfredo-pizza-10-gallery-2.webp",
+      "spinach-four-cheese-with-alfredo-pizza-10-gallery-3.webp",
+      "spinach-four-cheese-with-alfredo-pizza-10-gallery-4.webp"
+    ],
+    "gallery_us": [
+      "spinach-four-cheese-with-alfredo-pizza-10-us-gallery-1.webp",
+      "spinach-four-cheese-with-alfredo-pizza-10-us-gallery-2.webp",
+      "spinach-four-cheese-with-alfredo-pizza-10-us-gallery-3.webp",
+      "spinach-four-cheese-with-alfredo-pizza-10-us-gallery-4.webp"
+    ],
+    "slug": "spinach-four-cheese-with-alfredo-pizza-10"
   }
 ];
