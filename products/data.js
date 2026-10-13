@@ -221,23 +221,43 @@ const productsData = [
   },
   {
     "id": 10,
-    "title": "Margherita with Fresh Mozzarella Pizza",
+    "title": "Margherita with Fresh Mozzarella Pizza 10\"",
     "title_fr": "Pizza Margherita à la Mozzarella Fraîche",
     "title_es": "Pizza Margherita con Mozzarella Fresca",
     "category": "Frozen Pizza",
     "category_fr": "Pizza surgelée",
     "category_es": "Pizza congelada",
-    "image": "Margherita-with-Fresh-Mozzarella-Frozen-Pizza.webp",
+    "image": "margherita-with-fresh-mozzarella-pizza-10.webp",
     "description": "Martha Stewart Margherita with Fresh Mozzarella Pizza brings together vine-ripened tomatoes, fresh mozzarella and basil on a hand-stretched, stone-baked crust. Simple, classic ingredients come together for a pizzeria-inspired Margherita with a crisp, airy crust and rich tomato flavor. Ready in minutes, it's an effortless way to enjoy a restaurant-quality pizza at home.",
     "description_fr": "La pizza Margherita Martha Stewart sublime des tomates mûries sur pied, de la mozzarella fraîche fondante et du basilic doux sur une pâte artisanale cuite sur pierre. Une texture croustillante et une saveur digne des meilleures pizzerias.",
     "description_es": "La pizza Margherita Martha Stewart ofrece el sabor clásico y puro de Italia: tomates madurados, mozzarella fresca y albahaca sobre una masa crujiente horneada a la piedra. Calidad de restaurante lista en minutos.",
     "features": "Featuring: Vine-ripened tomatoes, fresh mozzarella and basil",
     "features_fr": "Caractéristiques : Tomates mûries sur pied, mozzarella fraîche et basilic",
     "features_es": "Características: Tomates madurados al sol, mozzarella fresca y albahaca",
-    "gallery": [],
+    "gallery": [
+      "margherita-with-fresh-mozzarella-pizza-10-gallery-1.webp",
+      "margherita-with-fresh-mozzarella-pizza-10-gallery-2.webp",
+      "margherita-with-fresh-mozzarella-pizza-10-gallery-3.webp",
+      "margherita-with-fresh-mozzarella-pizza-10-gallery-4.webp"
+    ],
     "ingredients": "Ingredients: Wheat flour, water, fresh mozzarella, tomato sauce, basil, parmesan cheese, olive oil, salt, yeast.\nContains: Wheat, Milk.",
     "ingredients_fr": "Ingrédients : Farine de blé, eau, mozzarella fraîche, sauce tomate, basilic, parmesan, huile d'olive, sel, levure.\nContient : Blé, Lait.",
-    "ingredients_es": "Ingredientes: Harina de trigo, agua, mozzarella fresca, salsa de tomate, albahaca, queso parmesano, aceite de oliva, sal, levadura.\nContiene: Trigo, Leche."
+    "ingredients_es": "Ingredientes: Harina de trigo, agua, mozzarella fresca, salsa de tomate, albahaca, queso parmesano, aceite de oliva, sal, levadura.\nContiene: Trigo, Leche.",
+    "image_ca": "margherita-with-fresh-mozzarella-pizza-10.webp",
+    "image_us": "margherita-with-fresh-mozzarella-pizza-10-us.webp",
+    "gallery_ca": [
+      "margherita-with-fresh-mozzarella-pizza-10-gallery-1.webp",
+      "margherita-with-fresh-mozzarella-pizza-10-gallery-2.webp",
+      "margherita-with-fresh-mozzarella-pizza-10-gallery-3.webp",
+      "margherita-with-fresh-mozzarella-pizza-10-gallery-4.webp"
+    ],
+    "gallery_us": [
+      "margherita-with-fresh-mozzarella-pizza-10-us-gallery-1.webp",
+      "margherita-with-fresh-mozzarella-pizza-10-us-gallery-2.webp",
+      "margherita-with-fresh-mozzarella-pizza-10-us-gallery-3.webp",
+      "margherita-with-fresh-mozzarella-pizza-10-us-gallery-4.webp"
+    ],
+    "slug": "margherita-with-fresh-mozzarella-pizza-10"
   },
   {
     "id": 11,
