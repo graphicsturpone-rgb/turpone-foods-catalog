@@ -93,23 +93,38 @@ const productsData = [
   },
   {
     "id": 4,
-    "title": "Cacio e Pepe with Alfredo Sauce Pizza",
+    "title": "Cacio e Pepe with Alfredo Sauce Pizza 12\"",
     "title_fr": "Pizza Cacio e Pepe à la Sauce Alfredo",
     "title_es": "Pizza Cacio e Pepe con Salsa Alfredo",
     "category": "Frozen Pizza",
     "category_fr": "Pizza surgelée",
     "category_es": "Pizza congelada",
-    "image": "Cacio-e-Pepe-with-Alfredo-Sauce-Frozen-Pizza.webp",
+    "image": "cacio-e-pepe-with-alfredo-sauce-pizza-12.webp",
     "description": "Martha Stewart Cacio e Pepe with Alfredo Sauce Pizza takes inspiration from the classic Italian pasta dish, pairing creamy Alfredo sauce with Parmesan, Romano cheese, minced garlic and black pepper on a hand-stretched, stone-baked crust. Rich and cheesy with a distinctive peppery finish, this white pizza offers an elevated alternative to traditional tomato-based varieties. Bake until golden for an easy, pizzeria-inspired meal at home.",
     "description_fr": "Inspirée du grand classique romain, la pizza Cacio e Pepe Martha Stewart allie une sauce Alfredo onctueuse, du parmesan, du pecorino romano, de l'ail émincé et du poivre noir moulu sur une pâte artisanale cuite sur pierre. Une alternative blanche raffinée et gourmande.",
     "description_es": "Inspirada en el clásico romano, la pizza Cacio e Pepe con salsa Alfredo Martha Stewart combina salsa cremosa con parmesano, queso romano, ajo picado y pimienta negra sobre una masa horneada a la piedra. Una opción blanca gourmet para saborear en casa.",
     "features": "Featuring: Alfredo sauce, minced garlic, Parmesan, Romano cheese and black pepper",
     "features_fr": "Caractéristiques : Sauce Alfredo, ail émincé, parmesan, fromage romano et poivre noir",
     "features_es": "Características: Salsa Alfredo, ajo picado, parmesano, queso romano y pimienta negra",
-    "gallery": [],
+    "gallery": [
+      "cacio-e-pepe-with-alfredo-sauce-pizza-12-gallery-1.webp",
+      "cacio-e-pepe-with-alfredo-sauce-pizza-12-gallery-2.webp",
+      "cacio-e-pepe-with-alfredo-sauce-pizza-12-gallery-3.webp",
+      "cacio-e-pepe-with-alfredo-sauce-pizza-12-gallery-4.webp"
+    ],
     "ingredients": "Ingredients: Wheat flour, water, alfredo sauce, parmesan cheese, romano cheese, minced garlic, black pepper, olive oil, salt, yeast.\nContains: Wheat, Milk.",
     "ingredients_fr": "Ingrédients : Farine de blé, eau, sauce alfredo, fromage parmesan, fromage romano, ail haché, poivre noir, huile d'olive, sel, levure.\nContient : Blé, Lait.",
-    "ingredients_es": "Ingredientes: Harina de trigo, agua, salsa alfredo, queso parmesano, queso romano, ajo picado, pimienta negra, aceite de oliva, sal, levadura.\nContiene: Trigo, Leche."
+    "ingredients_es": "Ingredientes: Harina de trigo, agua, salsa alfredo, queso parmesano, queso romano, ajo picado, pimienta negra, aceite de oliva, sal, levadura.\nContiene: Trigo, Leche.",
+    "image_ca": "cacio-e-pepe-with-alfredo-sauce-pizza-12.webp",
+    "image_us": "",
+    "gallery_ca": [
+      "cacio-e-pepe-with-alfredo-sauce-pizza-12-gallery-1.webp",
+      "cacio-e-pepe-with-alfredo-sauce-pizza-12-gallery-2.webp",
+      "cacio-e-pepe-with-alfredo-sauce-pizza-12-gallery-3.webp",
+      "cacio-e-pepe-with-alfredo-sauce-pizza-12-gallery-4.webp"
+    ],
+    "gallery_us": [],
+    "slug": "cacio-e-pepe-with-alfredo-sauce-pizza-12"
   },
   {
     "id": 5,
