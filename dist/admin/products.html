@@ -632,7 +632,7 @@
                         <th>Product Title</th>
                         <th>Category</th>
                         <th style="width: 140px;">Gallery Images</th>
-                        <th style="text-align: right; width: 170px;">Actions</th>
+                        <th style="text-align: right; min-width: 270px;">Actions</th>
                     </tr>
                 </thead>
                 <tbody id="productsTableBody">
@@ -779,7 +779,10 @@
 
                 <div class="modal-footer">
                     <button type="button" class="btn-cancel" onclick="closeModal()">Cancel</button>
-                    <button type="button" class="btn-primary" id="saveBtn" onclick="handleFormSubmit(event)">Save Product</button>
+                    <button type="button" class="btn-cancel" id="btnDuplicateModal" onclick="duplicateFromModal()" style="display:none;" title="Duplicate this product as a new entry">
+                        <i class="fa-solid fa-copy"></i> Duplicate as New
+                    </button>
+                    <button type="submit" class="btn-primary" id="saveBtn" onclick="handleFormSubmit(event)">Save Product</button>
                 </div>
             </form>
         </div>
@@ -985,7 +988,10 @@
                                 <button class="btn-action" onclick="openEditModal('${p.id}')">
                                     <i class="fa-solid fa-pen-to-square"></i> Edit
                                 </button>
-                                <button class="btn-action delete" onclick="confirmDelete('${p.id}')">
+                                <button class="btn-action" onclick="duplicateProduct('${p.id}')" title="Duplicate this product">
+                                    <i class="fa-solid fa-copy"></i> Duplicate
+                                </button>
+                                <button class="btn-action delete" onclick="confirmDelete('${p.id}')" title="Delete product">
                                     <i class="fa-solid fa-trash"></i>
                                 </button>
                             </div>
@@ -1019,6 +1025,12 @@
             renderGalleryPreviews('US');
             updateImagePreviews('CA');
             updateImagePreviews('US');
+
+            const btnDupModal = document.getElementById('btnDuplicateModal');
+            if (btnDupModal) btnDupModal.style.display = 'none';
+
+            const saveBtn = document.getElementById('saveBtn');
+            if (saveBtn) saveBtn.innerHTML = '<i class="fa-solid fa-check"></i> Save Product';
             
             document.getElementById('productModal').classList.add('active');
         }
@@ -1081,8 +1093,118 @@
             renderGalleryPreviews('US');
             updateImagePreviews('CA');
             updateImagePreviews('US');
+
+            const btnDupModal = document.getElementById('btnDuplicateModal');
+            if (btnDupModal) btnDupModal.style.display = 'inline-flex';
+
+            const saveBtn = document.getElementById('saveBtn');
+            if (saveBtn) saveBtn.innerHTML = '<i class="fa-solid fa-check"></i> Save Product';
             
             document.getElementById('productModal').classList.add('active');
+        }
+
+        function duplicateProduct(id) {
+            openDuplicateModal(id);
+        }
+
+        function duplicateFromModal() {
+            document.getElementById('modalTitle').innerHTML = '<i class="fa-solid fa-copy" style="color:var(--primary); margin-right:8px;"></i> Duplicate Product';
+            document.getElementById('productId').value = ''; // clear ID so it saves as new product
+            
+            const currentTitle = document.getElementById('formTitle').value.trim();
+            if (currentTitle && !currentTitle.toLowerCase().includes('(copy)')) {
+                document.getElementById('formTitle').value = currentTitle + ' (Copy)';
+            }
+            
+            const btnDupModal = document.getElementById('btnDuplicateModal');
+            if (btnDupModal) btnDupModal.style.display = 'none';
+
+            const saveBtn = document.getElementById('saveBtn');
+            if (saveBtn) saveBtn.innerHTML = '<i class="fa-solid fa-copy"></i> Save Duplicated Product';
+
+            showToast('Switched to Duplicate mode. Edit details and click Save.');
+        }
+
+        function openDuplicateModal(id) {
+            const product = window.ProductStore ? window.ProductStore.getById(id) : currentProducts.find(p => String(p.id) === String(id));
+            if (!product) return;
+
+            document.getElementById('modalTitle').innerHTML = '<i class="fa-solid fa-copy" style="color:var(--primary); margin-right:8px;"></i> Duplicate Product';
+            // Clear productId so it is treated as a brand new product
+            document.getElementById('productId').value = '';
+            
+            // Suggest duplicate title
+            const originalTitle = product.title || '';
+            document.getElementById('formTitle').value = originalTitle ? `${originalTitle} (Copy)` : 'New Product (Copy)';
+            document.getElementById('formCategory').value = product.category || '';
+            
+            // Populate CA and US images cleanly
+            if (product.image_ca !== undefined) {
+                document.getElementById('formImageCa').value = product.image_ca;
+            } else {
+                document.getElementById('formImageCa').value = product.image || '';
+            }
+
+            if (product.image_us !== undefined) {
+                document.getElementById('formImageUs').value = product.image_us;
+            } else {
+                document.getElementById('formImageUs').value = '';
+            }
+
+            document.getElementById('formDescription').value = product.description || '';
+            document.getElementById('formFeatures').value = product.features || '';
+            document.getElementById('formIngredients').value = product.ingredients || '';
+            
+            document.getElementById('mainFileInputCa').value = '';
+            document.getElementById('mainFileInputUs').value = '';
+            document.getElementById('galleryFileInputCa').value = '';
+            document.getElementById('galleryFileInputUs').value = '';
+            document.getElementById('formGalleryCa').value = '';
+            document.getElementById('formGalleryUs').value = '';
+
+            // Populate CA Gallery cleanly
+            if (Array.isArray(product.gallery_ca)) {
+                currentGalleryCa = sanitizeProductGallery([...product.gallery_ca]);
+            } else if (product.gallery_ca !== undefined && typeof product.gallery_ca === 'string') {
+                currentGalleryCa = product.gallery_ca.trim() ? [product.gallery_ca.trim()] : [];
+            } else if (Array.isArray(product.gallery)) {
+                currentGalleryCa = sanitizeProductGallery([...product.gallery]);
+            } else {
+                currentGalleryCa = [];
+            }
+
+            // Populate US Gallery cleanly
+            if (Array.isArray(product.gallery_us)) {
+                currentGalleryUs = sanitizeProductGallery([...product.gallery_us]);
+            } else if (product.gallery_us !== undefined && typeof product.gallery_us === 'string') {
+                currentGalleryUs = product.gallery_us.trim() ? [product.gallery_us.trim()] : [];
+            } else {
+                currentGalleryUs = [];
+            }
+
+            switchMarketTab('CA');
+            renderGalleryPreviews('CA');
+            renderGalleryPreviews('US');
+            updateImagePreviews('CA');
+            updateImagePreviews('US');
+
+            const btnDupModal = document.getElementById('btnDuplicateModal');
+            if (btnDupModal) btnDupModal.style.display = 'none';
+
+            const saveBtn = document.getElementById('saveBtn');
+            if (saveBtn) saveBtn.innerHTML = '<i class="fa-solid fa-copy"></i> Save Duplicated Product';
+
+            document.getElementById('productModal').classList.add('active');
+
+            setTimeout(() => {
+                const titleInput = document.getElementById('formTitle');
+                if (titleInput) {
+                    titleInput.focus();
+                    titleInput.select();
+                }
+            }, 100);
+
+            showToast(`Duplicating "${originalTitle}". Adjust fields and click Save.`);
         }
 
         function closeModal() {

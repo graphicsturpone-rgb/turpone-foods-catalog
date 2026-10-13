@@ -342,11 +342,25 @@ export async function onRequest(context) {
             const prodId = product.id ? String(product.id) : `prod_${Date.now()}`;
             product.id = isNaN(Number(prodId)) ? prodId : Number(prodId);
 
-            const existingIndex = products.findIndex(p => 
-                String(p.id) === String(product.id) ||
-                (p.aliasId && String(p.aliasId) === String(product.id)) ||
-                (p.slug && p.slug === product.slug)
-            );
+            const isNewProduct = !product.id || (typeof product.id === "string" && product.id.startsWith("prod_"));
+            let existingIndex = -1;
+
+            if (!isNewProduct) {
+                existingIndex = products.findIndex(p => 
+                    String(p.id) === String(product.id) ||
+                    (p.aliasId && String(p.aliasId) === String(product.id))
+                );
+            }
+
+            // Ensure unique slug
+            let baseSlug = (product.slug || product.title.toLowerCase().replace(/[^a-z0-9]+/g, "-")).replace(/(^-|-$)/g, "");
+            let candidateSlug = baseSlug;
+            let counter = 1;
+            while (products.some((p, idx) => idx !== existingIndex && p.slug === candidateSlug)) {
+                counter++;
+                candidateSlug = `${baseSlug}-${counter}`;
+            }
+            product.slug = candidateSlug;
 
             if (existingIndex >= 0) {
                 products[existingIndex] = { ...products[existingIndex], ...product };
