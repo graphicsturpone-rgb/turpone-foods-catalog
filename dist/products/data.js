@@ -857,5 +857,31 @@ const productsData = [
       "spinach-four-cheese-with-alfredo-pizza-10-us-gallery-4.webp"
     ],
     "slug": "spinach-four-cheese-with-alfredo-pizza-10"
+  },
+  {
+    "id": 33,
+    "title": "Margherita with Fresh Mozzarella Pizza 12\"",
+    "category": "Frozen Pizza",
+    "image": "margherita-with-fresh-mozzarella-pizza-12.webp",
+    "image_ca": "margherita-with-fresh-mozzarella-pizza-12.webp",
+    "image_us": "",
+    "gallery": [
+      "margherita-with-fresh-mozzarella-pizza-12-gallery-1.webp",
+      "margherita-with-fresh-mozzarella-pizza-12-gallery-2.webp",
+      "margherita-with-fresh-mozzarella-pizza-12-gallery-3.webp",
+      "margherita-with-fresh-mozzarella-pizza-12-gallery-4.webp"
+    ],
+    "gallery_ca": [
+      "margherita-with-fresh-mozzarella-pizza-12-gallery-1.webp",
+      "margherita-with-fresh-mozzarella-pizza-12-gallery-2.webp",
+      "margherita-with-fresh-mozzarella-pizza-12-gallery-3.webp",
+      "margherita-with-fresh-mozzarella-pizza-12-gallery-4.webp"
+    ],
+    "gallery_us": [],
+    "description": "Martha Stewart Margherita with Fresh Mozzarella Pizza brings together vine-ripened tomatoes, fresh mozzarella and basil on a hand-stretched, stone-baked crust. Simple, classic ingredients come together for a pizzeria-inspired Margherita with a crisp, airy crust and rich tomato flavor. Ready in minutes, it's an effortless way to enjoy a restaurant-quality pizza at home.",
+    "features": "Featuring: Vine-ripened tomatoes, fresh mozzarella and basil",
+    "ingredients": "Ingredients: Wheat flour, water, fresh mozzarella, tomato sauce, basil, parmesan cheese, olive oil, salt, yeast.\nContains: Wheat, Milk.",
+    "slug": "margherita-with-fresh-mozzarella-pizza-12",
+    "aliasId": "prod_1791921826235"
   }
 ];
