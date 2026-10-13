@@ -687,23 +687,43 @@ const productsData = [
   },
   {
     "id": 29,
-    "title": "Sausage and Hot Honey Pizza",
+    "title": "Sausage and Hot Honey Pizza 10\"",
     "title_fr": "Pizza à la Saucisse Italienne et Miel Piquant",
     "title_es": "Pizza de Salchicha Italiana y Miel Picante",
     "category": "Frozen Pizza",
     "category_fr": "Pizza surgelée",
     "category_es": "Pizza congelada",
-    "image": "Sausage-and-Hot-Honey-Frozen-Pizza.webp",
+    "image": "sausage-and-hot-honey-pizza-10.webp",
     "description": "Martha Stewart Sausage and Hot Honey Pizza pairs savory Italian sausage and fresh mozzarella with a drizzle of hot honey on a hand-stretched, stone-baked crust. The combination of savory sausage, creamy cheese and sweet heat creates a bold balance of flavors in every bite. Simply bake until golden for a distinctive, pizzeria-inspired pizza that's ready to enjoy at home in minutes.",
     "description_fr": "La pizza à la saucisse italienne et miel piquant Martha Stewart associe saucisse italienne de porc, mozzarella fondante et une touche de miel piquant sur une pâte dorée cuite sur pierre. Chaleur douce et gourmandise garanties.",
     "description_es": "La pizza de salchicha italiana y miel picante Martha Stewart ofrece una deliciosa combinación de salchicha italiana, queso fundido y miel con un toque picante horneada a la piedra.",
     "features": "Featuring: Fresh mozzarella, Italian sausage and hot honey",
     "features_fr": "Caractéristiques : Mozzarella fraîche, saucisse italienne et miel piquant",
     "features_es": "Características: Mozzarella fresca, salchicha italiana y miel picante",
-    "gallery": [],
+    "gallery": [
+      "sausage-and-hot-honey-pizza-10-gallery-1.webp",
+      "sausage-and-hot-honey-pizza-10-gallery-2.webp",
+      "sausage-and-hot-honey-pizza-10-gallery-3.webp",
+      "sausage-and-hot-honey-pizza-10-gallery-4.webp"
+    ],
     "ingredients": "Ingredients: Wheat flour, water, mozzarella cheese, Italian sausage, hot honey, tomato sauce, olive oil, salt, yeast.\nContains: Wheat, Milk.",
     "ingredients_fr": "Ingrédients : Farine de blé, eau, fromage mozzarella, saucisse italienne, miel piquant, sauce tomate, huile d'olive, sel, levure.\nContient : Blé, Lait.",
-    "ingredients_es": "Ingredientes: Harina de trigo, agua, queso mozzarella, salchicha italiana, miel picante, salsa de tomate, aceite de oliva, sal, levadura.\nContiene: Trigo, Leche."
+    "ingredients_es": "Ingredientes: Harina de trigo, agua, queso mozzarella, salchicha italiana, miel picante, salsa de tomate, aceite de oliva, sal, levadura.\nContiene: Trigo, Leche.",
+    "image_ca": "sausage-and-hot-honey-pizza-10.webp",
+    "image_us": "sausage-and-hot-honey-pizza-10-us.webp",
+    "gallery_ca": [
+      "sausage-and-hot-honey-pizza-10-gallery-1.webp",
+      "sausage-and-hot-honey-pizza-10-gallery-2.webp",
+      "sausage-and-hot-honey-pizza-10-gallery-3.webp",
+      "sausage-and-hot-honey-pizza-10-gallery-4.webp"
+    ],
+    "gallery_us": [
+      "sausage-and-hot-honey-pizza-10-us-gallery-1.webp",
+      "sausage-and-hot-honey-pizza-10-us-gallery-2.webp",
+      "sausage-and-hot-honey-pizza-10-us-gallery-3.webp",
+      "sausage-and-hot-honey-pizza-10-us-gallery-4.webp"
+    ],
+    "slug": "sausage-and-hot-honey-pizza-10"
   },
   {
     "id": 30,
