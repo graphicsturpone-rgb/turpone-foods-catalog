@@ -44,17 +44,32 @@ const productsData = [
     "category": "Frozen Pizza",
     "category_fr": "Pizza surgelée",
     "category_es": "Pizza congelada",
-    "image": "Bacon-and-Caramelized-Onions-Frozen-Pizza.webp",
+    "image": "bacon-and-caramelized-onions-pizza.webp",
     "description": "Martha Stewart Bacon and Caramelized Onions Pizza pairs savory bacon and sweet caramelized onions with creamy Alfredo sauce, mozzarella and Parmesan on a hand-stretched, stone-baked crust. Rich, savory and slightly sweet, this indulgent combination delivers layers of flavor in every bite. Simply bake until golden for a pizzeria-inspired pizza that's ready to enjoy at home in minutes.",
     "description_fr": "La pizza au bacon et oignons caramélisés Martha Stewart associe du bacon fumé savoureux et des oignons caramélisés fondants à une sauce Alfredo onctueuse, de la mozzarella et du parmesan sur une pâte cuite sur pierre étirée à la main. Riche et généreuse, elle offre un festival de saveurs à chaque bouchée. À cuire au four jusqu'à ce qu'elle soit bien dorée.",
     "description_es": "La pizza de tocino y cebollas caramelizadas Martha Stewart combina sabroso tocino y cebollas caramelizadas con salsa Alfredo cremosa, mozzarella y parmesano sobre una base horneada a la piedra estirada a mano. Rica, indulgente y perfectamente equilibrada, lista en minutos.",
     "features": "Featuring: Alfredo sauce, mozzarella, Parmesan, caramelized onions and bacon",
     "features_fr": "Caractéristiques : Sauce Alfredo, mozzarella, parmesan, oignons caramélisés et bacon",
     "features_es": "Características: Salsa Alfredo, mozzarella, parmesano, cebollas caramelizadas y tocino",
-    "gallery": [],
+    "gallery": [
+      "bacon-and-caramelized-onions-pizza-gallery-1.webp",
+      "bacon-and-caramelized-onions-pizza-gallery-2.webp",
+      "bacon-and-caramelized-onions-pizza-gallery-3.webp",
+      "bacon-and-caramelized-onions-pizza-gallery-4.webp"
+    ],
     "ingredients": "Ingredients: Wheat flour, water, mozzarella cheese, caramelized onions, bacon, alfredo sauce, parmesan, olive oil, salt, yeast.\nContains: Wheat, Milk.",
     "ingredients_fr": "Ingrédients : Farine de blé, eau, fromage mozzarella, oignons caramélisés, bacon, sauce alfredo, parmesan, huile d'olive, sel, levure.\nContient : Blé, Lait.",
-    "ingredients_es": "Ingredientes: Harina de trigo, agua, queso mozzarella, cebollas caramelizadas, tocino, salsa alfredo, queso parmesano, aceite de oliva, sal, levadura.\nContiene: Trigo, Leche."
+    "ingredients_es": "Ingredientes: Harina de trigo, agua, queso mozzarella, cebollas caramelizadas, tocino, salsa alfredo, queso parmesano, aceite de oliva, sal, levadura.\nContiene: Trigo, Leche.",
+    "image_ca": "bacon-and-caramelized-onions-pizza.webp",
+    "image_us": "",
+    "gallery_ca": [
+      "bacon-and-caramelized-onions-pizza-gallery-1.webp",
+      "bacon-and-caramelized-onions-pizza-gallery-2.webp",
+      "bacon-and-caramelized-onions-pizza-gallery-3.webp",
+      "bacon-and-caramelized-onions-pizza-gallery-4.webp"
+    ],
+    "gallery_us": [],
+    "slug": "bacon-and-caramelized-onions-pizza"
   },
   {
     "id": 3,
