@@ -61,14 +61,19 @@ const productsData = [
     "ingredients_fr": "Ingrédients : Farine de blé, eau, fromage mozzarella, oignons caramélisés, bacon, sauce alfredo, parmesan, huile d'olive, sel, levure.\nContient : Blé, Lait.",
     "ingredients_es": "Ingredientes: Harina de trigo, agua, queso mozzarella, cebollas caramelizadas, tocino, salsa alfredo, queso parmesano, aceite de oliva, sal, levadura.\nContiene: Trigo, Leche.",
     "image_ca": "bacon-and-caramelized-onions-pizza.webp",
-    "image_us": "",
+    "image_us": "bacon-and-caramelized-onions-pizza-12-us.webp",
     "gallery_ca": [
       "bacon-and-caramelized-onions-pizza-gallery-1.webp",
       "bacon-and-caramelized-onions-pizza-gallery-2.webp",
       "bacon-and-caramelized-onions-pizza-gallery-3.webp",
       "bacon-and-caramelized-onions-pizza-gallery-4.webp"
     ],
-    "gallery_us": [],
+    "gallery_us": [
+      "bacon-and-caramelized-onions-pizza-12-us-gallery-1.webp",
+      "bacon-and-caramelized-onions-pizza-12-us-gallery-2.webp",
+      "bacon-and-caramelized-onions-pizza-12-us-gallery-3.webp",
+      "bacon-and-caramelized-onions-pizza-12-us-gallery-4.webp"
+    ],
     "slug": "bacon-and-caramelized-onions-pizza-12"
   },
   {
