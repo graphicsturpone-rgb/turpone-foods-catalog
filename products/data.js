@@ -584,23 +584,43 @@ const productsData = [
   },
   {
     "id": 26,
-    "title": "Pepperoni and Hot Pickled Peppers Pizza",
+    "title": "Pepperoni and Hot Pickled Peppers Pizza 10\"",
     "title_fr": "Pizza au Pepperoni et Piments Marinés Piquants",
     "title_es": "Pizza de Pepperoni y Chiles Encurtidos Picantes",
     "category": "Frozen Pizza",
     "category_fr": "Pizza surgelée",
     "category_es": "Pizza congelada",
-    "image": "Pepperoni-and-Hot-Pickled-Peppers-Frozen-Pizza.webp",
+    "image": "pepperoni-and-hot-pickled-peppers-pizza-10.webp",
     "description": "Martha Stewart Pepperoni and Hot Pickled Peppers Pizza combines savory pepperoni with tangy hot pickled peppers, mozzarella and Parmesan on a hand-stretched, stone-baked crust. Bold, savory and pleasantly spicy, every bite balances rich pepperoni and melted cheese with the bright kick of pickled peppers. It's a flavorful twist on a classic pepperoni pizza, ready to bake and enjoy in minutes.",
     "description_fr": "La pizza au pepperoni et piments marinés piquants Martha Stewart offre une version relevée de la pizza classique. Cuite sur pierre, avec pepperoni croustillant, fromage fondant et piments acidulés.",
     "description_es": "La pizza de pepperoni y chiles encurtidos picantes Martha Stewart reinventa la pizza tradicional con una combinación vibrante de queso derretido, pepperoni artesanal y chiles encurtidos.",
     "features": "Featuring: Pepperoni, hot pickled peppers, mozzarella and Parmesan",
     "features_fr": "Caractéristiques : Pepperoni, piments marinés piquants, mozzarella et parmesan",
     "features_es": "Características: Pepperoni, chiles encurtidos picantes, mozzarella y parmesano",
-    "gallery": [],
+    "gallery": [
+      "pepperoni-and-hot-pickled-peppers-pizza-10-gallery-1.webp",
+      "pepperoni-and-hot-pickled-peppers-pizza-10-gallery-2.webp",
+      "pepperoni-and-hot-pickled-peppers-pizza-10-gallery-3.webp",
+      "pepperoni-and-hot-pickled-peppers-pizza-10-gallery-4.webp"
+    ],
     "ingredients": "Ingredients: Wheat flour, water, mozzarella cheese, pepperoni, hot pickled peppers, tomato sauce, parmesan cheese, olive oil, salt, yeast.\nContains: Wheat, Milk.",
     "ingredients_fr": "Ingrédients : Farine de blé, eau, fromage mozzarella, pepperoni, piments marinés forts, sauce tomate, fromage parmesan, huile d'olive, sel, levure.\nContient : Blé, Lait.",
-    "ingredients_es": "Ingredientes: Harina de trigo, agua, queso mozzarella, pepperoni, chiles picantes encurtidos, salsa de tomate, queso parmesano, aceite de oliva, sal, levadura.\nContiene: Trigo, Leche."
+    "ingredients_es": "Ingredientes: Harina de trigo, agua, queso mozzarella, pepperoni, chiles picantes encurtidos, salsa de tomate, queso parmesano, aceite de oliva, sal, levadura.\nContiene: Trigo, Leche.",
+    "image_ca": "pepperoni-and-hot-pickled-peppers-pizza-10.webp",
+    "image_us": "pepperoni-and-hot-pickled-peppers-pizza-10-us.webp",
+    "gallery_ca": [
+      "pepperoni-and-hot-pickled-peppers-pizza-10-gallery-1.webp",
+      "pepperoni-and-hot-pickled-peppers-pizza-10-gallery-2.webp",
+      "pepperoni-and-hot-pickled-peppers-pizza-10-gallery-3.webp",
+      "pepperoni-and-hot-pickled-peppers-pizza-10-gallery-4.webp"
+    ],
+    "gallery_us": [
+      "pepperoni-and-hot-pickled-peppers-pizza-10-us-gallery-1.webp",
+      "pepperoni-and-hot-pickled-peppers-pizza-10-us-gallery-2.webp",
+      "pepperoni-and-hot-pickled-peppers-pizza-10-us-gallery-3.webp",
+      "pepperoni-and-hot-pickled-peppers-pizza-10-us-gallery-4.webp"
+    ],
+    "slug": "pepperoni-and-hot-pickled-peppers-pizza-10"
   },
   {
     "id": 27,
