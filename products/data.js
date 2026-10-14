@@ -898,5 +898,36 @@ const productsData = [
     "ingredients": "Ingredients: Wheat flour, water, fresh mozzarella, tomato sauce, basil, parmesan cheese, olive oil, salt, yeast.\nContains: Wheat, Milk.",
     "slug": "margherita-with-fresh-mozzarella-pizza-12",
     "aliasId": "prod_1791921826235"
+  },
+  {
+    "id": 34,
+    "title": "Sausage and Hot Honey Pizza 12\"",
+    "category": "Frozen Pizza",
+    "image": "sausage-and-hot-honey-pizza-12.webp",
+    "image_ca": "sausage-and-hot-honey-pizza-12.webp",
+    "image_us": "sausage-and-hot-honey-pizza-12-us.webp",
+    "gallery": [
+      "sausage-and-hot-honey-pizza-12-gallery-1.webp",
+      "sausage-and-hot-honey-pizza-12-gallery-2.webp",
+      "sausage-and-hot-honey-pizza-12-gallery-3.webp",
+      "sausage-and-hot-honey-pizza-12-gallery-4.webp"
+    ],
+    "gallery_ca": [
+      "sausage-and-hot-honey-pizza-12-gallery-1.webp",
+      "sausage-and-hot-honey-pizza-12-gallery-2.webp",
+      "sausage-and-hot-honey-pizza-12-gallery-3.webp",
+      "sausage-and-hot-honey-pizza-12-gallery-4.webp"
+    ],
+    "gallery_us": [
+      "sausage-and-hot-honey-pizza-12-us-gallery-1.webp",
+      "sausage-and-hot-honey-pizza-12-us-gallery-2.webp",
+      "sausage-and-hot-honey-pizza-12-us-gallery-3.webp",
+      "sausage-and-hot-honey-pizza-12-us-gallery-4.webp"
+    ],
+    "description": "Martha Stewart Sausage and Hot Honey Pizza pairs savory Italian sausage and fresh mozzarella with a drizzle of hot honey on a hand-stretched, stone-baked crust. The combination of savory sausage, creamy cheese and sweet heat creates a bold balance of flavors in every bite. Simply bake until golden for a distinctive, pizzeria-inspired pizza that's ready to enjoy at home in minutes.",
+    "features": "Featuring: Fresh mozzarella, Italian sausage and hot honey",
+    "ingredients": "Ingredients: Wheat flour, water, mozzarella cheese, Italian sausage, hot honey, tomato sauce, olive oil, salt, yeast.\nContains: Wheat, Milk.",
+    "slug": "sausage-and-hot-honey-pizza-12",
+    "aliasId": "prod_1792006737889"
   }
 ];
