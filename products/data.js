@@ -121,14 +121,19 @@ const productsData = [
     "ingredients_fr": "Ingrédients : Farine de blé, eau, sauce alfredo, fromage parmesan, fromage romano, ail haché, poivre noir, huile d'olive, sel, levure.\nContient : Blé, Lait.",
     "ingredients_es": "Ingredientes: Harina de trigo, agua, salsa alfredo, queso parmesano, queso romano, ajo picado, pimienta negra, aceite de oliva, sal, levadura.\nContiene: Trigo, Leche.",
     "image_ca": "cacio-e-pepe-with-alfredo-sauce-pizza-12.webp",
-    "image_us": "",
+    "image_us": "cacio-e-pepe-with-alfredo-sauce-pizza-12-us.webp",
     "gallery_ca": [
       "cacio-e-pepe-with-alfredo-sauce-pizza-12-gallery-1.webp",
       "cacio-e-pepe-with-alfredo-sauce-pizza-12-gallery-2.webp",
       "cacio-e-pepe-with-alfredo-sauce-pizza-12-gallery-3.webp",
       "cacio-e-pepe-with-alfredo-sauce-pizza-12-gallery-4.webp"
     ],
-    "gallery_us": [],
+    "gallery_us": [
+      "cacio-e-pepe-with-alfredo-sauce-pizza-12-us-gallery-1.webp",
+      "cacio-e-pepe-with-alfredo-sauce-pizza-12-us-gallery-2.webp",
+      "cacio-e-pepe-with-alfredo-sauce-pizza-12-us-gallery-3.webp",
+      "cacio-e-pepe-with-alfredo-sauce-pizza-12-us-gallery-4.webp"
+    ],
     "slug": "cacio-e-pepe-with-alfredo-sauce-pizza-12"
   },
   {
