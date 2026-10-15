@@ -935,5 +935,36 @@ const productsData = [
     "ingredients": "Ingredients: Wheat flour, water, mozzarella cheese, Italian sausage, hot honey, tomato sauce, olive oil, salt, yeast.\nContains: Wheat, Milk.",
     "slug": "sausage-and-hot-honey-pizza-12",
     "aliasId": "prod_1792068734118"
+  },
+  {
+    "id": 35,
+    "title": "Pepperoni and Hot Pickled Peppers Pizza 12\"",
+    "category": "Frozen Pizza",
+    "image": "pepperoni-and-hot-pickled-peppers-pizza-12.webp",
+    "image_ca": "pepperoni-and-hot-pickled-peppers-pizza-12.webp",
+    "image_us": "pepperoni-and-hot-pickled-peppers-pizza-12-us.webp",
+    "gallery": [
+      "pepperoni-and-hot-pickled-peppers-pizza-12-gallery-1.webp",
+      "pepperoni-and-hot-pickled-peppers-pizza-12-gallery-2.webp",
+      "pepperoni-and-hot-pickled-peppers-pizza-12-gallery-3.webp",
+      "pepperoni-and-hot-pickled-peppers-pizza-12-gallery-4.webp"
+    ],
+    "gallery_ca": [
+      "pepperoni-and-hot-pickled-peppers-pizza-12-gallery-1.webp",
+      "pepperoni-and-hot-pickled-peppers-pizza-12-gallery-2.webp",
+      "pepperoni-and-hot-pickled-peppers-pizza-12-gallery-3.webp",
+      "pepperoni-and-hot-pickled-peppers-pizza-12-gallery-4.webp"
+    ],
+    "gallery_us": [
+      "pepperoni-and-hot-pickled-peppers-pizza-12-us-gallery-1.webp",
+      "pepperoni-and-hot-pickled-peppers-pizza-12-us-gallery-2.webp",
+      "pepperoni-and-hot-pickled-peppers-pizza-12-us-gallery-3.webp",
+      "pepperoni-and-hot-pickled-peppers-pizza-12-us-gallery-4.webp"
+    ],
+    "description": "Martha Stewart Pepperoni and Hot Pickled Peppers Pizza combines savory pepperoni with tangy hot pickled peppers, mozzarella and Parmesan on a hand-stretched, stone-baked crust. Bold, savory and pleasantly spicy, every bite balances rich pepperoni and melted cheese with the bright kick of pickled peppers. It's a flavorful twist on a classic pepperoni pizza, ready to bake and enjoy in minutes.",
+    "features": "Featuring: Pepperoni, hot pickled peppers, mozzarella and Parmesan",
+    "ingredients": "Ingredients: Wheat flour, water, mozzarella cheese, pepperoni, hot pickled peppers, tomato sauce, parmesan cheese, olive oil, salt, yeast.\nContains: Wheat, Milk.",
+    "slug": "pepperoni-and-hot-pickled-peppers-pizza-12",
+    "aliasId": "prod_1792073534950"
   }
 ];
