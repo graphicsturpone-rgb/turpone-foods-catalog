@@ -25,9 +25,15 @@ const productsData = [
     "ingredients_fr": "Ingrédients : Pinsa (farine de blé, farine de riz biologique, farine de fève biologique, levain naturel, eau, huile d'olive, sel, levure). Garnitures : Fromage mozzarella, oignons caramélisés, bacon (porc, eau, sel, sucre brun, épices), fromage parmesan. Sauce Alfredo : Crème, ail émincé, fromage parmesan, amidon de maïs modifié, sel, poivre noir.\nContient : Blé, Lait.\nPeut contenir : Œufs, Soja, Moutarde.",
     "ingredients_es": "Ingredientes: Masa de pinsa (harina de trigo, harina de arroz orgánica, harina de haba orgánica, masa madre, agua, aceite de oliva, sal, levadura). Coberturas: Queso mozzarella, cebollas caramelizadas, tocino (cerdo, agua, sal, azúcar moreno, especias), queso parmesano. Salsa Alfredo: Crema, ajo picado, queso parmesano, almidón de maíz modificado, sal, pimienta negra.\nContiene: Trigo, Leche.\nPuede contener: Huevos, Soya, Mostaza.",
     "slug": "bacon-and-caramelized-onions-pinsa",
-    "image_ca": "",
+    "image_ca": "bacon-and-caramelized-onions-pinsa.webp",
     "image_us": "bacon-and-caramelized-onions-pinsa-us.webp",
-    "gallery_ca": [],
+    "gallery_ca": [
+      "bacon-and-caramelized-onions-pinsa-gallery-1.webp",
+      "bacon-and-caramelized-onions-pinsa-gallery-2.webp",
+      "bacon-and-caramelized-onions-pinsa-gallery-3.webp",
+      "bacon-and-caramelized-onions-pinsa-gallery-4.webp",
+      "bacon-and-caramelized-onions-pinsa-gallery-5.webp"
+    ],
     "gallery_us": [
       "bacon-and-caramelized-onions-pinsa-us-gallery-1.webp",
       "bacon-and-caramelized-onions-pinsa-us-gallery-2.webp",
