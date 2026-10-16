@@ -313,17 +313,31 @@ const productsData = [
     "category": "Pizza Sauce",
     "category_fr": "Sauces à pizza",
     "category_es": "Salsas para pizza",
-    "image": "Roasted-Garlic-Pizza-Sauce-375ml.webp",
+    "image": "roasted-garlic-pizza-sauce-375g.webp",
     "description": "Martha Stewart Roasted Garlic Pizza Sauce combines vine-ripened crushed tomatoes with roasted garlic, extra virgin olive oil, oregano, basil and black pepper for a rich, savory flavor. Spread it over pizza dough and pair with mushrooms, onions, mozzarella or your favorite toppings, or use it as a flavorful sauce for pasta and other Italian-inspired dishes. The roasted garlic adds an extra layer of depth to every bite.",
     "description_fr": "La sauce à pizza à l'ail rôti Martha Stewart marie des tomates broyées mûries sur pied à de l'ail rôti savoureux, de l'huile d'olive extra vierge, de l'origan et du basilic. Idéale pour napper pâtes à pizza et plats mijotés.",
     "description_es": "La salsa para pizza con ajo asado Martha Stewart combina tomates madurados triturados con ajo asado dulce, aceite de oliva virgen extra, orégano y albahaca. Aporta profundidad aromática a cualquier receta.",
     "features": "Featuring: Vine-ripened crushed tomatoes, roasted garlic, extra virgin olive oil, oregano and basil",
     "features_fr": "Caractéristiques : Tomates broyées mûries sur pied, ail rôti, huile d'olive extra vierge, origan et basilic",
     "features_es": "Características: Tomates triturados madurados, ajo asado, aceite de oliva virgen extra, orégano y albahaca",
-    "gallery": [],
+    "gallery": [
+      "roasted-garlic-pizza-sauce-375g-gallery-1.webp",
+      "roasted-garlic-pizza-sauce-375g-gallery-2.webp"
+    ],
     "ingredients": "Ingredients: Vine-ripened crushed tomatoes, water, roasted garlic, extra-virgin olive oil, sea salt, oregano, basil, black pepper.",
     "ingredients_fr": "Ingrédients : Tomates broyées mûries sur pied, eau, ail rôti, huile d'olive extra vierge, sel de mer, origan, basilic, poivre noir.",
-    "ingredients_es": "Ingredientes: Tomates triturados madurados al sol, agua, ajo asado, aceite de oliva virgen extra, sal marina, orégano, albahaca, pimienta negra."
+    "ingredients_es": "Ingredientes: Tomates triturados madurados al sol, agua, ajo asado, aceite de oliva virgen extra, sal marina, orégano, albahaca, pimienta negra.",
+    "image_ca": "roasted-garlic-pizza-sauce-375g.webp",
+    "image_us": "roasted-garlic-pizza-sauce-375g-us.webp",
+    "gallery_ca": [
+      "roasted-garlic-pizza-sauce-375g-gallery-1.webp",
+      "roasted-garlic-pizza-sauce-375g-gallery-2.webp"
+    ],
+    "gallery_us": [
+      "roasted-garlic-pizza-sauce-375g-us-gallery-1.webp",
+      "roasted-garlic-pizza-sauce-375g-us-gallery-2.webp"
+    ],
+    "slug": "roasted-garlic-pizza-sauce-375g"
   },
   {
     "id": 12,
