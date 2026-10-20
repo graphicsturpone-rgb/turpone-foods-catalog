@@ -14,7 +14,7 @@ function resolveImageUrl(img, market, updated_at) {
         path = trimmed;
     } else {
         const cleanName = trimmed.split('?')[0];
-        const isExplicitUs = /[-_]us\.(webp|png|jpe?g)$/i.test(cleanName);
+        const isExplicitUs = /[-_]us(?:[-_.0-9a-z]*)\.(webp|png|jpe?g)$/i.test(cleanName);
         const folder = isExplicitUs ? '/assets/images/us_imgs/' : (currentMarket === 'US' ? '/assets/images/us_imgs/' : '/assets/images/ca_imgs/');
         path = folder + cleanName;
     }
@@ -142,7 +142,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     // Explicitly empty for CA (e.g. user removed CA image)
                     rawImg = '';
                 } else {
-                    rawImg = (p.image && !/[-_]us\.(webp|png|jpe?g)$/i.test(p.image)) ? p.image : '';
+                    rawImg = (p.image && !/[-_]us(?:[-_.0-9a-z]*)\.(webp|png|jpe?g)$/i.test(p.image)) ? p.image : '';
                 }
             }
             const imgSrc = (rawImg && rawImg.trim()) ? resolveImageUrl(rawImg, market, p.updated_at) : NEUTRAL_CATALOG_PLACEHOLDER;

@@ -60,8 +60,40 @@ function encodeBase64Utf8(str) {
     return btoa(binary);
 }
 
-// Fetch file contents from GitHub
+// Fetch file contents from GitHub with 0-cache Git Data API guarantee
 async function getFileContent(filePath, branch = "main", token) {
+    // 1. Primary: Direct Git Tree & Blob inspection (Bypasses GitHub's 60s contents/ REST edge cache)
+    try {
+        const refRes = await githubRequest(`git/ref/heads/${branch}`, "GET", null, token);
+        if (refRes.ok && refRes.data && refRes.data.object && refRes.data.object.sha) {
+            const headCommitSha = refRes.data.object.sha;
+            const commitRes = await githubRequest(`git/commits/${headCommitSha}`, "GET", null, token);
+            if (commitRes.ok && commitRes.data && commitRes.data.tree && commitRes.data.tree.sha) {
+                const treeSha = commitRes.data.tree.sha;
+                const treeRes = await githubRequest(`git/trees/${treeSha}?recursive=1`, "GET", null, token);
+                if (treeRes.ok && treeRes.data && Array.isArray(treeRes.data.tree)) {
+                    const fileEntry = treeRes.data.tree.find(e => e.path === filePath);
+                    if (fileEntry && fileEntry.sha) {
+                        const blobRes = await githubRequest(`git/blobs/${fileEntry.sha}`, "GET", null, token);
+                        if (blobRes.ok && blobRes.data && blobRes.data.content) {
+                            const cleanBase64 = blobRes.data.content.replace(/\n/g, "");
+                            const decoded = decodeBase64Utf8(cleanBase64);
+                            return {
+                                sha: fileEntry.sha,
+                                commitSha: headCommitSha,
+                                treeSha: treeSha,
+                                content: decoded
+                            };
+                        }
+                    }
+                }
+            }
+        }
+    } catch (gitErr) {
+        console.warn("Git Data API direct fetch error, falling back to contents API:", gitErr);
+    }
+
+    // 2. Fallback: Standard GitHub contents API with cache buster
     const res = await githubRequest(`contents/${filePath}?ref=${branch}`, "GET", null, token);
     if (!res.ok || !res.data) return null;
 
@@ -278,12 +310,14 @@ export async function onRequest(context) {
                 }
             }
 
+            const saveTimestamp = Date.now();
+
             // Process Canada Main Image
             if (product.image_ca && product.image_ca.startsWith("data:image/")) {
                 const match = product.image_ca.match(/^data:image\/([a-zA-Z0-9]+);base64,(.+)$/);
                 if (match) {
                     const ext = match[1] === "jpeg" ? "jpg" : match[1];
-                    const imageFileName = `${slug}.${ext}`;
+                    const imageFileName = `${slug}-v${saveTimestamp}-ca.${ext}`;
                     await createBlobAndAddTree(imageFileName, match[2], false);
                     product.image_ca = imageFileName;
                 }
@@ -296,7 +330,7 @@ export async function onRequest(context) {
                 const match = product.image_us.match(/^data:image\/([a-zA-Z0-9]+);base64,(.+)$/);
                 if (match) {
                     const ext = match[1] === "jpeg" ? "jpg" : match[1];
-                    const imageFileName = `${slug}-us.${ext}`;
+                    const imageFileName = `${slug}-v${saveTimestamp}-us.${ext}`;
                     await createBlobAndAddTree(imageFileName, match[2], true);
                     product.image_us = imageFileName;
                 }
@@ -313,7 +347,7 @@ export async function onRequest(context) {
                         const match = item.match(/^data:image\/([a-zA-Z0-9]+);base64,(.+)$/);
                         if (match) {
                             const ext = match[1] === "jpeg" ? "jpg" : match[1];
-                            const galFileName = `${slug}-gallery-${i + 1}.${ext}`;
+                            const galFileName = `${slug}-ca-gal-${i + 1}-${saveTimestamp}.${ext}`;
                             await createBlobAndAddTree(galFileName, match[2], false);
                             processedGallery.push(galFileName);
                         } else {
@@ -324,6 +358,8 @@ export async function onRequest(context) {
                     }
                 }
                 product.gallery_ca = processedGallery;
+            } else if (Array.isArray(product.gallery_ca)) {
+                product.gallery_ca = [];
             }
 
             // Process US Gallery
@@ -335,7 +371,7 @@ export async function onRequest(context) {
                         const match = item.match(/^data:image\/([a-zA-Z0-9]+);base64,(.+)$/);
                         if (match) {
                             const ext = match[1] === "jpeg" ? "jpg" : match[1];
-                            const galFileName = `${slug}-us-gallery-${i + 1}.${ext}`;
+                            const galFileName = `${slug}-us-gal-${i + 1}-${saveTimestamp}.${ext}`;
                             await createBlobAndAddTree(galFileName, match[2], true);
                             processedGalleryUs.push(galFileName);
                         } else {
@@ -346,9 +382,11 @@ export async function onRequest(context) {
                     }
                 }
                 product.gallery_us = processedGalleryUs;
+            } else if (Array.isArray(product.gallery_us)) {
+                product.gallery_us = [];
             }
 
-            // 4. Update or Insert product into catalog array with strict market isolation
+            // 4. Update or Insert product into catalog array with strict market isolation & anti-rollback
             const prodId = product.id ? String(product.id) : `prod_${Date.now()}`;
             product.id = isNaN(Number(prodId)) ? prodId : Number(prodId);
 
@@ -372,7 +410,6 @@ export async function onRequest(context) {
             }
             product.slug = candidateSlug;
 
-            const saveTimestamp = Date.now();
             let finalProduct = null;
 
             if (existingIndex >= 0) {
@@ -380,16 +417,27 @@ export async function onRequest(context) {
                 const updatedProduct = { ...existing, ...product };
 
                 // Strictly isolate market images and galleries
-                if (product.image_ca !== undefined) updatedProduct.image_ca = product.image_ca;
-                if (product.image_us !== undefined) updatedProduct.image_us = product.image_us;
-                if (product.gallery_ca !== undefined) updatedProduct.gallery_ca = product.gallery_ca;
-                if (product.gallery_us !== undefined) updatedProduct.gallery_us = product.gallery_us;
+                const effCa = (product.image_ca !== undefined) ? product.image_ca : (existing.image_ca || "");
+                const effUs = (product.image_us !== undefined) ? product.image_us : (existing.image_us || "");
+                updatedProduct.image_ca = effCa;
+                updatedProduct.image_us = effUs;
+                updatedProduct.image = effCa || effUs || "";
 
-                // Base fallback normalization
-                updatedProduct.image = updatedProduct.image_ca || updatedProduct.image_us || existing.image || "";
+                if (Array.isArray(product.gallery_ca)) {
+                    updatedProduct.gallery_ca = product.gallery_ca;
+                } else if (updatedProduct.gallery_ca === undefined) {
+                    updatedProduct.gallery_ca = existing.gallery_ca || [];
+                }
+
+                if (Array.isArray(product.gallery_us)) {
+                    updatedProduct.gallery_us = product.gallery_us;
+                } else if (updatedProduct.gallery_us === undefined) {
+                    updatedProduct.gallery_us = existing.gallery_us || [];
+                }
+
                 updatedProduct.gallery = (Array.isArray(updatedProduct.gallery_ca) && updatedProduct.gallery_ca.length > 0)
                     ? [...updatedProduct.gallery_ca]
-                    : (Array.isArray(updatedProduct.gallery_us) && updatedProduct.gallery_us.length > 0 ? [...updatedProduct.gallery_us] : (existing.gallery || []));
+                    : (Array.isArray(updatedProduct.gallery_us) && updatedProduct.gallery_us.length > 0 ? [...updatedProduct.gallery_us] : []);
 
                 updatedProduct.updated_at = saveTimestamp;
                 products[existingIndex] = updatedProduct;
@@ -461,7 +509,7 @@ export async function onRequest(context) {
             const newTreeSha = newTreeRes.data.sha;
 
             const newCommitRes = await githubRequest("git/commits", "POST", {
-                message: `Catalog update: ${finalProduct.title} (atomic sync) [skip ci]`,
+                message: `Catalog update: ${finalProduct.title} (atomic production sync)`,
                 tree: newTreeSha,
                 parents: [baseCommitSha]
             }, token);

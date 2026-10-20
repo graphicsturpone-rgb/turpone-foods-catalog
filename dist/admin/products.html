@@ -580,6 +580,9 @@
         </nav>
 
         <div class="admin-actions">
+            <button class="btn-view-store" onclick="forceSyncServer()" title="Pull fresh catalog from GitHub and purge local cache" style="cursor:pointer;">
+                <i class="fa-solid fa-arrows-rotate"></i> Sync Server
+            </button>
             <button class="btn-view-store" onclick="copyCatalogData()" title="Click to copy newly added products data to send to AI assistant">
                 <i class="fa-solid fa-copy"></i> Copy Catalog Data
             </button>
@@ -853,6 +856,29 @@
             });
         }
 
+        async function forceSyncServer() {
+            showToast('Syncing latest catalog from repository...');
+            try {
+                const res = await fetch('/api/products?t=' + Date.now(), {
+                    headers: { 'Cache-Control': 'no-cache, no-store, must-revalidate', 'Pragma': 'no-cache' }
+                });
+                const data = await res.json();
+                if (data && data.success && Array.isArray(data.products)) {
+                    window.__apiProducts = data.products;
+                    if (window.ProductStore) {
+                        window.ProductStore.saveCustom([]); // clear any old local overrides
+                    }
+                    window.__adminSessionTs = Date.now();
+                    loadProducts();
+                    showToast(`Synchronized ${data.products.length} products from repository!`);
+                } else {
+                    alert('Failed to sync from repository: ' + (data.error || 'Unknown error'));
+                }
+            } catch (e) {
+                alert('Server sync error: ' + e.message);
+            }
+        }
+
         function showToast(msg) {
             const toast = document.getElementById('toast');
             document.getElementById('toastMsg').textContent = msg;
@@ -874,9 +900,10 @@
             if (trimmed.startsWith('/')) {
                 path = trimmed;
             } else {
-                const isExplicitUs = /[-_]us\.(webp|png|jpe?g)$/i.test(trimmed);
+                const cleanName = trimmed.split('?')[0];
+                const isExplicitUs = /[-_]us(?:[-_.0-9a-z]*)\.(webp|png|jpe?g)$/i.test(cleanName);
                 const folder = isExplicitUs ? '/assets/images/us_imgs/' : (market === 'US' ? '/assets/images/us_imgs/' : '/assets/images/ca_imgs/');
-                path = folder + trimmed;
+                path = folder + cleanName;
             }
             const v = updated_at || window.__adminSessionTs;
             path += (path.includes('?') ? '&' : '?') + 't=' + v;
@@ -995,7 +1022,7 @@
             tbody.innerHTML = filtered.map(p => {
                 const isCustom = String(p.id).startsWith('prod_');
                 
-                const rawCa = (p.image_ca !== undefined) ? p.image_ca : (!/[-_]us\.(webp|png|jpe?g)$/i.test(p.image || '') ? (p.image || '') : '');
+                const rawCa = (p.image_ca !== undefined) ? p.image_ca : (!/[-_]us(?:[-_.0-9a-z]*)\.(webp|png|jpe?g)$/i.test(p.image || '') ? (p.image || '') : '');
                 const rawUs = (p.image_us !== undefined && p.image_us !== null && p.image_us !== '') ? p.image_us : '';
 
                 const imgSrcCa = (rawCa && rawCa.trim()) ? resolveImage(rawCa, 'CA', p.updated_at) : NEUTRAL_PLACEHOLDER;
@@ -1105,13 +1132,13 @@
 
             if (product.image_ca !== undefined) {
                 initialCa = product.image_ca;
-            } else if (product.image && !/[-_]us\.(webp|png|jpe?g)$/i.test(product.image)) {
+            } else if (product.image && !/[-_]us(?:[-_.0-9a-z]*)\.(webp|png|jpe?g)$/i.test(product.image)) {
                 initialCa = product.image;
             }
 
             if (product.image_us !== undefined) {
                 initialUs = product.image_us;
-            } else if (product.image && /[-_]us\.(webp|png|jpe?g)$/i.test(product.image)) {
+            } else if (product.image && /[-_]us(?:[-_.0-9a-z]*)\.(webp|png|jpe?g)$/i.test(product.image)) {
                 initialUs = product.image;
             }
 
@@ -1205,13 +1232,13 @@
 
             if (product.image_ca !== undefined) {
                 initialCa = product.image_ca;
-            } else if (product.image && !/[-_]us\.(webp|png|jpe?g)$/i.test(product.image)) {
+            } else if (product.image && !/[-_]us(?:[-_.0-9a-z]*)\.(webp|png|jpe?g)$/i.test(product.image)) {
                 initialCa = product.image;
             }
 
             if (product.image_us !== undefined) {
                 initialUs = product.image_us;
-            } else if (product.image && /[-_]us\.(webp|png|jpe?g)$/i.test(product.image)) {
+            } else if (product.image && /[-_]us(?:[-_.0-9a-z]*)\.(webp|png|jpe?g)$/i.test(product.image)) {
                 initialUs = product.image;
             }
 
@@ -1450,7 +1477,7 @@
             }
 
             previewBox.innerHTML = targetGallery.map((item, idx) => {
-                const resolvedThumb = resolveImage(item, market);
+                const resolvedThumb = resolveImage(item, market, window.__adminSessionTs);
                 return `
                     <div class="preview-img-box" title="${market} Gallery image ${idx + 1}">
                         <img src="${resolvedThumb}" onerror="this.onerror=null; this.src=NEUTRAL_PLACEHOLDER;">
@@ -1469,7 +1496,7 @@
                 const mainImg = mainImgInput ? mainImgInput.value.trim() : '';
 
                 if (mainImg) {
-                    const resolvedMain = resolveImage(mainImg, 'CA');
+                    const resolvedMain = resolveImage(mainImg, 'CA', window.__adminSessionTs);
                     mainBox.innerHTML = `<img src="${resolvedMain}" alt="CA Preview" onerror="this.onerror=null; this.src=NEUTRAL_PLACEHOLDER;">`;
                     if (btnRemoveMain) btnRemoveMain.style.display = 'inline-block';
                 } else {
@@ -1485,7 +1512,7 @@
                 const mainImgUs = mainImgInputUs ? mainImgInputUs.value.trim() : '';
 
                 if (mainImgUs) {
-                    const resolvedMainUs = resolveImage(mainImgUs, 'US');
+                    const resolvedMainUs = resolveImage(mainImgUs, 'US', window.__adminSessionTs);
                     mainBoxUs.innerHTML = `<img src="${resolvedMainUs}" alt="US Preview" onerror="this.onerror=null; this.src=NEUTRAL_PLACEHOLDER;">`;
                     if (btnRemoveMainUs) btnRemoveMainUs.style.display = 'inline-block';
                 } else {
@@ -1580,9 +1607,27 @@
 
                 const result = await response.json();
                 if (response.ok && result.success) {
-                    if (result.product && window.ProductStore) {
-                        window.ProductStore.save(result.product);
+                    const savedProduct = result.product || productData;
+
+                    // Update in-memory API list immediately so the UI reflects the saved version
+                    if (window.__apiProducts && Array.isArray(window.__apiProducts)) {
+                        const existingIdx = window.__apiProducts.findIndex(p => String(p.id) === String(savedProduct.id) || (savedProduct.aliasId && String(p.id) === String(savedProduct.aliasId)));
+                        if (existingIdx >= 0) {
+                            window.__apiProducts[existingIdx] = savedProduct;
+                        } else {
+                            window.__apiProducts.push(savedProduct);
+                        }
                     }
+
+                    // Purge draft from custom products in localStorage so it never resurrects an old draft
+                    if (window.ProductStore) {
+                        window.ProductStore.delete(savedProduct.id);
+                        if (savedProduct.aliasId) {
+                            window.ProductStore.delete(savedProduct.aliasId);
+                        }
+                    }
+
+                    window.__adminSessionTs = savedProduct.updated_at || Date.now();
                     showToast('Saved and pushed live to Production!');
                     closeModal();
                     loadProducts();

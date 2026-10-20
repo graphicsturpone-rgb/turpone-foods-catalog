@@ -292,7 +292,7 @@ function resolveImageUrl(img, market, updated_at) {
         path = trimmed;
     } else {
         const cleanName = trimmed.split('?')[0];
-        const isExplicitUs = /[-_]us\.(webp|png|jpe?g)$/i.test(cleanName);
+        const isExplicitUs = /[-_]us(?:[-_.0-9a-z]*)\.(webp|png|jpe?g)$/i.test(cleanName);
         const folder = isExplicitUs ? '/assets/images/us_imgs/' : (currentMarket === 'US' ? '/assets/images/us_imgs/' : '/assets/images/ca_imgs/');
         path = folder + cleanName;
     }
@@ -307,7 +307,7 @@ function attachImageFallback(imgEl, originalFilename) {
     
     const cleanName = originalFilename.replace(/^.*[\\\/]/, '').split('?')[0];
     const currentMarket = getActiveMarket();
-    const isExplicitUs = /[-_]us\.(webp|png|jpe?g)$/i.test(cleanName);
+    const isExplicitUs = /[-_]us(?:[-_.0-9a-z]*)\.(webp|png|jpe?g)$/i.test(cleanName);
     const primaryFolder = (isExplicitUs || currentMarket === 'US') ? '/assets/images/us_imgs/' : '/assets/images/ca_imgs/';
 
     const fallbackPaths = [

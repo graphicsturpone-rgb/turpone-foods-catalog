@@ -50,10 +50,22 @@
             'ingredients_fr', 'ingredients_es'
         ];
 
+        const activeDrafts = [];
         customList.forEach(custom => {
             const index = merged.findIndex(p => String(p.id) === String(custom.id) || (custom.aliasId && String(p.id) === String(custom.aliasId)));
             if (index >= 0) {
                 const baseProd = merged[index];
+
+                // CRITICAL ANTI-ROLLBACK CHECK:
+                // If base canonical product has an equal or newer timestamp, NEVER let older custom draft overwrite it!
+                const baseTs = Number(baseProd.updated_at) || 0;
+                const customTs = Number(custom.updated_at) || 0;
+                if (baseTs > 0 && baseTs >= customTs) {
+                    // Stale draft detected: canonical base is newer or already synced. Skip draft.
+                    return;
+                }
+
+                activeDrafts.push(custom);
                 const updated = { ...baseProd, ...custom };
                 
                 // Explicitly preserve market separation
@@ -73,9 +85,15 @@
                 });
                 merged[index] = updated;
             } else {
+                activeDrafts.push(custom);
                 merged.unshift(custom);
             }
         });
+
+        // Auto-purge stale drafts from localStorage if any were skipped
+        if (activeDrafts.length !== customList.length) {
+            saveCustomProducts(activeDrafts);
+        }
 
         return merged;
     }
@@ -144,16 +162,16 @@
                     const custom = getCustomProducts();
                     if (custom.length > 0) {
                         const remaining = custom.filter(c => {
-                            const remote = data.products.find(p => String(p.id) === String(c.id));
+                            const remote = data.products.find(p => String(p.id) === String(c.id) || (c.aliasId && String(p.id) === String(c.aliasId)));
                             if (!remote) return true; // keep if local product doesn't exist remotely
                             
-                            // If local has newer timestamp than remote, DO NOT discard!
                             const localTs = Number(c.updated_at) || 0;
                             const remoteTs = Number(remote.updated_at) || 0;
-                            if (localTs > remoteTs) {
-                                return true;
+                            // If remote has equal or newer timestamp, discard stale local draft
+                            if (remoteTs >= localTs && remoteTs > 0) {
+                                return false;
                             }
-                            return false;
+                            return true;
                         });
                         if (remaining.length !== custom.length) {
                             saveCustomProducts(remaining);
