@@ -367,17 +367,31 @@ const productsData = [
     "category": "Pizza Sauce",
     "category_fr": "Sauces à pizza",
     "category_es": "Salsas para pizza",
-    "image": "Spicy-Pizza-Sauce-375ml.webp",
+    "image": "spicy-pizza-sauce-375g.webp",
     "description": "Martha Stewart Spicy Pizza Sauce combines vine-ripened crushed tomatoes, extra virgin olive oil, garlic, oregano and basil with crushed chilies for a flavorful kick of heat. Use it as the base for a spicy pizza topped with Italian sausage, mozzarella and your favorite vegetables, or spoon it over polenta for a quick and flavorful meal. It's an easy way to add bold tomato flavor and a touch of heat to your favorite dishes.",
     "description_fr": "La sauce à pizza épicée Martha Stewart apporte une pointe de piquant grâce à des piments rouges broyés, associés à des tomates gorgées de soleil, de l'ail et de l'huile d'olive extra vierge.",
     "description_es": "La salsa para pizza picante Martha Stewart ofrece un toque vibrante de picor con hojuelas de chile trituradas, tomates madurados, ajo y orégano italiano. Perfecta para pizzas con carácter.",
     "features": "Featuring: Vine-ripened crushed tomatoes, crushed chilies, extra virgin olive oil, garlic and basil",
     "features_fr": "Caractéristiques : Tomates broyées, piments concassés, huile d'olive extra vierge, ail et basilic",
     "features_es": "Características: Tomates madurados triturados, chiles secos, aceite de oliva virgen extra, ajo y albahaca",
-    "gallery": [],
+    "gallery": [
+      "spicy-pizza-sauce-375g-gallery-1.webp",
+      "spicy-pizza-sauce-375g-gallery-2.webp"
+    ],
     "ingredients": "Ingredients: Vine-ripened crushed tomatoes, water, extra-virgin olive oil, chopped garlic, sea salt, crushed chilies, oregano, basil, black pepper.",
     "ingredients_fr": "Ingrédients : Tomates broyées mûries sur pied, eau, huile d'olive extra vierge, ail haché, sel de mer, piments concassés, origan, basilic, poivre noir.",
-    "ingredients_es": "Ingredientes: Tomates triturados, agua, aceite de oliva virgen extra, ajo picado, sal marina, chiles triturados, orégano, albahaca, pimienta negra."
+    "ingredients_es": "Ingredientes: Tomates triturados, agua, aceite de oliva virgen extra, ajo picado, sal marina, chiles triturados, orégano, albahaca, pimienta negra.",
+    "image_ca": "spicy-pizza-sauce-375g.webp",
+    "image_us": "spicy-pizza-sauce-375g-us.webp",
+    "gallery_ca": [
+      "spicy-pizza-sauce-375g-gallery-1.webp",
+      "spicy-pizza-sauce-375g-gallery-2.webp"
+    ],
+    "gallery_us": [
+      "spicy-pizza-sauce-375g-us-gallery-1.webp",
+      "spicy-pizza-sauce-375g-us-gallery-2.webp"
+    ],
+    "slug": "spicy-pizza-sauce-375g"
   },
   {
     "id": 14,
