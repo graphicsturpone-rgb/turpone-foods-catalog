@@ -41,7 +41,7 @@ const productsData = [
       "bacon-and-caramelized-onions-pinsa-us-gallery-4.webp",
       "bacon-and-caramelized-onions-pinsa-us-gallery-5.webp"
     ],
-    "updated_at": 1792520890678
+    "updated_at": 1792521013523
   },
   {
     "id": 9,
