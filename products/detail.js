@@ -280,20 +280,25 @@ function toggleAccordion(el) {
 
 const NEUTRAL_PRODUCT_PLACEHOLDER = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23f8fafc'/%3E%3Cpath d='M30 65 L45 45 L58 58 L68 46 L80 65 Z' fill='%23cbd5e1'/%3E%3Ccircle cx='40' cy='38' r='5' fill='%23cbd5e1'/%3E%3C/svg%3E";
 
-function resolveImageUrl(img, market) {
-    if (!img) return NEUTRAL_PRODUCT_PLACEHOLDER;
-    const currentMarket = market || getActiveMarket();
-    if (img.startsWith('http://') || img.startsWith('https://') || img.startsWith('data:') || img.startsWith('/')) {
-        if (currentMarket === 'US' && img.includes('/ca_imgs/')) {
-            return img.replace('/ca_imgs/', '/us_imgs/');
-        }
-        if (currentMarket === 'CA' && img.includes('/us_imgs/')) {
-            return img.replace('/us_imgs/', '/ca_imgs/');
-        }
-        return img;
+function resolveImageUrl(img, market, updated_at) {
+    if (!img || !img.trim()) return NEUTRAL_PRODUCT_PLACEHOLDER;
+    const trimmed = img.trim();
+    if (trimmed.startsWith('http://') || trimmed.startsWith('https://') || trimmed.startsWith('data:')) {
+        return trimmed;
     }
-    const folder = currentMarket === 'US' ? '/assets/images/us_imgs/' : '/assets/images/ca_imgs/';
-    return folder + img;
+    const currentMarket = market || getActiveMarket();
+    let path = '';
+    if (trimmed.startsWith('/')) {
+        path = trimmed;
+    } else {
+        const isExplicitUs = /[-_]us\.(webp|png|jpe?g)$/i.test(trimmed);
+        const folder = isExplicitUs ? '/assets/images/us_imgs/' : (currentMarket === 'US' ? '/assets/images/us_imgs/' : '/assets/images/ca_imgs/');
+        path = folder + trimmed;
+    }
+    if (updated_at) {
+        path += (path.includes('?') ? '&' : '?') + 'v=' + updated_at;
+    }
+    return path;
 }
 
 // Multi-path image fallback loader for detail page
@@ -302,7 +307,8 @@ function attachImageFallback(imgEl, originalFilename) {
     
     const cleanName = originalFilename.replace(/^.*[\\\/]/, '');
     const currentMarket = getActiveMarket();
-    const marketFolder = currentMarket === 'US' ? '/assets/images/us_imgs/' : '/assets/images/ca_imgs/';
+    const isExplicitUs = /[-_]us\.(webp|png|jpe?g)$/i.test(cleanName);
+    const marketFolder = (isExplicitUs || currentMarket === 'US') ? '/assets/images/us_imgs/' : '/assets/images/ca_imgs/';
 
     const fallbackPaths = [
         marketFolder + cleanName,
@@ -431,18 +437,45 @@ function renderDetailPage() {
     let rawGallery = [];
 
     if (activeMarket === 'US') {
-        rawMainImg = (product.image_us !== undefined) ? product.image_us : '';
-        rawGallery = (product.gallery_us !== undefined) ? product.gallery_us : [];
+        if (product.image_us !== undefined && product.image_us !== '') {
+            rawMainImg = product.image_us;
+        } else if (product.image_us === '') {
+            rawMainImg = '';
+        } else {
+            rawMainImg = product.image_ca || product.image || '';
+        }
+
+        if (Array.isArray(product.gallery_us) && product.gallery_us.length > 0) {
+            rawGallery = product.gallery_us;
+        } else if (Array.isArray(product.gallery_us) && product.gallery_us.length === 0) {
+            rawGallery = [];
+        } else {
+            rawGallery = product.gallery_ca || product.gallery || [];
+        }
     } else {
         // Canada Market (CA)
-        rawMainImg = (product.image_ca !== undefined) ? product.image_ca : (product.image || '');
-        rawGallery = (product.gallery_ca !== undefined) ? product.gallery_ca : (product.gallery || []);
+        if (product.image_ca !== undefined && product.image_ca !== '') {
+            rawMainImg = product.image_ca;
+        } else if (product.image_ca === '') {
+            rawMainImg = '';
+        } else {
+            rawMainImg = (product.image && !/[-_]us\.(webp|png|jpe?g)$/i.test(product.image)) ? product.image : '';
+        }
+
+        if (Array.isArray(product.gallery_ca) && product.gallery_ca.length > 0) {
+            rawGallery = product.gallery_ca;
+        } else if (Array.isArray(product.gallery_ca) && product.gallery_ca.length === 0) {
+            rawGallery = [];
+        } else {
+            rawGallery = product.gallery || [];
+        }
     }
 
     const mainImg = document.getElementById('main-img');
     if (mainImg) {
+        mainImg.setAttribute('data-market-managed', 'true');
         if (rawMainImg && rawMainImg.trim()) {
-            const mainImgSrc = resolveImageUrl(rawMainImg, activeMarket);
+            const mainImgSrc = resolveImageUrl(rawMainImg, activeMarket, product.updated_at);
             attachImageFallback(mainImg, rawMainImg);
             mainImg.src = mainImgSrc;
         } else {
@@ -456,15 +489,15 @@ function renderDetailPage() {
     let galleryImages = [];
     const cleanGallery = sanitizeGallery(rawGallery);
     if (cleanGallery.length > 0) {
-        galleryImages = cleanGallery.map(img => resolveImageUrl(img, activeMarket));
+        galleryImages = cleanGallery.map(img => resolveImageUrl(img, activeMarket, product.updated_at));
         if (rawMainImg && rawMainImg.trim()) {
-            const mainImgSrc = resolveImageUrl(rawMainImg, activeMarket);
+            const mainImgSrc = resolveImageUrl(rawMainImg, activeMarket, product.updated_at);
             if (!galleryImages.includes(mainImgSrc)) {
                 galleryImages.unshift(mainImgSrc);
             }
         }
     } else if (rawMainImg && rawMainImg.trim()) {
-        galleryImages = [resolveImageUrl(rawMainImg, activeMarket)];
+        galleryImages = [resolveImageUrl(rawMainImg, activeMarket, product.updated_at)];
     }
 
     const thumbsContainer = document.querySelector('.thumbs-container');
@@ -605,8 +638,39 @@ function initRelatedProducts(currentProduct) {
     const otherProducts = allProducts.filter(p => String(p.id) !== String(currentProduct.id));
     if (otherProducts.length === 0) return;
 
-    const sameCategory = otherProducts.filter(p => p.category === currentProduct.category);
-    const diffCategory = otherProducts.filter(p => p.category !== currentProduct.category);
+    function getRelatedSizePriority(product) {
+        const text = [
+            product.title || '',
+            product.title_fr || '',
+            product.title_es || '',
+            product.slug || ''
+        ].join(' ');
+
+        if (/\b10\s*["”'″]?\s*(?:po|in|pulg|inch(?:es)?)?(?=\s|$|[^\w])/i.test(text) &&
+            (text.includes('10"') || text.includes('10-') || /\b10\s*po\b/i.test(text) || /\b10\s*pulg\b/i.test(text) || /\b10\s*in\b/i.test(text))) {
+            return 1;
+        }
+        if (/\b12\s*["”'″]?\s*(?:po|in|pulg|inch(?:es)?)?(?=\s|$|[^\w])/i.test(text) &&
+            (text.includes('12"') || text.includes('12-') || /\b12\s*po\b/i.test(text) || /\b12\s*pulg\b/i.test(text) || /\b12\s*in\b/i.test(text))) {
+            return 2;
+        }
+        return 3;
+    }
+
+    function sortRelatedGroup(list) {
+        return [...list].sort((a, b) => {
+            const sizeA = getRelatedSizePriority(a);
+            const sizeB = getRelatedSizePriority(b);
+            if (sizeA !== sizeB) return sizeA - sizeB;
+
+            const titleA = (pageCurrentLang === 'fr' && a.title_fr) ? a.title_fr : ((pageCurrentLang === 'es' && a.title_es) ? a.title_es : (a.title || ''));
+            const titleB = (pageCurrentLang === 'fr' && b.title_fr) ? b.title_fr : ((pageCurrentLang === 'es' && b.title_es) ? b.title_es : (b.title || ''));
+            return titleA.localeCompare(titleB, pageCurrentLang || 'en', { sensitivity: 'base', numeric: true });
+        });
+    }
+
+    const sameCategory = sortRelatedGroup(otherProducts.filter(p => p.category === currentProduct.category));
+    const diffCategory = sortRelatedGroup(otherProducts.filter(p => p.category !== currentProduct.category));
     const relatedList = [...sameCategory, ...diffCategory];
 
     if (relatedList.length === 0) return;
@@ -615,8 +679,27 @@ function initRelatedProducts(currentProduct) {
                             (pageCurrentLang === 'es') ? '/es/products/detail.html?id=' :
                             '/products/detail.html?id=';
 
+    const activeMarket = getActiveMarket();
     track.innerHTML = relatedList.map(p => {
-        const imgSrc = resolveImageUrl(p.image);
+        let rawImg = '';
+        if (activeMarket === 'US') {
+            if (p.image_us !== undefined && p.image_us !== '') {
+                rawImg = p.image_us;
+            } else if (p.image_us === '') {
+                rawImg = '';
+            } else {
+                rawImg = p.image_ca || p.image || '';
+            }
+        } else {
+            if (p.image_ca !== undefined && p.image_ca !== '') {
+                rawImg = p.image_ca;
+            } else if (p.image_ca === '') {
+                rawImg = '';
+            } else {
+                rawImg = (p.image && !/[-_]us\.(webp|png|jpe?g)$/i.test(p.image)) ? p.image : '';
+            }
+        }
+        const imgSrc = (rawImg && rawImg.trim()) ? resolveImageUrl(rawImg, activeMarket, p.updated_at) : NEUTRAL_PRODUCT_PLACEHOLDER;
         const cardTitle = (pageCurrentLang === 'fr' && p.title_fr) ? p.title_fr :
                           (pageCurrentLang === 'es' && p.title_es) ? p.title_es :
                           (p.title || '');
@@ -628,7 +711,7 @@ function initRelatedProducts(currentProduct) {
             <a href="${detailUrlPrefix}${p.id}" class="related-card">
                 <div>
                     <div class="img-wrapper">
-                        <img src="${imgSrc}" alt="${cardTitle}" loading="lazy" onerror="this.onerror=null; this.src=NEUTRAL_PRODUCT_PLACEHOLDER;">
+                        <img src="${imgSrc}" alt="${cardTitle}" loading="lazy" data-market-managed="true" onerror="this.onerror=null; this.src=NEUTRAL_PRODUCT_PLACEHOLDER;">
                     </div>
                     <div class="related-card-cat">${cardCat}</div>
                     <h4>${cardTitle}</h4>

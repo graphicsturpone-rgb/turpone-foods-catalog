@@ -25,12 +25,8 @@
         }
     }
 
-    function getAllProducts() {
-        const baseProducts = (typeof productsData !== 'undefined' && Array.isArray(productsData)) ? [...productsData] : [];
-        const customProducts = getCustomProducts();
-        
-        // Merge custom products, overriding base products if ID matches or appending new ones
-        const merged = [...baseProducts];
+    function mergeProducts(baseList, customList) {
+        const merged = [...baseList];
         const translationKeys = [
             'title_fr', 'title_es',
             'category_fr', 'category_es',
@@ -39,8 +35,8 @@
             'ingredients_fr', 'ingredients_es'
         ];
 
-        customProducts.forEach(custom => {
-            const index = merged.findIndex(p => String(p.id) === String(custom.id));
+        customList.forEach(custom => {
+            const index = merged.findIndex(p => String(p.id) === String(custom.id) || (custom.aliasId && String(p.id) === String(custom.aliasId)));
             if (index >= 0) {
                 const baseProd = merged[index];
                 const updated = { ...baseProd, ...custom };
@@ -50,7 +46,9 @@
                 if (custom.image_us !== undefined) updated.image_us = custom.image_us;
                 if (custom.gallery_ca !== undefined) updated.gallery_ca = custom.gallery_ca;
                 if (custom.gallery_us !== undefined) updated.gallery_us = custom.gallery_us;
-                if (custom.image_ca === "") updated.image = "";
+                if (custom.image_ca === "") updated.image = (custom.image_us || "");
+                if (custom.image_us === "") updated.image = (custom.image_ca || "");
+                if (custom.updated_at) updated.updated_at = custom.updated_at;
 
                 // Ensure localized strings are preserved from baseProd if custom draft did not specify them
                 translationKeys.forEach(k => {
@@ -67,6 +65,14 @@
         return merged;
     }
 
+    function getAllProducts() {
+        const baseProducts = (window.__apiProducts && window.__apiProducts.length > 0)
+            ? [...window.__apiProducts]
+            : ((typeof productsData !== 'undefined' && Array.isArray(productsData)) ? [...productsData] : []);
+        const customProducts = getCustomProducts();
+        return mergeProducts(baseProducts, customProducts);
+    }
+
     function getProductById(id) {
         const all = (window.ProductStore && window.ProductStore.getAll) ? window.ProductStore.getAll() : getAllProducts();
         const strId = String(id).trim().toLowerCase();
@@ -79,11 +85,13 @@
 
     function saveProduct(product) {
         const customProducts = getCustomProducts();
-        const baseProducts = (typeof productsData !== 'undefined' && Array.isArray(productsData)) ? productsData : [];
         
         // Ensure id
         if (!product.id) {
             product.id = 'prod_' + Date.now();
+        }
+        if (!product.updated_at) {
+            product.updated_at = Date.now();
         }
 
         const index = customProducts.findIndex(p => String(p.id) === String(product.id));
@@ -107,11 +115,23 @@
     // Background live sync from /api/products if connected
     function syncFromApi(callback) {
         if (typeof fetch === 'undefined') return;
-        fetch('/api/products')
+        fetch('/api/products?t=' + Date.now())
             .then(res => res.json())
             .then(data => {
                 if (data && data.success && Array.isArray(data.products)) {
                     window.__apiProducts = data.products;
+                    // Automatically clean up stale drafts in localStorage that already exist in remote API
+                    const custom = getCustomProducts();
+                    if (custom.length > 0) {
+                        const remaining = custom.filter(c => {
+                            const remote = data.products.find(p => String(p.id) === String(c.id));
+                            if (!remote) return true;
+                            return false;
+                        });
+                        if (remaining.length !== custom.length) {
+                            saveCustomProducts(remaining);
+                        }
+                    }
                     try {
                         window.dispatchEvent(new CustomEvent('turpone:products-updated', { detail: data.products }));
                     } catch (e) {}
@@ -128,35 +148,7 @@
 
     // Export to window
     window.ProductStore = {
-        getAll: function() {
-            if (window.__apiProducts && window.__apiProducts.length > 0) {
-                // If remote API products are loaded, merge custom drafts
-                const custom = getCustomProducts();
-                const merged = [...window.__apiProducts];
-                const translationKeys = [
-                    'title_fr', 'title_es',
-                    'category_fr', 'category_es',
-                    'description_fr', 'description_es',
-                    'features_fr', 'features_es',
-                    'ingredients_fr', 'ingredients_es'
-                ];
-                custom.forEach(c => {
-                    const idx = merged.findIndex(p => String(p.id) === String(c.id));
-                    if (idx >= 0) {
-                        const baseProd = merged[idx];
-                        const updated = { ...baseProd, ...c };
-                        translationKeys.forEach(k => {
-                            if (!updated[k] && baseProd[k]) updated[k] = baseProd[k];
-                        });
-                        merged[idx] = updated;
-                    } else {
-                        merged.unshift(c);
-                    }
-                });
-                return merged;
-            }
-            return getAllProducts();
-        },
+        getAll: getAllProducts,
         getById: getProductById,
         save: saveProduct,
         delete: deleteProduct,

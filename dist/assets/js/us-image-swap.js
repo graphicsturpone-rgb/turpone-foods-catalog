@@ -43,9 +43,13 @@
         const fromFolder = market === 'US' ? '/ca_imgs/' : '/us_imgs/';
         const toFolder = market === 'US' ? '/us_imgs/' : '/ca_imgs/';
 
-        // 1. Swap normal <img> tags
+        // 1. Swap normal <img> tags (skip dynamically managed catalog/detail/admin images)
         const images = document.querySelectorAll('img');
         images.forEach(img => {
+            if (img.hasAttribute('data-market-managed') || 
+                img.closest('.product-card, #product-content, #products-grid, .related-products-section, .preview-img-box, .prod-thumb, [data-market-managed="true"]')) {
+                return;
+            }
             const src = img.getAttribute('src');
             if (src && src.includes(fromFolder)) {
                 img.setAttribute('src', src.replace(fromFolder, toFolder));

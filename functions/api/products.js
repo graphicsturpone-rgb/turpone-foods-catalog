@@ -273,6 +273,8 @@ export async function onRequest(context) {
                     await createBlobAndAddTree(imageFileName, match[2], false);
                     product.image_ca = imageFileName;
                 }
+            } else if (product.image_ca === "") {
+                product.image_ca = "";
             }
 
             // Process US Main Image
@@ -284,10 +286,13 @@ export async function onRequest(context) {
                     await createBlobAndAddTree(imageFileName, match[2], true);
                     product.image_us = imageFileName;
                 }
+            } else if (product.image_us === "") {
+                product.image_us = "";
             }
 
             // Normalize base fallback image
             product.image = product.image_ca || product.image_us || product.image || "";
+            product.updated_at = Date.now();
 
             // Process Canada Gallery
             if (Array.isArray(product.gallery_ca) && product.gallery_ca.length > 0) {
@@ -363,7 +368,12 @@ export async function onRequest(context) {
             product.slug = candidateSlug;
 
             if (existingIndex >= 0) {
-                products[existingIndex] = { ...products[existingIndex], ...product };
+                const updatedProduct = { ...products[existingIndex], ...product };
+                if (product.image_ca !== undefined) updatedProduct.image_ca = product.image_ca;
+                if (product.image_us !== undefined) updatedProduct.image_us = product.image_us;
+                if (product.gallery_ca !== undefined) updatedProduct.gallery_ca = product.gallery_ca;
+                if (product.gallery_us !== undefined) updatedProduct.gallery_us = product.gallery_us;
+                products[existingIndex] = updatedProduct;
             } else {
                 if (typeof product.id === "string" && !isNaN(Number(product.id))) {
                     product.id = Number(product.id);

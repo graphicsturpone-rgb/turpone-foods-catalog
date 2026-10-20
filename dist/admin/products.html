@@ -628,7 +628,7 @@
             <table>
                 <thead>
                     <tr>
-                        <th style="width: 70px;">Image</th>
+                        <th style="width: 130px;">Market Images</th>
                         <th>Product Title</th>
                         <th>Category</th>
                         <th style="width: 140px;">Gallery Images</th>
@@ -860,13 +860,25 @@
 
         const NEUTRAL_PLACEHOLDER = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23f1f5f9'/%3E%3Cpath d='M30 65 L45 45 L58 58 L68 46 L80 65 Z' fill='%23cbd5e1'/%3E%3Ccircle cx='40' cy='38' r='5' fill='%23cbd5e1'/%3E%3C/svg%3E";
 
-        function resolveImage(img, market = 'CA') {
-            if (!img) return NEUTRAL_PLACEHOLDER;
-            if (img.startsWith('http://') || img.startsWith('https://') || img.startsWith('data:') || img.startsWith('/')) {
-                return img;
+        window.__adminSessionTs = Date.now();
+
+        function resolveImage(img, market = 'CA', updated_at = null) {
+            if (!img || !img.trim()) return NEUTRAL_PLACEHOLDER;
+            const trimmed = img.trim();
+            if (trimmed.startsWith('data:') || trimmed.startsWith('http://') || trimmed.startsWith('https://')) {
+                return trimmed;
             }
-            const folder = market === 'US' ? '/assets/images/us_imgs/' : '/assets/images/ca_imgs/';
-            return folder + img;
+            let path = '';
+            if (trimmed.startsWith('/')) {
+                path = trimmed;
+            } else {
+                const isExplicitUs = /[-_]us\.(webp|png|jpe?g)$/i.test(trimmed);
+                const folder = isExplicitUs ? '/assets/images/us_imgs/' : (market === 'US' ? '/assets/images/us_imgs/' : '/assets/images/ca_imgs/');
+                path = folder + trimmed;
+            }
+            const v = updated_at || window.__adminSessionTs;
+            path += (path.includes('?') ? '&' : '?') + 't=' + v;
+            return path;
         }
 
         // Repair any previously split DataURLs in localStorage
@@ -926,6 +938,25 @@
             renderTable();
         }
 
+        function getSizePriority(product) {
+            const text = [
+                product.title || '',
+                product.title_fr || '',
+                product.title_es || '',
+                product.slug || ''
+            ].join(' ');
+
+            if (/\b10\s*["”'″]?\s*(?:po|in|pulg|inch(?:es)?)?(?=\s|$|[^\w])/i.test(text) &&
+                (text.includes('10"') || text.includes('10-') || /\b10\s*po\b/i.test(text) || /\b10\s*pulg\b/i.test(text) || /\b10\s*in\b/i.test(text))) {
+                return 1;
+            }
+            if (/\b12\s*["”'″]?\s*(?:po|in|pulg|inch(?:es)?)?(?=\s|$|[^\w])/i.test(text) &&
+                (text.includes('12"') || text.includes('12-') || /\b12\s*po\b/i.test(text) || /\b12\s*pulg\b/i.test(text) || /\b12\s*in\b/i.test(text))) {
+                return 2;
+            }
+            return 3;
+        }
+
         function renderTable() {
             const tbody = document.getElementById('productsTableBody');
             const search = document.getElementById('searchInput').value.toLowerCase().trim();
@@ -941,6 +972,17 @@
                 return matchesCat && matchesSearch;
             });
 
+            filtered.sort((a, b) => {
+                const catComp = (a.category || '').localeCompare(b.category || '', 'en', { sensitivity: 'base' });
+                if (catComp !== 0) return catComp;
+
+                const sizeA = getSizePriority(a);
+                const sizeB = getSizePriority(b);
+                if (sizeA !== sizeB) return sizeA - sizeB;
+
+                return (a.title || '').localeCompare(b.title || '', 'en', { sensitivity: 'base', numeric: true });
+            });
+
             document.getElementById('product-count').textContent = `Showing ${filtered.length} of ${currentProducts.length} products`;
 
             if (filtered.length === 0) {
@@ -950,8 +992,12 @@
 
             tbody.innerHTML = filtered.map(p => {
                 const isCustom = String(p.id).startsWith('prod_');
-                const rawMain = p.image_ca || p.image || p.image_us;
-                const imgSrc = resolveImage(rawMain, 'CA');
+                
+                const rawCa = (p.image_ca !== undefined) ? p.image_ca : (!/[-_]us\.(webp|png|jpe?g)$/i.test(p.image || '') ? (p.image || '') : '');
+                const rawUs = (p.image_us !== undefined) ? p.image_us : (p.image_ca || p.image || '');
+
+                const imgSrcCa = (rawCa && rawCa.trim()) ? resolveImage(rawCa, 'CA', p.updated_at) : NEUTRAL_PLACEHOLDER;
+                const imgSrcUs = (rawUs && rawUs.trim()) ? resolveImage(rawUs, 'US', p.updated_at) : NEUTRAL_PLACEHOLDER;
                 
                 const galleryCa = sanitizeProductGallery(p.gallery_ca || p.gallery);
                 const galleryUs = sanitizeProductGallery(p.gallery_us);
@@ -960,8 +1006,15 @@
                 return `
                     <tr>
                         <td>
-                            <div class="prod-thumb">
-                                <img src="${imgSrc}" alt="${p.title}" onerror="this.onerror=null; this.src=NEUTRAL_PLACEHOLDER;">
+                            <div style="display:flex; gap:6px; align-items:center;">
+                                <div class="prod-thumb" title="🇨🇦 Canada: ${rawCa || 'None'}" style="position:relative; width:48px; height:48px; flex-shrink:0;">
+                                    <img src="${imgSrcCa}" alt="${p.title} (CA)" onerror="this.onerror=null; this.src=NEUTRAL_PLACEHOLDER;" style="width:100%; height:100%; object-fit:contain;">
+                                    <span style="position:absolute; bottom:1px; right:1px; background:rgba(0,0,0,0.7); color:#fff; font-size:8px; font-weight:700; padding:1px 3px; border-radius:2px; line-height:1;">CA</span>
+                                </div>
+                                <div class="prod-thumb" title="🇺🇸 US: ${rawUs || 'None'}" style="position:relative; width:48px; height:48px; flex-shrink:0; ${!p.image_us ? 'opacity:0.6;' : ''}">
+                                    <img src="${imgSrcUs}" alt="${p.title} (US)" onerror="this.onerror=null; this.src=NEUTRAL_PLACEHOLDER;" style="width:100%; height:100%; object-fit:contain;">
+                                    <span style="position:absolute; bottom:1px; right:1px; background:rgba(0,0,0,0.7); color:#fff; font-size:8px; font-weight:700; padding:1px 3px; border-radius:2px; line-height:1;">US</span>
+                                </div>
                             </div>
                         </td>
                         <td>
@@ -1044,18 +1097,24 @@
             document.getElementById('formTitle').value = product.title || '';
             document.getElementById('formCategory').value = product.category || '';
             
-            // Populate CA and US images cleanly without unwanted fallback
+            // Populate CA and US images cleanly without unwanted cross-contamination
+            let initialCa = '';
+            let initialUs = '';
+
             if (product.image_ca !== undefined) {
-                document.getElementById('formImageCa').value = product.image_ca;
-            } else {
-                document.getElementById('formImageCa').value = product.image || '';
+                initialCa = product.image_ca;
+            } else if (product.image && !/[-_]us\.(webp|png|jpe?g)$/i.test(product.image)) {
+                initialCa = product.image;
             }
 
             if (product.image_us !== undefined) {
-                document.getElementById('formImageUs').value = product.image_us;
-            } else {
-                document.getElementById('formImageUs').value = '';
+                initialUs = product.image_us;
+            } else if (product.image && /[-_]us\.(webp|png|jpe?g)$/i.test(product.image)) {
+                initialUs = product.image;
             }
+
+            document.getElementById('formImageCa').value = initialCa;
+            document.getElementById('formImageUs').value = initialUs;
 
             document.getElementById('formDescription').value = product.description || '';
             document.getElementById('formFeatures').value = product.features || '';
@@ -1138,18 +1197,24 @@
             document.getElementById('formTitle').value = originalTitle ? `${originalTitle} (Copy)` : 'New Product (Copy)';
             document.getElementById('formCategory').value = product.category || '';
             
-            // Populate CA and US images cleanly
+            // Populate CA and US images cleanly without unwanted cross-contamination
+            let initialCa = '';
+            let initialUs = '';
+
             if (product.image_ca !== undefined) {
-                document.getElementById('formImageCa').value = product.image_ca;
-            } else {
-                document.getElementById('formImageCa').value = product.image || '';
+                initialCa = product.image_ca;
+            } else if (product.image && !/[-_]us\.(webp|png|jpe?g)$/i.test(product.image)) {
+                initialCa = product.image;
             }
 
             if (product.image_us !== undefined) {
-                document.getElementById('formImageUs').value = product.image_us;
-            } else {
-                document.getElementById('formImageUs').value = '';
+                initialUs = product.image_us;
+            } else if (product.image && /[-_]us\.(webp|png|jpe?g)$/i.test(product.image)) {
+                initialUs = product.image;
             }
+
+            document.getElementById('formImageCa').value = initialCa;
+            document.getElementById('formImageUs').value = initialUs;
 
             document.getElementById('formDescription').value = product.description || '';
             document.getElementById('formFeatures').value = product.features || '';
@@ -1452,8 +1517,11 @@
 
             const existingProduct = id && window.ProductStore ? window.ProductStore.getById(id) : null;
 
+            const updatedAt = Date.now();
+            window.__adminSessionTs = updatedAt;
+
             const productData = {
-                id: id || ('prod_' + Date.now()),
+                id: id || ('prod_' + updatedAt),
                 title,
                 category,
                 image,
@@ -1464,7 +1532,8 @@
                 gallery_us: [...currentGalleryUs],
                 description,
                 features,
-                ingredients
+                ingredients,
+                updated_at: updatedAt
             };
 
             // Preserve any existing translations if editing an existing item
@@ -1542,6 +1611,10 @@
         }
 
         document.addEventListener('DOMContentLoaded', () => {
+            loadProducts();
+        });
+
+        window.addEventListener('turpone:products-updated', () => {
             loadProducts();
         });
     </script>
