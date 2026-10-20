@@ -421,17 +421,31 @@ const productsData = [
     "category": "Pizza Sauce",
     "category_fr": "Sauces à pizza",
     "category_es": "Salsas para pizza",
-    "image": "Traditional-Pizza-Sauce-375ml.webp",
+    "image": "traditional-pizza-sauce-375g.webp",
     "description": "Martha Stewart Traditional Pizza Sauce combines vine-ripened crushed tomatoes with extra virgin olive oil, garlic, oregano, basil and black pepper for a classic, well-balanced flavor. Spread it over your favorite pizza dough and top with fresh mozzarella and basil for a simple, delicious pizza, or use it to bring rich tomato flavor to chicken parmesan, baked pasta and other Italian-inspired dishes.",
     "description_fr": "La sauce à pizza traditionnelle Martha Stewart associe des tomates mûries sur pied, de l'huile d'olive extra vierge, de l'ail, de l'origan et du basilic pour un goût italien authentique et équilibré.",
     "description_es": "La salsa para pizza tradicional Martha Stewart reúne tomates maduros triturados con aceite de oliva virgen extra, ajo, albahaca y orégano para un sabor clásico y armonioso.",
     "features": "Featuring: Vine-ripened crushed tomatoes, extra virgin olive oil, garlic, oregano and basil",
     "features_fr": "Caractéristiques : Tomates broyées, huile d'olive extra vierge, ail, origan et basilic",
     "features_es": "Características: Tomates madurados al sol, aceite de oliva virgen extra, ajo, orégano y albahaca",
-    "gallery": [],
+    "gallery": [
+      "traditional-pizza-sauce-375g-gallery-1.webp",
+      "traditional-pizza-sauce-375g-gallery-2.webp"
+    ],
     "ingredients": "Ingredients: Vine-ripened crushed tomatoes, water, extra-virgin olive oil, chopped garlic, sea salt, oregano, basil, black pepper.",
     "ingredients_fr": "Ingrédients : Tomates broyées mûries sur pied, eau, huile d'olive extra vierge, ail haché, sel de mer, origan, basilic, poivre noir.",
-    "ingredients_es": "Ingredientes: Tomates triturados madurados, agua, aceite de oliva virgen extra, ajo picado, sal marina, orégano, albahaca, pimienta negra."
+    "ingredients_es": "Ingredientes: Tomates triturados madurados, agua, aceite de oliva virgen extra, ajo picado, sal marina, orégano, albahaca, pimienta negra.",
+    "image_ca": "traditional-pizza-sauce-375g.webp",
+    "image_us": "traditional-pizza-sauce-375g-us.webp",
+    "gallery_ca": [
+      "traditional-pizza-sauce-375g-gallery-1.webp",
+      "traditional-pizza-sauce-375g-gallery-2.webp"
+    ],
+    "gallery_us": [
+      "traditional-pizza-sauce-375g-us-gallery-1.webp",
+      "traditional-pizza-sauce-375g-us-gallery-2.webp"
+    ],
+    "slug": "traditional-pizza-sauce-375g"
   },
   {
     "id": 16,
