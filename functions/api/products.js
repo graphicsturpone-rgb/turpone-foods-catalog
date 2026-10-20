@@ -19,18 +19,23 @@ const DIST_US_IMAGES_DIR = "dist/assets/images/us_imgs";
 
 // Helper for GitHub REST API calls
 async function githubRequest(path, method = "GET", body = null, token) {
-    const url = `https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/${path}`;
+    const separator = path.includes("?") ? "&" : "?";
+    const cacheBuster = method === "GET" ? `${separator}_cb=${Date.now()}` : "";
+    const url = `https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/${path}${cacheBuster}`;
     const headers = {
         "User-Agent": "Turpone-Catalog-Sync-Engine",
         "Authorization": `Bearer ${token}`,
         "Accept": "application/vnd.github.v3+json",
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
+        "Cache-Control": "no-cache, no-store, must-revalidate",
+        "Pragma": "no-cache"
     };
 
     const res = await fetch(url, {
         method,
         headers,
-        body: body ? JSON.stringify(body) : null
+        body: body ? JSON.stringify(body) : null,
+        cf: { cacheTtl: 0, cacheEverything: false }
     });
 
     const data = await res.json().catch(() => null);
@@ -195,12 +200,21 @@ export async function onRequest(context) {
             if (!fileData) {
                 return new Response(JSON.stringify({ error: "Failed to load products from GitHub" }), {
                     status: 500,
-                    headers: corsHeaders
+                    headers: {
+                        ...corsHeaders,
+                        "Cache-Control": "no-store, no-cache, must-revalidate, proxy-revalidate",
+                        "Pragma": "no-cache"
+                    }
                 });
             }
             const products = parseProductsData(fileData.content);
             return new Response(JSON.stringify({ success: true, count: products.length, products }), {
-                headers: corsHeaders
+                headers: {
+                    ...corsHeaders,
+                    "Cache-Control": "no-store, no-cache, must-revalidate, proxy-revalidate",
+                    "Pragma": "no-cache",
+                    "Expires": "0"
+                }
             });
         }
 
@@ -216,7 +230,7 @@ export async function onRequest(context) {
                 });
             }
 
-            // 1. Fetch current catalog file from GitHub
+            // 1. Fetch current catalog file from GitHub (freshly fetched without edge cache)
             const fileData = await getFileContent(PRODUCTS_DATA_PATH, "main", token);
             if (!fileData) {
                 return new Response(JSON.stringify({ error: "Unable to reach repository catalog file." }), {
@@ -290,10 +304,6 @@ export async function onRequest(context) {
                 product.image_us = "";
             }
 
-            // Normalize base fallback image
-            product.image = product.image_ca || product.image_us || product.image || "";
-            product.updated_at = Date.now();
-
             // Process Canada Gallery
             if (Array.isArray(product.gallery_ca) && product.gallery_ca.length > 0) {
                 const processedGallery = [];
@@ -338,12 +348,7 @@ export async function onRequest(context) {
                 product.gallery_us = processedGalleryUs;
             }
 
-            // Normalize base gallery
-            product.gallery = (Array.isArray(product.gallery_ca) && product.gallery_ca.length > 0)
-                ? [...product.gallery_ca]
-                : (Array.isArray(product.gallery_us) && product.gallery_us.length > 0 ? [...product.gallery_us] : []);
-
-            // 4. Update or Insert product into catalog array
+            // 4. Update or Insert product into catalog array with strict market isolation
             const prodId = product.id ? String(product.id) : `prod_${Date.now()}`;
             product.id = isNaN(Number(prodId)) ? prodId : Number(prodId);
 
@@ -367,13 +372,28 @@ export async function onRequest(context) {
             }
             product.slug = candidateSlug;
 
+            const saveTimestamp = Date.now();
+            let finalProduct = null;
+
             if (existingIndex >= 0) {
-                const updatedProduct = { ...products[existingIndex], ...product };
+                const existing = products[existingIndex];
+                const updatedProduct = { ...existing, ...product };
+
+                // Strictly isolate market images and galleries
                 if (product.image_ca !== undefined) updatedProduct.image_ca = product.image_ca;
                 if (product.image_us !== undefined) updatedProduct.image_us = product.image_us;
                 if (product.gallery_ca !== undefined) updatedProduct.gallery_ca = product.gallery_ca;
                 if (product.gallery_us !== undefined) updatedProduct.gallery_us = product.gallery_us;
+
+                // Base fallback normalization
+                updatedProduct.image = updatedProduct.image_ca || updatedProduct.image_us || existing.image || "";
+                updatedProduct.gallery = (Array.isArray(updatedProduct.gallery_ca) && updatedProduct.gallery_ca.length > 0)
+                    ? [...updatedProduct.gallery_ca]
+                    : (Array.isArray(updatedProduct.gallery_us) && updatedProduct.gallery_us.length > 0 ? [...updatedProduct.gallery_us] : (existing.gallery || []));
+
+                updatedProduct.updated_at = saveTimestamp;
                 products[existingIndex] = updatedProduct;
+                finalProduct = updatedProduct;
             } else {
                 if (typeof product.id === "string" && !isNaN(Number(product.id))) {
                     product.id = Number(product.id);
@@ -382,7 +402,13 @@ export async function onRequest(context) {
                     product.aliasId = product.id;
                     product.id = nextId;
                 }
+                product.image = product.image_ca || product.image_us || product.image || "";
+                product.gallery = (Array.isArray(product.gallery_ca) && product.gallery_ca.length > 0)
+                    ? [...product.gallery_ca]
+                    : (Array.isArray(product.gallery_us) && product.gallery_us.length > 0 ? [...product.gallery_us] : []);
+                product.updated_at = saveTimestamp;
                 products.push(product);
+                finalProduct = product;
             }
 
             // 5. Serialize products/data.js and add to Atomic Git Tree
@@ -435,7 +461,7 @@ export async function onRequest(context) {
             const newTreeSha = newTreeRes.data.sha;
 
             const newCommitRes = await githubRequest("git/commits", "POST", {
-                message: `Catalog update: ${product.title} (atomic sync) [skip ci]`,
+                message: `Catalog update: ${finalProduct.title} (atomic sync) [skip ci]`,
                 tree: newTreeSha,
                 parents: [baseCommitSha]
             }, token);
@@ -458,9 +484,16 @@ export async function onRequest(context) {
 
             return new Response(JSON.stringify({
                 success: true,
-                message: `Product "${product.title}" saved, translated, and committed directly to GitHub & Production!`,
-                product
-            }), { headers: corsHeaders });
+                message: `Product "${finalProduct.title}" saved, translated, and committed directly to GitHub & Production!`,
+                product: finalProduct
+            }), {
+                headers: {
+                    ...corsHeaders,
+                    "Cache-Control": "no-store, no-cache, must-revalidate, proxy-revalidate",
+                    "Pragma": "no-cache",
+                    "Expires": "0"
+                }
+            });
         }
 
         // DELETE: Remove product from catalog
@@ -534,7 +567,14 @@ export async function onRequest(context) {
             return new Response(JSON.stringify({
                 success: true,
                 message: `Product ID ${id} deleted and synced with GitHub.`
-            }), { headers: corsHeaders });
+            }), {
+                headers: {
+                    ...corsHeaders,
+                    "Cache-Control": "no-store, no-cache, must-revalidate, proxy-revalidate",
+                    "Pragma": "no-cache",
+                    "Expires": "0"
+                }
+            });
         }
 
         return new Response(JSON.stringify({ error: "Method not allowed" }), {

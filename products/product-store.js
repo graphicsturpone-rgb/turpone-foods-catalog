@@ -20,8 +20,23 @@
             localStorage.setItem(STORAGE_KEY, JSON.stringify(products));
             return true;
         } catch (e) {
-            console.error('Error saving custom products:', e);
-            return false;
+            console.error('Error saving custom products, attempting quota recovery:', e);
+            try {
+                // If quota exceeded, strip large DataURL strings to preserve product metadata
+                const lightweight = products.map(p => {
+                    const clone = { ...p };
+                    if (typeof clone.image_ca === 'string' && clone.image_ca.startsWith('data:')) delete clone.image_ca;
+                    if (typeof clone.image_us === 'string' && clone.image_us.startsWith('data:')) delete clone.image_us;
+                    if (Array.isArray(clone.gallery_ca)) clone.gallery_ca = clone.gallery_ca.filter(g => typeof g === 'string' && !g.startsWith('data:'));
+                    if (Array.isArray(clone.gallery_us)) clone.gallery_us = clone.gallery_us.filter(g => typeof g === 'string' && !g.startsWith('data:'));
+                    return clone;
+                });
+                localStorage.setItem(STORAGE_KEY, JSON.stringify(lightweight));
+                return true;
+            } catch (err2) {
+                console.error('Fatal quota error on localStorage:', err2);
+                return false;
+            }
         }
     }
 
@@ -41,7 +56,7 @@
                 const baseProd = merged[index];
                 const updated = { ...baseProd, ...custom };
                 
-                // Explicitly preserve empty values if customized
+                // Explicitly preserve market separation
                 if (custom.image_ca !== undefined) updated.image_ca = custom.image_ca;
                 if (custom.image_us !== undefined) updated.image_us = custom.image_us;
                 if (custom.gallery_ca !== undefined) updated.gallery_ca = custom.gallery_ca;
@@ -86,7 +101,7 @@
     function saveProduct(product) {
         const customProducts = getCustomProducts();
         
-        // Ensure id
+        // Ensure id and updated_at
         if (!product.id) {
             product.id = 'prod_' + Date.now();
         }
@@ -115,17 +130,29 @@
     // Background live sync from /api/products if connected
     function syncFromApi(callback) {
         if (typeof fetch === 'undefined') return;
-        fetch('/api/products?t=' + Date.now())
+        fetch('/api/products?t=' + Date.now(), {
+            headers: {
+                'Cache-Control': 'no-cache, no-store, must-revalidate',
+                'Pragma': 'no-cache'
+            }
+        })
             .then(res => res.json())
             .then(data => {
                 if (data && data.success && Array.isArray(data.products)) {
                     window.__apiProducts = data.products;
-                    // Automatically clean up stale drafts in localStorage that already exist in remote API
+                    // Automatically clean up stale drafts in localStorage ONLY if remote has equal or newer timestamp
                     const custom = getCustomProducts();
                     if (custom.length > 0) {
                         const remaining = custom.filter(c => {
                             const remote = data.products.find(p => String(p.id) === String(c.id));
-                            if (!remote) return true;
+                            if (!remote) return true; // keep if local product doesn't exist remotely
+                            
+                            // If local has newer timestamp than remote, DO NOT discard!
+                            const localTs = Number(c.updated_at) || 0;
+                            const remoteTs = Number(remote.updated_at) || 0;
+                            if (localTs > remoteTs) {
+                                return true;
+                            }
                             return false;
                         });
                         if (remaining.length !== custom.length) {

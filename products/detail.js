@@ -291,13 +291,13 @@ function resolveImageUrl(img, market, updated_at) {
     if (trimmed.startsWith('/')) {
         path = trimmed;
     } else {
-        const isExplicitUs = /[-_]us\.(webp|png|jpe?g)$/i.test(trimmed);
+        const cleanName = trimmed.split('?')[0];
+        const isExplicitUs = /[-_]us\.(webp|png|jpe?g)$/i.test(cleanName);
         const folder = isExplicitUs ? '/assets/images/us_imgs/' : (currentMarket === 'US' ? '/assets/images/us_imgs/' : '/assets/images/ca_imgs/');
-        path = folder + trimmed;
+        path = folder + cleanName;
     }
-    if (updated_at) {
-        path += (path.includes('?') ? '&' : '?') + 'v=' + updated_at;
-    }
+    const v = updated_at || Date.now();
+    path += (path.includes('?') ? '&' : '?') + 'v=' + v;
     return path;
 }
 
@@ -305,13 +305,15 @@ function resolveImageUrl(img, market, updated_at) {
 function attachImageFallback(imgEl, originalFilename) {
     if (!imgEl || !originalFilename) return;
     
-    const cleanName = originalFilename.replace(/^.*[\\\/]/, '');
+    const cleanName = originalFilename.replace(/^.*[\\\/]/, '').split('?')[0];
     const currentMarket = getActiveMarket();
     const isExplicitUs = /[-_]us\.(webp|png|jpe?g)$/i.test(cleanName);
-    const marketFolder = (isExplicitUs || currentMarket === 'US') ? '/assets/images/us_imgs/' : '/assets/images/ca_imgs/';
+    const primaryFolder = (isExplicitUs || currentMarket === 'US') ? '/assets/images/us_imgs/' : '/assets/images/ca_imgs/';
 
     const fallbackPaths = [
-        marketFolder + cleanName,
+        primaryFolder + cleanName,
+        `/assets/images/ca_imgs/${cleanName}`,
+        `/assets/images/us_imgs/${cleanName}`,
         `/assets/images/${cleanName}`,
         NEUTRAL_PRODUCT_PLACEHOLDER
     ];
