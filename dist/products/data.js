@@ -674,22 +674,32 @@ const productsData = [
     "category": "Infused Oils",
     "category_fr": "Huiles infusées",
     "category_es": "Aceites infusionados",
-    "image": "Spicy-Garlic-Infused-Extra-Virgin-Olive-Oil.webp",
+    "image": "spicy-garlic-infused-extra-virgin-olive-oil-v1793029618486-ca.webp",
     "description": "Martha Stewart Spicy Garlic Infused Extra Virgin Olive Oil pairs extra virgin olive oil with garlic and crushed red pepper for a bold, savory flavor with just the right amount of heat. Drizzle it over oven-baked pizza for an instant upgrade, use it to finish pasta and roasted vegetables, or serve it with warm bread for dipping. For a simple appetizer, try it over warmed olives finished with fresh orange zest.",
     "description_fr": "L'huile d'olive extra vierge infusée à l'ail piquant Martha Stewart unit l'ail déshydraté et les piments rouges broyés à une huile d'olive extra vierge de choix. Rehausse instantanément pizzas, pâtes et trempettes de pain.",
     "description_es": "El aceite de oliva virgen extra infusionado con ajo picante Martha Stewart mezcla ajo y hojuelas de pimiento rojo para un sabor audaz y cálido. Magnífico para aderezar pizzas y verduras.",
     "features": "Featuring: Extra-virgin olive oil, garlic and crushed red pepper",
     "features_fr": "Caractéristiques : Huile d'olive extra vierge, ail et piment rouge broyé",
     "features_es": "Características: Aceite de oliva virgen extra, ajo y pimiento rojo triturado",
-    "gallery": [],
+    "gallery": [
+      "spicy-garlic-infused-extra-virgin-olive-oil-ca-gal-1-1793029618486.webp",
+      "spicy-garlic-infused-extra-virgin-olive-oil-ca-gal-2-1793029618486.webp"
+    ],
     "ingredients": "Ingredients: Extra-virgin olive oil, crushed red pepper, dehydrated garlic, natural flavors (liquid garlic flavor).",
     "ingredients_fr": "Ingrédients : Huile d'olive extra vierge, piment rouge broyé, ail déshydraté, arômes naturels d'ail.",
     "ingredients_es": "Ingredientes: Aceite de oliva virgen extra, pimiento rojo triturado, ajo deshidratado, aromas naturales de ajo.",
-    "image_ca": "Spicy-Garlic-Infused-Extra-Virgin-Olive-Oil.webp",
-    "image_us": "",
-    "gallery_ca": [],
-    "gallery_us": [],
-    "updated_at": 1792523400000
+    "image_ca": "spicy-garlic-infused-extra-virgin-olive-oil-v1793029618486-ca.webp",
+    "image_us": "spicy-garlic-infused-extra-virgin-olive-oil-v1793029618486-us.webp",
+    "gallery_ca": [
+      "spicy-garlic-infused-extra-virgin-olive-oil-ca-gal-1-1793029618486.webp",
+      "spicy-garlic-infused-extra-virgin-olive-oil-ca-gal-2-1793029618486.webp"
+    ],
+    "gallery_us": [
+      "spicy-garlic-infused-extra-virgin-olive-oil-us-gal-1-1793029618486.webp",
+      "spicy-garlic-infused-extra-virgin-olive-oil-us-gal-2-1793029618486.webp"
+    ],
+    "updated_at": 1793029618486,
+    "slug": "spicy-garlic-infused-extra-virgin-olive-oil"
   },
   {
     "id": 6,
