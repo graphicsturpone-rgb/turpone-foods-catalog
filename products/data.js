@@ -1293,22 +1293,38 @@ const productsData = [
     "category": "Frozen Pizza Dough",
     "category_fr": "Pâtes à pizza surgelées",
     "category_es": "Masa de pizza congelada",
-    "image": "New-York-Style-Frozen-Pizza-Dough.webp",
+    "image": "new-york-style-pizza-dough-balls-v1793031231365-ca.webp",
     "description": "Martha Stewart New York Style Pizza Dough Balls make it easy to create classic New York-style pizza at home with a thin, crisp crust and satisfyingly chewy texture. Simply thaw, stretch and add your favorite sauce, cheese and toppings for an effortless homemade pizza night. Each ready-to-use dough ball gives you the foundation for a generously sized, pizzeria-inspired pizza without the time and preparation of making dough from scratch.",
     "description_fr": "Les boules de pâte style new-yorkais Martha Stewart vous offrent la pâte fine et croustillante emblématique de New York. Étirez facilement une grande pizza généreuse prête à cuire.",
     "description_es": "Las bolas de masa estilo Nueva York Martha Stewart son ideales para hornear pizzas grandes con la masa delgada, crujiente y flexible típica de las pizzerías neoyorquinas.",
     "features": "2 ready-to-use pizza dough balls",
     "features_fr": "2 boules de pâte à pizza prêtes à l'emploi",
     "features_es": "2 bolas de masa para pizza listas para usar",
-    "gallery": [],
+    "gallery": [
+      "new-york-style-pizza-dough-balls-ca-gal-1-1793031231365.webp",
+      "new-york-style-pizza-dough-balls-ca-gal-2-1793031231365.webp",
+      "new-york-style-pizza-dough-balls-ca-gal-3-1793031231365.webp",
+      "new-york-style-pizza-dough-balls-ca-gal-4-1793031231365.webp"
+    ],
     "ingredients": "Ingredients: Enriched unbleached wheat flour, water, olive oil, cane sugar, sea salt, yeast.\nContains: Wheat.",
     "ingredients_fr": "Ingrédients : Farine de blé non blanchie enrichie, eau, huile d'olive, sucre de canne, sel de mer, levure.\nContient : Blé.",
     "ingredients_es": "Ingredientes: Harina de trigo enriquecida sin blanquear, agua, aceite de oliva, azúcar de caña, sal marina, levadura.\nContiene: Trigo.",
-    "image_ca": "New-York-Style-Frozen-Pizza-Dough.webp",
-    "image_us": "",
-    "gallery_ca": [],
-    "gallery_us": [],
-    "updated_at": 1792523400000
+    "image_ca": "new-york-style-pizza-dough-balls-v1793031231365-ca.webp",
+    "image_us": "new-york-style-pizza-dough-balls-v1793031231365-us.webp",
+    "gallery_ca": [
+      "new-york-style-pizza-dough-balls-ca-gal-1-1793031231365.webp",
+      "new-york-style-pizza-dough-balls-ca-gal-2-1793031231365.webp",
+      "new-york-style-pizza-dough-balls-ca-gal-3-1793031231365.webp",
+      "new-york-style-pizza-dough-balls-ca-gal-4-1793031231365.webp"
+    ],
+    "gallery_us": [
+      "new-york-style-pizza-dough-balls-us-gal-1-1793031231365.webp",
+      "new-york-style-pizza-dough-balls-us-gal-2-1793031231365.webp",
+      "new-york-style-pizza-dough-balls-us-gal-3-1793031231365.webp",
+      "new-york-style-pizza-dough-balls-us-gal-4-1793031231365.webp"
+    ],
+    "updated_at": 1793031231365,
+    "slug": "new-york-style-pizza-dough-balls"
   },
   {
     "id": 36,
