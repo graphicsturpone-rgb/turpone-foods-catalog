@@ -1018,7 +1018,7 @@ const productsData = [
   },
   {
     "id": 13,
-    "title": "Spicy Pizza Sauce (375g)",
+    "title": "Spicy Pizza Sauce (375mL)",
     "title_fr": "Sauce à Pizza Épicée (375g)",
     "title_es": "Salsa para Pizza Picante (375g)",
     "category": "Pizza Sauce",
@@ -1048,8 +1048,8 @@ const productsData = [
       "spicy-pizza-sauce-375g-us-gallery-1.webp",
       "spicy-pizza-sauce-375g-us-gallery-2.webp"
     ],
-    "slug": "spicy-pizza-sauce-375g",
-    "updated_at": 1792523400000
+    "slug": "spicy-pizza-sauce-375ml",
+    "updated_at": 1793037490289
   },
   {
     "id": 14,
