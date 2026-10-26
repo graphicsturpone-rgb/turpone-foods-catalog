@@ -1208,22 +1208,41 @@ const productsData = [
     "category": "Pizza Flour",
     "category_fr": "Farines à pizza",
     "category_es": "Harinas para pizza",
-    "image": "New-York-Style-Pizza-Dough-Mix.webp",
+    "image": "new-york-style-dough-mix-v1793031035222-ca.webp",
     "description": "Martha Stewart New York Style Pizza Dough Mix is crafted with premium Italian flour to create the thin, crisp yet chewy crust that defines a classic New York-style pizza. Stretch it into a generously sized pizza and top with sauce, mozzarella, pepperoni or your favorite toppings. Designed for making pizzeria-style pizza at home, this mix delivers a flavorful crust that's sturdy enough to hold your toppings while remaining satisfyingly chewy.",
     "description_fr": "Le mélange pour pâte style new-yorkais Martha Stewart est préparé avec des farines choisies pour obtenir une croûte fine, dorée et moelleuse, solide pour accueillir toutes vos garnitures favorites.",
     "description_es": "La mezcla para masa estilo Nueva York Martha Stewart permite lograr la clásica corteza delgada y ligeramente elástica que sostiene generosas cantidades de queso y pepperoni.",
     "features": "Featuring: Premium Italian flour for authentic New York-style pizza crust",
     "features_fr": "Caractéristiques : Farine italienne de qualité supérieure pour croûte new-yorkaise authentique",
     "features_es": "Características: Harina italiana de primera calidad para auténtica masa estilo Nueva York",
-    "gallery": [],
+    "gallery": [
+      "new-york-style-dough-mix-ca-gal-1-1793031035222.webp",
+      "new-york-style-dough-mix-ca-gal-2-1793031035222.webp",
+      "new-york-style-dough-mix-ca-gal-3-1793031035222.webp",
+      "new-york-style-dough-mix-ca-gal-4-1793031035222.webp",
+      "new-york-style-dough-mix-ca-gal-5-1793031035222.webp"
+    ],
     "ingredients": "Made with: Premium Italian flour.",
     "ingredients_fr": "Composé de : Farine italienne de qualité supérieure.",
     "ingredients_es": "Elaborado con: Harina italiana de primera calidad.",
-    "image_ca": "New-York-Style-Pizza-Dough-Mix.webp",
-    "image_us": "",
-    "gallery_ca": [],
-    "gallery_us": [],
-    "updated_at": 1792523400000
+    "image_ca": "new-york-style-dough-mix-v1793031035222-ca.webp",
+    "image_us": "new-york-style-dough-mix-v1793031035222-us.webp",
+    "gallery_ca": [
+      "new-york-style-dough-mix-ca-gal-1-1793031035222.webp",
+      "new-york-style-dough-mix-ca-gal-2-1793031035222.webp",
+      "new-york-style-dough-mix-ca-gal-3-1793031035222.webp",
+      "new-york-style-dough-mix-ca-gal-4-1793031035222.webp",
+      "new-york-style-dough-mix-ca-gal-5-1793031035222.webp"
+    ],
+    "gallery_us": [
+      "new-york-style-dough-mix-us-gal-1-1793031035222.webp",
+      "new-york-style-dough-mix-us-gal-2-1793031035222.webp",
+      "new-york-style-dough-mix-us-gal-3-1793031035222.webp",
+      "new-york-style-dough-mix-us-gal-4-1793031035222.webp",
+      "new-york-style-dough-mix-us-gal-5-1793031035222.webp"
+    ],
+    "updated_at": 1793031035222,
+    "slug": "new-york-style-dough-mix"
   },
   {
     "id": 22,
