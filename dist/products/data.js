@@ -604,22 +604,32 @@ const productsData = [
     "category": "Infused Oils",
     "category_fr": "Huiles infusées",
     "category_es": "Aceites infusionados",
-    "image": "Lemon-Pepper-Infused-Extra-Virgin-Olive-Oil.webp",
+    "image": "lemon-pepper-infused-extra-virgin-olive-oil-v1793029414363-ca.webp",
     "description": "Martha Stewart Lemon Pepper Infused Extra Virgin Olive Oil combines extra virgin olive oil with black peppercorns and dried lemon peel for a bright, zesty flavor with a peppery finish. Fresh and versatile, it adds a burst of flavor to oven-baked pizzas and pairs beautifully with grilled fish, roasted chicken and vegetables. Mix it with fresh herbs and lemon juice for a simple, flavorful dressing or marinade.",
     "description_fr": "L'huile d'olive extra vierge infusée au citron et poivre noir Martha Stewart réunit des grains de poivre noir et des zestes de citron séchés pour une touche vive, fraîche et épicée. Idéale sur les pizzas, poissons grillés, volailles et légumes de saison.",
     "description_es": "El aceite de oliva virgen extra infusionado con limón y pimienta negra Martha Stewart une granos de pimienta negra y cáscara de limón para un toque cítrico y picante vibrante. Perfecto para pescados, pollos asados, ensaladas y pizzas.",
     "features": "Featuring: Extra-virgin olive oil, black peppercorns, dried lemon peel and de arbol peppers",
     "features_fr": "Caractéristiques : Huile d'olive extra vierge, grains de poivre noir, zeste de citron séché et piments de arbol",
     "features_es": "Características: Aceite de oliva virgen extra, granos de pimienta negra, cáscara de limón deshidratada y chiles de árbol",
-    "gallery": [],
+    "gallery": [
+      "lemon-pepper-infused-extra-virgin-olive-oil-ca-gal-1-1793029414363.webp",
+      "lemon-pepper-infused-extra-virgin-olive-oil-ca-gal-2-1793029414363.webp"
+    ],
     "ingredients": "Ingredients: Extra-virgin olive oil, black peppercorns, dried lemon peel, de arbol peppers, natural flavorings (liquid lemon flavor).",
     "ingredients_fr": "Ingrédients : Huile d'olive extra vierge, grains de poivre noir, zeste de citron séché, piments de arbol, arômes naturels de citron.",
     "ingredients_es": "Ingredientes: Aceite de oliva virgen extra, granos de pimienta negra, cáscara de limón deshidratada, chiles de árbol, aromas naturales de limón.",
-    "image_ca": "Lemon-Pepper-Infused-Extra-Virgin-Olive-Oil.webp",
-    "image_us": "",
-    "gallery_ca": [],
-    "gallery_us": [],
-    "updated_at": 1792523400000
+    "image_ca": "lemon-pepper-infused-extra-virgin-olive-oil-v1793029414363-ca.webp",
+    "image_us": "lemon-pepper-infused-extra-virgin-olive-oil-v1793029414363-us.webp",
+    "gallery_ca": [
+      "lemon-pepper-infused-extra-virgin-olive-oil-ca-gal-1-1793029414363.webp",
+      "lemon-pepper-infused-extra-virgin-olive-oil-ca-gal-2-1793029414363.webp"
+    ],
+    "gallery_us": [
+      "lemon-pepper-infused-extra-virgin-olive-oil-us-gal-1-1793029414363.webp",
+      "lemon-pepper-infused-extra-virgin-olive-oil-us-gal-2-1793029414363.webp"
+    ],
+    "updated_at": 1793029414363,
+    "slug": "lemon-pepper-infused-extra-virgin-olive-oil"
   },
   {
     "id": 27,
