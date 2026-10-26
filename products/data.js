@@ -1164,22 +1164,41 @@ const productsData = [
     "category": "Pizza Flour",
     "category_fr": "Farines à pizza",
     "category_es": "Harinas para pizza",
-    "image": "Neapolitan-Style-Pizza-Dough-Mix.webp",
+    "image": "neapolitan-style-dough-mix-v1793030935843-ca.webp",
     "description": "Martha Stewart Neapolitan Style 00 Pizza Dough Mix is crafted with premium Italian 00 flour to create the light, airy crust with a delicate crisp that defines classic Neapolitan-style pizza. Stretch it thin, top with crushed tomatoes and fresh mozzarella, and bake at high heat for a restaurant-inspired Margherita at home. Designed for high-temperature baking, this flour mix gives you pizzeria-quality results in your home oven.",
     "description_fr": "Le mélange pour pâte à pizza style napolitain Martha Stewart est élaboré à partir de farine italienne Tipo 00 de qualité supérieure. Permet d'obtenir une croûte gonflée, légère et délicatement alvéolée à haute température.",
     "description_es": "La mezcla para masa de pizza estilo napolitano Martha Stewart está formulada con harina italiana Tipo 00 de primera calidad para una masa elástica, ligera y de bordes aireados (cornicione) como en Nápoles.",
     "features": "Featuring: Premium Italian 00 flour for high-heat pizza baking",
     "features_fr": "Caractéristiques : Farine italienne Tipo 00 supérieure pour cuisson à haute température",
     "features_es": "Características: Harina italiana Tipo 00 premium para horneado a alta temperatura",
-    "gallery": [],
+    "gallery": [
+      "neapolitan-style-dough-mix-ca-gal-1-1793030935843.webp",
+      "neapolitan-style-dough-mix-ca-gal-2-1793030935843.webp",
+      "neapolitan-style-dough-mix-ca-gal-3-1793030935843.webp",
+      "neapolitan-style-dough-mix-ca-gal-4-1793030935843.webp",
+      "neapolitan-style-dough-mix-ca-gal-5-1793030935843.webp"
+    ],
     "ingredients": "Made with: Premium Italian 00 flour.",
     "ingredients_fr": "Composé de : Farine italienne Tipo 00 de qualité supérieure.",
     "ingredients_es": "Elaborado con: Harina italiana Tipo 00 de primera calidad.",
-    "image_ca": "Neapolitan-Style-Pizza-Dough-Mix.webp",
-    "image_us": "",
-    "gallery_ca": [],
-    "gallery_us": [],
-    "updated_at": 1792523400000
+    "image_ca": "neapolitan-style-dough-mix-v1793030935843-ca.webp",
+    "image_us": "neapolitan-style-dough-mix-v1793030935843-us.webp",
+    "gallery_ca": [
+      "neapolitan-style-dough-mix-ca-gal-1-1793030935843.webp",
+      "neapolitan-style-dough-mix-ca-gal-2-1793030935843.webp",
+      "neapolitan-style-dough-mix-ca-gal-3-1793030935843.webp",
+      "neapolitan-style-dough-mix-ca-gal-4-1793030935843.webp",
+      "neapolitan-style-dough-mix-ca-gal-5-1793030935843.webp"
+    ],
+    "gallery_us": [
+      "neapolitan-style-dough-mix-us-gal-1-1793030935843.webp",
+      "neapolitan-style-dough-mix-us-gal-2-1793030935843.webp",
+      "neapolitan-style-dough-mix-us-gal-3-1793030935843.webp",
+      "neapolitan-style-dough-mix-us-gal-4-1793030935843.webp",
+      "neapolitan-style-dough-mix-us-gal-5-1793030935843.webp"
+    ],
+    "updated_at": 1793030935843,
+    "slug": "neapolitan-style-dough-mix"
   },
   {
     "id": 24,
