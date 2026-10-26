@@ -849,22 +849,32 @@ const productsData = [
     "category": "Seasoning",
     "category_fr": "Assaisonnements",
     "category_es": "Sazonadores y especias",
-    "image": "Triple-Pepper-Mix-Seasoning.webp",
+    "image": "triple-pepper-mix-seasoning-v1793029258696-ca.webp",
     "description": "Martha Stewart Triple Pepper Mix Seasoning combines sea salt, black pepper, gochugaru chili flakes and chili pepper flakes for a bold blend with a flavorful kick of heat. Use it as a finishing touch for oven-baked pizza, season steak or pork before cooking, or sprinkle it over roasted vegetables and potatoes. The combination of peppers adds warmth and depth without overpowering your favorite dishes.",
     "description_fr": "L'assaisonnement aux trois poivres Martha Stewart réunit sel de mer, poivre noir, flocons de piment gochugaru et piments rouges concassés. Une chaleur équilibrée qui sublime viandes rouges, steaks et légumes sautés.",
     "description_es": "El sazonador tres pimientas Martha Stewart combina sal marina, pimienta negra, hojuelas de chile gochugaru y chile rojo. Aporta calidez y profundidad aromática a bistecs, hamburguesas y papas asadas.",
     "features": "Featuring: Sea salt, black pepper, gochugaru chili flakes and chili pepper flakes",
     "features_fr": "Caractéristiques : Sel de mer, poivre noir, flocons de piment gochugaru et piments concassés",
     "features_es": "Características: Sal marina, pimienta negra, hojuelas de chile gochugaru y hojuelas de chile",
-    "gallery": [],
+    "gallery": [
+      "triple-pepper-mix-seasoning-ca-gal-1-1793029258696.webp",
+      "triple-pepper-mix-seasoning-ca-gal-2-1793029258696.webp"
+    ],
     "ingredients": "Ingredients: Sea salt, black pepper, gochugaru chili flakes, chili pepper flakes.",
     "ingredients_fr": "Ingrédients : Sel de mer, poivre noir, flocons de piment gochugaru, flocons de piment chili.",
     "ingredients_es": "Ingredientes: Sal marina, pimienta negra, hojuelas de chile gochugaru, hojuelas de chile rojo.",
-    "image_ca": "Triple-Pepper-Mix-Seasoning.webp",
-    "image_us": "",
-    "gallery_ca": [],
-    "gallery_us": [],
-    "updated_at": 1792523400000
+    "image_ca": "triple-pepper-mix-seasoning-v1793029258696-ca.webp",
+    "image_us": "triple-pepper-mix-seasoning-v1793029258696-us.webp",
+    "gallery_ca": [
+      "triple-pepper-mix-seasoning-ca-gal-1-1793029258696.webp",
+      "triple-pepper-mix-seasoning-ca-gal-2-1793029258696.webp"
+    ],
+    "gallery_us": [
+      "triple-pepper-mix-seasoning-us-gal-1-1793029258696.webp",
+      "triple-pepper-mix-seasoning-us-gal-2-1793029258696.webp"
+    ],
+    "updated_at": 1793029258696,
+    "slug": "triple-pepper-mix-seasoning"
   },
   {
     "id": 11,
