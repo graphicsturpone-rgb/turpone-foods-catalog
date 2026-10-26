@@ -386,10 +386,10 @@ const productsData = [
   {
     "id": 2,
     "title": "Bacon and Caramelized Onions Pizza 12\"",
-    "title_fr": "Pizza au Bacon et Oignons Caramélisés 12\"",
+    "title_fr": "Pizza au Bacon et Oignons Caramélisés",
     "title_es": "Pizza de Tocino y Cebollas Caramelizadas",
     "category": "Frozen Pizza",
-    "category_fr": "Pizzas surgelées",
+    "category_fr": "Pizza surgelée",
     "category_es": "Pizza congelada",
     "image": "bacon-and-caramelized-onions-pizza.webp",
     "description": "Martha Stewart Bacon and Caramelized Onions Pizza pairs savory bacon and sweet caramelized onions with creamy Alfredo sauce, mozzarella and Parmesan on a hand-stretched, stone-baked crust. Rich, savory and slightly sweet, this indulgent combination delivers layers of flavor in every bite. Simply bake until golden for a pizzeria-inspired pizza that's ready to enjoy at home in minutes.",
@@ -408,7 +408,7 @@ const productsData = [
     "ingredients_fr": "Ingrédients : Farine de blé, eau, fromage mozzarella, oignons caramélisés, bacon, sauce alfredo, parmesan, huile d'olive, sel, levure.\nContient : Blé, Lait.",
     "ingredients_es": "Ingredientes: Harina de trigo, agua, queso mozzarella, cebollas caramelizadas, tocino, salsa alfredo, queso parmesano, aceite de oliva, sal, levadura.\nContiene: Trigo, Leche.",
     "image_ca": "bacon-and-caramelized-onions-pizza.webp",
-    "image_us": "bacon-and-caramelized-onions-pizza-12-us.webp",
+    "image_us": "bacon-and-caramelized-onions-pizza-12-v1793040578149-us.webp",
     "gallery_ca": [
       "bacon-and-caramelized-onions-pizza-gallery-1.webp",
       "bacon-and-caramelized-onions-pizza-gallery-2.webp",
@@ -416,13 +416,13 @@ const productsData = [
       "bacon-and-caramelized-onions-pizza-gallery-4.webp"
     ],
     "gallery_us": [
-      "bacon-and-caramelized-onions-pizza-12-us-gallery-1.webp",
-      "bacon-and-caramelized-onions-pizza-12-us-gallery-2.webp",
-      "bacon-and-caramelized-onions-pizza-12-us-gallery-3.webp",
-      "bacon-and-caramelized-onions-pizza-12-us-gallery-4.webp"
+      "bacon-and-caramelized-onions-pizza-12-us-gal-1-1793040578149.webp",
+      "bacon-and-caramelized-onions-pizza-12-us-gal-2-1793040578149.webp",
+      "bacon-and-caramelized-onions-pizza-12-us-gal-3-1793040578149.webp",
+      "bacon-and-caramelized-onions-pizza-12-us-gal-4-1793040578149.webp"
     ],
     "slug": "bacon-and-caramelized-onions-pizza-12",
-    "updated_at": 1793039192154
+    "updated_at": 1793040578149
   },
   {
     "id": 4,
