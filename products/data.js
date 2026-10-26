@@ -1262,8 +1262,7 @@ const productsData = [
     "gallery": [
       "neapolitan-style-pizza-dough-balls-ca-gal-1-1793031174722.webp",
       "neapolitan-style-pizza-dough-balls-ca-gal-2-1793031174722.webp",
-      "neapolitan-style-pizza-dough-balls-ca-gal-3-1793031174722.webp",
-      "neapolitan-style-pizza-dough-balls-ca-gal-4-1793031174722.webp"
+      "neapolitan-style-pizza-dough-balls-ca-gal-3-1793031174722.webp"
     ],
     "ingredients": "Ingredients: Enriched wheat flour, water, sourdough starter, sea salt, extra virgin olive oil, yeast.\nContains: Wheat.",
     "ingredients_fr": "Ingrédients : Farine de blé enrichie, eau, levain naturel, sel de mer, huile d'olive extra vierge, levure.\nContient : Blé.",
@@ -1273,16 +1272,14 @@ const productsData = [
     "gallery_ca": [
       "neapolitan-style-pizza-dough-balls-ca-gal-1-1793031174722.webp",
       "neapolitan-style-pizza-dough-balls-ca-gal-2-1793031174722.webp",
-      "neapolitan-style-pizza-dough-balls-ca-gal-3-1793031174722.webp",
-      "neapolitan-style-pizza-dough-balls-ca-gal-4-1793031174722.webp"
+      "neapolitan-style-pizza-dough-balls-ca-gal-3-1793031174722.webp"
     ],
     "gallery_us": [
       "neapolitan-style-pizza-dough-balls-us-gal-1-1793031174722.webp",
       "neapolitan-style-pizza-dough-balls-us-gal-2-1793031174722.webp",
-      "neapolitan-style-pizza-dough-balls-us-gal-3-1793031174722.webp",
-      "neapolitan-style-pizza-dough-balls-us-gal-4-1793031174722.webp"
+      "neapolitan-style-pizza-dough-balls-us-gal-3-1793031174722.webp"
     ],
-    "updated_at": 1793031174722,
+    "updated_at": 1793037618918,
     "slug": "neapolitan-style-pizza-dough-balls"
   },
   {
