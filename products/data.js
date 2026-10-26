@@ -1336,18 +1336,19 @@ const productsData = [
     "ingredients_fr": "Ingrédients : Farine de blé non blanchie enrichie, eau, huile d'olive, sucre de canne, sel de mer, levure.\nContient : Blé.",
     "ingredients_es": "Ingredientes: Harina de trigo enriquecida sin blanquear, agua, aceite de oliva, azúcar de caña, sal marina, levadura.\nContiene: Trigo.",
     "image_ca": "new-york-style-pizza-dough-balls-v1793031231365-ca.webp",
-    "image_us": "new-york-style-pizza-dough-balls-v1793031231365-us.webp",
+    "image_us": "new-york-style-pizza-dough-balls-v1793041086866-us.webp",
     "gallery_ca": [
       "new-york-style-pizza-dough-balls-ca-gal-1-1793031231365.webp",
       "new-york-style-pizza-dough-balls-ca-gal-2-1793031231365.webp",
       "new-york-style-pizza-dough-balls-ca-gal-3-1793031231365.webp"
     ],
     "gallery_us": [
-      "new-york-style-pizza-dough-balls-us-gal-1-1793031231365.webp",
-      "new-york-style-pizza-dough-balls-us-gal-2-1793031231365.webp",
-      "new-york-style-pizza-dough-balls-us-gal-3-1793031231365.webp"
+      "new-york-style-pizza-dough-balls-us-gal-1-1793041086866.webp",
+      "new-york-style-pizza-dough-balls-us-gal-2-1793041086866.webp",
+      "new-york-style-pizza-dough-balls-us-gal-3-1793041086866.webp",
+      "new-york-style-pizza-dough-balls-us-gal-4-1793041086866.webp"
     ],
-    "updated_at": 1793037630978,
+    "updated_at": 1793041086866,
     "slug": "new-york-style-pizza-dough-balls"
   },
   {
