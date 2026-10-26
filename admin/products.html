@@ -1595,13 +1595,11 @@
                 });
 
                 if (titleChanged) {
-                    const oldParen = existingProduct.title.match(/\(([^)]+)\)/);
                     const newParen = productData.title.match(/\(([^)]+)\)/);
-                    if (oldParen && newParen) {
-                        const oldSuffix = oldParen[0];
-                        const newSuffix = newParen[0];
-                        if (productData.title_fr) productData.title_fr = productData.title_fr.replace(oldSuffix, newSuffix);
-                        if (productData.title_es) productData.title_es = productData.title_es.replace(oldSuffix, newSuffix);
+                    if (newParen) {
+                        const newSuffix = newParen[0].toLowerCase();
+                        if (productData.title_fr) productData.title_fr = productData.title_fr.replace(/\([^)]+\)/, newSuffix);
+                        if (productData.title_es) productData.title_es = productData.title_es.replace(/\([^)]+\)/, newSuffix);
                     }
                     const oldInch = existingProduct.title.match(/\b(10|12)\s*["”']/);
                     const newInch = productData.title.match(/\b(10|12)\s*["”']/);

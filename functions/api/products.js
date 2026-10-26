@@ -419,13 +419,11 @@ export async function onRequest(context) {
 
                 // Intelligently synchronize title translations across languages if title was modified
                 if (existing.title && updatedProduct.title && existing.title !== updatedProduct.title) {
-                    const oldParen = existing.title.match(/\(([^)]+)\)/);
                     const newParen = updatedProduct.title.match(/\(([^)]+)\)/);
-                    if (oldParen && newParen) {
-                        const oldSuffix = oldParen[0];
-                        const newSuffix = newParen[0];
-                        if (updatedProduct.title_fr) updatedProduct.title_fr = updatedProduct.title_fr.replace(oldSuffix, newSuffix);
-                        if (updatedProduct.title_es) updatedProduct.title_es = updatedProduct.title_es.replace(oldSuffix, newSuffix);
+                    if (newParen) {
+                        const newSuffix = newParen[0].toLowerCase();
+                        if (updatedProduct.title_fr) updatedProduct.title_fr = updatedProduct.title_fr.replace(/\([^)]+\)/, newSuffix);
+                        if (updatedProduct.title_es) updatedProduct.title_es = updatedProduct.title_es.replace(/\([^)]+\)/, newSuffix);
                     }
                     const oldInch = existing.title.match(/\b(10|12)\s*["”']/);
                     const newInch = updatedProduct.title.match(/\b(10|12)\s*["”']/);
