@@ -902,7 +902,8 @@
             } else {
                 const cleanName = trimmed.split('?')[0];
                 const isExplicitUs = /[-_]us(?:[-_.0-9a-z]*)\.(webp|png|jpe?g)$/i.test(cleanName);
-                const folder = isExplicitUs ? '/assets/images/us_imgs/' : (market === 'US' ? '/assets/images/us_imgs/' : '/assets/images/ca_imgs/');
+                const isExplicitCa = /[-_]ca(?:[-_.0-9a-z]*)\.(webp|png|jpe?g)$/i.test(cleanName);
+                const folder = isExplicitUs ? '/assets/images/us_imgs/' : (isExplicitCa ? '/assets/images/ca_imgs/' : (market === 'US' ? '/assets/images/us_imgs/' : '/assets/images/ca_imgs/'));
                 path = folder + cleanName;
             }
             const v = updated_at || window.__adminSessionTs;

@@ -1,4 +1,3 @@
-
 const NEUTRAL_CATALOG_PLACEHOLDER = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23f8fafc'/%3E%3Cpath d='M30 65 L45 45 L58 58 L68 46 L80 65 Z' fill='%23cbd5e1'/%3E%3Ccircle cx='40' cy='38' r='5' fill='%23cbd5e1'/%3E%3C/svg%3E";
 
 function resolveImageUrl(img, market, updated_at) {
@@ -15,13 +14,50 @@ function resolveImageUrl(img, market, updated_at) {
     } else {
         const cleanName = trimmed.split('?')[0];
         const isExplicitUs = /[-_]us(?:[-_.0-9a-z]*)\.(webp|png|jpe?g)$/i.test(cleanName);
-        const folder = isExplicitUs ? '/assets/images/us_imgs/' : (currentMarket === 'US' ? '/assets/images/us_imgs/' : '/assets/images/ca_imgs/');
+        const isExplicitCa = /[-_]ca(?:[-_.0-9a-z]*)\.(webp|png|jpe?g)$/i.test(cleanName);
+        const folder = isExplicitUs 
+            ? '/assets/images/us_imgs/' 
+            : (isExplicitCa ? '/assets/images/ca_imgs/' : (currentMarket === 'US' ? '/assets/images/us_imgs/' : '/assets/images/ca_imgs/'));
         path = folder + cleanName;
     }
 
     const v = updated_at || Date.now();
     path += (path.includes('?') ? '&' : '?') + 'v=' + v;
     return path;
+}
+
+// Multi-path image fallback loader for catalog product cards
+function attachImageFallback(imgEl, originalFilename) {
+    if (!imgEl || !originalFilename) return;
+    
+    const cleanName = originalFilename.replace(/^.*[\\\/]/, '').split('?')[0];
+    const currentMarket = window.TurponeMarket ? window.TurponeMarket.getMarket() : (localStorage.getItem('turpone_market') || 'CA');
+    const isExplicitUs = /[-_]us(?:[-_.0-9a-z]*)\.(webp|png|jpe?g)$/i.test(cleanName);
+    const isExplicitCa = /[-_]ca(?:[-_.0-9a-z]*)\.(webp|png|jpe?g)$/i.test(cleanName);
+    const primaryFolder = isExplicitUs 
+        ? '/assets/images/us_imgs/' 
+        : (isExplicitCa ? '/assets/images/ca_imgs/' : (currentMarket === 'US' ? '/assets/images/us_imgs/' : '/assets/images/ca_imgs/'));
+    const altFolder = (primaryFolder === '/assets/images/us_imgs/') ? '/assets/images/ca_imgs/' : '/assets/images/us_imgs/';
+
+    const fallbackPaths = [
+        primaryFolder + cleanName,
+        altFolder + cleanName,
+        `/assets/images/${cleanName}`,
+        NEUTRAL_CATALOG_PLACEHOLDER
+    ];
+
+    let currentFallbackIdx = 0;
+    imgEl.onerror = function() {
+        while (currentFallbackIdx < fallbackPaths.length) {
+            const nextCandidate = fallbackPaths[currentFallbackIdx++];
+            if (imgEl.src !== nextCandidate && !imgEl.src.endsWith(nextCandidate)) {
+                imgEl.src = nextCandidate;
+                return;
+            }
+        }
+        imgEl.onerror = null;
+        imgEl.src = NEUTRAL_CATALOG_PLACEHOLDER;
+    };
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -125,24 +161,23 @@ document.addEventListener('DOMContentLoaded', () => {
             
             let rawImg = '';
             if (market === 'US') {
-                if (p.image_us !== undefined && p.image_us !== '') {
-                    rawImg = p.image_us;
-                } else if (p.image_us === '') {
-                    // Explicitly empty for US (e.g. no US packaging yet)
-                    rawImg = '';
+                if (p.image_us && p.image_us.trim()) {
+                    rawImg = p.image_us.trim();
+                } else if (p.image_ca && p.image_ca.trim()) {
+                    rawImg = p.image_ca.trim();
                 } else {
-                    // Fallback to image_ca or image for general products
-                    rawImg = p.image_ca || p.image || '';
+                    rawImg = p.image || '';
                 }
             } else {
                 // Canada Market (CA)
-                if (p.image_ca !== undefined && p.image_ca !== '') {
-                    rawImg = p.image_ca;
-                } else if (p.image_ca === '') {
-                    // Explicitly empty for CA (e.g. user removed CA image)
-                    rawImg = '';
+                if (p.image_ca && p.image_ca.trim()) {
+                    rawImg = p.image_ca.trim();
+                } else if (p.image && !/[-_]us(?:[-_.0-9a-z]*)\.(webp|png|jpe?g)$/i.test(p.image)) {
+                    rawImg = p.image.trim();
+                } else if (p.image_us && p.image_us.trim()) {
+                    rawImg = p.image_us.trim();
                 } else {
-                    rawImg = (p.image && !/[-_]us(?:[-_.0-9a-z]*)\.(webp|png|jpe?g)$/i.test(p.image)) ? p.image : '';
+                    rawImg = p.image || '';
                 }
             }
             const imgSrc = (rawImg && rawImg.trim()) ? resolveImageUrl(rawImg, market, p.updated_at) : NEUTRAL_CATALOG_PLACEHOLDER;
@@ -162,7 +197,7 @@ document.addEventListener('DOMContentLoaded', () => {
             card.innerHTML = `
                 <a href="${detailUrl}" style="text-decoration:none; color:inherit; display:flex; flex-direction:column; height:100%;">
                     <div class="img-wrapper">
-                        <img src="${imgSrc}" alt="${displayTitle}" loading="lazy" data-market-managed="true" onerror="this.onerror=null; this.src='${NEUTRAL_CATALOG_PLACEHOLDER}';">
+                        <img src="${imgSrc}" alt="${displayTitle}" loading="lazy" data-market-managed="true">
                     </div>
                     <div class="card-cat">${displayCat}</div>
                     <h4>${displayTitle}</h4>
@@ -170,6 +205,12 @@ document.addEventListener('DOMContentLoaded', () => {
                     <span class="btn-details" style="margin-top:auto;">${viewDetailsText} <i class="fa-solid fa-arrow-right"></i></span>
                 </a>
             `;
+
+            const imgEl = card.querySelector('img');
+            if (imgEl && rawImg) {
+                attachImageFallback(imgEl, rawImg);
+            }
+
             grid.appendChild(card);
         });
     }
@@ -193,6 +234,10 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     window.addEventListener('turpone:market-changed', () => {
+        renderProducts(currentCategory);
+    });
+
+    window.addEventListener('turpone:products-updated', () => {
         renderProducts(currentCategory);
     });
 

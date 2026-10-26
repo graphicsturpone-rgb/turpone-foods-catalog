@@ -293,7 +293,8 @@ function resolveImageUrl(img, market, updated_at) {
     } else {
         const cleanName = trimmed.split('?')[0];
         const isExplicitUs = /[-_]us(?:[-_.0-9a-z]*)\.(webp|png|jpe?g)$/i.test(cleanName);
-        const folder = isExplicitUs ? '/assets/images/us_imgs/' : (currentMarket === 'US' ? '/assets/images/us_imgs/' : '/assets/images/ca_imgs/');
+        const isExplicitCa = /[-_]ca(?:[-_.0-9a-z]*)\.(webp|png|jpe?g)$/i.test(cleanName);
+        const folder = isExplicitUs ? '/assets/images/us_imgs/' : (isExplicitCa ? '/assets/images/ca_imgs/' : (currentMarket === 'US' ? '/assets/images/us_imgs/' : '/assets/images/ca_imgs/'));
         path = folder + cleanName;
     }
     const v = updated_at || Date.now();
@@ -308,12 +309,13 @@ function attachImageFallback(imgEl, originalFilename) {
     const cleanName = originalFilename.replace(/^.*[\\\/]/, '').split('?')[0];
     const currentMarket = getActiveMarket();
     const isExplicitUs = /[-_]us(?:[-_.0-9a-z]*)\.(webp|png|jpe?g)$/i.test(cleanName);
-    const primaryFolder = (isExplicitUs || currentMarket === 'US') ? '/assets/images/us_imgs/' : '/assets/images/ca_imgs/';
+    const isExplicitCa = /[-_]ca(?:[-_.0-9a-z]*)\.(webp|png|jpe?g)$/i.test(cleanName);
+    const primaryFolder = isExplicitUs ? '/assets/images/us_imgs/' : (isExplicitCa ? '/assets/images/ca_imgs/' : (currentMarket === 'US' ? '/assets/images/us_imgs/' : '/assets/images/ca_imgs/'));
+    const altFolder = (primaryFolder === '/assets/images/us_imgs/') ? '/assets/images/ca_imgs/' : '/assets/images/us_imgs/';
 
     const fallbackPaths = [
         primaryFolder + cleanName,
-        `/assets/images/ca_imgs/${cleanName}`,
-        `/assets/images/us_imgs/${cleanName}`,
+        altFolder + cleanName,
         `/assets/images/${cleanName}`,
         NEUTRAL_PRODUCT_PLACEHOLDER
     ];
@@ -439,12 +441,12 @@ function renderDetailPage() {
     let rawGallery = [];
 
     if (activeMarket === 'US') {
-        if (product.image_us !== undefined && product.image_us !== '') {
-            rawMainImg = product.image_us;
-        } else if (product.image_us === '') {
-            rawMainImg = '';
+        if (product.image_us && product.image_us.trim()) {
+            rawMainImg = product.image_us.trim();
+        } else if (product.image_ca && product.image_ca.trim()) {
+            rawMainImg = product.image_ca.trim();
         } else {
-            rawMainImg = product.image_ca || product.image || '';
+            rawMainImg = product.image || '';
         }
 
         if (Array.isArray(product.gallery_us) && product.gallery_us.length > 0) {
@@ -456,12 +458,14 @@ function renderDetailPage() {
         }
     } else {
         // Canada Market (CA)
-        if (product.image_ca !== undefined && product.image_ca !== '') {
-            rawMainImg = product.image_ca;
-        } else if (product.image_ca === '') {
-            rawMainImg = '';
+        if (product.image_ca && product.image_ca.trim()) {
+            rawMainImg = product.image_ca.trim();
+        } else if (product.image && !/[-_]us(?:[-_.0-9a-z]*)\.(webp|png|jpe?g)$/i.test(product.image)) {
+            rawMainImg = product.image.trim();
+        } else if (product.image_us && product.image_us.trim()) {
+            rawMainImg = product.image_us.trim();
         } else {
-            rawMainImg = (product.image && !/[-_]us\.(webp|png|jpe?g)$/i.test(product.image)) ? product.image : '';
+            rawMainImg = product.image || '';
         }
 
         if (Array.isArray(product.gallery_ca) && product.gallery_ca.length > 0) {
@@ -685,20 +689,22 @@ function initRelatedProducts(currentProduct) {
     track.innerHTML = relatedList.map(p => {
         let rawImg = '';
         if (activeMarket === 'US') {
-            if (p.image_us !== undefined && p.image_us !== '') {
-                rawImg = p.image_us;
-            } else if (p.image_us === '') {
-                rawImg = '';
+            if (p.image_us && p.image_us.trim()) {
+                rawImg = p.image_us.trim();
+            } else if (p.image_ca && p.image_ca.trim()) {
+                rawImg = p.image_ca.trim();
             } else {
-                rawImg = p.image_ca || p.image || '';
+                rawImg = p.image || '';
             }
         } else {
-            if (p.image_ca !== undefined && p.image_ca !== '') {
-                rawImg = p.image_ca;
-            } else if (p.image_ca === '') {
-                rawImg = '';
+            if (p.image_ca && p.image_ca.trim()) {
+                rawImg = p.image_ca.trim();
+            } else if (p.image && !/[-_]us(?:[-_.0-9a-z]*)\.(webp|png|jpe?g)$/i.test(p.image)) {
+                rawImg = p.image.trim();
+            } else if (p.image_us && p.image_us.trim()) {
+                rawImg = p.image_us.trim();
             } else {
-                rawImg = (p.image && !/[-_]us\.(webp|png|jpe?g)$/i.test(p.image)) ? p.image : '';
+                rawImg = p.image || '';
             }
         }
         const imgSrc = (rawImg && rawImg.trim()) ? resolveImageUrl(rawImg, activeMarket, p.updated_at) : NEUTRAL_PRODUCT_PLACEHOLDER;
@@ -726,6 +732,17 @@ function initRelatedProducts(currentProduct) {
     }).join('');
 
     section.style.display = 'block';
+
+    // Attach fallback to each related product card image
+    track.querySelectorAll('.related-card').forEach((card, idx) => {
+        const p = relatedList[idx];
+        if (!p) return;
+        const imgEl = card.querySelector('img');
+        const candImg = (activeMarket === 'US') ? (p.image_us || p.image_ca || p.image) : (p.image_ca || p.image || p.image_us);
+        if (imgEl && candImg) {
+            attachImageFallback(imgEl, candImg);
+        }
+    });
 
     let currentIndex = 0;
     const totalItems = relatedList.length;
