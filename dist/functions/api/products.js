@@ -124,7 +124,7 @@ async function autoTranslateProduct(product, geminiKey) {
     const prompt = `You are a bilingual culinary translator for Turpone Foods and Martha Stewart in Canada and North America.
 Translate the following product fields into authentic Canadian French (Français canadien / OQLF / CFIA standards) and Mexican Spanish (Español de México).
 - For French Canadian: Use authentic Canadian terminology (e.g. for Quick Rising Mix use "Mélange à levée rapide"; for pinsa crust use "Croûte de pinsa"; for dough balls use "Boules de pâte à pizza"; for seasonings use "Assaisonnement"; for dip use "Trempette"; use mL for liquid sauce volumes).
-- For Mexican Spanish: Use natural Mexican culinary terminology (e.g. use "chile" instead of "pimiento" for spicy peppers; "tocino" instead of "panceta/beicon"; "masa" instead of "pasta/base"; "leudado rápido" for quick rising; "Sazonador" for seasoning; "congelada/congeladas" for frozen; "salsa de soya" instead of "salsa de soja"; use inches notation "10\"" and "12\"" for pizzas).`;
+- For Mexican Spanish: Use natural Mexican culinary terminology (e.g. use "chile" instead of "pimiento" for spicy peppers; "tocino" instead of "panceta/beicon"; "masa" instead of "pasta/base"; "leudado rápido" for quick rising; "Sazonador" for seasoning; "congelada/congeladas" for frozen; "salsa de soya" instead of "salsa de soja"; use inches notation "10\"" and "12\"" for pizzas).
 
 Product details to translate:
 Title: "${product.title || ""}"

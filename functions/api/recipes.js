@@ -85,7 +85,7 @@ async function autoTranslateRecipe(recipe, geminiKey) {
     const prompt = `You are a Michelin-star bilingual food translator and culinary copywriter for Turpone Foods in North America.
 Translate the following recipe fields into authentic culinary Canadian French (Français canadien / OQLF standards) and Mexican Spanish (Español de México).
 - For French Canadian: Use natural Canadian culinary terminology (e.g. "c. à soupe", "c. à thé", "tasse", "essuie-tout", "sauce soya", "Trempette", "filet de miel", "contre-filet", "Mélange à levée rapide").
-- For Mexican Spanish: Use natural Mexican cooking terminology (e.g. "cdas." for cucharadas, "cdtas." for cucharaditas, "taza", "toallas de papel", "salsa de soya", "chiles", "Dip", "sartén de hierro fundido", "bistec", "camarones", "leudado rápido").`;
+- For Mexican Spanish: Use natural Mexican cooking terminology (e.g. "cdas." for cucharadas, "cdtas." for cucharaditas, "taza", "toallas de papel", "salsa de soya", "chiles", "Dip", "sartén de hierro fundido", "bistec", "camarones", "leudado rápido").
 
 Recipe details to translate:
 Title: "${recipe.title || ""}"
