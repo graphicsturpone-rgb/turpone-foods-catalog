@@ -212,7 +212,7 @@ function toBase64Utf8(str) {
 export async function onRequest(context) {
     const { request, env } = context;
     const token = env.GITHUB_TOKEN;
-    const geminiKey = env.GEMINI_API_KEY;
+    const geminiKey = env.GEMINI_API_KEY || "AQ.Ab8RN6JIKnLiwIi9Mjh_N2XMweKksD2Is3McnIQsFTLy5VuCBA";
 
     const corsHeaders = {
         "Access-Control-Allow-Origin": "*",

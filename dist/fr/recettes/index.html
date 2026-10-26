@@ -123,7 +123,7 @@ if ('caches' in window) {
 </head><body class="page page-id-185 elementor-default elementor-kit-6 elementor-page elementor-page-185"><a class="skip-link screen-reader-text" href="#content">Skip to content</a><script src="/assets/js/header-injector.js"></script><main class="site-main post-185 page type-page status-publish hentry" id="content">
 <div class="recipes-index" style="max-width:1200px; margin: 0 auto; padding: 100px 20px; background-color: #ffffff; color: #000000; min-height: 70vh;">
     <h1 style="font-size: 60px; font-weight: 300; letter-spacing: -1px; margin-bottom: 50px; text-align: center;">Nos Recettes</h1>
-    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 40px;">
+    <div id="recipes-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 40px;">
         
         <a href="/fr/recettes/crispy-roasted-whole-chicken-with-roasted-garlic-olive-oil/" style="text-decoration: none; color: inherit; display: block; border-radius: 12px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: transform 0.3s ease;">
             <div style="height: 250px; background-image: url('/assets/images/recipes/Crispy Roasted Whole Chicken with Roasted Garlic Olive Oil.webp'); background-size: cover; background-position: center;"></div>
@@ -529,4 +529,69 @@ document.addEventListener("DOMContentLoaded", function() {
 <script src="/assets/js/cookie-consent.js"></script>
 <script src="/assets/js/newsletter-popup.js"></script>
 <link href="/assets/css/chatbot.css" rel="stylesheet"/><script defer="" src="/assets/js/chatbot.js"></script><script src="/assets/js/us-image-swap.js" defer></script>
+<script src="/recipes/data.js"></script>
+<script src="/recipes/recipe-store.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', async function() {
+    const grid = document.getElementById('recipes-grid');
+    if (!grid || typeof RecipeStore === 'undefined') return;
+
+    function getCurrentLanguage() {
+        const p = window.location.pathname.toLowerCase();
+        if (p.includes('/fr/')) return 'fr';
+        if (p.includes('/es/')) return 'es';
+        const stored = (localStorage.getItem('preferred-lang') || '').toLowerCase();
+        if (stored === 'fr' || stored === 'es') return stored;
+        return 'en';
+    }
+
+    try {
+        const recipes = await RecipeStore.getAll();
+        if (recipes && recipes.length > 0) {
+            const lang = getCurrentLanguage();
+            const staticSlugs = new Set([
+                "crispy-roasted-whole-chicken-with-roasted-garlic-olive-oil",
+                "fennel-and-rosemary-crusted-pork-loin",
+                "fig-herb-balsamic-vinaigrette",
+                "grilled-white-fish-with-lemon-pepper-herb-salmoriglio",
+                "mediterranean-tomato-marinade-for-fresh-bocconcini",
+                "pan-seared-salmon-with-a-lemon-black-pepper-honey-glaze",
+                "prosciutto-arugula-pizza",
+                "quick-garden-herb-ranch-dip",
+                "simple-balsamic-garlic-herb-tableside-dressing",
+                "spicy-garlic-grilled-shrimp-skewers",
+                "spicy-italian-sausage-pizza",
+                "triple-chili-honey-glazed-skewers",
+                "triple-pepper-crusted-new-york-strip-steak"
+            ]);
+
+            grid.innerHTML = recipes.map(r => {
+                let title = r.title || 'Untitled Recipe';
+                if (lang === 'fr' && r.title_fr) title = r.title_fr;
+                if (lang === 'es' && r.title_es) title = r.title_es;
+
+                let targetUrl = '';
+                if (lang === 'fr') {
+                    targetUrl = staticSlugs.has(r.slug) ? `/fr/recipes/${r.slug}/` : `/fr/recipes/detail.html?slug=${encodeURIComponent(r.slug)}`;
+                } else if (lang === 'es') {
+                    targetUrl = staticSlugs.has(r.slug) ? `/es/recipes/${r.slug}/` : `/es/recipes/detail.html?slug=${encodeURIComponent(r.slug)}`;
+                } else {
+                    targetUrl = staticSlugs.has(r.slug) ? `/recipes/${r.slug}/` : `/recipes/detail.html?slug=${encodeURIComponent(r.slug)}`;
+                }
+
+                const img = r.image || '/assets/images/placeholder.svg';
+                return `
+                <a href="${targetUrl}" style="text-decoration: none; color: inherit; display: block; border-radius: 12px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: transform 0.3s ease;">
+                    <div style="height: 250px; background-image: url('${img}'); background-size: cover; background-position: center;"></div>
+                    <div style="padding: 25px; background: #fff;">
+                        <h3 style="font-size: 22px; font-weight: 600; margin: 0;">${title}</h3>
+                    </div>
+                </a>`;
+            }).join('');
+        }
+    } catch (e) {
+        console.error('Error hydrating recipes:', e);
+    }
+});
+</script>
 </body></html>

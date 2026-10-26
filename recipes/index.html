@@ -535,11 +535,19 @@ document.addEventListener('DOMContentLoaded', async function() {
     const grid = document.getElementById('recipes-grid');
     if (!grid || typeof RecipeStore === 'undefined') return;
 
-    // Load recipes (synced with API / localStorage / fallback)
+    function getCurrentLanguage() {
+        const p = window.location.pathname.toLowerCase();
+        if (p.includes('/fr/')) return 'fr';
+        if (p.includes('/es/')) return 'es';
+        const stored = (localStorage.getItem('preferred-lang') || '').toLowerCase();
+        if (stored === 'fr' || stored === 'es') return stored;
+        return 'en';
+    }
+
     try {
         const recipes = await RecipeStore.getAll();
         if (recipes && recipes.length > 0) {
-            // Known static directory slugs that have their own index.html
+            const lang = getCurrentLanguage();
             const staticSlugs = new Set([
                 "crispy-roasted-whole-chicken-with-roasted-garlic-olive-oil",
                 "fennel-and-rosemary-crusted-pork-loin",
@@ -556,15 +564,26 @@ document.addEventListener('DOMContentLoaded', async function() {
                 "triple-pepper-crusted-new-york-strip-steak"
             ]);
 
-            // Clear static placeholders and re-render fresh list
             grid.innerHTML = recipes.map(r => {
-                const targetUrl = staticSlugs.has(r.slug) ? `/recipes/${r.slug}/` : `/recipes/detail.html?slug=${encodeURIComponent(r.slug)}`;
+                let title = r.title || 'Untitled Recipe';
+                if (lang === 'fr' && r.title_fr) title = r.title_fr;
+                if (lang === 'es' && r.title_es) title = r.title_es;
+
+                let targetUrl = '';
+                if (lang === 'fr') {
+                    targetUrl = staticSlugs.has(r.slug) ? `/fr/recipes/${r.slug}/` : `/fr/recipes/detail.html?slug=${encodeURIComponent(r.slug)}`;
+                } else if (lang === 'es') {
+                    targetUrl = staticSlugs.has(r.slug) ? `/es/recipes/${r.slug}/` : `/es/recipes/detail.html?slug=${encodeURIComponent(r.slug)}`;
+                } else {
+                    targetUrl = staticSlugs.has(r.slug) ? `/recipes/${r.slug}/` : `/recipes/detail.html?slug=${encodeURIComponent(r.slug)}`;
+                }
+
                 const img = r.image || '/assets/images/placeholder.svg';
                 return `
                 <a href="${targetUrl}" style="text-decoration: none; color: inherit; display: block; border-radius: 12px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: transform 0.3s ease;">
                     <div style="height: 250px; background-image: url('${img}'); background-size: cover; background-position: center;"></div>
                     <div style="padding: 25px; background: #fff;">
-                        <h3 style="font-size: 22px; font-weight: 600; margin: 0;">${r.title || 'Untitled Recipe'}</h3>
+                        <h3 style="font-size: 22px; font-weight: 600; margin: 0;">${title}</h3>
                     </div>
                 </a>`;
             }).join('');

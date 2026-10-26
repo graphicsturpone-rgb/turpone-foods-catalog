@@ -123,16 +123,16 @@ if ('caches' in window) {
 </head><body class="page page-id-185 elementor-default elementor-kit-6 elementor-page elementor-page-185"><a class="skip-link screen-reader-text" href="#content">Skip to content</a><script src="/assets/js/header-injector.js"></script><main class="site-main post-185 page type-page status-publish hentry" id="content">
 <div class="recipe-container" style="max-width:1200px; margin: 0 auto; padding: 100px 20px; background-color: #ffffff; color: #000000;">
     <div style="font-size: 13px; color: #777; margin-bottom: 25px;">
-        <a href="/" style="color:#777; text-decoration:none;">Home</a> <i class="fa-solid fa-angle-right" style="margin: 0 6px;"></i>
-        <a href="/recipes/" style="color:#777; text-decoration:none;">Recipes</a> <i class="fa-solid fa-angle-right" style="margin: 0 6px;"></i>
+        <a href="/" style="color:#777; text-decoration:none;" id="breadcrumb-home">Home</a> <i class="fa-solid fa-angle-right" style="margin: 0 6px;"></i>
+        <a href="/recipes/" style="color:#777; text-decoration:none;" id="breadcrumb-recipes">Recipes</a> <i class="fa-solid fa-angle-right" style="margin: 0 6px;"></i>
         <span id="breadcrumb-title" style="color:#222; font-weight:600;">Recipe</span>
     </div>
     <h1 id="recipe-title" style="font-size: 60px; font-weight: 300; letter-spacing: -1px; margin-bottom: 20px;">Recipe Title</h1>
     <div class="recipe-meta" style="display: flex; gap: 40px; margin-bottom: 40px; color: #555; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; border-bottom: 1px solid #eee; padding-bottom: 20px; flex-wrap: wrap;">
-        <span><strong>Prep:</strong> <span id="meta-prep">--</span></span>
-        <span><strong>Cook/Total:</strong> <span id="meta-cook">--</span></span>
-        <span><strong>Yields:</strong> <span id="meta-yields">--</span></span>
-        <span id="meta-cal-wrap" style="display:none;"><strong>Calories:</strong> <span id="meta-cal">--</span></span>
+        <span><strong id="label-prep">Prep:</strong> <span id="meta-prep">--</span></span>
+        <span><strong id="label-cook">Cook/Total:</strong> <span id="meta-cook">--</span></span>
+        <span><strong id="label-yields">Yields:</strong> <span id="meta-yields">--</span></span>
+        <span id="meta-cal-wrap" style="display:none;"><strong id="label-cal">Calories:</strong> <span id="meta-cal">--</span></span>
     </div>
     <div style="margin-bottom: 60px;">
         <img id="recipe-img" src="" alt="Recipe" style="width: 100%; max-height: 550px; object-fit: cover; border-radius: 12px; box-shadow: 0 20px 40px rgba(0,0,0,0.1);" />
@@ -142,13 +142,13 @@ if ('caches' in window) {
     <div class="recipe-grid" style="display: grid; grid-template-columns: 1fr 2fr; gap: 80px;">
         <!-- Left Column: Ingredients -->
         <div class="ingredients-section">
-            <h3 style="font-size: 24px; font-weight: 600; margin-bottom: 30px; border-bottom: 2px solid #000; padding-bottom: 10px;">Ingredients</h3>
+            <h3 id="label-ingredients" style="font-size: 24px; font-weight: 600; margin-bottom: 30px; border-bottom: 2px solid #000; padding-bottom: 10px;">Ingredients</h3>
             <ul id="recipe-ingredients" style="list-style: none; padding: 0; line-height: 2;">
             </ul>
         </div>
         <!-- Right Column: Instructions -->
         <div class="instructions-section">
-            <h3 style="font-size: 24px; font-weight: 600; margin-bottom: 30px; border-bottom: 2px solid #000; padding-bottom: 10px;">Instructions</h3>
+            <h3 id="label-instructions" style="font-size: 24px; font-weight: 600; margin-bottom: 30px; border-bottom: 2px solid #000; padding-bottom: 10px;">Instructions</h3>
             <div class="steps" style="line-height: 1.8; font-size: 18px; color: #333;">
                 <ol id="recipe-instructions" style="padding-left: 20px; line-height: 1.8; font-size: 16px; color: #444;">
                 </ol>
@@ -472,28 +472,121 @@ document.addEventListener("DOMContentLoaded", function() {
 document.addEventListener('DOMContentLoaded', async function() {
     const params = new URLSearchParams(window.location.search);
     const slug = params.get('slug') || params.get('id');
+
+    // Language detection
+    const path = window.location.pathname.toLowerCase();
+    const storedLang = (localStorage.getItem('preferred-lang') || '').toLowerCase();
+    let currentLang = 'en';
+    if (params.get('lang') === 'fr' || path.includes('/fr/')) {
+        currentLang = 'fr';
+    } else if (params.get('lang') === 'es' || path.includes('/es/')) {
+        currentLang = 'es';
+    } else if (storedLang === 'fr' || storedLang === 'es') {
+        currentLang = storedLang;
+    }
+
     if (!slug) {
-        window.location.href = '/recipes/';
+        window.location.href = (currentLang === 'fr') ? '/fr/recipes/' : ((currentLang === 'es') ? '/es/recipes/' : '/recipes/');
         return;
     }
+
+    const UI_I18N = {
+        en: {
+            home: 'Home',
+            homeUrl: '/',
+            recipes: 'Recipes',
+            recipesUrl: '/recipes/',
+            prep: 'Prep:',
+            cook: 'Cook/Total:',
+            yields: 'Yields:',
+            calories: 'Calories:',
+            ingredients: 'Ingredients',
+            instructions: 'Instructions',
+            notFoundTitle: 'Recipe Not Found',
+            notFoundDesc: 'The requested recipe could not be found. <a href="/recipes/">Return to recipes</a>.'
+        },
+        fr: {
+            home: 'Accueil',
+            homeUrl: '/fr/',
+            recipes: 'Nos Recettes',
+            recipesUrl: '/fr/recipes/',
+            prep: 'Préparation :',
+            cook: 'Temps Total :',
+            yields: 'Portions :',
+            calories: 'Calories :',
+            ingredients: 'Ingrédients',
+            instructions: 'Instructions',
+            notFoundTitle: 'Recette introuvable',
+            notFoundDesc: 'La recette demandée est introuvable. <a href="/fr/recipes/">Retour aux recettes</a>.'
+        },
+        es: {
+            home: 'Inicio',
+            homeUrl: '/es/',
+            recipes: 'Nuestras Recetas',
+            recipesUrl: '/es/recipes/',
+            prep: 'Preparación:',
+            cook: 'Tiempo Total:',
+            yields: 'Porciones:',
+            calories: 'Calorías:',
+            ingredients: 'Ingredientes',
+            instructions: 'Instrucciones',
+            notFoundTitle: 'Receta no encontrada',
+            notFoundDesc: 'No se pudo encontrar la receta solicitada. <a href="/es/recipes/">Volver a las recetas</a>.'
+        }
+    };
+
+    const t = UI_I18N[currentLang] || UI_I18N.en;
+
+    // Localize static UI labels
+    const homeLink = document.getElementById('breadcrumb-home');
+    if (homeLink) { homeLink.textContent = t.home; homeLink.href = t.homeUrl; }
+    const recLink = document.getElementById('breadcrumb-recipes');
+    if (recLink) { recLink.textContent = t.recipes; recLink.href = t.recipesUrl; }
+    const prepLabel = document.getElementById('label-prep');
+    if (prepLabel) prepLabel.textContent = t.prep;
+    const cookLabel = document.getElementById('label-cook');
+    if (cookLabel) cookLabel.textContent = t.cook;
+    const yieldsLabel = document.getElementById('label-yields');
+    if (yieldsLabel) yieldsLabel.textContent = t.yields;
+    const ingTitle = document.getElementById('label-ingredients');
+    if (ingTitle) ingTitle.textContent = t.ingredients;
+    const insTitle = document.getElementById('label-instructions');
+    if (insTitle) insTitle.textContent = t.instructions;
 
     try {
         const recipe = await RecipeStore.getBySlug(slug);
         if (!recipe) {
-            document.getElementById('recipe-title').textContent = 'Recipe Not Found';
-            document.getElementById('recipe-desc').innerHTML = '<p>The requested recipe could not be found. <a href="/recipes/">Return to recipes</a>.</p>';
+            document.getElementById('recipe-title').textContent = t.notFoundTitle;
+            document.getElementById('recipe-desc').innerHTML = `<p>${t.notFoundDesc}</p>`;
             return;
         }
 
+        // Localized fields
+        let title = recipe.title || 'Untitled Recipe';
+        if (currentLang === 'fr' && recipe.title_fr) title = recipe.title_fr;
+        if (currentLang === 'es' && recipe.title_es) title = recipe.title_es;
+
+        let description = recipe.description || '';
+        if (currentLang === 'fr' && recipe.description_fr) description = recipe.description_fr;
+        if (currentLang === 'es' && recipe.description_es) description = recipe.description_es;
+
+        let ingredients = recipe.ingredients || [];
+        if (currentLang === 'fr' && Array.isArray(recipe.ingredients_fr) && recipe.ingredients_fr.length) ingredients = recipe.ingredients_fr;
+        if (currentLang === 'es' && Array.isArray(recipe.ingredients_es) && recipe.ingredients_es.length) ingredients = recipe.ingredients_es;
+
+        let instructions = recipe.instructions || [];
+        if (currentLang === 'fr' && Array.isArray(recipe.instructions_fr) && recipe.instructions_fr.length) instructions = recipe.instructions_fr;
+        if (currentLang === 'es' && Array.isArray(recipe.instructions_es) && recipe.instructions_es.length) instructions = recipe.instructions_es;
+
         // Set document title & SEO
-        document.title = `${recipe.title} | Turpone Foods`;
+        document.title = `${title} | Turpone Foods`;
 
         // Breadcrumb and headers
         const breadcrumb = document.getElementById('breadcrumb-title');
-        if (breadcrumb) breadcrumb.textContent = recipe.title;
+        if (breadcrumb) breadcrumb.textContent = title;
 
         const titleEl = document.getElementById('recipe-title');
-        if (titleEl) titleEl.textContent = recipe.title;
+        if (titleEl) titleEl.textContent = title;
 
         // Meta tags
         if (recipe.prepTime) document.getElementById('meta-prep').textContent = recipe.prepTime;
@@ -508,28 +601,27 @@ document.addEventListener('DOMContentLoaded', async function() {
         const imgEl = document.getElementById('recipe-img');
         if (imgEl) {
             imgEl.src = recipe.image || '/assets/images/placeholder.svg';
-            imgEl.alt = recipe.title;
+            imgEl.alt = title;
         }
 
         // Description
         const descEl = document.getElementById('recipe-desc');
         if (descEl) {
-            descEl.innerHTML = `<p>${recipe.description || ''}</p>`;
+            descEl.innerHTML = `<p>${description}</p>`;
         }
 
         // Ingredients
         const ingList = document.getElementById('recipe-ingredients');
-        if (ingList && Array.isArray(recipe.ingredients)) {
-            ingList.innerHTML = recipe.ingredients.map(item => `
+        if (ingList && Array.isArray(ingredients)) {
+            ingList.innerHTML = ingredients.map(item => `
                 <li><span style="color:#000; font-weight:bold; margin-right:8px;">✔</span> ${item}</li>
             `).join('');
         }
 
         // Instructions
         const insList = document.getElementById('recipe-instructions');
-        if (insList && Array.isArray(recipe.instructions)) {
-            insList.innerHTML = recipe.instructions.map(step => {
-                // Convert markdown bold **...** if present
+        if (insList && Array.isArray(instructions)) {
+            insList.innerHTML = instructions.map(step => {
                 const formatted = step.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
                 return `<li style="margin-bottom: 20px;">${formatted}</li>`;
             }).join('');
