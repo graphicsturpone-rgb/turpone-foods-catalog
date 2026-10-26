@@ -1153,15 +1153,15 @@ const productsData = [
   },
   {
     "id": 16,
-    "title": "Traditional Pizza Sauce (680mL)",
-    "title_fr": "Sauce à Pizza Traditionnelle (680mL)",
-    "title_es": "Salsa para Pizza Tradicional (680mL)",
+    "title": "Traditional Pizza Sauce (24 Oz)",
+    "title_fr": "Sauce à Pizza Traditionnelle (680g)",
+    "title_es": "Salsa para Pizza Tradicional (680g)",
     "category": "Pizza Sauce",
     "category_fr": "Sauces à pizza",
     "category_es": "Salsas para pizza",
     "image": "traditional-pizza-sauce-680g.webp",
     "description": "Martha Stewart Traditional Pizza Sauce combines vine-ripened crushed tomatoes with extra virgin olive oil, garlic, oregano, basil and black pepper for a classic, well-balanced flavor. Spread it over your favorite pizza dough and top with fresh mozzarella and basil for a simple, delicious pizza, or use it to bring rich tomato flavor to chicken parmesan, baked pasta and other Italian-inspired dishes.",
-    "description_fr": "Grand format 680 mL. La sauce à pizza traditionnelle Martha Stewart offre une texture veloutée et des saveurs italiennes pures pour toute la famille, idéale pour pizzas et pâtes au four.",
+    "description_fr": "Grand format 680g. La sauce à pizza traditionnelle Martha Stewart offre une texture veloutée et des saveurs italiennes pures pour toute la famille, idéale pour pizzas et pâtes au four.",
     "description_es": "Formato familiar 680g. La salsa para pizza tradicional Martha Stewart proporciona un sabor clásico inconfundible con ingredientes puros y naturales para toda la familia.",
     "features": "Featuring: Vine-ripened crushed tomatoes, extra virgin olive oil, garlic, oregano and basil",
     "features_fr": "Caractéristiques : Tomates broyées, huile d'olive extra vierge, ail, origan et basilic",
@@ -1183,8 +1183,8 @@ const productsData = [
       "traditional-pizza-sauce-680g-us-gallery-1.webp",
       "traditional-pizza-sauce-680g-us-gallery-2.webp"
     ],
-    "updated_at": 1793039192154,
-    "slug": "traditional-pizza-sauce-680ml"
+    "updated_at": 1793040984456,
+    "slug": "traditional-pizza-sauce-24-oz"
   },
   {
     "id": 21,
