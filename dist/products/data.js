@@ -495,7 +495,17 @@ const productsData = [
     "ingredients": "Ingredients: Wheat flour, water, fresh mozzarella, tomato sauce, basil, parmesan cheese, olive oil, salt, yeast.\nContains: Wheat, Milk.",
     "slug": "margherita-with-fresh-mozzarella-pizza-12",
     "aliasId": "prod_1791921826235",
-    "updated_at": 1792523400000
+    "updated_at": 1793038672361,
+    "title_fr": "Pizza Margherita à la Mozzarella Fraîche 12\"",
+    "title_es": "Pizza Margherita con Mozzarella Fresca 12\"",
+    "category_fr": "Pizzas surgelées",
+    "category_es": "Pizza congelada",
+    "description_fr": "La pizza Margherita avec mozzarella fraîche Martha Stewart associe des tomates mûries sur pied, de la mozzarella fraîche et du basilic sur une croûte étirée à la main et cuite sur pierre. Des ingrédients simples et classiques réunis pour une pizza savoureuse prête en quelques minutes.",
+    "description_es": "La pizza Margherita con mozzarella fresca Martha Stewart combina tomates madurados en rama, mozzarella fresca y albahaca sobre una masa artesanal horneada a la piedra. Ingredientes clásicos para disfrutar de una auténtica pizza de pizzería en casa.",
+    "features_fr": "Comprend : Tomates mûries sur pied, mozzarella fraîche et basilic",
+    "features_es": "Con: Tomates madurados en rama, mozzarella fresca y albahaca",
+    "ingredients_fr": "Ingrédients : Farine de blé, eau, mozzarella fraîche, sauce tomate, basilic, fromage parmesan, huile d'olive, sel, levure.\nContient : Blé, Lait.",
+    "ingredients_es": "Ingredientes: Harina de trigo, agua, mozzarella fresca, salsa de tomate, albahaca, queso parmesano, aceite de oliva, sal, levadura.\nContiene: Trigo, Leche."
   },
   {
     "id": 35,
@@ -527,7 +537,17 @@ const productsData = [
     "ingredients": "Ingredients: Wheat flour, water, mozzarella cheese, pepperoni, hot pickled peppers, tomato sauce, parmesan cheese, olive oil, salt, yeast.\nContains: Wheat, Milk.",
     "slug": "pepperoni-and-hot-pickled-peppers-pizza-12",
     "aliasId": "prod_1792073534950",
-    "updated_at": 1792523400000
+    "updated_at": 1793038672361,
+    "title_fr": "Pizza au Pepperoni et Piments Marinés Piquants 12\"",
+    "title_es": "Pizza de Pepperoni y Chiles Encurtidos Picantes 12\"",
+    "category_fr": "Pizzas surgelées",
+    "category_es": "Pizza congelada",
+    "description_fr": "La pizza au pepperoni et piments marinés piquants Martha Stewart combine pepperoni savoureux, piments marinés acidulés, mozzarella et parmesan sur une pâte cuite sur pierre. Une touche épicée et relevée sur la classique pizza au pepperoni.",
+    "description_es": "La pizza de pepperoni y chiles encurtidos picantes Martha Stewart combina delicioso pepperoni con chiles picantes encurtidos, mozzarella y parmesano en una masa horneada a la piedra.",
+    "features_fr": "Comprend : Pepperoni, piments marinés piquants, mozzarella et parmesan",
+    "features_es": "Con: Pepperoni, chiles encurtidos picantes, mozzarella y parmesano",
+    "ingredients_fr": "Ingrédients : Farine de blé, eau, fromage mozzarella, pepperoni, piments marinés piquants, sauce tomate, fromage parmesan, huile d'olive, sel, levure.\nContient : Blé, Lait.",
+    "ingredients_es": "Ingredientes: Harina de trigo, agua, queso mozzarella, pepperoni, chiles encurtidos picantes, salsa de tomate, queso parmesano, aceite de oliva, sal, levadura.\nContiene: Trigo, Leche."
   },
   {
     "id": 34,
@@ -559,7 +579,17 @@ const productsData = [
     "ingredients": "Ingredients: Wheat flour, water, mozzarella cheese, Italian sausage, hot honey, tomato sauce, olive oil, salt, yeast.\nContains: Wheat, Milk.",
     "slug": "sausage-and-hot-honey-pizza-12",
     "aliasId": "prod_1792068734118",
-    "updated_at": 1792523400000
+    "updated_at": 1793038672361,
+    "title_fr": "Pizza à la Saucisse Italienne et Miel Piquant 12\"",
+    "title_es": "Pizza de Salchicha Italiana y Miel Picante 12\"",
+    "category_fr": "Pizzas surgelées",
+    "category_es": "Pizza congelada",
+    "description_fr": "La pizza à la saucisse et miel piquant Martha Stewart marie saucisse italienne savoureuse et mozzarella fraîche avec un filet de miel piquant sur une croûte étirée à la main. L'équilibre parfait entre le fondant crémeux et une douce touche épicée.",
+    "description_es": "La pizza de salchicha y miel picante Martha Stewart combina sabrosa salchicha italiana y mozzarella fresca con un toque de miel picante sobre una masa artesanal horneada a la piedra para un equilibrio dulce y picante irresistible.",
+    "features_fr": "Comprend : Mozzarella fraîche, saucisse italienne et filet de miel piquant",
+    "features_es": "Con: Mozzarella fresca, salchicha italiana y miel picante",
+    "ingredients_fr": "Ingrédients : Farine de blé, eau, fromage mozzarella, saucisse italienne, miel piquant, sauce tomate, huile d'olive, sel, levure.\nContient : Blé, Lait.",
+    "ingredients_es": "Ingredientes: Harina de trigo, agua, queso mozzarella, salchicha italiana, miel picante, salsa de tomate, aceite de oliva, sal, levadura.\nContiene: Trigo, Leche."
   },
   {
     "id": 3,
@@ -949,8 +979,8 @@ const productsData = [
   {
     "id": 11,
     "title": "Roasted Garlic Pizza Sauce (375mL)",
-    "title_fr": "Sauce à Pizza à l'Ail Rôti (375g)",
-    "title_es": "Salsa para Pizza con Ajo Asado (375g)",
+    "title_fr": "Sauce à Pizza à l'Ail Rôti (375mL)",
+    "title_es": "Salsa para Pizza con Ajo Asado (375mL)",
     "category": "Pizza Sauce",
     "category_fr": "Sauces à pizza",
     "category_es": "Salsas para pizza",
@@ -979,13 +1009,13 @@ const productsData = [
       "roasted-garlic-pizza-sauce-375g-us-gallery-2.webp"
     ],
     "slug": "roasted-garlic-pizza-sauce-375ml",
-    "updated_at": 1793037464319
+    "updated_at": 1793038672361
   },
   {
     "id": 12,
     "title": "Roasted Garlic Pizza Sauce (680mL)",
-    "title_fr": "Sauce à Pizza à l'Ail Rôti (680g)",
-    "title_es": "Salsa para Pizza con Ajo Asado (680g)",
+    "title_fr": "Sauce à Pizza à l'Ail Rôti (680mL)",
+    "title_es": "Salsa para Pizza con Ajo Asado (680mL)",
     "category": "Pizza Sauce",
     "category_fr": "Sauces à pizza",
     "category_es": "Salsas para pizza",
@@ -1013,14 +1043,14 @@ const productsData = [
       "roasted-garlic-pizza-sauce-680g-us-gallery-1.webp",
       "roasted-garlic-pizza-sauce-680g-us-gallery-2.webp"
     ],
-    "updated_at": 1793037864776,
+    "updated_at": 1793038672361,
     "slug": "roasted-garlic-pizza-sauce-680ml"
   },
   {
     "id": 13,
     "title": "Spicy Pizza Sauce (375mL)",
-    "title_fr": "Sauce à Pizza Épicée (375g)",
-    "title_es": "Salsa para Pizza Picante (375g)",
+    "title_fr": "Sauce à Pizza Épicée (375mL)",
+    "title_es": "Salsa para Pizza Picante (375mL)",
     "category": "Pizza Sauce",
     "category_fr": "Sauces à pizza",
     "category_es": "Salsas para pizza",
@@ -1049,13 +1079,13 @@ const productsData = [
       "spicy-pizza-sauce-375g-us-gallery-2.webp"
     ],
     "slug": "spicy-pizza-sauce-375ml",
-    "updated_at": 1793038039614
+    "updated_at": 1793038672361
   },
   {
     "id": 14,
     "title": "Spicy Pizza Sauce (680mL)",
-    "title_fr": "Sauce à Pizza Épicée (680g)",
-    "title_es": "Salsa para Pizza Picante (680g)",
+    "title_fr": "Sauce à Pizza Épicée (680mL)",
+    "title_es": "Salsa para Pizza Picante (680mL)",
     "category": "Pizza Sauce",
     "category_fr": "Sauces à pizza",
     "category_es": "Salsas para pizza",
@@ -1083,14 +1113,14 @@ const productsData = [
       "spicy-pizza-sauce-680g-us-gallery-1.webp",
       "spicy-pizza-sauce-680g-us-gallery-2.webp"
     ],
-    "updated_at": 1793037505164,
+    "updated_at": 1793038672361,
     "slug": "spicy-pizza-sauce-680ml"
   },
   {
     "id": 15,
     "title": "Traditional Pizza Sauce (375mL)",
-    "title_fr": "Sauce à Pizza Traditionnelle (375g)",
-    "title_es": "Salsa para Pizza Tradicional (375g)",
+    "title_fr": "Sauce à Pizza Traditionnelle (375mL)",
+    "title_es": "Salsa para Pizza Tradicional (375mL)",
     "category": "Pizza Sauce",
     "category_fr": "Sauces à pizza",
     "category_es": "Salsas para pizza",
@@ -1119,13 +1149,13 @@ const productsData = [
       "traditional-pizza-sauce-375g-us-gallery-2.webp"
     ],
     "slug": "traditional-pizza-sauce-375ml",
-    "updated_at": 1793037532424
+    "updated_at": 1793038672361
   },
   {
     "id": 16,
     "title": "Traditional Pizza Sauce (680mL)",
-    "title_fr": "Sauce à Pizza Traditionnelle (680g)",
-    "title_es": "Salsa para Pizza Tradicional (680g)",
+    "title_fr": "Sauce à Pizza Traditionnelle (680mL)",
+    "title_es": "Salsa para Pizza Tradicional (680mL)",
     "category": "Pizza Sauce",
     "category_fr": "Sauces à pizza",
     "category_es": "Salsas para pizza",
@@ -1153,7 +1183,7 @@ const productsData = [
       "traditional-pizza-sauce-680g-us-gallery-1.webp",
       "traditional-pizza-sauce-680g-us-gallery-2.webp"
     ],
-    "updated_at": 1793037543162,
+    "updated_at": 1793038672361,
     "slug": "traditional-pizza-sauce-680ml"
   },
   {
@@ -1351,8 +1381,18 @@ const productsData = [
     "description": "Martha Stewart Neapolitan Style 00 Pizza Dough Mix is crafted with premium Italian 00 flour to create the light, airy crust with a delicate crisp that defines classic Neapolitan-style pizza. Stretch it thin, top with crushed tomatoes and fresh mozzarella, and bake at high heat for a restaurant-inspired Margherita at home. Designed for high-temperature baking, this flour mix gives you pizzeria-quality results in your home oven.",
     "features": "Featuring: Premium Italian 00 flour for high-heat pizza baking",
     "ingredients": "Made with: Premium Italian 00 flour.",
-    "updated_at": 1793030725410,
+    "updated_at": 1793038672361,
     "slug": "quick-rising-mix",
-    "aliasId": "prod_1793030722315"
+    "aliasId": "prod_1793030722315",
+    "title_fr": "Mélange à Levée Rapide",
+    "title_es": "Mezcla de Crecimiento Rápido",
+    "category_fr": "Farines à pizza",
+    "category_es": "Harina para pizza",
+    "description_fr": "Le mélange pour pâte à pizza à levée rapide Martha Stewart permet de préparer une pâte maison savoureuse et aérée en un temps record.",
+    "description_es": "La mezcla para masa de pizza de crecimiento rápido Martha Stewart facilita la preparación de una auténtica masa casera ligera y crujiente en poco tiempo.",
+    "features_fr": "Comprend : Farine de qualité supérieure et levure à action rapide",
+    "features_es": "Con: Harina de trigo prémium y levadura de acción rápida",
+    "ingredients_fr": "Ingrédients : Farine de blé enrichie, levure à action rapide, sel de mer, sucre de canne.\nContient : Blé.",
+    "ingredients_es": "Ingredientes: Harina de trigo enriquecida, levadura de acción rápida, sal marina, azúcar de caña.\nContiene: Trigo."
   }
 ];

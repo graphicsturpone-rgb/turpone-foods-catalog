@@ -1578,8 +1578,10 @@
                 updated_at: updatedAt
             };
 
-            // Preserve any existing translations if editing an existing item
+            // Preserve and intelligently synchronize translations if editing an existing item
             if (existingProduct) {
+                const titleChanged = existingProduct.title && productData.title && (existingProduct.title !== productData.title);
+
                 [
                     'title_fr', 'title_es',
                     'category_fr', 'category_es',
@@ -1591,6 +1593,23 @@
                         productData[key] = existingProduct[key];
                     }
                 });
+
+                if (titleChanged) {
+                    const oldParen = existingProduct.title.match(/\(([^)]+)\)/);
+                    const newParen = productData.title.match(/\(([^)]+)\)/);
+                    if (oldParen && newParen) {
+                        const oldSuffix = oldParen[0];
+                        const newSuffix = newParen[0];
+                        if (productData.title_fr) productData.title_fr = productData.title_fr.replace(oldSuffix, newSuffix);
+                        if (productData.title_es) productData.title_es = productData.title_es.replace(oldSuffix, newSuffix);
+                    }
+                    const oldInch = existingProduct.title.match(/\b(10|12)\s*["”']/);
+                    const newInch = productData.title.match(/\b(10|12)\s*["”']/);
+                    if (oldInch && newInch) {
+                        if (productData.title_fr) productData.title_fr = productData.title_fr.replace(oldInch[0], newInch[0]);
+                        if (productData.title_es) productData.title_es = productData.title_es.replace(oldInch[0], newInch[0]);
+                    }
+                }
             }
 
             // 1. Save locally

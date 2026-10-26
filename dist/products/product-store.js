@@ -83,6 +83,25 @@
                         updated[k] = baseProd[k];
                     }
                 });
+
+                // If title in custom draft changed, ensure title_fr and title_es match the updated size/volume
+                if (custom.title && baseProd.title && custom.title !== baseProd.title) {
+                    const oldParen = baseProd.title.match(/\(([^)]+)\)/);
+                    const newParen = custom.title.match(/\(([^)]+)\)/);
+                    if (oldParen && newParen) {
+                        const oldSuffix = oldParen[0];
+                        const newSuffix = newParen[0];
+                        if (updated.title_fr) updated.title_fr = updated.title_fr.replace(oldSuffix, newSuffix);
+                        if (updated.title_es) updated.title_es = updated.title_es.replace(oldSuffix, newSuffix);
+                    }
+                    const oldInch = baseProd.title.match(/\b(10|12)\s*["”']/);
+                    const newInch = custom.title.match(/\b(10|12)\s*["”']/);
+                    if (oldInch && newInch) {
+                        if (updated.title_fr) updated.title_fr = updated.title_fr.replace(oldInch[0], newInch[0]);
+                        if (updated.title_es) updated.title_es = updated.title_es.replace(oldInch[0], newInch[0]);
+                    }
+                }
+
                 merged[index] = updated;
             } else {
                 activeDrafts.push(custom);

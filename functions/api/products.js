@@ -416,6 +416,24 @@ export async function onRequest(context) {
                 const existing = products[existingIndex];
                 const updatedProduct = { ...existing, ...product };
 
+                // Intelligently synchronize title translations across languages if title was modified
+                if (existing.title && updatedProduct.title && existing.title !== updatedProduct.title) {
+                    const oldParen = existing.title.match(/\(([^)]+)\)/);
+                    const newParen = updatedProduct.title.match(/\(([^)]+)\)/);
+                    if (oldParen && newParen) {
+                        const oldSuffix = oldParen[0];
+                        const newSuffix = newParen[0];
+                        if (updatedProduct.title_fr) updatedProduct.title_fr = updatedProduct.title_fr.replace(oldSuffix, newSuffix);
+                        if (updatedProduct.title_es) updatedProduct.title_es = updatedProduct.title_es.replace(oldSuffix, newSuffix);
+                    }
+                    const oldInch = existing.title.match(/\b(10|12)\s*["”']/);
+                    const newInch = updatedProduct.title.match(/\b(10|12)\s*["”']/);
+                    if (oldInch && newInch) {
+                        if (updatedProduct.title_fr) updatedProduct.title_fr = updatedProduct.title_fr.replace(oldInch[0], newInch[0]);
+                        if (updatedProduct.title_es) updatedProduct.title_es = updatedProduct.title_es.replace(oldInch[0], newInch[0]);
+                    }
+                }
+
                 // Strictly isolate market images and galleries
                 const effCa = (product.image_ca !== undefined) ? product.image_ca : (existing.image_ca || "");
                 const effUs = (product.image_us !== undefined) ? product.image_us : (existing.image_us || "");
