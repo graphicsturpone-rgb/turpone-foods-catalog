@@ -1033,7 +1033,7 @@ const productsData = [
     "features_es": "Características: Tomates madurados triturados, chiles secos, aceite de oliva virgen extra, ajo y albahaca",
     "gallery": [
       "spicy-pizza-sauce-375g-gallery-1.webp",
-      "spicy-pizza-sauce-375g-gallery-2.webp"
+      "spicy-pizza-sauce-375ml-ca-gal-2-1793038039614.webp"
     ],
     "ingredients": "Ingredients: Vine-ripened crushed tomatoes, water, extra-virgin olive oil, chopped garlic, sea salt, crushed chilies, oregano, basil, black pepper.",
     "ingredients_fr": "Ingrédients : Tomates broyées mûries sur pied, eau, huile d'olive extra vierge, ail haché, sel de mer, piments concassés, origan, basilic, poivre noir.",
@@ -1042,14 +1042,14 @@ const productsData = [
     "image_us": "spicy-pizza-sauce-375g-us.webp",
     "gallery_ca": [
       "spicy-pizza-sauce-375g-gallery-1.webp",
-      "spicy-pizza-sauce-375g-gallery-2.webp"
+      "spicy-pizza-sauce-375ml-ca-gal-2-1793038039614.webp"
     ],
     "gallery_us": [
       "spicy-pizza-sauce-375g-us-gallery-1.webp",
       "spicy-pizza-sauce-375g-us-gallery-2.webp"
     ],
     "slug": "spicy-pizza-sauce-375ml",
-    "updated_at": 1793037490289
+    "updated_at": 1793038039614
   },
   {
     "id": 14,
