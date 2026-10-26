@@ -744,22 +744,32 @@ const productsData = [
     "category": "Seasoning",
     "category_fr": "Assaisonnements",
     "category_es": "Sazonadores y especias",
-    "image": "Garden-Herb-Seasoning.webp",
+    "image": "garden-herb-seasoning-v1793029051715-ca.webp",
     "description": "Martha Stewart Garden Herb Seasoning is a bright, savory blend of sea salt, herbs, onion, garlic, black pepper and lemon. Sprinkle it over oven-baked pizza for an easy finishing touch, season roasted vegetables, chicken or potatoes, or mix it with mayonnaise and sour cream for a quick herb dip. Its fresh, versatile flavor makes it an effortless addition to everyday cooking.",
     "description_fr": "L'assaisonnement aux herbes du jardin Martha Stewart est un mélange vivifiant de sel de mer, aneth, persil, ciboulette, ail et zeste de citron. Parfait sur les légumes rôtis, volailles, pommes de terre et trempettes.",
     "description_es": "El sazonador de hierbas del huerto Martha Stewart es una mezcla fresca y aromática de sal marina, hierbas finas, cebolla, ajo, pimienta negra y toque de limón. Excelente para vegetales asados y carnes.",
     "features": "Featuring: Sea salt, dill, parsley, chives, garlic and lemon peel",
     "features_fr": "Caractéristiques : Sel de mer, aneth, persil, ciboulette, ail et zeste de citron",
     "features_es": "Características: Sal marina, eneldo, perejil, cebollino, ajo y ralladura de limón",
-    "gallery": [],
+    "gallery": [
+      "garden-herb-seasoning-ca-gal-1-1793029051715.webp",
+      "garden-herb-seasoning-ca-gal-2-1793029051715.webp"
+    ],
     "ingredients": "Ingredients: Sea salt, herbs (dill weed, parsley, chives), dehydrated vegetables (onion, garlic), black pepper, lemon juice powder, dehydrated lemon peel, natural lemon flavor, citric acid.",
     "ingredients_fr": "Ingrédients : Sel de mer, herbes (aneth, persil, ciboulette), légumes déshydratés (oignon, ail), poivre noir, jus de citron en poudre, zeste de citron déshydraté, arôme naturel de citron, acide citrique.",
     "ingredients_es": "Ingredientes: Sal marina, hierbas aromáticas (eneldo, perejil, cebollino), verduras deshidratadas (cebolla, ajo), pimienta negra, jugo de limón en polvo, cáscara de limón deshidratada, aroma natural de limón, ácido cítrico.",
-    "image_ca": "Garden-Herb-Seasoning.webp",
-    "image_us": "",
-    "gallery_ca": [],
-    "gallery_us": [],
-    "updated_at": 1792523400000
+    "image_ca": "garden-herb-seasoning-v1793029051715-ca.webp",
+    "image_us": "garden-herb-seasoning-v1793029051715-us.webp",
+    "gallery_ca": [
+      "garden-herb-seasoning-ca-gal-1-1793029051715.webp",
+      "garden-herb-seasoning-ca-gal-2-1793029051715.webp"
+    ],
+    "gallery_us": [
+      "garden-herb-seasoning-us-gal-1-1793029051715.webp",
+      "garden-herb-seasoning-us-gal-2-1793029051715.webp"
+    ],
+    "updated_at": 1793029051715,
+    "slug": "garden-herb-seasoning"
   },
   {
     "id": 18,
