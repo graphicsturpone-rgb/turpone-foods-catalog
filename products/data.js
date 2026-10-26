@@ -744,22 +744,32 @@ const productsData = [
     "category": "Honeys",
     "category_fr": "Miels gastronomiques",
     "category_es": "Mieles gastronómicas",
-    "image": "Lemon-Black-Pepper-Honey-Drizzle.webp",
+    "image": "lemon-black-pepper-honey-drizzle-v1793029884478-ca.webp",
     "description": "Martha Stewart Lemon Black Pepper Honey Drizzle brings together raw lemon honey, bright citrus and black pepper for a sweet, zesty flavor with a subtle peppery finish. Drizzle it over pizza, grilled salmon or roasted vegetables, or pair it with cheese for an effortless appetizer. Its balance of sweetness, citrus and pepper makes it a versatile finishing touch for both savory and sweet dishes.",
     "description_fr": "Le filet de miel au citron et poivre noir Martha Stewart rassemble du miel brut de citronnier, des notes d'agrumes éclatantes et du poivre noir pour une harmonie douce et piquante. Rehausse le saumon grillé, les pizzas, fromages fins et desserts.",
     "description_es": "La miel para rociar con limón y pimienta negra Martha Stewart equilibra el dulzor natural de la miel con toques cítricos y el picor elegante de la pimienta negra. Ideal sobre salmón a la plancha, quesos maduros y pizzas.",
     "features": "Featuring: Raw lemon honey, lemon extract and black pepper",
     "features_fr": "Caractéristiques : Miel brut de citron, extrait naturel de citron et poivre noir",
     "features_es": "Características: Miel cruda de limón, extracto de limón y pimienta negra",
-    "gallery": [],
+    "gallery": [
+      "lemon-black-pepper-honey-drizzle-ca-gal-1-1793029884478.webp",
+      "lemon-black-pepper-honey-drizzle-ca-gal-2-1793029884478.webp"
+    ],
     "ingredients": "Ingredients: Raw lemon honey, lemon extract, black pepper.",
     "ingredients_fr": "Ingrédients : Miel brut de citron, extrait de citron, poivre noir.",
     "ingredients_es": "Ingredientes: Miel pura de limón, extracto de limón, pimienta negra.",
-    "image_ca": "Lemon-Black-Pepper-Honey-Drizzle.webp",
-    "image_us": "",
-    "gallery_ca": [],
-    "gallery_us": [],
-    "updated_at": 1792523400000
+    "image_ca": "lemon-black-pepper-honey-drizzle-v1793029884478-ca.webp",
+    "image_us": "lemon-black-pepper-honey-drizzle-v1793029884478-us.webp",
+    "gallery_ca": [
+      "lemon-black-pepper-honey-drizzle-ca-gal-1-1793029884478.webp",
+      "lemon-black-pepper-honey-drizzle-ca-gal-2-1793029884478.webp"
+    ],
+    "gallery_us": [
+      "lemon-black-pepper-honey-drizzle-us-gal-1-1793029884478.webp",
+      "lemon-black-pepper-honey-drizzle-us-gal-2-1793029884478.webp"
+    ],
+    "updated_at": 1793029884478,
+    "slug": "lemon-black-pepper-honey-drizzle"
   },
   {
     "id": 8,
