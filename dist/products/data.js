@@ -1083,15 +1083,15 @@ const productsData = [
   },
   {
     "id": 14,
-    "title": "Spicy Pizza Sauce (680mL)",
-    "title_fr": "Sauce à Pizza Épicée (680mL)",
-    "title_es": "Salsa para Pizza Picante (680mL)",
+    "title": "Spicy Pizza Sauce (24 Oz)",
+    "title_fr": "Sauce à Pizza Épicée (680g)",
+    "title_es": "Salsa para Pizza Picante (680g)",
     "category": "Pizza Sauce",
     "category_fr": "Sauces à pizza",
     "category_es": "Salsas para pizza",
     "image": "spicy-pizza-sauce-680g.webp",
     "description": "Martha Stewart Spicy Pizza Sauce combines vine-ripened crushed tomatoes, extra virgin olive oil, garlic, oregano and basil with crushed chilies for a flavorful kick of heat. Use it as the base for a spicy pizza topped with Italian sausage, mozzarella and your favorite vegetables, or spoon it over polenta for a quick and flavorful meal. It's an easy way to add bold tomato flavor and a touch of heat to your favorite dishes.",
-    "description_fr": "Grand format 680 mL. La sauce à pizza épicée Martha Stewart sublime les pizzas à la saucisse italienne et les calzones avec son savoureux mélange de piments concassés et tomates mûries au soleil.",
+    "description_fr": "Grand format 680g. La sauce à pizza épicée Martha Stewart sublime les pizzas à la saucisse italienne et les calzones avec son savoureux mélange de piments concassés et tomates mûries au soleil.",
     "description_es": "Formato familiar 680g. La salsa para pizza picante Martha Stewart agrega audacia y calor suave con tomates maduros, aceite de oliva virgen extra y chiles finamente picados.",
     "features": "Featuring: Vine-ripened crushed tomatoes, crushed chilies, extra virgin olive oil, garlic and basil",
     "features_fr": "Caractéristiques : Tomates broyées, piments concassés, huile d'olive extra vierge, ail et basilic",
@@ -1113,8 +1113,8 @@ const productsData = [
       "spicy-pizza-sauce-680g-us-gallery-1.webp",
       "spicy-pizza-sauce-680g-us-gallery-2.webp"
     ],
-    "updated_at": 1793039192154,
-    "slug": "spicy-pizza-sauce-680ml"
+    "updated_at": 1793040957599,
+    "slug": "spicy-pizza-sauce-24-oz"
   },
   {
     "id": 15,
