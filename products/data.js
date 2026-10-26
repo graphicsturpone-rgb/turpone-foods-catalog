@@ -709,22 +709,32 @@ const productsData = [
     "category": "Honeys",
     "category_fr": "Miels gastronomiques",
     "category_es": "Mieles gastronómicas",
-    "image": "Fig-Oregano-Honey-Drizzle.webp",
+    "image": "fig-oregano-honey-drizzle-v1793029712357-ca.webp",
     "description": "Martha Stewart Fig Oregano Honey Drizzle combines raw fig honey with oregano and black pepper for a rich, subtly savory take on traditional honey. Perfect for drizzling over pizza, warm goat cheese or a fresh salad, it also pairs beautifully with grilled lamb and roasted vegetables. The combination of sweet fig, fragrant oregano and black pepper adds a distinctive finishing touch to everything from appetizers to main dishes.",
     "description_fr": "Le filet de miel à la figue et à l'origan Martha Stewart unit le miel brut de figue, l'origan parfumé et le poivre noir pour une nuance délicatement sucrée-salée. Sublime sur les pizzas artisanales, fromages de chèvre chauds, agneau grillé et salades.",
     "description_es": "La miel para rociar con higo y orégano Martha Stewart combina miel pura de higo con orégano y pimienta negra para un toque agridulce sofisticado. Excelente sobre pizzas, queso de cabra tibio, cordero y verduras asadas.",
     "features": "Featuring: Raw fig honey, black pepper and dried oregano leaves",
     "features_fr": "Caractéristiques : Miel brut de figue, poivre noir et feuilles d'origan séchées",
     "features_es": "Características: Miel cruda de higo, pimienta negra y hojas de orégano seco",
-    "gallery": [],
+    "gallery": [
+      "fig-oregano-honey-drizzle-ca-gal-1-1793029712357.webp",
+      "fig-oregano-honey-drizzle-ca-gal-2-1793029712357.webp"
+    ],
     "ingredients": "Ingredients: Raw fig honey, black pepper, dried oregano leaves.",
     "ingredients_fr": "Ingrédients : Miel brut de figue, poivre noir, feuilles d'origan séchées.",
     "ingredients_es": "Ingredientes: Miel pura de higo, pimienta negra, hojas de orégano seco.",
-    "image_ca": "Fig-Oregano-Honey-Drizzle.webp",
-    "image_us": "",
-    "gallery_ca": [],
-    "gallery_us": [],
-    "updated_at": 1792523400000
+    "image_ca": "fig-oregano-honey-drizzle-v1793029712357-ca.webp",
+    "image_us": "fig-oregano-honey-drizzle-v1793029712357-us.webp",
+    "gallery_ca": [
+      "fig-oregano-honey-drizzle-ca-gal-1-1793029712357.webp",
+      "fig-oregano-honey-drizzle-ca-gal-2-1793029712357.webp"
+    ],
+    "gallery_us": [
+      "fig-oregano-honey-drizzle-us-gal-1-1793029712357.webp",
+      "fig-oregano-honey-drizzle-us-gal-2-1793029712357.webp"
+    ],
+    "updated_at": 1793029712357,
+    "slug": "fig-oregano-honey-drizzle"
   },
   {
     "id": 7,
