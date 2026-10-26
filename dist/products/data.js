@@ -1344,11 +1344,10 @@ const productsData = [
     ],
     "gallery_us": [
       "new-york-style-pizza-dough-balls-us-gal-1-1793041521417.webp",
-      "new-york-style-pizza-dough-balls-us-gal-2-1793041521417.webp",
       "new-york-style-pizza-dough-balls-us-gal-3-1793041521417.webp",
       "new-york-style-pizza-dough-balls-us-gal-4-1793041521417.webp"
     ],
-    "updated_at": 1793041604428,
+    "updated_at": 1793042638447,
     "slug": "new-york-style-pizza-dough-balls"
   },
   {
