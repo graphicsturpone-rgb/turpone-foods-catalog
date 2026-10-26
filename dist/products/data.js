@@ -978,9 +978,9 @@ const productsData = [
   },
   {
     "id": 11,
-    "title": "Roasted Garlic Pizza Sauce (375mL)",
-    "title_fr": "Sauce à Pizza à l'Ail Rôti (375mL)",
-    "title_es": "Salsa para Pizza con Ajo Asado (375mL)",
+    "title": "Roasted Garlic Pizza Sauce (14 Oz)",
+    "title_fr": "Sauce à Pizza à l'Ail Rôti (375g)",
+    "title_es": "Salsa para Pizza con Ajo Asado (375g)",
     "category": "Pizza Sauce",
     "category_fr": "Sauces à pizza",
     "category_es": "Salsas para pizza",
@@ -1008,8 +1008,8 @@ const productsData = [
       "roasted-garlic-pizza-sauce-375g-us-gallery-1.webp",
       "roasted-garlic-pizza-sauce-375g-us-gallery-2.webp"
     ],
-    "slug": "roasted-garlic-pizza-sauce-375ml",
-    "updated_at": 1793038672361
+    "slug": "roasted-garlic-pizza-sauce-14-oz",
+    "updated_at": 1793040907392
   },
   {
     "id": 12,
