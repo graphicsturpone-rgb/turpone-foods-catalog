@@ -814,22 +814,32 @@ const productsData = [
     "category": "Seasoning",
     "category_fr": "Assaisonnements",
     "category_es": "Sazonadores y especias",
-    "image": "Sweet-Italian-Seasoning.webp",
+    "image": "sweet-italian-seasoning-v1793029196345-ca.webp",
     "description": "Martha Stewart Sweet Italian Seasoning brings together sea salt, garlic, onion, red bell pepper, fennel seed and rosemary for a savory, aromatic blend with a subtle touch of sweetness. Sprinkle it over oven-baked pizza, use it to season pork or chicken, or add it to roasted vegetables and potatoes. Its classic Italian-inspired flavors make it a versatile pantry staple for adding depth to everyday dishes.",
     "description_fr": "L'assaisonnement doux à l'italienne Martha Stewart associe sel de mer, ail, oignon, graines de fenouil et romarin avec une subtile touche sucrée. Indispensable pour assaisonner porc, volailles, pommes de terre et pâtes.",
     "description_es": "El sazonador italiano dulce Martha Stewart une sal marina, ajo, cebolla, pimiento rojo, semillas de hinojo y romero con un toque sutilmente dulce. Un condimento versátil para aves, carnes y pastas.",
     "features": "Featuring: Sea salt, garlic, onion, red bell pepper, fennel seed and rosemary",
     "features_fr": "Caractéristiques : Sel de mer, ail, oignon, poivron rouge, graines de fenouil et romarin",
     "features_es": "Características: Sal marina, ajo, cebolla, pimiento rojo, semillas de hinojo y romero",
-    "gallery": [],
+    "gallery": [
+      "sweet-italian-seasoning-ca-gal-1-1793029196345.webp",
+      "sweet-italian-seasoning-ca-gal-2-1793029196345.webp"
+    ],
     "ingredients": "Ingredients: Sea salt, dehydrated vegetables (garlic, onion, red bell pepper), fennel seed, rosemary, olive oil.",
     "ingredients_fr": "Ingrédients : Sel de mer, légumes déshydratés (ail, oignon, poivron rouge), graines de fenouil, romarin, huile d'olive.",
     "ingredients_es": "Ingredientes: Sal marina, verduras deshidratadas (ajo, cebolla, pimiento rojo), semillas de hinojo, romero, aceite de oliva.",
-    "image_ca": "Sweet-Italian-Seasoning.webp",
-    "image_us": "",
-    "gallery_ca": [],
-    "gallery_us": [],
-    "updated_at": 1792523400000
+    "image_ca": "sweet-italian-seasoning-v1793029196345-ca.webp",
+    "image_us": "sweet-italian-seasoning-v1793029196345-us.webp",
+    "gallery_ca": [
+      "sweet-italian-seasoning-ca-gal-1-1793029196345.webp",
+      "sweet-italian-seasoning-ca-gal-2-1793029196345.webp"
+    ],
+    "gallery_us": [
+      "sweet-italian-seasoning-us-gal-1-1793029196345.webp",
+      "sweet-italian-seasoning-us-gal-2-1793029196345.webp"
+    ],
+    "updated_at": 1793029196345,
+    "slug": "sweet-italian-seasoning"
   },
   {
     "id": 20,
