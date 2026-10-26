@@ -569,22 +569,32 @@ const productsData = [
     "category": "Infused Oils",
     "category_fr": "Huiles infusées",
     "category_es": "Aceites infusionados",
-    "image": "Balsamic-Garlic-and-Herb-Infused-Extra-Virgin-Olive-Oil.webp",
+    "image": "balsamic-garlic-herb-infused-extra-virgin-olive-oil-v1793029338421-ca.webp",
     "description": "Martha Stewart Balsamic Garlic & Herb Infused Extra Virgin Olive Oil combines extra virgin olive oil with balsamic vinegar, basil, garlic, oregano, thyme and a touch of crushed red pepper. Rich, aromatic and wonderfully versatile, it brings an extra layer of flavor to oven-baked pizzas and makes an effortless base for salad dressings and vinaigrettes. Drizzle it over fresh bread, roasted vegetables or your favorite dishes for an easy finishing touch.",
     "description_fr": "L'huile d'olive extra vierge infusée au vinaigre balsamique, ail et fines herbes Martha Stewart allie une huile d'olive de première pression à du vinaigre balsamique, basilic, ail, origan, thym et piment broyé. Aromatique et polyvalente, elle rehausse les pizzas, vinaigrettes et légumes rôtis.",
     "description_es": "El aceite de oliva virgen extra infusionado con balsámico, ajo y hierbas Martha Stewart combina aceite virgen extra con vinagre balsámico, albahaca, ajo, orégano, tomillo y pimiento rojo triturado. Aromático y versátil, ideal para pizzas, panes y aderezos.",
     "features": "Featuring: Extra-virgin olive oil, balsamic vinegar, garlic, basil, oregano and thyme",
     "features_fr": "Caractéristiques : Huile d'olive extra vierge, vinaigre balsamique, ail, basilic, origan et thym",
     "features_es": "Características: Aceite de oliva virgen extra, vinagre balsámico, ajo, albahaca, orégano y tomillo",
-    "gallery": [],
+    "gallery": [
+      "balsamic-garlic-herb-infused-extra-virgin-olive-oil-ca-gal-1-1793029338421.webp",
+      "balsamic-garlic-herb-infused-extra-virgin-olive-oil-ca-gal-2-1793029338421.webp"
+    ],
     "ingredients": "Ingredients: Extra-virgin olive oil, balsamic vinegar, basil, crushed red pepper, garlic, oregano, thyme, natural flavorings (liquid garlic flavor).",
     "ingredients_fr": "Ingrédients : Huile d'olive extra vierge, vinaigre balsamique, basilic, piment rouge broyé, ail, origan, thym, arômes naturels d'ail.",
     "ingredients_es": "Ingredientes: Aceite de oliva virgen extra, vinagre balsámico, albahaca, pimiento rojo triturado, ajo, orégano, tomillo, aromas naturales de ajo.",
-    "image_ca": "Balsamic-Garlic-and-Herb-Infused-Extra-Virgin-Olive-Oil.webp",
-    "image_us": "",
-    "gallery_ca": [],
-    "gallery_us": [],
-    "updated_at": 1792523400000
+    "image_ca": "balsamic-garlic-herb-infused-extra-virgin-olive-oil-v1793029338421-ca.webp",
+    "image_us": "balsamic-garlic-herb-infused-extra-virgin-olive-oil-v1793029338421-us.webp",
+    "gallery_ca": [
+      "balsamic-garlic-herb-infused-extra-virgin-olive-oil-ca-gal-1-1793029338421.webp",
+      "balsamic-garlic-herb-infused-extra-virgin-olive-oil-ca-gal-2-1793029338421.webp"
+    ],
+    "gallery_us": [
+      "balsamic-garlic-herb-infused-extra-virgin-olive-oil-us-gal-1-1793029338421.webp",
+      "balsamic-garlic-herb-infused-extra-virgin-olive-oil-us-gal-2-1793029338421.webp"
+    ],
+    "updated_at": 1793029338421,
+    "slug": "balsamic-garlic-herb-infused-extra-virgin-olive-oil"
   },
   {
     "id": 5,
