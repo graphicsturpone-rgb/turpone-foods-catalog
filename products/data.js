@@ -1123,7 +1123,7 @@ const productsData = [
   },
   {
     "id": 16,
-    "title": "Traditional Pizza Sauce (680g)",
+    "title": "Traditional Pizza Sauce (680mL)",
     "title_fr": "Sauce à Pizza Traditionnelle (680g)",
     "title_es": "Salsa para Pizza Tradicional (680g)",
     "category": "Pizza Sauce",
@@ -1153,8 +1153,8 @@ const productsData = [
       "traditional-pizza-sauce-680g-us-gallery-1.webp",
       "traditional-pizza-sauce-680g-us-gallery-2.webp"
     ],
-    "updated_at": 1792520321704,
-    "slug": "traditional-pizza-sauce-680g"
+    "updated_at": 1793037543162,
+    "slug": "traditional-pizza-sauce-680ml"
   },
   {
     "id": 21,
