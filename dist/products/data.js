@@ -1118,9 +1118,9 @@ const productsData = [
   },
   {
     "id": 15,
-    "title": "Traditional Pizza Sauce (375mL)",
-    "title_fr": "Sauce à Pizza Traditionnelle (375mL)",
-    "title_es": "Salsa para Pizza Tradicional (375mL)",
+    "title": "Traditional Pizza Sauce (14 Oz)",
+    "title_fr": "Sauce à Pizza Traditionnelle (375g)",
+    "title_es": "Salsa para Pizza Tradicional (375g)",
     "category": "Pizza Sauce",
     "category_fr": "Sauces à pizza",
     "category_es": "Salsas para pizza",
@@ -1148,8 +1148,8 @@ const productsData = [
       "traditional-pizza-sauce-375g-us-gallery-1.webp",
       "traditional-pizza-sauce-375g-us-gallery-2.webp"
     ],
-    "slug": "traditional-pizza-sauce-375ml",
-    "updated_at": 1793038672361
+    "slug": "traditional-pizza-sauce-14-oz",
+    "updated_at": 1793040969520
   },
   {
     "id": 16,
