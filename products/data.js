@@ -304,10 +304,10 @@ const productsData = [
   {
     "id": 29,
     "title": "Sausage and Hot Honey Pizza 10\"",
-    "title_fr": "Pizza à la Saucisse Italienne et Miel Piquant 10\"",
+    "title_fr": "Pizza à la Saucisse Italienne et Miel Piquant",
     "title_es": "Pizza de Salchicha Italiana y Miel Picante",
     "category": "Frozen Pizza",
-    "category_fr": "Pizzas surgelées",
+    "category_fr": "Pizza surgelée",
     "category_es": "Pizza congelada",
     "image": "sausage-and-hot-honey-pizza-10.webp",
     "description": "Martha Stewart Sausage and Hot Honey Pizza pairs savory Italian sausage and fresh mozzarella with a drizzle of hot honey on a hand-stretched, stone-baked crust. The combination of savory sausage, creamy cheese and sweet heat creates a bold balance of flavors in every bite. Simply bake until golden for a distinctive, pizzeria-inspired pizza that's ready to enjoy at home in minutes.",
@@ -334,13 +334,13 @@ const productsData = [
       "sausage-and-hot-honey-pizza-10-gallery-4.webp"
     ],
     "gallery_us": [
-      "sausage-and-hot-honey-pizza-10-us-gallery-1.webp",
-      "sausage-and-hot-honey-pizza-10-us-gallery-2.webp",
-      "sausage-and-hot-honey-pizza-10-us-gallery-3.webp",
-      "sausage-and-hot-honey-pizza-10-us-gallery-4.webp"
+      "sausage-and-hot-honey-pizza-10-us-gal-1-1793040029175.webp",
+      "sausage-and-hot-honey-pizza-10-us-gal-2-1793040029175.webp",
+      "sausage-and-hot-honey-pizza-10-us-gal-3-1793040029175.webp",
+      "sausage-and-hot-honey-pizza-10-us-gal-4-1793040029175.webp"
     ],
     "slug": "sausage-and-hot-honey-pizza-10",
-    "updated_at": 1793039192154
+    "updated_at": 1793040029175
   },
   {
     "id": 32,
