@@ -639,22 +639,32 @@ const productsData = [
     "category": "Infused Oils",
     "category_fr": "Huiles infusées",
     "category_es": "Aceites infusionados",
-    "image": "Roasted-Garlic-Infused-Extra-Virgin-Olive-Oil.webp",
+    "image": "roasted-garlic-infused-extra-virgin-olive-oil-v1793029563457-ca.webp",
     "description": "Martha Stewart Roasted Garlic Infused Extra Virgin Olive Oil brings together extra virgin olive oil with the rich, savory flavor of roasted garlic, rosemary, thyme and oregano. Fragrant and versatile, it adds delicious depth to oven-baked pizzas and is equally at home drizzled over vegetables, pasta or crusty bread. Try rubbing it over a whole chicken before roasting for a beautifully golden, flavorful finish.",
     "description_fr": "L'huile d'olive extra vierge infusée à l'ail rôti Martha Stewart marie l'huile d'olive de première pression à de l'ail rôti suave, du romarin, du thym et de l'origan. Exquise pour badigeonner volailles et arroser pizzas ou pains chauds.",
     "description_es": "El aceite de oliva virgen extra infusionado con ajo asado Martha Stewart combina aceite virgen extra con ajo dorado, romero, tomillo y orégano. Da un toque gourmet a pastas, carnes y panes rústicos.",
     "features": "Featuring: Extra-virgin olive oil, roasted garlic, rosemary, thyme and oregano",
     "features_fr": "Caractéristiques : Huile d'olive extra vierge, ail rôti, romarin, thym et origan",
     "features_es": "Características: Aceite de oliva virgen extra, ajo asado, romero, tomillo y orégano",
-    "gallery": [],
+    "gallery": [
+      "roasted-garlic-infused-extra-virgin-olive-oil-ca-gal-1-1793029563457.webp",
+      "roasted-garlic-infused-extra-virgin-olive-oil-ca-gal-2-1793029563457.webp"
+    ],
     "ingredients": "Ingredients: Extra-virgin olive oil, rosemary, minced garlic, thyme, oregano, natural flavorings (liquid garlic flavor).",
     "ingredients_fr": "Ingrédients : Huile d'olive extra vierge, romarin, ail haché, thym, origan, arômes naturels d'ail.",
     "ingredients_es": "Ingredientes: Aceite de oliva virgen extra, romero, ajo picado, tomillo, orégano, aromas naturales de ajo.",
-    "image_ca": "Roasted-Garlic-Infused-Extra-Virgin-Olive-Oil.webp",
-    "image_us": "",
-    "gallery_ca": [],
-    "gallery_us": [],
-    "updated_at": 1792523400000
+    "image_ca": "roasted-garlic-infused-extra-virgin-olive-oil-v1793029563457-ca.webp",
+    "image_us": "roasted-garlic-infused-extra-virgin-olive-oil-v1793029563457-us.webp",
+    "gallery_ca": [
+      "roasted-garlic-infused-extra-virgin-olive-oil-ca-gal-1-1793029563457.webp",
+      "roasted-garlic-infused-extra-virgin-olive-oil-ca-gal-2-1793029563457.webp"
+    ],
+    "gallery_us": [
+      "roasted-garlic-infused-extra-virgin-olive-oil-us-gal-1-1793029563457.webp",
+      "roasted-garlic-infused-extra-virgin-olive-oil-us-gal-2-1793029563457.webp"
+    ],
+    "updated_at": 1793029563457,
+    "slug": "roasted-garlic-infused-extra-virgin-olive-oil"
   },
   {
     "id": 30,
