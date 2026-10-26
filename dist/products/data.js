@@ -1252,22 +1252,38 @@ const productsData = [
     "category": "Frozen Pizza Dough",
     "category_fr": "Pâtes à pizza surgelées",
     "category_es": "Masa de pizza congelada",
-    "image": "Neapolitan-Style-Frozen-Pizza-Dough.webp",
+    "image": "neapolitan-style-pizza-dough-balls-v1793031174722-ca.webp",
     "description": "Martha Stewart Neapolitan Style Pizza Dough Balls make it easy to create authentic, pizzeria-inspired pizza at home with a light, airy crust and beautifully crisp exterior. Simply thaw, stretch and top with your favorite sauce, cheese and toppings. Perfect for a classic Margherita or your own creation, each ready-to-use dough ball takes the work out of making dough from scratch while delivering delicious homemade results.",
     "description_fr": "Les boules de pâte à pizza style napolitain Martha Stewart facilitent la préparation de véritables pizzas de chef à la maison. Décongelez, étirez et garnissez pour une croûte aérée et croustillante.",
     "description_es": "Las bolas de masa para pizza estilo napolitano Martha Stewart permiten preparar pizzas artesanales en casa sin complicaciones. Descongele, extienda y hornee para una masa suave, ligera y crujiente.",
     "features": "2 ready-to-use pizza dough balls",
     "features_fr": "2 boules de pâte à pizza prêtes à l'emploi",
     "features_es": "2 bolas de masa para pizza listas para usar",
-    "gallery": [],
+    "gallery": [
+      "neapolitan-style-pizza-dough-balls-ca-gal-1-1793031174722.webp",
+      "neapolitan-style-pizza-dough-balls-ca-gal-2-1793031174722.webp",
+      "neapolitan-style-pizza-dough-balls-ca-gal-3-1793031174722.webp",
+      "neapolitan-style-pizza-dough-balls-ca-gal-4-1793031174722.webp"
+    ],
     "ingredients": "Ingredients: Enriched wheat flour, water, sourdough starter, sea salt, extra virgin olive oil, yeast.\nContains: Wheat.",
     "ingredients_fr": "Ingrédients : Farine de blé enrichie, eau, levain naturel, sel de mer, huile d'olive extra vierge, levure.\nContient : Blé.",
     "ingredients_es": "Ingredientes: Harina de trigo enriquecida, agua, masa madre natural, sal marina, aceite de oliva virgen extra, levadura.\nContiene: Trigo.",
-    "image_ca": "Neapolitan-Style-Frozen-Pizza-Dough.webp",
-    "image_us": "",
-    "gallery_ca": [],
-    "gallery_us": [],
-    "updated_at": 1792523400000
+    "image_ca": "neapolitan-style-pizza-dough-balls-v1793031174722-ca.webp",
+    "image_us": "neapolitan-style-pizza-dough-balls-v1793031174722-us.webp",
+    "gallery_ca": [
+      "neapolitan-style-pizza-dough-balls-ca-gal-1-1793031174722.webp",
+      "neapolitan-style-pizza-dough-balls-ca-gal-2-1793031174722.webp",
+      "neapolitan-style-pizza-dough-balls-ca-gal-3-1793031174722.webp",
+      "neapolitan-style-pizza-dough-balls-ca-gal-4-1793031174722.webp"
+    ],
+    "gallery_us": [
+      "neapolitan-style-pizza-dough-balls-us-gal-1-1793031174722.webp",
+      "neapolitan-style-pizza-dough-balls-us-gal-2-1793031174722.webp",
+      "neapolitan-style-pizza-dough-balls-us-gal-3-1793031174722.webp",
+      "neapolitan-style-pizza-dough-balls-us-gal-4-1793031174722.webp"
+    ],
+    "updated_at": 1793031174722,
+    "slug": "neapolitan-style-pizza-dough-balls"
   },
   {
     "id": 23,
