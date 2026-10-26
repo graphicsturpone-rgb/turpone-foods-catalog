@@ -779,22 +779,32 @@ const productsData = [
     "category": "Seasoning",
     "category_fr": "Assaisonnements",
     "category_es": "Sazonadores y especias",
-    "image": "Mediterranean-Tomato-Seasoning.webp",
+    "image": "mediterranean-tomato-seasoning-v1793029144142-ca.webp",
     "description": "Martha Stewart Mediterranean Tomato Seasoning combines tomato, red bell pepper, basil, thyme, garlic, onion and black pepper for a savory, herb-forward blend inspired by Mediterranean flavors. Use it as a finishing touch for oven-baked pizza, sprinkle it over roasted vegetables or chicken, or mix it into a simple vinaigrette for fresh mozzarella or bocconcini. It's an easy way to add rich tomato and herb flavor to everyday dishes.",
     "description_fr": "L'assaisonnement méditerranéen à la tomate Martha Stewart réunit tomate séchée, poivron rouge, basilic, thym, ail et poivre noir. Inspiré des rivages ensoleillés pour sublimer pizzas, salades de bocconcini et grillades.",
     "description_es": "El sazonador mediterráneo con tomate Martha Stewart combina tomate deshidratado, pimiento rojo, albahaca, tomillo y ajo para un toque soleado irresistible. Ideal para quesos frescos, ensaladas y pizzas.",
     "features": "Featuring: Dehydrated tomato, red bell pepper, basil, thyme, garlic and black pepper",
     "features_fr": "Caractéristiques : Tomate déshydratée, poivron rouge, basilic, thym, ail et poivre noir",
     "features_es": "Características: Tomate deshidratado, pimiento rojo, albahaca, tomillo, ajo y pimienta negra",
-    "gallery": [],
+    "gallery": [
+      "mediterranean-tomato-seasoning-ca-gal-1-1793029144142.webp",
+      "mediterranean-tomato-seasoning-ca-gal-2-1793029144142.webp"
+    ],
     "ingredients": "Ingredients: Dehydrated vegetables (tomato, onion, garlic, red bell pepper), sea salt, herbs (basil, thyme), black pepper, olive oil, silicon dioxide (anti-caking agent), natural lemon flavor.",
     "ingredients_fr": "Ingrédients : Légumes déshydratés (tomate, oignon, ail, poivron rouge), sel de mer, herbes (basilic, thym), poivre noir, huile d'olive, arôme naturel de citron.",
     "ingredients_es": "Ingredientes: Verduras deshidratadas (tomate, cebolla, ajo, pimiento rojo), sal marina, hierbas (albahaca, tomillo), pimienta negra, aceite de oliva, aroma natural de limón.",
-    "image_ca": "Mediterranean-Tomato-Seasoning.webp",
-    "image_us": "",
-    "gallery_ca": [],
-    "gallery_us": [],
-    "updated_at": 1792523400000
+    "image_ca": "mediterranean-tomato-seasoning-v1793029144142-ca.webp",
+    "image_us": "mediterranean-tomato-seasoning-v1793029144142-us.webp",
+    "gallery_ca": [
+      "mediterranean-tomato-seasoning-ca-gal-1-1793029144142.webp",
+      "mediterranean-tomato-seasoning-ca-gal-2-1793029144142.webp"
+    ],
+    "gallery_us": [
+      "mediterranean-tomato-seasoning-us-gal-1-1793029144142.webp",
+      "mediterranean-tomato-seasoning-us-gal-2-1793029144142.webp"
+    ],
+    "updated_at": 1793029144142,
+    "slug": "mediterranean-tomato-seasoning"
   },
   {
     "id": 19,
