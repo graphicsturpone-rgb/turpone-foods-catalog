@@ -121,9 +121,9 @@ async function putFileContent(filePath, contentBase64, message, sha = null, bran
 async function autoTranslateProduct(product, geminiKey) {
     if (!geminiKey) return product;
 
-    const prompt = `You are a culinary translator for Turpone Foods and Martha Stewart.
-Translate the following product fields into authentic, culinary-grade French and Spanish.
-Never use literal word-for-word translation or automated widget translations. Use natural gastronomy terminology (e.g. for pinsa crust use "Croûte de Pinsa" in French and "Masa de Pinsa" in Spanish; for frozen use "surgelée" in French and "congelada" in Spanish).
+    const prompt = `You are a culinary translator for Turpone Foods and Martha Stewart in Canada.
+Translate the following product fields into authentic, culinary-grade Canadian French (Français canadien / OQLF / CFIA food labelling standards) and Spanish.
+Never use European French idioms or literal machine translations. Use authentic Canadian gastronomy terminology (e.g. for Quick Rising Mix use "Mélange à levée rapide"; for pinsa crust use "Croûte de pinsa"; for dough balls use "Boules de pâte à pizza"; for seasonings use "Assaisonnement"; for dip use "Trempette"; use mL for liquid sauce volumes and Canadian metrics).
 
 Product details to translate:
 Title: "${product.title || ""}"

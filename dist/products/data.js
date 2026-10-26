@@ -5,7 +5,7 @@ const productsData = [
     "title_fr": "Pinsa au Bacon et Oignons Caramélisés",
     "title_es": "Pinsa de Tocino y Cebollas Caramelizadas",
     "category": "Frozen Pinsa",
-    "category_fr": "Pinsa surgelée",
+    "category_fr": "Pinsas surgelées",
     "category_es": "Pinsa congelada",
     "image": "bacon-and-caramelized-onions-pinsa.webp",
     "description": "Martha Stewart Bacon and Caramelized Onions Pinsa pairs savory bacon and sweet caramelized onions with creamy Alfredo sauce, mozzarella and Parmesan on a hand-stretched, authentic Roman-style crust. Light and airy with a crisp exterior, the pinsa crust creates the perfect base for this rich, savory and slightly sweet combination. Ready in minutes, it's an effortless way to enjoy a distinctive Roman-inspired meal at home.",
@@ -49,7 +49,7 @@ const productsData = [
     "title_fr": "Pinsa Margherita à la Mozzarella Fraîche",
     "title_es": "Pinsa Margherita con Mozzarella Fresca",
     "category": "Frozen Pinsa",
-    "category_fr": "Pinsa surgelée",
+    "category_fr": "Pinsas surgelées",
     "category_es": "Pinsa congelada",
     "image": "margherita-with-fresh-mozzarella-pinsa.webp",
     "description": "Martha Stewart Margherita with Fresh Mozzarella Pinsa brings together vine-ripened tomatoes, fresh mozzarella and basil on a hand-stretched, authentic Roman-style crust. Light, airy and crisp, the crust provides the perfect base for the simple, classic combination of rich tomatoes, creamy fresh mozzarella and fragrant basil. Ready in minutes, it's a fresh take on a timeless Margherita.",
@@ -93,7 +93,7 @@ const productsData = [
     "title_fr": "Pinsa au Pepperoni et Piments Marinés Piquants",
     "title_es": "Pinsa de Pepperoni y Chiles Encurtidos Picantes",
     "category": "Frozen Pinsa",
-    "category_fr": "Pinsa surgelée",
+    "category_fr": "Pinsas surgelées",
     "category_es": "Pinsa congelada",
     "image": "pepperoni-and-hot-pickled-peppers-pinsa.webp",
     "description": "Martha Stewart Pepperoni and Hot Pickled Peppers Pinsa combines savory pepperoni with tangy hot pickled peppers, mozzarella and Parmesan on a hand-stretched, authentic Roman-style crust. Light and airy with a crisp exterior, the crust complements the richness of the pepperoni and cheese while hot pickled peppers add a bright, spicy kick. It's a bold twist on classic pepperoni, ready to enjoy at home in minutes.",
@@ -137,7 +137,7 @@ const productsData = [
     "title_fr": "Pinsa à la Saucisse Italienne et Miel Piquant",
     "title_es": "Pinsa de Salchicha Italiana y Miel Picante",
     "category": "Frozen Pinsa",
-    "category_fr": "Pinsa surgelée",
+    "category_fr": "Pinsas surgelées",
     "category_es": "Pinsa congelada",
     "image": "sausage-and-hot-honey-pinsa.webp",
     "description": "Martha Stewart Sausage and Hot Honey Pinsa combines savory Italian sausage and fresh mozzarella with hot honey on a hand-stretched, authentic Roman-style crust. The light, airy and crisp crust pairs beautifully with rich Italian sausage, creamy mozzarella and a sweet kick of heat from the hot honey. It's a bold balance of sweet and savory flavors, ready to bake and enjoy in minutes.",
@@ -181,7 +181,7 @@ const productsData = [
     "title_fr": "Pinsa Épinards et Quatre Fromages à la Sauce Alfredo",
     "title_es": "Pinsa de Espinacas y Cuatro Quesos con Salsa Alfredo",
     "category": "Frozen Pinsa",
-    "category_fr": "Pinsa surgelée",
+    "category_fr": "Pinsas surgelées",
     "category_es": "Pinsa congelada",
     "image": "spinach-four-cheese-with-alfredo-sauce-pinsa.webp",
     "description": "Martha Stewart Spinach Four Cheese with Alfredo Sauce Pinsa combines spinach with creamy Alfredo sauce and a rich blend of fontina, mozzarella, Parmesan and Romano cheeses on a hand-stretched, authentic Roman-style crust. The light, airy and crisp crust balances the creamy sauce and savory blend of cheeses, while spinach adds freshness to every bite. Rich and satisfying, it's an elevated Roman-inspired option that's ready to enjoy at home in minutes.",
@@ -222,10 +222,10 @@ const productsData = [
   {
     "id": 10,
     "title": "Margherita with Fresh Mozzarella Pizza 10\"",
-    "title_fr": "Pizza Margherita à la Mozzarella Fraîche",
+    "title_fr": "Pizza Margherita à la Mozzarella Fraîche 10\"",
     "title_es": "Pizza Margherita con Mozzarella Fresca",
     "category": "Frozen Pizza",
-    "category_fr": "Pizza surgelée",
+    "category_fr": "Pizzas surgelées",
     "category_es": "Pizza congelada",
     "image": "margherita-with-fresh-mozzarella-pizza-10.webp",
     "description": "Martha Stewart Margherita with Fresh Mozzarella Pizza brings together vine-ripened tomatoes, fresh mozzarella and basil on a hand-stretched, stone-baked crust. Simple, classic ingredients come together for a pizzeria-inspired Margherita with a crisp, airy crust and rich tomato flavor. Ready in minutes, it's an effortless way to enjoy a restaurant-quality pizza at home.",
@@ -258,15 +258,15 @@ const productsData = [
       "margherita-with-fresh-mozzarella-pizza-10-us-gallery-4.webp"
     ],
     "slug": "margherita-with-fresh-mozzarella-pizza-10",
-    "updated_at": 1792523400000
+    "updated_at": 1793039192154
   },
   {
     "id": 26,
     "title": "Pepperoni and Hot Pickled Peppers Pizza 10\"",
-    "title_fr": "Pizza au Pepperoni et Piments Marinés Piquants",
+    "title_fr": "Pizza au Pepperoni et Piments Marinés Piquants 10\"",
     "title_es": "Pizza de Pepperoni y Chiles Encurtidos Picantes",
     "category": "Frozen Pizza",
-    "category_fr": "Pizza surgelée",
+    "category_fr": "Pizzas surgelées",
     "category_es": "Pizza congelada",
     "image": "pepperoni-and-hot-pickled-peppers-pizza-10.webp",
     "description": "Martha Stewart Pepperoni and Hot Pickled Peppers Pizza combines savory pepperoni with tangy hot pickled peppers, mozzarella and Parmesan on a hand-stretched, stone-baked crust. Bold, savory and pleasantly spicy, every bite balances rich pepperoni and melted cheese with the bright kick of pickled peppers. It's a flavorful twist on a classic pepperoni pizza, ready to bake and enjoy in minutes.",
@@ -299,15 +299,15 @@ const productsData = [
       "pepperoni-and-hot-pickled-peppers-pizza-10-us-gallery-4.webp"
     ],
     "slug": "pepperoni-and-hot-pickled-peppers-pizza-10",
-    "updated_at": 1792523400000
+    "updated_at": 1793039192154
   },
   {
     "id": 29,
     "title": "Sausage and Hot Honey Pizza 10\"",
-    "title_fr": "Pizza à la Saucisse Italienne et Miel Piquant",
+    "title_fr": "Pizza à la Saucisse Italienne et Miel Piquant 10\"",
     "title_es": "Pizza de Salchicha Italiana y Miel Picante",
     "category": "Frozen Pizza",
-    "category_fr": "Pizza surgelée",
+    "category_fr": "Pizzas surgelées",
     "category_es": "Pizza congelada",
     "image": "sausage-and-hot-honey-pizza-10.webp",
     "description": "Martha Stewart Sausage and Hot Honey Pizza pairs savory Italian sausage and fresh mozzarella with a drizzle of hot honey on a hand-stretched, stone-baked crust. The combination of savory sausage, creamy cheese and sweet heat creates a bold balance of flavors in every bite. Simply bake until golden for a distinctive, pizzeria-inspired pizza that's ready to enjoy at home in minutes.",
@@ -340,15 +340,15 @@ const productsData = [
       "sausage-and-hot-honey-pizza-10-us-gallery-4.webp"
     ],
     "slug": "sausage-and-hot-honey-pizza-10",
-    "updated_at": 1792523400000
+    "updated_at": 1793039192154
   },
   {
     "id": 32,
     "title": "Spinach Four Cheese with Alfredo Pizza 10\"",
-    "title_fr": "Pizza Épinards et Quatre Fromages à la Sauce Alfredo",
+    "title_fr": "Pizza Épinards et Quatre Fromages à la Sauce Alfredo 10\"",
     "title_es": "Pizza de Espinacas y Cuatro Quesos con Salsa Alfredo",
     "category": "Frozen Pizza",
-    "category_fr": "Pizza surgelée",
+    "category_fr": "Pizzas surgelées",
     "category_es": "Pizza congelada",
     "image": "spinach-four-cheese-with-alfredo-pizza-10.webp",
     "description": "Martha Stewart Spinach Four Cheese with Alfredo Pizza combines spinach with creamy Alfredo sauce and a rich blend of fontina, mozzarella, Parmesan and Romano cheeses on a hand-stretched, stone-baked crust. Rich and satisfying, it's an elevated option that's ready to enjoy at home in minutes.",
@@ -381,15 +381,15 @@ const productsData = [
       "spinach-four-cheese-with-alfredo-pizza-10-us-gallery-4.webp"
     ],
     "slug": "spinach-four-cheese-with-alfredo-pizza-10",
-    "updated_at": 1792523400000
+    "updated_at": 1793039192154
   },
   {
     "id": 2,
     "title": "Bacon and Caramelized Onions Pizza 12\"",
-    "title_fr": "Pizza au Bacon et Oignons Caramélisés",
+    "title_fr": "Pizza au Bacon et Oignons Caramélisés 12\"",
     "title_es": "Pizza de Tocino y Cebollas Caramelizadas",
     "category": "Frozen Pizza",
-    "category_fr": "Pizza surgelée",
+    "category_fr": "Pizzas surgelées",
     "category_es": "Pizza congelada",
     "image": "bacon-and-caramelized-onions-pizza.webp",
     "description": "Martha Stewart Bacon and Caramelized Onions Pizza pairs savory bacon and sweet caramelized onions with creamy Alfredo sauce, mozzarella and Parmesan on a hand-stretched, stone-baked crust. Rich, savory and slightly sweet, this indulgent combination delivers layers of flavor in every bite. Simply bake until golden for a pizzeria-inspired pizza that's ready to enjoy at home in minutes.",
@@ -422,15 +422,15 @@ const productsData = [
       "bacon-and-caramelized-onions-pizza-12-us-gallery-4.webp"
     ],
     "slug": "bacon-and-caramelized-onions-pizza-12",
-    "updated_at": 1792523400000
+    "updated_at": 1793039192154
   },
   {
     "id": 4,
     "title": "Cacio e Pepe with Alfredo Sauce Pizza 12\"",
-    "title_fr": "Pizza Cacio e Pepe à la Sauce Alfredo",
+    "title_fr": "Pizza Cacio e Pepe à la Sauce Alfredo 12\"",
     "title_es": "Pizza Cacio e Pepe con Salsa Alfredo",
     "category": "Frozen Pizza",
-    "category_fr": "Pizza surgelée",
+    "category_fr": "Pizzas surgelées",
     "category_es": "Pizza congelada",
     "image": "cacio-e-pepe-with-alfredo-sauce-pizza-12.webp",
     "description": "Martha Stewart Cacio e Pepe with Alfredo Sauce Pizza takes inspiration from the classic Italian pasta dish, pairing creamy Alfredo sauce with Parmesan, Romano cheese, minced garlic and black pepper on a hand-stretched, stone-baked crust. Rich and cheesy with a distinctive peppery finish, this white pizza offers an elevated alternative to traditional tomato-based varieties. Bake until golden for an easy, pizzeria-inspired meal at home.",
@@ -463,7 +463,7 @@ const productsData = [
       "cacio-e-pepe-with-alfredo-sauce-pizza-12-us-gallery-4.webp"
     ],
     "slug": "cacio-e-pepe-with-alfredo-sauce-pizza-12",
-    "updated_at": 1792523400000
+    "updated_at": 1793039192154
   },
   {
     "id": 33,
@@ -594,7 +594,7 @@ const productsData = [
   {
     "id": 3,
     "title": "Balsamic Garlic & Herb Infused Extra Virgin Olive Oil",
-    "title_fr": "Huile d'Olive Extra Vierge Infusée au Balsamique, Ail et Herbes",
+    "title_fr": "Huile d'Olive Extra Vierge Infusée au Balsamique, Ail et Fines Herbes",
     "title_es": "Aceite de Oliva Virgen Extra Infusionado con Balsámico, Ajo y Hierbas",
     "category": "Infused Oils",
     "category_fr": "Huiles infusées",
@@ -623,7 +623,7 @@ const productsData = [
       "balsamic-garlic-herb-infused-extra-virgin-olive-oil-us-gal-1-1793029338421.webp",
       "balsamic-garlic-herb-infused-extra-virgin-olive-oil-us-gal-2-1793029338421.webp"
     ],
-    "updated_at": 1793029338421,
+    "updated_at": 1793039192154,
     "slug": "balsamic-garlic-herb-infused-extra-virgin-olive-oil"
   },
   {
@@ -1021,7 +1021,7 @@ const productsData = [
     "category_es": "Salsas para pizza",
     "image": "roasted-garlic-pizza-sauce-680g.webp",
     "description": "Martha Stewart Roasted Garlic Pizza Sauce combines vine-ripened crushed tomatoes with roasted garlic, extra virgin olive oil, oregano, basil and black pepper for a rich, savory flavor. Spread it over pizza dough and pair with mushrooms, onions, mozzarella or your favorite toppings, or use it as a flavorful sauce for pasta and other Italian-inspired dishes. The roasted garlic adds an extra layer of depth to every bite.",
-    "description_fr": "Grand format 680g. La sauce à pizza à l'ail rôti Martha Stewart sublime vos créations maison avec des tomates cueillies à maturité, de l'ail doucement rôti, de l'origan et de l'huile d'olive extra vierge.",
+    "description_fr": "Grand format 680 mL. La sauce à pizza à l'ail rôti Martha Stewart sublime vos créations maison avec des tomates cueillies à maturité, de l'ail doucement rôti, de l'origan et de l'huile d'olive extra vierge.",
     "description_es": "Formato familiar 680g. La salsa para pizza con ajo asado Martha Stewart realza masas de pizza y pastas con tomates seleccionados, ajo confitado y hierbas aromáticas finas.",
     "features": "Featuring: Vine-ripened crushed tomatoes, roasted garlic, extra virgin olive oil, oregano and basil",
     "features_fr": "Caractéristiques : Tomates broyées mûries sur pied, ail rôti, huile d'olive extra vierge, origan et basilic",
@@ -1043,7 +1043,7 @@ const productsData = [
       "roasted-garlic-pizza-sauce-680g-us-gallery-1.webp",
       "roasted-garlic-pizza-sauce-680g-us-gallery-2.webp"
     ],
-    "updated_at": 1793038672361,
+    "updated_at": 1793039192154,
     "slug": "roasted-garlic-pizza-sauce-680ml"
   },
   {
@@ -1091,7 +1091,7 @@ const productsData = [
     "category_es": "Salsas para pizza",
     "image": "spicy-pizza-sauce-680g.webp",
     "description": "Martha Stewart Spicy Pizza Sauce combines vine-ripened crushed tomatoes, extra virgin olive oil, garlic, oregano and basil with crushed chilies for a flavorful kick of heat. Use it as the base for a spicy pizza topped with Italian sausage, mozzarella and your favorite vegetables, or spoon it over polenta for a quick and flavorful meal. It's an easy way to add bold tomato flavor and a touch of heat to your favorite dishes.",
-    "description_fr": "Grand format 680g. La sauce à pizza épicée Martha Stewart sublime les pizzas à la saucisse italienne et les calzones avec son savoureux mélange de piments concassés et tomates mûries au soleil.",
+    "description_fr": "Grand format 680 mL. La sauce à pizza épicée Martha Stewart sublime les pizzas à la saucisse italienne et les calzones avec son savoureux mélange de piments concassés et tomates mûries au soleil.",
     "description_es": "Formato familiar 680g. La salsa para pizza picante Martha Stewart agrega audacia y calor suave con tomates maduros, aceite de oliva virgen extra y chiles finamente picados.",
     "features": "Featuring: Vine-ripened crushed tomatoes, crushed chilies, extra virgin olive oil, garlic and basil",
     "features_fr": "Caractéristiques : Tomates broyées, piments concassés, huile d'olive extra vierge, ail et basilic",
@@ -1113,7 +1113,7 @@ const productsData = [
       "spicy-pizza-sauce-680g-us-gallery-1.webp",
       "spicy-pizza-sauce-680g-us-gallery-2.webp"
     ],
-    "updated_at": 1793038672361,
+    "updated_at": 1793039192154,
     "slug": "spicy-pizza-sauce-680ml"
   },
   {
@@ -1161,7 +1161,7 @@ const productsData = [
     "category_es": "Salsas para pizza",
     "image": "traditional-pizza-sauce-680g.webp",
     "description": "Martha Stewart Traditional Pizza Sauce combines vine-ripened crushed tomatoes with extra virgin olive oil, garlic, oregano, basil and black pepper for a classic, well-balanced flavor. Spread it over your favorite pizza dough and top with fresh mozzarella and basil for a simple, delicious pizza, or use it to bring rich tomato flavor to chicken parmesan, baked pasta and other Italian-inspired dishes.",
-    "description_fr": "Grand format 680g. La sauce à pizza traditionnelle Martha Stewart offre une texture veloutée et des saveurs italiennes pures pour toute la famille, idéale pour pizzas et pâtes au four.",
+    "description_fr": "Grand format 680 mL. La sauce à pizza traditionnelle Martha Stewart offre une texture veloutée et des saveurs italiennes pures pour toute la famille, idéale pour pizzas et pâtes au four.",
     "description_es": "Formato familiar 680g. La salsa para pizza tradicional Martha Stewart proporciona un sabor clásico inconfundible con ingredientes puros y naturales para toda la familia.",
     "features": "Featuring: Vine-ripened crushed tomatoes, extra virgin olive oil, garlic, oregano and basil",
     "features_fr": "Caractéristiques : Tomates broyées, huile d'olive extra vierge, ail, origan et basilic",
@@ -1183,7 +1183,7 @@ const productsData = [
       "traditional-pizza-sauce-680g-us-gallery-1.webp",
       "traditional-pizza-sauce-680g-us-gallery-2.webp"
     ],
-    "updated_at": 1793038672361,
+    "updated_at": 1793039192154,
     "slug": "traditional-pizza-sauce-680ml"
   },
   {
@@ -1381,18 +1381,18 @@ const productsData = [
     "description": "Martha Stewart Neapolitan Style 00 Pizza Dough Mix is crafted with premium Italian 00 flour to create the light, airy crust with a delicate crisp that defines classic Neapolitan-style pizza. Stretch it thin, top with crushed tomatoes and fresh mozzarella, and bake at high heat for a restaurant-inspired Margherita at home. Designed for high-temperature baking, this flour mix gives you pizzeria-quality results in your home oven.",
     "features": "Featuring: Premium Italian 00 flour for high-heat pizza baking",
     "ingredients": "Made with: Premium Italian 00 flour.",
-    "updated_at": 1793038672361,
+    "updated_at": 1793039192154,
     "slug": "quick-rising-mix",
     "aliasId": "prod_1793030722315",
-    "title_fr": "Mélange à Levée Rapide",
+    "title_fr": "Mélange à levée rapide",
     "title_es": "Mezcla de Crecimiento Rápido",
     "category_fr": "Farines à pizza",
     "category_es": "Harina para pizza",
-    "description_fr": "Le mélange pour pâte à pizza à levée rapide Martha Stewart permet de préparer une pâte maison savoureuse et aérée en un temps record.",
+    "description_fr": "Le mélange à pâte à pizza à levée rapide Martha Stewart est spécialement conçu pour préparer facilement et en un temps record une délicieuse pâte à pizza maison, légère, aérée et dorée au four. Idéal pour des soirées pizza réussies en famille.",
     "description_es": "La mezcla para masa de pizza de crecimiento rápido Martha Stewart facilita la preparación de una auténtica masa casera ligera y crujiente en poco tiempo.",
-    "features_fr": "Comprend : Farine de qualité supérieure et levure à action rapide",
+    "features_fr": "Comprend : Farine de qualité supérieure et levure à levée rapide",
     "features_es": "Con: Harina de trigo prémium y levadura de acción rápida",
-    "ingredients_fr": "Ingrédients : Farine de blé enrichie, levure à action rapide, sel de mer, sucre de canne.\nContient : Blé.",
+    "ingredients_fr": "Ingrédients : Farine de blé enrichie, levure à levée rapide, sel de mer, sucre de canne.\nContient : Blé.",
     "ingredients_es": "Ingredientes: Harina de trigo enriquecida, levadura de acción rápida, sal marina, azúcar de caña.\nContiene: Trigo."
   }
 ];

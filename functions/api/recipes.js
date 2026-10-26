@@ -82,9 +82,9 @@ async function putFileContent(filePath, contentBase64, message, sha = null, bran
 async function autoTranslateRecipe(recipe, geminiKey) {
     if (!geminiKey) return recipe;
 
-    const prompt = `You are a Michelin-star bilingual food translator and culinary copywriter for Turpone Foods.
-Translate the following recipe fields into authentic culinary French and Spanish.
-Never use literal word-for-word translation; use natural cooking & gastronomy terminology.
+    const prompt = `You are a Michelin-star bilingual food translator and culinary copywriter for Turpone Foods in Canada.
+Translate the following recipe fields into authentic culinary Canadian French (Français canadien / OQLF standards) and Spanish.
+Never use literal word-for-word translation; use natural Canadian cooking & gastronomy terminology (e.g. use "c. à soupe" for tbsp, "c. à thé" for tsp, "tasse" for cup, "essuie-tout" for paper towel, "sauce soya" for soy sauce, "Trempette" for dips, "Mélange à levée rapide" for quick rising mix).
 
 Recipe details to translate:
 Title: "${recipe.title || ""}"
