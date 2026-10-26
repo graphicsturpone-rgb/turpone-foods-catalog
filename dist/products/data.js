@@ -779,22 +779,32 @@ const productsData = [
     "category": "Honeys",
     "category_fr": "Miels gastronomiques",
     "category_es": "Mieles gastronómicas",
-    "image": "MS-Honey-Triple-Chili-1.webp",
+    "image": "triple-chili-honey-drizzle-v1793029954633-ca.webp",
     "description": "Martha Stewart Triple Chili Honey Drizzle combines raw honey with jalapeño, habanero and cayenne peppers for a delicious balance of sweetness and heat. Drizzle it over pizza for a sweet and spicy finishing touch, pair it with grilled chicken or pork, or add it to roasted vegetables for an unexpected burst of flavor. It’s an easy way to bring a little heat—and a lot of flavor—to everyday dishes.",
     "description_fr": "Le filet de miel aux trois piments Martha Stewart associe du miel brut aux piments jalapeño, habanero et de Cayenne pour un équilibre sensationnel entre douceur dorée et intensité piquante. Parfait pour couronner vos pizzas, volailles grillées ou légumes rôtis.",
     "description_es": "La miel para rociar con tres chiles Martha Stewart combina miel pura con chiles jalapeño, habanero y cayena, creando una explosión irresistible de dulce y picante. Rocíela sobre pizzas, pollo asado o costillas.",
     "features": "Featuring: Raw honey, jalapeño pepper, habanero pepper and cayenne pepper",
     "features_fr": "Caractéristiques : Miel brut, piments jalapeño, habanero et de Cayenne",
     "features_es": "Características: Miel cruda, chiles jalapeño, habanero y cayena",
-    "gallery": [],
+    "gallery": [
+      "triple-chili-honey-drizzle-ca-gal-1-1793029954633.webp",
+      "triple-chili-honey-drizzle-ca-gal-2-1793029954633.webp"
+    ],
     "ingredients": "Ingredients: Raw honey, jalapeño pepper, habanero pepper, cayenne pepper, apple cider vinegar.",
     "ingredients_fr": "Ingrédients : Miel brut, piment jalapeño, piment habanero, piment de Cayenne, vinaigre de cidre de pomme.",
     "ingredients_es": "Ingredientes: Miel cruda, chile jalapeño, chile habanero, chile cayena, vinagre de sidra de manzana.",
-    "image_ca": "MS-Honey-Triple-Chili-1.webp",
-    "image_us": "",
-    "gallery_ca": [],
-    "gallery_us": [],
-    "updated_at": 1792523400000
+    "image_ca": "triple-chili-honey-drizzle-v1793029954633-ca.webp",
+    "image_us": "triple-chili-honey-drizzle-v1793029954633-us.webp",
+    "gallery_ca": [
+      "triple-chili-honey-drizzle-ca-gal-1-1793029954633.webp",
+      "triple-chili-honey-drizzle-ca-gal-2-1793029954633.webp"
+    ],
+    "gallery_us": [
+      "triple-chili-honey-drizzle-us-gal-1-1793029954633.webp",
+      "triple-chili-honey-drizzle-us-gal-2-1793029954633.webp"
+    ],
+    "updated_at": 1793029954633,
+    "slug": "triple-chili-honey-drizzle"
   },
   {
     "id": 17,
