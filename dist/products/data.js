@@ -445,7 +445,7 @@ const productsData = [
       "cacio-e-pepe-with-alfredo-sauce-pizza-12-gallery-3.webp",
       "cacio-e-pepe-with-alfredo-sauce-pizza-12-gallery-4.webp"
     ],
-    "ingredients": "Ingredients: Wheat flour, water, alfredo sauce, parmesan cheese, romano cheese, minced garlic, black pepper, olive oil, salt, yeast.\nContains: Wheat, Milk.",
+    "ingredients": "Ingredients: Crust: Enriched Wheat Flour, Water, Extra-Virgin Olive Oil, Salt, Yeast, Dried Sourdough (Wheat, Rye), Amylase, Sunflower Oil, Ascorbic Acid, Xylanase. Alfredo Sauce: Cream (Cream, Milk, Carrageenan, Cellulose Gum, Mono And Diglycerides, Polysorbate 80), Minced Garlic, Parmesan Cheese (Milk, Salt, Lipase, Microbial Enzyme, Bacterial Culture, Calcium Chloride, Cellulose), Modified Corn Starch, Salt, Black Pepper. Toppings: Romano Cheese (Milk, Salt, Bacterial Culture, Lipase, Calcium Chloride, Microbial Enzyme, Cellulose), Black Pepper.\nContains: Wheat, Milk, Rye.\nMay Contain: Eggs, Soy, Mustard.",
     "ingredients_fr": "Ingrédients : Farine de blé, eau, sauce alfredo, fromage parmesan, fromage romano, ail haché, poivre noir, huile d'olive, sel, levure.\nContient : Blé, Lait.",
     "ingredients_es": "Ingredientes: Harina de trigo, agua, salsa alfredo, queso parmesano, queso romano, ajo picado, pimienta negra, aceite de oliva, sal, levadura.\nContiene: Trigo, Leche.",
     "image_ca": "cacio-e-pepe-with-alfredo-sauce-pizza-12.webp",
@@ -463,7 +463,7 @@ const productsData = [
       "cacio-e-pepe-with-alfredo-sauce-pizza-12-us-gallery-4.webp"
     ],
     "slug": "cacio-e-pepe-with-alfredo-sauce-pizza-12",
-    "updated_at": 1793042059346
+    "updated_at": 1793106936443
   },
   {
     "id": 33,
