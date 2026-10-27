@@ -362,62 +362,68 @@ const recipesData = [
     "upsellLink": "",
     "ingredients": [
       "2 salmon fillets (6 to 8 oz each), skin-on preferred",
-      "2.5 tbsp <strong><a href=\"https://martha.com/\" target=\"_blank\">Martha Stewart</a></strong>’s Lemon Black Pepper Honey",
-      "1 tbsp olive oil",
+      "1/2 teaspoon coarsely cracked black pepper",
+      "Kosher salt",
+      "1 tablespoon extra-virgin olive oil",
       "2 cloves garlic, finely minced",
-      "1 tbsp fresh lemon juice",
-      "1/2 tsp coarsely cracked black pepper",
-      "Kosher salt, to taste"
+      "1 tablespoon fresh lemon juice, plus zest of ½ a lemon",
+      "2 1/2 tablespoons <strong><a href=\"https://martha.com/\" target=\"_blank\">Martha Stewart</a></strong>’s Lemon",
+      "Chopped parsley, for garnish",
+      "1 lemon wedge, for serving"
     ],
     "ingredients_fr": [
-      "2 filets de saumon (6 à 8 oz chacun), avec peau de préférence",
-      "2,5 c. à soupe de miel Citron Poivre Noir de <strong><a href=\"https://martha.com/\" target=\"_blank\">Martha Stewart</a></strong>",
-      "1 c. à soupe d’huile d’olive",
-      "2 gousses d'ail, finement hachées",
-      "1 c. à soupe de jus de citron frais",
+      "2 filets de saumon (de 6 à 8 oz chacun), idéalement avec la peau",
       "1/2 c. à thé de poivre noir concassé",
-      "Sel casher, au goût"
+      "Sel casher",
+      "1 c. à table d'huile d'olive extra-vierge",
+      "2 gousses d'ail, hachées finement",
+      "1 c. à table de jus de citron frais, plus le zeste de ½ citron",
+      "2 ½ c. à table de miel au citron et au poivre noir de <strong><a href=\"https://martha.com/\"target=\"_blank\">Martha Stewart</a></strong>",
+      "Persil haché, pour garnir",
+      "1 quartier de citron, pour servir"
     ],
     "ingredients_es": [
-      "2 filetes de salmón (6 a 8 oz cada uno), preferiblemente con piel",
-      "2.5 cdas. de Miel de Limón y Pimienta Negra de <strong><a href=\"https://martha.com/\" target=\"_blank\">Martha Stewart</a></strong>",
-      "1 cda. de aceite de oliva",
-      "2 dientes de ajo, finamente picados",
-      "1 cda. de jugo de limón fresco",
-      "1/2 cdta. de pimienta negra partida",
-      "Sal kosher, al gusto"
+      "2 filetes de salmón (de 6 a 8 oz cada uno), de preferencia con piel",
+      "1/2 cucharadita de pimienta negra triturada",
+      "Sal kosher",
+      "1 cucharada de aceite de oliva extra virgen",
+      "2 dientes de ajo, picados finamente",
+      "1 cucharada de jugo de limón fresco, más la ralladura de ½ limón",
+      "2 ½ cucharadas del Lemon Black Pepper Honey de <strong><a href=\"https://martha.com/\"target=\"_blank\">Martha Stewart</a></strong>",
+      "Perejil picado, para decorar",
+      "1 gajo de limón, para servir"
     ],
     "instructions": [
-      "**Dry and Season:** Remove salmon from the refrigerator 15 minutes before cooking. Pat the skin and flesh completely dry with paper towels. Season both sides generously with kosher salt and a light dusting of cracked black pepper.",
-      "**Sear the Flesh Side:** Heat olive oil in a heavy skillet over medium-high heat until shimmering. Place salmon fillets in the pan, flesh-side down. Cook undisturbed for 4 minutes until a deep golden-brown crust forms",
-      "**Crisp the Skin:** Flip the fillets skin-side down and reduce heat to medium. Cook for an additional 3 to 4 minutes, allowing the skin to crisp thoroughly while protecting the delicate flesh",
-      "**Sauté the Aromatics:** Slide the salmon to one side of the skillet (or transfer briefly to a plate). Lower the heat to low, add the minced garlic to the empty side of the pan, and sauté for 30 seconds until fragrant but not browned.",
-      "**Glaze and Plate:** Pour the fresh lemon juice and [Lemon Black Pepper Honey](https://turponefoods.com/turpone-products/) directly into the garlic. Continuously spoon the bubbling glaze over the salmon fillets for 45 to 60 seconds. Remove from the heat instantly to avoid scorching the honey. Plate immediately and spoon the remaining pan glaze over the top."
+      "Remove the salmon from the refrigerator 15 minutes before cooking. Pat the skin and flesh completely dry with paper towels. Season both sides generously with kosher salt and a light dusting of cracked black pepper.",
+      "Heat the olive oil in a heavy skillet over medium-high heat until shimmering. Place the fillets in the pan flesh-side down. Cook undisturbed for 4 minutes, until a deep golden-brown crust forms.",
+      "Flip the fillets skin-side down and reduce the heat to medium. Cook 3 to 4 minutes more, letting the skin crisp thoroughly while protecting the delicate flesh.",
+      "Slide the salmon to one side of the skillet (or transfer it briefly to a plate). Lower the heat, add the minced garlic to the empty side of the pan, and sauté 30 seconds until fragrant but not browned.",
+      "Pour the fresh lemon juice, zest and Lemon Black Pepper Honey directly into the garlic. Continuously spoon the bubbling glaze over the fillets for 45 to 60 seconds. Remove from the heat immediately to avoid scorching the honey. Plate and spoon the remaining pan glaze over the top. Garnish with parsley and serve with lemon wedge."
     ],
     "instructions_fr": [
-      "**Sécher et assaisonner :** Retirer le saumon du réfrigérateur 15 minutes avant la cuisson. Éponger complètement la peau et la chair avec des essuie-tout. Assaisonner généreusement des deux côtés avec du sel casher et une légère pincée de poivre noir concassé.",
-      "**Saisir le côté chair :** Chauffer l'huile d'olive dans une poêle lourde à feu moyen-vif jusqu'à ce qu'elle scintille. Placer les filets de saumon dans la poêle, côté chair vers le bas. Cuire sans les bouger pendant 4 minutes jusqu'à ce qu'une croûte brun doré foncé se forme.",
-      "**Rendre la peau croustillante :** Retourner les filets côté peau vers le bas et réduire le feu à moyen. Cuire pendant 3 à 4 minutes supplémentaires, permettant à la peau de croustiller complètement tout en protégeant la chair délicate.",
-      "**Faire sauter les aromates :** Faire glisser le saumon d'un côté de la poêle (ou le transférer brièvement dans une assiette). Baisser le feu au minimum, ajouter l'ail haché du côté vide de la poêle et faire sauter pendant 30 secondes jusqu'à ce que ce soit parfumé, mais pas brun.",
-      "**Laquer et servir :** Verser le jus de citron frais et le miel Citron Poivre Noir directement dans l'ail. Verser continuellement le glaçage bouillonnant sur les filets de saumon pendant 45 à 60 secondes. Retirer instantanément du feu pour éviter de brûler le miel. Servir immédiatement et verser le glaçage restant de la poêle sur le dessus."
+      "Sortir le saumon du réfrigérateur 15 minutes avant la cuisson. Bien éponger la peau et la chair avec du papier essuie-tout. Assaisonner généreusement les deux côtés de sel casher et saupoudrer légèrement de poivre noir concassé.",
+      "Dans une poêle à fond épais, chauffer l'huile d'olive à feu moyen-élevé jusqu'à ce qu'elle soit chatoyante. Déposer les filets dans la poêle, côté chair vers le bas. Cuire sans les déplacer pendant 4 minutes, jusqu'à ce qu'une croûte bien dorée se forme.",
+      "Retourner les filets côté peau et réduire le feu à moyen. Cuire de 3 à 4 minutes de plus, pour que la peau devienne bien croustillante tout en protégeant la chair délicate.",
+      "Glisser le saumon d'un côté de la poêle (ou le transférer brièvement dans une assiette). Baisser le feu, ajouter l'ail haché dans la partie vide de la poêle et le faire sauter 30 secondes, jusqu'à ce qu'il soit parfumé, mais pas doré.",
+      "Verser le jus de citron, le zeste et le miel au citron et au poivre noir directement sur l'ail. Arroser continuellement les filets de la glaçure bouillonnante pendant 45 à 60 secondes. Retirer immédiatement du feu pour éviter que le miel ne brûle. Servir dans les assiettes et napper du reste de la glaçure de la poêle. Garnir de persil et servir avec un quartier de citron."
     ],
     "instructions_es": [
-      "**Secar y sazonar:** Saque el salmón del refrigerador 15 minutos antes de cocinar. Seque completamente la piel y la carne con toallas de papel. Sazone ambos lados generosamente con sal kosher y una ligera capa de pimienta negra partida.",
-      "**Sellar el lado de la carne:** Caliente el aceite de oliva en una sartén pesada a fuego medio-alto hasta que brille. Coloque los filetes de salmón en la sartén, con el lado de la carne hacia abajo. Cocine sin mover durante 4 minutos hasta que se forme una costra de color marrón dorado oscuro.",
-      "**Crujir la piel:** Voltee los filetes con la piel hacia abajo y reduzca el fuego a medio. Cocine por otros 3 a 4 minutos, permitiendo que la piel se vuelva crujiente mientras protege la carne delicada.",
-      "**Saltear los aromáticos:** Deslice el salmón hacia un lado de la sartén (o transfiéralo brevemente a un plato). Baje el fuego al mínimo, agregue el ajo picado al lado vacío de la sartén y saltee durante 30 segundos hasta que esté fragante pero no dorado.",
-      "**Glasear y servir:** Vierta el jugo de limón fresco y la Miel de Limón y Pimienta Negra directamente sobre el ajo. Cucharee continuamente el glaseado burbujeante sobre los filetes de salmón durante 45 a 60 segundos. Retire del fuego instantáneamente para evitar que la miel se queme. Sirva inmediatamente y vierta el glaseado restante de la sartén sobre el pescado"
+      "Saque el salmón del refrigerador 15 minutos antes de cocinarlo. Seque bien la piel y la carne con toallas de papel. Sazone generosamente ambos lados con sal kosher y espolvoree ligeramente con pimienta negra triturada.",
+      "Caliente el aceite de oliva en un sartén de fondo grueso a fuego medio-alto hasta que brille. Coloque los filetes en el sartén con el lado de la carne hacia abajo. Cocine sin moverlos durante 4 minutos, hasta que se forme una costra bien dorada.",
+      "Voltee los filetes con la piel hacia abajo y baje el fuego a medio. Cocine de 3 a 4 minutos más, para que la piel quede bien crujiente sin resecar la carne.",
+      "Mueva el salmón a un lado del sartén (o páselo un momento a un plato). Baje el fuego, agregue el ajo picado en el lado vacío del sartén y saltéelo 30 segundos, hasta que suelte su aroma, sin que se dore.",
+      "Vierta el jugo de limón, la ralladura y el Lemon Black Pepper Honey directamente sobre el ajo. Bañe los filetes continuamente con el glaseado burbujeante durante 45 a 60 segundos. Retire del fuego de inmediato para evitar que la miel se queme. Sirva en los platos y bañe con el resto del glaseado del sartén. Decore con perejil y sirva con un gajo de limón."
     ],
     "description": "A quick, high-impact seafood dish featuring a sweet-citrus finish. Searing the fish flesh-side down first locks in moisture and builds a savory crust, while the honey is introduced at the very end to prevent burning.",
-    "description_fr": "Un plat de fruits de mer rapide et percutant avec une finition aigre-douce. Saisir le poisson côté chair vers le bas d'abord retient l'humidité et construit une croûte savoureuse, tandis que le miel est introduit à la toute fin pour éviter de brûler.",
-    "description_es": "Un plato de mariscos rápido y de alto impacto con un acabado cítrico-dulce. Sellar el pescado primero por el lado de la carne retiene la humedad y crea una costra sabrosa, mientras que la miel se introduce al final para evitar que se queme.",
+    "description_fr": "Un plat de fruits de mer rapide et savoureux, avec une finale sucrée et citronnée. Saisir d'abord le poisson côté chair permet de garder toute son humidité et de former une croûte savoureuse, tandis que le miel est ajouté tout à la fin pour éviter qu'il ne brûle.",
+    "description_es": "Un plato de mariscos rápido y lleno de sabor, con un toque final dulce y cítrico. Sellar primero el pescado por el lado de la carne ayuda a conservar su jugosidad y forma una costra dorada y sabrosa, mientras que la miel se agrega al final para evitar que se queme.",
     "prepTime_fr": "15 min",
     "cookTime_fr": "25 min",
     "yields_fr": "2 portions",
     "prepTime_es": "15 min",
     "cookTime_es": "25 min",
     "yields_es": "2 porciones",
-    "updated_at": 1793126935969
+    "updated_at": 1793129178018
   },
   {
     "id": "prosciutto-arugula-pizza",
