@@ -1252,7 +1252,7 @@ const productsData = [
       "new-york-style-dough-mix-ca-gal-4-1793031035222.webp",
       "new-york-style-dough-mix-ca-gal-5-1793031035222.webp"
     ],
-    "ingredients": "Made with: Premium Italian flour.",
+    "ingredients": "Ingredients: Wheat Flour, Salt, \u0003Granulated Sugar, Yeast (Sorbitan Monostearate, Ascorbic Acid). \nContains: Wheat.",
     "ingredients_fr": "Composé de : Farine italienne de qualité supérieure.",
     "ingredients_es": "Elaborado con: Harina italiana de primera calidad.",
     "image_ca": "new-york-style-dough-mix-v1793031035222-ca.webp",
@@ -1271,7 +1271,7 @@ const productsData = [
       "new-york-style-dough-mix-us-gal-4-1793031035222.webp",
       "new-york-style-dough-mix-us-gal-5-1793031035222.webp"
     ],
-    "updated_at": 1793031035222,
+    "updated_at": 1793109744539,
     "slug": "new-york-style-dough-mix"
   },
   {
