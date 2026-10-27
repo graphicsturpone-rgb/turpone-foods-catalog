@@ -557,6 +557,55 @@
             from { transform: translateY(20px); opacity: 0; }
             to { transform: translateY(0); opacity: 1; }
         }
+    
+        /* User Profile Pill & Logout */
+        .admin-user-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: #ffffff;
+            padding: 5px 12px;
+            border-radius: 30px;
+            border: 1px solid var(--border);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+        }
+        .user-meta {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.15;
+            text-align: left;
+        }
+        .user-name {
+            font-size: 12px;
+            font-weight: 600;
+            color: #0f172a;
+        }
+        .user-role {
+            font-size: 9px;
+            color: #b8976b;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 700;
+        }
+        .btn-logout {
+            background: #f1f5f9;
+            border: 1px solid var(--border);
+            color: #64748b;
+            cursor: pointer;
+            padding: 5px 8px;
+            font-size: 11px;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            border-radius: 6px;
+            transition: all 0.2s;
+            margin-left: 2px;
+        }
+        .btn-logout:hover {
+            color: #ef4444;
+            background: #fee2e2;
+            border-color: #fca5a5;
+        }
     </style>
 </head>
 <body>
@@ -580,6 +629,17 @@
         </nav>
 
         <div class="admin-actions">
+            <div class="admin-user-pill" id="adminUserPill">
+                <i class="fa-solid fa-circle-user" style="color:#b8976b; font-size:18px;"></i>
+                <div class="user-meta">
+                    <span class="user-name" id="adminUserName">Admin</span>
+                    <span class="user-role" id="adminUserRole">Administrator</span>
+                </div>
+                <button type="button" class="btn-logout" onclick="logoutAdmin()" title="Sign Out">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                </button>
+            </div>
+
             <button class="btn-view-store" onclick="forceSyncServer()" title="Pull fresh catalog from GitHub and purge local cache" style="cursor:pointer;">
                 <i class="fa-solid fa-arrows-rotate"></i> Sync Server
             </button>
@@ -804,6 +864,37 @@
     <script src="/products/product-store.js"></script>
 
     <script>
+        
+        function initAdminSession() {
+            const auth = JSON.parse(localStorage.getItem('turpone_admin_auth') || sessionStorage.getItem('turpone_admin_auth') || 'null');
+            if (!auth || !auth.email) {
+                window.location.href = '/admin/?redirect=products.html';
+                return null;
+            }
+
+            if (auth.role === 'recipes_editor') {
+                alert('Access Restricted: Your account has permissions for Recipes only.');
+                window.location.href = '/admin/recipes.html';
+                return null;
+            }
+
+            const userNameEl = document.getElementById('adminUserName');
+            const userRoleEl = document.getElementById('adminUserRole');
+            if (userNameEl) userNameEl.textContent = auth.name || auth.email;
+            if (userRoleEl) userRoleEl.textContent = 'Administrator';
+
+            return auth;
+        }
+
+        function logoutAdmin() {
+            localStorage.removeItem('turpone_admin_auth');
+            sessionStorage.removeItem('turpone_admin_auth');
+            window.location.href = '/admin/?logout=true';
+        }
+
+        // Run auth enforcement immediately
+        initAdminSession();
+    
         let currentProducts = [];
         let currentGalleryCa = [];
         let currentGalleryUs = [];

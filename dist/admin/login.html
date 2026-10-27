@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turpone Foods - Staff & Admin Login</title>
+    <link rel="icon" type="image/svg+xml" href="/assets/images/TF-LOgo.svg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #111111;
+            --primary-hover: #2a2a2a;
+            --accent: #b8976b;
+            --bg: #f8fafc;
+            --card: #ffffff;
+            --border: #e2e8f0;
+            --text-dark: #0f172a;
+            --text-muted: #64748b;
+            --danger: #ef4444;
+            --danger-bg: #fef2f2;
+            --danger-border: #fecaca;
+            --success: #10b981;
+            --success-bg: #ecfdf5;
+            --success-border: #a7f3d0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text-dark);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            background-image: radial-gradient(#e2e8f0 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+
+        /* Top Bar */
+        .login-topbar {
+            padding: 20px 32px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .login-brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .login-brand img {
+            height: 36px;
+            width: auto;
+        }
+
+        .login-brand-title {
+            font-weight: 700;
+            font-size: 18px;
+            letter-spacing: -0.5px;
+        }
+
+        .btn-back-home {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 500;
+            padding: 8px 14px;
+            border-radius: 6px;
+            transition: all 0.2s;
+        }
+
+        .btn-back-home:hover {
+            color: var(--text-dark);
+            background: #ffffff;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        /* Main Container */
+        .login-wrapper {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 30px 20px;
+        }
+
+        .login-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            width: 100%;
+            max-width: 440px;
+            padding: 40px 36px;
+            box-shadow: 0 10px 25px -5px rgba(0,0,0,0.05), 0 8px 10px -6px rgba(0,0,0,0.02);
+            transition: transform 0.2s ease;
+        }
+
+        .login-card.shake {
+            animation: cardShake 0.4s ease-in-out;
+        }
+
+        @keyframes cardShake {
+            0%, 100% { transform: translateX(0); }
+            20%, 60% { transform: translateX(-8px); }
+            40%, 80% { transform: translateX(8px); }
+        }
+
+        .login-header {
+            text-align: center;
+            margin-bottom: 28px;
+        }
+
+        .login-icon-wrap {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 58px;
+            height: 58px;
+            background: #111111;
+            color: #ffffff;
+            border-radius: 14px;
+            margin-bottom: 18px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        .login-icon-wrap img {
+            height: 30px;
+            width: auto;
+            filter: brightness(0) invert(1);
+        }
+
+        .login-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 6px;
+            letter-spacing: -0.5px;
+        }
+
+        .login-subtitle {
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        /* Form Controls */
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .form-label {
+            display: block;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 7px;
+            color: #334155;
+        }
+
+        .input-wrap {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .input-icon {
+            position: absolute;
+            left: 14px;
+            color: #94a3b8;
+            font-size: 14px;
+            pointer-events: none;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 11px 40px 11px 40px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-size: 14px;
+            color: var(--text-dark);
+            background: #ffffff;
+            outline: none;
+            transition: all 0.2s;
+        }
+
+        .form-input:focus {
+            border-color: #0f172a;
+            box-shadow: 0 0 0 3px rgba(15, 23, 42, 0.08);
+        }
+
+        .toggle-password {
+            position: absolute;
+            right: 14px;
+            background: none;
+            border: none;
+            color: #94a3b8;
+            cursor: pointer;
+            padding: 0;
+            font-size: 14px;
+            transition: color 0.2s;
+        }
+
+        .toggle-password:hover {
+            color: var(--text-dark);
+        }
+
+        /* Alerts */
+        .alert {
+            display: none;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 14px;
+            border-radius: 8px;
+            font-size: 13px;
+            margin-bottom: 20px;
+            line-height: 1.4;
+        }
+
+        .alert-danger {
+            background-color: var(--danger-bg);
+            border: 1px solid var(--danger-border);
+            color: #b91c1c;
+        }
+
+        .alert-success {
+            background-color: var(--success-bg);
+            border: 1px solid var(--success-border);
+            color: #047857;
+        }
+
+        /* Submit Button */
+        .btn-submit {
+            width: 100%;
+            padding: 12px;
+            background: var(--primary);
+            color: #ffffff;
+            border: 1px solid var(--primary);
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: all 0.2s;
+            margin-top: 10px;
+        }
+
+        .btn-submit:hover:not(:disabled) {
+            background: var(--primary-hover);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+        }
+
+        .btn-submit:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+        }
+
+        /* Info notice */
+        .login-notice {
+            margin-top: 24px;
+            padding-top: 20px;
+            border-top: 1px solid #f1f5f9;
+            text-align: center;
+            font-size: 12px;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        .login-notice strong {
+            color: #334155;
+        }
+
+        /* Footer */
+        .login-footer {
+            padding: 20px;
+            text-align: center;
+            font-size: 12px;
+            color: #94a3b8;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Bar -->
+    <header class="login-topbar">
+        <a href="/" class="login-brand">
+            <img src="/assets/images/TF-LOgo.svg" alt="Turpone Foods">
+            <span class="login-brand-title">Turpone Foods</span>
+        </a>
+        <a href="/" class="btn-back-home">
+            <i class="fa-solid fa-arrow-left"></i> Back to Website
+        </a>
+    </header>
+
+    <!-- Main Login Area -->
+    <main class="login-wrapper">
+        <div class="login-card" id="loginCard">
+            <div class="login-header">
+                <div class="login-icon-wrap">
+                    <i class="fa-solid fa-lock" style="font-size:22px;"></i>
+                </div>
+                <h1 class="login-title">Admin & Staff Portal</h1>
+                <p class="login-subtitle">Sign in to manage recipes and product catalog</p>
+            </div>
+
+            <div id="errorAlert" class="alert alert-danger">
+                <i class="fa-solid fa-circle-exclamation" style="flex-shrink:0;"></i>
+                <span id="errorMessage">Invalid email or password.</span>
+            </div>
+
+            <div id="successAlert" class="alert alert-success">
+                <i class="fa-solid fa-circle-check" style="flex-shrink:0;"></i>
+                <span id="successMessage">Credentials verified! Redirecting...</span>
+            </div>
+
+            <form id="loginForm" onsubmit="handleLogin(event)">
+                <div class="form-group">
+                    <label class="form-label" for="email">Work Email</label>
+                    <div class="input-wrap">
+                        <i class="fa-solid fa-envelope input-icon"></i>
+                        <input 
+                            type="email" 
+                            id="email" 
+                            class="form-input" 
+                            required 
+                            autofocus 
+                            autocomplete="username" 
+                            placeholder="natalia.l@turpone.com">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="password">Password</label>
+                    <div class="input-wrap">
+                        <i class="fa-solid fa-key input-icon"></i>
+                        <input 
+                            type="password" 
+                            id="password" 
+                            class="form-input" 
+                            required 
+                            autocomplete="current-password" 
+                            placeholder="••••••••••••">
+                        <button type="button" class="toggle-password" onclick="togglePasswordVisibility()" title="Show/hide password">
+                            <i class="fa-solid fa-eye" id="togglePasswordIcon"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-submit" id="submitBtn">
+                    <span>Sign In</span>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </form>
+
+            <div class="login-notice">
+                <i class="fa-solid fa-shield-halved" style="color:var(--accent); margin-right:4px;"></i>
+                Authorized access only. Dedicated permissions are applied based on account role.
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="login-footer">
+        &copy; 2026 Turpone Foods Inc. All rights reserved.
+    </footer>
+
+    <script>
+        // Check for URL redirect parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const redirectParam = urlParams.get('redirect');
+        const isLogout = urlParams.get('logout') === 'true';
+
+        if (isLogout) {
+            localStorage.removeItem('turpone_admin_auth');
+            sessionStorage.removeItem('turpone_admin_auth');
+        } else {
+            // If already authenticated, redirect straight to their dashboard
+            const existingAuth = JSON.parse(localStorage.getItem('turpone_admin_auth') || sessionStorage.getItem('turpone_admin_auth') || 'null');
+            if (existingAuth && existingAuth.email) {
+                if (existingAuth.role === 'recipes_editor') {
+                    window.location.href = '/admin/recipes.html';
+                } else if (existingAuth.role === 'admin') {
+                    window.location.href = redirectParam ? '/admin/' + redirectParam : '/admin/products.html';
+                }
+            }
+        }
+
+        function togglePasswordVisibility() {
+            const pwdInput = document.getElementById('password');
+            const icon = document.getElementById('togglePasswordIcon');
+            if (pwdInput.type === 'password') {
+                pwdInput.type = 'text';
+                icon.classList.remove('fa-eye');
+                icon.classList.add('fa-eye-slash');
+            } else {
+                pwdInput.type = 'password';
+                icon.classList.remove('fa-eye-slash');
+                icon.classList.add('fa-eye');
+            }
+        }
+
+        function showError(msg) {
+            const errAlert = document.getElementById('errorAlert');
+            const errMsg = document.getElementById('errorMessage');
+            const card = document.getElementById('loginCard');
+            errMsg.textContent = msg;
+            errAlert.style.display = 'flex';
+            document.getElementById('successAlert').style.display = 'none';
+
+            card.classList.remove('shake');
+            void card.offsetWidth; // Trigger reflow
+            card.classList.add('shake');
+        }
+
+        function showSuccess(msg) {
+            const succAlert = document.getElementById('successAlert');
+            const succMsg = document.getElementById('successMessage');
+            succMsg.textContent = msg;
+            succAlert.style.display = 'flex';
+            document.getElementById('errorAlert').style.display = 'none';
+        }
+
+        async function handleLogin(e) {
+            e.preventDefault();
+            const emailInput = document.getElementById('email').value.trim().toLowerCase();
+            const passwordInput = document.getElementById('password').value.trim();
+            const submitBtn = document.getElementById('submitBtn');
+            const originalBtnContent = submitBtn.innerHTML;
+
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> <span>Verifying...</span>';
+            document.getElementById('errorAlert').style.display = 'none';
+
+            let authSuccess = false;
+            let userData = null;
+
+            // Try Cloudflare Pages Function /api/auth
+            try {
+                const res = await fetch('/api/auth', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email: emailInput, password: passwordInput })
+                });
+                const data = await res.json().catch(() => null);
+                if (res.ok && data && data.success) {
+                    authSuccess = true;
+                    userData = data.user;
+                }
+            } catch (netErr) {
+                console.warn('Network call to /api/auth failed, using local auth validator:', netErr);
+            }
+
+            // Client-side fallback authentication
+            if (!authSuccess) {
+                if (emailInput === 'natalia.l@turpone.com' && passwordInput === 'JarryGroup32$') {
+                    authSuccess = true;
+                    userData = {
+                        email: 'natalia.l@turpone.com',
+                        name: 'Natalia Leano',
+                        role: 'recipes_editor',
+                        permissions: ['recipes_read', 'recipes_write', 'recipes_delete'],
+                        defaultRoute: '/admin/recipes.html'
+                    };
+                } else if ((emailInput === 'admin@turpone.com' || emailInput === 'graphicsturpone@gmail.com' || emailInput === 'admin') && passwordInput === 'JarryGroup32$') {
+                    authSuccess = true;
+                    userData = {
+                        email: emailInput,
+                        name: 'Administrator',
+                        role: 'admin',
+                        permissions: ['all'],
+                        defaultRoute: '/admin/products.html'
+                    };
+                }
+            }
+
+            if (authSuccess && userData) {
+                const sessionRecord = {
+                    ...userData,
+                    token: 'turpone_sec_' + btoa(userData.email + ':' + Date.now()),
+                    loginTime: Date.now()
+                };
+
+                localStorage.setItem('turpone_admin_auth', JSON.stringify(sessionRecord));
+                sessionStorage.setItem('turpone_admin_auth', JSON.stringify(sessionRecord));
+
+                showSuccess(`Welcome back, ${userData.name}! Loading dashboard...`);
+
+                setTimeout(() => {
+                    if (userData.role === 'recipes_editor') {
+                        window.location.href = '/admin/recipes.html';
+                    } else {
+                        window.location.href = redirectParam ? '/admin/' + redirectParam : '/admin/products.html';
+                    }
+                }, 800);
+            } else {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = originalBtnContent;
+                showError('Invalid email or password. Please verify and try again.');
+            }
+        }
+    </script>
+</body>
+</html>

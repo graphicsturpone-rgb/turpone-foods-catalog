@@ -396,6 +396,59 @@
             box-shadow: 0 10px 20px rgba(0,0,0,0.15);
             z-index: 1000;
         }
+    
+        /* User Profile Pill & Logout */
+        .admin-user-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: #ffffff;
+            padding: 5px 12px;
+            border-radius: 30px;
+            border: 1px solid var(--border);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+        }
+        .user-meta {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.15;
+            text-align: left;
+        }
+        .user-name {
+            font-size: 12px;
+            font-weight: 600;
+            color: #0f172a;
+        }
+        .user-role {
+            font-size: 9px;
+            color: #b8976b;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 700;
+        }
+        .btn-logout {
+            background: #f1f5f9;
+            border: 1px solid var(--border);
+            color: #64748b;
+            cursor: pointer;
+            padding: 5px 8px;
+            font-size: 11px;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            border-radius: 6px;
+            transition: all 0.2s;
+            margin-left: 2px;
+        }
+        .btn-logout:hover {
+            color: #ef4444;
+            background: #fee2e2;
+            border-color: #fca5a5;
+        }
+        .nav-tab.restricted {
+            opacity: 0.45;
+            cursor: not-allowed !important;
+        }
     </style>
 </head>
 <body>
@@ -410,15 +463,26 @@
 
         <!-- Navigation Tabs between Products & Recipes -->
         <nav class="nav-tabs">
-            <a href="/admin/products.html" class="nav-tab">
+            <a href="/admin/products.html" class="nav-tab" id="productsNavTab">
                 <i class="fa-solid fa-box" style="margin-right:6px;"></i> Products
             </a>
-            <a href="/admin/recipes.html" class="nav-tab active">
+            <a href="/admin/recipes.html" class="nav-tab active" id="recipesNavTab">
                 <i class="fa-solid fa-utensils" style="margin-right:6px;"></i> Recipes
             </a>
         </nav>
 
         <div class="admin-actions">
+            <div class="admin-user-pill" id="adminUserPill">
+                <i class="fa-solid fa-circle-user" style="color:#b8976b; font-size:18px;"></i>
+                <div class="user-meta">
+                    <span class="user-name" id="adminUserName">Staff</span>
+                    <span class="user-role" id="adminUserRole">Editor</span>
+                </div>
+                <button type="button" class="btn-logout" onclick="logoutAdmin()" title="Sign Out">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                </button>
+            </div>
+
             <a href="/recipes/" class="btn-view-store" target="_blank">
                 <i class="fa-solid fa-arrow-up-right-from-square"></i> View Live Recipes
             </a>
@@ -568,6 +632,44 @@
     <script src="/recipes/recipe-store.js"></script>
 
     <script>
+        
+        function initAdminSession() {
+            const auth = JSON.parse(localStorage.getItem('turpone_admin_auth') || sessionStorage.getItem('turpone_admin_auth') || 'null');
+            if (!auth || !auth.email) {
+                window.location.href = '/admin/?redirect=recipes.html';
+                return null;
+            }
+
+            const userNameEl = document.getElementById('adminUserName');
+            const userRoleEl = document.getElementById('adminUserRole');
+            const productsTab = document.getElementById('productsNavTab');
+
+            if (userNameEl) userNameEl.textContent = auth.name || auth.email;
+            if (userRoleEl) userRoleEl.textContent = auth.role === 'recipes_editor' ? 'Recipes Editor' : 'Administrator';
+
+            if (auth.role === 'recipes_editor' && productsTab) {
+                productsTab.classList.add('restricted');
+                productsTab.removeAttribute('href');
+                productsTab.title = 'Access Restricted: Your account has permissions for Recipes only';
+                productsTab.innerHTML = '<i class="fa-solid fa-lock" style="margin-right:6px;"></i> Products';
+                productsTab.onclick = function(e) {
+                    e.preventDefault();
+                    alert('Access Restricted: Your account has edit permissions for Recipes only.');
+                };
+            }
+
+            return auth;
+        }
+
+        function logoutAdmin() {
+            localStorage.removeItem('turpone_admin_auth');
+            sessionStorage.removeItem('turpone_admin_auth');
+            window.location.href = '/admin/?logout=true';
+        }
+
+        // Run auth enforcement immediately
+        initAdminSession();
+    
         let currentRecipes = [];
         const NEUTRAL_PLACEHOLDER = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23f1f5f9'/%3E%3Cpath d='M30 65 L45 45 L58 58 L68 46 L80 65 Z' fill='%23cbd5e1'/%3E%3Ccircle cx='40' cy='38' r='5' fill='%23cbd5e1'/%3E%3C/svg%3E";
 
