@@ -281,7 +281,7 @@ const productsData = [
       "pepperoni-and-hot-pickled-peppers-pizza-10-gallery-3.webp",
       "pepperoni-and-hot-pickled-peppers-pizza-10-gallery-4.webp"
     ],
-    "ingredients": "Ingredients: Wheat flour, water, mozzarella cheese, pepperoni, hot pickled peppers, tomato sauce, parmesan cheese, olive oil, salt, yeast.\nContains: Wheat, Milk.",
+    "ingredients": "Ingredients: Crust: Enriched Wheat Flour, Water, Extra-Virgin Olive Oil, Salt, Yeast, Dried Sourdough (Wheat, Rye), Amylase, Sunflower Oil, Ascorbic Acid, Xylanase. Toppings: Mozzarella Cheese Milk, Modified Milk Ingredients, Cream, Salt, Calcium Chloride, Bacterial Culture, Microbial Enzyme), Pepperoni (Pork, Salt, Pork Stock, Dextrose, Spice Extracts, Lactic Acid Starter Culture, Sodium Erythorbate, Natural Smoke Flavor, Dehydrated Garlic, Sodium Nitrite, Citric Acid Smoke), Red And Yellow Hot Pickled Peppers (Peppers, Water, Salt, Acetic Acid, Calcium Chloride, Sodium Benzoate, Sodium Metabisulfite, Turmeric), Parmesan Cheese (Milk, Salt, Lipase, Microbial Enzyme, Bacterial Culture, Calcium Chloride, Cellulose). Tomato Sauce: Diced Tomatoes (Tomatoes, *May Contain Citric Acid, Crushed Tomatoes, Salt, Sugar, Garlic Powder, Chili Flakes, Herb.\nContains: Milk, Wheat, Rye.\nMay Contain: Eggs, Soy, Mustard.",
     "ingredients_fr": "Ingrédients : Farine de blé, eau, fromage mozzarella, pepperoni, piments marinés forts, sauce tomate, fromage parmesan, huile d'olive, sel, levure.\nContient : Blé, Lait.",
     "ingredients_es": "Ingredientes: Harina de trigo, agua, queso mozzarella, pepperoni, chiles picantes encurtidos, salsa de tomate, queso parmesano, aceite de oliva, sal, levadura.\nContiene: Trigo, Leche.",
     "image_ca": "pepperoni-and-hot-pickled-peppers-pizza-10.webp",
@@ -299,7 +299,7 @@ const productsData = [
       "pepperoni-and-hot-pickled-peppers-pizza-10-us-gallery-4.webp"
     ],
     "slug": "pepperoni-and-hot-pickled-peppers-pizza-10",
-    "updated_at": 1793042059346
+    "updated_at": 1793105934600
   },
   {
     "id": 29,
