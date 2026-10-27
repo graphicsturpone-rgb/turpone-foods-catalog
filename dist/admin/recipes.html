@@ -474,8 +474,8 @@
         </div>
     </main>
 
-    <!-- Recipe Modal (Add / Edit) -->
-    <div class="modal-overlay" id="recipeModal">
+        <!-- Recipe Modal (Add / Edit) -->
+    <div class="modal-overlay" id="recipeModal" onclick="if (event.target === this) closeModal()">
         <div class="modal">
             <div class="modal-header">
                 <h2 id="modalTitle">Add New Recipe</h2>
@@ -484,6 +484,38 @@
             <form id="recipeForm" onsubmit="handleFormSubmit(event)">
                 <div class="modal-body">
                     <input type="hidden" id="formSlug">
+
+                    <!-- Timing & Servings -->
+                    <div class="form-row-3">
+                        <div class="form-group">
+                            <label for="formPrepTime">Prep Time</label>
+                            <input type="text" id="formPrepTime" placeholder="e.g. 15 min">
+                        </div>
+                        <div class="form-group">
+                            <label for="formCookTime">Total / Cook Time</label>
+                            <input type="text" id="formCookTime" placeholder="e.g. 30 min">
+                        </div>
+                        <div class="form-group">
+                            <label for="formYields">Yields / Servings</label>
+                            <input type="text" id="formYields" placeholder="e.g. 4 servings">
+                        </div>
+                    </div>
+
+                    <!-- Image Upload -->
+                    <div class="form-group">
+                        <label for="formImage">Featured Recipe Image *</label>
+                        <div class="upload-input-group">
+                            <input type="text" id="formImage" required placeholder="Filename or full URL" oninput="updateImagePreviews()">
+                            <label class="btn-upload-file" title="Upload image directly from your computer (.webp, .png, .jpg)">
+                                <i class="fa-solid fa-arrow-up-from-bracket"></i> Upload
+                                <input type="file" id="imageFileInput" accept=".webp,.png,.jpg,.jpeg,image/webp,image/png,image/jpeg" style="display:none;" onchange="handleImageFileUpload(this)">
+                            </label>
+                        </div>
+                        <span class="hint">Upload from your computer (auto-compressed to .webp), or type path in <code>/assets/images/recipes/</code>.</span>
+                        <div class="recipe-preview-box" id="imagePreviewBox">
+                            <span style="font-size:11px; color:#94a3b8;">No image</span>
+                        </div>
+                    </div>
 
                     <!-- Multilingual Tabs: English, French Canadian, Spanish -->
                     <div class="lang-tab-bar" style="display: flex; gap: 8px; margin-bottom: 20px; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px;">
@@ -494,25 +526,21 @@
 
                     <!-- Panel English -->
                     <div id="panelLangEn" class="recipe-lang-panel">
-                        <!-- Title -->
                         <div class="form-group">
                             <label for="formTitle">Recipe Title (English) *</label>
                             <input type="text" id="formTitle" required placeholder="e.g. Spicy Italian Sausage Pizza">
                         </div>
 
-                        <!-- Story / Paragraph -->
                         <div class="form-group">
                             <label for="formDescription">Recipe Story & Description (Paragraph under image)</label>
                             <textarea id="formDescription" rows="3" placeholder="Enter rich introduction or culinary background..."></textarea>
                         </div>
 
-                        <!-- Ingredients (one per line) -->
                         <div class="form-group">
                             <label for="formIngredients">Ingredients (One per line) *</label>
                             <textarea id="formIngredients" rows="5" required placeholder="1 whole roasting chicken&#10;4 tbsp Martha Stewart Roasted Garlic Olive Oil..."></textarea>
                         </div>
 
-                        <!-- Instructions (one per line) -->
                         <div class="form-group">
                             <label for="formInstructions">Instructions / Steps (One step per line) *</label>
                             <textarea id="formInstructions" rows="6" required placeholder="**Preheat:** Preheat oven to 425°F (220°C).&#10;**Cook:** Roast undisturbed for 50 to 60 minutes..."></textarea>
@@ -891,62 +919,94 @@ try { localStorage.removeItem("turpone_admin_auth"); sessionStorage.removeItem("
             }
         }
 
+        function safeSetValue(id, val) {
+            const el = document.getElementById(id);
+            if (el) el.value = val || '';
+        }
+
+        function safeSetText(id, text) {
+            const el = document.getElementById(id);
+            if (el) el.textContent = text || '';
+        }
+
         function openAddModal() {
-            document.getElementById('recipeForm').reset();
-            document.getElementById('modalTitle').textContent = 'Add New Recipe';
-            document.getElementById('formSlug').value = '';
-            document.getElementById('formTitleFr').value = '';
-            document.getElementById('formTitleEs').value = '';
-            document.getElementById('formDescriptionFr').value = '';
-            document.getElementById('formDescriptionEs').value = '';
-            document.getElementById('formIngredientsFr').value = '';
-            document.getElementById('formIngredientsEs').value = '';
-            document.getElementById('formInstructionsFr').value = '';
-            document.getElementById('formInstructionsEs').value = '';
+            const form = document.getElementById('recipeForm');
+            if (form) form.reset();
+            safeSetText('modalTitle', 'Add New Recipe');
+            safeSetValue('formSlug', '');
+            safeSetValue('formTitle', '');
+            safeSetValue('formPrepTime', '');
+            safeSetValue('formCookTime', '');
+            safeSetValue('formYields', '');
+            safeSetValue('formImage', '');
+            safeSetValue('formDescription', '');
+            safeSetValue('formIngredients', '');
+            safeSetValue('formInstructions', '');
+            safeSetValue('formTitleFr', '');
+            safeSetValue('formTitleEs', '');
+            safeSetValue('formDescriptionFr', '');
+            safeSetValue('formDescriptionEs', '');
+            safeSetValue('formIngredientsFr', '');
+            safeSetValue('formIngredientsEs', '');
+            safeSetValue('formInstructionsFr', '');
+            safeSetValue('formInstructionsEs', '');
+            safeSetValue('formUpsellImage', '');
+            safeSetValue('formUpsellLink', '');
             switchRecipeLangTab('en');
             updateImagePreviews();
-            document.getElementById('recipeModal').classList.add('active');
+            const modal = document.getElementById('recipeModal');
+            if (modal) modal.classList.add('active');
         }
 
         function openEditModal(slug) {
-            const recipe = currentRecipes.find(r => r.slug === slug || r.id === slug);
-            if (!recipe) return;
+            if (!slug) return;
+            const normSlug = String(slug).trim().toLowerCase();
+            const recipe = currentRecipes.find(r => 
+                String(r.slug || '').trim().toLowerCase() === normSlug || 
+                String(r.id || '').trim().toLowerCase() === normSlug
+            );
+            if (!recipe) {
+                alert('Recipe not found: ' + slug);
+                return;
+            }
 
-            document.getElementById('modalTitle').textContent = 'Edit Recipe: ' + recipe.title;
-            document.getElementById('formSlug').value = recipe.slug;
-            document.getElementById('formTitle').value = recipe.title || '';
-            document.getElementById('formPrepTime').value = recipe.prepTime || '';
-            document.getElementById('formCookTime').value = recipe.cookTime || '';
-            document.getElementById('formYields').value = recipe.yields || '';
-            document.getElementById('formImage').value = recipe.image || '';
-            document.getElementById('formDescription').value = recipe.description || '';
+            safeSetText('modalTitle', 'Edit Recipe: ' + (recipe.title || ''));
+            safeSetValue('formSlug', recipe.slug || recipe.id || '');
+            safeSetValue('formTitle', recipe.title || '');
+            safeSetValue('formPrepTime', recipe.prepTime || '');
+            safeSetValue('formCookTime', recipe.cookTime || '');
+            safeSetValue('formYields', recipe.yields || '');
+            safeSetValue('formImage', recipe.image || '');
+            safeSetValue('formDescription', recipe.description || '');
 
             const ingText = Array.isArray(recipe.ingredients) ? recipe.ingredients.join('\n') : (recipe.ingredients || '');
-            document.getElementById('formIngredients').value = ingText;
+            safeSetValue('formIngredients', ingText);
 
             const instText = Array.isArray(recipe.instructions) ? recipe.instructions.join('\n') : (recipe.instructions || '');
-            document.getElementById('formInstructions').value = instText;
+            safeSetValue('formInstructions', instText);
 
             // Multilingual fields
-            document.getElementById('formTitleFr').value = recipe.title_fr || '';
-            document.getElementById('formTitleEs').value = recipe.title_es || '';
-            document.getElementById('formDescriptionFr').value = recipe.description_fr || '';
-            document.getElementById('formDescriptionEs').value = recipe.description_es || '';
-            document.getElementById('formIngredientsFr').value = Array.isArray(recipe.ingredients_fr) ? recipe.ingredients_fr.join('\n') : (recipe.ingredients_fr || '');
-            document.getElementById('formIngredientsEs').value = Array.isArray(recipe.ingredients_es) ? recipe.ingredients_es.join('\n') : (recipe.ingredients_es || '');
-            document.getElementById('formInstructionsFr').value = Array.isArray(recipe.instructions_fr) ? recipe.instructions_fr.join('\n') : (recipe.instructions_fr || '');
-            document.getElementById('formInstructionsEs').value = Array.isArray(recipe.instructions_es) ? recipe.instructions_es.join('\n') : (recipe.instructions_es || '');
+            safeSetValue('formTitleFr', recipe.title_fr || '');
+            safeSetValue('formTitleEs', recipe.title_es || '');
+            safeSetValue('formDescriptionFr', recipe.description_fr || '');
+            safeSetValue('formDescriptionEs', recipe.description_es || '');
+            safeSetValue('formIngredientsFr', Array.isArray(recipe.ingredients_fr) ? recipe.ingredients_fr.join('\n') : (recipe.ingredients_fr || ''));
+            safeSetValue('formIngredientsEs', Array.isArray(recipe.ingredients_es) ? recipe.ingredients_es.join('\n') : (recipe.ingredients_es || ''));
+            safeSetValue('formInstructionsFr', Array.isArray(recipe.instructions_fr) ? recipe.instructions_fr.join('\n') : (recipe.instructions_fr || ''));
+            safeSetValue('formInstructionsEs', Array.isArray(recipe.instructions_es) ? recipe.instructions_es.join('\n') : (recipe.instructions_es || ''));
 
-            document.getElementById('formUpsellImage').value = recipe.upsellImage || '';
-            document.getElementById('formUpsellLink').value = recipe.upsellLink || '';
+            safeSetValue('formUpsellImage', recipe.upsellImage || '');
+            safeSetValue('formUpsellLink', recipe.upsellLink || '');
 
             switchRecipeLangTab('en');
             updateImagePreviews();
-            document.getElementById('recipeModal').classList.add('active');
+            const modal = document.getElementById('recipeModal');
+            if (modal) modal.classList.add('active');
         }
 
         function closeModal() {
-            document.getElementById('recipeModal').classList.remove('active');
+            const modal = document.getElementById('recipeModal');
+            if (modal) modal.classList.remove('active');
         }
 
         function compressImageFile(file, maxWidth = 1200, quality = 0.85) {
@@ -992,10 +1052,13 @@ try { localStorage.removeItem("turpone_admin_auth"); sessionStorage.removeItem("
         }
 
         function updateImagePreviews() {
-            const val = document.getElementById('formImage').value.trim();
+            const input = document.getElementById('formImage');
             const box = document.getElementById('imagePreviewBox');
+            if (!box) return;
+            const val = input ? input.value.trim() : '';
             if (val) {
-                box.innerHTML = `<img src="${val}" alt="Preview" style="max-height:100%; max-width:100%; object-fit:contain; border-radius:4px;">`;
+                const src = resolveImage(val);
+                box.innerHTML = `<img src="${src}" alt="Preview" style="max-height:100%; max-width:100%; object-fit:contain; border-radius:4px;" onerror="this.onerror=null; this.src=NEUTRAL_PLACEHOLDER;">`;
             } else {
                 box.innerHTML = `<span style="font-size:11px; color:#94a3b8;">No image</span>`;
             }
