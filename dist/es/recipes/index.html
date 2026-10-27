@@ -549,9 +549,28 @@ document.addEventListener('DOMContentLoaded', function() {
         try {
             const recipes = RecipeStore.getAll();
             if (!recipes || recipes.length === 0) {
+                if (grid.children && grid.children.length > 0 && !grid.innerHTML.includes('No recipes currently available')) {
+                    return;
+                }
                 grid.innerHTML = '<div style="grid-column: 1/-1; text-align: center; padding: 60px 20px; color: #64748b; font-size: 16px;">No recipes currently available.</div>';
                 return;
             }
+
+            const staticSlugs = [
+                'crispy-roasted-whole-chicken-with-roasted-garlic-olive-oil',
+                'fennel-and-rosemary-crusted-pork-loin',
+                'fig-herb-balsamic-vinaigrette',
+                'grilled-white-fish-with-lemon-pepper-herb-salmoriglio',
+                'mediterranean-tomato-marinade-for-fresh-bocconcini',
+                'pan-seared-salmon-with-a-lemon-black-pepper-honey-glaze',
+                'prosciutto-arugula-pizza',
+                'quick-garden-herb-ranch-dip',
+                'simple-balsamic-garlic-herb-tableside-dressing',
+                'spicy-garlic-grilled-shrimp-skewers',
+                'spicy-italian-sausage-pizza',
+                'triple-chili-honey-glazed-skewers',
+                'triple-pepper-crusted-new-york-strip-steak'
+            ];
 
             const lang = getCurrentLanguage();
             grid.innerHTML = recipes.map(r => {
@@ -560,12 +579,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (lang === 'es' && r.title_es) title = r.title_es;
 
                 let targetUrl = '';
-                if (lang === 'fr') {
-                    targetUrl = '/fr/recipes/detail.html?slug=' + encodeURIComponent(r.slug);
-                } else if (lang === 'es') {
-                    targetUrl = '/es/recipes/detail.html?slug=' + encodeURIComponent(r.slug);
+                if (staticSlugs.includes(r.slug)) {
+                    targetUrl = (lang === 'fr') ? ('/fr/recipes/' + r.slug + '/') : ((lang === 'es') ? ('/es/recipes/' + r.slug + '/') : ('/recipes/' + r.slug + '/'));
                 } else {
-                    targetUrl = '/recipes/detail.html?slug=' + encodeURIComponent(r.slug);
+                    targetUrl = (lang === 'fr') ? ('/fr/recipes/detail.html?slug=' + encodeURIComponent(r.slug)) : ((lang === 'es') ? ('/es/recipes/detail.html?slug=' + encodeURIComponent(r.slug)) : ('/recipes/detail.html?slug=' + encodeURIComponent(r.slug)));
                 }
 
                 const img = r.image || '/assets/images/placeholder.svg';

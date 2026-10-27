@@ -555,7 +555,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (insTitle) insTitle.textContent = t.instructions;
 
     try {
-        const recipe = await RecipeStore.getBySlug(slug);
+        const recipe = (window.RecipeStore && RecipeStore.getBySlug) ? RecipeStore.getBySlug(slug) : null;
         if (!recipe) {
             document.getElementById('recipe-title').textContent = t.notFoundTitle;
             document.getElementById('recipe-desc').innerHTML = `<p>${t.notFoundDesc}</p>`;
@@ -627,9 +627,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 return `<li style="margin-bottom: 20px;">${formatted}</li>`;
             }).join('');
         }
-    } catch (e) {
+        } catch (e) {
         console.error('Error hydrating recipe detail:', e);
     }
+}
+hydrateDetail();
+window.addEventListener('turpone:recipes-updated', hydrateDetail);
 });
 </script>
 </body></html>

@@ -620,10 +620,12 @@ try { localStorage.removeItem("turpone_admin_auth"); sessionStorage.removeItem("
         }
 
         function loadRecipes() {
-            if (window.RecipeStore) {
+            if (window.RecipeStore && typeof window.RecipeStore.getAll === 'function') {
                 currentRecipes = window.RecipeStore.getAll();
-            } else if (typeof recipesData !== 'undefined') {
+            } else if (typeof recipesData !== 'undefined' && Array.isArray(recipesData)) {
                 currentRecipes = [...recipesData];
+            } else if (typeof window !== 'undefined' && Array.isArray(window.recipesData)) {
+                currentRecipes = [...window.recipesData];
             } else {
                 currentRecipes = [];
             }
@@ -1116,7 +1118,7 @@ try { localStorage.removeItem("turpone_admin_auth"); sessionStorage.removeItem("
             }
         }
 
-        function confirmDelete(slug) {
+        async function confirmDelete(slug) {
             if (confirm('Are you sure you want to remove this recipe?')) {
                 if (window.RecipeStore) {
                     window.RecipeStore.delete(slug);

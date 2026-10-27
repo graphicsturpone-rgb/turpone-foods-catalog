@@ -839,3 +839,7 @@ const recipesData = [
     "description_es": "Esta receta utiliza una mezcla audaz y vibrante de sal marina gruesa, gochugaru coreano ahumado, hojuelas de chile rojo picante y pimienta negra penetrante. Presionar la mezcla de sazonador seco directamente sobre la superficie de un bistec de corte grueso crea una costra hermosa, profundamente caramelizada cuando se sella a fuego alto, equilibrando la rica grasa de la carne de res con un acabado picante de múltiples capas."
   }
 ];
+
+if (typeof window !== 'undefined') window.recipesData = recipesData;
+if (typeof globalThis !== 'undefined') globalThis.recipesData = recipesData;
+if (typeof module !== 'undefined' && module.exports) module.exports = recipesData;

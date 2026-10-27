@@ -239,7 +239,7 @@ function parseRecipesData(jsCode) {
 
 // Serialize recipes back to clean recipes/data.js format
 function serializeRecipesData(recipes) {
-    return `const recipesData = ${JSON.stringify(recipes, null, 2)};\n`;
+    return `const recipesData = ${JSON.stringify(recipes, null, 2)};\n\nif (typeof window !== 'undefined') window.recipesData = recipesData;\nif (typeof globalThis !== 'undefined') globalThis.recipesData = recipesData;\nif (typeof module !== 'undefined' && module.exports) module.exports = recipesData;\n`;
 }
 
 // Main handler

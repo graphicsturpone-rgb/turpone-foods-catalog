@@ -47,18 +47,24 @@
     }
 
     function getAllRecipes() {
-        const baseRecipes = (window.__apiRecipes && window.__apiRecipes.length > 0)
+        const baseRecipes = (window.__apiRecipes && Array.isArray(window.__apiRecipes) && window.__apiRecipes.length > 0)
             ? [...window.__apiRecipes]
-            : ((typeof recipesData !== 'undefined' && Array.isArray(recipesData)) ? [...recipesData] : []);
+            : ((typeof recipesData !== 'undefined' && Array.isArray(recipesData) && recipesData.length > 0) ? [...recipesData] : 
+               ((typeof window !== 'undefined' && Array.isArray(window.recipesData) && window.recipesData.length > 0) ? [...window.recipesData] : 
+               ((typeof globalThis !== 'undefined' && Array.isArray(globalThis.recipesData) && globalThis.recipesData.length > 0) ? [...globalThis.recipesData] : [])));
 
         const customRecipes = getCustomRecipes();
-        const deletedSlugs = new Set(getDeletedSlugs().map(s => String(s).trim().toLowerCase()));
+        const rawDeleted = getDeletedSlugs();
+        const deletedSlugs = new Set(rawDeleted.map(s => String(s).trim().toLowerCase()).filter(Boolean));
 
         const merged = [...baseRecipes];
         const activeDrafts = [];
 
         customRecipes.forEach(custom => {
+            if (!custom) return;
             const customId = String(custom.id || custom.slug || '').trim().toLowerCase();
+            if (!customId) return;
+
             const index = merged.findIndex(r => {
                 const baseId = String(r.id || r.slug || '').trim().toLowerCase();
                 return baseId === customId;
@@ -82,12 +88,25 @@
             }
         });
 
+        // Safety guard: If deletedSlugs would delete every single recipe or corrupt state,
+        // clear stale tombstones so catalog is never blanked
+        if (deletedSlugs.size > 0 && baseRecipes.length > 0 && deletedSlugs.size >= merged.length) {
+            console.warn('RecipeStore: Stale tombstone conflict detected. Restoring canonical catalog.');
+            saveDeletedSlugs([]);
+            deletedSlugs.clear();
+        }
+
         // Exclude all recipes that were marked as deleted
         const active = merged.filter(r => {
             const id = String(r.id || '').trim().toLowerCase();
             const slug = String(r.slug || '').trim().toLowerCase();
             return !deletedSlugs.has(id) && !deletedSlugs.has(slug);
         });
+
+        // Absolute safety fallback: Never return empty if base recipes exist
+        if (active.length === 0 && baseRecipes.length > 0) {
+            return baseRecipes;
+        }
 
         return active;
     }
