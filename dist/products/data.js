@@ -995,7 +995,7 @@ const productsData = [
       "roasted-garlic-pizza-sauce-375g-gallery-1.webp",
       "roasted-garlic-pizza-sauce-375g-gallery-2.webp"
     ],
-    "ingredients": "Ingredients: Vine-ripened crushed tomatoes, water, roasted garlic, extra-virgin olive oil, sea salt, oregano, basil, black pepper.",
+    "ingredients": "Ingredients:crushed Tomatoes (Water, Crushed Tomatoes), Carrots, Olive Oil, Salt, Onion*, Citric Acid, Garlic*, Basil, Oregano, Black Pepper. *Dried.",
     "ingredients_fr": "Ingrédients : Tomates broyées mûries sur pied, eau, ail rôti, huile d'olive extra vierge, sel de mer, origan, basilic, poivre noir.",
     "ingredients_es": "Ingredientes: Tomates triturados madurados al sol, agua, ajo asado, aceite de oliva virgen extra, sal marina, orégano, albahaca, pimienta negra.",
     "image_ca": "roasted-garlic-pizza-sauce-375g.webp",
@@ -1009,7 +1009,7 @@ const productsData = [
       "roasted-garlic-pizza-sauce-375g-us-gallery-2.webp"
     ],
     "slug": "roasted-garlic-pizza-sauce-14-oz",
-    "updated_at": 1793043040107
+    "updated_at": 1793110231384
   },
   {
     "id": 12,
