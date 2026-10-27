@@ -363,7 +363,7 @@ const productsData = [
       "spinach-four-cheese-with-alfredo-pizza-10-gallery-3.webp",
       "spinach-four-cheese-with-alfredo-pizza-10-gallery-4.webp"
     ],
-    "ingredients": "Ingredients: Wheat flour, water, alfredo sauce, spinach, fontina cheese, mozzarella cheese, parmesan cheese, romano cheese, olive oil, salt, yeast.\nContains: Wheat, Milk.",
+    "ingredients": "Ingredients: Crust: Enriched Wheat Flour, Water, Extra-Virgin Olive Oil, Salt, Yeast, Dried Sourdough (Wheat, Rye), Amylase, Sunflower Oil, Ascorbic Acid, Xylanase. Toppings:\nMozzarella Cheese Milk, Modified Milk Ingredients, Cream, Salt, Calcium Chloride, Bacterial Culture, Microbial Enzyme), Fontina Cheese (Milk, Calcium Chloride, Bacterial Culture, Microbial Enzyme, Lipase), Spinach, Parmesan Cheese (Milk, Salt, Lipase, Microbial Enzyme, Bacterial Culture, Calcium Chloride, Cellulose), Romano Cheese (Milk, Salt, Bacterial Culture, Lipase, Calcium Chloride, Microbial Enzyme, Cellulose). Alfredo Sauce: Cream (Cream, Milk, Carrageenan, Cellulose Gum, Mono And Diglycerides, Polysorbate 80), Minced Garlic, Parmesan Cheese (Milk, Salt, Lipase, Microbial Enzyme, Bacterial Culture, Calcium Chloride, Cellulose, Modified Corn Starch, Salt, Black Pepper.\nContains: Milk, Wheat, Rye.\nMay Contain: Eggs, Soy, Mustard.",
     "ingredients_fr": "Ingrédients : Farine de blé, eau, sauce alfredo, épinards, fromage fontina, fromage mozzarella, parmesan, romano, huile d'olive, sel, levure.\nContient : Blé, Lait.",
     "ingredients_es": "Ingredientes: Harina de trigo, agua, salsa alfredo, espinacas, quesos fontina, mozzarella, parmesano, romano, aceite de oliva, sal, levadura.\nContiene: Trigo, Leche.",
     "image_ca": "spinach-four-cheese-with-alfredo-pizza-10.webp",
@@ -381,7 +381,7 @@ const productsData = [
       "spinach-four-cheese-with-alfredo-pizza-10-us-gallery-4.webp"
     ],
     "slug": "spinach-four-cheese-with-alfredo-pizza-10",
-    "updated_at": 1793042059346
+    "updated_at": 1793106090829
   },
   {
     "id": 2,
