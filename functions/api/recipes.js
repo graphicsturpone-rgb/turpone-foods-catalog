@@ -104,6 +104,32 @@ async function getFileContent(filePath, branch = "main", token) {
 }
 
 // Built-in Canadian French (OQLF standard) & Mexican Spanish Culinary Translation Fallback
+function translateTimeOrYield(str, targetLang) {
+    if (!str) return "";
+    let s = String(str);
+    if (targetLang === 'fr') {
+        s = s.replace(/\bservings?\b/gi, 'portions')
+             .replace(/\bcups?\b/gi, 'tasse')
+             .replace(/\bto\b/gi, 'à')
+             .replace(/\bhours?\b/gi, 'h')
+             .replace(/\bhour\b/gi, 'h')
+             .replace(/\bplus dough preparation\b/gi, 'plus préparation de la pâte')
+             .replace(/\bplus 30 min marinating\b/gi, 'plus 30 min de marinade')
+             .replace(/\bplus 30 minutes chilling\b/gi, 'plus 30 minutes de repos au frais');
+    } else if (targetLang === 'es') {
+        s = s.replace(/\bservings?\b/gi, 'porciones')
+             .replace(/\bcups?\b/gi, 'taza')
+             .replace(/\bto\b/gi, 'a')
+             .replace(/\bhours\b/gi, 'horas')
+             .replace(/\bhour\b/gi, 'hora')
+             .replace(/\bminutes?\b/gi, 'minutos')
+             .replace(/\bplus dough preparation\b/gi, 'más preparación de la masa')
+             .replace(/\bplus 30 min marinating\b/gi, 'más 30 min de marinado')
+             .replace(/\bplus 30 minutes chilling\b/gi, 'más 30 minutos de refrigeración');
+    }
+    return s;
+}
+
 function translateRecipeCulinary(recipe) {
     if (!recipe) return recipe;
     const clone = { ...recipe };
@@ -157,6 +183,14 @@ function translateRecipeCulinary(recipe) {
     if (!clone.instructions_fr) clone.instructions_fr = clone.instructions || [];
     if (!clone.instructions_es) clone.instructions_es = clone.instructions || [];
 
+        if (!clone.prepTime_fr && clone.prepTime) clone.prepTime_fr = translateTimeOrYield(clone.prepTime, 'fr');
+    if (!clone.cookTime_fr && clone.cookTime) clone.cookTime_fr = translateTimeOrYield(clone.cookTime, 'fr');
+    if (!clone.yields_fr && clone.yields) clone.yields_fr = translateTimeOrYield(clone.yields, 'fr');
+
+    if (!clone.prepTime_es && clone.prepTime) clone.prepTime_es = translateTimeOrYield(clone.prepTime, 'es');
+    if (!clone.cookTime_es && clone.cookTime) clone.cookTime_es = translateTimeOrYield(clone.cookTime, 'es');
+    if (!clone.yields_es && clone.yields) clone.yields_es = translateTimeOrYield(clone.yields, 'es');
+
     return clone;
 }
 
@@ -171,6 +205,9 @@ Translate the following recipe fields into authentic culinary Canadian French (F
 
 Recipe details to translate:
 Title: "${recipe.title || ""}"
+Prep Time: "${recipe.prepTime || ""}"
+Cook/Total Time: "${recipe.cookTime || ""}"
+Yields: "${recipe.yields || ""}"
 Description: "${recipe.description || ""}"
 Ingredients: ${JSON.stringify(recipe.ingredients || [])}
 Instructions: ${JSON.stringify(recipe.instructions || [])}
@@ -179,6 +216,12 @@ Respond ONLY with valid, raw JSON (no markdown formatting, no code fences):
 {
   "title_fr": "...",
   "title_es": "...",
+  "prepTime_fr": "...",
+  "prepTime_es": "...",
+  "cookTime_fr": "...",
+  "cookTime_es": "...",
+  "yields_fr": "...",
+  "yields_es": "...",
   "description_fr": "...",
   "description_es": "...",
   "ingredients_fr": ["...", "..."],
@@ -205,7 +248,13 @@ Respond ONLY with valid, raw JSON (no markdown formatting, no code fences):
             return {
                 ...recipe,
                 title_fr: translations.title_fr || recipe.title_fr || recipe.title,
-                title_es: translations.title_es || recipe.title_es || recipe.title,
+                title_es: recipe.title_es || translations.title_es || recipe.title,
+                prepTime_fr: recipe.prepTime_fr || translations.prepTime_fr || translateTimeOrYield(recipe.prepTime, 'fr'),
+                prepTime_es: recipe.prepTime_es || translations.prepTime_es || translateTimeOrYield(recipe.prepTime, 'es'),
+                cookTime_fr: recipe.cookTime_fr || translations.cookTime_fr || translateTimeOrYield(recipe.cookTime, 'fr'),
+                cookTime_es: recipe.cookTime_es || translations.cookTime_es || translateTimeOrYield(recipe.cookTime, 'es'),
+                yields_fr: recipe.yields_fr || translations.yields_fr || translateTimeOrYield(recipe.yields, 'fr'),
+                yields_es: recipe.yields_es || translations.yields_es || translateTimeOrYield(recipe.yields, 'es'),
                 description_fr: translations.description_fr || recipe.description_fr || recipe.description,
                 description_es: translations.description_es || recipe.description_es || recipe.description,
                 ingredients_fr: Array.isArray(translations.ingredients_fr) && translations.ingredients_fr.length ? translations.ingredients_fr : (recipe.ingredients_fr || recipe.ingredients),

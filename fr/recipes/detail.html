@@ -590,9 +590,21 @@ document.addEventListener('DOMContentLoaded', function() {
         if (titleEl) titleEl.textContent = title;
 
         // Meta tags
-        if (recipe.prepTime) document.getElementById('meta-prep').textContent = recipe.prepTime;
-        if (recipe.cookTime) document.getElementById('meta-cook').textContent = recipe.cookTime;
-        if (recipe.yields) document.getElementById('meta-yields').textContent = recipe.yields;
+        let prepTime = recipe.prepTime || '';
+        if (currentLang === 'fr' && recipe.prepTime_fr) prepTime = recipe.prepTime_fr;
+        if (currentLang === 'es' && recipe.prepTime_es) prepTime = recipe.prepTime_es;
+
+        let cookTime = recipe.cookTime || '';
+        if (currentLang === 'fr' && recipe.cookTime_fr) cookTime = recipe.cookTime_fr;
+        if (currentLang === 'es' && recipe.cookTime_es) cookTime = recipe.cookTime_es;
+
+        let yields = recipe.yields || '';
+        if (currentLang === 'fr' && recipe.yields_fr) yields = recipe.yields_fr;
+        if (currentLang === 'es' && recipe.yields_es) yields = recipe.yields_es;
+
+        if (prepTime && document.getElementById('meta-prep')) document.getElementById('meta-prep').textContent = prepTime;
+        if (cookTime && document.getElementById('meta-cook')) document.getElementById('meta-cook').textContent = cookTime;
+        if (yields && document.getElementById('meta-yields')) document.getElementById('meta-yields').textContent = yields;
         if (recipe.calories) {
             document.getElementById('meta-cal-wrap').style.display = 'inline';
             document.getElementById('meta-cal').textContent = recipe.calories;

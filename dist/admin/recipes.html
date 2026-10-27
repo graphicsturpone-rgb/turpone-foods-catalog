@@ -695,8 +695,20 @@ try { localStorage.removeItem("turpone_admin_auth"); sessionStorage.removeItem("
                             <div style="font-size:12px; color:#64748b; margin-top:2px;">slug: ${r.slug}</div>
                         </td>
                         <td>
-                            <span class="meta-pill"><i class="fa-regular fa-clock"></i> ${timeInfo || 'Quick'}</span>
-                            ${r.yields ? `<span class="meta-pill"><i class="fa-solid fa-users"></i> ${r.yields}</span>` : ''}
+                            <div>
+                                <span class="meta-pill"><i class="fa-regular fa-clock"></i> ${timeInfo || 'Quick'}</span>
+                                ${r.yields ? `<span class="meta-pill"><i class="fa-solid fa-users"></i> ${r.yields}</span>` : ''}
+                            </div>
+                            ${(r.prepTime_fr || r.cookTime_fr || r.yields_fr) ? `
+                                <div style="font-size: 11px; color: #64748b; margin-top: 4px; line-height: 1.4;">
+                                    <strong style="color: #475569;">FR:</strong> ${[r.prepTime_fr ? `Prép: ${r.prepTime_fr}` : '', r.cookTime_fr ? `Total: ${r.cookTime_fr}` : '', r.yields_fr ? r.yields_fr : ''].filter(Boolean).join(' • ')}
+                                </div>
+                            ` : ''}
+                            ${(r.prepTime_es || r.cookTime_es || r.yields_es) ? `
+                                <div style="font-size: 11px; color: #64748b; margin-top: 2px; line-height: 1.4;">
+                                    <strong style="color: #475569;">ES:</strong> ${[r.prepTime_es ? `Prep: ${r.prepTime_es}` : '', r.cookTime_es ? `Total: ${r.cookTime_es}` : '', r.yields_es ? r.yields_es : ''].filter(Boolean).join(' • ')}
+                                </div>
+                            ` : ''}
                         </td>
                         <td>
                             <span style="font-size:13px; font-weight:600; color:#334155;"><i class="fa-solid fa-list-check" style="margin-right:5px; color:#64748b;"></i>${ingCount} items</span>
@@ -938,6 +950,12 @@ try { localStorage.removeItem("turpone_admin_auth"); sessionStorage.removeItem("
             safeSetValue('formPrepTime', '');
             safeSetValue('formCookTime', '');
             safeSetValue('formYields', '');
+            safeSetValue('formPrepTimeFr', '');
+            safeSetValue('formCookTimeFr', '');
+            safeSetValue('formYieldsFr', '');
+            safeSetValue('formPrepTimeEs', '');
+            safeSetValue('formCookTimeEs', '');
+            safeSetValue('formYieldsEs', '');
             safeSetValue('formImage', '');
             safeSetValue('formDescription', '');
             safeSetValue('formIngredients', '');
@@ -976,6 +994,12 @@ try { localStorage.removeItem("turpone_admin_auth"); sessionStorage.removeItem("
             safeSetValue('formPrepTime', recipe.prepTime || '');
             safeSetValue('formCookTime', recipe.cookTime || '');
             safeSetValue('formYields', recipe.yields || '');
+            safeSetValue('formPrepTimeFr', recipe.prepTime_fr || '');
+            safeSetValue('formCookTimeFr', recipe.cookTime_fr || '');
+            safeSetValue('formYieldsFr', recipe.yields_fr || '');
+            safeSetValue('formPrepTimeEs', recipe.prepTime_es || '');
+            safeSetValue('formCookTimeEs', recipe.cookTime_es || '');
+            safeSetValue('formYieldsEs', recipe.yields_es || '');
             safeSetValue('formImage', recipe.image || '');
             safeSetValue('formDescription', recipe.description || '');
 
@@ -1089,6 +1113,14 @@ try { localStorage.removeItem("turpone_admin_auth"); sessionStorage.removeItem("
                 .map(s => s.trim())
                 .filter(Boolean);
 
+            const prepTime_fr = (document.getElementById('formPrepTimeFr')?.value || '').trim();
+            const cookTime_fr = (document.getElementById('formCookTimeFr')?.value || '').trim();
+            const yields_fr = (document.getElementById('formYieldsFr')?.value || '').trim();
+
+            const prepTime_es = (document.getElementById('formPrepTimeEs')?.value || '').trim();
+            const cookTime_es = (document.getElementById('formCookTimeEs')?.value || '').trim();
+            const yields_es = (document.getElementById('formYieldsEs')?.value || '').trim();
+
             const title_fr = (document.getElementById('formTitleFr')?.value || '').trim();
             const title_es = (document.getElementById('formTitleEs')?.value || '').trim();
             const description_fr = (document.getElementById('formDescriptionFr')?.value || '').trim();
@@ -1119,6 +1151,14 @@ try { localStorage.removeItem("turpone_admin_auth"); sessionStorage.removeItem("
             };
 
             if (title_fr) recipeData.title_fr = title_fr;
+            if (prepTime_fr) recipeData.prepTime_fr = prepTime_fr;
+            if (cookTime_fr) recipeData.cookTime_fr = cookTime_fr;
+            if (yields_fr) recipeData.yields_fr = yields_fr;
+
+            if (title_es) recipeData.title_es = title_es;
+            if (prepTime_es) recipeData.prepTime_es = prepTime_es;
+            if (cookTime_es) recipeData.cookTime_es = cookTime_es;
+            if (yields_es) recipeData.yields_es = yields_es;
             if (title_es) recipeData.title_es = title_es;
             if (description_fr) recipeData.description_fr = description_fr;
             if (description_es) recipeData.description_es = description_es;

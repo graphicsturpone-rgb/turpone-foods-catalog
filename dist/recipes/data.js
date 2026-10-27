@@ -13,57 +13,63 @@ const recipesData = [
     "upsellImage": "/assets/images/recipes/roasted garlic.png",
     "upsellLink": "",
     "ingredients": [
-      "1 whole roasting chicken (about 4 pounds)",
-      "3 tablespoons <strong><a href=\"https://martha.com/\" target=\"_blank\">Martha Stewart</a></strong>’s Roasted Garlic Infused Extra Virgin Olive Oil, plus more for serving",
-      "1 tablespoon kosher salt (Diamond Crystal)",
+      "1 whole roasting chicken (approx. 4 lbs)",
+      "4 tbsp <strong><a href=\"https://martha.com/\" target=\"_blank\">Martha Stewart</a></strong>’s Roasted Garlic Infused Extra Virgin Olive Oil, divided",
+      "1 tbsp kosher salt",
+      "1 tsp coarsely cracked black pepper",
+      "1 tsp paprika",
       "1 sprig fresh rosemary or thyme",
-      "1/2 lemon",
-      "1 teaspoon coarsely ground black pepper",
-      "1 teaspoon sweet paprika (not smoked)"
+      "1/2 fresh lemon"
     ],
     "ingredients_fr": [
-      "1 poulet entier à rôtir (environ 4 lb / 1,8 kg)",
-      "3 c. à table d'huile d'olive extra-vierge infusée à l'ail rôti de <strong><a href=\"https://martha.com/\"target=\"_blank\">Martha Stewart</a></strong>, Stewart, et un peu plus pour le service",
-      "1 c. à table de sel casher (Diamond Crystal)",
-      "1 branche de romarin ou de thym frais",
-      "1/2 citron",
-      "1 c. à thé de poivre noir grossièrement moulu",
-      "1 c. à thé de paprika doux (non fumé)"
+      "1 poulet entier à rôtir (environ 4 lb)",
+      "4 c. à soupe d'huile d'olive extra vierge infusée à l'ail rôti de <strong><a href=\"https://martha.com/\" target=\"_blank\">Martha Stewart</a></strong>, divisées",
+      "1 c. à soupe de sel casher",
+      "1 c. à thé de poivre noir concassé",
+      "1 c. à thé de paprika",
+      "1 brin de romarin frais ou de thym",
+      "1/2 citron frais"
     ],
     "ingredients_es": [
-      "1 pollo entero para asar (aproximadamente 4 libras / 1.8 kg)",
-      "3 cucharadas del Roasted Garlic Infused Extra-Virgin Olive Oil de <strong><a href=\"https://martha.com/\"target=\"_blank\">Martha Stewart</a></strong>, y un poco más para servir",
-      "1 cucharada de sal kosher (Diamond Crystal)",
+      "1 pollo entero (aprox. 4 lbs)",
+      "4 cdas. de Aceite de Oliva Virgen Extra Infusionado con Ajo Asado de <strong><a href=\"https://martha.com/\" target=\"_blank\">Martha Stewart</a></strong>, divididas",
+      "1 cda. de sal kosher",
+      "1 cdta. de pimienta negra partida",
+      "1 cdta. de pimentón",
       "1 ramita de romero o tomillo fresco",
-      "1/2 limón",
-      "1 cucharadita de pimienta negra molida gruesa",
-      "1 cucharadita de paprika dulce (no ahumada)"
+      "1/2 limón fresco"
     ],
     "instructions": [
-      "Preheat oven to 425°F (220°C). Let the chicken rest at room temperature 1 hour before cooking. Pat chicken dry with paper towels.",
-      "Season the cavity of the chicken with 1 teaspoon of kosher salt, then insert the lemon half and fresh herb sprigs.",
-      "Rub 2 tablespoons Martha Stewart's Roasted Garlic Infused Extra Virgin Olive Oil all over outside of chicken. Gently loosen the skin over the breast meat with your fingers and drizzle 1 tablespoon oil under the skin.",
-      "Combine remaining  2 teaspoons salt, the black pepper, and paprika in a small bowl, use this to season chicken. Tie the legs together with kitchen twine and place the chicken breast-side up on a rack set inside a shallow roasting pan.",
-      "Roast until an instant-read thermometer registers 165°F (74°C) in the thickest part of the thigh 50 to 60 minutes,. Remove from oven and let rest 15 minutes. Serve drizzled with Martha Stewart's Roasted Garlic Infused Extra Virgin Olive Oil."
+      "**Prep and Preheat:** Preheat oven to 425°F (220°C). Bring the chicken out of the refrigerator 30 minutes prior to cooking. Thoroughly pat the entire bird dry with paper towels, checking both the exterior skin and the interior cavity.",
+      "**Aromatize the Cavity:** Season the inside of the cavity with 1 teaspoon of kosher salt, then insert the lemon half and fresh herb sprigs.",
+      "**Apply the Garlic Oil:** Pour 2 tablespoons of [Roasted Garlic Infused Olive Oil](https://turponefoods.com/turpone-products) over the chicken and massage thoroughly into the skin. Gently loosen the skin over the breast meat with your fingers and drizzle 1 additional tablespoon of oil directly underneath the skin.",
+      "**Season and Truss:** Combine the remaining salt, black pepper, and paprika in a small bowl; dust evenly over the oiled exterior. Bind the legs together with kitchen twine and place the chicken breast-side up on a roasting rack set inside a shallow pan.",
+      "**Roast:** Roast undisturbed for 50 to 60 minutes, or until an instant-read thermometer registers 165°F (74°C) in the thickest part of the thigh. Remove from oven and let rest for 15 minutes. Carve into pieces and finish with a light drizzle of raw [Roasted Garlic Infused Olive Oil](https://turponefoods.com/turpone-products) over the hot meat."
     ],
     "instructions_fr": [
-      "Préchauffer le four à 425 °F (220 C). Laisser reposer le poulet à la température ambiante pendant 1 heure avant la cuisson. Éponger le poulet avec du papier essuie-tout.",
-      "Assaisonner la cavité du poulet avec 1 c. à thé de sel casher, puis y insérer le demi-citron et la branche de romarin (ou de thym).",
-      "Frotter 2 c. a table d'huile d'olive extra-vierge infusee a l'ail roti de Martha Stewart sur tout l'extérieur du poulet. Décoller doucement la peau de la poitrine avec les doigts et verser 1 c. à table d'huile sous la peau.",
-      "Melanger les 2 c. a the de sel restantes, le poivre noir et le paprika dans un petit bol, et utiliser ce mélange pour assaisonner le poulet. Attacher les pattes ensemble avec de la ficelle de cuisine et placer le poulet, la poitrine vers le haut, sur une grille déposée dans une rôtissoire peu profonde.",
-      "Rôtir de 50 à 60 minutes, jusqu'à ce qu'un thermomètre à lecture instantanée indique 165 °F (74°C) dans la partie la plus épaisse de la cuisse. Retirer du four et laisser reposer 15 minutes. Servir arrose d'un filet d'huile d'olive extra-vierge infusee a l'ail roti de Martha Stewart."
+      "**Préparer et préchauffer :** Préchauffer le four à 425 °F (220 °C). Sortir le poulet du réfrigérateur 30 minutes avant de le cuire. Éponger complètement l'oiseau entier avec des essuie-tout, en vérifiant à la fois la peau extérieure et la cavité intérieure.",
+      "**Aromatiser la cavité :** Assaisonner l'intérieur de la cavité avec 1 cuillère à thé de sel casher, puis insérer la moitié de citron et les brins d'herbes fraîches.",
+      "**Appliquer l'huile à l'ail :** Verser 2 cuillères à soupe d'huile d'olive infusée à l'ail rôti sur le poulet et masser soigneusement dans la peau. Desserrer doucement la peau sur la viande de la poitrine avec vos doigts et verser 1 cuillère à soupe supplémentaire d'huile directement sous la peau.",
+      "**Assaisonner et brider :** Combiner le sel restant, le poivre noir et le paprika dans un petit bol; saupoudrer uniformément sur l'extérieur huilé. Lier les pattes ensemble avec de la ficelle de cuisine et placer le poulet poitrine vers le haut sur une grille de rôtissage placée dans une casserole peu profonde.",
+      "**Rôtir :** Rôtir sans le bouger pendant 50 à 60 minutes, ou jusqu'à ce qu'un thermomètre à lecture instantanée indique 165 °F (74 °C) dans la partie la plus épaisse de la cuisse. Retirer du four et laisser reposer pendant 15 minutes. Couper en morceaux et terminer avec un léger filet d'huile d'olive infusée à l'ail rôti crue sur la viande chaude."
     ],
     "instructions_es": [
-      "Deje reposar el pollo a temperatura ambiente durante 1 hora antes de cocinarlo. Precaliente el horno a 425 °F (220 °C). Seque el pollo con toallas de papel.",
-      "Sazone la cavidad del pollo con 1 cucharadita de sal kosher, luego inserte la mitad del limón y la ramita de romero o tomillo.",
-      "Frote 2 cucharadas del Roasted Garlic Infused Extra-Virgin Olive Oil de Martha Stewart por todo el exterior del pollo. Afloje suavemente la piel de la pechuga con los dedos y vierta 1 cucharada de aceite por debajo de la piel.",
-      "Mezcle las 2 cucharaditas de sal restantes, la pimienta negra y la paprika dulce en un tazón pequeño, y use esta mezcla para sazonar el pollo. Ate las patas con hilo de cocina y coloque el pollo con la pechuga hacia arriba sobre una rejilla dentro de una bandeja para asar poco profunda.",
-      "Ase de 50 a 60 minutos, hasta que un termómetro de lectura instantánea registre 165 °F (74 °C) en la parte más gruesa del muslo. Retire del horno y deje reposar durante 15 minutos. Sirva rociado con un poco más de Roasted Garlic Infused Extra-Virgin Olive Oil de Martha Stewart."
+      "**Preparar y precalentar:** Precaliente el horno a 425°F (220°C). Saque el pollo del refrigerador 30 minutos antes de cocinar. Seque bien toda el ave con toallas de papel, revisando tanto la piel exterior como la cavidad interior.",
+      "**Aromatizar la cavidad:** Sazone el interior de la cavidad con 1 cucharadita de sal kosher, luego inserte la mitad del limón y las ramitas de hierbas frescas.",
+      "**Aplicar el aceite de ajo:** Vierta 2 cucharadas de Aceite de Oliva Infusionado con Ajo Asado sobre el pollo y masajee profundamente en la piel. Afloje suavemente la piel sobre la carne de la pechuga con los dedos y vierta 1 cucharada adicional de aceite directamente debajo de la piel.",
+      "**Sazonar y bridar:** Combine la sal restante, la pimienta negra y el pimentón en un tazón pequeño; espolvoree uniformemente sobre el exterior aceitado. Ate las patas con hilo de cocina y coloque el pollo con la pechuga hacia arriba en una rejilla de asar dentro de una bandeja poco profunda.",
+      "**Asar:** Ase sin mover durante 50 a 60 minutos, o hasta que un termómetro de lectura instantánea registre 165°F (74°C) en la parte más gruesa del muslo. Retire del horno y deje reposar durante 15 minutos. Corte en piezas y termine con un ligero chorrito de Aceite de Oliva Infusionado con Ajo Asado crudo sobre la carne caliente."
     ],
-    "description": "Rich, mellow roasted garlic flavor baked directly into a whole roasting bird. Massaging the oil both over and under the skin guarantees exceptionally juicy breast meat and an ultra crisp and crackly skin.",
-    "description_fr": "La saveur riche et douce de l'ail rôti s'infuse au cour d'un poulet roti entier. En appliquant l'huile à la fois sur et sous la peau, on obtient une poitrine exceptionnellement juteuse et une peau ultra-croustillante.",
-    "description_es": "El sabor rico y suave del ajo asado se hornea directamente en un pollo entero. Al aplicar el aceite por encima y por debajo de la piel, se obtiene una pechuga excepcionalmente jugosa y una piel ultra crujiente.",
-    "updated_at": 1793125284584
+    "description": "Rich, mellow roasted garlic flavor baked directly into a whole roasting bird. Massaging the oil both over and underneath the skin guarantees exceptionally juicy breast meat and a shattered, crackly skin.",
+    "description_fr": "Riche saveur d'ail rôti, doux, cuit directement dans un poulet entier à rôtir. Masser l'huile à la fois sur et sous la peau garantit une viande de poitrine exceptionnellement juteuse et une peau émiettée et craquelante.",
+    "description_es": "Un rico y suave sabor a ajo asado horneado directamente en un pollo entero. Masajear el aceite tanto sobre como debajo de la piel garantiza una carne de pechuga excepcionalmente jugosa y una piel crujiente.",
+    "updated_at": 1793126935984,
+    "prepTime_fr": "35 min",
+    "cookTime_fr": "1 h 35 min",
+    "yields_fr": "4 portions",
+    "prepTime_es": "35 min",
+    "cookTime_es": "1 hora 35 min",
+    "yields_es": "4 porciones"
   },
   {
     "id": "fennel-and-rosemary-crusted-pork-loin",
@@ -122,7 +128,14 @@ const recipesData = [
     ],
     "description": "This recipe showcases a traditional Italian flavor profile, utilizing sweet fennel seeds, piney rosemary, and a base of garlic, onion, and red bell pepper. Pressing the seasoning blend directly onto the pork creates a highly aromatic, beautifully browned crust that enhances the natural sweetness of the roast.",
     "description_fr": "Cette recette présente un profil de saveur italien traditionnel, utilisant des graines de fenouil sucrées, du romarin au goût de pin et une base d’ail, d’oignon et de poivron rouge. Le fait de presser le mélange d’assaisonnement directement sur le porc crée une croûte magnifiquement brunie et très aromatique qui rehausse la douceur naturelle du rôti.",
-    "description_es": "Esta receta presenta un perfil de sabor italiano tradicional, utilizando semillas de hinojo dulces, romero con sabor a pino y una base de ajo, cebolla y pimiento rojo. Presionar la mezcla de sazonador directamente sobre el cerdo crea una costra altamente aromática y bellamente dorada que realza la dulzura natural del asado."
+    "description_es": "Esta receta presenta un perfil de sabor italiano tradicional, utilizando semillas de hinojo dulces, romero con sabor a pino y una base de ajo, cebolla y pimiento rojo. Presionar la mezcla de sazonador directamente sobre el cerdo crea una costra altamente aromática y bellamente dorada que realza la dulzura natural del asado.",
+    "prepTime_fr": "15 min",
+    "cookTime_fr": "1 h",
+    "yields_fr": "4 à 6 portions",
+    "prepTime_es": "15 min",
+    "cookTime_es": "1 hora",
+    "yields_es": "4 a 6 porciones",
+    "updated_at": 1793126935984
   },
   {
     "id": "fig-herb-balsamic-vinaigrette",
@@ -187,7 +200,14 @@ const recipesData = [
     ],
     "description": "An elegant, Mediterranean-inspired dressing that marries deep, jammy fig blossom notes with aromatic oregano. This vinaigrette relies on proper emulsification to create a smooth, unified coating for crisp salad greens.",
     "description_fr": "Une vinaigrette élégante d'inspiration méditerranéenne qui marie des notes profondes de fleur de figuier confite avec de l'origan aromatique. Cette vinaigrette repose sur une bonne émulsification pour créer un enrobage lisse et unifié pour les feuilles de salade croquantes.",
-    "description_es": "Un aderezo elegante de inspiración mediterránea que combina notas profundas de flor de higo con orégano aromático. Esta vinagreta depende de una emulsión adecuada para crear una capa suave y unificada sobre las hojas de ensalada crujientes."
+    "description_es": "Un aderezo elegante de inspiración mediterránea que combina notas profundas de flor de higo con orégano aromático. Esta vinagreta depende de una emulsión adecuada para crear una capa suave y unificada sobre las hojas de ensalada crujientes.",
+    "prepTime_fr": "5 min",
+    "cookTime_fr": "5 min",
+    "yields_fr": "1 tasse",
+    "prepTime_es": "5 min",
+    "cookTime_es": "5 min",
+    "yields_es": "1 taza",
+    "updated_at": 1793126935984
   },
   {
     "id": "grilled-white-fish-with-lemon-pepper-herb-salmoriglio",
@@ -252,7 +272,14 @@ const recipesData = [
     ],
     "description": "A bright, classic Southern Italian sauce format engineered to cut through the rich, smoky char of grilled seafood. The lemon tree notes and coarse pepper infusion naturally elevate the fresh garden herbs.",
     "description_fr": "Une sauce italienne du Sud classique et brillante conçue pour couper le riche charbon fumé des fruits de mer grillés. Les notes d'arbre à citron et l'infusion de poivre concassé rehaussent naturellement les herbes de jardin fraîches.",
-    "description_es": "Un formato de salsa clásica del sur de Italia, brillante y diseñado para cortar el rico y ahumado sabor de los mariscos a la parrilla. Las notas de limonero y la infusión de pimienta partida realzan naturalmente las hierbas frescas de jardín."
+    "description_es": "Un formato de salsa clásica del sur de Italia, brillante y diseñado para cortar el rico y ahumado sabor de los mariscos a la parrilla. Las notas de limonero y la infusión de pimienta partida realzan naturalmente las hierbas frescas de jardín.",
+    "prepTime_fr": "10 min",
+    "cookTime_fr": "20 min",
+    "yields_fr": "2 portions",
+    "prepTime_es": "10 min",
+    "cookTime_es": "20 min",
+    "yields_es": "2 porciones",
+    "updated_at": 1793126935984
   },
   {
     "id": "mediterranean-tomato-marinade-for-fresh-bocconcini",
@@ -314,7 +341,14 @@ const recipesData = [
     ],
     "description": "This recipe highlights a traditional, sun-drenched flavor profile by utilizing savory tomato flakes, sweet red bell pepper, crisp sea salt, and aromatic basil. Whisking the dry seasoning mix directly into extra virgin olive oil allows the tomato flakes to rehydrate and soften, creating a rich, vibrant marinade that perfectly coats creamy, mild bocconcini or fresh mozzarella pearls.",
     "description_fr": "Cette recette met en évidence un profil de saveur traditionnel et ensoleillé en utilisant des flocons de tomates savoureuses, du poivron rouge sucré, du sel de mer croustillant et du basilic aromatique. Le fait de mélanger l’assaisonnement sec directement dans l’huile d’olive extra-vierge permet aux flocons de tomates de se réhydrater et de s’assouplir, créant une marinade riche et vibrante qui enrobe parfaitement les bocconcini doux et crémeux ou les perles de mozzarella fraîches.",
-    "description_es": "Esta receta destaca un perfil de sabor tradicional bañado por el sol utilizando hojuelas de tomate saladas, pimiento rojo dulce, sal marina crujiente y albahaca aromática. Batir la mezcla de sazonador seco directamente en aceite de oliva extra virgen permite que las hojuelas de tomate se rehidraten y ablanden, creando un adobo rico y vibrante que cubre perfectamente el cremoso y suave bocconcini o las perlas de mozzarella fresca."
+    "description_es": "Esta receta destaca un perfil de sabor tradicional bañado por el sol utilizando hojuelas de tomate saladas, pimiento rojo dulce, sal marina crujiente y albahaca aromática. Batir la mezcla de sazonador seco directamente en aceite de oliva extra virgen permite que las hojuelas de tomate se rehidraten y ablanden, creando un adobo rico y vibrante que cubre perfectamente el cremoso y suave bocconcini o las perlas de mozzarella fresca.",
+    "prepTime_fr": "10 min",
+    "cookTime_fr": "10 min (plus 30 min de marinade)",
+    "yields_fr": "4 à 6 portions",
+    "prepTime_es": "10 min",
+    "cookTime_es": "10 min (más 30 min de marinado)",
+    "yields_es": "4 a 6 porciones",
+    "updated_at": 1793126935984
   },
   {
     "id": "pan-seared-salmon-with-a-lemon-black-pepper-honey-glaze",
@@ -379,7 +413,14 @@ const recipesData = [
     ],
     "description": "A quick, high-impact seafood dish featuring a sweet-citrus finish. Searing the fish flesh-side down first locks in moisture and builds a savory crust, while the honey is introduced at the very end to prevent burning.",
     "description_fr": "Un plat de fruits de mer rapide et percutant avec une finition aigre-douce. Saisir le poisson côté chair vers le bas d'abord retient l'humidité et construit une croûte savoureuse, tandis que le miel est introduit à la toute fin pour éviter de brûler.",
-    "description_es": "Un plato de mariscos rápido y de alto impacto con un acabado cítrico-dulce. Sellar el pescado primero por el lado de la carne retiene la humedad y crea una costra sabrosa, mientras que la miel se introduce al final para evitar que se queme."
+    "description_es": "Un plato de mariscos rápido y de alto impacto con un acabado cítrico-dulce. Sellar el pescado primero por el lado de la carne retiene la humedad y crea una costra sabrosa, mientras que la miel se introduce al final para evitar que se queme.",
+    "prepTime_fr": "15 min",
+    "cookTime_fr": "25 min",
+    "yields_fr": "2 portions",
+    "prepTime_es": "15 min",
+    "cookTime_es": "25 min",
+    "yields_es": "2 porciones",
+    "updated_at": 1793126935984
   },
   {
     "id": "prosciutto-arugula-pizza",
@@ -447,7 +488,14 @@ const recipesData = [
     ],
     "description": "A sophisticated pizza inspired by Italian trattorias. Delicate prosciutto, peppery arugula, and <strong><a href=\"https://martha.com/\" target=\"_blank\">Martha Stewart</a></strong> Balsamic Garlic & Herb Infused Extra Virgin Olive Oil create a fresh, balanced finish.",
     "description_fr": "Une pizza sophistiquée inspirée des _trattorias_ italiennes. Le prosciutto délicat, la roquette poivrée et l’huile d’olive extra vierge infusée au basilic, à l’ail et au vinaigre balsamique de <strong><a href=\"https://martha.com/\" target=\"_blank\">Martha Stewart</a></strong> créent une finale fraîche et équilibrée.",
-    "description_es": "Una pizza sofisticada inspirada en las _trattorias_ italianas. El delicado prosciutto, la rúcula picante y el aceite de oliva virgen extra infusionado con balsámico, ajo y hierbas de <strong><a href=\"https://martha.com/\" target=\"_blank\">Martha Stewart</a></strong> crean un final fresco y equilibrado."
+    "description_es": "Una pizza sofisticada inspirada en las _trattorias_ italianas. El delicado prosciutto, la rúcula picante y el aceite de oliva virgen extra infusionado con balsámico, ajo y hierbas de <strong><a href=\"https://martha.com/\" target=\"_blank\">Martha Stewart</a></strong> crean un final fresco y equilibrado.",
+    "prepTime_fr": "20 minutes (plus préparation de la pâte)",
+    "cookTime_fr": "45 minutes",
+    "yields_fr": "1 pizza (4 portions)",
+    "prepTime_es": "20 minutos (más preparación de la masa)",
+    "cookTime_es": "45 minutos",
+    "yields_es": "1 pizza (4 porciones)",
+    "updated_at": 1793126935984
   },
   {
     "id": "quick-garden-herb-ranch-dip",
@@ -506,7 +554,14 @@ const recipesData = [
     ],
     "description": "This classic, creamy dip utilizes a premium blend of sea salt, onion, garlic, black pepper, and lemon tree notes. Blending the dry seasoning directly into a rich base of sour cream and mayonnaise allows the herbs to fully bloom, creating an effortless, restaurant-quality appetizer.",
     "description_fr": "Cette trempette crémeuse classique utilise un mélange de qualité supérieure de sel de mer, d’oignon, d’ail, de poivre noir et de notes d’arbre à citron. Le fait de mélanger l’assaisonnement sec directement dans une base riche de crème sure et de mayonnaise permet aux herbes de s’épanouir complètement, créant un hors-d’œuvre sans effort de qualité restaurant.",
-    "description_es": "Esta clásica salsa cremosa utiliza una mezcla premium de sal marina, cebolla, ajo, pimienta negra y notas de limonero. Mezclar el sazonador seco directamente en una base rica de crema agria y mayonesa permite que las hierbas florezcan por completo, creando un aperitivo sencillo y con calidad de restaurante."
+    "description_es": "Esta clásica salsa cremosa utiliza una mezcla premium de sal marina, cebolla, ajo, pimienta negra y notas de limonero. Mezclar el sazonador seco directamente en una base rica de crema agria y mayonesa permite que las hierbas florezcan por completo, creando un aperitivo sencillo y con calidad de restaurante.",
+    "prepTime_fr": "5 min",
+    "cookTime_fr": "5 minutes (plus 30 minutes de repos au frais)",
+    "yields_fr": "1,5 tasse",
+    "prepTime_es": "5 min",
+    "cookTime_es": "5 minutos (más 30 minutos de refrigeración)",
+    "yields_es": "1.5 tazas",
+    "updated_at": 1793126935984
   },
   {
     "id": "simple-balsamic-garlic-herb-tableside-dressing",
@@ -546,7 +601,8 @@ const recipesData = [
       "Wash and spin the greens until completely dry as surface moisture will repel the oil dressing.",
       "Place the dry greens and any toppings in a large wooden or ceramic bowl. Sprinkle the salt and pepper directly onto the leaves before adding the oil.",
       "Shake the olive oil bottle vigorously for 10 seconds to distribute the vinegar, garlic solids, and herbs.",
-      "Drizzle 3 to 4 tablespoons of the shaken oil over the seasoned greens in a slow zigzag motion."
+      "Drizzle 3 to 4 tablespoons of the shaken oil over the seasoned greens in a slow zigzag motion.",
+      "Using salad tongs, gently toss the greens for 15 to 20 seconds, until evenly coated with balsamic streaks and herbs. Serve immediately."
     ],
     "instructions_fr": [
       "**Sécher les feuilles :** Laver et essorer les feuilles de salade jusqu'à ce qu'elles soient complètement sèches afin que la vinaigrette adhère parfaitement.",
@@ -565,7 +621,13 @@ const recipesData = [
     "description": "A completely effortless green salad preparation. The pre-blended herbs, garlic, and vinegar in the oil create a restaurant-style emulsion without any extra prep work.",
     "description_fr": "A completely effortless green salad preparation. The pre-blended herbs, garlic, and vinegar in the oil create a restaurant-style emulsion without any extra prep work.",
     "description_es": "A completely effortless green salad preparation. The pre-blended herbs, garlic, and vinegar in the oil create a restaurant-style emulsion without any extra prep work.",
-    "updated_at": 1793121286676
+    "updated_at": 1793126935984,
+    "prepTime_fr": "5 min",
+    "cookTime_fr": "5 min",
+    "yields_fr": "4 à 6 portions",
+    "prepTime_es": "5 min",
+    "cookTime_es": "5 min",
+    "yields_es": "4 a 6 porciones"
   },
   {
     "id": "spicy-garlic-grilled-shrimp-skewers",
@@ -630,7 +692,14 @@ const recipesData = [
     ],
     "description": "Plump, juicy shrimp coated in an aromatic marinade that prevents sticking on the grill. Finishing the seafood with raw infused oil right before serving maximizes the punchy garlic aroma.",
     "description_fr": "Crevettes dodues et juteuses enrobées d'une marinade aromatique qui empêche de coller sur le gril. Terminer les fruits de mer avec de l'huile infusée crue juste avant de servir maximise l'arôme d'ail percutant.",
-    "description_es": "Camarones regordetes y jugosos cubiertos en un marinado aromático que evita que se peguen a la parrilla. Terminar los mariscos con aceite infusionado crudo justo antes de servir maximiza el aroma intenso a ajo."
+    "description_es": "Camarones regordetes y jugosos cubiertos en un marinado aromático que evita que se peguen a la parrilla. Terminar los mariscos con aceite infusionado crudo justo antes de servir maximiza el aroma intenso a ajo.",
+    "prepTime_fr": "15 min",
+    "cookTime_fr": "25 min",
+    "yields_fr": "3 à 4 portions",
+    "prepTime_es": "15 min",
+    "cookTime_es": "25 min",
+    "yields_es": "3 a 4 porciones",
+    "updated_at": 1793126935984
   },
   {
     "id": "spicy-italian-sausage-pizza",
@@ -701,7 +770,14 @@ const recipesData = [
     ],
     "description": "A bold pizza layered with spicy tomato sauce, Italian sausage, and colorful peppers. Triple Pepper Mix Seasoning enhances the natural heat while Spicy Garlic Infused Olive Oil delivers an extra layer of savory flavor.",
     "description_fr": "Une pizza audacieuse garnie de sauce tomate épicée, de saucisse italienne et de poivrons colorés. L'assaisonnement Triple Pepper Mix rehausse le piquant naturel, tandis que l'huile d'olive infusée à l'ail épicé apporte une couche supplémentaire de saveur savoureuse.",
-    "description_es": "Una pizza atrevida con capas de salsa de tomate picante, salchicha italiana y pimientos coloridos. El Sazonador Mezcla de Tres Pimientos realza el picante natural, mientras que el Aceite de Oliva Infundido con Ajo Picante añade una capa extra de sabor salado."
+    "description_es": "Una pizza atrevida con capas de salsa de tomate picante, salchicha italiana y pimientos coloridos. El Sazonador Mezcla de Tres Pimientos realza el picante natural, mientras que el Aceite de Oliva Infundido con Ajo Picante añade una capa extra de sabor salado.",
+    "prepTime_fr": "20 minutes (plus préparation de la pâte)",
+    "cookTime_fr": "45 minutes",
+    "yields_fr": "1 pizza (4 portions)",
+    "prepTime_es": "20 minutos (más preparación de la masa)",
+    "cookTime_es": "45 minutos",
+    "yields_es": "1 pizza (4 porciones)",
+    "updated_at": 1793126935984
   },
   {
     "id": "triple-chili-honey-glazed-skewers",
@@ -770,7 +846,14 @@ const recipesData = [
     ],
     "description": "This sweet and spicy glaze pairs beautifully with smoky, flame-kissed proteins. The honey is utilized two ways: first to build flavor in a quick marinade, then applied at the very end of cooking to create a thick, glossy, caramelized finish.",
     "description_fr": "Cette sauce sucrée et épicée se marie à merveille avec les protéines fumées, embrassées par les flammes. Le miel est utilisé de deux façons : d'abord pour créer de la saveur dans une marinade rapide, puis appliqué à la toute fin de la cuisson pour créer une finition épaisse, brillante et caramélisée.",
-    "description_es": "Este glaseado dulce y picante combina a la perfección con proteínas ahumadas y besadas por la llama. La miel se utiliza de dos formas: primero para dar sabor en un marinado rápido, y luego aplicada al final de la cocción para crear un acabado espeso, brillante y caramelizado."
+    "description_es": "Este glaseado dulce y picante combina a la perfección con proteínas ahumadas y besadas por la llama. La miel se utiliza de dos formas: primero para dar sabor en un marinado rápido, y luego aplicada al final de la cocción para crear un acabado espeso, brillante y caramelizado.",
+    "prepTime_fr": "20 minutes",
+    "cookTime_fr": "15 minutes",
+    "yields_fr": "4 portions",
+    "prepTime_es": "20 minutos",
+    "cookTime_es": "15 minutos",
+    "yields_es": "4 porciones",
+    "updated_at": 1793126935984
   },
   {
     "id": "triple-pepper-crusted-new-york-strip-steak",
@@ -835,7 +918,14 @@ const recipesData = [
     ],
     "description": "This recipe utilizes a bold, vibrant blend of coarse sea salt, smoky Korean gochugaru, sharp red chili flakes, and pungent black pepper. Pressing the dry seasoning mix directly onto the surface of a thick-cut steak creates a beautiful, deeply caramelized crust when seared over high heat, balancing the rich fat of the beef with a multi-layered heat finish.",
     "description_fr": "Cette recette utilise un mélange audacieux et vibrant de sel de mer concassé, de gochugaru coréen fumé, de flocons de chili rouge piquants et de poivre noir âcre. Le fait de presser le mélange d’assaisonnement sec directement sur la surface d’un steak épais crée une belle croûte profondément caramélisée lorsqu’il est saisi à feu vif, équilibrant la riche graisse du bœuf avec une finale piquante à plusieurs couches.",
-    "description_es": "Esta receta utiliza una mezcla audaz y vibrante de sal marina gruesa, gochugaru coreano ahumado, hojuelas de chile rojo picante y pimienta negra penetrante. Presionar la mezcla de sazonador seco directamente sobre la superficie de un bistec de corte grueso crea una costra hermosa, profundamente caramelizada cuando se sella a fuego alto, equilibrando la rica grasa de la carne de res con un acabado picante de múltiples capas."
+    "description_es": "Esta receta utiliza una mezcla audaz y vibrante de sal marina gruesa, gochugaru coreano ahumado, hojuelas de chile rojo picante y pimienta negra penetrante. Presionar la mezcla de sazonador seco directamente sobre la superficie de un bistec de corte grueso crea una costra hermosa, profundamente caramelizada cuando se sella a fuego alto, equilibrando la rica grasa de la carne de res con un acabado picante de múltiples capas.",
+    "prepTime_fr": "15 min",
+    "cookTime_fr": "25 min",
+    "yields_fr": "2 portions",
+    "prepTime_es": "15 min",
+    "cookTime_es": "25 min",
+    "yields_es": "2 porciones",
+    "updated_at": 1793126935984
   }
 ];
 
