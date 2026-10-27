@@ -109,7 +109,7 @@ const productsData = [
       "pepperoni-and-hot-pickled-peppers-pinsa-gallery-4.webp",
       "pepperoni-and-hot-pickled-peppers-pinsa-gallery-5.webp"
     ],
-    "ingredients": "Ingredients: Pinsa crust (wheat flour, organic rice flour, organic fava flour, sourdough yeast, water, olive oil, salt, yeast [yeast, sorbitan monostearate, ascorbic acid]). Toppings: Mozzarella cheese (milk, modified milk ingredients, cream, salt, calcium chloride, bacterial culture, microbial enzyme), Pepperoni (pork, salt, pork stock, dextrose, spice extracts, lactic acid starter culture, sodium erythorbate, natural smoke flavor, dehydrated garlic, sodium nitrite, citric acid, smoke), Red and yellow hot pickled peppers (peppers, water, salt, acetic acid, calcium chloride, sodium benzoate, sodium metabisulfite, turmeric), Parmesan cheese (milk, salt, lipase, microbial enzyme, bacterial culture, calcium chloride, cellulose). Tomato sauce: Diced tomatoes (tomatoes, *may contain citric acid), Crushed tomatoes, Salt, Sugar, Garlic powder, Chili flakes, Herb.\nContains: Wheat, Milk.\nMay contain: Eggs, Soy, Mustard.",
+    "ingredients": "Ingredients: Pinsa Crust (Wheat Flour, Organic Rice Flour, Organic Fava Flour, Sourdough Yeast, Water, Olive Oil, Salt, Yeast [Yeast, Sorbitan Monostearate, Ascorbic Acid]). Toppings: Mozzarella Cheese (Milk, Modified Milk Ingredients, Cream, Salt, Calcium Chloride, Bacterial Culture, Microbial Enzyme), Pepperoni (Pork, Salt, Pork Stock, Dextrose, Spice Extracts, Lactic Acid Starter Culture, Sodium Erythorbate, Natural Smoke Flavor, Dehydrated Garlic, Sodium Nitrite, Citric Acid, Smoke), Red And Yellow Hot Pickled Peppers (Peppers, Water, Salt, Acetic Acid, Calcium Chloride, Sodium Benzoate, Sodium Metabisulfite, Turmeric), Parmesan Cheese (Milk, Salt, Lipase, Microbial Enzyme, Bacterial Culture, Calcium Chloride, Cellulose). Tomato Sauce: Diced Tomatoes (Tomatoes, *May Contain Citric Acid), Crushed Tomatoes, Salt, Sugar, Garlic Powder, Chili Flakes, Herb.\nContains: Wheat, Milk.\nMay Contain: Eggs, Soy, Mustard.",
     "ingredients_fr": "Ingrédients : Pâte à pinsa (farine de blé, farine de riz bio, farine de fève bio, levain, eau, huile d'olive, sel, levure). Garnitures : Mozzarella, pepperoni de porc, piments forts marinés rouges et jaunes, parmesan. Sauce tomate aux herbes.\nContient : Blé, Lait.\nPeut contenir : Œufs, Soja, Moutarde.",
     "ingredients_es": "Ingredientes: Masa de pinsa (harina de trigo, harina de arroz orgánica, harina de haba orgánica, masa madre, agua, aceite de oliva, sal, levadura). Coberturas: Queso mozzarella, pepperoni de cerdo, chiles encurtidos picantes rojos y amarillos, queso parmesano. Salsa de tomate sazonada.\nContiene: Trigo, Leche.\nPuede contener: Huevos, Soya, Mostaza.",
     "slug": "pepperoni-and-hot-pickled-peppers-pinsa",
@@ -129,7 +129,7 @@ const productsData = [
       "pepperoni-and-hot-pickled-peppers-pinsa-us-gallery-4.webp",
       "pepperoni-and-hot-pickled-peppers-pinsa-us-gallery-5.webp"
     ],
-    "updated_at": 1792523400000
+    "updated_at": 1793104682553
   },
   {
     "id": 28,
