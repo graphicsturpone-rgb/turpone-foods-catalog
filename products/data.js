@@ -240,7 +240,7 @@ const productsData = [
       "margherita-with-fresh-mozzarella-pizza-10-gallery-3.webp",
       "margherita-with-fresh-mozzarella-pizza-10-gallery-4.webp"
     ],
-    "ingredients": "Ingredients: Wheat flour, water, fresh mozzarella, tomato sauce, basil, parmesan cheese, olive oil, salt, yeast.\nContains: Wheat, Milk.",
+    "ingredients": "Ingredients: Crust: Enriched Wheat Flour, Water, Extra-Virgin Olive Oil, Salt, Yeast, Dried Sourdough (Wheat, Rye), Amylase, Sunflower Oil, Ascorbic Acid, Xylanase.\nToppings: Fresh Mozzarella (Pasteurized Milk, Vinegar, Microbial Enzymes, Salt), Mozzarella Cheese (Milk, Modified Milk Ingredients, Cream, Salt, Calcium Chloride, Bacterial Culture, Microbial Enzyme), Parmesan Cheese (Milk, Salt, Lipase, Microbial Enzyme, Bacterial Culture, Calcium Chloride, Cellulose, Basil. Tomato Sauce: Diced Tomatoes (Tomatoes, *May Contain Citric Acid), Crushed Tomatoes, Salt, Sugar, Garlic Powder, Chili Flakes, Herb.\nContains: Milk, Wheat, Rye.\nMay Contain: Eggs, Soy, Mustard.",
     "ingredients_fr": "Ingrédients : Farine de blé, eau, mozzarella fraîche, sauce tomate, basilic, parmesan, huile d'olive, sel, levure.\nContient : Blé, Lait.",
     "ingredients_es": "Ingredientes: Harina de trigo, agua, mozzarella fresca, salsa de tomate, albahaca, queso parmesano, aceite de oliva, sal, levadura.\nContiene: Trigo, Leche.",
     "image_ca": "margherita-with-fresh-mozzarella-pizza-10.webp",
@@ -258,7 +258,7 @@ const productsData = [
       "margherita-with-fresh-mozzarella-pizza-10-us-gallery-4.webp"
     ],
     "slug": "margherita-with-fresh-mozzarella-pizza-10",
-    "updated_at": 1793042059346
+    "updated_at": 1793105700444
   },
   {
     "id": 26,
