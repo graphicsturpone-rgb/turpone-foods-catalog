@@ -221,20 +221,69 @@ Respond ONLY with valid, raw JSON (no markdown formatting, no code fences):
     return translateRecipeCulinary(recipe);
 }
 
-// Parse recipesData array from javascript text
+// Parse recipesData array from javascript text safely without eval/new Function (Cloudflare Workers strict mode)
 function parseRecipesData(jsCode) {
+    if (!jsCode) return [];
     const marker = "const recipesData =";
     const idx = jsCode.indexOf(marker);
     if (idx === -1) return [];
 
-    let arrayStr = jsCode.substring(idx + marker.length).trim();
-    if (arrayStr.endsWith(";")) arrayStr = arrayStr.slice(0, -1);
-    try {
-        return JSON.parse(arrayStr);
-    } catch (e) {
-        const fn = new Function(jsCode + "; return recipesData;");
-        return fn();
+    const startBracket = jsCode.indexOf("[", idx + marker.length);
+    if (startBracket === -1) return [];
+
+    let depth = 0;
+    let inString = false;
+    let quoteChar = null;
+    let escape = false;
+    let endBracket = -1;
+
+    for (let i = startBracket; i < jsCode.length; i++) {
+        const ch = jsCode[i];
+
+        if (escape) {
+            escape = false;
+            continue;
+        }
+
+        if (ch === '\\' && inString) {
+            escape = true;
+            continue;
+        }
+
+        if (inString) {
+            if (ch === quoteChar) {
+                inString = false;
+                quoteChar = null;
+            }
+            continue;
+        }
+
+        if (ch === '"' || ch === "'") {
+            inString = true;
+            quoteChar = ch;
+            continue;
+        }
+
+        if (ch === '[') {
+            depth++;
+        } else if (ch === ']') {
+            depth--;
+            if (depth === 0) {
+                endBracket = i;
+                break;
+            }
+        }
     }
+
+    if (endBracket !== -1) {
+        const jsonStr = jsCode.substring(startBracket, endBracket + 1);
+        try {
+            return JSON.parse(jsonStr);
+        } catch (e) {
+            console.error("JSON.parse error in parseRecipesData:", e);
+        }
+    }
+    return [];
 }
 
 // Serialize recipes back to clean recipes/data.js format
