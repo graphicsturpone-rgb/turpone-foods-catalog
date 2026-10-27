@@ -439,12 +439,12 @@ const recipesData = [
     "upsellImage": "",
     "upsellLink": "",
     "ingredients": [
-      "1 package <strong><a href=\"https://martha.com/\" target=\"_blank\">Martha Stewart</a></strong> Neapolitan Style Pizza Dough Mix, prepared according to package directions",
+      "1 package <strong><a href=\"https://martha.com/\" target=\"_blank\">Martha Stewart</a></strong> Neapolitan Style Pizza Dough Mix, prepared per package directions",
       "1/2 cup <strong><a href=\"https://martha.com/\" target=\"_blank\">Martha Stewart</a></strong> Traditional Pizza Sauce",
       "2 cups shredded mozzarella",
       "4 oz thinly sliced prosciutto",
       "2 cups fresh arugula",
-      "2 tbsp <strong><a href=\"https://martha.com/\" target=\"_blank\">Martha Stewart</a></strong> Balsamic Garlic & Herb Infused Extra Virgin Olive Oil",
+      "2 tablespoons <strong><a href=\"https://martha.com/\" target=\"_blank\">Martha Stewart</a></strong> Balsamic Garlic & Herb Infused Extra-Virgin Olive Oil",
       "Fresh Parmesan shavings"
     ],
     "ingredients_fr": [
@@ -453,52 +453,52 @@ const recipesData = [
       "2 tasses de mozzarella râpée",
       "4 oz de prosciutto tranché finement",
       "2 tasses de roquette fraîche",
-      "2 c. à soupe d’huile d’olive extra vierge infusée au basilic, à l’ail et au vinaigre balsamique de <strong><a href=\"https://martha.com/\" target=\"_blank\">Martha Stewart</a></strong>",
+      "2 c. à table d'huile d'olive extra-vierge infusée au balsamique, à l'ail et aux fines herbes de <strong><a href=\"https://martha.com/\" target=\"_blank\">Martha Stewart</a></strong>",
       "Copeaux de parmesan frais"
     ],
     "ingredients_es": [
-      "1 paquete de mezcla para masa de pizza estilo napolitano de <strong><a href=\"https://martha.com/\" target=\"_blank\">Martha Stewart</a></strong>, preparada según las instrucciones del paquete",
-      "1/2 taza de salsa para pizza tradicional de <strong><a href=\"https://martha.com/\" target=\"_blank\">Martha Stewart</a></strong>",
+      "1 paquete de Neapolitan Style Pizza Dough Mix de <strong><a href=\"https://martha.com/\" target=\"_blank\">Martha Stewart</a></strong>, preparado según las instrucciones del paquete",
+      "1/2 taza de Traditional Pizza Sauce de <strong><a href=\"https://martha.com/\" target=\"_blank\">Martha Stewart</a></strong>",
       "2 tazas de queso mozzarella rallado",
       "4 oz de prosciutto en lonchas finas",
       "2 tazas de rúcula fresca",
-      "2 cdas. de aceite de oliva virgen extra infusionado con balsámico, ajo y hierbas de <strong><a href=\"https://martha.com/\" target=\"_blank\">Martha Stewart</a></strong>",
+      "2 cucharadas del Balsamic Garlic & Herb Infused Extra-Virgin Olive Oil de <strong><ahref=\"https://martha.com/\" target=\"_blank\">Martha Stewart</a></strong>",
       "Virutas de queso parmesano fresco"
     ],
     "instructions": [
-      "Prepare the dough according to package directions and shape into a 10-inch pizza.",
-      "Preheat the oven and pizza stone to 500°F.",
-      "Spread the Traditional Pizza Sauce evenly and top with mozzarella.",
-      "Bake for 8–10 minutes until the crust is golden.",
-      "Top immediately with prosciutto, fresh arugula, and Parmesan shavings.",
-      "Finish with a drizzle of Balsamic Garlic & Herb Olive Oil before serving."
+      "Prepare the dough per package directions and shape into a 10-inch round.",
+      "Preheat the oven and pizza stone to 500°F (260°C).",
+      "Spread the sauce evenly over the dough and top with the shredded mozzarella.",
+      "Bake for 8 to 10 minutes, until the crust is golden.",
+      "Top immediately with the prosciutto, arugula, and Parmesan shavings.",
+      "Drizzle with the Balsamic Garlic &amp; Herb Olive Oil before serving."
     ],
     "instructions_fr": [
-      "Préparez la pâte selon les instructions sur l’emballage et façonnez une pizza de 10 pouces.",
-      "Préchauffez le four et la pierre à pizza à 500 °F.",
-      "Étendez uniformément la sauce à pizza traditionnelle et recouvrez de mozzarella.",
-      "Faites cuire au four de 8 à 10 minutes jusqu’à ce que la croûte soit dorée.",
-      "Garnissez immédiatement de prosciutto, de roquette fraîche et de copeaux de parmesan.",
-      "1. Terminez par un filet d’huile d’olive au basilic, à l’ail et au vinaigre balsamique avant de servir."
+      "Préparer la pâte selon les instructions de l'emballage et la façonner en un cercle de 10 po.",
+      "Préchauffer le four et la pierre à pizza à 500 °F (260 °C).",
+      "Étendre la sauce uniformément sur la pâte et garnir de mozzarella râpée.",
+      "Cuire au four de 8 à 10 minutes, jusqu'à ce que la croûte soit dorée.",
+      "Garnir immédiatement de prosciutto, de roquette et de copeaux de parmesan.",
+      "Arroser d'huile d'olive au balsamique, à l'ail et aux fines herbes avant de servir."
     ],
     "instructions_es": [
-      "Prepare la masa según las instrucciones del paquete y déle forma a una pizza de 10 pulgadas (25 cm).",
-      "Precaliente el horno y la piedra para pizza a 500 °F (260 °C).",
-      "Extienda uniformemente la salsa para pizza tradicional y cubra con la mozzarella.",
-      "Hornee de 8 a 10 minutos hasta que la corteza esté dorada.",
-      "Cubra inmediatamente con el prosciutto, la rúcula fresca y las virutas de parmesano.",
-      "Termine con un chorrito de aceite de oliva infusionado con balsámico, ajo y hierbas antes de servir."
+      "Prepare la masa según las instrucciones del paquete y forme un círculo de 10 pulgadas.",
+      "Precaliente el horno con la piedra para pizza a 500 °F (260 °C).",
+      "Extienda la salsa de manera uniforme sobre la masa y cubra con la mozzarella rallada.",
+      "Hornee de 8 a 10 minutos, hasta que la orilla esté dorada.",
+      "Cubra de inmediato con el prosciutto, la arúgula y las lascas de parmesano.",
+      "Rocíe con el Balsamic Garlic & Herb Olive Oil antes de servir."
     ],
-    "description": "A sophisticated pizza inspired by Italian trattorias. Delicate prosciutto, peppery arugula, and <strong><a href=\"https://martha.com/\" target=\"_blank\">Martha Stewart</a></strong> Balsamic Garlic & Herb Infused Extra Virgin Olive Oil create a fresh, balanced finish.",
-    "description_fr": "Une pizza sophistiquée inspirée des _trattorias_ italiennes. Le prosciutto délicat, la roquette poivrée et l’huile d’olive extra vierge infusée au basilic, à l’ail et au vinaigre balsamique de <strong><a href=\"https://martha.com/\" target=\"_blank\">Martha Stewart</a></strong> créent une finale fraîche et équilibrée.",
-    "description_es": "Una pizza sofisticada inspirada en las _trattorias_ italianas. El delicado prosciutto, la rúcula picante y el aceite de oliva virgen extra infusionado con balsámico, ajo y hierbas de <strong><a href=\"https://martha.com/\" target=\"_blank\">Martha Stewart</a></strong> crean un final fresco y equilibrado.",
+    "description": "A sophisticated pizza inspired by Italian trattorias. Delicate prosciutto, peppery arugula, and Martha Stewart Balsamic Garlic &amp; Herb Infused Extra-Virgin Olive Oil creates a fresh, balanced finish.",
+    "description_fr": "Une pizza raffinée inspirée des trattorias italiennes. Le prosciutto délicat, la roquette poivrée et l'huile d'olive extra-vierge infusée au balsamique, à l'ail et aux fines herbes de Martha Stewart offrent une finale fraîche et équilibrée.",
+    "description_es": "Una pizza sofisticada inspirada en las trattorias italianas. El delicado prosciutto, la arúgula de sabor picante y el Balsamic Garlic & Herb Infused Extra-Virgin Olive Oil de Martha Stewart le dan un toque final fresco y equilibrado.",
     "prepTime_fr": "20 minutes (plus préparation de la pâte)",
     "cookTime_fr": "45 minutes",
     "yields_fr": "1 pizza (4 portions)",
     "prepTime_es": "20 minutos (más preparación de la masa)",
     "cookTime_es": "45 minutos",
     "yields_es": "1 pizza (4 porciones)",
-    "updated_at": 1793126935969
+    "updated_at": 1793129752592
   },
   {
     "id": "quick-garden-herb-ranch-dip",
