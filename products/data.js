@@ -197,7 +197,7 @@ const productsData = [
       "spinach-four-cheese-with-alfredo-sauce-pinsa-gallery-4.webp",
       "spinach-four-cheese-with-alfredo-sauce-pinsa-gallery-5.webp"
     ],
-    "ingredients": "Ingredients: Pinsa crust (wheat flour, organic rice flour, organic fava flour, sourdough yeast, water, olive oil, salt, yeast [yeast, sorbitan monostearate, ascorbic acid]). Toppings: Mozzarella cheese (milk, modified milk ingredients, cream, salt, calcium chloride, bacterial culture, microbial enzyme), Fontina cheese (milk, calcium chloride, bacterial culture, microbial enzyme, lipase), Spinach, Parmesan cheese (milk, salt, lipase, microbial enzyme, bacterial culture, calcium chloride, cellulose), Romano cheese (milk, salt, bacterial culture, lipase, calcium chloride, microbial enzyme, cellulose). Alfredo sauce: Cream (cream, milk, carrageenan, cellulose gum, mono and diglycerides, polysorbate 80), Minced garlic, Parmesan cheese (milk, salt, lipase, microbial enzyme, bacterial culture, calcium chloride, cellulose), Modified corn starch, Salt, Black pepper.\nContains: Wheat, Milk.\nMay contain: Eggs, Soy, Mustard.",
+    "ingredients": "Ingredients: Pinsa Crust (Wheat Flour, Organic Rice Flour, Organic Fava Flour, Sourdough Yeast, Water, Olive Oil, Salt, Yeast [Yeast, Sorbitan Monostearate, Ascorbic Acid]). Toppings: Mozzarella Cheese (Milk, Modified Milk Ingredients, Cream, Salt, Calcium Chloride, Bacterial Culture, Microbial Enzyme), Fontina Cheese (Milk, Calcium Chloride, Bacterial Culture, Microbial Enzyme, Lipase), Spinach, Parmesan Cheese (Milk, Salt, Lipase, Microbial Enzyme, Bacterial Culture, Calcium Chloride, Cellulose), Romano Cheese (Milk, Salt, Bacterial Culture, Lipase, Calcium Chloride, Microbial Enzyme, Cellulose). Alfredo Sauce: Cream (Cream, Milk, Carrageenan, Cellulose Gum, Mono And Diglycerides, Polysorbate 80), Minced Garlic, Parmesan Cheese (Milk, Salt, Lipase, Microbial Enzyme, Bacterial Culture, Calcium Chloride, Cellulose), Modified Corn Starch, Salt, Black Pepper.\nContains: Wheat, Milk.\nMay Contain: Eggs, Soy, Mustard.",
     "ingredients_fr": "Ingrédients : Pâte à pinsa (farine de blé, farine de riz bio, farine de fève bio, levain, eau, huile d'olive, sel, levure). Garnitures : Mozzarella, fontina, épinards, parmesan, romano. Sauce Alfredo : Crème, ail émincé, parmesan, amidon de maïs modifié, sel, poivre noir.\nContient : Blé, Lait.\nPeut contenir : Œufs, Soja, Moutarde.",
     "ingredients_es": "Ingredientes: Masa de pinsa (harina de trigo, harina de arroz orgánica, harina de haba orgánica, masa madre, agua, aceite de oliva, sal, levadura). Coberturas: Quesos mozzarella, fontina, parmesano, romano y espinacas. Salsa Alfredo: Crema, ajo picado, queso parmesano, sal, pimienta negra.\nContiene: Trigo, Leche.\nPuede contener: Huevos, Soya, Mostaza.",
     "slug": "spinach-four-cheese-with-alfredo-sauce-pinsa",
@@ -217,7 +217,7 @@ const productsData = [
       "spinach-four-cheese-with-alfredo-sauce-pinsa-us-gallery-4.webp",
       "spinach-four-cheese-with-alfredo-sauce-pinsa-us-gallery-5.webp"
     ],
-    "updated_at": 1792523400000
+    "updated_at": 1793104774321
   },
   {
     "id": 10,
