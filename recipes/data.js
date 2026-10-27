@@ -590,44 +590,43 @@ const recipesData = [
       "Optional: halved cherry tomatoes, sliced cucumbers, or shaved Parmesan cheese"
     ],
     "ingredients_fr": [
-      "5 à 6 tasses de feuilles de salade fraîches (laitue beurre croustillante ou jeunes pousses mélangées)",
-      "3 à 4 c. à soupe d’huile d’olive extra-vierge infusée balsamique, ail et fines herbes de <strong><a href=\"https://martha.com/\" target=\"_blank\">Martha Stewart</a></strong>",
-      "1/2 c. à thé de sel de mer en flocons ou de sel casher",
+      "5 à 6 tasses de verdures fraîches (laitue Boston croquante ou mélange de jeunes pousses)",
+      "3 à 4 c. à table d'huile d'olive extra-vierge infusée au balsamique, à l'ail et aux fines herbes de <strong><ahref=\"https://martha.com/\" target=\"_blank\">Martha Stewart</a></strong>",
+      "1/2 c. à thé de fleur de sel ou de sel casher",
       "1/4 c. à thé de poivre noir fraîchement concassé",
-      "Facultatif : Tomates cerises coupées en deux, concombres tranchés ou parmesan râpé"
+      "Facultatif : tomates cerises coupées en deux, concombre tranché ou copeaux de parmesan"
     ],
     "ingredients_es": [
-      "5 a 6 tazas de hojas de ensalada frescas (lechuga mantequilla crujiente o brotes tiernos mezclados)",
-      "3 a 4 cdas. de Aceite de Oliva Virgen Extra Infusionado con Balsámico, Ajo y Hierbas de <strong><a href=\"https://martha.com/\" target=\"_blank\">Martha Stewart</a></strong>",
-      "1/2 cdta. de sal marina en escamas o sal kosher",
-      "1/4 cdta. de pimienta negra recién molida",
-      "Opcional: Tomates cherry cortados por la mitad, pepinos en rodajas o queso parmesano rallado"
+      "5 a 6 tazas de hojas verdes frescas (lechuga mantequilla crujiente o mezcla de hojas tiernas)",
+      "3 a 4 cucharadas del Balsamic Garlic and Herb Infused Extra-Virgin Olive Oil de <strong><ahref=\"https://martha.com/\" target=\"_blank\">Martha Stewart</a></strong>",
+      "1/2 cucharadita de sal de mar en hojuelas o sal kosher",
+      "1/4 cucharadita de pimienta negra recién molida",
+      "Opcional: tomates cherry cortados por la mitad, pepino en rodajas o lascas de parmesano"
     ],
     "instructions": [
       "Wash and spin the greens until completely dry as surface moisture will repel the oil dressing.",
       "Place the dry greens and any toppings in a large wooden or ceramic bowl. Sprinkle the salt and pepper directly onto the leaves before adding the oil.",
       "Shake the olive oil bottle vigorously for 10 seconds to distribute the vinegar, garlic solids, and herbs.",
-      "Drizzle 3 to 4 tablespoons of the shaken oil over the seasoned greens in a slow zigzag motion.",
-      "Using salad tongs, gently toss the greens for 15 to 20 seconds, until evenly coated with balsamic streaks and herbs. Serve immediately."
+      "Drizzle 3 to 4 tablespoons of the shaken oil over the seasoned greens in a slow zigzag motion."
     ],
     "instructions_fr": [
-      "**Sécher les feuilles :** Laver et essorer les feuilles de salade jusqu'à ce qu'elles soient complètement sèches afin que la vinaigrette adhère parfaitement.",
-      "**Assaisonner d'abord :** Placer les feuilles sèches et les garnitures dans un grand bol. Saupoudrer le sel et le poivre directement sur les feuilles avant d'ajouter l'huile.",
-      "**Agiter la bouteille :** Secouer vigoureusement la bouteille d'huile d'olive pendant 10 secondes pour bien répartir le vinaigre, l'ail et les herbes.",
-      "**Verser l'huile :** Verser 3 à 4 c. à soupe de l'huile mélangée sur la salade en un mouvement zigzag régulier.",
-      "**Mélanger et servir :** À l'aide de pinces à salade, mélanger délicatement pendant 15 à 20 secondes jusqu'à ce que les feuilles soient uniformément enrobées. Servir immédiatement."
+      "Laver et essorer les verdures jusqu'à ce qu'elles soient complètement sèches, car l'humidité à leur surface empêche l'huile d'adhérer.",
+      "Déposer les verdures sèches et les garnitures, s'il y a lieu, dans un grand bol en bois ou en céramique. Saupoudrer le sel et le poivre directement sur les feuilles avant d'ajouter l'huile.",
+      "Agiter vigoureusement la bouteille d'huile d'olive pendant 10 secondes pour bien répartir le vinaigre, l'ail et les herbes.",
+      "Verser 3 à 4 c. à table de l'huile en un filet lent, en zigzag, sur les verdures assaisonnées.",
+      "À l'aide de pinces à salade, mélanger délicatement les verdures pendant 15 à 20 secondes, jusqu'à ce qu'elles soient uniformément enrobées de balsamique et d'herbes. Servir immédiatement."
     ],
     "instructions_es": [
-      "**Secar las hojas:** Lave y centrifugue las hojas de ensalada hasta que estén completamente secas para que el aderezo se adhiera bien.",
-      "**Sazonar primero:** Coloque las hojas secas y los ingredientes adicionales en un tazón grande. Espolvoree la sal y la pimienta directamente sobre las hojas antes de agregar el aceite.",
-      "**Agitar la botella:** Agite vigorosamente la botella de aceite de oliva durante 10 segundos para distribuir bien el vinagre, el ajo y las hierbas.",
-      "**Verter el aceite:** Rocíe de 3 a 4 cdas. del aceite agitado sobre las hojas sazonadas en un movimiento lento de zigzag.",
-      "**Mezclar y servir:** Con pinzas para ensalada, mezcle suavemente durante 15 a 20 segundos hasta que las hojas queden cubiertas de manera uniforme. Sirva de inmediato."
+      "Lave y centrifugue las hojas hasta que estén completamente secas, ya que la humedad en la superficie impide que el aceite se adhiera.",
+      "Coloque las hojas secas y los ingredientes opcionales en un tazón grande de madera o de cerámica. Espolvoree la sal y la pimienta directamente sobre las hojas antes de agregar el aceite.",
+      "Agite con fuerza la botella de aceite de oliva durante 10 segundos para distribuir bien el vinagre, el ajo y las hierbas.",
+      "Rocíe 3 a 4 cucharadas del aceite sobre las hojas sazonadas, en un movimiento lento en zigzag.",
+      "Con unas pinzas para ensalada, mezcle suavemente las hojas durante 15 a 20 segundos, hasta que queden bien cubiertas con el balsámico y las hierbas. Sirva de inmediato."
     ],
     "description": "A completely effortless green salad preparation. The pre-blended herbs, garlic, and vinegar in the oil create a restaurant-style emulsion without any extra prep work.",
-    "description_fr": "A completely effortless green salad preparation. The pre-blended herbs, garlic, and vinegar in the oil create a restaurant-style emulsion without any extra prep work.",
-    "description_es": "A completely effortless green salad preparation. The pre-blended herbs, garlic, and vinegar in the oil create a restaurant-style emulsion without any extra prep work.",
-    "updated_at": 1793126935969,
+    "description_fr": "Une salade verte d'une simplicité absolue. Le mélange d'herbes, d'ail et de vinaigre déjà présent dans l'huile crée une émulsion digne d'un restaurant, sans aucune préparation supplémentaire.",
+    "description_es": "Una ensalada verde de lo más sencilla. Las hierbas, el ajo y el vinagre que ya vienen mezclados en el aceite crean una emulsión de restaurante, sin ningún paso extra.",
+    "updated_at": 1793130199751,
     "prepTime_fr": "5 min",
     "cookTime_fr": "5 min",
     "yields_fr": "4 à 6 portions",
