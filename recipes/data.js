@@ -521,11 +521,11 @@ const recipesData = [
     "upsellImage": "/assets/images/recipes/balsamic and herb.png",
     "upsellLink": "",
     "ingredients": [
-      "5 to 6 cups fresh salad greens (crisp Italian blend, butter lettuce, or mixed baby greens)",
-      "3 to 4 tbsp <strong><a href=\"https://martha.com/\" target=\"_blank\">Martha Stewart</a></strong>’s Balsamic Garlic and Herb Infused Extra Virgin Olive Oil",
-      "1/2 tsp flaky sea salt or kosher salt",
-      "1/4 tsp freshly cracked black pepper",
-      "Optional: Halved cherry tomatoes, sliced cucumbers, or shaved Parmesan cheese"
+      "5 to 6 cups fresh salad greens (crisp butter lettuce, or mixed tender greens)",
+      "3 to 4 tablespoons <strong><a href=\"https://martha.com/\" target=\"_blank\">Martha Stewart</a></strong>’s Balsamic Garlic and Herb Infused Extra-Virgin Olive Oil",
+      "1/2 teaspoon flaky sea salt or kosher salt",
+      "1/4 teaspoon freshly cracked black pepper",
+      "Optional: halved cherry tomatoes, sliced cucumbers, or shaved Parmesan cheese"
     ],
     "ingredients_fr": [
       "5 à 6 tasses de feuilles de salade fraîches (mélange italien croustillant, laitue beurre ou jeunes pousses mélangées)",
@@ -542,11 +542,11 @@ const recipesData = [
       "Opcional: Tomates cherry cortados por la mitad, pepinos en rodajas o queso parmesano rallado"
     ],
     "instructions": [
-      "**Dry the Greens:** Wash salad greens thoroughly and run through a salad spinner until completely, bone-dry. _(Any residual surface moisture on the leaves will repel the infused oil dressing)._",
-      "**Season the Leaves First:** Place the dry greens and any desired toppings into a large wooden or ceramic serving bowl. Before adding any oil, sprinkle the salt and freshly cracked black pepper directly onto the dry leaves.",
-      "**Integrate the Blend:** Shake your bottle of [Balsamic Garlic and Herb Infused Olive Oil](https://turponefoods.com/turpone-products/) vigorously for 10 seconds to ensure the blended vinegar, garlic solids, and sedimented herbs are fully distributed before pouring.",
-      "**Pour the Oil:** Drizzle 3 to 4 tablespoons of the shaken oil directly over the seasoned greens in a slow, sweeping zigzag motion across the bowl.",
-      "**Toss and Serve:** Using salad tongs, lift and gently toss the greens from the bottom up for 15 to 20 seconds. Ensure the dark balsamic streaks and herbs are evenly distributed, giving every leaf a glossy, aromatic sheen. Serve immediately."
+      "Wash and spin the greens until completely dry as surface moisture will repel the oil dressing.",
+      "Place the dry greens and any toppings in a large wooden or ceramic bowl. Sprinkle the salt and pepper directly onto the leaves before adding the oil.",
+      "Shake the olive oil bottle vigorously for 10 seconds to distribute the vinegar, garlic solids, and herbs.",
+      "Drizzle 3 to 4 tablespoons of the shaken oil over the seasoned greens in a slow zigzag motion.",
+      "Using salad tongs, gently toss the greens for 15 to 20 seconds, until evenly coated with balsamic streaks and herbs. Serve immediately."
     ],
     "instructions_fr": [
       "**Sécher les feuilles :** Laver soigneusement les feuilles de salade et les passer dans une essoreuse à salade jusqu’à ce qu’elles soient complètement, absolument sèches. _(Toute humidité résiduelle à la surface des feuilles repoussera la vinaigrette à l’huile infusée)._",
@@ -562,7 +562,7 @@ const recipesData = [
       "**Verter el aceite:** Rocíe 3 a 4 cucharadas del aceite agitado directamente sobre las hojas sazonadas con un movimiento lento y amplio en zigzag por todo el tazón.",
       "**Mezclar y servir:** Usando pinzas para ensalada, levante y mezcle suavemente las hojas desde abajo hacia arriba durante 15 a 20 segundos. Asegúrese de que las vetas oscuras de balsámico y las hierbas estén distribuidas uniformemente, dando a cada hoja un brillo aromático. Sirva inmediatamente."
     ],
-    "description": "A completely effortless green salad preparation. Because the herbs, garlic aromatics, and rich vinegar are pre-blended directly into the oil base, seasoning the dry leaves first ensures a flawless restaurant-style emulsion without any setup clutter.",
+    "description": "A completely effortless green salad preparation. The pre-blended herbs, garlic, and\nvinegar in the oil create a restaurant-style emulsion without any extra prep work.",
     "description_fr": "Une préparation de salade verte complètement sans effort. Étant donné que les herbes, les aromates à l’ail et le vinaigre riche sont prémélangés directement dans la base d’huile, assaisonner les feuilles sèches d’abord assure une émulsion de style restaurant impeccable sans désordre.",
     "description_es": "Una preparación de ensalada verde sin esfuerzo. Debido a que las hierbas, los aromáticos de ajo y el rico vinagre ya están mezclados directamente en la base de aceite, sazonar las hojas secas primero garantiza una emulsión impecable estilo restaurante."
   },
