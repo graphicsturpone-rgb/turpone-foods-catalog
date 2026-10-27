@@ -785,7 +785,7 @@ const productsData = [
       "lemon-black-pepper-honey-drizzle-ca-gal-1-1793029884478.webp",
       "lemon-black-pepper-honey-drizzle-ca-gal-2-1793029884478.webp"
     ],
-    "ingredients": "Ingredients: Raw lemon honey, lemon extract, black pepper.",
+    "ingredients": "Ingredients: Raw Lemon Honey, Lemon Extract, Black Pepper.",
     "ingredients_fr": "Ingrédients : Miel brut de citron, extrait de citron, poivre noir.",
     "ingredients_es": "Ingredientes: Miel pura de limón, extracto de limón, pimienta negra.",
     "image_ca": "lemon-black-pepper-honey-drizzle-v1793029884478-ca.webp",
@@ -798,7 +798,7 @@ const productsData = [
       "lemon-black-pepper-honey-drizzle-us-gal-1-1793029884478.webp",
       "lemon-black-pepper-honey-drizzle-us-gal-2-1793029884478.webp"
     ],
-    "updated_at": 1793029884478,
+    "updated_at": 1793109078302,
     "slug": "lemon-black-pepper-honey-drizzle"
   },
   {
