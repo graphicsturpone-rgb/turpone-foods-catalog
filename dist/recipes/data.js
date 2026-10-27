@@ -514,57 +514,60 @@ const recipesData = [
     "upsellImage": "/assets/images/recipes/garden herb.png",
     "upsellLink": "",
     "ingredients": [
-      "3 tbsp <strong><a href=\"https://martha.com/\" target=\"_blank\">Martha Stewart</a></strong>’s Garden Herb Seasoning",
       "1 cup sour cream",
       "1/2 cup high-quality mayonnaise",
-      "1 tsp fresh lemon juice (optional)",
-      "Fresh chives or dill, finely chopped (for garnish)"
+      "3 tablespoons <strong><a href=\"https://martha.com/\" target=\"_blank\">Martha Stewart</a></strong>’s Garden Herb Seasoning",
+      "1 teaspoon fresh lemon juice (optional)",
+      "Fresh chives or dill, finely chopped (for garnish)",
+      "Crudité or chips, for serving"
     ],
     "ingredients_fr": [
-      "3 c. à soupe d’assaisonnement aux fines herbes du jardin de <strong><a href=\"https://martha.com/\" target=\"_blank\">Martha Stewart</a></strong>",
       "1 tasse de crème sure",
-      "1/2 tasse de mayonnaise de haute qualité",
+      "1/2 tasse de mayonnaise de qualité",
+      "3 c. à table d'assaisonnement aux fines herbes du jardin de <strong><a href=\"https://martha.com/\" target=\"_blank\">Martha Stewart</a></strong>",
       "1 c. à thé de jus de citron frais (facultatif)",
-      "Ciboulette fraîche ou aneth, finement haché (pour la garniture)"
+      "Ciboulette ou aneth frais, haché finement (pour garnir)",
+      "Crudités ou croustilles, pour servir"
     ],
     "ingredients_es": [
-      "3 cdas de Sazonador de Hierbas de Jardín (Garden Herb Seasoning) de <strong><a href=\"https://martha.com/\" target=\"_blank\">Martha Stewart</a></strong>",
       "1 taza de crema agria",
-      "1/2 taza de mayonesa de alta calidad",
-      "1 cdta de jugo de limón fresco (opcional)",
-      "Cebollino o eneldo fresco, finamente picado (para decorar)"
+      "1/2 taza de mayonesa de buena calidad",
+      "3 cucharadas del Garden Herb Seasoning de <strong><a href=\"https://martha.com/\"target=\"_blank\">Martha Stewart</a></strong>",
+      "1 cucharadita de jugo de limón fresco (opcional)",
+      "Cebollino o eneldo fresco, picado finamente (para decorar)",
+      "Crudités o papitas fritas, para servir"
     ],
     "instructions": [
-      "**Whisk the Base:** In a medium bowl, whisk together the sour cream and mayonnaise until completely smooth and unified.",
-      "**Incorporate the Seasoning:** Add the[ Garden Herb Seasoning](https://turponefoods.com/turpone-products/) to the bowl. Using a rubber spatula, fold the blend thoroughly into the cream base until the herbs, garlic, and cracked black pepper are evenly distributed.",
-      "**Adjust the Brightness:** Taste the mixture. If a brighter, tangier profile is desired, stir in the fresh lemon juice to amplify the citrus notes inherent in the seasoning.",
-      "**Chill and Bloom:** Cover the bowl tightly with plastic wrap and refrigerate for at least 30 minutes before serving. This resting period allows the dehydrated onion, garlic, and herbs to absorb moisture and fully release their aromatic oils.",
-      "**Garnish and Serve:** Give the dip a brief stir, transfer to a chilled serving dish, and scatter fresh chopped chives or dill across the top. Serve alongside crisp crudités, potato chips, or as a cooling accompaniment to grilled mains."
+      "Combine the sour cream and mayonnaise in a medium bowl and whisk until smooth and combined.",
+      "Add the Garden Herb Seasoning and fold it thoroughly into the cream base until the herbs, garlic, and pepper are evenly distributed.",
+      "Taste and add the fresh lemon juice if you want enhanced citrus notes.",
+      "Cover with plastic wrap and refrigerate at least 30 minutes to let the flavors come together.",
+      "Stir briefly, transfer to a chilled serving dish, top with the chopped chives or dill, and serve with crudités or potato chips."
     ],
     "instructions_fr": [
-      "**Fouetter la base :** Dans un bol moyen, fouetter la crème sure et la mayonnaise jusqu’à ce qu’elles soient complètement lisses et uniformes.",
-      "**Incorporer l’assaisonnement :** Ajouter l’assaisonnement aux fines herbes du jardin au bol. À l’aide d’une spatule en caoutchouc, incorporer soigneusement le mélange dans la base de crème jusqu’à ce que les herbes, l’ail et le poivre noir concassé soient uniformément répartis.",
-      "**Ajuster l’éclat :** Goûter le mélange. Si un profil plus vif et acidulé est souhaité, incorporer le jus de citron frais pour amplifier les notes d’agrumes inhérentes à l’assaisonnement.",
-      "**Refroidir et laisser s’épanouir :** Couvrir hermétiquement le bol d’une pellicule plastique et réfrigérer pendant au moins 30 minutes avant de servir. Cette période de repos permet à l’oignon, à l’ail et aux herbes déshydratées d’absorber l’humidité et de libérer complètement leurs huiles aromatiques.",
-      "**Garnir et servir :** Remuer brièvement la trempette, transférer dans un plat de service réfrigéré et disperser la ciboulette ou l’aneth frais haché sur le dessus. Servir avec des crudités croustillantes, des croustilles ou comme accompagnement rafraîchissant pour les plats principaux grillés."
+      "Dans un bol moyen, mélanger la crème sure et la mayonnaise et fouetter jusqu'à ce que le mélange soit lisse et homogène.",
+      "Ajouter l'assaisonnement aux fines herbes du jardin et l'incorporer délicatement à la base crémeuse jusqu'à ce que les herbes, l'ail et le poivre soient bien répartis.",
+      "Goûter et ajouter le jus de citron frais pour rehausser les notes d'agrumes, au goût.",
+      "Couvrir d'une pellicule plastique et réfrigérer au moins 30 minutes pour que les saveurs se mélangent.",
+      "Remuer brièvement, transférer dans un plat de service froid, garnir de ciboulette ou d'aneth haché et servir avec des crudités ou des croustilles."
     ],
     "instructions_es": [
-      "**Batir la base:** En un bol mediano, bata la crema agria y la mayonesa hasta que estén completamente suaves y unificadas.",
-      "**Incorporar el sazonador:** Agregue el Sazonador de Hierbas de Jardín al bol. Usando una espátula de goma, incorpore la mezcla a fondo en la base de crema hasta que las hierbas, el ajo y la pimienta negra partida estén distribuidos uniformemente.",
-      "**Ajustar la acidez:** Pruebe la mezcla. Si desea un perfil más brillante y ácido, incorpore el jugo de limón fresco para amplificar las notas cítricas inherentes en el sazonador.",
-      "**Refrigerar y activar:** Cubra el bol firmemente con envoltura de plástico y refrigere durante al menos 30 minutos antes de servir. Este período de reposo permite que la cebolla, el ajo y las hierbas deshidratadas absorban la humedad y liberen completamente sus aceites aromáticos.",
-      "**Decorar y servir:** Revuelva brevemente la salsa, transfiérala a un plato de servir frío y esparza cebollino o eneldo fresco picado por encima. Sirva junto con crudités crujientes, papas fritas o como acompañamiento refrescante para platos principales a la parrilla."
+      "En un tazón mediano, mezcle la crema agria y la mayonesa y bata hasta que quede suave y homogénea.",
+      "Agregue el Garden Herb Seasoning e incorpórelo con movimientos envolventes a la base cremosa, hasta que las hierbas, el ajo y la pimienta estén bien distribuidos.",
+      "Pruebe y agregue el jugo de limón fresco si desea un toque cítrico más intenso.",
+      "Cubra con plástico adherente y refrigere por lo menos 30 minutos para que los sabores se integren.",
+      "Revuelva brevemente, pase a un recipiente frío para servir, decore con el cebollino o el eneldo picado y sirva con crudités o papitas fritas."
     ],
-    "description": "This classic, creamy dip utilizes a premium blend of sea salt, onion, garlic, black pepper, and lemon tree notes. Blending the dry seasoning directly into a rich base of sour cream and mayonnaise allows the herbs to fully bloom, creating an effortless, restaurant-quality appetizer.",
-    "description_fr": "Cette trempette crémeuse classique utilise un mélange de qualité supérieure de sel de mer, d’oignon, d’ail, de poivre noir et de notes d’arbre à citron. Le fait de mélanger l’assaisonnement sec directement dans une base riche de crème sure et de mayonnaise permet aux herbes de s’épanouir complètement, créant un hors-d’œuvre sans effort de qualité restaurant.",
-    "description_es": "Esta clásica salsa cremosa utiliza una mezcla premium de sal marina, cebolla, ajo, pimienta negra y notas de limonero. Mezclar el sazonador seco directamente en una base rica de crema agria y mayonesa permite que las hierbas florezcan por completo, creando un aperitivo sencillo y con calidad de restaurante.",
+    "description": "This classic, creamy dip utilizes a premium blend of sea salt, onion, garlic, black pepper, and lemon tree notes.",
+    "description_fr": "Cette trempette classique et crémeuse est préparée avec un mélange de qualité de sel de mer, d'oignon, d'ail, de poivre noir et de notes de citron.",
+    "description_es": "Este dip clásico y cremoso lleva una mezcla de calidad de sal de mar, cebolla, ajo, pimienta negra y notas de limón.",
     "prepTime_fr": "5 min",
     "cookTime_fr": "5 minutes (plus 30 minutes de repos au frais)",
-    "yields_fr": "1,5 tasse",
+    "yields_fr": "1.5 tasse",
     "prepTime_es": "5 min",
-    "cookTime_es": "5 minutos (más 30 minutos de refrigeración)",
-    "yields_es": "1.5 tazas",
-    "updated_at": 1793126935969
+    "cookTime_es": "5 minutos (plus 30 minutos chilling)",
+    "yields_es": "1.5 taza",
+    "updated_at": 1793130024712
   },
   {
     "id": "simple-balsamic-garlic-herb-tableside-dressing",
