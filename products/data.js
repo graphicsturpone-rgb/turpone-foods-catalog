@@ -610,7 +610,7 @@ const productsData = [
       "balsamic-garlic-herb-infused-extra-virgin-olive-oil-ca-gal-1-1793029338421.webp",
       "balsamic-garlic-herb-infused-extra-virgin-olive-oil-ca-gal-2-1793029338421.webp"
     ],
-    "ingredients": "Ingredients: Extra-virgin olive oil, balsamic vinegar, basil, crushed red pepper, garlic, oregano, thyme, natural flavorings (liquid garlic flavor).",
+    "ingredients": "Ingredients: Extra-Virgin Olive Oil, Balsamic Vinegar, Basil, Crushed Red Pepper, Garlic, Oregano, Thyme, Natural Flavorings (Liquid Garlic Flavor).",
     "ingredients_fr": "Ingrédients : Huile d'olive extra vierge, vinaigre balsamique, basilic, piment rouge broyé, ail, origan, thym, arômes naturels d'ail.",
     "ingredients_es": "Ingredientes: Aceite de oliva virgen extra, vinagre balsámico, albahaca, pimiento rojo triturado, ajo, orégano, tomillo, aromas naturales de ajo.",
     "image_ca": "balsamic-garlic-herb-infused-extra-virgin-olive-oil-v1793029338421-ca.webp",
@@ -623,7 +623,7 @@ const productsData = [
       "balsamic-garlic-herb-infused-extra-virgin-olive-oil-us-gal-1-1793029338421.webp",
       "balsamic-garlic-herb-infused-extra-virgin-olive-oil-us-gal-2-1793029338421.webp"
     ],
-    "updated_at": 1793042059346,
+    "updated_at": 1793108813337,
     "slug": "balsamic-garlic-herb-infused-extra-virgin-olive-oil"
   },
   {
