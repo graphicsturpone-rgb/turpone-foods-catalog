@@ -2,9 +2,9 @@ const recipesData = [
   {
     "id": "crispy-roasted-whole-chicken-with-roasted-garlic-olive-oil",
     "slug": "crispy-roasted-whole-chicken-with-roasted-garlic-olive-oil",
-    "title": "Crispy Roasted Whole Chicken with Roasted Garlic Olive Oil",
-    "title_fr": "Poulet entier rôti croustillant avec huile d'olive à l'ail rôti",
-    "title_es": "Pollo Entero Asado Crujiente con Aceite de Oliva de Ajo Asado",
+    "title": "Crispy Roasted Whole Chicken with Roasted Garlic Olive Oil TEST",
+    "title_fr": "Poulet entier rôti croustillant à l'huile d'olive à l'ail rôti TEST",
+    "title_es": "Pollo entero asado crujiente con aceite de oliva con ajo asado TEST",
     "image": "/assets/images/recipes/Crispy Roasted Whole Chicken with Roasted Garlic Olive Oil.webp",
     "prepTime": "35 min",
     "cookTime": "1 hour 35 min",
@@ -61,8 +61,9 @@ const recipesData = [
       "**Asar:** Ase sin mover durante 50 a 60 minutos, o hasta que un termómetro de lectura instantánea registre 165°F (74°C) en la parte más gruesa del muslo. Retire del horno y deje reposar durante 15 minutos. Corte en piezas y termine con un ligero chorrito de Aceite de Oliva Infusionado con Ajo Asado crudo sobre la carne caliente."
     ],
     "description": "Rich, mellow roasted garlic flavor baked directly into a whole roasting bird. Massaging the oil both over and underneath the skin guarantees exceptionally juicy breast meat and a shattered, crackly skin.",
-    "description_fr": "Riche saveur d'ail rôti, doux, cuit directement dans un poulet entier à rôtir. Masser l'huile à la fois sur et sous la peau garantit une viande de poitrine exceptionnellement juteuse et une peau émiettée et craquelante.",
-    "description_es": "Un rico y suave sabor a ajo asado horneado directamente en un pollo entero. Masajear el aceite tanto sobre como debajo de la piel garantiza una carne de pechuga excepcionalmente jugosa y una piel crujiente."
+    "description_fr": "",
+    "description_es": "",
+    "updated_at": 1793115326303
   },
   {
     "id": "fennel-and-rosemary-crusted-pork-loin",
