@@ -295,60 +295,57 @@ const recipesData = [
     "upsellImage": "/assets/images/recipes/mediterranean tomato.png",
     "upsellLink": "",
     "ingredients": [
-      "3 tbsp <strong><a href=\"https://martha.com/\" target=\"_blank\">Martha Stewart</a></strong>’s Mediterranean Tomato Seasoning",
-      "1/2 cup high-quality extra virgin olive oil",
-      "1 tbsp white balsamic vinegar or fresh lemon juice",
-      "1 lb fresh bocconcini cheese balls (or fresh mozzarella pearls, drained)",
+      "1/2 cup high-quality extra-virgin olive oil",
+      "1 tablespoon white balsamic vinegar or fresh lemon juice",
+      "3 tablespoons <strong><a href=\"https://martha.com/\" target=\"_blank\">Martha Stewart</a></strong>’s Mediterranean Tomato Seasoning",
+      "1 pound fresh bocconcini (or fresh mozzarella pearls, drained)",
       "1 cup cherry tomatoes, halved",
-      "Fresh basil leaves, torn (for garnish)"
+      "Fresh basil leaves, torn (for garnish)",
+      "Warm bread or flatbread, for serving"
     ],
     "ingredients_fr": [
-      "3 c. à soupe d’assaisonnement aux tomates méditerranéennes de <strong><a href=\"https://martha.com/\" target=\"_blank\">Martha Stewart</a></strong>",
-      "1/2 tasse d’huile d’olive extra-vierge de haute qualité",
-      "1 c. à soupe de vinaigre balsamique blanc ou de jus de citron frais",
-      "450 g (1 lb) de boules de bocconcini frais (ou de perles de mozzarella fraîches, égouttées)",
-      "1 cup cherry tomatoes, halved",
-      "Feuilles de basilic frais, déchirées (pour la garniture)"
+      "1/2 tasse d'huile d'olive extra-vierge de qualité",
+      "1 c. à table de vinaigre balsamique blanc ou de jus de citron frais",
+      "3 c. à table d'assaisonnement méditerranéen aux tomates de <strong><a href=\"https://martha.com/\"target=\"_blank\">Martha Stewart</a></strong>",
+      "1 lb de bocconcinis frais (ou de perles de mozzarella fraîche), égouttés",
+      "1 tasse de tomates cerises, coupées en deux",
+      "Feuilles de basilic frais, déchirées (pour garnir)",
+      "Pain chaud ou pain plat, pour servir"
     ],
     "ingredients_es": [
-      "3 cdas de Sazonador de Tomate Mediterráneo (Mediterranean Tomato Seasoning) de <strong><a href=\"https://martha.com/\" target=\"_blank\">Martha Stewart</a></strong>",
-      "1/2 taza de aceite de oliva extra virgen de alta calidad",
-      "1 cda de vinagre balsámico blanco o jugo de limón fresco",
-      "450 g (1 lb) de bolitas de queso bocconcini fresco (o perlas de mozzarella fresca, escurridas)",
-      "1 taza de tomates cherry, partidos por la mitad",
-      "Hojas de albahaca fresca, rasgadas (para decorar)"
+      "1/2 taza de aceite de oliva extra virgen de buena calidad",
+      "1 cucharada de vinagre balsámico blanco o jugo de limón fresco",
+      "3 cucharadas del Mediterranean Tomato Seasoning de <strong><a href=\"https://martha.com/\"target=\"_blank\">Martha Stewart</a></strong>",
+      "1 libra de bocconcini frescos (o perlas de mozzarella fresca), escurridos",
+      "1 taza de tomates cherry, cortados por la mitad",
+      "Hojas de albahaca fresca, troceadas con las manos (para decorar)",
+      "Pan caliente o pan plano, para servir"
     ],
     "instructions": [
-      "**Hydrate the Seasoning:** In a medium bowl, whisk together the extra virgin olive oil, white balsamic vinegar, and the [Mediterranean Tomato Seasoning](https://turponefoods.com/turpone-products/). Let the mixture sit at room temperature for 5 minutes to allow the dried tomato flakes and basil to absorb the liquids and unlock their full aroma.",
-      "**Prep the Cheese:** Drain the bocconcini or fresh mozzarella pearls thoroughly from their liquid brine. Pat them lightly with a paper towel; removing excess moisture ensures the infused oil grips the smooth surface of the cheese.",
-      "**Combine and Coat:** Add the drained bocconcini and the halved cherry tomatoes directly into the bowl with the tomato-basil oil. Using a large spoon or rubber spatula, gently toss the ingredients together until the cheese and tomatoes are completely coated in the herb-flecked marinade.",
-      "**Marinate and Infuse:** Cover the bowl tightly with plastic wrap and let it sit at room temperature for at least 30 minutes before serving. This resting window allows the rich garlic, tomato, and basil profiles to penetrate the creamy center of the fresh mozzarella.",
-      "**Garnish and Serve:** Transfer the marinated cheese and tomatoes to a shallow serving platter, ensuring you spoon all the flavorful oil from the bottom of the bowl over the top. Scatter fresh torn basil leaves across the dish and serve alongside warm, crusty artisan bread or grilled flatbreads."
+      "Whisk together the olive oil, vinegar, and Mediterranean Tomato Seasoning in a medium bowl. Let rest 5 minutes at room temperature so the dried components fully absorb the liquid.",
+      "Drain the cheese and pat lightly with paper towels to remove excess moisture. Add the cheese and halved cherry tomatoes to the oil mixture.  Toss to coat in the marinade. Cover and let rest at room temperature for 30 minutes to absorb flavors.",
+      "Transfer to a serving platter, drizzle with the remaining oil, scatter torn basil over top, and serve with warm bread or flatbreads."
     ],
     "instructions_fr": [
-      "**Hydrater l’assaisonnement :** Dans un bol moyen, fouetter l’huile d’olive extra-vierge, le vinaigre balsamique blanc et l’assaisonnement aux tomates méditerranéennes. Laisser le mélange reposer à température ambiante pendant 5 minutes pour permettre aux flocons de tomates séchées et au basilic d’absorber les liquides et de libérer tout leur arôme.",
-      "**Préparer le fromage :** Égoutter soigneusement les bocconcini ou les perles de mozzarella fraîches de leur saumure liquide. Les éponger légèrement avec un essuie-tout; enlever l’excès d’humidité assure que l’huile infusée agrippe la surface lisse du fromage.",
-      "**Combiner et enrober :** Ajouter les bocconcini égouttés et les tomates cerises coupées en deux directement dans le bol avec l’huile de tomates et basilic. À l’aide d’une grande cuillère ou d’une spatule en caoutchouc, mélanger doucement les ingrédients jusqu’à ce que le fromage et les tomates soient complètement enrobés de la marinade parsemée d’herbes.",
-      "**Mariner et infuser :** Couvrir hermétiquement le bol d’une pellicule plastique et laisser reposer à température ambiante pendant au moins 30 minutes avant de servir. Cette période de repos permet aux riches saveurs d’ail, de tomate et de basilic de pénétrer le centre crémeux de la mozzarella fraîche.",
-      "**Garnir et servir :** Transférer le fromage et les tomates marinées dans un plat de service peu profond, en vous assurant de verser à la cuillère toute l’huile savoureuse du fond du bol sur le dessus. Disperser des feuilles de basilic frais déchirées sur le plat et servir avec du pain artisanal chaud et croustillant ou des pains plats grillés."
+      "Dans un bol moyen, fouetter ensemble l'huile d'olive, le vinaigre et l'assaisonnement méditerranéen aux tomates. Laisser reposer 5 minutes à température ambiante pour que les ingrédients séchés absorbent bien le liquide.",
+      "Égoutter le fromage et l'éponger délicatement avec du papier essuie-tout pour retirer l'excédent d'humidité. Ajouter le fromage et les tomates cerises au mélange d'huile. Mélanger pour bien enrober de marinade. Couvrir et laisser reposer à température ambiante pendant 30 minutes pour que les saveurs pénètrent.",
+      "Transférer dans un plat de service, arroser du reste de l'huile, parsemer de basilic déchiré et servir avec du pain chaud ou des pains plats."
     ],
     "instructions_es": [
-      "**Hidratar el sazonador:** En un bol mediano, bata el aceite de oliva extra virgen, el vinagre balsámico blanco y el Sazonador de Tomate Mediterráneo. Deje reposar la mezcla a temperatura ambiente durante 5 minutos para permitir que las hojuelas de tomate y la albahaca secas absorban los líquidos y liberen todo su aroma.",
-      "**Preparar el queso:** Escurra completamente el bocconcini o las perlas de mozzarella fresca de su salmuera líquida. Séquelos ligeramente con una toalla de papel; eliminar el exceso de humedad asegura que el aceite infusionado se adhiera a la superficie suave del queso.",
-      "**Combinar y cubrir:** Agregue el bocconcini escurrido y los tomates cherry partidos por la mitad directamente al bol con el aceite de tomate y albahaca. Usando una cuchara grande o una espátula de goma, mezcle suavemente los ingredientes hasta que el queso y los tomates estén completamente cubiertos con el adobo salpicado de hierbas.",
-      "**Marinar e infundir:** Cubra el bol firmemente con envoltura de plástico y déjelo reposar a temperatura ambiente durante al menos 30 minutos antes de servir. Esta ventana de reposo permite que los ricos perfiles de ajo, tomate y albahaca penetren en el centro cremoso de la mozzarella fresca.",
-      "**Decorar y servir:** Transfiera el queso y los tomates marinados a una fuente poco profunda, asegurándose de verter todo el aceite sabroso del fondo del bol por encima. Esparza hojas de albahaca fresca rasgadas por el plato y sirva junto con pan artesanal tibio y crujiente o pan plano a la parrilla."
+      "En un tazón mediano, bata el aceite de oliva, el vinagre y el Mediterranean Tomato Seasoning. Deje reposar 5 minutos a temperatura ambiente para que los ingredientes secos absorban bien el líquido.",
+      "Escurra el queso y séquelo ligeramente con toallas de papel para quitar el exceso de humedad. Agregue el queso y los tomates cherry a la mezcla de aceite. Mezcle para cubrirlos bien con la marinada. Tape y deje reposar a temperatura ambiente durante 30 minutos para que absorban los sabores.",
+      "Pase a una fuente, rocíe con el resto del aceite, esparza la albahaca troceada por encima y sirva con pan caliente o pan plano."
     ],
-    "description": "This recipe highlights a traditional, sun-drenched flavor profile by utilizing savory tomato flakes, sweet red bell pepper, crisp sea salt, and aromatic basil. Whisking the dry seasoning mix directly into extra virgin olive oil allows the tomato flakes to rehydrate and soften, creating a rich, vibrant marinade that perfectly coats creamy, mild bocconcini or fresh mozzarella pearls.",
-    "description_fr": "Cette recette met en évidence un profil de saveur traditionnel et ensoleillé en utilisant des flocons de tomates savoureuses, du poivron rouge sucré, du sel de mer croustillant et du basilic aromatique. Le fait de mélanger l’assaisonnement sec directement dans l’huile d’olive extra-vierge permet aux flocons de tomates de se réhydrater et de s’assouplir, créant une marinade riche et vibrante qui enrobe parfaitement les bocconcini doux et crémeux ou les perles de mozzarella fraîches.",
-    "description_es": "Esta receta destaca un perfil de sabor tradicional bañado por el sol utilizando hojuelas de tomate saladas, pimiento rojo dulce, sal marina crujiente y albahaca aromática. Batir la mezcla de sazonador seco directamente en aceite de oliva extra virgen permite que las hojuelas de tomate se rehidraten y ablanden, creando un adobo rico y vibrante que cubre perfectamente el cremoso y suave bocconcini o las perlas de mozzarella fresca.",
+    "description": "This dish showcases traditional Mediterranean flavors using tomato flakes, red bell pepper, sea \nsalt, and basil. The seasoning mix rehydrates in olive oil to create a marinade that coats creamy \nbocconcini or fresh mozzarella pearls.",
+    "description_fr": "Ce plat met en valeur les saveurs traditionnelles de la Méditerranée grâce aux flocons de tomate, au poivron rouge, au sel de mer et au basilic. Le mélange d'assaisonnement se réhydrate dans l'huile d'olive pour créer une marinade qui enrobe des bocconcinis crémeux ou des perles de mozzarella fraîche.",
+    "description_es": "Este plato resalta los sabores tradicionales del Mediterráneo con hojuelas de tomate, pimiento rojo, sal de mar y albahaca. La mezcla de sazonador se rehidrata en el aceite de oliva para crear una marinada que cubre bocconcini cremosos o perlas de mozzarella fresca.",
     "prepTime_fr": "10 min",
     "cookTime_fr": "10 min (plus 30 min de marinade)",
     "yields_fr": "4 à 6 portions",
     "prepTime_es": "10 min",
     "cookTime_es": "10 min (más 30 min de marinado)",
     "yields_es": "4 a 6 porciones",
-    "updated_at": 1793126935969
+    "updated_at": 1793128795655
   },
   {
     "id": "pan-seared-salmon-with-a-lemon-black-pepper-honey-glaze",
