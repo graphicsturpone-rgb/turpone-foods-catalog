@@ -404,7 +404,7 @@ const productsData = [
       "bacon-and-caramelized-onions-pizza-gallery-3.webp",
       "bacon-and-caramelized-onions-pizza-gallery-4.webp"
     ],
-    "ingredients": "Ingredients: Wheat flour, water, mozzarella cheese, caramelized onions, bacon, alfredo sauce, parmesan, olive oil, salt, yeast.\nContains: Wheat, Milk.",
+    "ingredients": "Ingredients: Crust: Enriched Wheat Flour, Water, Extra Virgin Olive Oil, Salt, Yeast, Dried Sourdough (Wheat, Rye), Amylase, Sunflower Oil, Ascorbic Acid, Xylanase. Toppings: Mozzarella Cheese (Milk, Modified Milk Ingredients, Cream, Salt, Calcium Chloride, Bacterial Culture, Microbial Enzyme), Caramelized Onions (Onions, Natural Flavor), Bacon (Pork, Water, Salt, Brown Sugar, Smoked Sugar, Sodium Phosphate, Sodium Erythorbate, Sodium Nitrite, Spices), Parmesan Cheese (Milk, Salt, Lipase, Microbial Enzyme, Bacterial Culture, Calcium Chloride, Cellulose).\nAlfredo Sauce: Cream (Cream, Milk, Carrageenan, Cellulose Gum, Mono And Diglycerides, Polysorbate 80), Minced Garlic, Parmesan Cheese (Milk, Salt, Lipase, Microbial Enzyme, Bacterial Culture, Calcium Chloride, Cellulose),\nModified Corn Starch, Salt, Black Pepper.\nContains: Wheat, Milk, Rye.\nMay Contain: Eggs, Soy, Mustard.",
     "ingredients_fr": "Ingrédients : Farine de blé, eau, fromage mozzarella, oignons caramélisés, bacon, sauce alfredo, parmesan, huile d'olive, sel, levure.\nContient : Blé, Lait.",
     "ingredients_es": "Ingredientes: Harina de trigo, agua, queso mozzarella, cebollas caramelizadas, tocino, salsa alfredo, queso parmesano, aceite de oliva, sal, levadura.\nContiene: Trigo, Leche.",
     "image_ca": "bacon-and-caramelized-onions-pizza.webp",
@@ -422,7 +422,7 @@ const productsData = [
       "bacon-and-caramelized-onions-pizza-12-us-gal-4-1793040578149.webp"
     ],
     "slug": "bacon-and-caramelized-onions-pizza-12",
-    "updated_at": 1793042059346
+    "updated_at": 1793106209847
   },
   {
     "id": 4,
