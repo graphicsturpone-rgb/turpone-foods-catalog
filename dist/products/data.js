@@ -925,7 +925,7 @@ const productsData = [
       "sweet-italian-seasoning-ca-gal-1-1793029196345.webp",
       "sweet-italian-seasoning-ca-gal-2-1793029196345.webp"
     ],
-    "ingredients": "Ingredients: Sea salt, dehydrated vegetables (garlic, onion, red bell pepper), fennel seed, rosemary, olive oil.",
+    "ingredients": "Ingredients: Sea Salt, Dehydrated Vegetables (Garlic, Onion, Red Bell Pepper), Fennel Seed, Rosemary, Olive Oil.\nMay Contain: Sesame, Soy, Wheat, Mustard.",
     "ingredients_fr": "Ingrédients : Sel de mer, légumes déshydratés (ail, oignon, poivron rouge), graines de fenouil, romarin, huile d'olive.",
     "ingredients_es": "Ingredientes: Sal marina, verduras deshidratadas (ajo, cebolla, pimiento rojo), semillas de hinojo, romero, aceite de oliva.",
     "image_ca": "sweet-italian-seasoning-v1793029196345-ca.webp",
@@ -938,7 +938,7 @@ const productsData = [
       "sweet-italian-seasoning-us-gal-1-1793029196345.webp",
       "sweet-italian-seasoning-us-gal-2-1793029196345.webp"
     ],
-    "updated_at": 1793029196345,
+    "updated_at": 1793109380464,
     "slug": "sweet-italian-seasoning"
   },
   {
