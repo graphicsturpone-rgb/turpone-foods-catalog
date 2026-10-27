@@ -1,7 +1,8 @@
 /**
  * Recipes Data Store & Sync Manager for Turpone Foods
  * Manages loading recipes from recipesData (recipes/data.js) + custom/modified recipes (localStorage)
- * Supports instant local persistence, deletion tracking (tombstones), and live API synchronization.
+ * Supports instant local persistence, deletion tracking (tombstones), anti-rollback timestamp validation,
+ * and zero-delay API synchronization with the production backend.
  */
 (function(window) {
     const STORAGE_KEY = 'turpone_custom_recipes';
@@ -54,6 +55,8 @@
         const deletedSlugs = new Set(getDeletedSlugs().map(s => String(s).trim().toLowerCase()));
 
         const merged = [...baseRecipes];
+        const activeDrafts = [];
+
         customRecipes.forEach(custom => {
             const customId = String(custom.id || custom.slug || '').trim().toLowerCase();
             const index = merged.findIndex(r => {
@@ -62,8 +65,19 @@
             });
 
             if (index >= 0) {
-                merged[index] = { ...merged[index], ...custom };
+                const baseRec = merged[index];
+                const baseTs = Number(baseRec.updated_at) || 0;
+                const customTs = Number(custom.updated_at) || 0;
+
+                // Anti-rollback check: if base canonical recipe from server has equal or newer timestamp, skip stale local draft
+                if (baseTs > 0 && baseTs >= customTs) {
+                    return;
+                }
+
+                activeDrafts.push(custom);
+                merged[index] = { ...baseRec, ...custom };
             } else {
+                activeDrafts.push(custom);
                 merged.unshift(custom);
             }
         });
@@ -101,7 +115,8 @@
             recipe.slug = recipe.id;
         }
 
-        recipe.updated_at = recipe.updated_at || Date.now();
+        // Always stamp with the latest timestamp so it takes precedence over server until synced
+        recipe.updated_at = Date.now();
 
         // 1. Remove from deleted tombstones if it was previously deleted
         const normId = String(recipe.id).trim().toLowerCase();
@@ -209,6 +224,20 @@
                         saveDeletedSlugs(remaining);
                     }
 
+                    // Prune drafts that are now older than or equal to server data
+                    const customRecipes = getCustomRecipes();
+                    const remainingDrafts = customRecipes.filter(custom => {
+                        const customId = String(custom.id || custom.slug || '').trim().toLowerCase();
+                        const serverRec = data.recipes.find(r => 
+                            String(r.id || r.slug || '').trim().toLowerCase() === customId
+                        );
+                        if (!serverRec) return true; // keep if not on server yet
+                        const serverTs = Number(serverRec.updated_at) || 0;
+                        const customTs = Number(custom.updated_at) || 0;
+                        return customTs > serverTs; // keep only if local draft is strictly newer
+                    });
+                    saveCustomRecipes(remainingDrafts);
+
                     try {
                         window.dispatchEvent(new CustomEvent('turpone:recipes-updated', { detail: { action: 'sync', recipes: data.recipes } }));
                     } catch (e) {}
@@ -219,20 +248,17 @@
             .catch(() => { /* offline fallback */ });
     }
 
-    // Auto-sync on load
-    if (typeof window !== 'undefined') {
-        syncFromApi();
-    }
-
-    // Export to window
+    // Export to global scope
     window.RecipeStore = {
         getAll: getAllRecipes,
         getBySlug: getRecipeBySlug,
         save: saveRecipe,
         delete: deleteRecipe,
-        getCustom: getCustomRecipes,
-        saveCustom: saveCustomRecipes,
-        getDeleted: getDeletedSlugs,
         syncFromApi: syncFromApi
     };
+
+    // Auto-sync on script evaluation
+    if (typeof window !== 'undefined') {
+        syncFromApi();
+    }
 })(typeof window !== 'undefined' ? window : this);

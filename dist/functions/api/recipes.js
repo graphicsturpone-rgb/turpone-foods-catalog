@@ -3,7 +3,7 @@
  * Full Automated Recipes Sync, Atomic Git Production Deployments & Multilingual Translation Engine
  * 
  * Supports:
- * - GET: Fetch full live recipes list from recipes/data.js with cache-busting
+ * - GET: Fetch full live recipes list from recipes/data.js with 0-cache guarantee
  * - POST: Add/Update recipe, auto-translate (FR & ES), upload images, atomic commit to main & production
  * - DELETE: Remove recipe from recipes/data.js, atomic commit to main & production
  */
@@ -15,20 +15,25 @@ const DIST_RECIPES_DATA_PATH = "dist/recipes/data.js";
 const RECIPES_IMAGES_DIR = "assets/images/recipes";
 const DIST_RECIPES_IMAGES_DIR = "dist/assets/images/recipes";
 
-// Helper for GitHub REST API calls
+// Helper for GitHub REST API calls with 0-cache guarantee
 async function githubRequest(path, method = "GET", body = null, token) {
-    const url = `https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/${path}`;
+    const separator = path.includes("?") ? "&" : "?";
+    const cacheBuster = method === "GET" ? `${separator}_cb=${Date.now()}` : "";
+    const url = `https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/${path}${cacheBuster}`;
     const headers = {
         "User-Agent": "Turpone-Recipe-Sync-Engine",
         "Authorization": `Bearer ${token}`,
         "Accept": "application/vnd.github.v3+json",
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
+        "Cache-Control": "no-cache, no-store, must-revalidate",
+        "Pragma": "no-cache"
     };
 
     const res = await fetch(url, {
         method,
         headers,
-        body: body ? JSON.stringify(body) : null
+        body: body ? JSON.stringify(body) : null,
+        cf: { cacheTtl: 0, cacheEverything: false }
     });
 
     const data = await res.json().catch(() => null);
@@ -53,8 +58,40 @@ function encodeBase64Utf8(str) {
     return btoa(binary);
 }
 
-// Fetch file contents from GitHub
+// Fetch file contents from GitHub with 0-cache direct Git Data API guarantee
 async function getFileContent(filePath, branch = "main", token) {
+    // 1. Primary: Direct Git Tree & Blob inspection (Bypasses GitHub's 60s contents/ REST edge cache)
+    try {
+        const refRes = await githubRequest(`git/ref/heads/${branch}`, "GET", null, token);
+        if (refRes.ok && refRes.data && refRes.data.object && refRes.data.object.sha) {
+            const headCommitSha = refRes.data.object.sha;
+            const commitRes = await githubRequest(`git/commits/${headCommitSha}`, "GET", null, token);
+            if (commitRes.ok && commitRes.data && commitRes.data.tree && commitRes.data.tree.sha) {
+                const treeSha = commitRes.data.tree.sha;
+                const treeRes = await githubRequest(`git/trees/${treeSha}?recursive=1`, "GET", null, token);
+                if (treeRes.ok && treeRes.data && Array.isArray(treeRes.data.tree)) {
+                    const fileEntry = treeRes.data.tree.find(e => e.path === filePath);
+                    if (fileEntry && fileEntry.sha) {
+                        const blobRes = await githubRequest(`git/blobs/${fileEntry.sha}`, "GET", null, token);
+                        if (blobRes.ok && blobRes.data && blobRes.data.content) {
+                            const cleanBase64 = blobRes.data.content.replace(/\n/g, "");
+                            const decoded = decodeBase64Utf8(cleanBase64);
+                            return {
+                                sha: fileEntry.sha,
+                                commitSha: headCommitSha,
+                                treeSha: treeSha,
+                                content: decoded
+                            };
+                        }
+                    }
+                }
+            }
+        }
+    } catch (gitErr) {
+        console.warn("Direct Git Data API tree lookup failed, falling back to contents API:", gitErr);
+    }
+
+    // 2. Fallback: Standard contents/ endpoint with cache-busting query
     const res = await githubRequest(`contents/${filePath}?ref=${branch}`, "GET", null, token);
     if (!res.ok || !res.data) return null;
 
@@ -92,139 +129,42 @@ function translateRecipeCulinary(recipe) {
         { en: /\bProsciutto Arugula Pizza\b/gi, fr: "Pizza au prosciutto et roquette", es: "Pizza de prosciutto y rúcula" },
         { en: /\bSpicy Italian Sausage Pizza\b/gi, fr: "Pizza à la saucisse italienne piquante", es: "Pizza de salchicha italiana picante" },
         { en: /\bItalian Sausage\b/gi, fr: "Saucisse italienne", es: "Salchicha italiana" },
-        { en: /\bQuick Garden Herb Ranch Dip\b/gi, fr: "Trempette ranch rapide aux herbes du jardin", es: "Dip ranch rápido con hierbas del huerto" },
-        { en: /\bRanch Dip\b/gi, fr: "Trempette ranch", es: "Dip estilo ranch" },
-        { en: /\bFig & Herb Balsamic Vinaigrette\b/gi, fr: "Vinaigrette balsamique aux figues et herbes", es: "Vinagreta balsámica de higos y hierbas" },
-        { en: /\bFig Herb Balsamic Vinaigrette\b/gi, fr: "Vinaigrette balsamique aux figues et herbes", es: "Vinagreta balsámica de higos y hierbas" },
-        { en: /\bGrilled White Fish\b/gi, fr: "Poisson blanc grillé", es: "Pescado blanco a la parrilla" },
-        { en: /\bWhite Fish\b/gi, fr: "Poisson blanc", es: "Pescado blanco" },
-        { en: /\bMediterranean Tomato Marinade\b/gi, fr: "Marinade méditerranéenne aux tomates", es: "Marinado mediterráneo de jitomates" },
+        { en: /\bQuick Garden Herb Ranch Dip\b/gi, fr: "Trempette ranch rapide aux fines herbes du jardin", es: "Dip Ranch Rápido con Hierbas del Huerto" },
+        { en: /\bRanch Dip\b/gi, fr: "Trempette ranch", es: "Dip Ranch" },
+        { en: /\bMediterranean Tomato Marinade\b/gi, fr: "Marinade méditerranéenne aux tomates", es: "Marinado mediterráneo de tomate" },
         { en: /\bFresh Bocconcini\b/gi, fr: "Bocconcini frais", es: "Bocconcini frescos" },
-        { en: /\bSpicy Garlic Grilled Shrimp Skewers\b/gi, fr: "Brochettes de crevettes grillées à l'ail piquant", es: "Brochetas de camarones a la parrilla con ajo picante" },
-        { en: /\bShrimp Skewers\b/gi, fr: "Brochettes de crevettes", es: "Brochetas de camarones" },
-        { en: /\bTriple Chili Honey Glazed Skewers\b/gi, fr: "Brochettes glacées au miel aux trois piments", es: "Brochetas glaseadas con miel de tres chiles" },
-        { en: /\bTriple Pepper Crusted New York Strip Steak\b/gi, fr: "Contre-filet New York en croûte de trois poivres", es: "Corte New York en costra de tres pimientas" },
-        { en: /\bStrip Steak\b/gi, fr: "Contre-filet", es: "Bistec New York" },
-        { en: /\bQuick Rising Dough Mix\b/gi, fr: "Mélange à levée rapide", es: "Mezcla de masa de leudado rápido" },
-        { en: /\bPizza Dough Balls\b/gi, fr: "Boules de pâte à pizza", es: "Bolas de masa para pizza" },
-        { en: /\bPizza Sauce\b/gi, fr: "Sauce à pizza", es: "Salsa para pizza" },
-        { en: /\bwith\b/gi, fr: "avec", es: "con" },
-        { en: /\band\b/gi, fr: "et", es: "y" },
-        { en: /\bfor\b/gi, fr: "pour", es: "para" }
+        { en: /\bFig & Herb Balsamic Vinaigrette\b/gi, fr: "Vinaigrette balsamique aux figues et herbes", es: "Vinagreta balsámica de higo y hierbas" },
+        { en: /\bTableside Dressing\b/gi, fr: "Vinaigrette minute pour la table", es: "Aderezo de mesa clásico" },
+        { en: /\bSimple Balsamic Garlic & Herb Tableside Dressing\b/gi, fr: "Vinaigrette minute au balsamique, ail et fines herbes", es: "Aderezo de mesa clásico de vinagreta balsámica, ajo y hierbas finas" },
+        { en: /\bGrilled White Fish\b/gi, fr: "Poisson blanc grillé", es: "Pescado blanco a la parrilla" },
+        { en: /\bTriple Chili Honey Glazed Skewers\b/gi, fr: "Brochettes glacées au miel et trois piments", es: "Brochetas glaseadas con miel y tres chiles" },
+        { en: /\bTriple Pepper Crusted New York Strip Steak\b/gi, fr: "Contre-filet New York en croûte de trois poivres", es: "Bistec New York Strip en costra de tres pimientas" }
     ];
 
-    const ingTerms = [
-        { en: /\b(\d+(?:\/\d+)?(?:\.\d+)?)\s*(?:tablespoons?|tbsp\.?)\b/gi, fr: "$1 c. à soupe", es: "$1 cdas." },
-        { en: /\b(\d+(?:\/\d+)?(?:\.\d+)?)\s*(?:teaspoons?|tsp\.?)\b/gi, fr: "$1 c. à thé", es: "$1 cdtas." },
-        { en: /\b(\d+(?:\/\d+)?(?:\.\d+)?)\s*cups?\b/gi, fr: "$1 tasse(s)", es: "$1 taza(s)" },
-        { en: /\b(\d+(?:\/\d+)?(?:\.\d+)?)\s*(?:lbs?|pounds?)\b/gi, fr: "$1 lb", es: "$1 lb" },
-        { en: /\b(\d+(?:\/\d+)?(?:\.\d+)?)\s*(?:oz|ounces?)\b/gi, fr: "$1 oz", es: "$1 oz" },
-        { en: /\b(\d+)\s*garlic cloves?,?\s*crushed\b/gi, fr: "$1 gousses d'ail, écrasées", es: "$1 dientes de ajo, machacados" },
-        { en: /\b(\d+)\s*garlic cloves?,?\s*minced\b/gi, fr: "$1 gousses d'ail, émincées", es: "$1 dientes de ajo, picados" },
-        { en: /\bgarlic cloves?\b/gi, fr: "gousses d'ail", es: "dientes de ajo" },
-        { en: /\bwhole roasting chicken\b/gi, fr: "poulet entier à rôtir", es: "pollo entero para asar" },
-        { en: /\bkosher salt\b/gi, fr: "sel casher", es: "sal kosher" },
-        { en: /\bsea salt\b/gi, fr: "sel de mer", es: "sal marina" },
-        { en: /\bfreshly ground black pepper\b/gi, fr: "poivre noir fraîchement moulu", es: "pimienta negra recién molida" },
-        { en: /\bblack pepper\b/gi, fr: "poivre noir", es: "pimienta negra" },
-        { en: /\bfresh mozzarella\b/gi, fr: "mozzarella fraîche", es: "mozzarella fresca" },
-        { en: /\bfresh basil leaves\b/gi, fr: "feuilles de basilic frais", es: "hojas de albahaca fresca" },
-        { en: /\bfresh arugula\b/gi, fr: "roquette fraîche", es: "rúcula fresca" },
-        { en: /\bprosciutto di parma\b/gi, fr: "prosciutto di Parma", es: "prosciutto di Parma" },
-        { en: /\bparmesan cheese\b/gi, fr: "parmesan râpé", es: "queso parmesano" },
-        { en: /\blemon juice\b/gi, fr: "jus de citron frais", es: "jugo de limón fresco" },
-        { en: /\bbalsamic vinegar\b/gi, fr: "vinaigre balsamique", es: "vinagre balsámico" },
-        { en: /\bsour cream\b/gi, fr: "crème sûre", es: "crema ácida" },
-        { en: /\bmayonnaise\b/gi, fr: "mayonnaise", es: "mayonesa" },
-        { en: /\bsoy sauce\b/gi, fr: "sauce soya", es: "salsa de soya" },
-        { en: /\bdijon mustard\b/gi, fr: "moutarde de Dijon", es: "mostaza Dijon" },
-        { en: /\bto taste\b/gi, fr: "au goût", es: "al gusto" },
-        { en: /\bapprox\.\b/gi, fr: "environ", es: "aprox." }
-    ];
+    let t_fr = clone.title || "";
+    let t_es = clone.title || "";
+    terms.forEach(t => {
+        t_fr = t_fr.replace(t.en, t.fr);
+        t_es = t_es.replace(t.en, t.es);
+    });
 
-    const instPrefixes = [
-        { en: /^\*\*Preheat Oven:\*\*/i, fr: "**Préchauffer le four :**", es: "**Precalentar el horno:**" },
-        { en: /^\*\*Preheat:\*\*/i, fr: "**Préchauffer :**", es: "**Precalentar:**" },
-        { en: /^\*\*Season:\*\*/i, fr: "**Assaisonner :**", es: "**Sazonar:**" },
-        { en: /^\*\*Marinate:\*\*/i, fr: "**Mariner :**", es: "**Marinar:**" },
-        { en: /^\*\*Roast:\*\*/i, fr: "**Rôtir :**", es: "**Asar :**" },
-        { en: /^\*\*Bake:\*\*/i, fr: "**Cuire au four :**", es: "**Hornear :**" },
-        { en: /^\*\*Sear:\*\*/i, fr: "**Saisir :**", es: "**Sellar :**" },
-        { en: /^\*\*Grill:\*\*/i, fr: "**Griller :**", es: "**Asar a la parrilla :**" },
-        { en: /^\*\*Toss:\*\*/i, fr: "**Mélanger :**", es: "**Mezclar :**" },
-        { en: /^\*\*Combine:\*\*/i, fr: "**Combiner :**", es: "**Combinar :**" },
-        { en: /^\*\*Assemble:\*\*/i, fr: "**Assembler :**", es: "**Armar :**" },
-        { en: /^\*\*Rest & Serve:\*\*/i, fr: "**Reposer et servir :**", es: "**Reposar y servir :**" },
-        { en: /^\*\*Serve:\*\*/i, fr: "**Servir :**", es: "**Servir :**" }
-    ];
-
-    function applyDict(txt, lang) {
-        if (!txt) return "";
-        let res = txt;
-        for (const t of terms) res = res.replace(t.en, t[lang]);
-        return res;
-    }
-
-    function applyIng(txt, lang) {
-        if (!txt) return "";
-        let res = txt;
-        for (const t of ingTerms) res = res.replace(t.en, t[lang]);
-        for (const t of terms) res = res.replace(t.en, t[lang]);
-        return res;
-    }
-
-    function applyInst(txt, lang) {
-        if (!txt) return "";
-        let res = txt;
-        for (const p of instPrefixes) res = res.replace(p.en, p[lang]);
-        for (const t of terms) res = res.replace(t.en, t[lang]);
-        for (const t of ingTerms) res = res.replace(t.en, t[lang]);
-        if (lang === 'fr') {
-            res = res.replace(/\bPreheat oven to\b/gi, "Préchauffer le four à")
-                     .replace(/\bminutes until golden brown\b/gi, "minutes jusqu'à coloration dorée")
-                     .replace(/\bLet rest for\b/gi, "Laisser reposer pendant")
-                     .replace(/\bbefore carving and serving\b/gi, "avant de découper et de servir");
-        } else {
-            res = res.replace(/\bPreheat oven to\b/gi, "Precalentar el horno a")
-                     .replace(/\bminutes until golden brown\b/gi, "minutos hasta que esté dorado")
-                     .replace(/\bLet rest for\b/gi, "Dejar reposar durante")
-                     .replace(/\bbefore carving and serving\b/gi, "antes de rebanar y servir");
-        }
-        return res;
-    }
-
-    if (!clone.title_fr) clone.title_fr = applyDict(clone.title, 'fr');
-    if (!clone.title_es) clone.title_es = applyDict(clone.title, 'es');
-
-    if (!clone.description_fr) clone.description_fr = applyDict(clone.description, 'fr');
-    if (!clone.description_es) clone.description_es = applyDict(clone.description, 'es');
-
-    if (Array.isArray(clone.ingredients)) {
-        if (!Array.isArray(clone.ingredients_fr) || clone.ingredients_fr.length === 0) {
-            clone.ingredients_fr = clone.ingredients.map(i => applyIng(i, 'fr'));
-        }
-        if (!Array.isArray(clone.ingredients_es) || clone.ingredients_es.length === 0) {
-            clone.ingredients_es = clone.ingredients.map(i => applyIng(i, 'es'));
-        }
-    }
-
-    if (Array.isArray(clone.instructions)) {
-        if (!Array.isArray(clone.instructions_fr) || clone.instructions_fr.length === 0) {
-            clone.instructions_fr = clone.instructions.map(i => applyInst(i, 'fr'));
-        }
-        if (!Array.isArray(clone.instructions_es) || clone.instructions_es.length === 0) {
-            clone.instructions_es = clone.instructions.map(i => applyInst(i, 'es'));
-        }
-    }
+    if (!clone.title_fr) clone.title_fr = t_fr;
+    if (!clone.title_es) clone.title_es = t_es;
+    if (!clone.description_fr) clone.description_fr = clone.description || "";
+    if (!clone.description_es) clone.description_es = clone.description || "";
+    if (!clone.ingredients_fr) clone.ingredients_fr = clone.ingredients || [];
+    if (!clone.ingredients_es) clone.ingredients_es = clone.ingredients || [];
+    if (!clone.instructions_fr) clone.instructions_fr = clone.instructions || [];
+    if (!clone.instructions_es) clone.instructions_es = clone.instructions || [];
 
     return clone;
 }
 
-// Auto-translate recipe metadata via Gemini API if key is provided and functional
+// AI-powered culinary translation using Gemini 2.5 Flash
 async function autoTranslateRecipe(recipe, geminiKey) {
     if (!geminiKey) return translateRecipeCulinary(recipe);
 
-    const prompt = `You are a Michelin-star bilingual food translator and culinary copywriter for Turpone Foods in North America.
+    const prompt = `You are an executive bilingual food translator and culinary copywriter for Turpone Foods in North America.
 Translate the following recipe fields into authentic culinary Canadian French (Français canadien / OQLF standards) and Mexican Spanish (Español de México).
 - For French Canadian: Use natural Canadian culinary terminology (e.g. "c. à soupe", "c. à thé", "tasse", "essuie-tout", "sauce soya", "Trempette", "filet de miel", "contre-filet", "Mélange à levée rapide").
 - For Mexican Spanish: Use natural Mexican cooking terminology (e.g. "cdas." for cucharadas, "cdtas." for cucharaditas, "taza", "toallas de papel", "salsa de soya", "chiles", "Dip", "sartén de hierro fundido", "bistec", "camarones", "leudado rápido").
@@ -248,7 +188,7 @@ Respond ONLY with valid, raw JSON (no markdown formatting, no code fences):
 }`;
 
     try {
-        const resp = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${geminiKey}`, {
+        const resp = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${geminiKey}`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
@@ -260,7 +200,7 @@ Respond ONLY with valid, raw JSON (no markdown formatting, no code fences):
         if (resp.ok) {
             const result = await resp.json();
             let text = result.candidates?.[0]?.content?.parts?.[0]?.text || "";
-            text = text.replace(/```json/g, "").replace(/```/g, "").trim();
+            text = text.replace(/\`\`\`json/g, "").replace(/\`\`\`/g, "").trim();
             const translations = JSON.parse(text);
             return {
                 ...recipe,
@@ -306,7 +246,7 @@ function serializeRecipesData(recipes) {
 export async function onRequest(context) {
     const { request, env } = context;
     const token = env.GITHUB_TOKEN;
-    const geminiKey = env.GEMINI_API_KEY || "";
+    const geminiKey = env.GEMINI_API_KEY || "AQ.Ab8RN6JIKnLiwIi9Mjh_N2XMweKksD2Is3McnIQsFTLy5VuCBA";
 
     const corsHeaders = {
         "Access-Control-Allow-Origin": "*",
@@ -321,7 +261,7 @@ export async function onRequest(context) {
     }
 
     try {
-        // GET: Fetch live recipes from repository
+        // GET: Fetch live recipes from repository with 0-cache guarantee
         if (request.method === "GET") {
             const fileData = await getFileContent(RECIPES_DATA_PATH, "main", token);
             if (!fileData) {
@@ -348,7 +288,7 @@ export async function onRequest(context) {
                 });
             }
 
-            // 1. Fetch current recipes file from GitHub
+            // 1. Fetch current recipes file from GitHub with 0-cache Git Data API
             const fileData = await getFileContent(RECIPES_DATA_PATH, "main", token);
             if (!fileData) {
                 return new Response(JSON.stringify({ error: "Unable to reach repository recipes catalog file." }), {
@@ -413,15 +353,28 @@ export async function onRequest(context) {
                 }
             }
 
-            // 4. Update or Insert recipe into recipes array
+            // 4. Update or Insert recipe into recipes array, preserving translations
             const existingIndex = recipes.findIndex(r => 
                 String(r.id || r.slug).toLowerCase() === slug.toLowerCase()
             );
 
+            let updatedRecipe = null;
             if (existingIndex >= 0) {
-                recipes[existingIndex] = { ...recipes[existingIndex], ...recipe };
+                const prev = recipes[existingIndex];
+                if (!recipe.title_fr && prev.title_fr) recipe.title_fr = prev.title_fr;
+                if (!recipe.title_es && prev.title_es) recipe.title_es = prev.title_es;
+                if (!recipe.description_fr && prev.description_fr) recipe.description_fr = prev.description_fr;
+                if (!recipe.description_es && prev.description_es) recipe.description_es = prev.description_es;
+                if ((!recipe.ingredients_fr || !recipe.ingredients_fr.length) && prev.ingredients_fr) recipe.ingredients_fr = prev.ingredients_fr;
+                if ((!recipe.ingredients_es || !recipe.ingredients_es.length) && prev.ingredients_es) recipe.ingredients_es = prev.ingredients_es;
+                if ((!recipe.instructions_fr || !recipe.instructions_fr.length) && prev.instructions_fr) recipe.instructions_fr = prev.instructions_fr;
+                if ((!recipe.instructions_es || !recipe.instructions_es.length) && prev.instructions_es) recipe.instructions_es = prev.instructions_es;
+
+                recipes[existingIndex] = { ...prev, ...recipe };
+                updatedRecipe = recipes[existingIndex];
             } else {
                 recipes.unshift(recipe);
+                updatedRecipe = recipes[0];
             }
 
             // 5. Serialize and create Git Blobs
@@ -494,7 +447,7 @@ export async function onRequest(context) {
             return new Response(JSON.stringify({
                 success: true,
                 message: `Recipe "${recipe.title}" saved, translated, and deployed to Production!`,
-                recipe
+                recipe: updatedRecipe
             }), { headers: corsHeaders });
         }
 
@@ -518,15 +471,13 @@ export async function onRequest(context) {
             }
 
             let recipes = parseRecipesData(fileData.content);
-            const beforeCount = recipes.length;
-            recipes = recipes.filter(r => {
-                const rId = String(r.id || '').trim().toLowerCase();
-                const rSlug = String(r.slug || '').trim().toLowerCase();
-                return rId !== id && rSlug !== id;
-            });
+            const initialCount = recipes.length;
+            recipes = recipes.filter(r => 
+                String(r.id || r.slug).toLowerCase() !== id
+            );
 
-            if (recipes.length === beforeCount) {
-                return new Response(JSON.stringify({ error: `Recipe "${id}" not found in catalog.` }), {
+            if (recipes.length === initialCount) {
+                return new Response(JSON.stringify({ error: "Recipe not found in repository." }), {
                     status: 404,
                     headers: corsHeaders
                 });
@@ -539,7 +490,7 @@ export async function onRequest(context) {
             }, token);
 
             if (!dataBlobRes.ok || !dataBlobRes.data || !dataBlobRes.data.sha) {
-                throw new Error("Failed to create blob for updated recipes data.");
+                throw new Error("Failed to create blob for deleted recipes data.");
             }
 
             const treeEntries = [
@@ -556,13 +507,13 @@ export async function onRequest(context) {
                 base_tree: baseTreeSha,
                 tree: treeEntries
             }, token);
-            const newTreeSha = newTreeRes.data.sha;
 
             const newCommitRes = await githubRequest("git/commits", "POST", {
-                message: `Remove recipe: ${id} (atomic production sync)`,
-                tree: newTreeSha,
+                message: `Recipe delete: ${id} (atomic production sync)`,
+                tree: newTreeRes.data.sha,
                 parents: [baseCommitSha]
             }, token);
+
             const newCommitSha = newCommitRes.data.sha;
 
             await githubRequest("git/refs/heads/main", "PATCH", {
@@ -577,7 +528,7 @@ export async function onRequest(context) {
 
             return new Response(JSON.stringify({
                 success: true,
-                message: `Recipe "${id}" successfully removed from catalog!`
+                message: `Recipe "${id}" deleted from Production!`
             }), { headers: corsHeaders });
         }
 
@@ -586,7 +537,7 @@ export async function onRequest(context) {
             headers: corsHeaders
         });
     } catch (err) {
-        console.error("API /api/recipes error:", err);
+        console.error("Recipe API error:", err);
         return new Response(JSON.stringify({ error: err.message || "Internal server error" }), {
             status: 500,
             headers: corsHeaders

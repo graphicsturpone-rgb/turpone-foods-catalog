@@ -2,9 +2,9 @@ const recipesData = [
   {
     "id": "crispy-roasted-whole-chicken-with-roasted-garlic-olive-oil",
     "slug": "crispy-roasted-whole-chicken-with-roasted-garlic-olive-oil",
-    "title": "Crispy Roasted Whole Chicken with Roasted Garlic Olive Oil TEST",
-    "title_fr": "Poulet entier rôti croustillant à l'huile d'olive à l'ail rôti TEST",
-    "title_es": "Pollo entero asado crujiente con aceite de oliva con ajo asado TEST",
+    "title": "Crispy Roasted Whole Chicken with Roasted Garlic Olive Oil",
+    "title_fr": "Poulet entier rôti croustillant avec huile d'olive à l'ail rôti",
+    "title_es": "Pollo Entero Asado Crujiente con Aceite de Oliva de Ajo Asado",
     "image": "/assets/images/recipes/Crispy Roasted Whole Chicken with Roasted Garlic Olive Oil.webp",
     "prepTime": "35 min",
     "cookTime": "1 hour 35 min",
@@ -61,9 +61,9 @@ const recipesData = [
       "**Asar:** Ase sin mover durante 50 a 60 minutos, o hasta que un termómetro de lectura instantánea registre 165°F (74°C) en la parte más gruesa del muslo. Retire del horno y deje reposar durante 15 minutos. Corte en piezas y termine con un ligero chorrito de Aceite de Oliva Infusionado con Ajo Asado crudo sobre la carne caliente."
     ],
     "description": "Rich, mellow roasted garlic flavor baked directly into a whole roasting bird. Massaging the oil both over and underneath the skin guarantees exceptionally juicy breast meat and a shattered, crackly skin.",
-    "description_fr": "",
-    "description_es": "",
-    "updated_at": 1793115326303
+    "description_fr": "Riche saveur d'ail rôti, doux, cuit directement dans un poulet entier à rôtir. Masser l'huile à la fois sur et sous la peau garantit une viande de poitrine exceptionnellement juteuse et une peau émiettée et craquelante.",
+    "description_es": "Un rico y suave sabor a ajo asado horneado directamente en un pollo entero. Masajear el aceite tanto sobre como debajo de la piel garantiza una carne de pechuga excepcionalmente jugosa y una piel crujiente.",
+    "updated_at": 1793115785527
   },
   {
     "id": "fennel-and-rosemary-crusted-pork-loin",
@@ -512,8 +512,8 @@ const recipesData = [
     "id": "simple-balsamic-garlic-herb-tableside-dressing",
     "slug": "simple-balsamic-garlic-herb-tableside-dressing",
     "title": "Simple Balsamic Garlic & Herb Tableside Dressing",
-    "title_fr": "Simple Balsamic Garlic & Herb Tableside Dressing",
-    "title_es": "Simple Balsamic Garlic & Herb Tableside Dressing",
+    "title_fr": "Vinaigrette minute au balsamique, ail et fines herbes",
+    "title_es": "Aderezo de mesa clásico de vinagreta balsámica, ajo y hierbas finas",
     "image": "/assets/images/recipes/Simple Balsamic Garlic Herb.webp",
     "prepTime": "5 min",
     "cookTime": "5 min",
@@ -529,18 +529,18 @@ const recipesData = [
       "Optional: halved cherry tomatoes, sliced cucumbers, or shaved Parmesan cheese"
     ],
     "ingredients_fr": [
-      "5 to 6 tasse(s) fresh salad greens (crisp butter lettuce, or mixed tender greens)",
-      "3 to 4 c. à soupe <strong><a href=\"https://martha.com/\" target=\"_blank\">Martha Stewart</a></strong>’s Balsamic Garlic et Herb Infused Extra-Virgin Huile d'olive",
-      "1/2 c. à thé flaky sel de mer or sel casher",
-      "1/4 c. à thé freshly cracked poivre noir",
-      "Optional: halved cherry tomatoes, sliced cucumbers, or shaved parmesan râpé"
+      "5 à 6 tasses de feuilles de salade fraîches (laitue beurre croustillante ou jeunes pousses mélangées)",
+      "3 à 4 c. à soupe d’huile d’olive extra-vierge infusée balsamique, ail et fines herbes de <strong><a href=\"https://martha.com/\" target=\"_blank\">Martha Stewart</a></strong>",
+      "1/2 c. à thé de sel de mer en flocons ou de sel casher",
+      "1/4 c. à thé de poivre noir fraîchement concassé",
+      "Facultatif : Tomates cerises coupées en deux, concombres tranchés ou parmesan râpé"
     ],
     "ingredients_es": [
-      "5 to 6 taza(s) fresh salad greens (crisp butter lettuce, or mixed tender greens)",
-      "3 to 4 cdas. <strong><a href=\"https://martha.com/\" target=\"_blank\">Martha Stewart</a></strong>’s Balsamic Garlic y Herb Infused Extra-Virgin Aceite de oliva",
-      "1/2 cdtas. flaky sal marina or sal kosher",
-      "1/4 cdtas. freshly cracked pimienta negra",
-      "Optional: halved cherry tomatoes, sliced cucumbers, or shaved queso parmesano"
+      "5 a 6 tazas de hojas de ensalada frescas (lechuga mantequilla crujiente o brotes tiernos mezclados)",
+      "3 a 4 cdas. de Aceite de Oliva Virgen Extra Infusionado con Balsámico, Ajo y Hierbas de <strong><a href=\"https://martha.com/\" target=\"_blank\">Martha Stewart</a></strong>",
+      "1/2 cdta. de sal marina en escamas o sal kosher",
+      "1/4 cdta. de pimienta negra recién molida",
+      "Opcional: Tomates cherry cortados por la mitad, pepinos en rodajas o queso parmesano rallado"
     ],
     "instructions": [
       "Wash and spin the greens until completely dry as surface moisture will repel the oil dressing.",
@@ -550,23 +550,23 @@ const recipesData = [
       "Using salad tongs, gently toss the greens for 15 to 20 seconds, until evenly coated with balsamic streaks and herbs. Serve immediately."
     ],
     "instructions_fr": [
-      "Wash et spin the greens until completely dry as surface moisture will repel the oil dressing.",
-      "Place the dry greens et any toppings in a large wooden or ceramic bowl. Sprinkle the salt et pepper directly onto the leaves before adding the oil.",
-      "Shake the Huile d'olive bottle vigorously pour 10 seconds to distribute the vinegar, garlic solids, et herbs.",
-      "Drizzle 3 to 4 c. à soupe of the shaken oil over the seasoned greens in a slow zigzag motion.",
-      "Using salad tongs, gently toss the greens pour 15 to 20 seconds, until evenly coated avec balsamic streaks et herbs. Serve immediately."
+      "**Sécher les feuilles :** Laver et essorer les feuilles de salade jusqu'à ce qu'elles soient complètement sèches afin que la vinaigrette adhère parfaitement.",
+      "**Assaisonner d'abord :** Placer les feuilles sèches et les garnitures dans un grand bol. Saupoudrer le sel et le poivre directement sur les feuilles avant d'ajouter l'huile.",
+      "**Agiter la bouteille :** Secouer vigoureusement la bouteille d'huile d'olive pendant 10 secondes pour bien répartir le vinaigre, l'ail et les herbes.",
+      "**Verser l'huile :** Verser 3 à 4 c. à soupe de l'huile mélangée sur la salade en un mouvement zigzag régulier.",
+      "**Mélanger et servir :** À l'aide de pinces à salade, mélanger délicatement pendant 15 à 20 secondes jusqu'à ce que les feuilles soient uniformément enrobées. Servir immédiatement."
     ],
     "instructions_es": [
-      "Wash y spin the greens until completely dry as surface moisture will repel the oil dressing.",
-      "Place the dry greens y any toppings in a large wooden or ceramic bowl. Sprinkle the salt y pepper directly onto the leaves before adding the oil.",
-      "Shake the Aceite de oliva bottle vigorously para 10 seconds to distribute the vinegar, garlic solids, y herbs.",
-      "Drizzle 3 to 4 cdas. of the shaken oil over the seasoned greens in a slow zigzag motion.",
-      "Using salad tongs, gently toss the greens para 15 to 20 seconds, until evenly coated con balsamic streaks y herbs. Serve immediately."
+      "**Secar las hojas:** Lave y centrifugue las hojas de ensalada hasta que estén completamente secas para que el aderezo se adhiera bien.",
+      "**Sazonar primero:** Coloque las hojas secas y los ingredientes adicionales en un tazón grande. Espolvoree la sal y la pimienta directamente sobre las hojas antes de agregar el aceite.",
+      "**Agitar la botella:** Agite vigorosamente la botella de aceite de oliva durante 10 segundos para distribuir bien el vinagre, el ajo y las hierbas.",
+      "**Verter el aceite:** Rocíe de 3 a 4 cdas. del aceite agitado sobre las hojas sazonadas en un movimiento lento de zigzag.",
+      "**Mezclar y servir:** Con pinzas para ensalada, mezcle suavemente durante 15 a 20 segundos hasta que las hojas queden cubiertas de manera uniforme. Sirva de inmediato."
     ],
-    "description": "A completely effortless green salad preparation. The pre-blended herbs, garlic, and\nvinegar in the oil create a restaurant-style emulsion without any extra prep work.",
-    "description_fr": "",
-    "description_es": "",
-    "updated_at": 1793115258101
+    "description": "A completely effortless green salad preparation. The pre-blended herbs, garlic, and vinegar in the oil create a restaurant-style emulsion without any extra prep work.",
+    "description_fr": "Une préparation de salade verte complètement sans effort. Les herbes, l'ail et le vinaigre prémélangés dans l'huile créent une émulsion de style restaurant sans aucun travail de préparation supplémentaire.",
+    "description_es": "Una preparación de ensalada verde completamente sin esfuerzo. Las hierbas, el ajo y el vinagre premezclados en el aceite crean una emulsión estilo restaurante sin ningún trabajo de preparación adicional.",
+    "updated_at": 1793115785527
   },
   {
     "id": "spicy-garlic-grilled-shrimp-skewers",

@@ -487,7 +487,7 @@ document.addEventListener("DOMContentLoaded", function() {
 <script src="/recipes/recipe-store.js"></script>
 <script>
 (function() {
-    document.addEventListener('DOMContentLoaded', function() {
+    function hydrateLiveRecipe() {
         if (typeof RecipeStore === 'undefined') return;
         const path = window.location.pathname.toLowerCase();
         const parts = path.replace(/\/$/, '').split('/');
@@ -502,15 +502,59 @@ document.addEventListener("DOMContentLoaded", function() {
             return;
         }
 
-        // Dynamically update title and texts if modified
+        // 1. Title
         const title = (lang === 'fr' && recipe.title_fr) ? recipe.title_fr : ((lang === 'es' && recipe.title_es) ? recipe.title_es : recipe.title);
         if (title) {
             const h1 = document.querySelector('h1');
             if (h1 && h1.textContent !== title) h1.textContent = title;
             document.title = title + ' | Turpone Foods';
         }
-    });
+
+        // 2. Story / Description paragraph
+        const desc = (lang === 'fr' && recipe.description_fr) ? recipe.description_fr : ((lang === 'es' && recipe.description_es) ? recipe.description_es : recipe.description);
+        if (desc) {
+            const recipeGrid = document.querySelector('.recipe-grid');
+            const descContainer = recipeGrid ? recipeGrid.previousElementSibling : null;
+            const descP = descContainer ? descContainer.querySelector('p') : null;
+            if (descP) {
+                descP.innerHTML = desc;
+            }
+        }
+
+        // 3. Ingredients list
+        const ingredients = (lang === 'fr' && Array.isArray(recipe.ingredients_fr) && recipe.ingredients_fr.length) ? recipe.ingredients_fr :
+                            ((lang === 'es' && Array.isArray(recipe.ingredients_es) && recipe.ingredients_es.length) ? recipe.ingredients_es : recipe.ingredients);
+        if (Array.isArray(ingredients) && ingredients.length) {
+            const ingUl = document.querySelector('.ingredients-section ul');
+            if (ingUl) {
+                ingUl.innerHTML = ingredients.map(i => '<li><span style="color:#000; font-weight:bold;">✔</span> ' + i + '</li>').join('');
+            }
+        }
+
+        // 4. Instructions list
+        const instructions = (lang === 'fr' && Array.isArray(recipe.instructions_fr) && recipe.instructions_fr.length) ? recipe.instructions_fr :
+                             ((lang === 'es' && Array.isArray(recipe.instructions_es) && recipe.instructions_es.length) ? recipe.instructions_es : recipe.instructions);
+        if (Array.isArray(instructions) && instructions.length) {
+            const instList = document.querySelector('.instructions-section ol') || document.querySelector('.instructions-section ul');
+            if (instList) {
+                instList.innerHTML = instructions.map(s => {
+                    const formatted = s.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+                    return '<li style="margin-bottom: 20px;">' + formatted + '</li>';
+                }).join('');
+            }
+        }
+
+        // 5. Featured Image
+        if (recipe.image) {
+            const imgEl = document.querySelector('img[src*="/assets/images/recipes/"]');
+            if (imgEl && imgEl.src !== recipe.image) {
+                imgEl.src = recipe.image;
+            }
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', hydrateLiveRecipe);
+    window.addEventListener('turpone:recipes-updated', hydrateLiveRecipe);
 })();
 </script>
-
 </body></html>
