@@ -720,69 +720,70 @@ const recipesData = [
     "upsellImage": "",
     "upsellLink": "",
     "ingredients": [
-      "1 package <strong><a href=\"https://martha.com/\" target=\"_blank\">Martha Stewart</a></strong> Neapolitan Style Pizza Dough Mix, prepared according to package directions",
+      "1 package <strong><a href=\"https://martha.com/\" target=\"_blank\">Martha Stewart</a></strong> Neapolitan Style Pizza Dough Mix, prepared per package directions",
       "1/2 cup <strong><a href=\"https://martha.com/\" target=\"_blank\">Martha Stewart</a></strong> Spicy Pizza Sauce",
-      "2 tbsp <strong><a href=\"https://martha.com/\" target=\"_blank\">Martha Stewart</a></strong> Spicy Garlic Infused Extra Virgin Olive Oil",
+      "2 tablespoons <strong><a href=\"https://martha.com/\" target=\"_blank\">Martha Stewart</a></strong> Spicy Garlic Infused Extra-Virgin Olive Oil",
       "2 cups shredded mozzarella",
-      "8 oz Italian sausage, cooked and crumbled",
-      "1/2 green bell pepper, thinly sliced",
+      "8 ounces Italian sausage, cooked and crumbled",
+      "1/2 bell pepper, thinly sliced (red, yellow, orange or a mix)",
       "1/4 red onion, thinly sliced",
-      "1 tbsp <strong><a href=\"https://martha.com/\" target=\"_blank\">Martha Stewart</a></strong> Triple Pepper Mix Seasoning"
+      "1 tablespoon <strong><a href=\"https://martha.com/\" target=\"_blank\">Martha Stewart</a></strong> Triple Pepper Mix Seasoning"
     ],
     "ingredients_fr": [
       "1 paquet de mélange à pâte à pizza de style napolitain <strong><a href=\"https://martha.com/\" target=\"_blank\">Martha Stewart</a></strong>, préparé selon les instructions de l'emballage",
       "1/2 tasse de sauce à pizza épicée <strong><a href=\"https://martha.com/\" target=\"_blank\">Martha Stewart</a></strong>",
-      "2 c. à table d'huile d'olive extra vierge infusée à l'ail épicé <strong><a href=\"https://martha.com/\" target=\"_blank\">Martha Stewart</a></strong>",
+      "2 c. à table d'huile d'olive extra-vierge infusée à l'ail épicé <strong><a href=\"https://martha.com/\" target=\"_blank\">Martha Stewart</a></strong>",
       "2 tasses de mozzarella râpée",
       "8 oz de saucisse italienne, cuite et émiettée",
-      "1/2 poivron vert, coupé en fines tranches",
-      "1/4 d'oignon rouge, coupé en fines tranches",
-      "1 c. à table d'assaisonnement Triple Pepper Mix <strong><a href=\"https://martha.com/\" target=\"_blank\">Martha Stewart</a></strong>"
+      "1/2 poivron, coupé en fines tranches",
+      "1/4 d'oignon rouge, tranché finement (rouge, jaune, orange ou un mélange)",
+      "1/4 d'oignon rouge, tranché finement",
+      "1 c. à table de mélange d'assaisonnement aux trois poivres de <strong><a href=\"https://martha.com/\" target=\"_blank\">Martha Stewart</a></strong>"
     ],
     "ingredients_es": [
-      "1 paquete de Premezcla para Masa de Pizza Estilo Napolitano <strong><a href=\"https://martha.com/\" target=\"_blank\">Martha Stewart</a></strong>, preparado según las instrucciones del paquete",
-      "1/2 taza de Salsa de Pizza Picante <strong><a href=\"https://martha.com/\" target=\"_blank\">Martha Stewart</a></strong>",
-      "2 cucharadas de Aceite de Oliva Virgen Extra Infundido con Ajo Picante <strong><a href=\"https://martha.com/\" target=\"_blank\">Martha Stewart</a></strong>",
+      "1 paquete de Neapolitan Style Pizza Dough Mix de <strong><a href=\"https://martha.com/\"target=\"_blank\">Martha Stewart</a></strong>, preparado según las instrucciones del paquete",
+      "1/2 taza de Spicy Pizza Sauce de <strong><a href=\"https://martha.com/\" target=\"_blank\">Martha Stewart</a></strong>",
+      "2 cucharadas del Spicy Garlic Infused Extra-Virgin Olive Oil de <strong><a href=\"https://martha.com/\" target=\"_blank\">Martha Stewart</a></strong> y un poco más para rociar",
       "2 tazas de mozzarella rallada",
-      "8 oz de salchicha italiana, cocida y desmenuzada",
-      "1/2 pimiento verde, cortado en rodajas finas",
-      "1/4 de cebolla morada, cortada en rodajas finas",
-      "1 cucharada de Sazonador Mezcla de Tres Pimientos <strong><a href=\"https://martha.com/\" target=\"_blank\">Martha Stewart</a></strong>"
+      "8 onzas de salchicha italiana, cocida y desmenuzada",
+      "1/2 pimiento, en tiras finas (rojo, amarillo, anaranjado o una mezcla)",
+      "1/4 de cebolla morada, en rodajas finas",
+      "1 cucharada del Triple Pepper Mix Seasoning de <strong><a href=\"https://martha.com/\" target=\"_blank\">Martha Stewart</a></strong>"
     ],
     "instructions": [
-      "**Prepare the Dough:** Prepare the Neapolitan Style Pizza Dough Mix according to package directions and stretch into a 10-inch pizza.",
-      "**Preheat the Oven:** Heat the oven and pizza stone to 500°F.",
-      "**Assemble:** Brush the dough lightly with Spicy Garlic Olive Oil. Spread the Spicy Pizza Sauce evenly across the surface.",
-      "**Top the Pizza:** Sprinkle mozzarella over the sauce. Evenly distribute the sausage, peppers, and onions. Finish with Triple Pepper Mix Seasoning.",
-      "**Bake:** Bake for 8–10 minutes until the crust is puffed with light charring and the cheese has melted completely.",
-      "**Finish:** Drizzle a small amount of Spicy Garlic Olive Oil over the hot pizza before slicing."
+      "Prepare the Neapolitan Style Pizza Dough Mix according to package directions and stretch into a 10-inch round.",
+      "Heat the oven and pizza stone to 500°F (260°C).",
+      "Brush the dough lightly with the Spicy Garlic Olive Oil, then spread the Spicy Pizza Sauce evenly across the surface.",
+      "Sprinkle the mozzarella over the sauce. Evenly distribute the sausage, peppers, and onions. Finish with the Triple Pepper Mix Seasoning.",
+      "Bake 8 to 10 minutes, until the crust is puffed with light charring and the cheese has melted completely.",
+      "Drizzle a small amount of Spicy Garlic Olive Oil over the hot pizza before slicing."
     ],
     "instructions_fr": [
-      "**Préparer la pâte :** Préparer le mélange à pâte à pizza de style napolitain selon les instructions de l'emballage et l'étirer en une pizza de 10 pouces.",
-      "**Préchauffer le four :** Chauffer le four et la pierre à pizza à 500 °F.",
-      "**Assembler :** Badigeonner légèrement la pâte d'huile d'olive à l'ail épicé. Étaler la sauce à pizza épicée uniformément sur la surface.",
-      "**Garnir la pizza :** Saupoudrer de mozzarella sur la sauce. Répartir uniformément la saucisse, les poivrons et les oignons. Terminer avec l'assaisonnement Triple Pepper Mix",
-      "**Cuire :** Cuire au four de 8 à 10 minutes jusqu'à ce que la croûte soit gonflée avec un léger brunissement et que le fromage soit complètement fondu.",
-      "**Terminer :** Arroser la pizza chaude d'une petite quantité d'huile d'olive à l'ail épicé avant de la couper."
+      "Préparer le mélange pour pâte à pizza de style napolitain selon les instructions de l'emballage et l'étirer en un cercle de 10 po.",
+      "Préchauffer le four et la pierre à pizza à 500 °F (260 °C).",
+      "Badigeonner légèrement la pâte d'huile d'olive à l'ail épicé, puis étendre uniformément la sauce à pizza épicée sur toute la surface.",
+      "Parsemer la sauce de mozzarella. Répartir uniformément la saucisse, les poivrons et l'oignon. Terminer avec le mélange d'assaisonnement aux trois poivres.",
+      "Cuire au four de 8 à 10 minutes, jusqu'à ce que la croûte soit gonflée et légèrement grillée et que le fromage soit complètement fondu.",
+      "Arroser la pizza chaude d'un filet d'huile d'olive à l'ail épicé avant de la couper."
     ],
     "instructions_es": [
-      "**Prepare la Masa:** Prepare la Premezcla para Masa de Pizza Estilo Napolitano según las instrucciones del paquete y estírela hasta formar una pizza de 10 pulgadas (25 cm).",
-      "**Precaliente el Horno:** Caliente el horno y la piedra para pizza a 500 °F (260 °C).",
-      "**Arme la Pizza:** Unte la masa ligeramente con el Aceite de Oliva con Ajo Picante. Distribuya la Salsa de Pizza Picante de manera uniforme sobre la superficie.",
-      "**Ponga los Ingredientes:** Espolvoree la mozzarella sobre la salsa. Distribuya uniformemente la salchicha, los pimientos y las cebollas. Termine con el Sazonador Mezcla de Tres Pimientos.",
-      "**Hornee:** Hornee durante 8 a 10 minutos hasta que la corteza se haya inflado con un ligero chamuscado y el queso se haya derretido por completo.",
-      "**Termine:** Rocíe una pequeña cantidad de Aceite de Oliva con Ajo Picante sobre la pizza caliente antes de cortarla."
+      "Prepare el Neapolitan Style Pizza Dough Mix según las instrucciones del paquete y estírelo en un círculo de 10 pulgadas.",
+      "Precaliente el horno con la piedra para pizza a 500 °F (260 °C).",
+      "Barnice ligeramente la masa con el Spicy Garlic Olive Oil y luego extienda la Spicy Pizza Sauce de manera uniforme sobre toda la superficie.",
+      "Espolvoree la mozzarella sobre la salsa. Distribuya de manera uniforme la salchicha, los pimientos y la cebolla. Termine con el Triple Pepper Mix Seasoning.",
+      "Hornee de 8 a 10 minutos, hasta que la orilla esté inflada y ligeramente tostada y el queso se haya derretido por completo.",
+      "Rocíe un poco de Spicy Garlic Olive Oil sobre la pizza caliente antes de cortarla."
     ],
-    "description": "A bold pizza layered with spicy tomato sauce, Italian sausage, and colorful peppers. Triple Pepper Mix Seasoning enhances the natural heat while Spicy Garlic Infused Olive Oil delivers an extra layer of savory flavor.",
-    "description_fr": "Une pizza audacieuse garnie de sauce tomate épicée, de saucisse italienne et de poivrons colorés. L'assaisonnement Triple Pepper Mix rehausse le piquant naturel, tandis que l'huile d'olive infusée à l'ail épicé apporte une couche supplémentaire de saveur savoureuse.",
-    "description_es": "Una pizza atrevida con capas de salsa de tomate picante, salchicha italiana y pimientos coloridos. El Sazonador Mezcla de Tres Pimientos realza el picante natural, mientras que el Aceite de Oliva Infundido con Ajo Picante añade una capa extra de sabor salado.",
+    "description": "A bold pizza layered with spicy tomato sauce, Italian sausage, and colorful peppers, with Triple Pepper Mix Seasoning and infused olive oil bringing out the natural heat and savory profile.",
+    "description_fr": "Une pizza audacieuse garnie de sauce tomate épicée, de saucisse italienne et de poivrons colorés, avec le mélange d'assaisonnement aux trois poivres et l'huile d'olive infusée qui font ressortir sa chaleur naturelle et ses saveurs relevées.",
+    "description_es": "Una pizza atrevida con salsa de tomate picante, salchicha italiana y pimientos de colores, con el Triple Pepper Mix Seasoning y el aceite de oliva infusionado que realzan su picor natural y su sabor intenso.",
     "prepTime_fr": "20 minutes (plus préparation de la pâte)",
     "cookTime_fr": "45 minutes",
     "yields_fr": "1 pizza (4 portions)",
     "prepTime_es": "20 minutos (más preparación de la masa)",
     "cookTime_es": "45 minutos",
     "yields_es": "1 pizza (4 porciones)",
-    "updated_at": 1793126935969
+    "updated_at": 1793131091372
   },
   {
     "id": "triple-chili-honey-glazed-skewers",
