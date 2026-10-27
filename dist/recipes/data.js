@@ -648,63 +648,63 @@ const recipesData = [
     "upsellImage": "/assets/images/recipes/spicy garlic.png",
     "upsellLink": "",
     "ingredients": [
-      "1 lb large shrimp (16–20 count), peeled and deveined, tails left on",
-      "4 tbsp <strong><a href=\"https://martha.com/\" target=\"_blank\">Martha Stewart</a></strong>’s Spicy Garlic Infused Olive Oil, divided",
-      "1 fresh lemon, zested and cut into wedges",
-      "1 tsp smoked paprika",
-      "2 tbsp fresh flat-leaf parsley, finely chopped",
+      "1 pound large shrimp (16–20 count), peeled and deveined, tails left on",
+      "4 tablespoons <strong><a href=\"https://martha.com/\" target=\"_blank\">Martha Stewart</a></strong>’s Spicy Garlic Infused Olive Oil, divided",
+      "1 lemon, zested and cut into wedges",
+      "1 teaspoon smoked paprika",
+      "2 tablespoons flat-leaf parsley, finely chopped",
       "Kosher salt, to taste"
     ],
     "ingredients_fr": [
-      "1 lb de grosses crevettes (16 à 20), décortiquées et déveinées, queues laissées",
-      "4 c. à soupe d'huile d'olive infusée à l'ail épicé de <strong><a href=\"https://martha.com/\" target=\"_blank\">Martha Stewart</a></strong>, divisées",
-      "1 citron frais, zeste et coupé en quartiers",
+      "1 lb de grosses crevettes (calibre 16-20), décortiquées et déveinées, avec la queue",
+      "4 c. à table d'huile d'olive infusée à l'ail épicé de <strong><a href=\"https://martha.com/\" target=\"_blank\">Martha Stewart</a></strong>, divisée",
+      "1 citron, le zeste prélevé et coupé en quartiers",
       "1 c. à thé de paprika fumé",
-      "2 c. à soupe de persil frais à feuilles plates, finement haché",
+      "2 c. à table de persil plat, haché finement",
       "Sel casher, au goût"
     ],
     "ingredients_es": [
-      "1 lb de camarones grandes (16-20 unidades), pelados y desvenados, con la cola intacta",
-      "4 cdas. de Aceite de Oliva Infusionado con Ajo Picante de <strong><a href=\"https://martha.com/\" target=\"_blank\">Martha Stewart</a></strong>, divididas",
-      "1 limón fresco, rallado y cortado en gajos",
-      "1 cdta. de pimentón ahumado",
-      "2 cdas. de perejil fresco de hoja plana, finamente picado",
+      "1 libra de camarones grandes (16-20 por libra), pelados y desvenados, con la cola",
+      "4 cucharadas del Spicy Garlic Infused Olive Oil de <strong><a href=\"https://martha.com/\" target=\"_blank\">Martha Stewart</a></strong>, divididas",
+      "1 limón, con la ralladura y cortado en gajos",
+      "1 cucharadita de paprika ahumada",
+      "2 cucharadas de perejil liso, picado finamente",
       "Sal kosher, al gusto"
     ],
     "instructions": [
-      "**Marinate the Shrimp:** Pat shrimp completely dry with paper towels. In a medium bowl, whisk together 2 tablespoons of the [Spicy Garlic Infused Olive Oil](https://turponefoods.com/turpone-products/), lemon zest, smoked paprika, and a generous pinch of kosher salt. Toss shrimp to coat evenly; marinate at room temperature for 10 to 15 minutes",
-      "**Thread the Skewers:** Thread the marinated shrimp onto your skewers. Pierce each shrimp twice—once through the tail and once near the head—so they sit completely flat and flip easily on the grill.",
-      "**Heat the Grill:** Preheat an outdoor grill or a heavy cast-iron grill pan to high heat. Ensure grates are clean and lightly oiled.",
-      "**Grill and Sear:** Place skewers on the hot grill. Cook undisturbed for 2 to 3 minutes until the underside turns bright pink and clear grill marks develop.",
-      "**Flip and Baste:** Flip the skewers over. Immediately brush the remaining 2 tablespoons of fresh [Spicy Garlic Infused Olive Oil](https://turponefoods.com/turpone-products/) over the cooked side. Grill for another 2 minutes until opaque throughout.",
-      "**Finish:** Transfer shrimp to a warm serving platter, scatter chopped parsley over the top, squeeze fresh lemon juice across the skewers, and apply a final light drizzle of raw [Spicy Garlic Infused Olive Oil.](https://turponefoods.com/turpone-products/)"
+      "Pat the shrimp dry with paper towels. Whisk together 2 tablespoons of the oil, the lemon zest, paprika, and salt in a medium bowl. Coat the shrimp evenly and marinate at room temperature for 10 to 15 minutes.",
+      "Preheat an outdoor grill or cast-iron grill pan to high. Clean and lightly oil the grates.",
+      "Thread the marinated shrimp onto skewers, piercing each shrimp twice (through the tail and the head area) so they lie flat and flip easily.",
+      "Place the skewers on the hot grill and cook undisturbed for 2 to 3 minutes, until the undersides turn bright pink with clear grill marks.",
+      "Flip the skewers and brush the remaining 2 tablespoons of oil over the cooked side. Grill 2 minutes more, until opaque.",
+      "Transfer to a warm platter, scatter the parsley over the top, squeeze fresh lemon juice over, and drizzle with a final light coat of raw oil."
     ],
     "instructions_fr": [
-      "**Mariner les crevettes :** Éponger complètement les crevettes avec des essuie-tout. Dans un bol moyen, fouetter ensemble 2 cuillères à soupe d'huile d'olive infusée à l'ail épicé, le zeste de citron, le paprika fumé et une généreuse pincée de sel casher. Remuer les crevettes pour les enrober uniformément; laisser mariner à température ambiante pendant 10 à 15 minutes.",
-      "**Enfiler les brochettes :** Enfiler les crevettes marinées sur vos brochettes. Percer chaque crevette deux fois, une fois par la queue et une fois près de la tête, afin qu'elles reposent complètement à plat et se retournent facilement sur le gril.",
-      "**Chauffer le gril :** Préchauffer un barbecue extérieur ou une lourde poêle à griller en fonte à feu vif. S'assurer que les grilles sont propres et légèrement huilées.",
-      "**Griller et saisir :** Placer les brochettes sur le gril chaud. Cuire sans les bouger pendant 2 à 3 minutes jusqu'à ce que le dessous devienne rose vif et que des marques de gril claires se développent.",
-      "**Retourner et badigeonner :** Retourner les brochettes. Badigeonner immédiatement les 2 cuillères à soupe restantes d'huile d'olive fraîche infusée à l'ail épicé sur le côté cuit. Griller pendant 2 minutes supplémentaires jusqu'à ce que ce soit opaque partout.",
-      "**Terminer :** Transférer les crevettes sur un plat de service chaud, saupoudrer de persil haché sur le dessus, presser du jus de citron frais sur les brochettes et appliquer un dernier filet léger d'huile d'olive infusée à l'ail épicé crue."
+      "Éponger les crevettes avec du papier essuie-tout. Dans un bol moyen, fouetter ensemble 2 c. à table d'huile, le zeste de citron, le paprika et le sel. Bien enrober les crevettes et laisser mariner à température ambiante de 10 à 15 minutes.",
+      "Préchauffer le barbecue ou une poêle à griller en fonte à feu élevé. Nettoyer la grille et la huiler légèrement.",
+      "Enfiler les crevettes marinées sur des brochettes en piquant chaque crevette deux fois (au niveau de la queue et de la tête) pour qu'elles restent bien à plat et soient faciles à retourner.",
+      "Déposer les brochettes sur le gril chaud et cuire sans les déplacer de 2 à 3 minutes, jusqu'à ce que le dessous devienne rose vif et soit bien marqué par la grille.",
+      "Retourner les brochettes et badigeonner le côté cuit avec les 2 c. à table d'huile restantes. Griller 2 minutes de plus, jusqu'à ce que les crevettes soient opaques.",
+      "Transférer dans un plat de service chaud, parsemer de persil, arroser de jus de citron frais et terminer avec un léger filet d'huile crue."
     ],
     "instructions_es": [
-      "**Marinar los camarones:** Seque completamente los camarones con toallas de papel. En un tazón mediano, bata 2 cucharadas del Aceite de Oliva Infusionado con Ajo Picante, la ralladura de limón, el pimentón ahumado y una generosa pizca de sal kosher. Mezcle los camarones para cubrirlos uniformemente; marine a temperatura ambiente durante 10 a 15 minutos.",
-      "**Enhebrar las brochetas:** Inserte los camarones marinados en las brochetas. Perfore cada camarón dos veces (una vez por la cola y otra cerca de la cabeza) para que queden planos y se volteen fácilmente en la parrilla.",
-      "**Calentar la parrilla:** Precaliente una parrilla al aire libre o una sartén de hierro fundido a fuego alto. Asegúrese de que las rejillas estén limpias y ligeramente aceitadas.",
-      "**Parrillar y sellar:** Coloque las brochetas en la parrilla caliente. Cocine sin mover durante 2 a 3 minutos hasta que la parte inferior se vuelva rosa brillante y se marquen las líneas de la parrilla.",
-      "**Voltear y barnizar:** Voltee las brochetas. Barnice inmediatamente las 2 cucharadas restantes de Aceite de Oliva Infusionado con Ajo Picante fresco sobre el lado cocido. Ase durante otros 2 minutos hasta que estén opacos en todas partes.",
-      "**Terminar:** Transfiera los camarones a una fuente de servir caliente, esparza perejil picado por encima, exprima jugo de limón fresco sobre las brochetas y aplique un toque final de Aceite de Oliva Infusionado con Ajo Picante crudo."
+      "Seque los camarones con toallas de papel. En un tazón mediano, bata 2 cucharadas del aceite con la ralladura de limón, la paprika y la sal. Cubra bien los camarones y deje marinar a temperatura ambiente de 10 a 15 minutos.",
+      "Precaliente la parrilla o una sartén para asar de hierro fundido a fuego alto. Limpie la rejilla y engrásela ligeramente.",
+      "Ensarte los camarones marinados en brochetas, atravesando cada camarón dos veces (por la cola y por la parte de la cabeza) para que queden planos y sea fácil voltearlos.",
+      "Coloque las brochetas en la parrilla caliente y cocine sin moverlas de 2 a 3 minutos, hasta que la parte de abajo esté rosada y tenga marcas de la parrilla.",
+      "Voltee las brochetas y barnice el lado cocido con las 2 cucharadas de aceite restantes. Ase 2 minutos más, hasta que los camarones estén opacos.",
+      "Pase a una fuente caliente, espolvoree el perejil por encima, exprima jugo de limón fresco y termine con un chorrito ligero de aceite crudo."
     ],
     "description": "Plump, juicy shrimp coated in an aromatic marinade that prevents sticking on the grill. Finishing the seafood with raw infused oil right before serving maximizes the punchy garlic aroma.",
-    "description_fr": "Crevettes dodues et juteuses enrobées d'une marinade aromatique qui empêche de coller sur le gril. Terminer les fruits de mer avec de l'huile infusée crue juste avant de servir maximise l'arôme d'ail percutant.",
-    "description_es": "Camarones regordetes y jugosos cubiertos en un marinado aromático que evita que se peguen a la parrilla. Terminar los mariscos con aceite infusionado crudo justo antes de servir maximiza el aroma intenso a ajo.",
+    "description_fr": "Des crevettes dodues et juteuses, enrobées d'une marinade aromatique qui les empêche de coller au gril. Terminer les fruits de mer avec un filet d'huile infusée crue juste avant de servir fait ressortir tout l'arôme intense de l'ail.",
+    "description_es": "Camarones jugosos y carnosos cubiertos con una marinada aromática que evita que se peguen a la parrilla. Terminar los mariscos con un chorrito de aceite infusionado crudo justo antes de servir resalta al máximo el intenso aroma del ajo.",
     "prepTime_fr": "15 min",
     "cookTime_fr": "25 min",
     "yields_fr": "3 à 4 portions",
     "prepTime_es": "15 min",
     "cookTime_es": "25 min",
     "yields_es": "3 a 4 porciones",
-    "updated_at": 1793126935969
+    "updated_at": 1793130614204
   },
   {
     "id": "spicy-italian-sausage-pizza",
