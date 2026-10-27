@@ -680,7 +680,7 @@ const productsData = [
       "roasted-garlic-infused-extra-virgin-olive-oil-ca-gal-1-1793029563457.webp",
       "roasted-garlic-infused-extra-virgin-olive-oil-ca-gal-2-1793029563457.webp"
     ],
-    "ingredients": "Ingredients: Extra-virgin olive oil, rosemary, minced garlic, thyme, oregano, natural flavorings (liquid garlic flavor).",
+    "ingredients": "Ingredients: Extra-Virgin Olive Oil, Rosemary, Minced Garlic, Thyme, Oregano, Natural Flavorings (Liquid Garlic Flavor).",
     "ingredients_fr": "Ingrédients : Huile d'olive extra vierge, romarin, ail haché, thym, origan, arômes naturels d'ail.",
     "ingredients_es": "Ingredientes: Aceite de oliva virgen extra, romero, ajo picado, tomillo, orégano, aromas naturales de ajo.",
     "image_ca": "roasted-garlic-infused-extra-virgin-olive-oil-v1793029563457-ca.webp",
@@ -693,7 +693,7 @@ const productsData = [
       "roasted-garlic-infused-extra-virgin-olive-oil-us-gal-1-1793029563457.webp",
       "roasted-garlic-infused-extra-virgin-olive-oil-us-gal-2-1793029563457.webp"
     ],
-    "updated_at": 1793029563457,
+    "updated_at": 1793108907330,
     "slug": "roasted-garlic-infused-extra-virgin-olive-oil"
   },
   {
