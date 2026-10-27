@@ -512,8 +512,8 @@ const recipesData = [
     "id": "simple-balsamic-garlic-herb-tableside-dressing",
     "slug": "simple-balsamic-garlic-herb-tableside-dressing",
     "title": "Simple Balsamic Garlic & Herb Tableside Dressing",
-    "title_fr": "Vinaigrette minute au balsamique, ail et fines herbes",
-    "title_es": "Aderezo de mesa clásico de vinagreta balsámica, ajo y hierbas finas",
+    "title_fr": "Simple Balsamic Garlic & Herb Vinaigrette minute pour la table",
+    "title_es": "Simple Balsamic Garlic & Herb Aderezo de mesa clásico",
     "image": "/assets/images/recipes/Simple Balsamic Garlic Herb.webp",
     "prepTime": "5 min",
     "cookTime": "5 min",
@@ -564,9 +564,9 @@ const recipesData = [
       "**Mezclar y servir:** Con pinzas para ensalada, mezcle suavemente durante 15 a 20 segundos hasta que las hojas queden cubiertas de manera uniforme. Sirva de inmediato."
     ],
     "description": "A completely effortless green salad preparation. The pre-blended herbs, garlic, and vinegar in the oil create a restaurant-style emulsion without any extra prep work.",
-    "description_fr": "Une préparation de salade verte complètement sans effort. Les herbes, l'ail et le vinaigre prémélangés dans l'huile créent une émulsion de style restaurant sans aucun travail de préparation supplémentaire.",
-    "description_es": "Una preparación de ensalada verde completamente sin esfuerzo. Las hierbas, el ajo y el vinagre premezclados en el aceite crean una emulsión estilo restaurante sin ningún trabajo de preparación adicional.",
-    "updated_at": 1793115785527
+    "description_fr": "A completely effortless green salad preparation. The pre-blended herbs, garlic, and vinegar in the oil create a restaurant-style emulsion without any extra prep work.",
+    "description_es": "A completely effortless green salad preparation. The pre-blended herbs, garlic, and vinegar in the oil create a restaurant-style emulsion without any extra prep work.",
+    "updated_at": 1793116194749
   },
   {
     "id": "spicy-garlic-grilled-shrimp-skewers",
