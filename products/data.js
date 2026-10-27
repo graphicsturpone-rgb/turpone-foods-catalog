@@ -65,7 +65,7 @@ const productsData = [
       "margherita-with-fresh-mozzarella-pinsa-gallery-4.webp",
       "margherita-with-fresh-mozzarella-pinsa-gallery-5.webp"
     ],
-    "ingredients": "Ingredients: Pinsa crust (wheat flour, organic rice flour, organic fava flour, sourdough yeast, water, olive oil, salt, yeast [yeast, sorbitan monostearate, ascorbic acid]). Toppings: Fresh mozzarella slices (pasteurized milk, vinegar, microbial enzymes, salt), Mozzarella cheese (milk, modified milk ingredients, cream, salt, calcium chloride, bacterial culture, microbial enzyme), Parmesan cheese (milk, salt, lipase, microbial enzyme, bacterial culture, calcium chloride, cellulose), Basil. Tomato sauce: Diced tomatoes (tomatoes, *may contain citric acid), Crushed tomatoes, Salt, Sugar, Garlic powder, Chili flakes, Herb.\nContains: Wheat, Milk.\nMay contain: Eggs, Soy, Mustard.",
+    "ingredients": "Ingredients: Pinsa Crust (Wheat Flour, Organic Rice Flour, Organic Fava Flour, Sourdough Yeast, Water, Olive Oil, Salt, Yeast [Yeast, Sorbitan Monostearate, Ascorbic Acid]). Toppings: Fresh Mozzarella Slices (Pasteurized Milk, Vinegar, Microbial Enzymes, Salt), Mozzarella Cheese (Milk, Modified Milk Ingredients, Cream, Salt, Calcium Chloride, Bacterial Culture, Microbial Enzyme), Parmesan Cheese (Milk, Salt, Lipase, Microbial Enzyme, Bacterial Culture, Calcium Chloride, Cellulose), Basil. Tomato Sauce: Diced Tomatoes (Tomatoes, *May Contain Citric Acid), Crushed Tomatoes, Salt, Sugar, Garlic Powder, Chili Flakes, Herb.\nContains: Wheat, Milk.\nMay Contain: Eggs, Soy, Mustard.",
     "ingredients_fr": "Ingrédients : Pâte à pinsa (farine de blé, farine de riz biologique, farine de fève biologique, levain naturel, eau, huile d'olive, sel, levure). Garnitures : Mozzarella fraîche, mozzarella râpée, parmesan, basilic frais. Sauce tomate : Tomates concassées, sel, sucre, ail en poudre, herbes.\nContient : Blé, Lait.\nPeut contenir : Œufs, Soja, Moutarde.",
     "ingredients_es": "Ingredientes: Masa de pinsa (harina de trigo, harina de arroz orgánica, harina de haba orgánica, masa madre, agua, aceite de oliva, sal, levadura). Coberturas: Rebanadas de mozzarella fresca, queso mozzarella, queso parmesano, albahaca. Salsa de tomate: Tomates troceados, sal, azúcar, ajo en polvo, especias.\nContiene: Trigo, Leche.\nPuede contener: Huevos, Soya, Mostaza.",
     "slug": "margherita-with-fresh-mozzarella-pinsa",
@@ -85,7 +85,7 @@ const productsData = [
       "margherita-with-fresh-mozzarella-pinsa-us-gallery-4.webp",
       "margherita-with-fresh-mozzarella-pinsa-us-gallery-5.webp"
     ],
-    "updated_at": 1792523400000
+    "updated_at": 1793104617632
   },
   {
     "id": 25,
