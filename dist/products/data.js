@@ -645,7 +645,7 @@ const productsData = [
       "lemon-pepper-infused-extra-virgin-olive-oil-ca-gal-1-1793029414363.webp",
       "lemon-pepper-infused-extra-virgin-olive-oil-ca-gal-2-1793029414363.webp"
     ],
-    "ingredients": "Ingredients: Extra-virgin olive oil, black peppercorns, dried lemon peel, de arbol peppers, natural flavorings (liquid lemon flavor).",
+    "ingredients": "Ingredients: Extra-Virgin Olive Oil, Black Peppercorns, Dried Lemon Peel, De Arbol Peppers, Natural Flavorings (Liquid Lemon Flavor).",
     "ingredients_fr": "Ingrédients : Huile d'olive extra vierge, grains de poivre noir, zeste de citron séché, piments de arbol, arômes naturels de citron.",
     "ingredients_es": "Ingredientes: Aceite de oliva virgen extra, granos de pimienta negra, cáscara de limón deshidratada, chiles de árbol, aromas naturales de limón.",
     "image_ca": "lemon-pepper-infused-extra-virgin-olive-oil-v1793029414363-ca.webp",
@@ -658,7 +658,7 @@ const productsData = [
       "lemon-pepper-infused-extra-virgin-olive-oil-us-gal-1-1793029414363.webp",
       "lemon-pepper-infused-extra-virgin-olive-oil-us-gal-2-1793029414363.webp"
     ],
-    "updated_at": 1793029414363,
+    "updated_at": 1793108859279,
     "slug": "lemon-pepper-infused-extra-virgin-olive-oil"
   },
   {
