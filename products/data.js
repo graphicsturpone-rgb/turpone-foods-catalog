@@ -153,7 +153,7 @@ const productsData = [
       "sausage-and-hot-honey-pinsa-gallery-4.webp",
       "sausage-and-hot-honey-pinsa-gallery-5.webp"
     ],
-    "ingredients": "Ingredients: Pinsa crust (wheat flour, organic rice flour, organic fava flour, sourdough yeast, water, olive oil, salt, yeast), Italian sausage (pork, spices, salt), fresh mozzarella, hot honey, tomato sauce.\nContains: Wheat, Milk.",
+    "ingredients": "Ingredients: Pinsa Crust (Wheat Flour, Organic Rice Flour, Organic Fava Flour, Sourdough Yeast, Water, Olive Oil, Salt, Yeast [Yeast, Sorbitan Monostearate, Ascorbic Acid]). Toppings: Fresh Mozzarella (Pasteurized Milk, Vinegar, Microbial Enzymes, Salt), Sausage Crumble (Pork, Water, Spices, Salt, Dextrose, Natural Flavour), Mozzarella Cheese (Milk, Modified Milk Ingredients, Cream, Salt, Calcium Chloride, Bacterial Culture, Microbial Enzyme), Hot Honey Sauce (Sugars [Sugar, Honey], Water, Chili Peppers, Vinegar, Modified Corn Starch, Salt, Rice Vinegar, Crushed Chilies, Dried Garlic, Dried Onion, Spices, Natural Flavour, Xanthan Gum, Acetic Acid, Potassium Sorbate, Sodium Benzoate). Tomato Sauce: Diced Tomatoes (Tomatoes, *May Contain Citric Acid), Crushed Tomatoes, Salt, Sugar, Garlic Powder, Chili Flakes, Herb.\nContains: Wheat, Milk.\nMay Contain: Eggs, Soy, Mustard.",
     "ingredients_fr": "Ingrédients : Pâte à pinsa (farine de blé, farine de riz bio, farine de fève bio, levain, eau, huile d'olive, sel, levure), saucisse italienne de porc, mozzarella fraîche, miel piquant, sauce tomate.\nContient : Blé, Lait.",
     "ingredients_es": "Ingredientes: Masa de pinsa (harina de trigo, harina de arroz orgánica, harina de haba orgánica, masa madre, agua, aceite de oliva, sal, levadura), salchicha italiana de cerdo, mozzarella fresca, miel picante, salsa de tomate.\nContiene: Trigo, Leche.",
     "slug": "sausage-and-hot-honey-pinsa",
@@ -173,7 +173,7 @@ const productsData = [
       "sausage-and-hot-honey-pinsa-us-gallery-4.webp",
       "sausage-and-hot-honey-pinsa-us-gallery-5.webp"
     ],
-    "updated_at": 1792523400000
+    "updated_at": 1793104731331
   },
   {
     "id": 31,
