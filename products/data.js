@@ -750,7 +750,7 @@ const productsData = [
       "fig-oregano-honey-drizzle-ca-gal-1-1793029712357.webp",
       "fig-oregano-honey-drizzle-ca-gal-2-1793029712357.webp"
     ],
-    "ingredients": "Ingredients: Raw fig honey, black pepper, dried oregano leaves.",
+    "ingredients": "Ingredients: Raw Fig Honey, Black Pepper, Dried Oregano Leaves.",
     "ingredients_fr": "Ingrédients : Miel brut de figue, poivre noir, feuilles d'origan séchées.",
     "ingredients_es": "Ingredientes: Miel pura de higo, pimienta negra, hojas de orégano seco.",
     "image_ca": "fig-oregano-honey-drizzle-v1793029712357-ca.webp",
@@ -763,7 +763,7 @@ const productsData = [
       "fig-oregano-honey-drizzle-us-gal-1-1793029712357.webp",
       "fig-oregano-honey-drizzle-us-gal-2-1793029712357.webp"
     ],
-    "updated_at": 1793029712357,
+    "updated_at": 1793109002678,
     "slug": "fig-oregano-honey-drizzle"
   },
   {
