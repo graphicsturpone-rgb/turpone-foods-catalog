@@ -1135,7 +1135,7 @@ const productsData = [
       "traditional-pizza-sauce-375g-gallery-1.webp",
       "traditional-pizza-sauce-375g-gallery-2.webp"
     ],
-    "ingredients": "Ingredients: Vine-ripened crushed tomatoes, water, extra-virgin olive oil, chopped garlic, sea salt, oregano, basil, black pepper.",
+    "ingredients": "Ingredients: Crushed Tomatoes (Water, Crushed Tomatoes), Carrots, Olive Oil, Salt, Onion*, Garlic*, Citric Acid, Basil, Oregano, Black Pepper. *Dried.",
     "ingredients_fr": "Ingrédients : Tomates broyées mûries sur pied, eau, huile d'olive extra vierge, ail haché, sel de mer, origan, basilic, poivre noir.",
     "ingredients_es": "Ingredientes: Tomates triturados madurados, agua, aceite de oliva virgen extra, ajo picado, sal marina, orégano, albahaca, pimienta negra.",
     "image_ca": "traditional-pizza-sauce-375g.webp",
@@ -1149,7 +1149,7 @@ const productsData = [
       "traditional-pizza-sauce-375g-us-gallery-2.webp"
     ],
     "slug": "traditional-pizza-sauce-14-oz",
-    "updated_at": 1793043040107
+    "updated_at": 1793110186866
   },
   {
     "id": 16,
