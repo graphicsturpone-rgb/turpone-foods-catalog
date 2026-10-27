@@ -546,8 +546,7 @@ const recipesData = [
       "Wash and spin the greens until completely dry as surface moisture will repel the oil dressing.",
       "Place the dry greens and any toppings in a large wooden or ceramic bowl. Sprinkle the salt and pepper directly onto the leaves before adding the oil.",
       "Shake the olive oil bottle vigorously for 10 seconds to distribute the vinegar, garlic solids, and herbs.",
-      "Drizzle 3 to 4 tablespoons of the shaken oil over the seasoned greens in a slow zigzag motion.",
-      "Using salad tongs, gently toss the greens for 15 to 20 seconds, until evenly coated with balsamic streaks and herbs. Serve immediately."
+      "Drizzle 3 to 4 tablespoons of the shaken oil over the seasoned greens in a slow zigzag motion."
     ],
     "instructions_fr": [
       "**Sécher les feuilles :** Laver et essorer les feuilles de salade jusqu'à ce qu'elles soient complètement sèches afin que la vinaigrette adhère parfaitement.",
@@ -566,7 +565,7 @@ const recipesData = [
     "description": "A completely effortless green salad preparation. The pre-blended herbs, garlic, and vinegar in the oil create a restaurant-style emulsion without any extra prep work.",
     "description_fr": "A completely effortless green salad preparation. The pre-blended herbs, garlic, and vinegar in the oil create a restaurant-style emulsion without any extra prep work.",
     "description_es": "A completely effortless green salad preparation. The pre-blended herbs, garlic, and vinegar in the oil create a restaurant-style emulsion without any extra prep work.",
-    "updated_at": 1793116194749
+    "updated_at": 1793121286676
   },
   {
     "id": "spicy-garlic-grilled-shrimp-skewers",
