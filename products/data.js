@@ -322,7 +322,7 @@ const productsData = [
       "sausage-and-hot-honey-pizza-10-gallery-3.webp",
       "sausage-and-hot-honey-pizza-10-gallery-4.webp"
     ],
-    "ingredients": "Ingredients: Wheat flour, water, mozzarella cheese, Italian sausage, hot honey, tomato sauce, olive oil, salt, yeast.\nContains: Wheat, Milk.",
+    "ingredients": "Ingredients: Crust: Enriched Wheat Flour, Water, Extra-Virgin Olive Oil, Salt, Yeast, Dried Sourdough (Wheat, Rye), Amylase, Sunflower Oil, Ascorbic Acid, Xylanase. Toppings: Fresh Mozzarella (Pasteurized Milk, Vinegar, Microbial Enzymes, Salt), Sausage Crumble (Pork, Water, Spices Salt, Dextrose, Natural Flavour), Mozzarella Cheese (Milk. Moditied Milk Ingredients, Cream, Salt, Calcium Chloride Bacterial Culture, Microbial Enzyme), Hot Honey Sauce (Sugars [Sugar, Honey], Water, Chili Peppers, Vinegar, Modified Corn Starch, Salt, Rice Vinegar, Crushed Chilies, Dried Garlic, Dried Onion, Spices, Natural Tavour, Xanthan Gum, Acetic Acia, Potassium Sorbate, Sodium Benzoate).\nTomato Sauce: Diced Tomatoes (Tomatoes, *May Contain Citric Acid, Crushed Tomatoes, Salt, Sugar, Garlic Powder, Chili Flakes, Herb.\nContains: Milk, Wheat, Rye.\nMay Contain: Eggs, Soy, Mustard.",
     "ingredients_fr": "Ingrédients : Farine de blé, eau, fromage mozzarella, saucisse italienne, miel piquant, sauce tomate, huile d'olive, sel, levure.\nContient : Blé, Lait.",
     "ingredients_es": "Ingredientes: Harina de trigo, agua, queso mozzarella, salchicha italiana, miel picante, salsa de tomate, aceite de oliva, sal, levadura.\nContiene: Trigo, Leche.",
     "image_ca": "sausage-and-hot-honey-pizza-10.webp",
@@ -340,7 +340,7 @@ const productsData = [
       "sausage-and-hot-honey-pizza-10-us-gal-4-1793040029175.webp"
     ],
     "slug": "sausage-and-hot-honey-pizza-10",
-    "updated_at": 1793042059346
+    "updated_at": 1793106020924
   },
   {
     "id": 32,
