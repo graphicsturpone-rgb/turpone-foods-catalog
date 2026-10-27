@@ -890,7 +890,7 @@ const productsData = [
       "mediterranean-tomato-seasoning-ca-gal-1-1793029144142.webp",
       "mediterranean-tomato-seasoning-ca-gal-2-1793029144142.webp"
     ],
-    "ingredients": "Ingredients: Dehydrated vegetables (tomato, onion, garlic, red bell pepper), sea salt, herbs (basil, thyme), black pepper, olive oil, silicon dioxide (anti-caking agent), natural lemon flavor.",
+    "ingredients": "Ingredients: Dehydrated Vegetables (Tomato, Onion, Garlic, Red Bell Pepper), Sea Salt, Herbs (Basil, Thyme), Black Pepper, Olive Oil, Silicon Dioxide (Anti-Caking Agent), Natural Lemon Flavor.\nMay Contain: Sesame, Soy, Wheat, Mustard.",
     "ingredients_fr": "Ingrédients : Légumes déshydratés (tomate, oignon, ail, poivron rouge), sel de mer, herbes (basilic, thym), poivre noir, huile d'olive, arôme naturel de citron.",
     "ingredients_es": "Ingredientes: Verduras deshidratadas (tomate, cebolla, ajo, pimiento rojo), sal marina, hierbas (albahaca, tomillo), pimienta negra, aceite de oliva, aroma natural de limón.",
     "image_ca": "mediterranean-tomato-seasoning-v1793029144142-ca.webp",
@@ -903,7 +903,7 @@ const productsData = [
       "mediterranean-tomato-seasoning-us-gal-1-1793029144142.webp",
       "mediterranean-tomato-seasoning-us-gal-2-1793029144142.webp"
     ],
-    "updated_at": 1793029144142,
+    "updated_at": 1793109339693,
     "slug": "mediterranean-tomato-seasoning"
   },
   {
