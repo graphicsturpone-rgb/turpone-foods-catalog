@@ -820,7 +820,7 @@ const productsData = [
       "triple-chili-honey-drizzle-ca-gal-1-1793029954633.webp",
       "triple-chili-honey-drizzle-ca-gal-2-1793029954633.webp"
     ],
-    "ingredients": "Ingredients: Raw honey, jalapeño pepper, habanero pepper, cayenne pepper, apple cider vinegar.",
+    "ingredients": "Ingredients: Raw Honey, Jalapeño Pepper, Habanero Pepper, Cayenne Pepper, Apple Cider Vinegar.",
     "ingredients_fr": "Ingrédients : Miel brut, piment jalapeño, piment habanero, piment de Cayenne, vinaigre de cidre de pomme.",
     "ingredients_es": "Ingredientes: Miel cruda, chile jalapeño, chile habanero, chile cayena, vinagre de sidra de manzana.",
     "image_ca": "triple-chili-honey-drizzle-v1793029954633-ca.webp",
@@ -833,7 +833,7 @@ const productsData = [
       "triple-chili-honey-drizzle-us-gal-1-1793029954633.webp",
       "triple-chili-honey-drizzle-us-gal-2-1793029954633.webp"
     ],
-    "updated_at": 1793029954633,
+    "updated_at": 1793109122482,
     "slug": "triple-chili-honey-drizzle"
   },
   {
