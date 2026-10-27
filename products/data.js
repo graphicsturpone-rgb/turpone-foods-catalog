@@ -855,7 +855,7 @@ const productsData = [
       "garden-herb-seasoning-ca-gal-1-1793029051715.webp",
       "garden-herb-seasoning-ca-gal-2-1793029051715.webp"
     ],
-    "ingredients": "Ingredients: Sea salt, herbs (dill weed, parsley, chives), dehydrated vegetables (onion, garlic), black pepper, lemon juice powder, dehydrated lemon peel, natural lemon flavor, citric acid.",
+    "ingredients": "Ingredients: Sea Salt, Herbs (Dill Weed, Parsley, Chives), Dehydrated Vegetables (Onion, Garlic), Black Pepper, Lemon Juice Powder, Dehydrated Lemon Peel, Natural Lemon Flavor, Citric Acid.\nMay Contain: Sesame, Soy, Wheat, Mustard.",
     "ingredients_fr": "Ingrédients : Sel de mer, herbes (aneth, persil, ciboulette), légumes déshydratés (oignon, ail), poivre noir, jus de citron en poudre, zeste de citron déshydraté, arôme naturel de citron, acide citrique.",
     "ingredients_es": "Ingredientes: Sal marina, hierbas aromáticas (eneldo, perejil, cebollino), verduras deshidratadas (cebolla, ajo), pimienta negra, jugo de limón en polvo, cáscara de limón deshidratada, aroma natural de limón, ácido cítrico.",
     "image_ca": "garden-herb-seasoning-v1793029051715-ca.webp",
@@ -868,7 +868,7 @@ const productsData = [
       "garden-herb-seasoning-us-gal-1-1793029051715.webp",
       "garden-herb-seasoning-us-gal-2-1793029051715.webp"
     ],
-    "updated_at": 1793029051715,
+    "updated_at": 1793109211520,
     "slug": "garden-herb-seasoning"
   },
   {
