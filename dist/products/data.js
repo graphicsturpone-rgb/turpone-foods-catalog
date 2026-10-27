@@ -1100,7 +1100,7 @@ const productsData = [
       "spicy-pizza-sauce-680g-gallery-1.webp",
       "spicy-pizza-sauce-680g-gallery-2.webp"
     ],
-    "ingredients": "Ingredients: Vine-ripened crushed tomatoes, water, extra-virgin olive oil, chopped garlic, sea salt, crushed chilies, oregano, basil, black pepper.",
+    "ingredients": "Ingredients: Crushed Tomatoes (Water, Crushed Tomatoes), Carrots, Olive Oil, Salt, Red Pepper, Onion*, Garlic*, Citric Acid, Garlic*, Basil*, Oregano*, Black Pepper. *Dried.",
     "ingredients_fr": "Ingrédients : Tomates broyées mûries sur pied, eau, huile d'olive extra vierge, ail haché, sel de mer, piments concassés, origan, basilic, poivre noir.",
     "ingredients_es": "Ingredientes: Tomates triturados, agua, aceite de oliva virgen extra, ajo picado, sal marina, chiles triturados, orégano, albahaca, pimienta negra.",
     "image_ca": "spicy-pizza-sauce-680g.webp",
@@ -1113,7 +1113,7 @@ const productsData = [
       "spicy-pizza-sauce-680g-us-gallery-1.webp",
       "spicy-pizza-sauce-680g-us-gallery-2.webp"
     ],
-    "updated_at": 1793043040107,
+    "updated_at": 1793110348506,
     "slug": "spicy-pizza-sauce-24-oz"
   },
   {
