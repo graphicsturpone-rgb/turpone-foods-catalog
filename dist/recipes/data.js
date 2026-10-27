@@ -145,63 +145,57 @@ const recipesData = [
     "upsellImage": "/assets/images/recipes/Fig-Oregano.png",
     "upsellLink": "https://turponefoods.com/turpone-products/",
     "ingredients": [
-      "3 tbsp <strong><a href=\"https://martha.com/\" target=\"_blank\">Martha Stewart</a></strong>’s Fig Oregano Honey",
+      "2 teaspoons minced shallot",
       "1/4 cup aged balsamic vinegar",
-      "1/2 cup extra virgin olive oil",
-      "1 tsp Dijon mustard",
-      "1 small shallot, finely minced",
-      "A pinch of dried oregano",
-      "Sea salt and freshly cracked black pepper, to taste"
+      "1 tablespoon red wine vinegar",
+      "1 tablespoon <strong><a href=\"https://martha.com/\" target=\"_blank\">Martha Stewart</a></strong>’s Fig Oregano Honey vinegar",
+      "1 teaspoon Dijon mustard",
+      "Pinch of dried oregano",
+      "Sea salt and freshly ground black pepper",
+      "1/2 cup extra virgin olive oil"
     ],
     "ingredients_fr": [
-      "3 c. à soupe de miel Figue Origan de <strong><a href=\"https://martha.com/\" target=\"_blank\">Martha Stewart</a></strong>",
+      "2 c. à thé d'échalote française hachée finement",
       "1/4 tasse de vinaigre balsamique vieilli",
-      "1/2 tasse d'huile d'olive extra vierge",
+      "1 c. à table de vinaigre de vin rouge",
+      "1 c. à table de vinaigre au miel, à la figue et à l'origan de <strong><a href=\"https://martha.com/\"target=\"_blank\">Martha Stewart</a></strong>",
       "1 c. à thé de moutarde de Dijon",
-      "1 petite échalote, finement hachée",
-      "Une pincée d'origan séché",
-      "Sel de mer et poivre noir fraîchement moulu, au goût"
+      "1 pincée d'origan séché",
+      "Sel de mer et poivre noir fraîchement moulu",
+      "1/2 tasse d'huile d'olive extra-vierge"
     ],
     "ingredients_es": [
-      "3 cdas. de Miel de Higo y Orégano de <strong><a href=\"https://martha.com/\" target=\"_blank\">Martha Stewart</a></strong>",
-      "1/4 de taza de vinagre balsámico añejo",
-      "1/2 taza de aceite de oliva virgen extra",
-      "1 cdta. de mostaza Dijon",
-      "1 chalota pequeña, finamente picada",
-      "Una pizca de orégano seco",
-      "Sal marina y pimienta negra recién molida, al gusto"
+      "2 cucharaditas de chalota picada finamente",
+      "1/4 taza de vinagre balsámico añejo",
+      "1 cucharada de vinagre de vino tinto",
+      "1 cucharada del Fig Oregano Honey Vinegar de <strong><a href=\"https://martha.com/\"target=\"_blank\">Martha Stewart</a></strong>",
+      "1 cucharadita de mostaza Dijon",
+      "1 pizca de orégano seco",
+      "Sal de mar y pimienta negra recién molida",
+      "1/2 taza de aceite de oliva extra virgen"
     ],
     "instructions": [
-      "**Combine the Aromatics:** In a medium bowl (or a clean mason jar), combine the minced shallot, balsamic vinegar, Dijon mustard, [Fig Oregano Honey](https://turponefoods.com/turpone-products/), and dried oregano.",
-      "**Whisk the Base:** Whisk the mixture vigorously for 30 seconds. Ensure the thick honey and Dijon mustard are completely dissolved into the vinegar before introducing any oil.",
-      "**Emulsify the Dressing:** While whisking constantly with one hand, slowly pour the extra virgin olive oil into the bowl in a thin, steady stream until thick and fully incorporated. (If using a mason jar, secure the lid tightly and shake vigorously for 30 seconds until uniform).",
-      "**Season to Balance:** Taste the vinaigrette and add a pinch of sea salt and a generous grind of black pepper to balance the natural sweetness of the fig honey.",
-      "**Serve:** Lightly toss your preferred salad greens in the vinaigrette. Plate the salad, top with warm, pan-fried goat cheese, and complete with a direct zigzag drizzle of raw [Fig Oregano Honey](https://turponefoods.com/turpone-products/) across the cheese."
+      "In a medium bowl (or a clean mason jar), combine the minced shallot and vinegars. Let stand 10 minutes to mellow flavor of shallot.",
+      "Whisk in Martha Stewart’s Fig Oregano Honey, Dijon mustard and dried oregano. While whisking constantly with one hand, slowly pour the extra virgin olive oil into the bowl in a thin, steady stream until thick and fully incorporated. (If using a mason jar, secure the lid tightly and shake vigorously for 30 seconds until uniform.) Season with salt and pepper."
     ],
     "instructions_fr": [
-      "**Combiner les aromates :** Dans un bol moyen (ou un pot Mason propre), combiner l'échalote hachée, le vinaigre balsamique, la moutarde de Dijon, le miel Figue Origan et l'origan séché.",
-      "**Fouetter la base :** Fouetter le mélange vigoureusement pendant 30 secondes. S'assurer que le miel épais et la moutarde de Dijon sont complètement dissous dans le vinaigre avant d'introduire de l'huile.",
-      "**Émulsifier la vinaigrette :** Tout en fouettant constamment d'une main, verser lentement l'huile d'olive extra vierge dans le bol en un mince filet régulier jusqu'à ce que ce soit épais et complètement incorporé. _(Si vous utilisez un pot Mason, fermer hermétiquement le couvercle et agiter vigoureusement pendant 30 secondes jusqu'à l'uniformité)._",
-      "**Assaisonner pour l'équilibre :** Goûter la vinaigrette et ajouter une pincée de sel de mer et un généreux moulin de poivre noir pour équilibrer la douceur naturelle du miel de figue",
-      "**Servir :** Mélanger légèrement les feuilles de salade de votre choix dans la vinaigrette. Disposer la salade dans une assiette, garnir de fromage de chèvre chaud poêlé et compléter avec un filet en zigzag de miel Figue Origan cru directement sur le fromage."
+      "Dans un bol moyen (ou un pot Mason propre), mélanger l'échalote hachée et les vinaigres. Laisser reposer 10 minutes pour adoucir le goût de l'échalote.",
+      "Ajouter le vinaigre au miel, à la figue et à l'origan de Martha Stewart, la moutarde de Dijon et l'origan séché, en fouettant. Tout en fouettant constamment d'une main, verser lentement l'huile d'olive extra-vierge en un mince filet continu, jusqu'à ce que la vinaigrette épaississe et soit bien homogène. (Si vous utilisez un pot Mason, bien fermer le couvercle et secouer vigoureusement pendant 30 secondes, jusqu'à ce que le mélange soit homogène.) Assaisonner de sel et de poivre."
     ],
     "instructions_es": [
-      "**Combinar los aromáticos:** En un tazón mediano (o un frasco de vidrio limpio), combine la chalota picada, el vinagre balsámico, la mostaza Dijon, la Miel de Higo y Orégano y el orégano seco.",
-      "**Batir la base:** Bata la mezcla vigorosamente durante 30 segundos. Asegúrese de que la miel espesa y la mostaza Dijon estén completamente disueltas en el vinagre antes de introducir el aceite.",
-      "**Emulsionar el aderezo:** Mientras bate constantemente con una mano, vierta lentamente el aceite de oliva virgen extra en el tazón en un chorro delgado y constante hasta que esté espeso y completamente incorporado. _(Si usa un frasco de vidrio, cierre bien la tapa y agite vigorosamente durante 30 segundos hasta que sea uniforme)._",
-      "**Sazonar para equilibrar:** Pruebe la vinagreta y añada una pizca de sal marina y un generoso toque de pimienta negra para equilibrar la dulzura natural de la miel de higo.",
-      "**Servir:** Mezcle ligeramente sus hojas de ensalada preferidas en la vinagreta. Sirva la ensalada, cubra con queso de cabra tibio salteado y termine con un chorrito en zigzag de Miel de Higo y Orégano cruda directamente sobre el queso."
+      "En un tazón mediano (o un frasco tipo Mason limpio), mezcle la chalota picada y los vinagres. Deje reposar 10 minutos para suavizar el sabor de la chalota.",
+      "Agregue el Fig Oregano Honey Vinegar de Martha Stewart, la mostaza Dijon y el orégano seco, batiendo. Sin dejar de batir con una mano, vierta poco a poco el aceite de oliva extra virgen en un chorro fino y constante, hasta que la vinagreta espese y quede bien incorporada. (Si usa un frasco tipo Mason, cierre bien la tapa y agite con fuerza durante 30 segundos, hasta que la mezcla quede uniforme.) Sazone con sal y pimienta."
     ],
-    "description": "An elegant, Mediterranean-inspired dressing that marries deep, jammy fig blossom notes with aromatic oregano. This vinaigrette relies on proper emulsification to create a smooth, unified coating for crisp salad greens.",
-    "description_fr": "Une vinaigrette élégante d'inspiration méditerranéenne qui marie des notes profondes de fleur de figuier confite avec de l'origan aromatique. Cette vinaigrette repose sur une bonne émulsification pour créer un enrobage lisse et unifié pour les feuilles de salade croquantes.",
-    "description_es": "Un aderezo elegante de inspiración mediterránea que combina notas profundas de flor de higo con orégano aromático. Esta vinagreta depende de una emulsión adecuada para crear una capa suave y unificada sobre las hojas de ensalada crujientes.",
+    "description": "An elegant, Mediterranean-inspired dressing that marries deep, jammy fig blossom notes with aromatic oregano. This vinaigrette relies on proper emulsification to create a smooth, unified coating for crisp salad greens. This dressing is a lovely complement to a salad of bitter greens (like arugula and radicchios) served with warmed goat cheese.",
+    "description_fr": "Une vinaigrette élégante d'inspiration méditerranéenne qui marie les notes profondes et confites de la figue à l'arôme de l'origan. Cette vinaigrette repose sur une émulsion bien réussie, qui permet d'enrober uniformément et en douceur des verdures croquantes. Elle accompagne à merveille une salade de verdures amères (comme la roquette et le radicchio) servie avec du fromage de chèvre tiède.",
+    "description_es": "Un aderezo elegante de inspiración mediterránea que combina las notas profundas y acarameladas del higo con el aroma del orégano. Esta vinagreta depende de una buena emulsión para cubrir de manera suave y uniforme las hojas verdes crujientes. Es el complemento perfecto para una ensalada de hojas amargas (como arúgula y radicchio) servida con queso de cabra tibio.",
     "prepTime_fr": "5 min",
     "cookTime_fr": "5 min",
     "yields_fr": "1 tasse",
     "prepTime_es": "5 min",
     "cookTime_es": "5 min",
     "yields_es": "1 taza",
-    "updated_at": 1793126935969
+    "updated_at": 1793127462125
   },
   {
     "id": "grilled-white-fish-with-lemon-pepper-herb-salmoriglio",
