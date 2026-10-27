@@ -21,7 +21,7 @@ const productsData = [
       "bacon-and-caramelized-onions-pinsa-gallery-4.webp",
       "bacon-and-caramelized-onions-pinsa-gallery-5.webp"
     ],
-    "ingredients": "Ingredients: Pinsa (wheat flour, organic rice flour, organic fava flour, sourdough yeast, water, olive oil, salt, yeast [yeast, sorbitan monostearate, ascorbic acid]). Toppings: Mozzarella cheese (milk, modified milk ingredients, cream, salt, calcium chloride, bacterial culture, microbial enzyme), Caramelized ONIONSs (ONIONSs, natural flavour), Bacon (pork, water, salt, brown sugar, smoked sugar, sodium phosphate, sodium erythorbate, sodium nitrite, spices), Parmesan cheese (milk, salt, lipase, microbial enzyme, bacterial culture, calcium chloride, cellulose). Alfredo sauce: Cream (cream, milk, carrageenan, cellulose gum, mono and diglycerides, polysorbate 80), Minced garlic, Parmesan cheese (milk, salt, lipase, microbial enzyme, bacterial culture, calcium chloride, cellulose), Modified corn starch, Salt, Black pepper.\nContains: Wheat, Milk.\nMay contain: Eggs, Soy, Mustard.",
+    "ingredients": "Ingredients: Pinsa (Wheat Flour, Organic Rice Flour, Organic Fava Flour, Sourdough Yeast, Water, Olive Oil, Salt, Yeast [Yeast, Sorbitan Monostearate, Ascorbic Acid]). Toppings: Mozzarella Cheese (Milk, Modified Milk Ingredients, Cream, Salt, Calcium Chloride, Bacterial Culture, Microbial Enzyme), Caramelized Onionss (Onionss, Natural Flavour), Bacon (Pork, Water, Salt, Brown Sugar, Smoked Sugar, Sodium Phosphate, Sodium Erythorbate, Sodium Nitrite, Spices), Parmesan Cheese (Milk, Salt, Lipase, Microbial Enzyme, Bacterial Culture, Calcium Chloride, Cellulose). Alfredo Sauce: Cream (Cream, Milk, Carrageenan, Cellulose Gum, Mono And Diglycerides, Polysorbate 80), Minced Garlic, Parmesan Cheese (Milk, Salt, Lipase, Microbial Enzyme, Bacterial Culture, Calcium Chloride, Cellulose), Modified Corn Starch, Salt, Black Pepper.\nContains: Wheat, Milk.\nMay Contain: Eggs, Soy, Mustard.",
     "ingredients_fr": "Ingrédients : Pinsa (farine de blé, farine de riz biologique, farine de fève biologique, levain naturel, eau, huile d'olive, sel, levure). Garnitures : Fromage mozzarella, oignons caramélisés, bacon (porc, eau, sel, sucre brun, épices), fromage parmesan. Sauce Alfredo : Crème, ail émincé, fromage parmesan, amidon de maïs modifié, sel, poivre noir.\nContient : Blé, Lait.\nPeut contenir : Œufs, Soja, Moutarde.",
     "ingredients_es": "Ingredientes: Masa de pinsa (harina de trigo, harina de arroz orgánica, harina de haba orgánica, masa madre, agua, aceite de oliva, sal, levadura). Coberturas: Queso mozzarella, cebollas caramelizadas, tocino (cerdo, agua, sal, azúcar moreno, especias), queso parmesano. Salsa Alfredo: Crema, ajo picado, queso parmesano, almidón de maíz modificado, sal, pimienta negra.\nContiene: Trigo, Leche.\nPuede contener: Huevos, Soya, Mostaza.",
     "slug": "bacon-and-caramelized-onions-pinsa",
@@ -41,7 +41,7 @@ const productsData = [
       "bacon-and-caramelized-onions-pinsa-us-gallery-4.webp",
       "bacon-and-caramelized-onions-pinsa-us-gallery-5.webp"
     ],
-    "updated_at": 1792521013523
+    "updated_at": 1793104545584
   },
   {
     "id": 9,
