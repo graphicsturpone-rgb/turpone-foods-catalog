@@ -960,7 +960,7 @@ const productsData = [
       "triple-pepper-mix-seasoning-ca-gal-1-1793029258696.webp",
       "triple-pepper-mix-seasoning-ca-gal-2-1793029258696.webp"
     ],
-    "ingredients": "Ingredients: Sea salt, black pepper, gochugaru chili flakes, chili pepper flakes.",
+    "ingredients": "Ingredients: Sea Salt, Black Pepper, Gochugaru Chili Flakes, Chili Pepper Flakes.\u0003May Contain: Sesame, Soy, Wheat, Mustard.",
     "ingredients_fr": "Ingrédients : Sel de mer, poivre noir, flocons de piment gochugaru, flocons de piment chili.",
     "ingredients_es": "Ingredientes: Sal marina, pimienta negra, hojuelas de chile gochugaru, hojuelas de chile rojo.",
     "image_ca": "triple-pepper-mix-seasoning-v1793029258696-ca.webp",
@@ -973,7 +973,7 @@ const productsData = [
       "triple-pepper-mix-seasoning-us-gal-1-1793029258696.webp",
       "triple-pepper-mix-seasoning-us-gal-2-1793029258696.webp"
     ],
-    "updated_at": 1793029258696,
+    "updated_at": 1793109412394,
     "slug": "triple-pepper-mix-seasoning"
   },
   {
