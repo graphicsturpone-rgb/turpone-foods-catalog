@@ -531,7 +531,7 @@ document.addEventListener("DOMContentLoaded", function() {
 <script src="/recipes/data.js"></script>
 <script src="/recipes/recipe-store.js"></script>
 <script>
-document.addEventListener('DOMContentLoaded', async function() {
+document.addEventListener('DOMContentLoaded', function() {
     const grid = document.getElementById('recipes-grid');
     if (!grid || typeof RecipeStore === 'undefined') return;
 
@@ -544,26 +544,15 @@ document.addEventListener('DOMContentLoaded', async function() {
         return 'en';
     }
 
-    try {
-        const recipes = await RecipeStore.getAll();
-        if (recipes && recipes.length > 0) {
-            const lang = getCurrentLanguage();
-            const staticSlugs = new Set([
-                "crispy-roasted-whole-chicken-with-roasted-garlic-olive-oil",
-                "fennel-and-rosemary-crusted-pork-loin",
-                "fig-herb-balsamic-vinaigrette",
-                "grilled-white-fish-with-lemon-pepper-herb-salmoriglio",
-                "mediterranean-tomato-marinade-for-fresh-bocconcini",
-                "pan-seared-salmon-with-a-lemon-black-pepper-honey-glaze",
-                "prosciutto-arugula-pizza",
-                "quick-garden-herb-ranch-dip",
-                "simple-balsamic-garlic-herb-tableside-dressing",
-                "spicy-garlic-grilled-shrimp-skewers",
-                "spicy-italian-sausage-pizza",
-                "triple-chili-honey-glazed-skewers",
-                "triple-pepper-crusted-new-york-strip-steak"
-            ]);
+    function renderRecipesGrid() {
+        try {
+            const recipes = RecipeStore.getAll();
+            if (!recipes || recipes.length === 0) {
+                grid.innerHTML = '<div style="grid-column: 1/-1; text-align: center; padding: 60px 20px; color: #64748b; font-size: 16px;">No recipes currently available.</div>';
+                return;
+            }
 
+            const lang = getCurrentLanguage();
             grid.innerHTML = recipes.map(r => {
                 let title = r.title || 'Untitled Recipe';
                 if (lang === 'fr' && r.title_fr) title = r.title_fr;
@@ -571,26 +560,28 @@ document.addEventListener('DOMContentLoaded', async function() {
 
                 let targetUrl = '';
                 if (lang === 'fr') {
-                    targetUrl = staticSlugs.has(r.slug) ? `/fr/recipes/${r.slug}/` : `/fr/recipes/detail.html?slug=${encodeURIComponent(r.slug)}`;
+                    targetUrl = '/fr/recipes/detail.html?slug=' + encodeURIComponent(r.slug);
                 } else if (lang === 'es') {
-                    targetUrl = staticSlugs.has(r.slug) ? `/es/recipes/${r.slug}/` : `/es/recipes/detail.html?slug=${encodeURIComponent(r.slug)}`;
+                    targetUrl = '/es/recipes/detail.html?slug=' + encodeURIComponent(r.slug);
                 } else {
-                    targetUrl = staticSlugs.has(r.slug) ? `/recipes/${r.slug}/` : `/recipes/detail.html?slug=${encodeURIComponent(r.slug)}`;
+                    targetUrl = '/recipes/detail.html?slug=' + encodeURIComponent(r.slug);
                 }
 
                 const img = r.image || '/assets/images/placeholder.svg';
-                return `
-                <a href="${targetUrl}" style="text-decoration: none; color: inherit; display: block; border-radius: 12px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: transform 0.3s ease;">
-                    <div style="height: 250px; background-image: url('${img}'); background-size: cover; background-position: center;"></div>
-                    <div style="padding: 25px; background: #fff;">
-                        <h3 style="font-size: 22px; font-weight: 600; margin: 0;">${title}</h3>
-                    </div>
-                </a>`;
+                return '<a href="' + targetUrl + '" style="text-decoration: none; color: inherit; display: block; border-radius: 12px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: transform 0.3s ease;">' +
+                    '<div style="height: 250px; background-image: url(\'' + img + '\'); background-size: cover; background-position: center;"></div>' +
+                    '<div style="padding: 25px; background: #fff;">' +
+                        '<h3 style="font-size: 22px; font-weight: 600; margin: 0;">' + title + '</h3>' +
+                    '</div>' +
+                '</a>';
             }).join('');
+        } catch (e) {
+            console.error('Error hydrating recipes:', e);
         }
-    } catch (e) {
-        console.error('Error hydrating recipes:', e);
     }
+
+    renderRecipesGrid();
+    window.addEventListener('turpone:recipes-updated', renderRecipesGrid);
 });
 </script>
 </body></html>

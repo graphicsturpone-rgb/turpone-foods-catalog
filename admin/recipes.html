@@ -762,6 +762,161 @@
             renderTable();
         }
 
+        
+        // Built-in Canadian French (OQLF standard) & Mexican Spanish Culinary Translation Engine
+        function translateRecipeLocally(recipe) {
+            if (!recipe) return recipe;
+            const clone = { ...recipe };
+
+            const terms = [
+                { en: /\bwith Roasted Garlic Olive Oil\b/gi, fr: "à l'huile d'olive à l'ail rôti", es: "con aceite de oliva con ajo asado" },
+                { en: /\bwith Spicy Garlic Olive Oil\b/gi, fr: "à l'huile d'olive à l'ail piquant", es: "con aceite de oliva con ajo picante" },
+                { en: /\bwith Lemon Pepper Olive Oil\b/gi, fr: "à l'huile d'olive citron et poivre", es: "con aceite de oliva con limón y pimienta" },
+                { en: /\bCrispy Roasted Whole Chicken\b/gi, fr: "Poulet entier rôti croustillant", es: "Pollo entero asado crujiente" },
+                { en: /\bWhole Chicken\b/gi, fr: "Poulet entier", es: "Pollo entero" },
+                { en: /\bRoasted Garlic Olive Oil\b/gi, fr: "Huile d'olive à l'ail rôti", es: "Aceite de oliva con ajo asado" },
+                { en: /\bSpicy Garlic Olive Oil\b/gi, fr: "Huile d'olive à l'ail piquant", es: "Aceite de oliva con ajo picante" },
+                { en: /\bLemon Pepper Olive Oil\b/gi, fr: "Huile d'olive citron et poivre", es: "Aceite de oliva limón y pimienta" },
+                { en: /\bBalsamic Garlic & Herb Olive Oil\b/gi, fr: "Huile d'olive balsamique ail et herbes", es: "Aceite de oliva balsámico ajo y hierbas" },
+                { en: /\bExtra Virgin Olive Oil\b/gi, fr: "Huile d'olive extra vierge", es: "Aceite de oliva extra virgen" },
+                { en: /\bOlive Oil\b/gi, fr: "Huile d'olive", es: "Aceite de oliva" },
+                { en: /\bFennel and Rosemary Crusted Pork Loin\b/gi, fr: "Longe de porc en croûte de fenouil et romarin", es: "Lomo de cerdo en costra de hinojo y romero" },
+                { en: /\bPork Loin\b/gi, fr: "Longe de porc", es: "Lomo de cerdo" },
+                { en: /\bPan-Seared Salmon\b/gi, fr: "Saumon poêlé", es: "Salmón sellado a la sartén" },
+                { en: /\bSalmon\b/gi, fr: "Saumon", es: "Salmón" },
+                { en: /\bLemon Black Pepper Honey Glaze\b/gi, fr: "Glaçage au miel, citron et poivre noir", es: "Glaseado de miel con limón y pimienta negra" },
+                { en: /\bHoney Glaze\b/gi, fr: "Glaçage au miel", es: "Glaseado de miel" },
+                { en: /\bProsciutto Arugula Pizza\b/gi, fr: "Pizza au prosciutto et roquette", es: "Pizza de prosciutto y rúcula" },
+                { en: /\bSpicy Italian Sausage Pizza\b/gi, fr: "Pizza à la saucisse italienne piquante", es: "Pizza de salchicha italiana picante" },
+                { en: /\bItalian Sausage\b/gi, fr: "Saucisse italienne", es: "Salchicha italiana" },
+                { en: /\bQuick Garden Herb Ranch Dip\b/gi, fr: "Trempette ranch rapide aux herbes du jardin", es: "Dip ranch rápido con hierbas del huerto" },
+                { en: /\bRanch Dip\b/gi, fr: "Trempette ranch", es: "Dip estilo ranch" },
+                { en: /\bFig & Herb Balsamic Vinaigrette\b/gi, fr: "Vinaigrette balsamique aux figues et herbes", es: "Vinagreta balsámica de higos y hierbas" },
+                { en: /\bFig Herb Balsamic Vinaigrette\b/gi, fr: "Vinaigrette balsamique aux figues et herbes", es: "Vinagreta balsámica de higos y hierbas" },
+                { en: /\bGrilled White Fish\b/gi, fr: "Poisson blanc grillé", es: "Pescado blanco a la parrilla" },
+                { en: /\bWhite Fish\b/gi, fr: "Poisson blanc", es: "Pescado blanco" },
+                { en: /\bMediterranean Tomato Marinade\b/gi, fr: "Marinade méditerranéenne aux tomates", es: "Marinado mediterráneo de jitomates" },
+                { en: /\bFresh Bocconcini\b/gi, fr: "Bocconcini frais", es: "Bocconcini frescos" },
+                { en: /\bSpicy Garlic Grilled Shrimp Skewers\b/gi, fr: "Brochettes de crevettes grillées à l'ail piquant", es: "Brochetas de camarones a la parrilla con ajo picante" },
+                { en: /\bShrimp Skewers\b/gi, fr: "Brochettes de crevettes", es: "Brochetas de camarones" },
+                { en: /\bTriple Chili Honey Glazed Skewers\b/gi, fr: "Brochettes glacées au miel aux trois piments", es: "Brochetas glaseadas con miel de tres chiles" },
+                { en: /\bTriple Pepper Crusted New York Strip Steak\b/gi, fr: "Contre-filet New York en croûte de trois poivres", es: "Corte New York en costra de tres pimientas" },
+                { en: /\bStrip Steak\b/gi, fr: "Contre-filet", es: "Bistec New York" },
+                { en: /\bQuick Rising Dough Mix\b/gi, fr: "Mélange à levée rapide", es: "Mezcla de masa de leudado rápido" },
+                { en: /\bPizza Dough Balls\b/gi, fr: "Boules de pâte à pizza", es: "Bolas de masa para pizza" },
+                { en: /\bPizza Sauce\b/gi, fr: "Sauce à pizza", es: "Salsa para pizza" },
+                { en: /\bwith\b/gi, fr: "avec", es: "con" },
+                { en: /\band\b/gi, fr: "et", es: "y" },
+                { en: /\bfor\b/gi, fr: "pour", es: "para" }
+            ];
+
+            const ingTerms = [
+                { en: /\b(\d+(?:\/\d+)?(?:\.\d+)?)\s*(?:tablespoons?|tbsp\.?)\b/gi, fr: "$1 c. à soupe", es: "$1 cdas." },
+                { en: /\b(\d+(?:\/\d+)?(?:\.\d+)?)\s*(?:teaspoons?|tsp\.?)\b/gi, fr: "$1 c. à thé", es: "$1 cdtas." },
+                { en: /\b(\d+(?:\/\d+)?(?:\.\d+)?)\s*cups?\b/gi, fr: "$1 tasse(s)", es: "$1 taza(s)" },
+                { en: /\b(\d+(?:\/\d+)?(?:\.\d+)?)\s*(?:lbs?|pounds?)\b/gi, fr: "$1 lb", es: "$1 lb" },
+                { en: /\b(\d+(?:\/\d+)?(?:\.\d+)?)\s*(?:oz|ounces?)\b/gi, fr: "$1 oz", es: "$1 oz" },
+                { en: /\b(\d+)\s*garlic cloves?,?\s*crushed\b/gi, fr: "$1 gousses d'ail, écrasées", es: "$1 dientes de ajo, machacados" },
+                { en: /\b(\d+)\s*garlic cloves?,?\s*minced\b/gi, fr: "$1 gousses d'ail, émincées", es: "$1 dientes de ajo, picados" },
+                { en: /\bgarlic cloves?\b/gi, fr: "gousses d'ail", es: "dientes de ajo" },
+                { en: /\bwhole roasting chicken\b/gi, fr: "poulet entier à rôtir", es: "pollo entero para asar" },
+                { en: /\bkosher salt\b/gi, fr: "sel casher", es: "sal kosher" },
+                { en: /\bsea salt\b/gi, fr: "sel de mer", es: "sal marina" },
+                { en: /\bfreshly ground black pepper\b/gi, fr: "poivre noir fraîchement moulu", es: "pimienta negra recién molida" },
+                { en: /\bblack pepper\b/gi, fr: "poivre noir", es: "pimienta negra" },
+                { en: /\bfresh mozzarella\b/gi, fr: "mozzarella fraîche", es: "mozzarella fresca" },
+                { en: /\bfresh basil leaves\b/gi, fr: "feuilles de basilic frais", es: "hojas de albahaca fresca" },
+                { en: /\bfresh arugula\b/gi, fr: "roquette fraîche", es: "rúcula fresca" },
+                { en: /\bprosciutto di parma\b/gi, fr: "prosciutto di Parma", es: "prosciutto di Parma" },
+                { en: /\bparmesan cheese\b/gi, fr: "parmesan râpé", es: "queso parmesano" },
+                { en: /\blemon juice\b/gi, fr: "jus de citron frais", es: "jugo de limón fresco" },
+                { en: /\bbalsamic vinegar\b/gi, fr: "vinaigre balsamique", es: "vinagre balsámico" },
+                { en: /\bsour cream\b/gi, fr: "crème sûre", es: "crema ácida" },
+                { en: /\bmayonnaise\b/gi, fr: "mayonnaise", es: "mayonesa" },
+                { en: /\bsoy sauce\b/gi, fr: "sauce soya", es: "salsa de soya" },
+                { en: /\bdijon mustard\b/gi, fr: "moutarde de Dijon", es: "mostaza Dijon" },
+                { en: /\bto taste\b/gi, fr: "au goût", es: "al gusto" },
+                { en: /\bapprox\.\b/gi, fr: "environ", es: "aprox." }
+            ];
+
+            const instPrefixes = [
+                { en: /^\*\*Preheat Oven:\*\*/i, fr: "**Préchauffer le four :**", es: "**Precalentar el horno:**" },
+                { en: /^\*\*Preheat:\*\*/i, fr: "**Préchauffer :**", es: "**Precalentar:**" },
+                { en: /^\*\*Season:\*\*/i, fr: "**Assaisonner :**", es: "**Sazonar:**" },
+                { en: /^\*\*Marinate:\*\*/i, fr: "**Mariner :**", es: "**Marinar:**" },
+                { en: /^\*\*Roast:\*\*/i, fr: "**Rôtir :**", es: "**Asar :**" },
+                { en: /^\*\*Bake:\*\*/i, fr: "**Cuire au four :**", es: "**Hornear :**" },
+                { en: /^\*\*Sear:\*\*/i, fr: "**Saisir :**", es: "**Sellar :**" },
+                { en: /^\*\*Grill:\*\*/i, fr: "**Griller :**", es: "**Asar a la parrilla :**" },
+                { en: /^\*\*Toss:\*\*/i, fr: "**Mélanger :**", es: "**Mezclar :**" },
+                { en: /^\*\*Combine:\*\*/i, fr: "**Combiner :**", es: "**Combinar :**" },
+                { en: /^\*\*Assemble:\*\*/i, fr: "**Assembler :**", es: "**Armar :**" },
+                { en: /^\*\*Rest & Serve:\*\*/i, fr: "**Reposer et servir :**", es: "**Reposar y servir :**" },
+                { en: /^\*\*Serve:\*\*/i, fr: "**Servir :**", es: "**Servir :**" }
+            ];
+
+            function applyDict(txt, lang) {
+                if (!txt) return "";
+                let res = txt;
+                for (const t of terms) res = res.replace(t.en, t[lang]);
+                return res;
+            }
+
+            function applyIng(txt, lang) {
+                if (!txt) return "";
+                let res = txt;
+                for (const t of ingTerms) res = res.replace(t.en, t[lang]);
+                for (const t of terms) res = res.replace(t.en, t[lang]);
+                return res;
+            }
+
+            function applyInst(txt, lang) {
+                if (!txt) return "";
+                let res = txt;
+                for (const p of instPrefixes) res = res.replace(p.en, p[lang]);
+                for (const t of terms) res = res.replace(t.en, t[lang]);
+                for (const t of ingTerms) res = res.replace(t.en, t[lang]);
+                if (lang === 'fr') {
+                    res = res.replace(/\bPreheat oven to\b/gi, "Préchauffer le four à")
+                             .replace(/\bminutes until golden brown\b/gi, "minutes jusqu'à coloration dorée")
+                             .replace(/\bLet rest for\b/gi, "Laisser reposer pendant")
+                             .replace(/\bbefore carving and serving\b/gi, "avant de découper et de servir");
+                } else {
+                    res = res.replace(/\bPreheat oven to\b/gi, "Precalentar el horno a")
+                             .replace(/\bminutes until golden brown\b/gi, "minutos hasta que esté dorado")
+                             .replace(/\bLet rest for\b/gi, "Dejar reposar durante")
+                             .replace(/\bbefore carving and serving\b/gi, "antes de rebanar y servir");
+                }
+                return res;
+            }
+
+            if (!clone.title_fr) clone.title_fr = applyDict(clone.title, 'fr');
+            if (!clone.title_es) clone.title_es = applyDict(clone.title, 'es');
+
+            if (!clone.description_fr) clone.description_fr = applyDict(clone.description, 'fr');
+            if (!clone.description_es) clone.description_es = applyDict(clone.description, 'es');
+
+            if (Array.isArray(clone.ingredients)) {
+                if (!Array.isArray(clone.ingredients_fr) || clone.ingredients_fr.length === 0) {
+                    clone.ingredients_fr = clone.ingredients.map(i => applyIng(i, 'fr'));
+                }
+                if (!Array.isArray(clone.ingredients_es) || clone.ingredients_es.length === 0) {
+                    clone.ingredients_es = clone.ingredients.map(i => applyIng(i, 'es'));
+                }
+            }
+
+            if (Array.isArray(clone.instructions)) {
+                if (!Array.isArray(clone.instructions_fr) || clone.instructions_fr.length === 0) {
+                    clone.instructions_fr = clone.instructions.map(i => applyInst(i, 'fr'));
+                }
+                if (!Array.isArray(clone.instructions_es) || clone.instructions_es.length === 0) {
+                    clone.instructions_es = clone.instructions.map(i => applyInst(i, 'es'));
+                }
+            }
+
+            return clone;
+        }
+    
         function openAddModal() {
             document.getElementById('modalTitle').textContent = 'Add New Recipe';
             document.getElementById('recipeForm').reset();
@@ -976,7 +1131,8 @@
         document.addEventListener('DOMContentLoaded', () => {
             loadRecipes();
             if (window.RecipeStore) {
-                window.RecipeStore.syncFromApi(() => {
+                window.addEventListener('turpone:recipes-updated', () => loadRecipes());
+            window.RecipeStore.syncFromApi(() => {
                     loadRecipes();
                 });
             }

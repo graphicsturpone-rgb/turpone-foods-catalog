@@ -483,4 +483,35 @@ document.addEventListener("DOMContentLoaded", function() {
 <script src="/assets/js/cookie-consent.js"></script>
 <script src="/assets/js/newsletter-popup.js"></script>
 <link href="/assets/css/chatbot.css" rel="stylesheet"/><script defer="" src="/assets/js/chatbot.js"></script><script src="/assets/js/us-image-swap.js" defer></script>
+
+<script src="/recipes/data.js"></script>
+<script src="/recipes/recipe-store.js"></script>
+<script>
+(function() {
+    document.addEventListener('DOMContentLoaded', function() {
+        if (typeof RecipeStore === 'undefined') return;
+        const path = window.location.pathname.toLowerCase();
+        const parts = path.replace(/\/$/, '').split('/');
+        const slug = parts[parts.length - 1];
+        const lang = path.includes('/fr/') ? 'fr' : (path.includes('/es/') ? 'es' : 'en');
+
+        const recipe = RecipeStore.getBySlug(slug);
+        if (!recipe) {
+            // Recipe deleted - redirect to recipe catalog
+            const target = lang === 'fr' ? '/fr/recipes/' : (lang === 'es' ? '/es/recipes/' : '/recipes/');
+            window.location.replace(target);
+            return;
+        }
+
+        // Dynamically update title and texts if modified
+        const title = (lang === 'fr' && recipe.title_fr) ? recipe.title_fr : ((lang === 'es' && recipe.title_es) ? recipe.title_es : recipe.title);
+        if (title) {
+            const h1 = document.querySelector('h1');
+            if (h1 && h1.textContent !== title) h1.textContent = title;
+            document.title = title + ' | Turpone Foods';
+        }
+    });
+})();
+</script>
+
 </body></html>

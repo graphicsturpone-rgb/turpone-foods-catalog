@@ -469,7 +469,8 @@ document.addEventListener("DOMContentLoaded", function() {
 <script src="/recipes/data.js"></script>
 <script src="/recipes/recipe-store.js"></script>
 <script>
-document.addEventListener('DOMContentLoaded', async function() {
+document.addEventListener('DOMContentLoaded', function() {
+    async function hydrateDetail() {
     const params = new URLSearchParams(window.location.search);
     const slug = params.get('slug') || params.get('id');
 
