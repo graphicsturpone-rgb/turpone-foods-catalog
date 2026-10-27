@@ -1208,7 +1208,7 @@ const productsData = [
       "neapolitan-style-dough-mix-ca-gal-4-1793030935843.webp",
       "neapolitan-style-dough-mix-ca-gal-5-1793030935843.webp"
     ],
-    "ingredients": "Made with: Premium Italian 00 flour.",
+    "ingredients": "Ingredients:\n1 ball Neapolitan Style dough (recipe on back of box) prepared through step 2\n1/3 cup Martha Stewart's Traditional Pizza Sauce\n5 to 6 slices of fresh mozzarella\nPinch of salt \nExtra-virgin olive oil,\nfor drizzling\nFresh basil leaves",
     "ingredients_fr": "Composé de : Farine italienne Tipo 00 de qualité supérieure.",
     "ingredients_es": "Elaborado con: Harina italiana Tipo 00 de primera calidad.",
     "image_ca": "neapolitan-style-dough-mix-v1793030935843-ca.webp",
@@ -1227,7 +1227,7 @@ const productsData = [
       "neapolitan-style-dough-mix-us-gal-4-1793030935843.webp",
       "neapolitan-style-dough-mix-us-gal-5-1793030935843.webp"
     ],
-    "updated_at": 1793030935843,
+    "updated_at": 1793109575213,
     "slug": "neapolitan-style-dough-mix"
   },
   {
