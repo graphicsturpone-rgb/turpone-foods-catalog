@@ -715,7 +715,7 @@ const productsData = [
       "spicy-garlic-infused-extra-virgin-olive-oil-ca-gal-1-1793029618486.webp",
       "spicy-garlic-infused-extra-virgin-olive-oil-ca-gal-2-1793029618486.webp"
     ],
-    "ingredients": "Ingredients: Extra-virgin olive oil, crushed red pepper, dehydrated garlic, natural flavors (liquid garlic flavor).",
+    "ingredients": "Ingredients: Extra-Virgin Olive Oil, Crushed Red Pepper, Dehydrated Garlic, Natural Flavors \u0003(Liquid Garlic Flavor).",
     "ingredients_fr": "Ingrédients : Huile d'olive extra vierge, piment rouge broyé, ail déshydraté, arômes naturels d'ail.",
     "ingredients_es": "Ingredientes: Aceite de oliva virgen extra, pimiento rojo triturado, ajo deshidratado, aromas naturales de ajo.",
     "image_ca": "spicy-garlic-infused-extra-virgin-olive-oil-v1793029618486-ca.webp",
@@ -728,7 +728,7 @@ const productsData = [
       "spicy-garlic-infused-extra-virgin-olive-oil-us-gal-1-1793029618486.webp",
       "spicy-garlic-infused-extra-virgin-olive-oil-us-gal-2-1793029618486.webp"
     ],
-    "updated_at": 1793029618486,
+    "updated_at": 1793108946424,
     "slug": "spicy-garlic-infused-extra-virgin-olive-oil"
   },
   {
