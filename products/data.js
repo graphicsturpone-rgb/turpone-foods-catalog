@@ -1332,7 +1332,7 @@ const productsData = [
       "new-york-style-pizza-dough-balls-ca-gal-2-1793031231365.webp",
       "new-york-style-pizza-dough-balls-ca-gal-3-1793031231365.webp"
     ],
-    "ingredients": "Ingredients: Enriched unbleached wheat flour, water, olive oil, cane sugar, sea salt, yeast.\nContains: Wheat.",
+    "ingredients": "Ingredients:\n1 New York Style dough ball (thawed & proofed according to instructions)\n1/2 cup Martha Stewart's Spicy Pizza Sauce\n3/4 cup grated mozzarella cheese\n30 to 40 pepperoni slices\nExtra-virgin olive oil, for drizzling\nMartha Stewart’s Triple Chili\nHoney Drizzle (optional)",
     "ingredients_fr": "Ingrédients : Farine de blé non blanchie enrichie, eau, huile d'olive, sucre de canne, sel de mer, levure.\nContient : Blé.",
     "ingredients_es": "Ingredientes: Harina de trigo enriquecida sin blanquear, agua, aceite de oliva, azúcar de caña, sal marina, levadura.\nContiene: Trigo.",
     "image_ca": "new-york-style-pizza-dough-balls-v1793031231365-ca.webp",
@@ -1347,7 +1347,7 @@ const productsData = [
       "new-york-style-pizza-dough-balls-us-gal-3-1793041521417.webp",
       "new-york-style-pizza-dough-balls-us-gal-4-1793041521417.webp"
     ],
-    "updated_at": 1793042638447,
+    "updated_at": 1793108750978,
     "slug": "new-york-style-pizza-dough-balls"
   },
   {
