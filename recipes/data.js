@@ -85,57 +85,51 @@ const recipesData = [
     "upsellImage": "/assets/images/recipes/sweet italian.png",
     "upsellLink": "",
     "ingredients": [
-      "1 boneless center-cut pork loin roast (approx. 2.5 to 3 lbs)",
-      "3 tbsp <strong><a href=\"https://martha.com/\" target=\"_blank\">Martha Stewart</a></strong>’s Sweet Italian Seasoning",
-      "2 tbsp extra virgin olive oil",
-      "1 cup low-sodium chicken broth or dry white wine (for the pan)"
+      "1 boneless center-cut pork loin roast (2 ½ to 3 pounds)",
+      "3 tablespoons <strong><a href=\"https://martha.com/\" target=\"_blank\">Martha Stewart</a></strong>’s Sweet Italian Seasoning",
+      "2 tablespoons extra-virgin olive oil",
+      "1 cup low-sodium chicken broth or dry white wine or water"
     ],
     "ingredients_fr": [
-      "1 rôti de longe de porc désossé, coupé au centre (environ 1,1 à 1,4 kg/2,5 à 3 lb)",
-      "3 c. à soupe d’assaisonnement italien sucré de <strong><a href=\"https://martha.com/\" target=\"_blank\">Martha Stewart</a></strong>",
-      "2 c. à soupe d’huile d’olive extra-vierge",
-      "1 tasse de bouillon de poulet à faible teneur en sodium ou de vin blanc sec (pour la poêle)"
+      "1 rôti de longe de porc désossé, coupe du centre (2 ½ à 3 lb)",
+      "3 c. à table d'assaisonnement italien doux de <strong><a href=\"https://martha.com/\"target=\"_blank\">Martha Stewart</a></strong>",
+      "2 c. à table d'huile d'olive extra-vierge",
+      "1 tasse de bouillon de poulet à faible teneur en sodium, de vin blanc sec ou d'eau"
     ],
     "ingredients_es": [
-      "1 asado de lomo de cerdo sin hueso y de centro (aprox. 1.1 a 1.4 kg / 2.5 a 3 lb)",
-      "3 cdas de Sazonador Italiano Dulce (Sweet Italian Seasoning) de <strong><a href=\"https://martha.com/\" target=\"_blank\">Martha Stewart</a></strong>",
-      "2 cdas de aceite de oliva extra virgen",
-      "1 taza de caldo de pollo bajo en sodio o vino blanco seco (para la fuente)"
+      "1 lomo de cerdo deshuesado, corte central (2 ½ a 3 libras)",
+      "3 cucharadas del Sweet Italian Seasoning de <strong><a href=\"https://martha.com/\" target=\"_blank\">Martha Stewart</a></strong>",
+      "2 cucharadas de aceite de oliva extra virgen",
+      "1 taza de caldo de pollo bajo en sodio, vino blanco seco o agua"
     ],
     "instructions": [
-      "**Preheat and Prep:** Preheat the oven to 400°F (204°C). Remove the pork loin from the refrigerator 20 minutes before cooking to take the chill off, ensuring an even roast.",
-      "**Dry and Bind:** Pat the entire exterior of the pork roast completely dry with paper towels. Rub the extra virgin olive oil thoroughly over all sides of the meat; this acts as a binder to lock in moisture and help the seasoning adhere.",
-      "**Crust the Pork:** Generously sprinkle the [Sweet Italian Seasoning](https://turponefoods.com/turpone-products/) over the pork loin. Use your hands to press the mix firmly into the meat, ensuring the fennel seeds, rosemary, and sweet bell pepper flakes form an even, visible crust across the top and sides.",
-      "**Arrange for Roasting:** Place the seasoned pork loin fat-side up on a roasting rack set inside a shallow baking pan. Pour the chicken broth or white wine into the bottom of the pan beneath the rack; this keeps the drippings from burning and maintains moisture in the oven.",
-      "**Roast to Temperature:** Roast undisturbed for 45 to 55 minutes, or until an instant-read thermometer inserted into the thickest part of the loin registers 145°F (63°C).",
-      "**Rest and Carve:** Transfer the roast to a warm carving board and tent loosely with aluminum foil. Let the meat rest for 10 minutes before slicing. This allows the juices to redistribute throughout the loin, ensuring every slice stays exceptionally tender. Slice into half-inch rounds and serve warm."
+      "Preheat oven to 400°F (200°C). For even cooking, Let  pork stand at room temperature for 1 hour before cooking.",
+      "Pat pork dry with paper towels. Rub pork all over with olive oil to help the seasoning stick and help with browning. Sprinkle pork evenly with the Sweet Italian Seasoning pressing with your hands to adhere.",
+      "Place the pork, fat-side up, on a roasting rack set inside a shallow baking pan. Pour the broth or wine into the pan to prevent burning.",
+      "Roast until an instant-read thermometer inserted into the thickest part registers 145°F (63°C). Transfer to a carving board, tent loosely with foil, and rest for 15 minutes. Slice into half-inch rounds and serve drizzled with pan juices if desired."
     ],
     "instructions_fr": [
-      "**Préchauffer et préparer :** Préchauffer le four à 204 °C (400 °F). Retirer la longe de porc du réfrigérateur 20 minutes avant la cuisson pour qu’elle ne soit plus froide, assurant un rôti uniforme.",
-      "**Sécher et lier :** Éponger complètement l’extérieur entier du rôti de porc avec des essuie-tout. Frotter soigneusement l’huile d’olive extra-vierge sur tous les côtés de la viande; cela sert de liant pour emprisonner l’humidité et aider l’assaisonnement à adhérer.",
-      "**Former une croûte sur le porc :** Saupoudrer généreusement l’assaisonnement italien sucré sur la longe de porc. Utiliser vos mains pour presser fermement le mélange dans la viande, en vous assurant que les graines de fenouil, le romarin et les flocons de poivron doux forment une croûte uniforme et visible sur le dessus et les côtés.",
-      "**Disposer pour rôtir :** Placer la longe de porc assaisonnée côté gras vers le haut sur une grille à rôtir placée dans une lèchefrite peu profonde. Verser le bouillon de poulet ou le vin blanc dans le fond de la poêle sous la grille; cela empêche les gouttes de brûler et maintient l’humidité dans le four.",
-      "**Rôtir jusqu’à température :** Rôtir sans remuer de 45 à 55 minutes, ou jusqu’à ce qu’un thermomètre à lecture instantanée inséré dans la partie la plus épaisse de la longe indique 63 °C (145 °F).",
-      "**Laisser reposer et découper :** Transférer le rôti sur une planche à découper chaude et couvrir lâchement de papier d’aluminium. Laisser la viande reposer pendant 10 minutes avant de la trancher. Cela permet aux jus de se redistribuer dans toute la longe, assurant que chaque tranche reste exceptionnellement tendre. Trancher en rondelles de 1,3 cm (un demi-pouce) et servir chaud."
+      "Préchauffer le four à 400 °F (200 °C). Pour une cuisson uniforme, laisser reposer le porc à température ambiante pendant 1 heure avant la cuisson.",
+      "Éponger le porc avec du papier essuie-tout. Frotter le porc de tous les côtés avec l'huile d'olive pour aider les épices à adhérer et favoriser le brunissement. Saupoudrer le porc uniformément d'assaisonnement italien doux, en pressant avec les mains pour bien le faire adhérer.",
+      "Placer le porc, le côté gras vers le haut, sur une grille de rôtissage déposée dans une rôtissoire (ou un plat de cuisson peu profond). Verser le bouillon ou le vin dans le fond du plat pour empêcher que les sucs ne brûlent.",
+      "Rôtir jusqu'à ce qu'un thermomètre à lecture instantanée inséré dans la partie la plus épaisse indique 145 °F (63 °C). Transférer sur une planche à découper, couvrir lâchement d'une feuille de papier d'aluminium et laisser reposer 15 minutes. Couper en tranches d'un demi-pouce d'épaisseur et servir arrosé du jus de cuisson, au goût."
     ],
     "instructions_es": [
-      "**Precalentar y preparar:** Precaliente el horno a 400 °F (204 °C). Retire el lomo de cerdo del refrigerador 20 minutos antes de cocinar para que se atempere, asegurando un asado uniforme.",
-      "**Secar y adherir:** Seque completamente todo el exterior del asado de cerdo con toallas de papel. Frote el aceite de oliva extra virgen a fondo sobre todos los lados de la carne; esto actúa como aglutinante para sellar la humedad y ayudar a que el sazonador se adhiera.",
-      "**Crear la costra en el cerdo:** Espolvoree generosamente el Sazonador Italiano Dulce sobre el lomo de cerdo. Use las manos para presionar la mezcla firmemente en la carne, asegurándose de que las semillas de hinojo, el romero y las hojuelas de pimiento morrón dulce formen una costra uniforme y visible en la parte superior y los lados.",
-      "**Colocar para asar:** Coloque el lomo de cerdo sazonado con el lado de la grasa hacia arriba en una rejilla para asar dentro de una fuente poco profunda. Vierta el caldo de pollo o el vino blanco en el fondo de la fuente debajo de la rejilla; esto evita que las gotas se quemen y mantiene la humedad en el horno.",
-      "**Asar a temperatura:** Ase sin mover durante 45 a 55 minutos, o hasta que un termómetro de lectura instantánea insertado en la parte más gruesa del lomo registre 145 °F (63 °C).",
-      "**Reposar y cortar:** Transfiera el asado a una tabla de cortar tibia y cúbralo holgadamente con papel de aluminio. Deje reposar la carne durante 10 minutos antes de rebanar. Esto permite que los jugos se redistribuyan por todo el lomo, asegurando que cada rebanada se mantenga excepcionalmente tierna. Corte en rodajas de media pulgada y sirva caliente."
+      "Precaliente el horno a 400 °F (200 °C). Para una cocción uniforme, deje reposar el cerdo a temperatura ambiente durante 1 hora antes de cocinarlo.",
+      "Seque el cerdo con toallas de papel. Frote el cerdo por todos lados con el aceite de oliva para ayudar a que el sazonador se adhiera y se dore mejor. Espolvoree el Sweet Italian Seasoning de manera uniforme sobre el cerdo, presionando con las manos para que se adhiera.",
+      "Coloque el cerdo, con el lado de la grasa hacia arriba, sobre una rejilla para asar dentro de una bandeja para hornear poco profunda. Vierta el caldo o el vino en la bandeja para evitar que los jugos se quemen.",
+      "Ase hasta que un termómetro de lectura instantánea, insertado en la parte más gruesa, registre 145 °F (63 °C). Pase el cerdo a una tabla para cortar, cúbralo ligeramente con papel de aluminio y déjelo reposar durante 15 minutos. Córtelo en rodajas de media pulgada de grosor y sírvalo rociado con los jugos de cocción, si lo desea"
     ],
-    "description": "This recipe showcases a traditional Italian flavor profile, utilizing sweet fennel seeds, piney rosemary, and a base of garlic, onion, and red bell pepper. Pressing the seasoning blend directly onto the pork creates a highly aromatic, beautifully browned crust that enhances the natural sweetness of the roast.",
-    "description_fr": "Cette recette présente un profil de saveur italien traditionnel, utilisant des graines de fenouil sucrées, du romarin au goût de pin et une base d’ail, d’oignon et de poivron rouge. Le fait de presser le mélange d’assaisonnement directement sur le porc crée une croûte magnifiquement brunie et très aromatique qui rehausse la douceur naturelle du rôti.",
-    "description_es": "Esta receta presenta un perfil de sabor italiano tradicional, utilizando semillas de hinojo dulces, romero con sabor a pino y una base de ajo, cebolla y pimiento rojo. Presionar la mezcla de sazonador directamente sobre el cerdo crea una costra altamente aromática y bellamente dorada que realza la dulzura natural del asado.",
+    "description": "This recipe showcases a traditional Italian flavor profile, utilizing sweet fennel seeds, piney \nrosemary, and a base of garlic, onion, and red bell pepper.",
+    "description_fr": "Cette recette met en valeur un profil de saveurs italiennes traditionnelles, alliant des graines de fenouil, du romarin aux arômes boisés, et une base d'ail, d'oignon et de poivron rouge.",
+    "description_es": "Esta receta resalta un perfil de sabor italiano tradicional, con semillas de hinojo dulce, romero de notas a pino y una base de ajo, cebolla y pimiento rojo.",
     "prepTime_fr": "15 min",
     "cookTime_fr": "1 h",
     "yields_fr": "4 à 6 portions",
     "prepTime_es": "15 min",
     "cookTime_es": "1 hora",
     "yields_es": "4 a 6 porciones",
-    "updated_at": 1793126935969
+    "updated_at": 1793127057084
   },
   {
     "id": "fig-herb-balsamic-vinaigrette",
