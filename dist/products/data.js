@@ -1294,7 +1294,7 @@ const productsData = [
       "neapolitan-style-pizza-dough-balls-ca-gal-2-1793031174722.webp",
       "neapolitan-style-pizza-dough-balls-ca-gal-3-1793031174722.webp"
     ],
-    "ingredients": "Ingredients: Enriched wheat flour, water, sourdough starter, sea salt, extra virgin olive oil, yeast.\nContains: Wheat.",
+    "ingredients": "Ingredients:\n1 Neapolitan Style Dough Ball (thawed & proofed according to instructions)\n1/3 cup Martha Stewart's Traditional Pizza Sauce\n5 to 6 slices of fresh mozzarella\nPinch of salt \nExtra-virgin olive oil,for drizzling\nFresh basil leaves",
     "ingredients_fr": "Ingrédients : Farine de blé enrichie, eau, levain naturel, sel de mer, huile d'olive extra vierge, levure.\nContient : Blé.",
     "ingredients_es": "Ingredientes: Harina de trigo enriquecida, agua, masa madre natural, sal marina, aceite de oliva virgen extra, levadura.\nContiene: Trigo.",
     "image_ca": "neapolitan-style-pizza-dough-balls-v1793031174722-ca.webp",
@@ -1309,7 +1309,7 @@ const productsData = [
       "neapolitan-style-pizza-dough-balls-us-gal-2-1793031174722.webp",
       "neapolitan-style-pizza-dough-balls-us-gal-3-1793031174722.webp"
     ],
-    "updated_at": 1793037618918,
+    "updated_at": 1793108717768,
     "slug": "neapolitan-style-pizza-dough-balls"
   },
   {
