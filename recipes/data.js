@@ -563,9 +563,9 @@ const recipesData = [
       "Using salad tongs, gently toss the greens para 15 to 20 seconds, until evenly coated con balsamic streaks y herbs. Serve immediately."
     ],
     "description": "A completely effortless green salad preparation. The pre-blended herbs, garlic, and\nvinegar in the oil create a restaurant-style emulsion without any extra prep work.",
-    "description_fr": "A completely effortless green salad preparation. The pre-blended herbs, garlic, et\nvinegar in the oil create a restaurant-style emulsion without any extra prep work.",
-    "description_es": "A completely effortless green salad preparation. The pre-blended herbs, garlic, y\nvinegar in the oil create a restaurant-style emulsion without any extra prep work.",
-    "updated_at": 1793114901566
+    "description_fr": "",
+    "description_es": "",
+    "updated_at": 1793115258101
   },
   {
     "id": "spicy-garlic-grilled-shrimp-skewers",
