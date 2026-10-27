@@ -511,8 +511,8 @@ const recipesData = [
     "id": "simple-balsamic-garlic-herb-tableside-dressing",
     "slug": "simple-balsamic-garlic-herb-tableside-dressing",
     "title": "Simple Balsamic Garlic & Herb Tableside Dressing",
-    "title_fr": "Vinaigrette minute au balsamique, ail et fines herbes",
-    "title_es": "Aderezo de mesa clásico de vinagreta balsámica, ajo y hierbas finas",
+    "title_fr": "Simple Balsamic Garlic & Herb Tableside Dressing",
+    "title_es": "Simple Balsamic Garlic & Herb Tableside Dressing",
     "image": "/assets/images/recipes/Simple Balsamic Garlic Herb.webp",
     "prepTime": "5 min",
     "cookTime": "5 min",
@@ -528,18 +528,18 @@ const recipesData = [
       "Optional: halved cherry tomatoes, sliced cucumbers, or shaved Parmesan cheese"
     ],
     "ingredients_fr": [
-      "5 à 6 tasses de feuilles de salade fraîches (mélange italien croustillant, laitue beurre ou jeunes pousses mélangées)",
-      "3 à 4 c. à soupe d’huile d’olive extra-vierge infusée balsamique, ail et fines herbes de <strong><a href=\"https://martha.com/\" target=\"_blank\">Martha Stewart</a></strong>",
-      "1/2 c. à thé de sel de mer en flocons ou de sel casher",
-      "1/4 c. à thé de poivre noir fraîchement concassé",
-      "Facultatif : Tomates cerises coupées en deux, concombres tranchés ou parmesan râpé"
+      "5 to 6 tasse(s) fresh salad greens (crisp butter lettuce, or mixed tender greens)",
+      "3 to 4 c. à soupe <strong><a href=\"https://martha.com/\" target=\"_blank\">Martha Stewart</a></strong>’s Balsamic Garlic et Herb Infused Extra-Virgin Huile d'olive",
+      "1/2 c. à thé flaky sel de mer or sel casher",
+      "1/4 c. à thé freshly cracked poivre noir",
+      "Optional: halved cherry tomatoes, sliced cucumbers, or shaved parmesan râpé"
     ],
     "ingredients_es": [
-      "5 a 6 tazas de hojas de ensalada frescas (mezcla italiana crujiente, lechuga mantequilla o brotes tiernos mezclados)",
-      "3 a 4 cdas. de Aceite de Oliva Virgen Extra Infusionado con Balsámico, Ajo y Hierbas de <strong><a href=\"https://martha.com/\" target=\"_blank\">Martha Stewart</a></strong>",
-      "1/2 cdta. de sal marina en escamas o sal kosher",
-      "1/4 cdta. de pimienta negra recién molida",
-      "Opcional: Tomates cherry cortados por la mitad, pepinos en rodajas o queso parmesano rallado"
+      "5 to 6 taza(s) fresh salad greens (crisp butter lettuce, or mixed tender greens)",
+      "3 to 4 cdas. <strong><a href=\"https://martha.com/\" target=\"_blank\">Martha Stewart</a></strong>’s Balsamic Garlic y Herb Infused Extra-Virgin Aceite de oliva",
+      "1/2 cdtas. flaky sal marina or sal kosher",
+      "1/4 cdtas. freshly cracked pimienta negra",
+      "Optional: halved cherry tomatoes, sliced cucumbers, or shaved queso parmesano"
     ],
     "instructions": [
       "Wash and spin the greens until completely dry as surface moisture will repel the oil dressing.",
@@ -549,22 +549,23 @@ const recipesData = [
       "Using salad tongs, gently toss the greens for 15 to 20 seconds, until evenly coated with balsamic streaks and herbs. Serve immediately."
     ],
     "instructions_fr": [
-      "**Sécher les feuilles :** Laver soigneusement les feuilles de salade et les passer dans une essoreuse à salade jusqu’à ce qu’elles soient complètement, absolument sèches. _(Toute humidité résiduelle à la surface des feuilles repoussera la vinaigrette à l’huile infusée)._",
-      "**Assaisonner les feuilles d’abord :** Placer les feuilles sèches et les garnitures désirées dans un grand bol de service en bois ou en céramique. Avant d’ajouter de l’huile, saupoudrer le sel et le poivre noir fraîchement concassé directement sur les feuilles sèches.",
-      "**Intégrer le mélange :** Secouer vigoureusement votre bouteille d’huile d’olive infusée balsamique, ail et fines herbes pendant 10 secondes pour s’assurer que le vinaigre mélangé, les solides d’ail et les herbes sédimentées sont entièrement répartis avant de verser.",
-      "**Verser l’huile :** Verser 3 à 4 c. à soupe de l’huile secouée directement sur les feuilles assaisonnées en un mouvement zigzag lent et régulier à travers le bol.",
-      "**Mélanger et servir :** À l’aide de pinces à salade, soulever et mélanger doucement les feuilles du bas vers le haut pendant 15 à 20 secondes. S’assurer que les traînées balsamiques foncées et les herbes sont uniformément réparties, donnant à chaque feuille un aspect lustré et aromatique. Servir immédiatement."
+      "Wash et spin the greens until completely dry as surface moisture will repel the oil dressing.",
+      "Place the dry greens et any toppings in a large wooden or ceramic bowl. Sprinkle the salt et pepper directly onto the leaves before adding the oil.",
+      "Shake the Huile d'olive bottle vigorously pour 10 seconds to distribute the vinegar, garlic solids, et herbs.",
+      "Drizzle 3 to 4 c. à soupe of the shaken oil over the seasoned greens in a slow zigzag motion.",
+      "Using salad tongs, gently toss the greens pour 15 to 20 seconds, until evenly coated avec balsamic streaks et herbs. Serve immediately."
     ],
     "instructions_es": [
-      "**Secar las hojas:** Lave bien las hojas de ensalada y páselas por una centrifugadora de ensaladas hasta que estén completamente secas. _(Cualquier humedad residual en las hojas repelerá el aderezo de aceite infusionado)._",
-      "**Sazonar primero las hojas:** Coloque las hojas secas y los ingredientes deseados en un tazón grande de madera o cerámica. Antes de añadir el aceite, espolvoree la sal y la pimienta negra recién molida directamente sobre las hojas secas.",
-      "**Integrar la mezcla:** Agite vigorosamente su botella de Aceite de Oliva Infusionado con Balsámico, Ajo y Hierbas durante 10 segundos para asegurar que el vinagre mezclado, los sólidos de ajo y las hierbas sedimentadas estén completamente distribuidos antes de verter.",
-      "**Verter el aceite:** Rocíe 3 a 4 cucharadas del aceite agitado directamente sobre las hojas sazonadas con un movimiento lento y amplio en zigzag por todo el tazón.",
-      "**Mezclar y servir:** Usando pinzas para ensalada, levante y mezcle suavemente las hojas desde abajo hacia arriba durante 15 a 20 segundos. Asegúrese de que las vetas oscuras de balsámico y las hierbas estén distribuidas uniformemente, dando a cada hoja un brillo aromático. Sirva inmediatamente."
+      "Wash y spin the greens until completely dry as surface moisture will repel the oil dressing.",
+      "Place the dry greens y any toppings in a large wooden or ceramic bowl. Sprinkle the salt y pepper directly onto the leaves before adding the oil.",
+      "Shake the Aceite de oliva bottle vigorously para 10 seconds to distribute the vinegar, garlic solids, y herbs.",
+      "Drizzle 3 to 4 cdas. of the shaken oil over the seasoned greens in a slow zigzag motion.",
+      "Using salad tongs, gently toss the greens para 15 to 20 seconds, until evenly coated con balsamic streaks y herbs. Serve immediately."
     ],
     "description": "A completely effortless green salad preparation. The pre-blended herbs, garlic, and\nvinegar in the oil create a restaurant-style emulsion without any extra prep work.",
-    "description_fr": "Une préparation de salade verte complètement sans effort. Étant donné que les herbes, les aromates à l’ail et le vinaigre riche sont prémélangés directement dans la base d’huile, assaisonner les feuilles sèches d’abord assure une émulsion de style restaurant impeccable sans désordre.",
-    "description_es": "Una preparación de ensalada verde sin esfuerzo. Debido a que las hierbas, los aromáticos de ajo y el rico vinagre ya están mezclados directamente en la base de aceite, sazonar las hojas secas primero garantiza una emulsión impecable estilo restaurante."
+    "description_fr": "A completely effortless green salad preparation. The pre-blended herbs, garlic, et\nvinegar in the oil create a restaurant-style emulsion without any extra prep work.",
+    "description_es": "A completely effortless green salad preparation. The pre-blended herbs, garlic, y\nvinegar in the oil create a restaurant-style emulsion without any extra prep work.",
+    "updated_at": 1793114901566
   },
   {
     "id": "spicy-garlic-grilled-shrimp-skewers",
