@@ -13,57 +13,57 @@ const recipesData = [
     "upsellImage": "/assets/images/recipes/roasted garlic.png",
     "upsellLink": "",
     "ingredients": [
-      "1 whole roasting chicken (approx. 4 lbs)",
-      "4 tbsp <strong><a href=\"https://martha.com/\" target=\"_blank\">Martha Stewart's</a></strong> Roasted Garlic Infused Extra Virgin Olive Oil, divided",
-      "1 tbsp kosher salt",
-      "1 tsp coarsely cracked black pepper",
-      "1 tsp paprika",
+      "1 whole roasting chicken (about 4 pounds)",
+      "3 tablespoons <strong><a href=\"https://martha.com/\" target=\"_blank\">Martha Stewart's</a></strong> Roasted Garlic Infused Extra-Virgin Olive Oil, plus more for serving",
+      "1 tablespoon kosher salt (Diamond Crystal)",
       "1 sprig fresh rosemary or thyme",
-      "1/2 fresh lemon"
+      "1/2 lemon",
+      "1 teaspoon coarsely ground black pepper",
+      "1 teaspoon sweet paprika (not smoked)"
     ],
     "ingredients_fr": [
       "1 poulet entier à rôtir (environ 4 lb)",
-      "4 c. à soupe d'huile d'olive extra vierge infusée à l'ail rôti de <strong><a href=\"https://martha.com/\" target=\"_blank\">Martha Stewart</a></strong>, divisées",
-      "1 c. à soupe de sel casher",
-      "1 c. à thé de poivre noir concassé",
-      "1 c. à thé de paprika",
-      "1 brin de romarin frais ou de thym",
-      "1/2 citron frais"
+      "3 c. à table d'huile d'olive extra-vierge infusée à l'ail rôti de <strong<ahref=\"https://martha.com/\"target=\"_blank\">Martha Stewart</a></strong>, plus un peu pour servir",
+      "1 c. à table de sel casher (Diamond Crystal)",
+      "1 brin de romarin ou de thym frais",
+      "1/2 citron",
+      "1 c. à thé de poivre noir grossièrement moulu",
+      "1 c. à thé de paprika doux (non fumé)"
     ],
     "ingredients_es": [
-      "1 pollo entero (aprox. 4 lbs)",
-      "4 cdas. de Aceite de Oliva Virgen Extra Infusionado con Ajo Asado de <strong><a href=\"https://martha.com/\" target=\"_blank\">Martha Stewart</a></strong>, divididas",
-      "1 cda. de sal kosher",
-      "1 cdta. de pimienta negra partida",
-      "1 cdta. de pimentón",
+      "1 pollo entero para asar (aproximadamente 4 libras)",
+      "3 cucharadas del Roasted Garlic Infused Extra-Virgin Olive Oil de <strong<ahref=\"https://martha.com/\"target=\"_blank\">Martha Stewart</a></strong>, y un poco más para servir",
+      "1 cucharada de sal kosher (Diamond Crystal)",
       "1 ramita de romero o tomillo fresco",
-      "1/2 limón fresco"
+      "1/2 limón",
+      "1 cucharadita de pimienta negra molida gruesa",
+      "1 cucharadita de paprika dulce"
     ],
     "instructions": [
-      "**Prep and Preheat:** Preheat oven to 425°F (220°C). Bring the chicken out of the refrigerator 30 minutes prior to cooking. Thoroughly pat the entire bird dry with paper towels, checking both the exterior skin and the interior cavity.",
-      "**Aromatize the Cavity:** Season the inside of the cavity with 1 teaspoon of kosher salt, then insert the lemon half and fresh herb sprigs.",
-      "**Apply the Garlic Oil:** Pour 2 tablespoons of [Roasted Garlic Infused Olive Oil](https://turponefoods.com/turpone-products) over the chicken and massage thoroughly into the skin. Gently loosen the skin over the breast meat with your fingers and drizzle 1 additional tablespoon of oil directly underneath the skin.",
-      "**Season and Truss:** Combine the remaining salt, black pepper, and paprika in a small bowl; dust evenly over the oiled exterior. Bind the legs together with kitchen twine and place the chicken breast-side up on a roasting rack set inside a shallow pan.",
-      "**Roast:** Roast undisturbed for 50 to 60 minutes, or until an instant-read thermometer registers 165°F (74°C) in the thickest part of the thigh. Remove from oven and let rest for 15 minutes. Carve into pieces and finish with a light drizzle of raw [Roasted Garlic Infused Olive Oil](https://turponefoods.com/turpone-products) over the hot meat."
+      "Preheat oven to 425°F (220°C). Let the chicken rest at room temperature 1 hour before cooking. Pat chicken dry with paper towels.",
+      "Season the cavity of the chicken with 1 teaspoon of kosher salt, then insert the lemon half and fresh herb sprigs.",
+      "Rub 2 tablespoons Martha Stewart's Roasted Garlic Infused Extra Virgin Olive Oil all over outside of chicken. Gently loosen the skin over the breast meat with your fingers and drizzle 1 tablespoon oil under the skin.",
+      "Combine remaining  2 teaspoons salt, the black pepper, and paprika in a small bowl, use this to season chicken. Tie the legs together with kitchen twine and place the chicken breast-side up on a rack set inside a shallow roasting pan.",
+      "Roast until an instant-read thermometer registers 165°F (74°C) in the thickest part of the thigh 50 to 60 minutes,. Remove from oven and let rest 15 minutes. Serve drizzled with Martha Stewart's Roasted Garlic Infused Extra-Virgin Olive Oil."
     ],
     "instructions_fr": [
-      "**Préparer et préchauffer :** Préchauffer le four à 425 °F (220 °C). Sortir le poulet du réfrigérateur 30 minutes avant de le cuire. Éponger complètement l'oiseau entier avec des essuie-tout, en vérifiant à la fois la peau extérieure et la cavité intérieure.",
-      "**Aromatiser la cavité :** Assaisonner l'intérieur de la cavité avec 1 cuillère à thé de sel casher, puis insérer la moitié de citron et les brins d'herbes fraîches.",
-      "**Appliquer l'huile à l'ail :** Verser 2 cuillères à soupe d'huile d'olive infusée à l'ail rôti sur le poulet et masser soigneusement dans la peau. Desserrer doucement la peau sur la viande de la poitrine avec vos doigts et verser 1 cuillère à soupe supplémentaire d'huile directement sous la peau.",
-      "**Assaisonner et brider :** Combiner le sel restant, le poivre noir et le paprika dans un petit bol; saupoudrer uniformément sur l'extérieur huilé. Lier les pattes ensemble avec de la ficelle de cuisine et placer le poulet poitrine vers le haut sur une grille de rôtissage placée dans une casserole peu profonde.",
-      "**Rôtir :** Rôtir sans le bouger pendant 50 à 60 minutes, ou jusqu'à ce qu'un thermomètre à lecture instantanée indique 165 °F (74 °C) dans la partie la plus épaisse de la cuisse. Retirer du four et laisser reposer pendant 15 minutes. Couper en morceaux et terminer avec un léger filet d'huile d'olive infusée à l'ail rôti crue sur la viande chaude."
+      "Préchauffer le four à 425 °F (220 °C). Laisser reposer le poulet à température ambiante pendant 1 heure avant la cuisson. Éponger le poulet avec du papier essuie-tout.",
+      "Assaisonner la cavité du poulet avec 1 c. à thé de sel casher, puis y insérer le demi-citron et le brin de romarin ou de thym.",
+      "Frotter 2 c. à table d'huile d'olive extra-vierge infusée à l'ail rôti de Martha Stewart sur tout l'extérieur du poulet. Décoller délicatement la peau de la poitrine avec les doigts et verser 1 c. à table d'huile sous la peau.",
+      "Dans un petit bol, mélanger les 2 c. à thé de sel restantes, le poivre noir et le paprika, et utiliser ce mélange pour assaisonner le poulet. Ficeler les pattes avec de la ficelle de cuisine et placer le poulet, la poitrine vers le haut, sur une grille déposée dans une rôtissoire peu profonde.",
+      "Rôtir de 50 à 60 minutes, jusqu'à ce qu'un thermomètre à lecture instantanée indique 165 °F (74 °C) dans la partie la plus épaisse de la cuisse. Retirer du four et laisser reposer 15 minutes. Servir arrosé d'un filet d'huile d'olive extra-vierge infusée à l'ail rôti de Martha Stewart."
     ],
     "instructions_es": [
-      "**Preparar y precalentar:** Precaliente el horno a 425°F (220°C). Saque el pollo del refrigerador 30 minutos antes de cocinar. Seque bien toda el ave con toallas de papel, revisando tanto la piel exterior como la cavidad interior.",
-      "**Aromatizar la cavidad:** Sazone el interior de la cavidad con 1 cucharadita de sal kosher, luego inserte la mitad del limón y las ramitas de hierbas frescas.",
-      "**Aplicar el aceite de ajo:** Vierta 2 cucharadas de Aceite de Oliva Infusionado con Ajo Asado sobre el pollo y masajee profundamente en la piel. Afloje suavemente la piel sobre la carne de la pechuga con los dedos y vierta 1 cucharada adicional de aceite directamente debajo de la piel.",
-      "**Sazonar y bridar:** Combine la sal restante, la pimienta negra y el pimentón en un tazón pequeño; espolvoree uniformemente sobre el exterior aceitado. Ate las patas con hilo de cocina y coloque el pollo con la pechuga hacia arriba en una rejilla de asar dentro de una bandeja poco profunda.",
-      "**Asar:** Ase sin mover durante 50 a 60 minutos, o hasta que un termómetro de lectura instantánea registre 165°F (74°C) en la parte más gruesa del muslo. Retire del horno y deje reposar durante 15 minutos. Corte en piezas y termine con un ligero chorrito de Aceite de Oliva Infusionado con Ajo Asado crudo sobre la carne caliente."
+      "Precaliente el horno a 425 °F (220 °C). Deje reposar el pollo a temperatura ambiente durante 1 hora antes de cocinarlo. Seque el pollo con toallas de papel.",
+      "Sazone la cavidad del pollo con 1 cucharadita de sal kosher, luego inserte la mitad del limón y la ramita de romero o tomillo.",
+      "Frote 2 cucharadas del Roasted Garlic Infused Extra-Virgin Olive Oil de Martha Stewart por todo el exterior del pollo. Afloje suavemente la piel de la pechuga con los dedos y vierta 1 cucharada de aceite por debajo de la piel.",
+      "Mezcle las 2 cucharaditas de sal restantes, la pimienta negra y la paprika dulce en un tazón pequeño, y use esta mezcla para sazonar el pollo. Ate las patas con hilo de cocina y coloque el pollo con la pechuga hacia arriba sobre una rejilla dentro de una bandeja para asar poco profunda.",
+      "Ase de 50 a 60 minutos, hasta que un termómetro de lectura instantánea registre 165 °F (74 °C) en la parte más gruesa del muslo. Retire del horno y deje reposar durante 15 minutos. Sirva rociado con un poco más de Roasted Garlic Infused Extra-Virgin Olive Oil de Martha Stewart."
     ],
-    "description": "Rich, mellow roasted garlic flavor baked directly into a whole roasting bird. Massaging the oil both over and underneath the skin guarantees exceptionally juicy breast meat and a shattered, crackly skin.",
-    "description_fr": "Riche saveur d'ail rôti, doux, cuit directement dans un poulet entier à rôtir. Masser l'huile à la fois sur et sous la peau garantit une viande de poitrine exceptionnellement juteuse et une peau émiettée et craquelante.",
-    "description_es": "Un rico y suave sabor a ajo asado horneado directamente en un pollo entero. Masajear el aceite tanto sobre como debajo de la piel garantiza una carne de pechuga excepcionalmente jugosa y una piel crujiente.",
-    "updated_at": 1793194706126,
+    "description": "Rich, mellow roasted garlic flavor baked directly into a whole roasting bird. Massaging the oil both over and under the skin guarantees exceptionally juicy breast meat and an ultra crisp and crackly skin.",
+    "description_fr": "La saveur riche et douce de l'ail rôti s'infuse au cœur d'un poulet rôti entier. En appliquant l'huile à la fois sur et sous la peau, on obtient une poitrine exceptionnellement juteuse et une peau ultra-croustillante.",
+    "description_es": "El sabor rico y suave del ajo asado se hornea directamente en un pollo entero. Al aplicar el aceite por encima y por debajo de la piel, se obtiene una pechuga excepcionalmente jugosa y una piel ultra crujiente.",
+    "updated_at": 1793195147208,
     "prepTime_fr": "35 min",
     "cookTime_fr": "1 h 35 min",
     "yields_fr": "4 portions",
