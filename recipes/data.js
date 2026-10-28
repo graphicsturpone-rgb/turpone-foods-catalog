@@ -584,7 +584,7 @@ const recipesData = [
     "upsellLink": "",
     "ingredients": [
       "5 to 6 cups fresh salad greens (crisp butter lettuce, or mixed tender greens)",
-      "3 to 4 tablespoons <strong><a href=\"https://martha.com/\" target=\"_blank\">Martha Stewart</a></strong>’s Balsamic Garlic and Herb Infused Extra-Virgin Olive Oil",
+      "3 to 4 tablespoons <strong><a href=\"https://martha.com/\" target=\"_blank\">Martha Stewart's</a></strong> Balsamic Garlic and Herb Infused Extra-Virgin Olive Oil",
       "1/2 teaspoon flaky sea salt or kosher salt",
       "1/4 teaspoon freshly cracked black pepper",
       "Optional: halved cherry tomatoes, sliced cucumbers, or shaved Parmesan cheese"
@@ -626,7 +626,7 @@ const recipesData = [
     "description": "A completely effortless green salad preparation. The pre-blended herbs, garlic, and vinegar in the oil create a restaurant-style emulsion without any extra prep work.",
     "description_fr": "Une salade verte d'une simplicité absolue. Le mélange d'herbes, d'ail et de vinaigre déjà présent dans l'huile crée une émulsion digne d'un restaurant, sans aucune préparation supplémentaire.",
     "description_es": "Una ensalada verde de lo más sencilla. Las hierbas, el ajo y el vinagre que ya vienen mezclados en el aceite crean una emulsión de restaurante, sin ningún paso extra.",
-    "updated_at": 1793130199751,
+    "updated_at": 1793194465645,
     "prepTime_fr": "5 min",
     "cookTime_fr": "5 min",
     "yields_fr": "4 à 6 portions",
