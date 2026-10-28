@@ -877,20 +877,20 @@ const recipesData = [
     "upsellImage": "/assets/images/recipes/triple pepper mix.png",
     "upsellLink": "",
     "ingredients": [
-      "2 thick-cut New York strip steaks (approx. 12 to 14 oz each, 1.5 inches thick)",
-      "3 tbsp <strong><a href=\"https://martha.com/\" target=\"_blank\">Martha Stewart</a></strong>’s Triple Pepper Mix Seasoning",
-      "1.5 tbsp high-smoke point oil (such as canola or grapeseed oil)",
-      "2 tbsp unsalted butter",
-      "2 sprigs fresh thyme or rosemary",
-      "2 cloves garlic, smashed"
+      "2 thick-cut New York strip steaks (approx. 12 to 14 oz each, 1 ½-inches thick)",
+      "1 ½ tablespoons high-smoke-point oil (such as grapeseed), plus more for drizzling",
+      "3 tablespoons <strong><a href=\"https://martha.com/\" target=\"_blank\">Martha Stewart's</a</strong> Triple Pepper Mix Seasoning",
+      "2 tablespoons unsalted butter",
+      "2 cloves garlic, smashed",
+      "2 sprigs fresh thyme or rosemary"
     ],
     "ingredients_fr": [
-      "2 steaks de contre-filet de New York épais (environ 340 à 400 g chacun, 3,8 cm/1,5 po d’épaisseur)",
-      "3 c. à soupe d’assaisonnement mélange de poivre triple de <strong><a href=\"https://martha.com/\" target=\"_blank\">Martha Stewart</a></strong>",
-      "1,5 c. à soupe d’huile à point de fumée élevé (comme l’huile de canola ou de pépins de raisin)",
-      "2 c. à soupe de beurre non salé",
-      "2 brins de thym ou de romarin frais",
-      "2 gousses d’ail, écrasées"
+      "2 steaks de contre-filet épais (environ 12 à 14 oz chacun, 1 ½ po d'épaisseur)",
+      "1 ½ c. à table d'huile à point de fumée élevé (comme l'huile de pépins de raisin), plus un peu pour arroser",
+      "3 c. à table de mélange d'assaisonnement aux trois poivres de <strong<ahref=\"https://martha.com/\"target=\"_blank\">Martha Stewart</a></strong>",
+      "2 c. à table de beurre non salé",
+      "2 gousses d'ail, écrasées",
+      "2 brins de thym ou de romarin frais"
     ],
     "ingredients_es": [
       "2 bistecs New York strip de corte grueso (aprox. 340 a 400 g cada uno, 3.8 cm de grosor)",
@@ -901,20 +901,20 @@ const recipesData = [
       "2 dientes de ajo, machacados"
     ],
     "instructions": [
-      "**Bring to Room Temperature:** Remove the steaks from the refrigerator 30 minutes before cooking. Bringing the beef to room temperature ensures an even cook throughout the steak and prevents the center from remaining cold.",
-      "**Dry and Season:** Pat the entire surface of the steaks completely dry with paper towels. Rub a tiny drop of oil over the meat to help the seasoning stick. Generously press the[ Triple Pepper Mix Seasoning](https://turponefoods.com/turpone-products/) onto the top, bottom, and sides of the steaks, creating an even, visible crust.",
-      "**Sear the Exterior:** Heat a heavy cast-iron skillet over high heat until smoking. Add the remaining high-smoke point oil. Carefully lay the seasoned steaks into the pan. Sear undisturbed for 3 to 4 minutes per side until a deeply browned, spicy pepper crust forms.",
-      "**Baste with Aromatics:** Turn the heat down to medium. Flip the steaks onto their sides to render any thick edges of fat for 1 minute. Turn the steaks back flat, slide them to one side of the skillet, and drop the unsalted butter, smashed garlic, and fresh herb sprigs into the empty space.",
-      "**Finish Cooking:** As the butter melts and foams, tilt the pan slightly and spoon the hot garlic-herb butter continuously over the tops of the steaks for an additional 2 minutes, or until an instant-read thermometer registers 130°F (54°C) for medium-rare.",
-      "**Rest and Slice:** Transfer the crusted steaks to a warm cutting board and let them rest for 5 to 7 minutes to allow the juices to redistribute. Slice against the grain and serve immediately, spooning any remaining pan juices over the top."
+      "Remove the steaks from the refrigerator 30 minutes before cooking to come to room temperature so they cook evenly throughout.",
+      "Pat the steaks dry with paper towels, apply a light coating of oil, then generously press the seasoning onto all surfaces.",
+      "Heat a cast-iron skillet until smoking, add the oil, then sear the steaks 3 to 4 minutes per side for a browned pepper crust.",
+      "Reduce the heat to medium, render the fat on the edges for 1 minute, then add the butter, garlic, and herbs and baste the steaks for 2 minutes.",
+      "Continue basting until the internal temperature reaches 130°F (54°C) for medium-rare.",
+      "Transfer to a cutting board, rest 5 to 7 minutes, slice against the grain, and serve with the pan juices."
     ],
     "instructions_fr": [
-      "**Amener à température ambiante :** Retirer les steaks du réfrigérateur 30 minutes avant la cuisson. Amener le bœuf à température ambiante assure une cuisson uniforme dans tout le steak et empêche le centre de rester froid.",
-      "**Sécher et assaisonner :** Éponger complètement toute la surface des steaks avec des essuie-tout. Frotter une petite goutte d’huile sur la viande pour aider l’assaisonnement à coller. Presser généreusement l’assaisonnement mélange de poivre triple sur le dessus, le dessous et les côtés des steaks, créant une croûte uniforme et visible.",
-      "**Saisir l’extérieur :** Chauffer une poêle en fonte épaisse à feu vif jusqu’à ce qu’elle fume. Ajouter le reste de l’huile à point de fumée élevé. Déposer soigneusement les steaks assaisonnés dans la poêle. Saisir sans remuer de 3 à 4 minutes par côté jusqu’à ce qu’une croûte de poivre épicée et profondément brunie se forme.",
-      "**Badigeonner d’aromates :** Baisser le feu à moyen. Retourner les steaks sur leurs côtés pour faire fondre toute partie épaisse de gras pendant 1 minute. Remettre les steaks à plat, les glisser d’un côté de la poêle et déposer le beurre non salé, l’ail écrasé et les brins d’herbes fraîches dans l’espace vide.",
-      "**Terminer la cuisson :** Au fur et à mesure que le beurre fond et mousse, incliner légèrement la poêle et verser à la cuillère le beurre chaud à l’ail et aux herbes continuellement sur le dessus des steaks pendant 2 minutes supplémentaires, ou jusqu’à ce qu’un thermomètre à lecture instantanée indique 54 °C (130 °F) pour une cuisson mi-saignante.",
-      "**Laisser reposer et trancher :** Transférer les steaks en croûte sur une planche à découper chaude et les couvrir lâchement de papier d’aluminium. Laisser la viande reposer de 5 à 7 minutes pour permettre aux jus de se redistribuer. Trancher contre le grain et servir immédiatement, en versant à la cuillère tout jus de poêle restant sur le dessus."
+      "Sortir les steaks du réfrigérateur 30 minutes avant la cuisson pour qu'ils atteignent la température ambiante et cuisent uniformément.",
+      "Éponger les steaks avec du papier essuie-tout, les badigeonner d'une légère couche d'huile, puis presser généreusement l'assaisonnement sur toutes les surfaces.",
+      "Chauffer une poêle en fonte jusqu'à ce qu'elle fume, ajouter l'huile, puis saisir les steaks de 3 à 4 minutes de chaque côté pour obtenir une croûte poivrée bien dorée.",
+      "Réduire le feu à moyen, faire fondre le gras sur les bords pendant 1 minute, puis ajouter le beurre, l'ail et les herbes et arroser les steaks pendant 2 minutes.",
+      "Continuer d'arroser jusqu'à ce que la température interne atteigne 130 °F (54 °C) pour une cuisson mi-saignante.",
+      "Transférer sur une planche à découper, laisser reposer de 5 à 7 minutes, trancher dans le sens contraire des fibres et servir avec le jus de cuisson."
     ],
     "instructions_es": [
       "**Llevar a temperatura ambiente:** Retire los bistecs del refrigerador 30 minutos antes de cocinar. Llevar la carne de res a temperatura ambiente asegura una cocción uniforme en todo el bistec y evita que el centro permanezca frío.",
@@ -924,8 +924,8 @@ const recipesData = [
       "**Terminar la cocción:** A medida que la mantequilla se derrite y hace espuma, incline la sartén ligeramente y vierta continuamente la mantequilla caliente de ajo y hierbas sobre la parte superior de los bistecs durante 2 minutos adicionales, o hasta que un termómetro de lectura instantánea registre 130 °F (54 °C) para un término medio-rojo.",
       "**Reposar y rebanar:** Transfiera los bistecs con costra a una tabla de cortar tibia y déjelos reposar de 5 a 7 minutos para permitir que los jugos se redistribuyan. Rebana contra la fibra y sirva inmediatamente, vertiendo los jugos restantes de la sartén por encima."
     ],
-    "description": "This recipe utilizes a bold, vibrant blend of coarse sea salt, smoky Korean gochugaru, sharp red chili flakes, and pungent black pepper. Pressing the dry seasoning mix directly onto the surface of a thick-cut steak creates a beautiful, deeply caramelized crust when seared over high heat, balancing the rich fat of the beef with a multi-layered heat finish.",
-    "description_fr": "Cette recette utilise un mélange audacieux et vibrant de sel de mer concassé, de gochugaru coréen fumé, de flocons de chili rouge piquants et de poivre noir âcre. Le fait de presser le mélange d’assaisonnement sec directement sur la surface d’un steak épais crée une belle croûte profondément caramélisée lorsqu’il est saisi à feu vif, équilibrant la riche graisse du bœuf avec une finale piquante à plusieurs couches.",
+    "description": "This recipe combines a bold, vibrant blend of coarse sea salt, smoky Korean gochugaru, sharp \nred chili flakes, and pungent black pepper to create a deeply caramelized crust when seared over \nhigh heat.",
+    "description_fr": "Cette recette combine un mélange audacieux et vibrant de gros sel de mer, de gochugaru coréen fumé, de flocons de piment rouge piquants et de poivre noir relevé pour créer une croûte bien caramélisée lorsque la viande est saisie à feu vif.",
     "description_es": "Esta receta utiliza una mezcla audaz y vibrante de sal marina gruesa, gochugaru coreano ahumado, hojuelas de chile rojo picante y pimienta negra penetrante. Presionar la mezcla de sazonador seco directamente sobre la superficie de un bistec de corte grueso crea una costra hermosa, profundamente caramelizada cuando se sella a fuego alto, equilibrando la rica grasa de la carne de res con un acabado picante de múltiples capas.",
     "prepTime_fr": "15 min",
     "cookTime_fr": "25 min",
@@ -933,7 +933,7 @@ const recipesData = [
     "prepTime_es": "15 min",
     "cookTime_es": "25 min",
     "yields_es": "2 porciones",
-    "updated_at": 1793126935969
+    "updated_at": 1793194210101
   }
 ];
 
