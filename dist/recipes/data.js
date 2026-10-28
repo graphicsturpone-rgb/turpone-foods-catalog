@@ -809,7 +809,7 @@ const recipesData = [
       "Kosher salt and freshly ground black pepper, for seasoning"
     ],
     "ingredients_fr": [
-      "3 c. à table de filet de miel aux trois piments <strong<ahref=\"https://martha.com/\"target=\"_blank\">Martha Stewart</a></strong>",
+      "3 c. à table de filet de miel aux trois piments <strong><a href=\"https://martha.com/\" target=\"_blank\">Martha Stewart</a></strong>",
       "2 c. à table de sauce soya",
       "1 c. à table d'huile d'olive",
       "3 gousses d'ail, hachées",
@@ -819,7 +819,7 @@ const recipesData = [
       "Sel casher et poivre noir fraîchement moulu, pour assaisonner"
     ],
     "ingredients_es": [
-      "3 cucharadas de Triple Chili Honey Drizzle <strong<ahref=\"https://martha.com/\"target=\"_blank\">MarthaStewart</a></strong> (Triple Chili Honey Drizzle)",
+      "3 cucharadas de Triple Chili Honey Drizzle <strong><a href=\"https://martha.com/\" target=\"_blank\">Martha Stewart</a></strong>",
       "2 cucharadas de salsa de soya",
       "1 cucharada de aceite de oliva",
       "3 dientes de ajo, picados",
@@ -861,7 +861,7 @@ const recipesData = [
     "prepTime_es": "15 minutos",
     "cookTime_es": "45 minutos",
     "yields_es": "4 porciones",
-    "updated_at": 1793194552939
+    "updated_at": 1793202689294
   },
   {
     "id": "triple-pepper-crusted-new-york-strip-steak",
