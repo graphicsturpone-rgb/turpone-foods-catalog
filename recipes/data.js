@@ -23,7 +23,7 @@ const recipesData = [
     ],
     "ingredients_fr": [
       "1 poulet entier à rôtir (environ 4 lb)",
-      "3 c. à table d'huile d'olive extra-vierge infusée à l'ail rôti de <strong<ahref=\"https://martha.com/\"target=\"_blank\">Martha Stewart</a></strong>, plus un peu pour servir",
+      "3 c. à table d'huile d'olive extra-vierge infusée à l'ail rôti de <strong><a href=\"https://martha.com/\" target=\"_blank\">Martha Stewart</a></strong>, plus un peu pour servir",
       "1 c. à table de sel casher (Diamond Crystal)",
       "1 brin de romarin ou de thym frais",
       "1/2 citron",
@@ -32,7 +32,7 @@ const recipesData = [
     ],
     "ingredients_es": [
       "1 pollo entero para asar (aproximadamente 4 libras)",
-      "3 cucharadas del Roasted Garlic Infused Extra-Virgin Olive Oil de <strong<ahref=\"https://martha.com/\"target=\"_blank\">Martha Stewart</a></strong>, y un poco más para servir",
+      "3 cucharadas del Roasted Garlic Infused Extra-Virgin Olive Oil de <strong><a href=\"https://martha.com/\" target=\"_blank\">Martha Stewart</a></strong> , y un poco más para servir",
       "1 cucharada de sal kosher (Diamond Crystal)",
       "1 ramita de romero o tomillo fresco",
       "1/2 limón",
@@ -63,7 +63,7 @@ const recipesData = [
     "description": "Rich, mellow roasted garlic flavor baked directly into a whole roasting bird. Massaging the oil both over and under the skin guarantees exceptionally juicy breast meat and an ultra crisp and crackly skin.",
     "description_fr": "La saveur riche et douce de l'ail rôti s'infuse au cœur d'un poulet rôti entier. En appliquant l'huile à la fois sur et sous la peau, on obtient une poitrine exceptionnellement juteuse et une peau ultra-croustillante.",
     "description_es": "El sabor rico y suave del ajo asado se hornea directamente en un pollo entero. Al aplicar el aceite por encima y por debajo de la piel, se obtiene una pechuga excepcionalmente jugosa y una piel ultra crujiente.",
-    "updated_at": 1793195147208,
+    "updated_at": 1793201911646,
     "prepTime_fr": "35 min",
     "cookTime_fr": "1 h 35 min",
     "yields_fr": "4 portions",
