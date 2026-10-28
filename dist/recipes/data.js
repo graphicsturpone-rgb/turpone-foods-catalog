@@ -893,12 +893,12 @@ const recipesData = [
       "2 brins de thym ou de romarin frais"
     ],
     "ingredients_es": [
-      "2 bistecs New York strip de corte grueso (aprox. 340 a 400 g cada uno, 3.8 cm de grosor)",
-      "3 cdas de Mezcla de Triple Pimienta (Triple Pepper Mix Seasoning) de <strong><a href=\"https://martha.com/\" target=\"_blank\">Martha Stewart</a></strong>",
-      "1.5 cdas de aceite con alto punto de humo (como aceite de canola o de semilla de uva)",
-      "2 cdas de mantequilla sin sal",
-      "2 ramitas de tomillo o romero fresco",
-      "2 dientes de ajo, machacados"
+      "2 bistecs New York gruesos (aproximadamente de 12 a 14 onzas cada uno, de 1 ½ pulgadas de grosor)",
+      "1 ½ cucharadas de aceite con alto punto de humo (como aceite de semilla de uva), y un poco más para rociar",
+      "3 cucharadas del Triple Pepper Mix Seasoning de <strong<ahref=\"https://martha.com/\"target=\"_blank\">Martha Stewart</a></strong>",
+      "2 cucharadas de mantequilla sin sal",
+      "2 dientes de ajo, machacados",
+      "2 ramitas de tomillo o romero fresco"
     ],
     "instructions": [
       "Remove the steaks from the refrigerator 30 minutes before cooking to come to room temperature so they cook evenly throughout.",
@@ -917,23 +917,23 @@ const recipesData = [
       "Transférer sur une planche à découper, laisser reposer de 5 à 7 minutes, trancher dans le sens contraire des fibres et servir avec le jus de cuisson."
     ],
     "instructions_es": [
-      "**Llevar a temperatura ambiente:** Retire los bistecs del refrigerador 30 minutos antes de cocinar. Llevar la carne de res a temperatura ambiente asegura una cocción uniforme en todo el bistec y evita que el centro permanezca frío.",
-      "**Secar y sazonar:** Seque completamente toda la superficie de los bistecs con toallas de papel. Frote una pequeña gota de aceite sobre la carne para ayudar a que el sazonador se adhiera. Presione generosamente la Mezcla de Triple Pimienta sobre la parte superior, inferior y los lados de los bistecs, creando una costra uniforme y visible.",
-      "**Sellar el exterior:** Caliente una sartén de hierro fundido pesada a fuego alto hasta que humee. Agregue el aceite restante con alto punto de humo. Coloque cuidadosamente los bistecs sazonados en la sartén. Selle sin mover de 3 a 4 minutos por lado hasta que se forme una costra de pimienta picante de color marrón oscuro.",
-      "**Rociar con aromáticos:** Baje el fuego a medio. Voltee los bistecs sobre sus lados para derretir los bordes gruesos de grasa durante 1 minuto. Vuelva a colocar los bistecs planos, deslícelos hacia un lado de la sartén, y coloque la mantequilla sin sal, el ajo machacado y las ramitas de hierbas frescas en el espacio vacío.",
-      "**Terminar la cocción:** A medida que la mantequilla se derrite y hace espuma, incline la sartén ligeramente y vierta continuamente la mantequilla caliente de ajo y hierbas sobre la parte superior de los bistecs durante 2 minutos adicionales, o hasta que un termómetro de lectura instantánea registre 130 °F (54 °C) para un término medio-rojo.",
-      "**Reposar y rebanar:** Transfiera los bistecs con costra a una tabla de cortar tibia y déjelos reposar de 5 a 7 minutos para permitir que los jugos se redistribuyan. Rebana contra la fibra y sirva inmediatamente, vertiendo los jugos restantes de la sartén por encima."
+      "Saque los bistecs del refrigerador 30 minutos antes de cocinarlos para que lleguen a temperatura ambiente y se cocinen de manera uniforme.",
+      "Seque los bistecs con toallas de papel, úntelos con una capa ligera de aceite y presione generosamente el sazonador sobre todas sus caras.",
+      "Caliente un sartén de hierro fundido hasta que humee, agregue el aceite y selle los bistecs de 3 a 4 minutos por lado, hasta formar una costra dorada de pimienta.",
+      "Baje el fuego a medio, dore la grasa de los bordes durante 1 minuto y luego agregue la mantequilla, el ajo y las hierbas, y bañe los bistecs durante 2 minutos.",
+      "Siga bañándolos hasta que la temperatura interna llegue a 130 °F (54 °C) para un término medio rojo.",
+      "Pase a una tabla para cortar, deje reposar de 5 a 7 minutos, corte en contra de la fibra y sirva con los jugos de cocción."
     ],
     "description": "This recipe combines a bold, vibrant blend of coarse sea salt, smoky Korean gochugaru, sharp \nred chili flakes, and pungent black pepper to create a deeply caramelized crust when seared over \nhigh heat.",
     "description_fr": "Cette recette combine un mélange audacieux et vibrant de gros sel de mer, de gochugaru coréen fumé, de flocons de piment rouge piquants et de poivre noir relevé pour créer une croûte bien caramélisée lorsque la viande est saisie à feu vif.",
-    "description_es": "Esta receta utiliza una mezcla audaz y vibrante de sal marina gruesa, gochugaru coreano ahumado, hojuelas de chile rojo picante y pimienta negra penetrante. Presionar la mezcla de sazonador seco directamente sobre la superficie de un bistec de corte grueso crea una costra hermosa, profundamente caramelizada cuando se sella a fuego alto, equilibrando la rica grasa de la carne de res con un acabado picante de múltiples capas.",
+    "description_es": "Esta receta combina una mezcla intensa y vibrante de sal de mar gruesa, gochugaru coreano ahumado, hojuelas de chile rojo picantes y pimienta negra para crear una costra bien caramelizada al sellar la carne a fuego alto.",
     "prepTime_fr": "15 min",
     "cookTime_fr": "25 min",
     "yields_fr": "2 portions",
     "prepTime_es": "15 min",
     "cookTime_es": "25 min",
     "yields_es": "2 porciones",
-    "updated_at": 1793194210101
+    "updated_at": 1793194304847
   }
 ];
 
