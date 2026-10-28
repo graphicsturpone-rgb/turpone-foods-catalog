@@ -887,7 +887,7 @@ const recipesData = [
     "ingredients_fr": [
       "2 steaks de contre-filet épais (environ 12 à 14 oz chacun, 1 ½ po d'épaisseur)",
       "1 ½ c. à table d'huile à point de fumée élevé (comme l'huile de pépins de raisin), plus un peu pour arroser",
-      "3 c. à table de mélange d'assaisonnement aux trois poivres de <strong<ahref=\"https://martha.com/\"target=\"_blank\">Martha Stewart</a></strong>",
+      "3 c. à table de mélange d'assaisonnement aux trois poivres de <strong><a href=\"https://martha.com/\" target=\"_blank\">Martha Stewart</a></strong>",
       "2 c. à table de beurre non salé",
       "2 gousses d'ail, écrasées",
       "2 brins de thym ou de romarin frais"
@@ -895,7 +895,7 @@ const recipesData = [
     "ingredients_es": [
       "2 bistecs New York gruesos (aproximadamente de 12 a 14 onzas cada uno, de 1 ½ pulgadas de grosor)",
       "1 ½ cucharadas de aceite con alto punto de humo (como aceite de semilla de uva), y un poco más para rociar",
-      "3 cucharadas del Triple Pepper Mix Seasoning de <strong<ahref=\"https://martha.com/\"target=\"_blank\">Martha Stewart</a></strong>",
+      "3 cucharadas del Triple Pepper Mix Seasoning de <strong><a href=\"https://martha.com/\" target=\"_blank\">Martha Stewart</a></strong>",
       "2 cucharadas de mantequilla sin sal",
       "2 dientes de ajo, machacados",
       "2 ramitas de tomillo o romero fresco"
@@ -933,7 +933,7 @@ const recipesData = [
     "prepTime_es": "15 min",
     "cookTime_es": "25 min",
     "yields_es": "2 porciones",
-    "updated_at": 1793194607474
+    "updated_at": 1793202752681
   }
 ];
 
