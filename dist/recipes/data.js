@@ -649,7 +649,7 @@ const recipesData = [
     "upsellLink": "",
     "ingredients": [
       "1 pound large shrimp (16–20 count), peeled and deveined, tails left on",
-      "4 tablespoons <strong><a href=\"https://martha.com/\" target=\"_blank\">Martha Stewart</a></strong>’s Spicy Garlic Infused Olive Oil, divided",
+      "4 tablespoons <strong><a href=\"https://martha.com/\" target=\"_blank\">Martha Stewart's</a></strong> Spicy Garlic Infused Olive Oil, divided",
       "1 lemon, zested and cut into wedges",
       "1 teaspoon smoked paprika",
       "2 tablespoons flat-leaf parsley, finely chopped",
@@ -704,7 +704,7 @@ const recipesData = [
     "prepTime_es": "15 min",
     "cookTime_es": "25 min",
     "yields_es": "3 a 4 porciones",
-    "updated_at": 1793130614204
+    "updated_at": 1793195342113
   },
   {
     "id": "spicy-italian-sausage-pizza",
