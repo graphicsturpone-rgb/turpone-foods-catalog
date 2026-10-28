@@ -879,7 +879,7 @@ const recipesData = [
     "ingredients": [
       "2 thick-cut New York strip steaks (approx. 12 to 14 oz each, 1 ½-inches thick)",
       "1 ½ tablespoons high-smoke-point oil (such as grapeseed), plus more for drizzling",
-      "3 tablespoons <strong><a href=\"https://martha.com/\" target=\"_blank\">Martha Stewart's</a</strong> Triple Pepper Mix Seasoning",
+      "3 tablespoons <strong><a href=\"https://martha.com/\" target=\"_blank\">Martha Stewart's</a></strong> Triple Pepper Mix Seasoning",
       "2 tablespoons unsalted butter",
       "2 cloves garlic, smashed",
       "2 sprigs fresh thyme or rosemary"
@@ -933,7 +933,7 @@ const recipesData = [
     "prepTime_es": "15 min",
     "cookTime_es": "25 min",
     "yields_es": "2 porciones",
-    "updated_at": 1793194304847
+    "updated_at": 1793194607474
   }
 ];
 
