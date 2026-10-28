@@ -367,7 +367,7 @@ const recipesData = [
       "1 tablespoon extra-virgin olive oil",
       "2 cloves garlic, finely minced",
       "1 tablespoon fresh lemon juice, plus zest of ½ a lemon",
-      "2 1/2 tablespoons <strong><a href=\"https://martha.com/\" target=\"_blank\">Martha Stewart</a></strong>’s Lemon",
+      "2 1/2 tablespoons <strong><a href=\"https://martha.com/\" target=\"_blank\">Martha Stewart's</a></strong> Lemon",
       "Chopped parsley, for garnish",
       "1 lemon wedge, for serving"
     ],
@@ -423,7 +423,7 @@ const recipesData = [
     "prepTime_es": "15 min",
     "cookTime_es": "25 min",
     "yields_es": "2 porciones",
-    "updated_at": 1793129178018
+    "updated_at": 1793195304059
   },
   {
     "id": "prosciutto-arugula-pizza",
