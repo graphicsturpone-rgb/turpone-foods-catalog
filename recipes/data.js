@@ -14,7 +14,7 @@ const recipesData = [
     "upsellLink": "",
     "ingredients": [
       "1 whole roasting chicken (approx. 4 lbs)",
-      "4 tbsp <strong><a href=\"https://martha.com/\" target=\"_blank\">Martha Stewart</a></strong>’s Roasted Garlic Infused Extra Virgin Olive Oil, divided",
+      "4 tbsp <strong><a href=\"https://martha.com/\" target=\"_blank\">Martha Stewart's</a></strong> Roasted Garlic Infused Extra Virgin Olive Oil, divided",
       "1 tbsp kosher salt",
       "1 tsp coarsely cracked black pepper",
       "1 tsp paprika",
@@ -63,7 +63,7 @@ const recipesData = [
     "description": "Rich, mellow roasted garlic flavor baked directly into a whole roasting bird. Massaging the oil both over and underneath the skin guarantees exceptionally juicy breast meat and a shattered, crackly skin.",
     "description_fr": "Riche saveur d'ail rôti, doux, cuit directement dans un poulet entier à rôtir. Masser l'huile à la fois sur et sous la peau garantit une viande de poitrine exceptionnellement juteuse et une peau émiettée et craquelante.",
     "description_es": "Un rico y suave sabor a ajo asado horneado directamente en un pollo entero. Masajear el aceite tanto sobre como debajo de la piel garantiza una carne de pechuga excepcionalmente jugosa y una piel crujiente.",
-    "updated_at": 1793126935969,
+    "updated_at": 1793194706126,
     "prepTime_fr": "35 min",
     "cookTime_fr": "1 h 35 min",
     "yields_fr": "4 portions",
