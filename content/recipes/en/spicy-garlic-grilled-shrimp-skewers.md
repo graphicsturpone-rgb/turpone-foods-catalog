@@ -5,22 +5,22 @@ prepTime: 15 min
 cookTime: 25 min
 calories: 320 kcal
 yields: 3 to 4 servings
-upsellImage: /assets/images/recipes/spicy garlic.png
+upsellImage: ''
 upsellLink: ''
 ingredients:
-  - 1 lb large shrimp (16–20 count), peeled and deveined, tails left on
-  - 4 tbsp <strong><a href="https://martha.com/" target="_blank">Martha Stewart</a></strong>’s Spicy Garlic Infused Olive Oil, divided
-  - 1 fresh lemon, zested and cut into wedges
-  - 1 tsp smoked paprika
-  - 2 tbsp fresh flat-leaf parsley, finely chopped
+  - 1 pound large shrimp (16–20 count), peeled and deveined, tails left on
+  - 4 tablespoons <strong><a href="https://martha.com/" target="_blank">Martha Stewart's</a></strong> Spicy Garlic Infused Olive Oil, divided
+  - 1 lemon, zested and cut into wedges
+  - 1 teaspoon smoked paprika
+  - 2 tablespoons flat-leaf parsley, finely chopped
   - Kosher salt, to taste
 instructions:
-  - '**Marinate the Shrimp:** Pat shrimp completely dry with paper towels. In a medium bowl, whisk together 2 tablespoons of the [Spicy Garlic Infused Olive Oil](https://turponefoods.com/turpone-products/), lemon zest, smoked paprika, and a generous pinch of kosher salt. Toss shrimp to coat evenly; marinate at room temperature for 10 to 15 minutes'
-  - '**Thread the Skewers:** Thread the marinated shrimp onto your skewers. Pierce each shrimp twice—once through the tail and once near the head—so they sit completely flat and flip easily on the grill.'
-  - '**Heat the Grill:** Preheat an outdoor grill or a heavy cast-iron grill pan to high heat. Ensure grates are clean and lightly oiled.'
-  - '**Grill and Sear:** Place skewers on the hot grill. Cook undisturbed for 2 to 3 minutes until the underside turns bright pink and clear grill marks develop.'
-  - '**Flip and Baste:** Flip the skewers over. Immediately brush the remaining 2 tablespoons of fresh [Spicy Garlic Infused Olive Oil](https://turponefoods.com/turpone-products/) over the cooked side. Grill for another 2 minutes until opaque throughout.'
-  - '**Finish:** Transfer shrimp to a warm serving platter, scatter chopped parsley over the top, squeeze fresh lemon juice across the skewers, and apply a final light drizzle of raw [Spicy Garlic Infused Olive Oil.](https://turponefoods.com/turpone-products/)'
+  - "Pat the shrimp dry with paper towels. Whisk together 2 tablespoons of the oil, the lemon zest, paprika, and salt in a medium bowl. Coat the shrimp evenly and marinate at room temperature for 10 to 15 minutes."
+  - "Preheat an outdoor grill or cast-iron grill pan to high. Clean and lightly oil the grates."
+  - "Thread the marinated shrimp onto skewers, piercing each shrimp twice (through the tail and the head area) so they lie flat and flip easily."
+  - "Place the skewers on the hot grill and cook undisturbed for 2 to 3 minutes, until the undersides turn bright pink with clear grill marks."
+  - "Flip the skewers and brush the remaining 2 tablespoons of oil over the cooked side. Grill 2 minutes more, until opaque."
+  - "Transfer to a warm platter, scatter the parsley over the top, squeeze fresh lemon juice over, and drizzle with a final light coat of raw oil."
 nutrition: ''
 ---
 

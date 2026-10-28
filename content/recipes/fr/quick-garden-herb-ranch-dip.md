@@ -1,25 +1,26 @@
 ---
-title: Trempette Ranch aux fines herbes du jardin rapide
+title: Trempette ranch rapide aux fines herbes du jardin
 image: /assets/images/recipes/Quick Garden Herb.webp
 prepTime: 5 min
-cookTime: 5 minutes (plus 30 minutes de refroidissement)
+cookTime: 5 minutes (plus 30 minutes de repos au frais)
 calories: 320 kcal
-yields: 1,5 tasse (375 ml)
+yields: 1.5 tasse
 upsellImage: ''
 upsellLink: ''
 ingredients:
-  - 3 c. à soupe d’assaisonnement aux fines herbes du jardin de <strong><a href="https://martha.com/" target="_blank">Martha Stewart</a></strong>
   - 1 tasse de crème sure
-  - 1/2 tasse de mayonnaise de haute qualité
+  - 1/2 tasse de mayonnaise de qualité
+  - 3 c. à table d'assaisonnement aux fines herbes du jardin de <strong><a href="https://martha.com/" target="_blank">Martha Stewart</a></strong>
   - 1 c. à thé de jus de citron frais (facultatif)
-  - Ciboulette fraîche ou aneth, finement haché (pour la garniture)
+  - Ciboulette ou aneth frais, haché finement (pour garnir)
+  - Crudités ou croustilles, pour servir
 instructions:
-  - '**Fouetter la base :** Dans un bol moyen, fouetter la crème sure et la mayonnaise jusqu’à ce qu’elles soient complètement lisses et uniformes.'
-  - '**Incorporer l’assaisonnement :** Ajouter l’assaisonnement aux fines herbes du jardin au bol. À l’aide d’une spatule en caoutchouc, incorporer soigneusement le mélange dans la base de crème jusqu’à ce que les herbes, l’ail et le poivre noir concassé soient uniformément répartis.'
-  - '**Ajuster l’éclat :** Goûter le mélange. Si un profil plus vif et acidulé est souhaité, incorporer le jus de citron frais pour amplifier les notes d’agrumes inhérentes à l’assaisonnement.'
-  - '**Refroidir et laisser s’épanouir :** Couvrir hermétiquement le bol d’une pellicule plastique et réfrigérer pendant au moins 30 minutes avant de servir. Cette période de repos permet à l’oignon, à l’ail et aux herbes déshydratées d’absorber l’humidité et de libérer complètement leurs huiles aromatiques.'
-  - '**Garnir et servir :** Remuer brièvement la trempette, transférer dans un plat de service réfrigéré et disperser la ciboulette ou l’aneth frais haché sur le dessus. Servir avec des crudités croustillantes, des croustilles ou comme accompagnement rafraîchissant pour les plats principaux grillés.'
+  - "Dans un bol moyen, mélanger la crème sure et la mayonnaise et fouetter jusqu'à ce que le mélange soit lisse et homogène."
+  - "Ajouter l'assaisonnement aux fines herbes du jardin et l'incorporer délicatement à la base crémeuse jusqu'à ce que les herbes, l'ail et le poivre soient bien répartis."
+  - "Goûter et ajouter le jus de citron frais pour rehausser les notes d'agrumes, au goût."
+  - "Couvrir d'une pellicule plastique et réfrigérer au moins 30 minutes pour que les saveurs se mélangent."
+  - "Remuer brièvement, transférer dans un plat de service froid, garnir de ciboulette ou d'aneth haché et servir avec des crudités ou des croustilles."
 nutrition: ''
 ---
 
-Cette trempette crémeuse classique utilise un mélange de qualité supérieure de sel de mer, d’oignon, d’ail, de poivre noir et de notes d’arbre à citron. Le fait de mélanger l’assaisonnement sec directement dans une base riche de crème sure et de mayonnaise permet aux herbes de s’épanouir complètement, créant un hors-d’œuvre sans effort de qualité restaurant.
+Cette trempette classique et crémeuse est préparée avec un mélange de qualité de sel de mer, d'oignon, d'ail, de poivre noir et de notes de citron.

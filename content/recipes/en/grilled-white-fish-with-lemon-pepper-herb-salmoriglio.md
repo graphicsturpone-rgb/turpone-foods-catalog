@@ -5,23 +5,27 @@ prepTime: 10 min
 cookTime: 20 min
 calories: 320 kcal
 yields: 2 servings
-upsellImage: /assets/images/recipes/lemon pepper.png
+upsellImage: ''
 upsellLink: ''
 ingredients:
-  - 2 high-quality white fish fillets (such as Sea Bass, Halibut, Cod, or Red Snapper)
-  - 4 tbsp <strong><a href="https://martha.com/" target="_blank">Martha Stewart</a></strong>’s Lemon Pepper Infused Extra Virgin Olive Oil, divided
-  - 2 tbsp fresh lemon juice
-  - 3 tbsp fresh flat-leaf parsley, finely minced
-  - 1 tbsp fresh oregano or thyme, finely minced
-  - 1 clove garlic, grated into a paste (optional)
-  - Kosher salt and coarse black pepper, to taste
+  - 1/2 cup <strong><a href="https://martha.com/" target="_blank">Martha Stewart's</a></strong> Lemon Pepper Infused Extra-Virgin Olive Oil, divided
+  - 2 tablespoons freshly squeezed lemon juice
+  - 3 tablespoons fresh flat-leaf parsley, minced
+  - 1 tablespoon fresh oregano or thyme leaves, minced plus 2 sprigs
+  - 1 clove garlic, grated (optional)
+  - Kosher salt and coarsely ground black pepper
+  - 2 whole branzino (each 1 to 1 ½ pounds), cleaned, heads and tails left intact
+  - 1 lemon thinly sliced
+  - Vegetable oil, for grill
 instructions:
-  - '**Blend the Salmoriglio Sauce:** In a small bowl, whisk together 3 tablespoons of the [Lemon Pepper Infused Olive Oil](https://turponefoods.com/turpone-products/), fresh lemon juice, minced parsley, oregano, and grated garlic. Add a small pinch of salt and set aside to let the herb flavors infuse.'
-  - '**Oil and Season the Fish:** Pat fish fillets thoroughly dry with a paper towel. Rub the final 1 tablespoon of [Lemon Pepper Infused Olive Oil](https://turponefoods.com/turpone-products/) across both sides of the fish, then season generously with kosher salt and coarse black pepper.'
-  - '**Preheat the Grates:** Heat a grill or heavy grill pan to medium-high heat. Ensure grates are clean and lightly oiled to prevent sticking.'
-  - '**Grill First Side:** Lay the fillets on the grill. Cook undisturbed for 4 to 5 minutes. Avoid moving the fish early; it will naturally release from the hot surface once a proper crust has set.'
-  - '**Flip and Dress:** Flip carefully using a thin spatula. Cook for another 2 to 3 minutes until the center is opaque and flakes easily. Transfer to a platter and immediately spoon the prepared Salmoriglio sauce over the hot fish.'
+  - "Whisk together 3 tablespoons of Martha Stewart's Lemon Pepper Infused Extra-Virgin Olive Oil, the  lemon juice,  parsley, oregano, and garlic. Add a pinch of salt and set aside to let the herb flavors infuse."
+  - "Preheat grill for direct-heat grilling over medium-high heat. Meanwhile, drizzle cavity of each fish with 1 tablespoon olive oil, then season generously with coarse salt and freshly ground pepper. Stuff cavities with lemon slices and thyme sprigs. Fasten each opening with a wooden skewer or toothpicks that have been soaked in water so they don't burn. This keeps the aromatics inside and also makes fish easier to handle on the grill."
+  - "Using a paring knife, make long, 1/4-inch-deep diagonal slashes at 2-inch intervals on both sides of fish so they cook evenly throughout."
+  - "Rub both sides of each fish with remaining olive oil and season with salt and pepper, working all into slashes as well as heads and tails—both are edible, and the tail becomes delightfully crisp when grilled."
+  - "Brush hot grill with vegetable oil; immediately place fish on grill. Cook, undisturbed and uncovered, until undersides are charred and flesh along gills on undersides turns opaque, 5 to 7 minutes. Turn fish with 2 large spatulas. If they stick, wait a few seconds until skin sears enough to release cleanly. Grill on other side until charred and fish are just cooked through and opaque, 5 to 7 minutes more."
+  - "To serve, cut fillet free from top side of fish and remove with a spatula. Remove bones to free other fillet."
+  - "Transfer to a platter and spoon the salmoriglio over the hot fish."
 nutrition: ''
 ---
 
-A bright, classic Southern Italian sauce format engineered to cut through the rich, smoky char of grilled seafood. The lemon tree notes and coarse pepper infusion naturally elevate the fresh garden herbs.
+A bright, Southern Italian sauce perfectly balanced to cut through the smoky char of grilled seafood and meats.

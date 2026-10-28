@@ -485,22 +485,6 @@
                 <div class="modal-body">
                     <input type="hidden" id="formSlug">
 
-                    <!-- Timing & Servings -->
-                    <div class="form-row-3">
-                        <div class="form-group">
-                            <label for="formPrepTime">Prep Time</label>
-                            <input type="text" id="formPrepTime" placeholder="e.g. 15 min">
-                        </div>
-                        <div class="form-group">
-                            <label for="formCookTime">Total / Cook Time</label>
-                            <input type="text" id="formCookTime" placeholder="e.g. 30 min">
-                        </div>
-                        <div class="form-group">
-                            <label for="formYields">Yields / Servings</label>
-                            <input type="text" id="formYields" placeholder="e.g. 4 servings">
-                        </div>
-                    </div>
-
                     <!-- Image Upload -->
                     <div class="form-group">
                         <label for="formImage">Featured Recipe Image *</label>
@@ -529,6 +513,22 @@
                         <div class="form-group">
                             <label for="formTitle">Recipe Title (English) *</label>
                             <input type="text" id="formTitle" required placeholder="e.g. Spicy Italian Sausage Pizza">
+                        </div>
+
+                        <!-- Timing & Servings (EN) -->
+                        <div class="form-row-3">
+                            <div class="form-group">
+                                <label for="formPrepTime">Prep Time (EN)</label>
+                                <input type="text" id="formPrepTime" placeholder="e.g. 15 min">
+                            </div>
+                            <div class="form-group">
+                                <label for="formCookTime">Total Time (EN)</label>
+                                <input type="text" id="formCookTime" placeholder="e.g. 30 min">
+                            </div>
+                            <div class="form-group">
+                                <label for="formYields">Yields / Servings (EN)</label>
+                                <input type="text" id="formYields" placeholder="e.g. 4 servings">
+                            </div>
                         </div>
 
                         <div class="form-group">
@@ -701,7 +701,8 @@ try { localStorage.removeItem("turpone_admin_auth"); sessionStorage.removeItem("
             tbody.innerHTML = filtered.map(r => {
                 const imgSrc = resolveImage(r.image);
                 const ingCount = Array.isArray(r.ingredients) ? r.ingredients.length : 0;
-                const timeInfo = [r.prepTime ? `Prep: ${r.prepTime}` : '', r.cookTime ? `Cook: ${r.cookTime}` : ''].filter(Boolean).join(' • ');
+                const enTimeParts = [r.prepTime ? `Prep: ${r.prepTime}` : '', r.cookTime ? `Total: ${r.cookTime}` : '', r.yields ? `Yields: ${r.yields}` : ''].filter(Boolean).join(' • ');
+                const timeInfo = [r.prepTime ? `Prep: ${r.prepTime}` : '', r.cookTime ? `Total: ${r.cookTime}` : ''].filter(Boolean).join(' • ');
 
                 return `
                     <tr>
@@ -718,6 +719,9 @@ try { localStorage.removeItem("turpone_admin_auth"); sessionStorage.removeItem("
                             <div>
                                 <span class="meta-pill"><i class="fa-regular fa-clock"></i> ${timeInfo || 'Quick'}</span>
                                 ${r.yields ? `<span class="meta-pill"><i class="fa-solid fa-users"></i> ${r.yields}</span>` : ''}
+                            </div>
+                            <div style="font-size: 11px; color: #334155; margin-top: 4px; line-height: 1.4;">
+                                <strong style="color: #0f172a;">EN:</strong> ${enTimeParts || 'Quick'}
                             </div>
                             ${(r.prepTime_fr || r.cookTime_fr || r.yields_fr) ? `
                                 <div style="font-size: 11px; color: #64748b; margin-top: 4px; line-height: 1.4;">

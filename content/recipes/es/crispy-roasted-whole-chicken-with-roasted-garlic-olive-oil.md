@@ -1,27 +1,27 @@
 ---
 title: Pollo Entero Asado Crujiente con Aceite de Oliva de Ajo Asado
 image: /assets/images/recipes/Crispy Roasted Whole Chicken with Roasted Garlic Olive Oil.webp
-prepTime: 35 minutos
-cookTime: 1 hora 35 minutos
+prepTime: 35 min
+cookTime: 1 hora 35 min
 calories: 320 kcal
 yields: 4 porciones
 upsellImage: ''
 upsellLink: ''
 ingredients:
-  - 1 pollo entero (aprox. 4 lbs)
-  - 4 cdas. de Aceite de Oliva Virgen Extra Infusionado con Ajo Asado de <strong><a href="https://martha.com/" target="_blank">Martha Stewart</a></strong>, divididas
-  - 1 cda. de sal kosher
-  - 1 cdta. de pimienta negra partida
-  - 1 cdta. de pimentón
+  - 1 pollo entero para asar (aproximadamente 4 libras)
+  - 3 cucharadas del Roasted Garlic Infused Extra-Virgin Olive Oil de <strong<ahref="https://martha.com/"target="_blank">Martha Stewart</a></strong>, y un poco más para servir
+  - 1 cucharada de sal kosher (Diamond Crystal)
   - 1 ramita de romero o tomillo fresco
-  - 1/2 limón fresco
+  - 1/2 limón
+  - 1 cucharadita de pimienta negra molida gruesa
+  - 1 cucharadita de paprika dulce
 instructions:
-  - '**Preparar y precalentar:** Precaliente el horno a 425°F (220°C). Saque el pollo del refrigerador 30 minutos antes de cocinar. Seque bien toda el ave con toallas de papel, revisando tanto la piel exterior como la cavidad interior.'
-  - '**Aromatizar la cavidad:** Sazone el interior de la cavidad con 1 cucharadita de sal kosher, luego inserte la mitad del limón y las ramitas de hierbas frescas.'
-  - '**Aplicar el aceite de ajo:** Vierta 2 cucharadas de Aceite de Oliva Infusionado con Ajo Asado sobre el pollo y masajee profundamente en la piel. Afloje suavemente la piel sobre la carne de la pechuga con los dedos y vierta 1 cucharada adicional de aceite directamente debajo de la piel.'
-  - '**Sazonar y bridar:** Combine la sal restante, la pimienta negra y el pimentón en un tazón pequeño; espolvoree uniformemente sobre el exterior aceitado. Ate las patas con hilo de cocina y coloque el pollo con la pechuga hacia arriba en una rejilla de asar dentro de una bandeja poco profunda.'
-  - '**Asar:** Ase sin mover durante 50 a 60 minutos, o hasta que un termómetro de lectura instantánea registre 165°F (74°C) en la parte más gruesa del muslo. Retire del horno y deje reposar durante 15 minutos. Corte en piezas y termine con un ligero chorrito de Aceite de Oliva Infusionado con Ajo Asado crudo sobre la carne caliente.'
+  - "Precaliente el horno a 425 °F (220 °C). Deje reposar el pollo a temperatura ambiente durante 1 hora antes de cocinarlo. Seque el pollo con toallas de papel."
+  - "Sazone la cavidad del pollo con 1 cucharadita de sal kosher, luego inserte la mitad del limón y la ramita de romero o tomillo."
+  - "Frote 2 cucharadas del Roasted Garlic Infused Extra-Virgin Olive Oil de Martha Stewart por todo el exterior del pollo. Afloje suavemente la piel de la pechuga con los dedos y vierta 1 cucharada de aceite por debajo de la piel."
+  - "Mezcle las 2 cucharaditas de sal restantes, la pimienta negra y la paprika dulce en un tazón pequeño, y use esta mezcla para sazonar el pollo. Ate las patas con hilo de cocina y coloque el pollo con la pechuga hacia arriba sobre una rejilla dentro de una bandeja para asar poco profunda."
+  - "Ase de 50 a 60 minutos, hasta que un termómetro de lectura instantánea registre 165 °F (74 °C) en la parte más gruesa del muslo. Retire del horno y deje reposar durante 15 minutos. Sirva rociado con un poco más de Roasted Garlic Infused Extra-Virgin Olive Oil de Martha Stewart."
 nutrition: ''
 ---
 
-Un rico y suave sabor a ajo asado horneado directamente en un pollo entero. Masajear el aceite tanto sobre como debajo de la piel garantiza una carne de pechuga excepcionalmente jugosa y una piel crujiente.
+El sabor rico y suave del ajo asado se hornea directamente en un pollo entero. Al aplicar el aceite por encima y por debajo de la piel, se obtiene una pechuga excepcionalmente jugosa y una piel ultra crujiente.

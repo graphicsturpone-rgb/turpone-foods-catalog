@@ -1,27 +1,29 @@
 ---
-title: Salmón a la Sartén con Glaseado de Miel, Limón y Pimienta Negra
+title: Salmón sellado en sartén con glaseado de miel, limón y pimienta negra
 image: /assets/images/recipes/Pan-Seared Salmon with a Lemon Black Pepper Honey Glaze.webp
-prepTime: 15 minutos
-cookTime: 25 minutos
+prepTime: 15 min
+cookTime: 25 min
 calories: 320 kcal
 yields: 2 porciones
 upsellImage: ''
 upsellLink: ''
 ingredients:
-  - 2 filetes de salmón (6 a 8 oz cada uno), preferiblemente con piel
-  - 2.5 cdas. de Miel de Limón y Pimienta Negra de <strong><a href="https://martha.com/" target="_blank">Martha Stewart</a></strong>
-  - 1 cda. de aceite de oliva
-  - 2 dientes de ajo, finamente picados
-  - 1 cda. de jugo de limón fresco
-  - 1/2 cdta. de pimienta negra partida
-  - Sal kosher, al gusto
+  - 2 filetes de salmón (de 6 a 8 oz cada uno), de preferencia con piel
+  - 1/2 cucharadita de pimienta negra triturada
+  - Sal kosher
+  - 1 cucharada de aceite de oliva extra virgen
+  - 2 dientes de ajo, picados finamente
+  - 1 cucharada de jugo de limón fresco, más la ralladura de ½ limón
+  - 2 ½ cucharadas del Lemon Black Pepper Honey de <strong><a href="https://martha.com/"target="_blank">Martha Stewart</a></strong>
+  - Perejil picado, para decorar
+  - 1 gajo de limón, para servir
 instructions:
-  - '**Secar y sazonar:** Saque el salmón del refrigerador 15 minutos antes de cocinar. Seque completamente la piel y la carne con toallas de papel. Sazone ambos lados generosamente con sal kosher y una ligera capa de pimienta negra partida.'
-  - '**Sellar el lado de la carne:** Caliente el aceite de oliva en una sartén pesada a fuego medio-alto hasta que brille. Coloque los filetes de salmón en la sartén, con el lado de la carne hacia abajo. Cocine sin mover durante 4 minutos hasta que se forme una costra de color marrón dorado oscuro.'
-  - '**Crujir la piel:** Voltee los filetes con la piel hacia abajo y reduzca el fuego a medio. Cocine por otros 3 a 4 minutos, permitiendo que la piel se vuelva crujiente mientras protege la carne delicada.'
-  - '**Saltear los aromáticos:** Deslice el salmón hacia un lado de la sartén (o transfiéralo brevemente a un plato). Baje el fuego al mínimo, agregue el ajo picado al lado vacío de la sartén y saltee durante 30 segundos hasta que esté fragante pero no dorado.'
-  - '**Glasear y servir:** Vierta el jugo de limón fresco y la Miel de Limón y Pimienta Negra directamente sobre el ajo. Cucharee continuamente el glaseado burbujeante sobre los filetes de salmón durante 45 a 60 segundos. Retire del fuego instantáneamente para evitar que la miel se queme. Sirva inmediatamente y vierta el glaseado restante de la sartén sobre el pescado'
+  - "Saque el salmón del refrigerador 15 minutos antes de cocinarlo. Seque bien la piel y la carne con toallas de papel. Sazone generosamente ambos lados con sal kosher y espolvoree ligeramente con pimienta negra triturada."
+  - "Caliente el aceite de oliva en un sartén de fondo grueso a fuego medio-alto hasta que brille. Coloque los filetes en el sartén con el lado de la carne hacia abajo. Cocine sin moverlos durante 4 minutos, hasta que se forme una costra bien dorada."
+  - "Voltee los filetes con la piel hacia abajo y baje el fuego a medio. Cocine de 3 a 4 minutos más, para que la piel quede bien crujiente sin resecar la carne."
+  - "Mueva el salmón a un lado del sartén (o páselo un momento a un plato). Baje el fuego, agregue el ajo picado en el lado vacío del sartén y saltéelo 30 segundos, hasta que suelte su aroma, sin que se dore."
+  - "Vierta el jugo de limón, la ralladura y el Lemon Black Pepper Honey directamente sobre el ajo. Bañe los filetes continuamente con el glaseado burbujeante durante 45 a 60 segundos. Retire del fuego de inmediato para evitar que la miel se queme. Sirva en los platos y bañe con el resto del glaseado del sartén. Decore con perejil y sirva con un gajo de limón."
 nutrition: ''
 ---
 
-Un plato de mariscos rápido y de alto impacto con un acabado cítrico-dulce. Sellar el pescado primero por el lado de la carne retiene la humedad y crea una costra sabrosa, mientras que la miel se introduce al final para evitar que se queme.
+Un plato de mariscos rápido y lleno de sabor, con un toque final dulce y cítrico. Sellar primero el pescado por el lado de la carne ayuda a conservar su jugosidad y forma una costra dorada y sabrosa, mientras que la miel se agrega al final para evitar que se queme.

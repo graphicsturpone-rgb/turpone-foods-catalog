@@ -1,26 +1,28 @@
 ---
 title: Triple Chili Honey Glazed Skewers
 image: /assets/images/recipes/triple-chili-honey-glazed-skewers.webp
-prepTime: 20 minutes
-cookTime: 15 minutes
+prepTime: 15 minutes
+cookTime: 45 minutes
 calories: 320 kcal
 yields: 4 servings
-upsellImage: /assets/images/recipes/triple chili.png
+upsellImage: ''
 upsellLink: ''
 ingredients:
-  - 1.5 lbs chicken thighs, cut into 1-inch cubes
-  - 3 tbsp Triple Chili Honey Drizzle
-  - 2 tbsp soy sauce
-  - 1 tbsp olive oil
+  - 3 tablespoons <strong><a href="https://martha.com/" target="_blank">Martha Stewart's</a></strong> Triple Chili Honey Drizzle
+  - 2 tablespoons soy sauce
+  - 1 tablespoons olive oil
   - 3 cloves garlic, minced
-  - 1 red onion, cut into 1-inch chunks
+  - 1-inch piece fresh ginger, grated
+  - 1 ½ pounds chicken thighs, cut into 1-inch cubes
+  - 1 red onion, cut into 1-inch pieces
+  - Kosher salt and freshly ground black pepper, for seasoning
 instructions:
-  - '**Marinate the Protein:** In a medium bowl, whisk together 1 tablespoon of the [Triple Chili Honey Drizzle](https://turponefoods.com/turpone-products/), soy sauce, olive oil, minced garlic, and grated ginger. Add the cubed chicken or pork, tossing until completely coated. Let marinate at room temperature for 15 to 30 minutes. (If using wooden skewers, soak them in water now to prevent burning).'
-  - '**Assemble the Skewers**: Thread the marinated meat onto the skewers, alternating each piece with a chunk of red onion. Season the exterior of the skewers lightly with kosher salt and black pepper.'
-  - '**Preheat the Grill:** Heat an outdoor grill or a heavy cast-iron grill pan over medium-high heat. Lightly oil the grates to prevent sticking.'
-  - '**Sear the Meat:** Place skewers on the grill. Cook undisturbed for 5 to 6 minutes per side for chicken (or 4 minutes per side for pork). Ensure distinct grill marks form and the meat is nearly cooked through before glazing.'
-  - '**Glaze and Caramelize:** During the final 2 minutes of grilling, use a pastry brush to generously coat the top side of the skewers with the remaining 2 tablespoons of [Triple Chili Honey Drizzle](https://turponefoods.com/turpone-products/). Flip onto the glazed side for 30 to 60 seconds until bubbling and slightly charred. Coat the reverse side, flip once more, and remove immediately from the heat.'
-  - '**Rest and Serve:** Let the skewers rest for 3 minutes. Just before serving, apply a light finishing drizzle of fresh honey straight from the bottle for a glossy, sweet-spicy presentation.'
+  - "Whisk together 1 tablespoon of Triple Chili Honey Drizzle, the soy sauce, olive oil, minced garlic, and grated ginger. Coat the chicken and let it marinate 15 to 30 minutes at room temperature. (Soak wooden skewers in water.)"
+  - "Thread the marinated meat onto skewers, alternating with the red onion pieces. Season the lightly with kosher salt and black pepper."
+  - "Heat an outdoor grill or cast-iron grill pan over medium-high. Lightly oil the grates."
+  - "Place the skewers on the grill. Cook undisturbed 5 to 6 minutes per side, until grill marks form and the meat is nearly cooked through."
+  - "In the final 2 minutes, brush the remaining 2 tablespoons of Triple Chili Honey Drizzle over the top. Flip onto the glazed side for 30 to 60 seconds, until bubbling and charred. Coat and flip the reverse side, then once the chicken reaches 165 degrees F, remove immediately."
+  - "Let rest 3 minutes. Apply a light finishing honey drizzle before serving."
 nutrition: ''
 ---
 

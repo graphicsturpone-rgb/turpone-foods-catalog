@@ -2,26 +2,26 @@
 title: Poulet entier rôti croustillant avec huile d'olive à l'ail rôti
 image: /assets/images/recipes/Crispy Roasted Whole Chicken with Roasted Garlic Olive Oil.webp
 prepTime: 35 min
-cookTime: 1 heure 35 min
+cookTime: 1 h 35 min
 calories: 320 kcal
-yields: 4 servings
+yields: 4 portions
 upsellImage: ''
 upsellLink: ''
 ingredients:
   - 1 poulet entier à rôtir (environ 4 lb)
-  - 4 c. à soupe d'huile d'olive extra vierge infusée à l'ail rôti de <strong><a href="https://martha.com/" target="_blank">Martha Stewart</a></strong>, divisées
-  - 1 c. à soupe de sel casher
-  - 1 c. à thé de poivre noir concassé
-  - 1 c. à thé de paprika
-  - 1 brin de romarin frais ou de thym
-  - 1/2 citron frais
+  - 3 c. à table d'huile d'olive extra-vierge infusée à l'ail rôti de <strong<ahref="https://martha.com/"target="_blank">Martha Stewart</a></strong>, plus un peu pour servir
+  - 1 c. à table de sel casher (Diamond Crystal)
+  - 1 brin de romarin ou de thym frais
+  - 1/2 citron
+  - 1 c. à thé de poivre noir grossièrement moulu
+  - 1 c. à thé de paprika doux (non fumé)
 instructions:
-  - "**Préparer et préchauffer :** Préchauffer le four à 425 °F (220 °C). Sortir le poulet du réfrigérateur 30 minutes avant de le cuire. Éponger complètement l'oiseau entier avec des essuie-tout, en vérifiant à la fois la peau extérieure et la cavité intérieure."
-  - "**Aromatiser la cavité :** Assaisonner l'intérieur de la cavité avec 1 cuillère à thé de sel casher, puis insérer la moitié de citron et les brins d'herbes fraîches."
-  - "**Appliquer l'huile à l'ail :** Verser 2 cuillères à soupe d'huile d'olive infusée à l'ail rôti sur le poulet et masser soigneusement dans la peau. Desserrer doucement la peau sur la viande de la poitrine avec vos doigts et verser 1 cuillère à soupe supplémentaire d'huile directement sous la peau."
-  - "**Assaisonner et brider :** Combiner le sel restant, le poivre noir et le paprika dans un petit bol; saupoudrer uniformément sur l'extérieur huilé. Lier les pattes ensemble avec de la ficelle de cuisine et placer le poulet poitrine vers le haut sur une grille de rôtissage placée dans une casserole peu profonde."
-  - "**Rôtir :** Rôtir sans le bouger pendant 50 à 60 minutes, ou jusqu'à ce qu'un thermomètre à lecture instantanée indique 165 °F (74 °C) dans la partie la plus épaisse de la cuisse. Retirer du four et laisser reposer pendant 15 minutes. Couper en morceaux et terminer avec un léger filet d'huile d'olive infusée à l'ail rôti crue sur la viande chaude."
+  - "Préchauffer le four à 425 °F (220 °C). Laisser reposer le poulet à température ambiante pendant 1 heure avant la cuisson. Éponger le poulet avec du papier essuie-tout."
+  - "Assaisonner la cavité du poulet avec 1 c. à thé de sel casher, puis y insérer le demi-citron et le brin de romarin ou de thym."
+  - "Frotter 2 c. à table d'huile d'olive extra-vierge infusée à l'ail rôti de Martha Stewart sur tout l'extérieur du poulet. Décoller délicatement la peau de la poitrine avec les doigts et verser 1 c. à table d'huile sous la peau."
+  - "Dans un petit bol, mélanger les 2 c. à thé de sel restantes, le poivre noir et le paprika, et utiliser ce mélange pour assaisonner le poulet. Ficeler les pattes avec de la ficelle de cuisine et placer le poulet, la poitrine vers le haut, sur une grille déposée dans une rôtissoire peu profonde."
+  - "Rôtir de 50 à 60 minutes, jusqu'à ce qu'un thermomètre à lecture instantanée indique 165 °F (74 °C) dans la partie la plus épaisse de la cuisse. Retirer du four et laisser reposer 15 minutes. Servir arrosé d'un filet d'huile d'olive extra-vierge infusée à l'ail rôti de Martha Stewart."
 nutrition: ''
 ---
 
-Riche saveur d'ail rôti, doux, cuit directement dans un poulet entier à rôtir. Masser l'huile à la fois sur et sous la peau garantit une viande de poitrine exceptionnellement juteuse et une peau émiettée et craquelante.
+La saveur riche et douce de l'ail rôti s'infuse au cœur d'un poulet rôti entier. En appliquant l'huile à la fois sur et sous la peau, on obtient une poitrine exceptionnellement juteuse et une peau ultra-croustillante.

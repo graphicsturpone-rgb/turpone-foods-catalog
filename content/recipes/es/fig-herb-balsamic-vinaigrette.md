@@ -1,27 +1,25 @@
 ---
-title: Vinagreta Balsámica de Higo y Hierbas
+title: Vinagreta balsámica de higo y hierbas finas
 image: /assets/images/recipes/Fig & Herb Balsamic Vinaigrette.webp
-prepTime: 5 minutos
-cookTime: 5 minutos
+prepTime: 5 min
+cookTime: 5 min
 calories: 320 kcal
 yields: 1 taza
-upsellImage: /assets/images/recipes/Fig-Oregano.png
+upsellImage: ''
 upsellLink: ''
 ingredients:
-  - 3 cdas. de Miel de Higo y Orégano de <strong><a href="https://martha.com/" target="_blank">Martha Stewart</a></strong>
-  - 1/4 de taza de vinagre balsámico añejo
-  - 1/2 taza de aceite de oliva virgen extra
-  - 1 cdta. de mostaza Dijon
-  - 1 chalota pequeña, finamente picada
-  - Una pizca de orégano seco
-  - Sal marina y pimienta negra recién molida, al gusto
+  - 2 cucharaditas de chalota picada finamente
+  - 1/4 taza de vinagre balsámico añejo
+  - 1 cucharada de vinagre de vino tinto
+  - 1 cucharada del Fig Oregano Honey Vinegar de <strong><a href="https://martha.com/"target="_blank">Martha Stewart</a></strong>
+  - 1 cucharadita de mostaza Dijon
+  - 1 pizca de orégano seco
+  - Sal de mar y pimienta negra recién molida
+  - 1/2 taza de aceite de oliva extra virgen
 instructions:
-  - '**Combinar los aromáticos:** En un tazón mediano (o un frasco de vidrio limpio), combine la chalota picada, el vinagre balsámico, la mostaza Dijon, la Miel de Higo y Orégano y el orégano seco.'
-  - '**Batir la base:** Bata la mezcla vigorosamente durante 30 segundos. Asegúrese de que la miel espesa y la mostaza Dijon estén completamente disueltas en el vinagre antes de introducir el aceite.'
-  - '**Emulsionar el aderezo:** Mientras bate constantemente con una mano, vierta lentamente el aceite de oliva virgen extra en el tazón en un chorro delgado y constante hasta que esté espeso y completamente incorporado. _(Si usa un frasco de vidrio, cierre bien la tapa y agite vigorosamente durante 30 segundos hasta que sea uniforme)._'
-  - '**Sazonar para equilibrar:** Pruebe la vinagreta y añada una pizca de sal marina y un generoso toque de pimienta negra para equilibrar la dulzura natural de la miel de higo.'
-  - '**Servir:** Mezcle ligeramente sus hojas de ensalada preferidas en la vinagreta. Sirva la ensalada, cubra con queso de cabra tibio salteado y termine con un chorrito en zigzag de Miel de Higo y Orégano cruda directamente sobre el queso.'
+  - "En un tazón mediano (o un frasco tipo Mason limpio), mezcle la chalota picada y los vinagres. Deje reposar 10 minutos para suavizar el sabor de la chalota."
+  - "Agregue el Fig Oregano Honey Vinegar de Martha Stewart, la mostaza Dijon y el orégano seco, batiendo. Sin dejar de batir con una mano, vierta poco a poco el aceite de oliva extra virgen en un chorro fino y constante, hasta que la vinagreta espese y quede bien incorporada. (Si usa un frasco tipo Mason, cierre bien la tapa y agite con fuerza durante 30 segundos, hasta que la mezcla quede uniforme.) Sazone con sal y pimienta."
 nutrition: ''
 ---
 
-Un aderezo elegante de inspiración mediterránea que combina notas profundas de flor de higo con orégano aromático. Esta vinagreta depende de una emulsión adecuada para crear una capa suave y unificada sobre las hojas de ensalada crujientes.
+Un aderezo elegante de inspiración mediterránea que combina las notas profundas y acarameladas del higo con el aroma del orégano. Esta vinagreta depende de una buena emulsión para cubrir de manera suave y uniforme las hojas verdes crujientes. Es el complemento perfecto para una ensalada de hojas amargas (como arúgula y radicchio) servida con queso de cabra tibio.

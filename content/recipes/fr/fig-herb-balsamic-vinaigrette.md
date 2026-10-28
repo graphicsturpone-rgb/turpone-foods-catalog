@@ -1,27 +1,25 @@
 ---
-title: Vinaigrette balsamique Figue et fines herbes
+title: Vinaigrette balsamique aux figues et fines herbes
 image: /assets/images/recipes/Fig & Herb Balsamic Vinaigrette.webp
-prepTime: 15 min
-cookTime: 30 min
+prepTime: 5 min
+cookTime: 5 min
 calories: 320 kcal
-yields: 4 servings
-upsellImage: /assets/images/recipes/Fig-Oregano.png
+yields: 1 tasse
+upsellImage: ''
 upsellLink: ''
 ingredients:
-  - 3 c. à soupe de miel Figue Origan de <strong><a href="https://martha.com/" target="_blank">Martha Stewart</a></strong>
+  - 2 c. à thé d'échalote française hachée finement
   - 1/4 tasse de vinaigre balsamique vieilli
-  - 1/2 tasse d'huile d'olive extra vierge
+  - 1 c. à table de vinaigre de vin rouge
+  - 1 c. à table de vinaigre au miel, à la figue et à l'origan de <strong><a href="https://martha.com/"target="_blank">Martha Stewart</a></strong>
   - 1 c. à thé de moutarde de Dijon
-  - 1 petite échalote, finement hachée
-  - Une pincée d'origan séché
-  - Sel de mer et poivre noir fraîchement moulu, au goût
+  - 1 pincée d'origan séché
+  - Sel de mer et poivre noir fraîchement moulu
+  - 1/2 tasse d'huile d'olive extra-vierge
 instructions:
-  - "**Combiner les aromates :** Dans un bol moyen (ou un pot Mason propre), combiner l'échalote hachée, le vinaigre balsamique, la moutarde de Dijon, le miel Figue Origan et l'origan séché."
-  - "**Fouetter la base :** Fouetter le mélange vigoureusement pendant 30 secondes. S'assurer que le miel épais et la moutarde de Dijon sont complètement dissous dans le vinaigre avant d'introduire de l'huile."
-  - "**Émulsifier la vinaigrette :** Tout en fouettant constamment d'une main, verser lentement l'huile d'olive extra vierge dans le bol en un mince filet régulier jusqu'à ce que ce soit épais et complètement incorporé. _(Si vous utilisez un pot Mason, fermer hermétiquement le couvercle et agiter vigoureusement pendant 30 secondes jusqu'à l'uniformité)._"
-  - "**Assaisonner pour l'équilibre :** Goûter la vinaigrette et ajouter une pincée de sel de mer et un généreux moulin de poivre noir pour équilibrer la douceur naturelle du miel de figue"
-  - '**Servir :** Mélanger légèrement les feuilles de salade de votre choix dans la vinaigrette. Disposer la salade dans une assiette, garnir de fromage de chèvre chaud poêlé et compléter avec un filet en zigzag de miel Figue Origan cru directement sur le fromage.'
+  - "Dans un bol moyen (ou un pot Mason propre), mélanger l'échalote hachée et les vinaigres. Laisser reposer 10 minutes pour adoucir le goût de l'échalote."
+  - "Ajouter le vinaigre au miel, à la figue et à l'origan de Martha Stewart, la moutarde de Dijon et l'origan séché, en fouettant. Tout en fouettant constamment d'une main, verser lentement l'huile d'olive extra-vierge en un mince filet continu, jusqu'à ce que la vinaigrette épaississe et soit bien homogène. (Si vous utilisez un pot Mason, bien fermer le couvercle et secouer vigoureusement pendant 30 secondes, jusqu'à ce que le mélange soit homogène.) Assaisonner de sel et de poivre."
 nutrition: ''
 ---
 
-Une vinaigrette élégante d'inspiration méditerranéenne qui marie des notes profondes de fleur de figuier confite avec de l'origan aromatique. Cette vinaigrette repose sur une bonne émulsification pour créer un enrobage lisse et unifié pour les feuilles de salade croquantes.
+Une vinaigrette élégante d'inspiration méditerranéenne qui marie les notes profondes et confites de la figue à l'arôme de l'origan. Cette vinaigrette repose sur une émulsion bien réussie, qui permet d'enrober uniformément et en douceur des verdures croquantes. Elle accompagne à merveille une salade de verdures amères (comme la roquette et le radicchio) servie avec du fromage de chèvre tiède.

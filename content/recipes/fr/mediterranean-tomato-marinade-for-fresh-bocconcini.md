@@ -8,19 +8,18 @@ yields: 4 à 6 portions
 upsellImage: ''
 upsellLink: ''
 ingredients:
-  - 3 c. à soupe d’assaisonnement aux tomates méditerranéennes de <strong><a href="https://martha.com/" target="_blank">Martha Stewart</a></strong>
-  - 1/2 tasse d’huile d’olive extra-vierge de haute qualité
-  - 1 c. à soupe de vinaigre balsamique blanc ou de jus de citron frais
-  - 450 g (1 lb) de boules de bocconcini frais (ou de perles de mozzarella fraîches, égouttées)
-  - 1 cup cherry tomatoes, halved
-  - Feuilles de basilic frais, déchirées (pour la garniture)
+  - 1/2 tasse d'huile d'olive extra-vierge de qualité
+  - 1 c. à table de vinaigre balsamique blanc ou de jus de citron frais
+  - 3 c. à table d'assaisonnement méditerranéen aux tomates de <strong><a href="https://martha.com/"target="_blank">Martha Stewart</a></strong>
+  - 1 lb de bocconcinis frais (ou de perles de mozzarella fraîche), égouttés
+  - 1 tasse de tomates cerises, coupées en deux
+  - Feuilles de basilic frais, déchirées (pour garnir)
+  - Pain chaud ou pain plat, pour servir
 instructions:
-  - '**Hydrater l’assaisonnement :** Dans un bol moyen, fouetter l’huile d’olive extra-vierge, le vinaigre balsamique blanc et l’assaisonnement aux tomates méditerranéennes. Laisser le mélange reposer à température ambiante pendant 5 minutes pour permettre aux flocons de tomates séchées et au basilic d’absorber les liquides et de libérer tout leur arôme.'
-  - '**Préparer le fromage :** Égoutter soigneusement les bocconcini ou les perles de mozzarella fraîches de leur saumure liquide. Les éponger légèrement avec un essuie-tout; enlever l’excès d’humidité assure que l’huile infusée agrippe la surface lisse du fromage.'
-  - '**Combiner et enrober :** Ajouter les bocconcini égouttés et les tomates cerises coupées en deux directement dans le bol avec l’huile de tomates et basilic. À l’aide d’une grande cuillère ou d’une spatule en caoutchouc, mélanger doucement les ingrédients jusqu’à ce que le fromage et les tomates soient complètement enrobés de la marinade parsemée d’herbes.'
-  - '**Mariner et infuser :** Couvrir hermétiquement le bol d’une pellicule plastique et laisser reposer à température ambiante pendant au moins 30 minutes avant de servir. Cette période de repos permet aux riches saveurs d’ail, de tomate et de basilic de pénétrer le centre crémeux de la mozzarella fraîche.'
-  - '**Garnir et servir :** Transférer le fromage et les tomates marinées dans un plat de service peu profond, en vous assurant de verser à la cuillère toute l’huile savoureuse du fond du bol sur le dessus. Disperser des feuilles de basilic frais déchirées sur le plat et servir avec du pain artisanal chaud et croustillant ou des pains plats grillés.'
+  - "Dans un bol moyen, fouetter ensemble l'huile d'olive, le vinaigre et l'assaisonnement méditerranéen aux tomates. Laisser reposer 5 minutes à température ambiante pour que les ingrédients séchés absorbent bien le liquide."
+  - "Égoutter le fromage et l'éponger délicatement avec du papier essuie-tout pour retirer l'excédent d'humidité. Ajouter le fromage et les tomates cerises au mélange d'huile. Mélanger pour bien enrober de marinade. Couvrir et laisser reposer à température ambiante pendant 30 minutes pour que les saveurs pénètrent."
+  - "Transférer dans un plat de service, arroser du reste de l'huile, parsemer de basilic déchiré et servir avec du pain chaud ou des pains plats."
 nutrition: ''
 ---
 
-Cette recette met en évidence un profil de saveur traditionnel et ensoleillé en utilisant des flocons de tomates savoureuses, du poivron rouge sucré, du sel de mer croustillant et du basilic aromatique. Le fait de mélanger l’assaisonnement sec directement dans l’huile d’olive extra-vierge permet aux flocons de tomates de se réhydrater et de s’assouplir, créant une marinade riche et vibrante qui enrobe parfaitement les bocconcini doux et crémeux ou les perles de mozzarella fraîches.
+Ce plat met en valeur les saveurs traditionnelles de la Méditerranée grâce aux flocons de tomate, au poivron rouge, au sel de mer et au basilic. Le mélange d'assaisonnement se réhydrate dans l'huile d'olive pour créer une marinade qui enrobe des bocconcinis crémeux ou des perles de mozzarella fraîche.
