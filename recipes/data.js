@@ -591,14 +591,14 @@ const recipesData = [
     ],
     "ingredients_fr": [
       "5 à 6 tasses de verdures fraîches (laitue Boston croquante ou mélange de jeunes pousses)",
-      "3 à 4 c. à table d'huile d'olive extra-vierge infusée au balsamique, à l'ail et aux fines herbes de <strong><ahref=\"https://martha.com/\" target=\"_blank\">Martha Stewart</a></strong>",
+      "3 à 4 c. à table d'huile d'olive extra-vierge infusée au balsamique, à l'ail et aux fines herbes de <strong><a href=\"https://martha.com/\" target=\"_blank\">Martha Stewart</a></strong>",
       "1/2 c. à thé de fleur de sel ou de sel casher",
       "1/4 c. à thé de poivre noir fraîchement concassé",
       "Facultatif : tomates cerises coupées en deux, concombre tranché ou copeaux de parmesan"
     ],
     "ingredients_es": [
       "5 a 6 tazas de hojas verdes frescas (lechuga mantequilla crujiente o mezcla de hojas tiernas)",
-      "3 a 4 cucharadas del Balsamic Garlic and Herb Infused Extra-Virgin Olive Oil de <strong><ahref=\"https://martha.com/\" target=\"_blank\">Martha Stewart</a></strong>",
+      "3 a 4 cucharadas del Balsamic Garlic and Herb Infused Extra-Virgin Olive Oil de <strong><a href=\"https://martha.com/\" target=\"_blank\">Martha Stewart</a></strong>",
       "1/2 cucharadita de sal de mar en hojuelas o sal kosher",
       "1/4 cucharadita de pimienta negra recién molida",
       "Opcional: tomates cherry cortados por la mitad, pepino en rodajas o lascas de parmesano"
@@ -626,7 +626,7 @@ const recipesData = [
     "description": "A completely effortless green salad preparation. The pre-blended herbs, garlic, and vinegar in the oil create a restaurant-style emulsion without any extra prep work.",
     "description_fr": "Une salade verte d'une simplicité absolue. Le mélange d'herbes, d'ail et de vinaigre déjà présent dans l'huile crée une émulsion digne d'un restaurant, sans aucune préparation supplémentaire.",
     "description_es": "Una ensalada verde de lo más sencilla. Las hierbas, el ajo y el vinagre que ya vienen mezclados en el aceite crean una emulsión de restaurante, sin ningún paso extra.",
-    "updated_at": 1793194465645,
+    "updated_at": 1793202539837,
     "prepTime_fr": "5 min",
     "cookTime_fr": "5 min",
     "yields_fr": "4 à 6 portions",
