@@ -439,8 +439,8 @@ const recipesData = [
     "upsellImage": "",
     "upsellLink": "",
     "ingredients": [
-      "1 package <strong><a href=\"https://martha.com/\" target=\"_blank\">Martha Stewart</a></strong> Neapolitan Style Pizza Dough Mix, prepared per package directions",
-      "1/2 cup <strong><a href=\"https://martha.com/\" target=\"_blank\">Martha Stewart</a></strong> Traditional Pizza Sauce",
+      "1 package <strong><a href=\"https://martha.com/\" target=\"_blank\">Martha Stewart's</a></strong> Neapolitan Style Pizza Dough Mix, prepared per package directions",
+      "1/2 cup <strong><a href=\"https://martha.com/\" target=\"_blank\">Martha Stewart's</a></strong> Traditional Pizza Sauce",
       "2 cups shredded mozzarella",
       "4 oz thinly sliced prosciutto",
       "2 cups fresh arugula",
@@ -462,7 +462,7 @@ const recipesData = [
       "2 tazas de queso mozzarella rallado",
       "4 oz de prosciutto en lonchas finas",
       "2 tazas de rúcula fresca",
-      "2 cucharadas del Balsamic Garlic & Herb Infused Extra-Virgin Olive Oil de <strong><ahref=\"https://martha.com/\" target=\"_blank\">Martha Stewart</a></strong>",
+      "2 cucharadas del Balsamic Garlic & Herb Infused Extra-Virgin Olive Oil de <strong><a href=\"https://martha.com/\" target=\"_blank\">Martha Stewart</a></strong>",
       "Virutas de queso parmesano fresco"
     ],
     "instructions": [
@@ -498,7 +498,7 @@ const recipesData = [
     "prepTime_es": "20 minutos (más preparación de la masa)",
     "cookTime_es": "45 minutos",
     "yields_es": "1 pizza (4 porciones)",
-    "updated_at": 1793195485064
+    "updated_at": 1793202432392
   },
   {
     "id": "quick-garden-herb-ranch-dip",
