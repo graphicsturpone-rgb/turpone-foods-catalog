@@ -297,7 +297,7 @@ const recipesData = [
     "ingredients": [
       "1/2 cup high-quality extra-virgin olive oil",
       "1 tablespoon white balsamic vinegar or fresh lemon juice",
-      "3 tablespoons <strong><a href=\"https://martha.com/\" target=\"_blank\">Martha Stewart</a></strong>’s Mediterranean Tomato Seasoning",
+      "3 tablespoons <strong><a href=\"https://martha.com/\" target=\"_blank\">Martha Stewart's</a></strong> Mediterranean Tomato Seasoning",
       "1 pound fresh bocconcini (or fresh mozzarella pearls, drained)",
       "1 cup cherry tomatoes, halved",
       "Fresh basil leaves, torn (for garnish)",
@@ -345,7 +345,7 @@ const recipesData = [
     "prepTime_es": "10 min",
     "cookTime_es": "10 min (más 30 min de marinado)",
     "yields_es": "4 a 6 porciones",
-    "updated_at": 1793128795655
+    "updated_at": 1793195289867
   },
   {
     "id": "pan-seared-salmon-with-a-lemon-black-pepper-honey-glaze",
