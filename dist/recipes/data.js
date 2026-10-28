@@ -86,7 +86,7 @@ const recipesData = [
     "upsellLink": "",
     "ingredients": [
       "1 boneless center-cut pork loin roast (2 ½ to 3 pounds)",
-      "3 tablespoons <strong><a href=\"https://martha.com/\" target=\"_blank\">Martha Stewart</a></strong>’s Sweet Italian Seasoning",
+      "3 tablespoons <strong><a href=\"https://martha.com/\" target=\"_blank\">Martha Stewart's</a></strong> Sweet Italian Seasoning",
       "2 tablespoons extra-virgin olive oil",
       "1 cup low-sodium chicken broth or dry white wine or water"
     ],
@@ -129,7 +129,7 @@ const recipesData = [
     "prepTime_es": "15 min",
     "cookTime_es": "1 hora",
     "yields_es": "4 a 6 porciones",
-    "updated_at": 1793127057084
+    "updated_at": 1793195189666
   },
   {
     "id": "fig-herb-balsamic-vinaigrette",
