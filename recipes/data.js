@@ -444,7 +444,7 @@ const recipesData = [
       "2 cups shredded mozzarella",
       "4 oz thinly sliced prosciutto",
       "2 cups fresh arugula",
-      "2 tablespoons <strong><a href=\"https://martha.com/\" target=\"_blank\">Martha Stewart</a></strong> Balsamic Garlic & Herb Infused Extra-Virgin Olive Oil",
+      "2 tablespoons <strong><a href=\"https://martha.com/\" target=\"_blank\">Martha Stewart's</a></strong> Balsamic Garlic & Herb Infused Extra-Virgin Olive Oil",
       "Fresh Parmesan shavings"
     ],
     "ingredients_fr": [
@@ -498,7 +498,7 @@ const recipesData = [
     "prepTime_es": "20 minutos (más preparación de la masa)",
     "cookTime_es": "45 minutos",
     "yields_es": "1 pizza (4 porciones)",
-    "updated_at": 1793129752592
+    "updated_at": 1793195485064
   },
   {
     "id": "quick-garden-herb-ranch-dip",
