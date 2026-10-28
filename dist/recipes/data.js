@@ -516,7 +516,7 @@ const recipesData = [
     "ingredients": [
       "1 cup sour cream",
       "1/2 cup high-quality mayonnaise",
-      "3 tablespoons <strong><a href=\"https://martha.com/\" target=\"_blank\">Martha Stewart</a></strong>’s Garden Herb Seasoning",
+      "3 tablespoons <strong><a href=\"https://martha.com/\" target=\"_blank\">Martha Stewart's</a></strong> Garden Herb Seasoning",
       "1 teaspoon fresh lemon juice (optional)",
       "Fresh chives or dill, finely chopped (for garnish)",
       "Crudité or chips, for serving"
@@ -567,7 +567,7 @@ const recipesData = [
     "prepTime_es": "5 min",
     "cookTime_es": "5 minutos (plus 30 minutos chilling)",
     "yields_es": "1.5 taza",
-    "updated_at": 1793130024712
+    "updated_at": 1793195320191
   },
   {
     "id": "simple-balsamic-garlic-herb-tableside-dressing",
