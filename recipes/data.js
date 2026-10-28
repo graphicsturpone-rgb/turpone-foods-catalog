@@ -720,19 +720,19 @@ const recipesData = [
     "upsellImage": "",
     "upsellLink": "",
     "ingredients": [
-      "1 package <strong><a href=\"https://martha.com/\" target=\"_blank\">Martha Stewart</a></strong> Neapolitan Style Pizza Dough Mix, prepared per package directions",
-      "1/2 cup <strong><a href=\"https://martha.com/\" target=\"_blank\">Martha Stewart</a></strong> Spicy Pizza Sauce",
-      "2 tablespoons <strong><a href=\"https://martha.com/\" target=\"_blank\">Martha Stewart</a></strong> Spicy Garlic Infused Extra-Virgin Olive Oil",
+      "1 package <strong><a href=\"https://martha.com/\" target=\"_blank\">Martha Stewart's</a></strong> Neapolitan Style Pizza Dough Mix, prepared per package directions",
+      "1/2 cup <strong><a href=\"https://martha.com/\" target=\"_blank\">Martha Stewart's</a></strong> Spicy Pizza Sauce",
+      "2 tablespoons <strong><a href=\"https://martha.com/\" target=\"_blank\">Martha Stewart's</a></strong> Spicy Garlic Infused Extra-Virgin Olive Oil, plus more for drizzling",
       "2 cups shredded mozzarella",
       "8 ounces Italian sausage, cooked and crumbled",
       "1/2 bell pepper, thinly sliced (red, yellow, orange or a mix)",
       "1/4 red onion, thinly sliced",
-      "1 tablespoon <strong><a href=\"https://martha.com/\" target=\"_blank\">Martha Stewart</a></strong> Triple Pepper Mix Seasoning"
+      "1 tablespoon <strong><a href=\"https://martha.com/\" target=\"_blank\">Martha Stewart's</a></strong> Triple Pepper Mix Seasoning"
     ],
     "ingredients_fr": [
       "1 paquet de mélange à pâte à pizza de style napolitain <strong><a href=\"https://martha.com/\" target=\"_blank\">Martha Stewart</a></strong>, préparé selon les instructions de l'emballage",
       "1/2 tasse de sauce à pizza épicée <strong><a href=\"https://martha.com/\" target=\"_blank\">Martha Stewart</a></strong>",
-      "2 c. à table d'huile d'olive extra-vierge infusée à l'ail épicé <strong><a href=\"https://martha.com/\" target=\"_blank\">Martha Stewart</a></strong>",
+      "2 c. à table d'huile d'olive extra-vierge infusée à l'ail épicé <strong><a href=\"https://martha.com/\" target=\"_blank\">Martha Stewart</a></strong>, plus un peu pour arroser",
       "2 tasses de mozzarella râpée",
       "8 oz de saucisse italienne, cuite et émiettée",
       "1/2 poivron, coupé en fines tranches",
@@ -783,7 +783,7 @@ const recipesData = [
     "prepTime_es": "20 minutos (más preparación de la masa)",
     "cookTime_es": "45 minutos",
     "yields_es": "1 pizza (4 porciones)",
-    "updated_at": 1793131091372
+    "updated_at": 1793195712707
   },
   {
     "id": "triple-chili-honey-glazed-skewers",
