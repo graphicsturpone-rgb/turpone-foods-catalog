@@ -222,7 +222,7 @@ const recipesData = [
       "Vegetable oil, for grill"
     ],
     "ingredients_fr": [
-      "1/2 tasse d'huile d'olive extra-vierge infusée au citron et au poivre de <strong<ahref=\"https://martha.com/\"target=\"_blank\">Martha Stewart's</a></strong>, divisée",
+      "1/2 tasse d'huile d'olive extra-vierge infusée au citron et au poivre de <strong><a href=\"https://martha.com/\" target=\"_blank\">Martha Stewart's</a></strong>, divisée",
       "2 c. à table de jus de citron fraîchement pressé",
       "3 c. à table de persil plat frais, haché finement",
       "1 c. à table de feuilles d'origan ou de thym frais, hachées finement, plus 2 brins",
@@ -279,7 +279,7 @@ const recipesData = [
     "prepTime_es": "10 min",
     "cookTime_es": "20 min",
     "yields_es": "2 porciones",
-    "updated_at": 1793202080126
+    "updated_at": 1793202125492
   },
   {
     "id": "mediterranean-tomato-marinade-for-fresh-bocconcini",
