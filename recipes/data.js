@@ -148,7 +148,7 @@ const recipesData = [
       "2 teaspoons minced shallot",
       "1/4 cup aged balsamic vinegar",
       "1 tablespoon red wine vinegar",
-      "1 tablespoon <strong><a href=\"https://martha.com/\" target=\"_blank\">Martha Stewart</a></strong>’s Fig Oregano Honey vinegar",
+      "1 tablespoon <strong><a href=\"https://martha.com/\" target=\"_blank\">Martha Stewart's</a></strong> Fig Oregano Honey vinegar",
       "1 teaspoon Dijon mustard",
       "Pinch of dried oregano",
       "Sea salt and freshly ground black pepper",
@@ -195,7 +195,7 @@ const recipesData = [
     "prepTime_es": "5 min",
     "cookTime_es": "5 min",
     "yields_es": "1 taza",
-    "updated_at": 1793127462125
+    "updated_at": 1793195230885
   },
   {
     "id": "grilled-white-fish-with-lemon-pepper-herb-salmoriglio",
