@@ -799,7 +799,7 @@ const recipesData = [
     "upsellImage": "/assets/images/recipes/triple chili.png",
     "upsellLink": "",
     "ingredients": [
-      "3 tablespoons Triple Chili Honey Drizzle of <strong<ahref=\"https://martha.com/\"target=\"_blank\">MarthaStewart</a></strong>",
+      "3 tablespoons <strong><a href=\"https://martha.com/\" target=\"_blank\">Martha Stewart's</a></strong> Triple Chili Honey Drizzle",
       "2 tablespoons soy sauce",
       "1 tablespoons olive oil",
       "3 cloves garlic, minced",
@@ -861,7 +861,7 @@ const recipesData = [
     "prepTime_es": "15 minutos",
     "cookTime_es": "45 minutos",
     "yields_es": "4 porciones",
-    "updated_at": 1793193913311
+    "updated_at": 1793194552939
   },
   {
     "id": "triple-pepper-crusted-new-york-strip-steak",
