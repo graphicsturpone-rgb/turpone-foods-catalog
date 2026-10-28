@@ -211,7 +211,7 @@ const recipesData = [
     "upsellImage": "/assets/images/recipes/lemon pepper.png",
     "upsellLink": "",
     "ingredients": [
-      "1/2 cup <strong><a href=\"https://martha.com/\" target=\"_blank\">Martha Stewart</a></strong>’s Lemon Pepper Infused Extra-Virgin Olive Oil, divided",
+      "1/2 cup <strong><a href=\"https://martha.com/\" target=\"_blank\">Martha Stewart's</a></strong> Lemon Pepper Infused Extra-Virgin Olive Oil, divided",
       "2 tablespoons freshly squeezed lemon juice",
       "3 tablespoons fresh flat-leaf parsley, minced",
       "1 tablespoon fresh oregano or thyme leaves, minced plus 2 sprigs",
@@ -279,7 +279,7 @@ const recipesData = [
     "prepTime_es": "10 min",
     "cookTime_es": "20 min",
     "yields_es": "2 porciones",
-    "updated_at": 1793128058722
+    "updated_at": 1793195253969
   },
   {
     "id": "mediterranean-tomato-marinade-for-fresh-bocconcini",
