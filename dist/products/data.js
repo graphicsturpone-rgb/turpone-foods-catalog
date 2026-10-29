@@ -140,10 +140,10 @@ const productsData = [
     "category_fr": "Pinsas surgelées",
     "category_es": "Pinsas congeladas",
     "image": "sausage-and-hot-honey-pinsa.webp",
-    "description": "Martha Stewart Sausage and Hot Honey Pinsa combines savory Italian sausage and fresh mozzarella with hot honey on a hand-stretched, authentic Roman-style crust. The light, airy and crisp crust pairs beautifully with rich Italian sausage, creamy mozzarella and a sweet kick of heat from the hot honey. It's a bold balance of sweet and savory flavors, ready to bake and enjoy in minutes.",
+    "description": "Discover the irresistible sweet and savory magic of Martha Stewart’s authentic Sausage and Hot Honey Pinsa. Rooted in an ancient recipe, this hand-stretched Roman sourdough crust bakes up remarkably crisp and airy. Expertly topped with Italian sausage, fresh mozzarella, and a hot honey drizzle, it boasts over 30g of protein. Enjoy this quick, twelve-minute artisan flatbread meal with your closest friends.",
     "description_fr": "La pinsa à la saucisse italienne et miel piquant Martha Stewart marie saucisse italienne assaisonnée, mozzarella fraîche et un filet de miel piquant sur une croûte romaine légère et croustillante. Une alliance sucrée-salée irrésistible.",
     "description_es": "La pinsa de salchicha italiana y miel picante Martha Stewart reúne salchicha sazonada, mozzarella cremosa y miel picante sobre una masa artesanal de masa madre crujiente.",
-    "features": "Featuring: Fresh mozzarella, Italian sausage and hot honey",
+    "features": "Featuring: Sourdough crust, Italian sausage, fresh mozzarella, and hot honey drizzle.",
     "features_fr": "Caractéristiques : Mozzarella fraîche, saucisse italienne et miel piquant",
     "features_es": "Características: Mozzarella fresca, salchicha italiana y miel picante",
     "gallery": [
@@ -173,7 +173,7 @@ const productsData = [
       "sausage-and-hot-honey-pinsa-us-gallery-4.webp",
       "sausage-and-hot-honey-pinsa-us-gallery-5.webp"
     ],
-    "updated_at": 1793104731331
+    "updated_at": 1793279132862
   },
   {
     "id": 31,
