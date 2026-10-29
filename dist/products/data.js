@@ -8,10 +8,10 @@ const productsData = [
     "category_fr": "Pinsas surgelées",
     "category_es": "Pinsas congeladas",
     "image": "bacon-and-caramelized-onions-pinsa.webp",
-    "description": "Elevate weeknight dinners with Martha Stewart’s Martha Stewart Bacon and Caramelized Onions Pinsa. Built on a hand-stretched, 72-hour fermented Roman-style sourdough crust, this artisan flatbread bakes up remarkably crisp yet airy in ten minutes. We layer rich Alfredo sauce, melted mozzarella, aged Parmesan, sweet caramelized onions, and smoky bacon—delivering over 30g of protein and effortless gourmet Italian flavor for sharing with friends.",
+    "description": "Elevate your weeknight dinners with Martha Stewart Bacon and Caramelized Onions Pinsa. Inspired by an ancient recipe, this authentic hand-stretched Roman-style sourdough crust bakes up remarkably crisp yet airy in just ten minutes. Topped with creamy Alfredo sauce, melted mozzarella, aged Parmesan, sweet caramelized onions, and smoky bacon, it delivers over 30g of protein and rich flavor perfect for sharing with friends.",
     "description_fr": "La pinsa au bacon et oignons caramélisés Martha Stewart marie du bacon savoureux et de doux oignons caramélisés avec une sauce Alfredo crémeuse, de la mozzarella et du parmesan sur une croûte romaine artisanale étirée à la main. Légère, aérée et croustillante à l'extérieur, elle offre un équilibre gourmand entre saveurs salées et notes douces. Prête en quelques minutes pour un repas d'inspiration romaine chez soi.",
     "description_es": "La pinsa de tocino y cebollas caramelizadas Martha Stewart combina sabroso tocino y dulces cebollas caramelizadas con cremosa salsa Alfredo, mozzarella y parmesano sobre una masa artesanal de estilo romano estirada a mano. Ligera y crujiente por fuera, crea la base perfecta para esta combinación rica, salada y sutilmente dulce. Lista en minutos para disfrutar en casa.",
-    "features": "Featuring: 72-hour sourdough crust, Alfredo sauce, mozzarella, Parmesan, bacon, caramelized onions.",
+    "features": "Featuring: Hand-stretched sourdough crust, Alfredo sauce, mozzarella, Parmesan, bacon, caramelized onions.",
     "features_fr": "Caractéristiques : Sauce Alfredo, mozzarella, parmesan, oignons caramélisés et bacon",
     "features_es": "Características: Salsa Alfredo, mozzarella, parmesano, cebollas caramelizadas y tocino",
     "gallery": [
@@ -41,7 +41,7 @@ const productsData = [
       "bacon-and-caramelized-onions-pinsa-us-gallery-4.webp",
       "bacon-and-caramelized-onions-pinsa-us-gallery-5.webp"
     ],
-    "updated_at": 1793278300446
+    "updated_at": 1793278486402
   },
   {
     "id": 9,
