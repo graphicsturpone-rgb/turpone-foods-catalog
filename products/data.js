@@ -96,10 +96,10 @@ const productsData = [
     "category_fr": "Pinsas surgelées",
     "category_es": "Pinsas congeladas",
     "image": "pepperoni-and-hot-pickled-peppers-pinsa.webp",
-    "description": "Martha Stewart Pepperoni and Hot Pickled Peppers Pinsa combines savory pepperoni with tangy hot pickled peppers, mozzarella and Parmesan on a hand-stretched, authentic Roman-style crust. Light and airy with a crisp exterior, the crust complements the richness of the pepperoni and cheese while hot pickled peppers add a bright, spicy kick. It's a bold twist on classic pepperoni, ready to enjoy at home in minutes.",
+    "description": "Spice up your pizza night with the Martha Stewart authentic Pepperoni and Hot Pickled Peppers Pinsa. Crafted from an ancient recipe, this delicious hand-stretched Roman sourdough crust ferments for 72 hours to achieve a perfectly crisp, airy texture. Topped with zesty pepperoni, spicy pickled peppers, melted mozzarella, and aged Parmesan, it bakes in ten minutes, delivering over 30g of protein for effortless home entertaining.",
     "description_fr": "La pinsa au pepperoni et piments marinés piquants Martha Stewart associe du pepperoni savoureux, des piments marinés acidulés, de la mozzarella et du parmesan sur une pâte romaine au levain croustillante. Un délice audacieux prêt en quelques minutes.",
     "description_es": "La pinsa de pepperoni y chiles encurtidos picantes Martha Stewart equilibra el pepperoni especiado con chiles picantes y quesos fundidos sobre una masa romana ligera y crujiente.",
-    "features": "Featuring: Pepperoni, hot pickled peppers, mozzarella and Parmesan",
+    "features": "Featuring: Sourdough crust, pepperoni, hot pickled peppers, mozzarella, and Parmesan.",
     "features_fr": "Caractéristiques : Pepperoni, piments marinés piquants, mozzarella et parmesan",
     "features_es": "Características: Pepperoni, chiles encurtidos picantes, mozzarella y parmesano",
     "gallery": [
@@ -129,7 +129,7 @@ const productsData = [
       "pepperoni-and-hot-pickled-peppers-pinsa-us-gallery-4.webp",
       "pepperoni-and-hot-pickled-peppers-pinsa-us-gallery-5.webp"
     ],
-    "updated_at": 1793104682553
+    "updated_at": 1793278827284
   },
   {
     "id": 28,
