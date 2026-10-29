@@ -269,10 +269,10 @@ const productsData = [
     "category_fr": "Pizzas surgelées",
     "category_es": "Pizzas congeladas",
     "image": "pepperoni-and-hot-pickled-peppers-pizza-10.webp",
-    "description": "Martha Stewart Pepperoni and Hot Pickled Peppers Pizza combines savory pepperoni with tangy hot pickled peppers, mozzarella and Parmesan on a hand-stretched, stone-baked crust. Bold, savory and pleasantly spicy, every bite balances rich pepperoni and melted cheese with the bright kick of pickled peppers. It's a flavorful twist on a classic pepperoni pizza, ready to bake and enjoy in minutes.",
+    "description": "Transform your home into a premium Italian trattoria with Martha Stewart's exclusive Pepperoni and Hot Pickled Peppers Pizza. This restaurant-quality, ten-inch masterpiece features a hand-stretched, stone-baked sourdough crust that cooks to a flawless golden crunch in minutes. Loaded generously with zesty pepperoni, spicy pickled peppers, melted mozzarella, and parmesan, it boasts over thirty grams of protein for a deeply satisfying, effortless dinner.",
     "description_fr": "La pizza au pepperoni et piments marinés piquants Martha Stewart offre une version relevée de la pizza classique. Cuite sur pierre, avec pepperoni croustillant, fromage fondant et piments acidulés.",
     "description_es": "La pizza de pepperoni y chiles encurtidos picantes Martha Stewart reinventa la pizza tradicional con una combinación vibrante de queso derretido, pepperoni artesanal y chiles encurtidos.",
-    "features": "Featuring: Pepperoni, hot pickled peppers, mozzarella and Parmesan",
+    "features": "Featuring: Stone-baked sourdough, pepperoni, hot pickled peppers, mozzarella, and parmesan.",
     "features_fr": "Caractéristiques : Pepperoni, piments marinés piquants, mozzarella et parmesan",
     "features_es": "Características: Pepperoni, chiles encurtidos picantes, mozzarella y parmesano",
     "gallery": [
@@ -299,7 +299,7 @@ const productsData = [
       "pepperoni-and-hot-pickled-peppers-pizza-10-us-gallery-4.webp"
     ],
     "slug": "pepperoni-and-hot-pickled-peppers-pizza-10",
-    "updated_at": 1793105934600
+    "updated_at": 1793279597632
   },
   {
     "id": 29,
