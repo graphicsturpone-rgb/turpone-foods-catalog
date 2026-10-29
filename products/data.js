@@ -8,10 +8,10 @@ const productsData = [
     "category_fr": "Pinsas surgelées",
     "category_es": "Pinsas congeladas",
     "image": "bacon-and-caramelized-onions-pinsa.webp",
-    "description": "Upgrade pizza night with the Martha Stewart Bacon and Caramelized Onions Pinsa. Crafted with a hand-stretched, authentic Roman-style sourdough crust, this pizza bakes up impossibly light, airy, and crisp in just ten minutes. Topped with creamy Alfredo sauce, melted mozzarella, aged Parmesan, sweet caramelized onions, and smoky bacon, it delivers a rich, bakery-fresh meal that makes effortless weeknight entertaining truly unforgettable.",
+    "description": "Elevate weeknight dinners with Martha Stewart’s Martha Stewart Bacon and Caramelized Onions Pinsa. Built on a hand-stretched, 72-hour fermented Roman-style sourdough crust, this artisan flatbread bakes up remarkably crisp yet airy in ten minutes. We layer rich Alfredo sauce, melted mozzarella, aged Parmesan, sweet caramelized onions, and smoky bacon—delivering over 30g of protein and effortless gourmet Italian flavor for sharing with friends.",
     "description_fr": "La pinsa au bacon et oignons caramélisés Martha Stewart marie du bacon savoureux et de doux oignons caramélisés avec une sauce Alfredo crémeuse, de la mozzarella et du parmesan sur une croûte romaine artisanale étirée à la main. Légère, aérée et croustillante à l'extérieur, elle offre un équilibre gourmand entre saveurs salées et notes douces. Prête en quelques minutes pour un repas d'inspiration romaine chez soi.",
     "description_es": "La pinsa de tocino y cebollas caramelizadas Martha Stewart combina sabroso tocino y dulces cebollas caramelizadas con cremosa salsa Alfredo, mozzarella y parmesano sobre una masa artesanal de estilo romano estirada a mano. Ligera y crujiente por fuera, crea la base perfecta para esta combinación rica, salada y sutilmente dulce. Lista en minutos para disfrutar en casa.",
-    "features": "Detailed Product Featuring & Culinary Breakdown\nExpanded directly from the core product paragraph, this section breaks down the key selling points into scannable, conversion-focused feature blocks ideal for e-commerce product pages, retail sell sheets, and promotional layouts:\n• Authentic Hand-Stretched Roman Sourdough Crust: Inspired by an ancient Roman recipe, our Pinsa crust is made with real sourdough and stretched by hand. Unlike heavy traditional frozen pizzas, it bakes into a golden-brown base with a delicate, crisp exterior and an airy, cloud-like interior. \n• Decadent Savory & Sweet Topping Pairing: Every bite balances rich, savory depth with subtle sweetness. A velvety Alfredo sauce base is layered with creamy mozzarella, sharp Parmesan, slow-sweetened caramelized onions, and smoky bacon. \n• Artisanal Quality in 10–12 Minutes: Designed for effortless weeknight meals or last-minute hosting, this Pinsa goes straight from the freezer to the middle oven rack at 400°F (200°C), baking to bubbling perfection in just 10 to 12 minutes. \n• Naturally High in Protein: Packing more than 30g of protein per box (12g of protein per 1/3 pizza serving at 360 calories), it offers a satisfying, substantial meal whether served as a main course with a crisp green salad or sliced into squares as an appetizer for friends. \n• Product Specifications at a Glance:\n◦ Full Product Name: Martha Stewart Bacon and Caramelized Onions Pinsa \n◦ Net Weight: 16.01 oz (454g) \n◦ Serving Size: 3 servings per container (1/3 pizza / 140g per serving) \n◦ SKU / Item Code: MS_PINSAS-BACONONION \n◦ UPC: 6-28634-32562-9",
+    "features": "Featuring: 72-hour sourdough crust, Alfredo sauce, mozzarella, Parmesan, bacon, caramelized onions.",
     "features_fr": "Caractéristiques : Sauce Alfredo, mozzarella, parmesan, oignons caramélisés et bacon",
     "features_es": "Características: Salsa Alfredo, mozzarella, parmesano, cebollas caramelizadas y tocino",
     "gallery": [
@@ -41,7 +41,7 @@ const productsData = [
       "bacon-and-caramelized-onions-pinsa-us-gallery-4.webp",
       "bacon-and-caramelized-onions-pinsa-us-gallery-5.webp"
     ],
-    "updated_at": 1793278060879
+    "updated_at": 1793278300446
   },
   {
     "id": 9,
