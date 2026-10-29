@@ -184,10 +184,10 @@ const productsData = [
     "category_fr": "Pinsas surgelées",
     "category_es": "Pinsas congeladas",
     "image": "spinach-four-cheese-with-alfredo-sauce-pinsa.webp",
-    "description": "Martha Stewart Spinach Four Cheese with Alfredo Sauce Pinsa combines spinach with creamy Alfredo sauce and a rich blend of fontina, mozzarella, Parmesan and Romano cheeses on a hand-stretched, authentic Roman-style crust. The light, airy and crisp crust balances the creamy sauce and savory blend of cheeses, while spinach adds freshness to every bite. Rich and satisfying, it's an elevated Roman-inspired option that's ready to enjoy at home in minutes.",
+    "description": "Treat yourself to an effortless gourmet Italian dinner at home with Martha Stewart’s exquisite Spinach Four Cheese With Alfredo Sauce Pinsa. This authentic, hand-stretched Roman sourdough crust provides a delightfully crisp yet airy bite that bakes up beautifully in about ten minutes. We generously layer it with rich Alfredo, fresh spinach, plus a decadent blend of fontina, mozzarella, Parmesan, and Romano cheeses.",
     "description_fr": "La pinsa épinards et quatre fromages à la sauce Alfredo Martha Stewart marie épinards frais, sauce Alfredo crémeuse et une sélection généreuse de fromages fontina, mozzarella, parmesan et romano sur une pâte romaine au levain aérée et croustillante.",
     "description_es": "La pinsa de espinacas y cuatro quesos con salsa Alfredo Martha Stewart reúne espinacas, salsa blanca y una mezcla exquisita de quesos fontina, mozzarella, parmesano y romano sobre masa madre crujiente.",
-    "features": "Featuring: Spinach, Alfredo sauce, fontina, mozzarella, Parmesan and Romano cheeses",
+    "features": "Featuring: Sourdough crust, spinach, Alfredo, fontina, mozzarella, Parmesan, and Romano cheeses.",
     "features_fr": "Caractéristiques : Épinards, sauce Alfredo, fromages fontina, mozzarella, parmesan et romano",
     "features_es": "Características: Espinacas, salsa Alfredo, quesos fontina, mozzarella, parmesano y romano",
     "gallery": [
@@ -217,7 +217,7 @@ const productsData = [
       "spinach-four-cheese-with-alfredo-sauce-pinsa-us-gallery-4.webp",
       "spinach-four-cheese-with-alfredo-sauce-pinsa-us-gallery-5.webp"
     ],
-    "updated_at": 1793104774321
+    "updated_at": 1793278709488
   },
   {
     "id": 10,
