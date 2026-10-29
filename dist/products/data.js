@@ -140,10 +140,10 @@ const productsData = [
     "category_fr": "Pinsas surgelées",
     "category_es": "Pinsas congeladas",
     "image": "sausage-and-hot-honey-pinsa.webp",
-    "description": "Discover the irresistible sweet and savory magic of Martha Stewart’s authentic Sausage and Hot Honey Pinsa. Rooted in an ancient recipe, this hand-stretched Roman sourdough crust bakes up remarkably crisp and airy. Expertly topped with Italian sausage, fresh mozzarella, and a hot honey drizzle, it boasts over 30g of protein. Enjoy this quick, twelve-minute artisan flatbread meal with your closest friends.",
+    "description": "Indulge in the sweet and savory perfection of Martha Stewart’s Sausage and Hot Honey Pinsa. Baked on an authentic hand-stretched Roman sourdough crust, this premium artisan flatbread achieves a beautifully crisp, airy finish in mere minutes. We artfully combine savory Italian sausage, creamy fresh mozzarella, and a signature hot honey drizzle. Packing over 30g of protein, it easily elevates any weeknight gathering.",
     "description_fr": "La pinsa à la saucisse italienne et miel piquant Martha Stewart marie saucisse italienne assaisonnée, mozzarella fraîche et un filet de miel piquant sur une croûte romaine légère et croustillante. Une alliance sucrée-salée irrésistible.",
     "description_es": "La pinsa de salchicha italiana y miel picante Martha Stewart reúne salchicha sazonada, mozzarella cremosa y miel picante sobre una masa artesanal de masa madre crujiente.",
-    "features": "Featuring: Sourdough crust, Italian sausage, fresh mozzarella, and hot honey drizzle.",
+    "features": "Featuring: Hand-stretched sourdough crust, Italian sausage, fresh mozzarella, hot honey drizzle.",
     "features_fr": "Caractéristiques : Mozzarella fraîche, saucisse italienne et miel piquant",
     "features_es": "Características: Mozzarella fresca, salchicha italiana y miel picante",
     "gallery": [
@@ -173,7 +173,7 @@ const productsData = [
       "sausage-and-hot-honey-pinsa-us-gallery-4.webp",
       "sausage-and-hot-honey-pinsa-us-gallery-5.webp"
     ],
-    "updated_at": 1793279132862
+    "updated_at": 1793279493169
   },
   {
     "id": 31,
