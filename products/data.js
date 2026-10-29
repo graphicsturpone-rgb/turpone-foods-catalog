@@ -52,10 +52,10 @@ const productsData = [
     "category_fr": "Pinsas surgelées",
     "category_es": "Pinsas congeladas",
     "image": "margherita-with-fresh-mozzarella-pinsa.webp",
-    "description": "Martha Stewart Margherita with Fresh Mozzarella Pinsa brings together vine-ripened tomatoes, fresh mozzarella and basil on a hand-stretched, authentic Roman-style crust. Light, airy and crisp, the crust provides the perfect base for the simple, classic combination of rich tomatoes, creamy fresh mozzarella and fragrant basil. Ready in minutes, it's a fresh take on a timeless Margherita.",
+    "description": "Experience authentic Italian simplicity with Martha Stewart’s Margherita with Fresh Mozzarella Pinsa. This artisan flatbread features a hand-stretched Roman sourdough crust, celebrated for its uniquely crisp yet airy texture. Topped elegantly with vine-ripened tomatoes, aromatic basil, and fresh mozzarella, it packs over 30g of protein. Bake this flavor-rich pizza in under twelve minutes for the perfect, satisfying weeknight meal to share.",
     "description_fr": "La pinsa Margherita Martha Stewart réunit des tomates mûries sur pied, de la mozzarella fraîche fondante et du basilic aromatique sur une pâte romaine au levain étirée à la main. Légère, alvéolée et croustillante, prête en quelques minutes au four.",
     "description_es": "La pinsa Margherita Martha Stewart reúne tomates madurados al sol, mozzarella fresca cremosa y albahaca fragante sobre una base artesanal romana estirada a mano. Crujiente, esponjosa y lista en minutos para disfrutar.",
-    "features": "Featuring: Vine-ripened tomatoes, fresh mozzarella and basil",
+    "features": "Featuring: Hand-stretched sourdough, vine-ripened tomatoes, fresh mozzarella, and aromatic basil.",
     "features_fr": "Caractéristiques : Tomates mûries sur pied, mozzarella fraîche et basilic",
     "features_es": "Características: Tomates madurados al sol, mozzarella fresca y albahaca",
     "gallery": [
@@ -85,7 +85,7 @@ const productsData = [
       "margherita-with-fresh-mozzarella-pinsa-us-gallery-4.webp",
       "margherita-with-fresh-mozzarella-pinsa-us-gallery-5.webp"
     ],
-    "updated_at": 1793104617632
+    "updated_at": 1793278958343
   },
   {
     "id": 25,
